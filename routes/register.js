@@ -10,10 +10,13 @@ var app = express();
 
 router
   .get('/', (req,res) => {
-    var myTitle = "This is the registration page";
+    var myTitle = "Datacentrix Showcase 2017";
+
+    //res.render()
 
     res.render('register', {
       title: myTitle,
+      //partials: {header: "header"},
     });
 
   });

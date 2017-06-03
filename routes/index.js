@@ -12,8 +12,14 @@ router
   .get('/home', (req,res) => {
     var myTitle = "Datacentrix Showcase 2017";
 
-    res.render('home', {
+    res.render('skeleton', {
       title: myTitle,
+      partials: {
+        header: "partials/header", 
+        content: "partials/home",
+        footer: "partials/footer", 
+        }
+      
     });
 
   });

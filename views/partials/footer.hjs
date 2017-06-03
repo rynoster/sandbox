@@ -1,0 +1,40 @@
+
+		
+		<footer class="dark-bg">
+			<div class="container inner">
+				<div class="row">
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>More about Datacentrix</h4>
+						<p>Datacentrix is an ICT solutions provider that uses technology and services to deliver business value to organisations. We partner with our customers, equipping them with valuable insight, and help them to align their technology undertakings with their business strategy.</p>
+						<a href="http://www.datacentrix.co.za" class="txt-btn">Learn more about us</a>
+					</div><!-- /.col -->
+					
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Datacentrix Showcase 2017</h4>
+						<p>Do not miss this oppertunity to hear from leaders in the industry, network with top experts and get a peak into a new kind of humanity.</p>
+						<ul class="contacts">
+							<li><i class="icon-location contact"></i> Montecasino, Johannesburg</li>
+							<li><i class="icon-mobile contact"></i> 087 741 5000</li>
+							<li><a href="#"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
+						</ul><!-- /.contacts -->
+					</div><!-- /.col -->
+									
+									
+					<div class="col-md-3 col-sm-6 inner">
+						<h4>Recap on Showcase 2016</h4>
+						<iframe src="https://player.vimeo.com/video/191488441" width="auto" height="200" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>	
+					</div><!-- /.col -->
+										
+				</div><!-- /.row --> 
+			</div><!-- .container -->
+		  
+			<div class="footer-bottom">
+				<div class="container inner">
+					<p class="pull-left">© 2017 Datacentrix (Pty) Ltd. All rights reserved.</p>
+					<ul class="footer-menu pull-right">
+						<li><a href="#">Site use policy</a></li>
+					</ul><!-- .footer-menu -->
+				</div><!-- .container -->
+			</div><!-- .footer-bottom -->
+		</footer>
