@@ -8,14 +8,35 @@ var app = express();
 //   res.render('index', { title: 'Express' });
 // });
 
+// Depending on user entry from the dropdown, registration page will be dynamically created.
+
 router
   .get('/', (req,res) => {
-    var myTitle = "This is the registration page";
 
-    res.render('register', {
-      title: myTitle,
+    res.render('skeleton', {
+      partials: {
+        header: "header", 
+        content: "register",
+        footer: "footer", 
+        jscript: "jscript",
+        }
+      
     });
 
+  })
+
+  .get('/delegate', (req,res) => {
+
+    res.render('skeleton', {
+      partials: {
+        header: "header", 
+        content: "register",
+        footer: "footer", 
+        jscript: "jscript",
+        }
+      
+    });
   });
+  
 
 module.exports = router;

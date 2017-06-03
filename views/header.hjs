@@ -1,0 +1,118 @@
+		<header>
+			<div class="navbar">
+				
+				<div class="navbar-header">
+					<div class="container">
+						
+						<ul class="info pull-left">
+							<li><a href="#"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
+							<li><i class="icon-mobile contact"></i> 087 741 5000</li>
+						</ul><!-- /.info -->
+						
+						<ul class="social pull-right">
+							<li><a href="#"><i class="icon-s-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-s-twitter"></i></a></li>
+	
+						</ul><!-- /.social -->
+						
+						<!-- ============================================================= LOGO MOBILE ============================================================= -->
+						
+						<a class="navbar-brand" href="/"><img src="/assets/images/datacentrix.svg" class="logo" alt=""></a>
+						
+						<!-- ============================================================= LOGO MOBILE : END ============================================================= -->
+						
+						<a class="navbar-toggle btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a>
+						
+					</div><!-- /.container -->
+				</div><!-- /.navbar-header -->
+				
+				<div class="yamm">
+					<div class="navbar-collapse collapse">
+						<div class="container">
+							
+							<!-- ============================================================= LOGO ============================================================= -->
+							
+							<a class="navbar-brand" href="/"><img src="/assets/images/datacentrix.svg" class="logo animate img-responsive" alt=""  ></a>
+							
+							<!-- ============================================================= LOGO : END ============================================================= -->
+							
+							
+							<!-- ============================================================= MAIN NAVIGATION ============================================================= -->
+							
+							<ul class="nav navbar-nav">
+								<!-- This is the menu driving the top navigation -->
+															
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Attend</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Delegate</a></li>
+										<li><a href="#">Sponsor</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Register</a>
+									<ul class="dropdown-menu">
+										<li><a href="/register/delegate">Delegate</a></li>
+										<li><a href="/register/sponsors">Sponsors</a></li>
+										<li><a href="/register/staff">Organisers & Staff</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Event Info</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Agenda</a></li>
+										<li><a href="#">Speakers</a></li>
+										<li><a href="#">Multimedia</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sponsors</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Diamond</a></li>
+										<li><a href="#">Platinum</a></li>
+										<li><a href="#">Gold</a></li>
+										<li><a href="#">Silver</a></li>
+										<li><a href="#">Display</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Logistics</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="#">Venue</a></li>
+										<li><a href="#">Accomodation</a></li>
+										<li><a href="#">Transfers & Parking</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
+																		<ul class="dropdown-menu">
+										<li><a href="#">Datacentrix</a></li>
+										<li><a href="#">Organisers</a></li>
+									</ul><!-- /.dropdown-menu -->
+								</li>
+								
+								
+								<!--<li class="dropdown pull-right searchbox">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></a>
+											  
+									<div class="dropdown-menu">
+										<form id="search" class="navbar-form search" role="search">
+											<input type="search" class="form-control" placeholder="Type to search">
+											<button type="submit" class="btn btn-default btn-submit icon-right-open"></button>
+										</form>
+									</div><!-- /.dropdown-menu -->
+								</li><!-- /.searchbox -->
+								
+							</ul><!-- /.nav -->
+					
+						</div><!-- /.container -->
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.yamm -->
+			</div><!-- /.navbar -->
+		</header>
