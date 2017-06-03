@@ -92,7 +92,14 @@ main.js-reveal:before {
     padding-left: 0;
 }
 p {
+	margin-bottom: 10px;
+	line-height: 100%
+	
+}
+p1 {
 	margin-bottom: 20px;
+    
+	
 }
 p a {
 	border-bottom: 1px solid #73879C;
@@ -513,7 +520,6 @@ blockquote .small:after {
 hr {
     border: 0;
     border-bottom: 1px solid #CED7E0;
-    margin: 60px 0;
 }
 .map iframe {
     display: block;
@@ -6013,6 +6019,9 @@ input:focus:-ms-input-placeholder {
   }
   .hidden-phone {
     display: none !important;
+  }
+  .show-phone {
+    display: block !important;
   }
 }
 /*===================================================================================*/

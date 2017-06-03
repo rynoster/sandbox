@@ -72,7 +72,7 @@
 						
 						<!-- ============================================================= LOGO MOBILE : END ============================================================= -->
 						
-						<a class="navbar-toggle btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a>
+						<a class="navbar-toggle btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class="icon-menu-1"></i></a>
 						
 					</div><!-- /.container -->
 				</div><!-- /.navbar-header -->
@@ -158,7 +158,7 @@
 											<button type="submit" class="btn btn-default btn-submit icon-right-open"></button>
 										</form>
 									</div><!-- /.dropdown-menu -->
-								</li><!-- /.searchbox -->
+								<!--</li><!-- /.searchbox -->
 								
 							</ul><!-- /.nav -->
 					
@@ -179,34 +179,31 @@
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg" autoplay:"">
+				<div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
-					<div class="item" style="background-image: url(assets/images/art/slider01-b.jpg);">
+					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
 						<div class="container">
+						 
 							<div class="caption vertical-center text-right">
 								
 								<div class="fadeIn-1">
+									
+									<!-- Display the Showcase logo on everything but the a mobile phone-->
 									<div class="hidden-phone">
-										<img src="assets/images/showcase.svg" style="width:400px;height:auto;"><br/><br>
-										<p style="font-size: 250%; color:#005981">Thursday, 27 July 2017</p><br/>
-										<div id="getting-started"></div>
-										
-									  
-									  <!-- Countdown timer -->
-									  <script type="text/javascript">
-										  $("#getting-started")
-										  .countdown("2017/07/27", function(event) {
-											$(this).text(
-											  event.strftime('%D days %H:%M:%S')
-											);
-										  });
-										</script>
+										<img src="/assets/images/showcase.svg" style="width:700px;height:auto">
+										<br><br><br>
+										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
 									</div>
-									
-									
-									<p style="font-size: 100%; ;color:dimgray; text-align: right" >As we enter the first phases of the digital world, we experience this first   nd. The human race is now, more than ever, depended on technology. From our daily communication with each other; globally connected platforms that connect humans with the digital world; medical devices implanted into humans that breathe life into them that are controlled by software - to more advanced DNA manipulation; and nano scale technology innovation powered by machines. </p><br>
-
+									<div class="hidden-lg hiiden-md hidden-sm" style="padding-bottom: 30px">
+										
+										<p style="font-weight: bold; font-size: 200%; color:#005981">Showcase 2017</p><br>
+										<p style="font-size: 100%; color:#005981">Thursday, 27 July 2017</p>
+										<img src="/assets/images/art/calendar.png" style="width:100px;height:auto">
+										
+										
+									</div>										
+																								
 								</div>
 														
 								<div class="fadeInDown-2">
@@ -218,12 +215,12 @@
 					
 
 					<!-- Page 2 of main banner - Keynote speaker - Michael Jordaan -->
-					<div class="item" style="background-image: url(assets/images/art/slider03.jpg);">
+					<div class="item" style="background-image: url(/assets/images/art/slider03.jpg);">
 						<div class="container">
 							<div class="caption vertical-center text-left">
 								
 								<h1 class="fadeInRight-1 dark-bg light-color" style="font-size: 300%"><span>DR. MICHAEL JORDAAN</span></h1>
-								<p class="fadeInLeft-2 light-color"><strong>Keynote speaker on singularity,</strong> venture capitalist and former banker<br><br/> </p>
+								<p class="fadeInLeft-2 light-color" style="font-size: 150%"><strong>Keynote speaker on singularity,</strong> venture capitalist and former banker<br><br/> </p>
 								
 								<!-- /.fadeIn -->
 							</div><!-- /.caption -->
@@ -236,13 +233,14 @@
 						<div class="container">
 							<div class="caption vertical-center text-left">
 							 	
-							 	<div class="fadeIn-1">
-									<img src="assets/images/art/Sponsor-Logo/Hewlett_Packard_Enterprise_logo_white.svg" style="width:200px;height:auto;"><br/>
+							 	<div class="fadeIn-1" style="padding-bottom:20px">
+									<img src="/assets/images/art/Sponsor-Logo/Hewlett_Packard_Enterprise_logo_white.svg" style="width:300px;height:auto">
 									<br>
+									<p style="font-size: 150%; color: #fff; padding-bottom: 20px">Dimond Sponsor</p>
 								</div>
 								
-								<div class="fadeIn-2">
-									<p style="font-size: 250%; font-weight: bold; color: #fff">Digital transformation <br/></br/>starts with <b>'YES'</b></br><br/></p>
+								<div class="fadeIn-2 hidden-phone" >
+									<p style="font-size: 300%; font-weight: bold; color:#39B188;">Digital transformation <br> starts with Yes</p>
 								</div>
 								
 								<div class="fadeIn-3">
@@ -252,7 +250,7 @@
 							</div><!-- /.caption -->
 						</div><!-- /.container -->
 					</div><!-- /.item -->
-				</div><!-- /.owl-carousel -->
+				</div>
 			</section>
 			
 			<!-- ============================================================= SECTION – Top Banner : END ============================================================= -->
@@ -266,7 +264,7 @@
 					<div class="row">
 						
 						<div class="col-sm-6 inner-right-xs text-right">
-							<figure><img src="assets/images/art/product01.jpg" alt=""></figure>
+							<figure><img src="/assets/images/art/product01.jpg" alt=""></figure>
 						</div><!-- /.col -->
 						
 						<div class="col-sm-6 inner-top-xs inner-left-xs">
@@ -292,7 +290,7 @@
 					<div class="row inner-top-md">
 						
 						<div class="col-sm-6 inner-right-xs text-right">
-							<figure><img src="assets/images/art/product03.jpg" alt=""></figure>
+							<figure><img src="/assets/images/art/product03.jpg" alt=""></figure>
 						</div><!-- /.col -->
 						
 						<div class="col-sm-6 inner-top-xs inner-left-xs">
@@ -322,7 +320,7 @@
 				<div class="container inner">
 				
 					<div class="row">
-							<div class="col-sm-6 inner-right-xs text-Left">
+							<div class="col-sm-6 inner-right-xs text-center">
 							<header>
 								<figure><img src="assets/images/sponsor logos/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
 								<p>Cisco. Your Foundation for Digital Transformation</p>
@@ -330,8 +328,11 @@
 							</header>
 							<a href="#" class="btn btn-large">Cisco sponsor page</a>
 							</div><!-- /.col -->
-							
-							<div class="col-sm-6 inner-right-xs text-right">
+							<div class="hidden-lg hidden-md hidden-sm text-center">
+								<div class="container" style="padding: 50px"></div>
+							</div>
+						  	<!-- -->
+							<div class="col-sm-6 inner-right-xs text-center">
 							<header>
 								<figure><img src="assets/images/sponsor logos/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
 								<p>Lenovo. From pocket to data center</p>
@@ -356,47 +357,50 @@
 						<div class="center-block text-center">
 							<header>
 								<h2>Gold sponsors</h2>
+								<p>Please click on the logo to access the sponsors event page for more information</p>
 								<hr color="#005982" align="left" width="100%" size="1">
-								<br/>
 								<figure>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;">&nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								</figure>
 								<br/>
 								<br/>
 								<br/>
-								<h2>Silver sponsors</h2>
+								<h2 style="padding-top: 40px">Silver sponsors</h2>
+								<p>Please click on the logo to access the sponsors event page for more information</p>
 								<hr color="#005982" align="left" width="100%" size="1">
-								<br/>
 								<figure>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;">&nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/citrix.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/ibm.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/netapp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/vmware.jpg" alt="" style="width:120px;height:auto;padding: 10px "> &nbsp &nbsp</a>
 								</figure>
+								
 								
 								<br/>
 								<br/>
 								<br/>
-								<h2>Display sponsors</h2>
-								<hr color="#005982" align="left" width="100%" size="1">
-								<br/>
+								<h2 style="padding-top: 40px">Display sponsors</h2>
+								<p>These sponsors do not have any events pages on this site</p>
+								<hr color="#005982" align="left" width="100%" size="1"  style="padding: ">
 								<figure>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;">&nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;"> &nbsp &nbsp</a>
+									<img src="assets/images/sponsor logos/Display/arista.jpg" alt="" style="width:90px;height:auto;">&nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/black.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/f5.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/microfocus.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/tripleplay.jpg" alt="" style="width:90px;height:auto;"> &nbsp &nbsp
 								</figure>
 								
 								</header>
