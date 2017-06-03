@@ -9,15 +9,14 @@ var app = express();
 // });
 
 router
-  .get('/home', (req,res) => {
-    var myTitle = "Datacentrix Showcase 2017";
+  .get('/', (req,res) => {
 
     res.render('skeleton', {
-      title: myTitle,
       partials: {
-        header: "partials/header", 
-        content: "partials/home",
-        footer: "partials/footer", 
+        header: "header", 
+        content: "home",
+        footer: "footer", 
+        jscript: "jscript"
         }
       
     });

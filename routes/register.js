@@ -8,17 +8,35 @@ var app = express();
 //   res.render('index', { title: 'Express' });
 // });
 
+// Depending on user entry from the dropdown, registration page will be dynamically created.
+
 router
   .get('/', (req,res) => {
-    var myTitle = "Datacentrix Showcase 2017";
 
-    //res.render()
-
-    res.render('register', {
-      title: myTitle,
-      //partials: {header: "header"},
+    res.render('skeleton', {
+      partials: {
+        header: "header", 
+        content: "register",
+        footer: "footer", 
+        jscript: "jscript",
+        }
+      
     });
 
+  })
+
+  .get('/delegate', (req,res) => {
+
+    res.render('skeleton', {
+      partials: {
+        header: "header", 
+        content: "register",
+        footer: "footer", 
+        jscript: "jscript",
+        }
+      
+    });
   });
+  
 
 module.exports = router;
