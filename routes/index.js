@@ -9,7 +9,7 @@ var app = express();
 // });
 
 router
-  .get('/', (req,res) => {
+  .get('/home', (req,res) => {
 
     res.render('skeleton', {
       partials: {
