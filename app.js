@@ -4,6 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var db = require('./db');
+var passport = require('passport');
+var session = require('express-session');
+require('./passport');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -28,6 +33,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/register', register);
 app.use('/whyattend', whyattend);
+
+//Initialize the session, with secret and passport
+app.use(session({ secret: "I like steak", resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

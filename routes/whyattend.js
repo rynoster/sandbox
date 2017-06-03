@@ -14,7 +14,7 @@ router
     res.render('skeleton', {
       partials: {
         header: "header", 
-        content: "whyattend",
+        content: "why_attend",
         footer: "footer", 
         jscript: "jscript"
         }
