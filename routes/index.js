@@ -9,12 +9,12 @@ var app = express();
 // });
 
 router
-  .get('/home', (req,res) => {
+  .get('/', (req,res) => {
 
     res.render('skeleton', {
       partials: {
         header: "header", 
-        content: "home",
+        content: "index",
         footer: "footer", 
         jscript: "jscript"
         }
