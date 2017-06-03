@@ -43,7 +43,7 @@
 								<!-- This is the menu driving the top navigation -->
 															
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Attend</a>
+									<a href="/whyattend" class="dropdown-toggle" data-toggle="dropdown">Why Attend</a>
 									<ul class="dropdown-menu">
 										<li><a href="#">Delegate</a></li>
 										<li><a href="#">Sponsor</a></li>
