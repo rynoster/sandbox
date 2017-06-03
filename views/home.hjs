@@ -220,7 +220,7 @@
 								<br/>
 								<h2 style="padding-top: 40px">Display sponsors</h2>
 								<p>These sponsors do not have any events pages on this site</p>
-								<hr color="#005982" align="left" width="100%" size="1"  style="padding: 10px">
+								<hr color="#005982" align="left" width="100%" size="1"  style="padding: 0px">
 								<figure>
 									<img src="assets/images/sponsor logos/Display/arista.jpg" alt="" style="width:90px;height:auto;padding:10px">&nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/black.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
