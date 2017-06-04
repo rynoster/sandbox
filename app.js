@@ -5,8 +5,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var db = require('./db');
 var passport = require('passport');
+
+var db = require('./db');
 require('./passport');
 
 
@@ -14,7 +15,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var register = require('./routes/register');
 var whyattend = require('./routes/whyattend');
-var login = require('./routes/login');
+//var login = require('./routes/login');
 
 var app = express();
 
@@ -34,14 +35,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/register', register);
 app.use('/whyattend', whyattend);
-app.use('/login', login);
-
-//Initialize the session, with secret and passport
-//app.use(session({ resave: false, saveUninitialized: false, secret: "Jou ma se kwas" }));
-
-// app.use(session({ secret: "I like steak", resave: false, saveUninitialized: false }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+//app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
