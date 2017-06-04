@@ -212,14 +212,9 @@ router
 
   .get('/admin', auth.loginRequired, (req,res) => {
 
-    res.render('skeleton', {
-      partials: {
-        header: "header", 
-        content: "admin",
-        footer: "footer", 
-        jscript: "jscript"
-        }
-    });
+    res.render('admin', {
+      partials: {jscript: "jscript"}
+    })
   })
 
   // ===========================================================================
