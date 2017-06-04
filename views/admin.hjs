@@ -1,0 +1,18 @@
+<html>
+    <body>
+        
+    </body>
+</html>
+
+{{> jscript}}
+
+<script>
+    $(function (){
+
+        $.ajax({
+            type: 'GET'
+            url: '/'
+        });
+    })
+
+</script>

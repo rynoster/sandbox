@@ -4,6 +4,7 @@ var RedisStore = require('connect-redis')(session);
 var router = express.Router();
 var db = require('../db');
 var passport = require('passport');
+var auth = require('../auth');
 
 require('../passport');
 
@@ -59,10 +60,24 @@ router
   }) 
   
   //Catches on pushing the Log In button and redirects based on authentication
-  .post('/login', passport.authenticate("local", {
-    successRedirect: "auth",
-    failureRedirect: "login",
-  }))
+  // .post('/login', passport.authenticate("local", {
+  //   successRedirect: "auth",
+  //   failureRedirect: "login",
+  // }))
+
+  .post('/login', 
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
+
+      if (!req.session.sourceURL) {
+        res.redirect('/auth');
+      }
+      else {
+        res.redirect(req.session.sourceURL);
+        req.session.sourceURL = "";
+      }
+      
+  })
 
   // ===========================================================================
   //  Login : END ==============================================================
@@ -189,6 +204,26 @@ router
 
   // ===========================================================================
   //  Contacts Us : END ========================================================
+  // ===========================================================================
+
+  // ===========================================================================
+  //  Admin Page ===== =========================================================
+  // ===========================================================================
+
+  .get('/admin', auth.loginRequired, (req,res) => {
+
+    res.render('skeleton', {
+      partials: {
+        header: "header", 
+        content: "admin",
+        footer: "footer", 
+        jscript: "jscript"
+        }
+    });
+  })
+
+  // ===========================================================================
+  //  Admin Page : END  ========================================================
   // ===========================================================================
 
  ;

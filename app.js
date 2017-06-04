@@ -12,10 +12,8 @@ require('./passport');
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var api = require('./routes/api');
 var register = require('./routes/register');
-// var whyattend = require('./routes/whyattend');
-//var login = require('./routes/login');
 
 var app = express();
 
@@ -32,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); //Servers static content
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/api', api);
 app.use('/register', register);
 // app.use('/whyattend', whyattend);
 //app.use('/login', login);
