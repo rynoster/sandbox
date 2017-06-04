@@ -1,5 +1,6 @@
 var express = require('express');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 var router = express.Router();
 var db = require('../db');
 var passport = require('passport');
@@ -10,7 +11,12 @@ var app = express();
 
 router
   //Session initialise
-  .use(session({ resave: false, saveUninitialized: false, secret: "Singularity is the secret!!!" }))
+  .use(session({ 
+    store: new RedisStore(),
+    resave: false, 
+    saveUninitialized: false, 
+    secret: "Singularity is the secret!!!"
+  }))
   .use(passport.initialize())
   .use(passport.session())
 
