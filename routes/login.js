@@ -9,6 +9,8 @@ require('../passport');
 var app = express();
 
 router
+  .use(session({ resave: false, saveUninitialized: false, secret: "Jou ma se kwas" }))
+
   .get('/', (req,res) => {
 
     res.render('skeleton', {
