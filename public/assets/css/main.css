@@ -917,7 +917,7 @@ iframe + iframe {
     color: #F27A24 !important;
 }
 .navy {
-    color: #34495E !important;
+    color: #005982 !important;
 }
 .gray {
     color: #95A5A6 !important;
@@ -3545,6 +3545,16 @@ textarea,
 .navbar-form .form-control {
     width: 100%;
 }
+.selectflt {
+    -moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border-collapse: collapse !important;
+	background-image: none !important;
+} 
 select,
 textarea,
 textarea.form-control,
@@ -3570,7 +3580,7 @@ input[type="color"],
     margin-bottom: 15px;
     font-size: 14px;
     line-height: 25px;
-    color: #73879C;
+    color:#005982;
     resize: none;
     vertical-align: middle;
     -webkit-box-shadow: none;
@@ -3704,19 +3714,19 @@ footer .newsletter .btn-submit {
 .dark-bg button,
 .dark-bg select,
 .dark-bg textarea {
-    color: #A3B1BF;
+    color:#506A85;
 }
 .form-control::-webkit-input-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .form-control:-moz-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .form-control::-moz-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .form-control:-ms-input-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .dark-bg .form-control::-webkit-input-placeholder {
     color: #828E99;
@@ -3731,16 +3741,16 @@ footer .newsletter .btn-submit {
     color: #828E99;
 }
 .search .form-control::-webkit-input-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .search .form-control:-moz-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .search .form-control::-moz-placeholder {
-    color: #C2C7CC;
+    color: #828E99;
 }
 .search .form-control:-ms-input-placeholder {
-    color: #C2C7CC;
+    color:#828E99;
 }
 input:focus::-webkit-input-placeholder {
     color: transparent !important;
