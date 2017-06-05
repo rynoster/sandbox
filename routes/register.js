@@ -33,7 +33,7 @@ router
         content: "register",
         footer: "footer", 
         jscript: "jscript",
-        usertpe: "delegate",
+        // usertpe: "delegate",
         }
       
     });
@@ -47,7 +47,7 @@ router
         content: "register",
         footer: "footer", 
         jscript: "jscript",
-        usertpe: "sponsor",
+        // usertpe: "sponsor",
         }
       
     });
@@ -61,7 +61,7 @@ router
         content: "register",
         footer: "footer", 
         jscript: "jscript",
-        usertpe: "organiser",
+        // usertpe: "organiser",
         }
       
     });
