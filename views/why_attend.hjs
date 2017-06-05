@@ -1,1 +1,246 @@
+
+	<!-- ============================================================= Top Banner ============================================================= -->
+			
+			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background-why-attend.jpg);">
+				<div class="container " >
+					<div class="row">
+						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
+							<header>
+								<h1 style="color:#005982">Why attend</h1>
+								<p style="font-size:200%;color:dimgrey"><strong>Datacentrix</strong> Showcase 2017</p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+<!-- ============================================================= Top Banner : END ============================================================= -->
+
+<!-- ============================================================= SECTION 1 : START ==================================================================== -->
+
+			<section id="blog" class="light-bg">
+				<div class="container inner-top-sm inner-bottom">
+					
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<div class="grid-blog col-3 no-sidebar">
+								<div class="posts">
+									
+									<div class="post format-gallery">			
+										
+										<div class="post-content">
+<!-- =========================================================== Flash Cards : START ========================================================================== -->
+
+											<div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
+												
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t0.jpg" alt="">
+													</figure>
+												</div><!-- /.item -->
+											
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t0-3.jpg" alt="">
+													</figure>
+												</div><!-- /.item -->
+
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t1.jpg" alt="">
+													</figure>
+												</div><!-- /.item -->
+
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t0-4.jpg" alt="">
+													</figure>
+												</div><!-- /.item -->
+												
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t2.jpg"alt="">
+													</figure>
+												</div><!-- /.item -->
+
+												<div class="item">
+													<figure>
+														<img src="/assets/images/art/wa-banner-t0-5.jpg" alt="">
+													</figure>
+												</div><!-- /.item -->
+												
+												
+											</div><!-- /.owl-carousel -->
+
+<!-- =========================================================== Flash Cards : End========================================================================== -->	
+
+
+<!-- =========================================================== Post - Journey towards singularity: START =============================================== -->											
+											
+											<h2 class="post-title">
+												<p>Journey towards singularity</p>
+											</h2>
+											
+											<p>
+												Join the discussion about strategic decisions that will equip your company in order to bridge the gap 
+												between business and technology in order to survive the digital age. 
+												<br><br>
+												
+												Be challenged by the corporate sector’s role in elevating humanity’s consumption of technology:
+												<ul style="list-style-type:disc" >
+													<li>What learnings are needed?</li>
+													<li>What is the role of code<?/li>
+													<li>How will artificial intelligence change evolution?</li>
+												</ul>
+
+											</p>
+											
+									</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+
+<!-- =========================================================== Post End =========================================================================== -->
+
+
+<!-- =========================================================== Quote - Gartner: START ============================================================= -->
+									<div class="post format-quote">
+										
+										<div class="post-content">
+											 
+											<blockquote>
+												<p>Gartner predicts one in three jobs will be converted to software, robots and smart machines by 2025. New digital businesses require less labour; machines will make sense of data faster than humans can.</p>
+												<footer><cite>Peter Sondergaard, Gartner</cite></footer>
+											<br></blockquote>
+											
+										</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+<!-- =========================================================== Quote : END =========================================================================== -->
+
+
+<!-- =========================================================== Post - Focus on the confreence : START =============================================== -->										
+									
+									<div class="post format-standard">
+										
+										<div class="post-content">
+											
+										
+											<h2 class="post-title outer-top-xs">
+												<p>The focus of the conference</p>
+											</h2>
+												
+											<p>
+												Find out about how different components, solutions and vendors come together to achieve connected business. In support of this, 
+												we encourage attendees to meet up with local and international industry experts to unpack their journey. <br><br> 
+												Assimilate as much information about connected ICT solutions in one day, by attending our high impact breakout sessions, visiting the 
+												showcase hall where all sponsors will share their view of the future and the jounrey into the digital age. 
+											</p>
+
+						
+										</div><!-- /.post-content --> 
+									</div><!-- /.post -->
+
+<!-- =========================================================== Post: END ============================================================= -->
+
+
+
+<!-- =========================================================== Post - Michael bio's: START ============================================================= -->										
+									
+									<div class="post format-standard">
+										
+										<div class="post-content">
+											
+											<figure class="icon-overlay icn-link post-media">
+												<img src="/assets/images/art/Ad-MJ-Small.jpg" alt="">
+											</figure><!-- /.post-media -->
+
+												
+											<p>
+												Industry is changing its shape from something physical to being a number on a screen. 
+												<br><br>
+												Artificial intelligence is taking over skilled professions, delivering cost efficiencies 
+												for consumers, but disrupting business as we know it. Continuous learning is the only answer. 
+												<br><br>
+												<strong>Join the discussion with Dr. Michael Jordaan at the opening plenary and lunchtime panel discussion</strong>
+											</p>
+																	
+										</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+
+<!-- =========================================================== Post END ============================================================= -->
+
+
+<!-- =========================================================== Quote Start - Centre Top ============================================================= -->
+									<div class="post format-quote">
+										
+										<div class="post-content">
+											 
+											<blockquote>
+												<p>“Many leaders and organisations are blind to the significant disruptive changes that will be brought by exponential technology growth.</p>
+												<footer><cite>Salim Ismail, Singularity University</cite></footer>
+											<br><br></blockquote>
+											
+										</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+<!-- =========================================================== Quote End =========================================================================== -->			
+								
+
+<!-- =========================================================== Post - Rudie's Article: START ============================================================= -->										
+									
+									<div class="post format-standard">
+										
+										<div class="post-content">
+											
+											<figure class="icon-overlay icn-link post-media">
+												<img src="/assets/images/art/Ad-RR-Small.jpg" alt="">
+											</figure><!-- /.post-media -->
+
+											<h2>Standing on the brink of the singularity revolution</h2>	
+											<p>Singularity represents an era where humankind and machines collide to become one civilisation, but what will it mean for us?</p>
+											
+											<div class="fadeIn-3">
+												<a href="https://mybroadband.co.za/news/industrynews/202622-standing-on-the-brink-of-the-singularity-revolution.html" target="_blank" class="btn btn-large">Read full article</a>
+											</div>
+																	
+										</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+
+<!-- =========================================================== Post END ============================================================= -->	
+
+
+<!-- =========================================================== Quote - Gartner: START ============================================================= -->
+									<div class="post format-quote">
+										
+										<div class="post-content">
+											 
+											<blockquote>
+												<p>With digital business revenue expected to increase by over 80% by 2020, it’s not an option to put growth plans on hold.</p>
+												<footer><cite>Peter Sondergaard, Gartner</cite></footer>
+											<br></blockquote>
+											
+										</div><!-- /.post-content --> 
+										
+									</div><!-- /.post -->
+<!-- =========================================================== Quote End =========================================================================== -->	
+
+
+									</div><!-- /.post -->
+								</div><!-- /.posts -->
+							</div><!-- /.grid-blog -->
+						
+							
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+					
+				</div><!-- /.container -->
+			</section>
+			
+<!-- ============================================================= SECTION – BLOG : END ============================================================= -->
+			
+		</main>
+<!-- ============================================================= MAIN : END ============================================================= -->
+
 {{> jscript}}

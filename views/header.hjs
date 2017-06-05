@@ -43,11 +43,7 @@
 								<!-- This is the menu driving the top navigation -->
 															
 								<li class="dropdown">
-									<a href="/whyattend" class="dropdown-toggle" data-toggle="dropdown">Why Attend</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Delegate</a></li>
-										<li><a href="#">Sponsor</a></li>
-									</ul><!-- /.dropdown-menu -->
+									<a href="/whyattend" class="dropdown-toggle" data-toggle="dropdown">Why attend</a>
 								</li>
 								
 								<li class="dropdown">
@@ -55,12 +51,12 @@
 									<ul class="dropdown-menu">
 										<li><a href="/register/delegate">Delegate</a></li>
 										<li><a href="/register/sponsors">Sponsors</a></li>
-										<li><a href="/register/staff">Organisers & Staff</a></li>
+										<li><a href="/register/staff">Organisers & staff</a></li>
 									</ul><!-- /.dropdown-menu -->
 								</li>
 								
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Event Info</a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Event info</a>
 									<ul class="dropdown-menu">
 										<li><a href="#">Agenda</a></li>
 										<li><a href="#">Speakers</a></li>
@@ -85,12 +81,12 @@
 									<ul class="dropdown-menu">
 										<li><a href="#">Venue</a></li>
 										<li><a href="#">Accomodation</a></li>
-										<li><a href="#">Transfers & Parking</a></li>
+										<li><a href="#">Transfers & parking</a></li>
 									</ul><!-- /.dropdown-menu -->
 								</li>
 								
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact us</a>
 																		<ul class="dropdown-menu">
 										<li><a href="#">Datacentrix</a></li>
 										<li><a href="#">Organisers</a></li>
