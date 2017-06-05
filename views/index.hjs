@@ -35,7 +35,7 @@
 								</div>
 														
 								<div class="fadeInDown-2">
-									<a href="#" class="btn btn-large">Secure your seat now</a>
+									<a href="/register" class="btn btn-large">Secure your seat now</a>
 								</div><!-- /.fadeIn -->
 							</div><!-- /.caption -->
 						</div><!-- /.container -->
@@ -211,7 +211,6 @@
 									<a href="#"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a href="#"><img src="assets/images/sponsor logos/Silver/vmware.jpg" alt="" style="width:120px;height:auto;padding: 10px "> &nbsp &nbsp</a>
 								</figure>
 								
 								
@@ -229,6 +228,7 @@
 									<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/tripleplay.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/vmware.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 								</figure>
 								
 								</header>

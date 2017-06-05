@@ -1,12 +1,14 @@
-	<!-- ============================================================= Top Banner ============================================================= -->
+
+    
+    <!-- ============================================================= Top Banner ============================================================= -->
 			
 			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
 				<div class="container " >
 					<div class="row">
 						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
 							<header>
-								<h1 style="color:#005982">Delegate registration </h1>
-								<p>This exciting business conference is free and open to all enterprise business customers. We'd love to see you at the Showcase 2017. </p>
+								<h1 style="color:#005982">Event registration </h1>
+								<p>This exciting business conference is free and open to all enterprise business customers and sponsors. </p>
 							</header>
 						</div><!-- /.col -->
 					</div><!-- ./row -->
@@ -22,83 +24,74 @@
 						<div class="col-sm-12">
 							<div class="row">
 								
-								<div class="col-sm-6 outer-top-sm inner-right-sm">
-									
-									<h2>Enter your business details</h2>
-                                    <p>Please complete all fields in order to confirm your attendance. </p><br>
-									
-									<form id="frm_registration" class="forms" action="#" method="post">
-									<table width="607">
-                                        <tbody>
-                                        <tr>
-                                            <td>Title</td>
-                                            <td>Name</td>
-                                            <td>Surname</td>
-                                            <td>Company</td>
-                                        </tr>
-                                        <tr>
-                                            <td><select name="selTitle" id="selTitle" form="form1" class="outer-xs">
-                                                <option value="Mr">Mr</option>
-                                                <option value="Mrs">Mrs</option>
-                                                <option value="Miss">Miss</option>
-                                                <option value="Dr">Dr</option>
-                                                <option value="Prof">Prof</option>
-                                            </select></td>
-                                            <td><input type="text" name="textfield" id="textfield"></td>
-                                            <td><input type="text" name="textfield2" id="textfield2"></td>
-                                            <td><input type="text" name="textfield3" id="textfield3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td height="0" colspan="4">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Business Level</td>
-                                            <td>Your title at the company</td>
-                                            <td>Office Number</td>
-                                            <td>Mobile Number </td>
-                                        </tr>
-                                        <tr>
-                                            <td><select name="selBusLevel" id="selBusLevel" form="form1">
-                                            <option value="1">C-Level</option>
-                                            <option value="2">Excutive / Director</option>
-                                            <option value="3">HOD / Snr Manager</option>
-                                            <option value="4">IT Manager</option>
-                                            <option value="5">Support / Engineering</option>
-                                            <option value="6">Other</option>
-                                            </select></td>
-                                            <td><input type="text" name="textfield4" id="textfield4"></td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">Business Email Address</td>
-                                            <td colspan="2">Re-enter Business Email Address</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2"><input type="text" name="textfield5" id="textfield5"></td>
-                                            <td colspan="2"><input type="text" name="textfield6" id="textfield6"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-						
-										
-										<button type="submit" class="btn btn-default btn-submit">Register as a delegate</button>
-										
-									</form>
-									
-									<div id="response" class="outer-bottom-sm"></div>
-									
-								</div><!-- ./col -->
-																
-							</div><!-- /.row -->
-						</div><!-- /.col -->
-					
-				</div><!-- /.container -->
-			</section>
-			
+							<div class="col-md-8 inner-right-md vcenter">
+												
+                                <section id="regform-section" class="outer-xs">
+                                    
+                                    <h2>Please complete to confirm your attendance</h2>
+                                    <p>This exclusive business conference is free of charge. For this reason, all registrations are subject to approval 
+                                        by Datacentrix’ marketing team – a quick process that’ll be completed within 2 working days. <br><br>As soon as your registration is approved, 
+                                        your seat will be booked and you’ll be notified via email. We’re looking forward to contacting you.</p>
+                                    
+                                    <form id="regform" class="forms" action="#" method="post">
+                                       
+                                        <div class="row">
+                                           <div class="col-sm-12 outer-top-xs"><p><strong>Your details</strong><p></div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-6"><input type="text" name="name" class="form-control" placeholder="Name (Required)"></div>
+                                            <div class="col-sm-6"><input type="text" name="surname" class="form-control" placeholder="Surname (Required)"></div>
+                                        </div>
+
+                                         <div class="row">
+                                            <div class="col-sm-6"><input type="text" name="company" class="form-control" placeholder="Company name (Required)"></div>
+                                            <div class="col-sm-6"><input type="text" name="bustitle" class="form-control" placeholder="Business title (Required)"></div>
+                                        </div>
+
+
+                                         <div class="row">
+                                            <div class="col-sm-6"><input type="text" name="Mobile" class="form-control" placeholder="Mobile no (Required)"></div>
+                                            <div class="col-sm-6"><input type="text" name="Office" class="form-control" placeholder="Office (Optional)"></div>
+                                        </div>
+
+                                       <div class="row">
+                                           <div class="col-sm-12 outer-top-xs"><p><strong>Business email address</strong><p></div>
+                                        </div>
+                                    
+                            
+                                        <div class="row">
+                                            <div class="col-sm-6"><input type="email" name="email1" class="form-control" placeholder="Business email (Required)"></div>
+                                            <div class="col-sm-6"><input type="email" name="email2" class="form-control" placeholder="Verify email (Required)"></div>
+                                        </div>
+
+                                        <div class="row">
+                                           <div class="col-sm-12 outer-top-xs"><p><strong>Selet the type of registration</strong><p></div>
+                                        </div>
+
+                                         <div class="row">
+                                            <div class="col-sm-6">
+                                                     <select class="form-control" id="selregtype">
+                                                        <option>End Customer</option>
+                                                        <option>Media</option>
+                                                        <option>Staff</option>
+
+                                                    </select>
+                                                </div>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-default btn-submit">Register for the event</button>
+                                        
+                                    </form>
+                                    
+                                    <div id="response"></div>
+                                    
+                                </section>
+                                        
+                          </div>	
+            </section>
+            
 <!-- ============================================================= SECTION – Registration FORM : END ============================================================= -->
 
 
