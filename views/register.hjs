@@ -28,56 +28,61 @@
                                     <p>Please complete all fields in order to confirm your attendance. </p><br>
 									
 									<form id="frm_registration" class="forms" action="#" method="post">
-										
-										<div class="row">
-											<div class="col-sm-6">
-										<input type="text" name="name" class="form-control" placeholder="Name (Required)"> 
-											</div><!-- /.col -->
-										</div><!-- /.row -->
-										
-										<div class="row">
-											<div class="col-sm-6">
-												<input type="email" name="email" class="form-control" placeholder="Business email (Required)">
-											</div><!-- /.col -->
-										</div><!-- /.row -->
-
-                                        <div class="row">
-											<div class="col-sm-6">
-												<input type="email" name="email-verify" class="form-control" placeholder="Verify businesse email (Required)">
-											</div><!-- /.col -->
-										</div><!-- /.row -->
-										
-										<div class="row">
-											<div class="col-sm-6">
-												<input type="text" name="company" class="form-control" placeholder="Company name (Required)">
-											</div><!-- /.col -->
-										</div><!-- /.row -->
-
-                                        <div class="row">
-											<div class="col-sm-6">
-												<input type="text" name="bus-title" class="form-control" placeholder="Business title (Required)">
-											</div><!-- /.col -->
-									
-                                        </div><!-- /.row -->
-                                        <div class="row">
-											<div class="col-sm-6">
-												<input type="text" name="mobile" class="form-control" placeholder="Mobile number (Preferred)">
-											</div><!-- /.col -->
-										</div><!-- /.row -->
-										
-                                         <div class="row">
-											<div class="col-sm-6">
-                                                <p>Please select the best option for your diatry needs: </p>
-												<select name="diatry" id="diatry" class="form-control selectflt">
-                                                    <option value="halal">None</option>
-                                                    <option value="halal">Halal</option>
-                                                    <option value="vegetarian">Vegetarian</option>
-                                                    <option value="vegan">Vegan</option>
-                                                    <option value="banting">Banting</option>
-                                                    <option value="other">Other</option>
-                                                </select>
-											</div><!-- /.col -->
-										</div><!-- /.row -->
+									<table width="607">
+                                        <tbody>
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>Name</td>
+                                            <td>Surname</td>
+                                            <td>Company</td>
+                                        </tr>
+                                        <tr>
+                                            <td><select name="selTitle" id="selTitle" form="form1" class="outer-xs">
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mrs">Mrs</option>
+                                                <option value="Miss">Miss</option>
+                                                <option value="Dr">Dr</option>
+                                                <option value="Prof">Prof</option>
+                                            </select></td>
+                                            <td><input type="text" name="textfield" id="textfield"></td>
+                                            <td><input type="text" name="textfield2" id="textfield2"></td>
+                                            <td><input type="text" name="textfield3" id="textfield3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="0" colspan="4">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Business Level</td>
+                                            <td>Your title at the company</td>
+                                            <td>Office Number</td>
+                                            <td>Mobile Number </td>
+                                        </tr>
+                                        <tr>
+                                            <td><select name="selBusLevel" id="selBusLevel" form="form1">
+                                            <option value="1">C-Level</option>
+                                            <option value="2">Excutive / Director</option>
+                                            <option value="3">HOD / Snr Manager</option>
+                                            <option value="4">IT Manager</option>
+                                            <option value="5">Support / Engineering</option>
+                                            <option value="6">Other</option>
+                                            </select></td>
+                                            <td><input type="text" name="textfield4" id="textfield4"></td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Business Email Address</td>
+                                            <td colspan="2">Re-enter Business Email Address</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><input type="text" name="textfield5" id="textfield5"></td>
+                                            <td colspan="2"><input type="text" name="textfield6" id="textfield6"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 						
 										
 										<button type="submit" class="btn btn-default btn-submit">Register as a delegate</button>
@@ -87,22 +92,7 @@
 									<div id="response" class="outer-bottom-sm"></div>
 									
 								</div><!-- ./col -->
-								
-								<div class="col-sm-6 outer-top-sm inner-left-sm border-left">
-									
-									<h3>Terms of registration</h3>
-									<p style="font-size:80%;" >Datacentrix Showcase attracts key decision makers from various industries, from c-level executives to 
-                                        IT Managers, wanting to hear how business should be responding to these changing times in business. We take great pride in the quality of our 
-                                        attendees at Datacentrix Showcase, and therefore do not allow non-enterprise business user to attend this event other than media. <br><br>
-                                        Please use your business address, allowing our staff verify your registration quickly and effectivly. New registration approvals will 
-                                        not take longer than 2-business-days. If you do not receive a email from us 
-                                        confirming you attendace, please do contact our organisers on showcase@datacentrix.co.za.  </p>
-									
-	
-									
-									
-								</div><!-- /.col -->
-								
+																
 							</div><!-- /.row -->
 						</div><!-- /.col -->
 					
