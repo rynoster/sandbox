@@ -1,20 +1,19 @@
-var express = require('express');
-var session = require('express-session');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express =       require('express');
+var session =       require('express-session');
+var path =          require('path');
+var favicon =       require('serve-favicon');
+var logger =        require('morgan');
+var cookieParser =  require('cookie-parser');
+var bodyParser =    require('body-parser');
+var passport =      require('passport');
+
 var db = require('./db');
-var passport = require('passport');
 require('./passport');
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var api = require('./routes/api');
 var register = require('./routes/register');
-var whyattend = require('./routes/whyattend');
-var login = require('./routes/login');
 
 var app = express();
 
@@ -31,17 +30,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); //Servers static content
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/api', api);
 app.use('/register', register);
-app.use('/whyattend', whyattend);
-app.use('/login', login);
-
-//Initialize the session, with secret and passport
-//app.use(session({ resave: false, saveUninitialized: false, secret: "Jou ma se kwas" }));
-
-// app.use(session({ secret: "I like steak", resave: false, saveUninitialized: false }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+// app.use('/whyattend', whyattend);
+//app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,6 @@
+<div class="jumbotron">Sponsors page</div>
+<!--HTML ABOVE THIS LINE-->
+
+{{> jscript}}
+
+<!--JavaScript BELOW THIS LINE-->

@@ -1,26 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var db = require("../db");
+var auth = require("../auth")
 
 var app = express();
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send(users);
-});
 
 router
   .get('/register', (req, res) => {
     res.send("Register page")
   })
 
-  .get('/dbtest', (req,res, next) => {
+  .get('/allUsers', auth.loginRequired, auth.adminRequired, (req,res, next) => {
 
     db("users").then((users) => {
       res.send(users);
     }, next)
   })
 
-  .post('/dbtest', (req,res, next) => {
+  .post('/user', (req,res, next) => {
 
     db("users")
       .insert(req.body)
@@ -29,8 +26,7 @@ router
       }, next)
     })
 
-
-  .get('/dbtest/:id', (req,res, next) => {
+  .get('/user/:id', auth.loginRequired, (req,res, next) => {
     const { id } = req.params;
 
     db("users")
@@ -44,8 +40,8 @@ router
       }, next)
     })
 
-    .put('/dbtest/:id', (req,res, next) => {
-    const { id } = req.params;
+  .put('/user/:id', (req,res, next) => {
+  const { id } = req.params;
 
     db("users")
       .where("id", id)
@@ -58,7 +54,7 @@ router
       }, next)
     })
 
-    .delete('/dbtest/:id', (req,res, next) => {
+    .delete('/user/:id', auth.loginRequired, auth.adminRequired, (req,res, next) => {
     const { id } = req.params;
 
     db("users")

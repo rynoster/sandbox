@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Users</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="list-group" id="users"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+                    
+                </div>
+                <div class="col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Add User</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+                            
+                            <div id="contactForm" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Full name</label>
+                                    <div class="col-xs-4">
+                                        <input id="first_name" type="text" class="form-control" name="firstName" placeholder="First name" />
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input id="last_name" type="text" class="form-control" name="lastName" placeholder="Last name" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Email address</label>
+                                    <div class="col-xs-5">
+                                        <input id="email" type="text" class="form-control" name="email" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Company</label>
+                                    <div class="col-xs-5">
+                                        <input id="company" type="text" class="form-control" name="company" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group selectContainer">
+                                    <label class="col-xs-3 control-label">Event profile</label>
+                                    <div class="col-xs-5">
+                                        <select id="event_profile" class="form-control" name="event_profile">
+                                            <option value="Delegate">Delegate</option>
+                                            <option value="Staff">Staff</option>
+                                            <option value="Sponsor">Sponsor</option>
+                                            <option value="Press">Press</option>
+                                            <option value="VIP">VIP</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group selectContainer">
+                                    <label class="col-xs-3 control-label">Professional profile</label>
+                                    <div class="col-xs-5">
+                                        <select class="form-control" name="pro_profile">
+                                            <option value="">Select a profile</option>
+                                            <option value="Architect">Architect</option>
+                                            <option value="Engineer">Engineer</option>
+                                            <option value="Executive">Executive</option>
+                                            <option value="Manager">Manager</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-xs-3 control-label">Dietary requirements</label>
+                                    <div class="col-xs-5">
+                                        <input id="dietary" type="text" class="form-control" name="dietary" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-xs-9 col-xs-offset-3">
+                                        <button id="add-user" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
+{{> jscript}}
+
+<script>
+    $(document).ready(function(){
+
+        var $users = $("#users");
+        var $firstName = $("#first_name");
+        var $lastName = $("#last_name");
+        var $email = $("#email");
+        var $dietary = $("#dietary");
+        var $eventProfile = $("#event_profile");
+        var $company = $("#company");
+        var $proProfile = $("#pro_profile");
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/allUsers',
+            success: function(users) {
+                $.each(users, function(i, user) {
+                    $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
+                });
+            },
+            error: function() {
+                alert("Error retrieving users");
+            }
+        });
+
+        $('#add-user').on('click', function() {
+            var user = {
+                first_name: $firstName.val(),
+                last_name: $lastName.val(),
+                email: $email.val(),
+                dietary: $dietary.val(),
+                event_profile: $eventProfile.val(),
+                pro_profile: $proProfile.val(),
+                company: $company.val(),
+
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/user',
+                data: user,
+                success: function(newUser) {
+                    $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
+
+                    //Clear fields once done
+                    $firstName.val('');
+                    $lastName.val('');
+                    $email.val('');
+                    $dietary.val('');
+                    $eventProfile.val('Delegate');
+                    $proProfile.val('');
+                    $company.val('');
+
+                },
+                error: function() {
+                    alert("Error saving order");
+                }
+                
+            })
+        });
+
+    });
+
+</script>
