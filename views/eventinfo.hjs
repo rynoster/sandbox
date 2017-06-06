@@ -1,5 +1,228 @@
-<div class="jumbotron">Event Info page</div>
-<!--HTML ABOVE THIS LINE-->
+    <!-- ============================================================= Top Banner ============================================================= -->
+			
+			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
+				<div class="container " >
+					<div class="row">
+						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
+							<header>
+								<h1 style="color:#005982">Event info </h1>
+								<p>How to plan your day with us, what to expect and much more. </p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+			
+<!-- ============================================================= Top Banner : END ============================================================= -->
+
+
+
+<!-- ============================================================= SECTION – Agenda: START ============================================================= -->
+			
+			<section id="eventinfo" class="outer-top-xs" >
+                <div class="container">
+                    <h2 >Thursday, 27 July 2017</h2>
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr>
+                        </div>
+                    </div>
+                    
+                  <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">06:00 to 09:00</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>Registration desk opens</strong></p>
+                            <p style="font-size:90%">The doors will open at 06:00 for registration and the showcase are will open at 07:00. Light snacks drinks will be 
+                                avaialble for the earlybirds. All excutives attending the C-Level breakfast will need to be registered by 06:50 to take their seat for 
+                                the 07:00 breakfast session.</p>
+                        </div>
+                    </div>
+                   
+                   <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div>
+
+                     <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">07:00 to 08:45</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>C-Level exclusive business breakfast</strong></p>
+                            <p style="font-size:90%">This breakfast is per invite only, but you are most welcome to request a seat by regitering for the event 
+                                and once approved you can request a pass to the breakfast session. This breakfast is sponsored by Hewlett-Packard Enterprise with "Unknown" as the 
+                                keynote speaker, discussing the impact of the digital age on South Africa and current business model. We will unpack tough questions on the change 
+                                in the job market if technology starts automating tradinional human jobs. Do not miss this oppertunity.</p> 
+                            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana, facilitated by HPE</p>
+                        </div>
+                    </div>
+
+                    <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div>
+
+                    <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">09:15 to 11:00</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>Opening plenary</strong></p>
+                            <p style="font-size:90%">Datacentrix Showcase 2017 promise this year to have a mind-blowing keynote, by venture captilist and former banker, 
+                                Dr. Michael Jordaan. Dr. Jordaan will look at the reality of singularity and how business need to respond to this pardigmn shift we are entering. Other 
+                                speakers like David Charmers, CTO for HPE EMEA will focus on how Hewlett-Packard Enterprise innovate in this new age.</p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Il Grande, facilitated by Rudie Raath, chief digital strategist for Datacentrix
+                                </p>
+                        </div>
+                    </div>
+
+                   <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div>
+
+                    <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">11:15 to 11:35</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions</strong></p>
+                                        
+                                        <div class="tabs tabs-top tab-container">
+                                            
+                                            <ul class="etabs text-left">
+                                                <li class="tab"><a href="#tab-1">La Toscana</a></li>
+                                                <li class="tab"><a href="#tab-2">Conference 1</a></li>
+                                                <li class="tab"><a href="#tab-3">Conference 2</a></li>
+                                                <li class="tab"><a href="#tab-4">Conference 3</a></li>
+                                            </ul><!-- /.etabs -->
+                                            
+                                            <div class="panel-container">
+                                                
+                                                <!-- /. ===================================La Toscana Room  =======================================-->
+                                                <div class="tab-content" id="tab-1">
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-md-4 col-md-offset-1 col-sm-6 inner-right-xs">
+                                                            <figure><img src="assets/images/agenda/session1/default.jpg" alt=""></figure>
+                                                        </div><!-- /.col -->
+                                                        
+                                                        <div class="col-md-6 col-sm-6 inner-top-xs inner-left-xs">
+                                                            <h3>Session topic goes here </h3>
+                                                            <p style="font-size:75%;color:#005982">Presenter:</p>
+                                                            <p>Description about the session, Monique to still help with info. More info to follow. Monique to still complete. 
+                                                        </div><!-- /.col -->
+                                                        
+                                                    </div><!-- /.row -->
+                                                </div><!-- /.tab-content -->
+                                                
+                                                <!-- /. =================================== Confernce Room 1 =======================================-->
+                                                <div class="tab-content" id="tab-2">
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-md-5 col-md-push-5 col-md-offset-1 col-sm-6 col-sm-push-6 inner-left-xs">
+                                                            <figure><img src="assets/images/art/product01.jpg" alt=""></figure>
+                                                        </div><!-- /.col -->
+                                                        
+                                                        <div class="col-md-5 col-md-pull-5 col-sm-6 col-sm-pull-6 inner-top-xs inner-right-xs">
+                                                            <h3>User Experience</h3>
+                                                            <p>Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque quiae sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus.</p>
+                                                        </div><!-- /.col -->
+                                                        
+                                                    </div><!-- /.row -->
+                                                </div><!-- /.tab-content -->
+                                        
+                                                <!-- /. =================================== Confernce Room 2 =======================================-->
+                                                <div class="tab-content" id="tab-3">
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-md-4 col-md-push-3 col-md-offset-1 col-sm-6 inner-left-xs inner-right-xs">
+                                                            <figure><img src="assets/images/art/product06.jpg" alt=""></figure>
+                                                        </div><!-- /.col -->
+                                                        
+                                                        <div class="col-md-3 col-md-pull-4 col-sm-6 inner-top-xs">
+                                                            <h3>Design</h3>
+                                                            <p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
+                                                        </div><!-- /.col -->
+                                                        
+                                                        <div class="col-md-3 col-sm-6 inner-top-xs">
+                                                            <h3>User interface</h3>
+                                                            <p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
+                                                        </div><!-- /.col -->
+                                                        
+                                                    </div><!-- /.row -->
+                                                </div><!-- /.tab-content -->
+                                                
+                                                <!-- /. =================================== Confernce Room 3 =======================================-->
+                                                <div class="tab-content" id="tab-4">
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-9 center-block text-center">
+                                                            <h3>Technology</h3>
+                                                            <p>Magnis modipsae que lib voloratati andigen daepeditem quiate ut reporemni aut labor. Laceaque quiae sitiorem rest non restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta oreprerum tibusam emnis et consent accullignis.</p>
+                                                        </div><!-- /.col -->
+                                                    </div><!-- /.row -->
+                                                </div><!-- /.tab-content -->
+                                                                        
+                                    </div><!-- /.panel-container -->
+                                    
+                                </div><!-- /.tabs -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div>
+
+
+                    <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                </div>
+			</section>
+                 
+<!-- ============================================================= SECTION – STANDARD TABS TOP ============================================================= -->
+			
+			<section id="standard-tabs-top">
+				<div class="container inner">
+					
+
+					
+				</div><!-- /.container -->
+			</section>
+			
+<!-- ============================================================= SECTION – STANDARD TABS TOP : END ============================================================= -->
+
+
+            
+<!-- ============================================================= SECTION – Agenda: END ============================================================= -->
+
 
 {{> jscript}}
 

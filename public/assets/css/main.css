@@ -892,6 +892,9 @@ iframe + iframe {
 .accent-dcx-blue {
 	color: #00aeef !important;
 }
+.accent-dcx-grey {
+	color: #b2b2b2 !important;
+}
 .dark-color {
 	color: #506A85 !important;
 }
@@ -6071,10 +6074,3 @@ body:before {
 }*/
 
 
-/*===================================================================================*/
-/*	DEMO ONLY
-/*===================================================================================*/
-
-a.changecolor {
-	cursor: pointer;
-}
