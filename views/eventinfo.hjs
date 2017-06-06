@@ -13,12 +13,7 @@
 				</div><!-- /.container -->
 			</section>
 			
-<!-- ============================================================= Top Banner : END ============================================================= -->
-
-
-
-<!-- ============================================================= SECTION – Agenda: START ============================================================= -->
-			
+<!-- ========================================= Morning Section ============================================================= -->
 			<section id="eventinfo" class="outer-top-xs" >
                 <div class="container">
                     <h2 >Thursday, 27 July 2017</h2>
@@ -28,7 +23,8 @@
                         </div>
                     </div>
                     
-                  <!-- Next row - Slot info  -->
+
+    <!-- ========================================= Registration open - 06:00 to 09:00 =================================== -->
                     <div class="row">
                         <div class="col-md-3" >
                             <p class="text-center">06:00 to 09:00</p>
@@ -41,13 +37,14 @@
                         </div>
                     </div>
                    
-                   <!-- Next row - Line  -->
+
                     <div class="row">
                         <div class="col-md-12" >
                             <hr style="border: 0.5px dashed #d8d8d8;" />
                         </div>
                     </div>
 
+    <!-- ========================================= C-Breakfastsession - 07:00 to 08:45 =================================== -->
                      <!-- Next row - Slot info  -->
                     <div class="row">
                         <div class="col-md-3" >
@@ -63,7 +60,7 @@
                         </div>
                     </div>
 
-                    <!-- Next row - Line  -->
+    <!-- ========================================= Opening Plenery session - 09:00 to 11:00 =================================== -->
                     <div class="row">
                         <div class="col-md-12" >
                             <hr style="border: 0.5px dashed #d8d8d8;" />
@@ -92,7 +89,7 @@
                         </div>
                     </div>
 
-                    <!-- Next row - Slot info  -->
+    <!-- ========================================= Break away session - 11:15 to 11:35 =================================== -->
                     <div class="row">
                         <div class="col-md-3" >
                             <p class="text-center">11:15 to 11:35</p>
@@ -100,90 +97,10 @@
                             <div class="col-md-8" >
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions</strong></p>
-                                        
-                                        <div class="tabs tabs-top tab-container">
-                                            
-                                            <ul class="etabs text-left">
-                                                <li class="tab"><a href="#tab-1">La Toscana</a></li>
-                                                <li class="tab"><a href="#tab-2">Conference 1</a></li>
-                                                <li class="tab"><a href="#tab-3">Conference 2</a></li>
-                                                <li class="tab"><a href="#tab-4">Conference 3</a></li>
-                                            </ul><!-- /.etabs -->
-                                            
-                                            <div class="panel-container">
-                                                
-                                                <!-- /. ===================================La Toscana Room  =======================================-->
-                                                <div class="tab-content" id="tab-1">
-                                                    <div class="row">
-                                                        
-                                                        <div class="col-md-4 col-md-offset-1 col-sm-6 inner-right-xs">
-                                                            <figure><img src="assets/images/agenda/session1/default.jpg" alt=""></figure>
-                                                        </div><!-- /.col -->
-                                                        
-                                                        <div class="col-md-6 col-sm-6 inner-top-xs inner-left-xs">
-                                                            <h3>Session topic goes here </h3>
-                                                            <p style="font-size:75%;color:#005982">Presenter:</p>
-                                                            <p>Description about the session, Monique to still help with info. More info to follow. Monique to still complete. 
-                                                        </div><!-- /.col -->
-                                                        
-                                                    </div><!-- /.row -->
-                                                </div><!-- /.tab-content -->
-                                                
-                                                <!-- /. =================================== Confernce Room 1 =======================================-->
-                                                <div class="tab-content" id="tab-2">
-                                                    <div class="row">
-                                                        
-                                                        <div class="col-md-5 col-md-push-5 col-md-offset-1 col-sm-6 col-sm-push-6 inner-left-xs">
-                                                            <figure><img src="assets/images/art/product01.jpg" alt=""></figure>
-                                                        </div><!-- /.col -->
-                                                        
-                                                        <div class="col-md-5 col-md-pull-5 col-sm-6 col-sm-pull-6 inner-top-xs inner-right-xs">
-                                                            <h3>User Experience</h3>
-                                                            <p>Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque quiae sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus.</p>
-                                                        </div><!-- /.col -->
-                                                        
-                                                    </div><!-- /.row -->
-                                                </div><!-- /.tab-content -->
-                                        
-                                                <!-- /. =================================== Confernce Room 2 =======================================-->
-                                                <div class="tab-content" id="tab-3">
-                                                    <div class="row">
-                                                        
-                                                        <div class="col-md-4 col-md-push-3 col-md-offset-1 col-sm-6 inner-left-xs inner-right-xs">
-                                                            <figure><img src="assets/images/art/product06.jpg" alt=""></figure>
-                                                        </div><!-- /.col -->
-                                                        
-                                                        <div class="col-md-3 col-md-pull-4 col-sm-6 inner-top-xs">
-                                                            <h3>Design</h3>
-                                                            <p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
-                                                        </div><!-- /.col -->
-                                                        
-                                                        <div class="col-md-3 col-sm-6 inner-top-xs">
-                                                            <h3>User interface</h3>
-                                                            <p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
-                                                        </div><!-- /.col -->
-                                                        
-                                                    </div><!-- /.row -->
-                                                </div><!-- /.tab-content -->
-                                                
-                                                <!-- /. =================================== Confernce Room 3 =======================================-->
-                                                <div class="tab-content" id="tab-4">
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-sm-9 center-block text-center">
-                                                            <h3>Technology</h3>
-                                                            <p>Magnis modipsae que lib voloratati andigen daepeditem quiate ut reporemni aut labor. Laceaque quiae sitiorem rest non restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta oreprerum tibusam emnis et consent accullignis.</p>
-                                                        </div><!-- /.col -->
-                                                    </div><!-- /.row -->
-                                                </div><!-- /.tab-content -->
-                                                                        
-                                    </div><!-- /.panel-container -->
-                                    
-                                </div><!-- /.tabs -->
-                            </div><!-- /.col -->
-                        </div><!-- /.row -->
-                    </div>
-
+                                        <p class="text-left"><strong>Breakaway sessions block #1</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
 
                     <!-- Next row - Line  -->
                     <div class="row">
@@ -191,38 +108,229 @@
                             <hr style="border: 0.5px dashed #d8d8d8;" />
                         </div>
                     </div> 
+                    </div>
 
+    <!-- ========================================= Break away session - 11:45 to 12:05 =================================== -->
+                         <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">11:45 to 12:05</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions block #2</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
 
+                    <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div> 
+                    </div>
 
+    <!-- ========================================= Break away session - 12:15 to 12:35  =================================== -->
 
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">12:15 to 12:35</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions block #3</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
 
-
-
-
-
-
-
-
-                    
+                        <!-- Next row - Line  -->
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                            </div>
+                        </div> 
+                    </div>
                 </div>
 			</section>
-                 
-<!-- ============================================================= SECTION – STANDARD TABS TOP ============================================================= -->
-			
-			<section id="standard-tabs-top">
-				<div class="container inner">
-					
 
+
+<!-- ========================================= Lunch ============================================================= -->
+			
+			<section id="lunchsession" style="background-color:lightslategrey">
+				<div class="container text-center">
+
+							<br>
+                            <h3 style="color:#fff">Lunch is served from 12:30 to 14:00 in the Monte ballroom and outside tent area</h3>
+                            <br>
 					
 				</div><!-- /.container -->
 			</section>
+
+<!-- ========================================= Lunch ============================================================= -->
 			
-<!-- ============================================================= SECTION – STANDARD TABS TOP : END ============================================================= -->
+			<section id="lunchsession" class="img-bg img-bg-soft tint-bg" style="background-image: url(assets/images/art/pattern-background01.jpg);">
+						<div class="container">
+					
+					<div class="row">
+					    <div class="col-md text-center outer-bottom-xs outer-top-xs">
+							<header>
+                                <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
+								<h2 style="color:#fff">Interactive lunch sesion from 13:15 - 14:00 with </h2>
+                                <h1 style="color:#fff"><strong>TOBY SHAPSHACK</strong></h1>
+                                <p style="color:#fff">Toby is hosting a straight talk session with other leading panellists on the very sensitive 
+                                    topic of singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 
+                                    today and how should business transform to stay relevant in the future. 
+                                </p>							
+                                </header>
+                                
+                            </header>
+		                    <a href="#" class="btn btn-large">Book your seat now</a>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+					
+				</div><!-- /.container -->
+			</section>
 
 
-            
-<!-- ============================================================= SECTION – Agenda: END ============================================================= -->
+            <section class="outer-bottom-sm">
 
+    <!-- ========================================= Break away session - 14:15 to 14:35  =================================== -->
+
+                    <div class="row outer-top-xs">
+                        <div class="col-md-3" >
+                            <p class="text-center">14:15 to 14:35</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions block #4</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
+
+                        <!-- Next row - Line  -->
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                            </div>
+                        </div> 
+                    </div>
+                
+
+    <!-- ========================================= Break away session - 14:45 to 15:05  =================================== -->
+
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">14:45 to 15:05</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions block #5</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
+
+                        <!-- Next row - Line  -->
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                            </div>
+                        </div> 
+                    </div>
+               			
+
+
+    <!-- ========================================= Break away session - 15:15 to 15:45  =================================== -->
+
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">15:15 to 15:45</p>
+                        </div>
+                            <div class="col-md-8" >
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="text-left"><strong>Breakaway sessions block #6</strong> (4 Streams)</p>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div>
+
+                        <!-- Next row - Line  -->
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                            </div>
+                        </div> 
+                    </div>
+              
+
+
+    <!-- ========================================= Opening Plenery session - 16:00 to 17:00 =================================== -->
+
+                    <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">16:00 to 17:00</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>Networking and prize giving</strong></p>
+                            <p style="font-size:90%">Please join us for the various luck draw prizes that is on offer. During this hour, delegates will be given the 
+                                oppertunity to visit any partner stands that they might have missed, clarify any questions or just have light snack and drinks with 
+                                other delegates, sponsors and Datacentrix staff.  </p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Monte ballroom, facilitated by Rudie Raath, chief digital strategist for Datacentrix
+                                </p>
+                        </div>
+                    </div>
+
+                   <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div>
+
+
+<!-- ========================================= Cocktail Party - 17:00 to 20:00 =================================== -->
+
+                    <!-- Next row - Slot info  -->
+                    <div class="row">
+                        <div class="col-md-3" >
+                            <p class="text-center">17:00 to 20:00</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>Intel cocktail function with live performances from "The Muses"</strong></p>
+                            <p style="font-size:90%">Please join Intel for the closing party you do not want to miss. From a live performance by "The Muses" and liquid chefs entertaining 
+                                delegates with all their bar tricks, we will also give away our big prize. We always drink responsibly and therefore we will have a home driving facility available on the day for all delegates.</p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana, sponsored by Intel
+                                </p>
+                        </div>
+                    </div>
+
+                   <!-- Next row - Line  -->
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                        </div>
+                    </div>
+
+ <!-- ========================================= After Party - 20:00 to late =================================== -->
+
+                    <!-- Next row - Slot info  -->
+                    <div class="row outer-bottom-sm">
+                        <div class="col-md-3" >
+                            <p class="text-center">20:00 till late</p>
+                        </div>
+                        <div class="col-md-8" >
+                            <p class="text-left"><strong>Datacentrix Showcase 2017 after party  </strong></p>
+                            <p style="font-size:90%">Everyone is invited to join Datacentix in celebrating the event of the year and thanking all sponsors and delegates for sharing 
+                                this special day with us. We always drink responsibly and therefore we will have a home driving facility available on the day for all delegates.</p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Joe Parkers comedy club
+                                </p><br><br>
+                        </div>
+                    </div>
+                </section>
 
 {{> jscript}}
 
