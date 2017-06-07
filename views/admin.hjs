@@ -116,10 +116,12 @@
 
         </div>
 
+        {{> jscript}}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+
     </body>
 </html>
-
-{{> jscript}}
 
 <script>
     $(document).ready(function(){
@@ -171,12 +173,12 @@
                     $email.val('');
                     $dietary.val('');
                     $eventProfile.val('Delegate');
-                    $proProfile.val('');
+                    $proProfile.val('Select a profile');
                     $company.val('');
 
                 },
                 error: function() {
-                    alert("Error saving order");
+                    alert("Error saving user");
                 }
                 
             })
