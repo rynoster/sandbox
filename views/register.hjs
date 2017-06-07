@@ -42,7 +42,7 @@
                                         by Datacentrix’ marketing team – a quick process that’ll be completed within 2 working days. <br><br>As soon as your registration is approved, 
                                         your seat will be booked and you’ll be notified via email. We’re looking forward to contacting you.</p>
                                     
-                                    <form id="regform" class="form-horizontal">
+                                    <form onsubmit="return false" id="regform" class="form-horizontal">
                                        
                                         <div class="row form-group has-feedback">
                                            <div class="col-sm-12 outer-top-xs"><p><strong>Your details</strong><p></div>
@@ -110,7 +110,7 @@
                                         </div>
 
 
-                                        <button type="submit" class="btn btn-default btn-submit">Register for the event</button>
+                                        <button type="submit" id="register" class="btn btn-default">Register for the event</button>
                                         
                                     </form>
                                     
@@ -130,14 +130,60 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
-<script>   
-    $.validate({
-        modules : 'location, date, security, file',
-        onModulesLoaded : function() {
-        $('#country').suggestCountry();
-        }
-    });
+<script>  
+    $(document).ready(function(){
+
+        var $firstName = $("#firstName");
+        var $lastName = $("#lastName");
+        var $company = $("#company");
+        var $bustitle = $("#bustitle");
+        var $mobilenr = $("#mobilenr");
+        var $officenr = $("#officenr");
+        var $email = $("#email1");
+        var $eventProfile = $("#event_profile");
+
+        $.validate({
+            modules : 'date, security',
+            onModulesLoaded : function() {
+            
+        },
+
+            onSuccess : function() {
+
+                var user = {
+                    first_name: $firstName.val(),
+                    last_name: $lastName.val(),
+                    company: $company.val(), 
+                    pro_profile: $bustitle.val(),
+                    mobilenr: $mobilenr.val(),
+                    officenr: $officenr.val(),
+                    email: $email.val(),
+                    event_profile: $eventProfile.val(),
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/user',
+                    data: user,
+                    success: function() {
+                        window.location = "/";
+
+                    },
+                    error: function() {
+                        alert("Error saving user");
+                    }
+                    
+                })
+
+            },
+
+            onError : function() {
+            },
+    });    
 
     // Restrict presentation length
     $('#presentation').restrictLength( $('#pres-max-length') );
+
+    });
+
 </script>

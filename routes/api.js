@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require("../db");
 var auth = require("../auth")
+var crypto = require('crypto');
 
 var app = express();
 
@@ -18,11 +19,16 @@ router
   })
 
   .post('/user', (req,res, next) => {
+    const newUser = req.body;
+
+    newUser.token = crypto.randomBytes(64).toString('hex');
 
     db("users")
       .insert(req.body)
       .then((users) => {
+
         res.send(users);
+
       }, next)
     })
 

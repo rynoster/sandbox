@@ -99,7 +99,7 @@
 
                                 <div class="form-group">
                                     <div class="col-xs-9 col-xs-offset-3">
-                                        <button id="add-user" class="btn btn-primary">Submit</button>
+                                        <button type="submit" id="add-user" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
 
         {{> jscript}}
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 
     </body>
 </html>
