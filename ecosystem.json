@@ -1,0 +1,18 @@
+{
+  "apps" : [{
+    // Chirpee
+    "name"        : "chirpee.io",
+    "script"      : "server.js",
+    "args"        : [""],
+    "watch"       : true,
+    "node_args"   : "",
+    "merge_logs"  : true,
+    "cwd"         : "/home/ubuntu/server/chirpee",
+    "env": {
+      "NODE_ENV": "dev"
+    },
+    "env_prod" : {
+       "NODE_ENV": "prod"
+    }
+  }]
+}
