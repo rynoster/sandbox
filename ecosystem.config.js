@@ -1,8 +1,15 @@
 module.exports = {
   apps: [{
     name: 'chirpee.io',
-    script: './server.js'
+    script: './server.js',
+    env: {
+            NODE_ENV: "dev"
+    },
+    env_prod: {
+        NODE_ENV: "prod"
+    },
   }],
+
   deploy: {
     production: {
         user: 'ubuntu',
@@ -11,12 +18,6 @@ module.exports = {
         ref: 'origin/master',
         repo: 'https://github.com/rynoster/sandbox',
         path: '/home/ubuntu/server/chirpee',
-        env: {
-            NODE_ENV: "dev"
-        },
-        env_prod: {
-            NODE_ENV: "prod"
-        },
         
         'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --env prod'
 
