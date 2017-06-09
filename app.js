@@ -10,7 +10,6 @@ var passport =      require('passport');
 var db = require('./db');
 require('./passport');
 
-
 var index = require('./routes/index');
 var api = require('./routes/api');
 var register = require('./routes/register');
