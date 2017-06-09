@@ -107,6 +107,17 @@
                         </div>
 
                     </div>
+
+                     <div id="errPanel" class="panel panel-danger hidden">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Error</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <p id="errMessage"></p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col-lg-2">
                     
@@ -134,6 +145,8 @@
         var $eventProfile = $("#event_profile");
         var $company = $("#company");
         var $proProfile = $("#pro_profile");
+        var $errMessage = $("#errMessage");
+        var $errPanel = $("#errPanel");
 
         $.ajax({
             type: 'GET',
@@ -177,8 +190,10 @@
                     $company.val('');
 
                 },
-                error: function() {
-                    alert("Error saving user");
+                error: function(xhr, textStatus, errorThrown) {
+
+                    $errPanel.removeClass("hidden");
+                    $errMessage.text(xhr.responseText);
                 }
                 
             })

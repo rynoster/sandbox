@@ -21,15 +21,16 @@ router
   .post('/user', (req,res, next) => {
     const newUser = req.body;
 
-    newUser.token = crypto.randomBytes(64).toString('hex');
+    newUser.token = crypto.randomBytes(64).toString('base64');
 
     db("users")
-      .insert(req.body)
+      .insert(newUser)
       .then((users) => {
 
         res.send(users);
 
       }, next)
+      
     })
 
   .get('/user/:id', auth.loginRequired, (req,res, next) => {
