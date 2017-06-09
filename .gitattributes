@@ -1,2 +1,1 @@
-config.json filter=git-crypt diff=git-crypt
-confignew.json filter=git-crypt diff=git-crypt
+env.json filter=git-crypt diff=git-crypt
