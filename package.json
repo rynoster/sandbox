@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "dependencies": {
     "aws-sdk": "^2.65.0",
