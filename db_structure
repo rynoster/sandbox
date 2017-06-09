@@ -18,3 +18,15 @@ CREATE TABLE `users` (
   `verified` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+
+CREATE USER 'rynoster'@'localhost' IDENTIFIED BY 'ch1rp3eSQL%connection';
+
+CREATE USER 'rynoster'@'%' IDENTIFIED BY 'ch1rp3eSQL%connection';
+
+GRANT ALL PRIVILEGES ON *.* to rynoster@localhost IDENTIFIED BY 'ch1rp3eSQL%connection' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* to rynoster@'%' IDENTIFIED BY 'ch1rp3eSQL%connection' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+EXIT;

@@ -1,6 +1,6 @@
 <div class="jumbotron">Contact Us page</div>
-<!--HTML ABOVE THIS LINE-->
+<!--HTML ABOVE THIS LINE -->
 
 {{> jscript}}
 
-<!--JavaScript BELOW THIS LINE-->
+<!--JavaScript BELOW THIS LINE -->
