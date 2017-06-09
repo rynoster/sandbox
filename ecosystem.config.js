@@ -18,7 +18,7 @@ module.exports = {
             "NODE_ENV": "prod"
         },
         
-        'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --name chirpee.io --env prod'
+        'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --env prod'
 
         }
   }
