@@ -7,7 +7,6 @@
     "watch"       : true,
     "node_args"   : "",
     "merge_logs"  : true,
-    "cwd"         : "/home/ubuntu/server/chirpee",
     "env": {
       "NODE_ENV": "dev"
     },
