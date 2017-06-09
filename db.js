@@ -1,12 +1,14 @@
 var knex = require("knex");
 
+var dbConfig = require("./config/env.json")[process.env.NODE_ENV || "dev"]
+
 const db = knex({
     client: "mysql",
     connection: {
-        host: "127.0.0.1",
-        user: "root",
-        // password: "ch1rp3eSQL%connection",
-        database: "chirpee_dcx2017",
+        host: dbConfig.host,
+        user: dbConfig.user,
+        database: dbConfig.database,
+        password: dbConfig.password
     }
 })
 
