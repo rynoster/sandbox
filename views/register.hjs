@@ -125,9 +125,9 @@
 
 
 <!-- ============================================================= SECTION HIDDEN - Registration Success =========================================================-->
-			<section id="DelRegister-Success" hidden >
+			<section id="DelRegister-Success" >
 				<div class="container">				
-						<div class="col-sm-12">
+						<div class="col-sm-12 outer-bottom-md outer-top-md">
 							<div class="row">
                                 
                                 <div class="col-md-2">	
@@ -147,7 +147,7 @@
                                             please follow us on facebook and join the conversation on your thoughts of sigularity. Will humans be assimulated into
                                             code - are we on the brink of a new humanity?
                                         </p>
-                                            
+                                        <a href="/" class="btn btn-large">Go to home page</a>    
                                 </div>	
 							</div>
 						</div>
