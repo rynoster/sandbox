@@ -45,14 +45,10 @@
 								<li class="dropdown">
 									<a href="/whyattend" >Why attend</a>
 								</li>
-								
-								<li class="dropdown">
-									<a href="/register" >Register</a>
-								</li>
-								
+							
 								<li class="dropdown">
 
-									<a href="/eventinfo">Event Info</a>
+									<a href="/eventinfo">Agenda</a>
 								</li>
 							
 								
@@ -65,6 +61,11 @@
 										<li><a href="#">Transfers & parking</a></li>
 									</ul><!-- /.dropdown-menu -->
 								</li>
+
+								<li class="dropdown">
+									<a href="/register" >Register</a>
+								</li>
+								
 								
 								<li class="dropdown">
 									<a href="/contactus" class="dropdown-toggle" data-toggle="dropdown">Contact us</a>

@@ -121,8 +121,41 @@
                           </div>	
             </section>
             
-<!-- ============================================================= SECTION – Registration FORM : END ============================================================= -->
+    <!-- ============================================================= SECTION – Registration FORM : END ============================================================= -->
 
+
+<!-- ============================================================= SECTION HIDDEN - Registration Success =========================================================-->
+			<section id="DelRegister-Success" >
+				<div class="container">				
+						<div class="col-sm-12">
+							<div class="row">
+                                
+                                <div class="col-md-2">	
+                                    <figure><img src="assets/images/art/emailverify.jpg" alt="" style="width:150px;height:auto;"></figure>
+                                </div>
+                                
+                                <div class="col-md-8 inner-right-md vcenter">
+
+                                        
+                                        <h2>Thanks for registering for the event - Verify Email</h2>
+                                        <p>In order to complete your registration, please click on the verification link we just mailed you. 
+                                            After verification of your email, will your seat be confirmed you you will receive a confirmation email 
+                                            from the system. 
+                                            <br><br>
+                                            
+                                            Please strat tweeting about the event using the hashtag <strong>#datacentrixshowcase17</strong>. Also 
+                                            please follow us on facebook and join the conversation on your thoughts of sigularity. Will humans be assimulated into
+                                            code - are we on the brink of a new humanity?
+                                        </p>
+                                            
+                                </div>	
+							</div>
+						</div>
+				</div>
+            </section>>
+
+
+   
 
 
 <!-- ====================================  Do not remove or change - this is needed to render page  ==================================' -->
