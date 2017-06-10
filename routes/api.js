@@ -11,6 +11,7 @@ router
     res.send("Register page")
   })
 
+  //Shows all users
   .get('/allUsers', auth.loginRequired, auth.adminRequired, (req,res, next) => {
 
     db("users").then((users) => {
@@ -18,6 +19,7 @@ router
     }, next)
   })
 
+  //Main router for registering/creating new users
   .post('/user', (req, res, next) => {
     const newUser = req.body;
 
@@ -35,6 +37,24 @@ router
             .insert(newUser)
             .then((users) => {
 
+              //Send email verification email
+              var Mail = require('../email');
+              var mail = new Mail({
+                from : "rynoster@chirpee.io", 
+                to : "ryno@coetzee.za.com", 
+                subject : "subject",
+                html : htmlBody,
+                // html : "the <strong>verification</strong> email",
+                successCallback : function(success){
+                  console.log("Mail send");
+                },
+                errorCallback : function(err){
+                  console.log("Mail not send");
+                }
+              });
+
+              mail.send();
+
               res.send(users);
 
             })
@@ -47,6 +67,7 @@ router
       
     })
 
+  //Get user details for specific user id
   .get('/user/:id', auth.loginRequired, (req,res, next) => {
     const { id } = req.params;
 
@@ -61,6 +82,7 @@ router
       }, next)
     })
 
+  //Update existing user details
   .put('/user/:id', (req,res, next) => {
   const { id } = req.params;
 
@@ -75,6 +97,7 @@ router
       }, next)
     })
 
+    //Delete user
     .delete('/user/:id', auth.loginRequired, auth.adminRequired, (req,res, next) => {
     const { id } = req.params;
 
