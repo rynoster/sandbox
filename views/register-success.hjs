@@ -1,0 +1,40 @@
+<style>
+    .form-error {
+        font-size: 13px;
+    }
+
+    .form-control.error{
+        margin-bottom: 2px;
+    }
+
+</style>
+   
+    <!-- ============================================================= Top Banner ============================================================= -->
+			
+			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
+				<div class="container " >
+					<div class="row">
+						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
+							<header>
+								<h1 style="color:#005982">Event registration </h1>
+								<p>This exciting business conference is free and open to all enterprise business customers and sponsors. </p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+			
+			<!-- ============================================================= Top Banner : END ============================================================= -->
+    
+    <!-- ============================================================= SECTION – Registration FORM: START ============================================================= -->
+			
+			<section id="registersuccess">
+				
+            </section>
+            
+<!-- ============================================================= SECTION – Registration FORM : END ============================================================= -->
+
+
+
+<!-- ====================================  Do not remove or change - this is needed to render page  ==================================' -->
+{{> jscript}}
