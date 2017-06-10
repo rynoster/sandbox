@@ -18,18 +18,32 @@ router
     }, next)
   })
 
-  .post('/user', (req,res, next) => {
+  .post('/user', (req, res, next) => {
     const newUser = req.body;
 
     newUser.token = crypto.randomBytes(64).toString('base64');
 
     db("users")
-      .insert(newUser)
-      .then((users) => {
+      .where("email", newUser.email)
+      .first()
+      .then((user) => {
+        if (user) {
+          res.status(500).send({ error: "User exists" });
+        } else {
 
-        res.send(users);
+          db("users")
+            .insert(newUser)
+            .then((users) => {
 
-      }, next)
+              res.send(users);
+
+            })
+            .catch((err) => {
+              res.status(500).send({ error: err.message });
+
+            })
+        }
+      })
       
     })
 
