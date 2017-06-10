@@ -42,31 +42,36 @@ router
       .where("token", token)
       .first()
       .then((users) => {
-        var fullName = users.first_name + " " + users.last_name;
-        var updateUser = users;
+        if(users) {
+          var fullName = users.first_name + " " + users.last_name;
+          var updateUser = users;
 
-        updateUser.verified = 1;
+          updateUser.verified = 1;
 
-        db("users")
-        .where("id", updateUser.id)
-        .update(updateUser)
-        .then((result) => {
-          if (result === 0 ) {
-            return res.send(400)
-          }
-          res.send(200);
-        }, next)
+          db("users")
+          .where("id", updateUser.id)
+          .update(updateUser)
+          .then((result) => {
+            if (result === 0 ) {
+              return res.send(400)
+            }
+            res.send(200);
+          }, next)
 
-        res.render('skeleton', {
-          fullName : fullName,
-          partials : {
-            header: "header", 
-            content: "verify",
-            footer: "footer", 
-            jscript: "jscript"
-          }
-        });
-      })
+          res.render('skeleton', {
+            fullName : fullName,
+            partials : {
+              header: "header", 
+              content: "verify",
+              footer: "footer", 
+              jscript: "jscript"
+            }
+          })
+        } else {
+          return res.send(400);
+        }
+
+      }, next)
       })
 
   // ===========================================================================

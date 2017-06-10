@@ -84,6 +84,19 @@ router
       
     })
 
+  .get('/sponsor/:sponsorTag', (req,res, next) => {
+    const { sponsorTag } = req.params;
+
+    db("sponsors")
+      .where("sponsorTag", sponsorTag)
+      .first()
+      .then((sponsors) => {
+        if (!sponsors) {
+          return res.send(400);
+        }
+        res.send(sponsors);
+      }, next)
+    })
    
 
   //Get user details for specific user id

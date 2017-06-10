@@ -104,7 +104,9 @@
 									<br>
 									<figure><img src="assets/images/sponsor logos/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
 									<br>
-									<a  href="#" class="btn btn-medium light-color ">HPE sponsor page</a>
+									<!--<a  href="#" class="btn btn-medium light-color ">HPE sponsor page</a>-->
+									<button id="btnPlat" class="btn btn-medium light-color sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">HPE Sponsor page</button>
+
 								</header>
 							</div>
 							
@@ -267,11 +269,11 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Sponsor Name goes here</h4>
+							<h4 id="sponsorName" class="modal-title">Sponsor Name goes here</h4>
 						</div>
 
 						<div class="modal-body">
-							<p>Sponsor content will go here.</p>
+							<p id="sponsorContent">Sponsor content will go here.</p>
 						</div>
 
 						<div class="modal-footer">
@@ -294,5 +296,25 @@
         $('#sponsorModal').on('hide.bs.modal', function () {
     		// do something
 		});
+
+		$('.sponsor-Class').on('click', function() {
+			sponsorTag = $(this).data('sponsor');
+
+			$.ajax({
+				type: 'GET',
+				url: '/api/sponsor/' + sponsorTag,
+				
+				success: function(sponsors) {
+					$("#sponsorName").text(sponsors.sponsorName);
+					$("#sponsorContent").html(sponsors.sponsorContent);
+				},
+				error: function() {
+					// alert("Error retrieving users");
+				}
+				
+			})
+
+		});
+
     });
 </script>
