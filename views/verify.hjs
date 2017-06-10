@@ -1,0 +1,40 @@
+<!-- ============================================================= SECTION – HERO ============================================================= -->
+			
+			<section id="hero" class="dark-bg img-bg " style="background-image: url(assets/images/art/contact-banner.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 outer-bottom-xs outer-top-xs">
+							<header class="outer-top-xs">
+								<h1>Email address verified!</h1>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+			
+			<!-- ============================================================= SECTION – HERO : END ============================================================= -->
+			
+			<div class="container outer-top-xs">
+				<div class="row">
+					
+					<div class="col-md-8 inner-right-md">
+						
+						<!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
+						
+						<section id="verify-form">
+							
+							<h2>Thank you {{fullName}}, your email address has been verified.</h2>
+							
+							<div id="response"></div>
+							
+						</section>
+						
+						<!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
+						
+					</div><!-- ./col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+
+{{> jscript}}
+
+<!--JavaScript BELOW THIS LINE -->

@@ -9,7 +9,16 @@ var app = express();
 function buildHtmlBody(params){
   console.log(params);
 
-  return("<strong>building</strong> html");
+  htmlBody = "Dear " + params.first_name + " " + params.last_name + ",<br><br>"
+  htmlBody += "<strong>Thank you for registering to the Datacentrix 2017 Showcase event</strong><br><br>"
+  htmlBody += "To verify your email address, please follow the link below:<br><br>"
+  htmlBody += "https://datacentrix.chirpee.io/verify/" + params.token + "<br><br>"
+  htmlBody += "If you didn't register for this event, just ignore this email and nothing will happen.<br><br>"
+  htmlBody += "Have a nice day,<br>"
+  htmlBody += "Datacentrix Showcase team.<br><br>"
+  htmlBody += "This email was sent by a user triggered event and thus can't really be unsubscribed from.<br><br>"
+
+  return(htmlBody);
 
 }
 
@@ -30,7 +39,8 @@ router
   .post('/user', (req, res, next) => {
     const newUser = req.body;
 
-    newUser.token = crypto.randomBytes(64).toString('base64');
+    //Generate the token, trim to 24 characters
+    newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 24);
 
     db("users")
       .where("email", newUser.email)
@@ -47,9 +57,9 @@ router
               //Send email verification email
               var Mail = require('../email');
               var mail = new Mail({
-                from : "rynoster@chirpee.io", 
-                to : "ryno@coetzee.za.com", 
-                subject : "subject",
+                from : "noreply@chirpee.io", 
+                to : newUser.email,
+                subject : "Datacentrix Showcase 2017 - Email Address Verification Request",
                 html : buildHtmlBody(newUser),
                 // html : "the <strong>verification</strong> email",
                 successCallback : function(success){
@@ -73,6 +83,8 @@ router
       })
       
     })
+
+   
 
   //Get user details for specific user id
   .get('/user/:id', auth.loginRequired, (req,res, next) => {

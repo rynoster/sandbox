@@ -34,6 +34,41 @@ router
     });
   })
 
+   //Verify email links
+    .get('/verify/:token', (req,res, next) => {
+      const { token } = req.params;
+
+      db("users")
+      .where("token", token)
+      .first()
+      .then((users) => {
+        var fullName = users.first_name + " " + users.last_name;
+        var updateUser = users;
+
+        updateUser.verified = 1;
+
+        db("users")
+        .where("id", updateUser.id)
+        .update(updateUser)
+        .then((result) => {
+          if (result === 0 ) {
+            return res.send(400)
+          }
+          res.send(200);
+        }, next)
+
+        res.render('skeleton', {
+          fullName : fullName,
+          partials : {
+            header: "header", 
+            content: "verify",
+            footer: "footer", 
+            jscript: "jscript"
+          }
+        });
+      })
+      })
+
   // ===========================================================================
   //  Login ====================================================================
   // ===========================================================================
