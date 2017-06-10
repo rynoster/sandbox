@@ -6,6 +6,13 @@ var crypto = require('crypto');
 
 var app = express();
 
+function buildHtmlBody(params){
+  console.log(params);
+
+  return("<strong>building</strong> html");
+
+}
+
 router
   .get('/register', (req, res) => {
     res.send("Register page")
@@ -43,13 +50,13 @@ router
                 from : "rynoster@chirpee.io", 
                 to : "ryno@coetzee.za.com", 
                 subject : "subject",
-                html : htmlBody,
+                html : buildHtmlBody(newUser),
                 // html : "the <strong>verification</strong> email",
                 successCallback : function(success){
-                  console.log("Mail send");
+                  console.log("Mail sent");
                 },
                 errorCallback : function(err){
-                  console.log("Mail not send");
+                  console.log("Mail not sent");
                 }
               });
 
