@@ -1,5 +1,215 @@
-<div class="jumbotron">Logistics page</div>
-<!--HTML ABOVE THIS LINE-->
+<!-- ============================================================= Top Banner ============================================================= -->
+		
+			<section id="hero" class="dark-bg" style="background-image: url(assets/images/art/montecasino.jpg);">
+				<div class="container inner">
+					<div class="row">
+						<div class="col-sm-10">
+							<header>
+								<h1>The venue</h1>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+			
+
+			
+			
+<!-- ============================================================= SECTION – The Venue ============================================================= -->
+			
+			<section id="thevenue">
+				<div class="container inner-xs">
+					<div class="row inner-top-xs">
+						
+						<div class="col-sm-6 inner-right-xs inner-bottom-xs">
+							<h2>Montecasino</h2>
+							<p>Situated in the northern suburb of Fourways in Johannesburg, Southern Sun Montecasino hotel offers its guests 
+                                not only the finest service and amenities, but access to a scintillating world of exploration, entertainment, 
+                                and indulgence. <br><br>
+
+                                Inspired by the design of the 15th century Palazzo Corsini villa in Italy’s picturesque mountain region of 
+                                Gianicolo, our hotel is the perfect blend of stylistic innovation and old-world Venetian charm coupled with the 
+                                modern convenience expected at a Southern Sun hotel.<br><br>
+                                
+                                The Southern Sun Montecasino hotel, which received the coveted Certificate of Excellence from leading travel authority 
+                                site TripAdvisor, is close to a number of Johannesburg’s top attractions. Local attractions include the Cradle of 
+                                Humankind and many more.
+                        </div><!-- /.col -->
+						
+						<div class="col-sm-6 inner-left-xs inner-bottom-xs">
+							<h2>Montecasino conferences video</h2>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/8fzkmzlf7AI" frameborder="0" allowfullscreen></iframe>
+						</div><!-- /.col -->
+						
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+			
+			
+			
+			
+<!-- ============================================================= SECTION – The hotels ============================================================= -->
+			
+			<section id="hotels" class="light-bg">
+				<div class="container inner-top inner-bottom-sm">
+					
+					<div class="row">
+						<div class="col-md-8 col-sm-10 center-block text-center">
+							<header>
+								<h1>Where to book accomodation</h1>
+								<p>Montecasino is home to some of Johannesburg’s most popular hotels. Each hotel has a 
+                                    character of its own, so you can choose opulence, contemporary, eclectic, business friendly or 
+                                    romantic. Really the choice is yours. We invite you to experience them for yourself and 
+                                    enjoy an unforgettable stay in Fourways.</p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+					
+					<div class="row inner-top-sm text-center">
+						
+						<div class="col-sm-4 inner-bottom-sm inner-left inner-right">
+							<figure class="member">
+								
+								<div class="icon-overlay icn-link">
+									<a href="#"><img src="assets/images/art/SouternSun.jpg" class="img-circle"></a>
+								</div><!-- /.icon-overlay -->
+								
+								<figcaption>
+								
+									<h2>
+										Southern Sun Montecasino
+									</h2>
+									
+									<blockquote>Inspired by the design of the 15th century Palazzo Corsini villa in Italy’s picturesque mountain 
+                                        region of Gianicolo, our hotel is the perfect blend of stylistic innovation and old-world Venetian charm coupled 
+                                        with the modern convenience expected at a Southern Sun hotel.</blockquote>
+									<a href="https://www.tsogosun.com/southern-sun-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
+								</figcaption>
+								
+							</figure>
+						</div><!-- /.col -->
+						
+						<div class="col-sm-4 inner-bottom-sm inner-left inner-right">
+							<figure class="member">
+								
+								<div class="icon-overlay icn-link">
+									<a href="#"><img src="assets/images/art/sunsquare.jpg" class="img-circle"></a>
+								</div><!-- /.icon-overlay -->
+								
+								<figcaption>
+								
+									<h2>SunSquare Montecasino</h2>
+									
+									<blockquote>Modern styling and contemporary design ensure a bright, welcoming atmosphere that is 
+                                        underscored by outstanding service and attention to detail. Our location allows you to effortlessly 
+                                        explore the Montecasino Entertainment Complex, with the renowned Teatro theatre only a short walk away.</blockquote>
+									<a href="https://www.tsogosun.com/sunsquare-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
+								</figcaption>
+								
+							</figure>
+						</div><!-- /.col -->
+						
+						<div class="col-sm-4 inner-bottom-sm inner-left inner-right">
+							<figure class="member">
+								
+								<div class="icon-overlay icn-link">
+									<a href="#"><img src="assets/images/art/palazzo.jpg" class="img-circle"></a>
+								</div><!-- /.icon-overlay -->
+								
+								<figcaption>
+								
+									<h2>
+										Palazzo
+									</h2>
+									
+									<blockquote>The enchantment of its Tuscan-inspired architecture, reflected in the luxurious 
+                                        accommodation and spectacular gardens, is one of the reasons the Palazzo hotel has been a 
+                                        World Luxury Hotels Award winner for six consecutive years, and a TripAdvisor Certificate of 
+                                        Excellence winner in 2015..</blockquote>
+									<a href="https://www.tsogosun.com/the-palazzo-hotel" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
+								</figcaption>
+								
+							</figure>
+						</div><!-- /.col -->
+						
+					</div><!-- /.row -->
+
+					
+				</div><!-- /.container -->
+			</section>
+			
+			
+			
+			<!-- ============================================================= SECTION – HOW WE WORK ============================================================= -->
+			
+			<section id="transport">
+				<div class="container inner-xs">
+					
+					<div class="row">
+						<div class="col-md-8 col-sm-9 center-block text-center">
+							<header>
+								<h1>Transportation</h1>
+								<p>Datacentrix showcase 2017 is hosted at one of the leading hotels in Gauteng, with an array of options when it comes to 
+                                    getting to and from the venue. Here are our primary options. </p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+					
+					<div class="row inner-top-sm text-center">
+						
+						<div class="col-sm-4 inner-bottom-xs">
+							<div class="icon">
+								<i class="icon-road icn lg"></i>
+							</div><!-- /.icon -->
+							<h2>Own transport</h2>
+							<p class="text-small">Complimentary parking is included in your conference seat. Once your 
+                                registration is approved, will you eligible to receive your complimentary undercover 
+                                parking.</p>
+                            
+						</div><!-- /.col -->
+						
+						<div class="col-sm-4 inner-bottom-xs">
+							<div class="icon">
+								<i class="icon-megaphone-1 icn lg"></i>
+							</div><!-- /.icon -->
+							<h2>Call a ride</h2>
+							<p class="text-small">Uber: One tap and a car comes directly to you. Hop in—your driver knows exactly where to go. 
+                                And when you get there, just step out. Payment is completely seamless</p>
+						</div><!-- /.col -->
+						
+						<div class="col-sm-4 inner-bottom-xs">
+							<div class="icon">
+								<i class="icon-flight-1 icn lg"></i>
+							</div><!-- /.icon -->
+							<h2>Airport tranfers</h2>
+							<p class="text-small">Airport transfers can be arranged direclty with the hotel you are booked with, or if you are just flying in for the day, we recommend you make use of Uber.</p>
+						</div><!-- /.col -->
+						
+					</div><!-- /.row -->
+					
+				</div><!-- /.container -->
+			</section>
+			
+			
+			
+			
+			
+			
+			<!-- ============================================================= SECTION – GET IN TOUCH ============================================================= -->
+			
+			<section id="registernow" class="tint-bg">
+				<div class="container inner-xs">
+					<div class="row">
+						<div class="col-sm-10 center-block text-center">
+							<h2 class="single-block">Have you registered and secured your seat? <a href="/register" class="btn btn-small">Register now</a></h2>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+			
 
 {{> jscript}}
 

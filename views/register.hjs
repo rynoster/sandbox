@@ -125,7 +125,7 @@
 
 
 <!-- ============================================================= SECTION HIDDEN - Registration Success =========================================================-->
-			<section id="DelRegister-Success" >
+			<section id="DelRegister-Success" hidden >
 				<div class="container">				
 						<div class="col-sm-12 outer-bottom-md outer-top-md">
 							<div class="row">

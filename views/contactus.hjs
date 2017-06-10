@@ -1,5 +1,95 @@
-<div class="jumbotron">Contact Us page</div>
-<!--HTML ABOVE THIS LINE -->
+<!-- ============================================================= SECTION – HERO ============================================================= -->
+			
+			<section id="hero" class="dark-bg img-bg " style="background-image: url(assets/images/art/contact-banner.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 outer-bottom-xs outer-top-xs">
+							<header class="outer-top-xs">
+								<h1>Get in touch</h1>
+								<p> Do you want to know more? We’d love to hear from you!</p>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
+				</div><!-- /.container -->
+			</section>
+			
+			<!-- ============================================================= SECTION – HERO : END ============================================================= -->
+			
+			<div class="container outer-top-xs">
+				<div class="row">
+					
+					<div class="col-md-8 inner-right-md">
+						
+						<!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
+						
+						<section id="contact-form">
+							
+							<h2>Leave a Message</h2>
+							
+							<form id="contactform" class="forms" action="contact.php" method="post">
+								
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" name="name" class="form-control" placeholder="Name (Required)">
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+								
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="email" name="email" class="form-control" placeholder="Email (Required)">
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+								
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" name="subject" class="form-control" placeholder="Subject">
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+								
+								<div class="row">
+									<div class="col-sm-12">
+										<textarea name="message" class="form-control" placeholder="Enter your message ..."></textarea>
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+								
+								<button type="submit" class="btn btn-default btn-submit">Submit message</button>
+								
+							</form>
+							
+							<div id="response"></div>
+							
+						</section>
+						
+						<!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
+						
+						
+						<!-- ============================================================= SECTION – CONTACTS ============================================================= -->
+						
+						<section id="contacts" class="outer-top-md outer-bottom-xs">
+							
+							<h2>Contacts</h2>
+							<p>You are most welcome to pop around to our office for a cup a coffee or give us a call. We look forward 
+                                in hearing from you.<br><br>The showcase team </p>
+                            <br><br>
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<h3>Datacentrix</h3>
+									<ul class="contacts">
+										<li><i class="icon-location contact"></i> 238 Roan Crescent Ave, Corporate Park North, Midrand, 1685</li>
+										<li><i class="icon-mobile contact"></i> 087 741 5000</li>
+										<li><a href="mailto:showcase@datacentrix.co.za"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
+									</ul><!-- /.contacts -->
+								</div><!-- /.col -->
+							</div><!-- /.row -->
+							
+						</section>
+						
+						<!-- ============================================================= SECTION – CONTACTS : END ============================================================= -->
+						
+					</div><!-- ./col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
 
 {{> jscript}}
 
