@@ -41,6 +41,10 @@
 							
 							<ul class="nav navbar-nav">
 								<!-- This is the menu driving the top navigation -->
+
+								<li class="dropdown">
+									<a href="/" >Home</a>
+								</li>
 															
 								<li class="dropdown">
 									<a href="/whyattend" >Why attend</a>

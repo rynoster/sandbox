@@ -31,12 +31,11 @@
 					<div class="col-xs-6 col-md-4 inner">
 						<h4>Site Navigation</h4>
 						<hr color="#fff" align="left" width="80%" size="1">
-							<a href="#">Why attend</a><br>
-							<a href="#">Register</a><br>
-							<a href="#">Event info</a><br>
-							<a href="#">Sponsors</a><br>
-							<a href="#">Logistics</a><br>
-							<a href="#">Contact info</a><br>
+							<a href="/whyattend">Why attend</a><br>
+							<a href="/eventinfo">Agenda</a><br>
+							<a href="/logistics">Logistics</a><br>
+							<a href="/register">Register</a><br>
+							<a href="/contactus">Contact info</a><br>
 					</div><!-- /.col -->
 									
 							

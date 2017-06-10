@@ -33,6 +33,10 @@ ul.circled li:before,
 .tint-color {
 	color: #005982 !important;
 }
+.tint-bgb .btn,
+.tint-color {
+	color:white !important;
+}
 
 .btn,
 .classic-blog .post .date,
@@ -61,6 +65,14 @@ ul.circled li:before,
 .tooltip-inner {
 	background-color: #005982;
 }
+
+.tint-bgb,
+.tint-bgb.img-bg-soft:before,
+.tint-bgb.img-bg-softer:before,
+.tooltip-inner {
+	background-color:#00b188;
+}
+
 
 .btn:hover,
 .btn:focus,

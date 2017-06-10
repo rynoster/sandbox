@@ -54,40 +54,14 @@
 							</div><!-- /.caption -->
 						</div><!-- /.container -->
 					</div><!-- /.item -->
-					
-					
-					<!-- Page 3 of main banner - HPE Diamond Sponsor -->
-					<div class="item" style="background-image: url(assets/images/art/slider02.jpg);">
-						<div class="container">
-							<div class="caption vertical-center text-left">
-							 	
-							 	<div class="fadeIn-1" style="padding-bottom:20px">
-									<img src="/assets/images/art/Sponsor-Logo/Hewlett_Packard_Enterprise_logo_white.svg" style="width:300px;height:auto">
-									<br>
-									<p style="font-size: 150%; color: #fff; padding-bottom: 20px">Dimond Sponsor</p>
-								</div>
-								
-								<div class="fadeIn-2 hidden-phone" >
-									<p style="font-size: 300%; font-weight: bold; color:#39B188;">Digital transformation <br> starts with Yes</p>
-								</div>
-								
-								<div class="fadeIn-3">
-									<a href="#" class="btn btn-large">HPE sponsor page</a>
-								</div>
-													
-							</div><!-- /.caption -->
-						</div><!-- /.container -->
-					</div><!-- /.item -->
+
 				</div>
 			</section>
 			
-			<!-- ============================================================= SECTION – Top Banner : END ============================================================= -->
-			
-			
-			<!-- ============================================================= SECTION – Event Info ============================================================= -->
+<!-- ============================================================= SECTION – Event Info ============================================================= -->
 			
 			<section id="EventInfo">
-				<div class="container inner">
+				<div class="container outer-bottom-md outer-top-md">
 					
 					<div class="row">
 						
@@ -101,8 +75,45 @@
 						</div><!-- /.col -->
 						
 					</div><!-- /.row -->
+				
+				</div><!-- /.container -->
+			</section>
+
+<!-- ============================================================= SECTION – Diamond Sponsor ============================================================= -->
+
+			<section id="PlatinumSponsors" class="img-bg img-bg-soft" style="background-image: url(assets/images/art/hpe-robot.jpg);">
+				<div class="container">
+					<div class="row">
+						<header>
+							<div class="fadeInLeft-1 col-sm-12 outer-top-xs light-color">
+								<h2>Diamond sponsor</h2>
+							</div>	
+						</header>	
+					</div>
+
+					<div class="row">
+							<div class="fadeInLeft-2 col-sm-5 outer-bottom-xs transparent-rr">
+								<header>
+									<br>
+									<figure><img src="assets/images/sponsor logos/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
+									<br>
+									<a  href="#" class="btn btn-medium light-color ">HPE sponsor page</a>
+								</header>
+							</div>
+							
+							
+							</div><!-- /.col -->
+					</div><!-- /.row -->
 					
-					<div class="row inner-top-md">
+				</div><!-- /.container -->
+			</section>		
+
+<!-- ============================================================= SECTION – Event Info continue  ============================================================= -->
+			
+			<section id="EventInfo">
+				<div class="container outer-bottom-md outer-top-md">
+									
+					<div class="row">
 						
 						<div class="col-sm-6 col-sm-push-6 inner-left-xs">
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/ZNXx8MzvOcs" frameborder="0" allowfullscreen></iframe>
@@ -115,7 +126,7 @@
 						
 					</div><!-- /.row -->
 					
-					<div class="row inner-top-md">
+					<div class="row">
 						
 						<div class="col-sm-6 inner-right-xs text-right">
 							<figure><img src="/assets/images/art/product03.jpg" alt=""></figure>
@@ -137,22 +148,25 @@
 				</div><!-- /.container -->
 			</section>
 			
-			<!-- ============================================================= SECTION – Event Info : END ============================================================= -->
+		
 			
-			
-			<!-- ============================================================= SECTION – Platinum Sponsers ============================================================= -->
-			<div class="center-block text-center">
-				<h1>Platinum sponsors</h1>
-			</div>
+<!-- ============================================================= SECTION – Platinum Sponsers ============================================================= -->
+
 			<section id="PlatinumSponsors" class="img-bg img-bg-soft tint-bg" style="background-image: url(assets/images/art/image-background04.jpg);">
-				<div class="container inner">
-				
+				<div class="container">
 					<div class="row">
-							<div class="col-sm-6 inner-right-xs text-center">
+						<header>
+							<div class="col-sm-1212 text-center outer-bottom-xs outer-top-xs">
+								<h2 style="color:#fff">Platinum sponsors</h2>
+							</div>	
+						</header>	
+					</div>
+
+					<div class="row outer-bottom-xs">
+							<div class="col-sm-6 text-center">
 							<header>
 								<figure><img src="assets/images/sponsor logos/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
 								<p>Cisco. Your Foundation for Digital Transformation</p>
-								<p style="font-size: 80%">Platinum sponsor</p>
 							</header>
 							<a href="#" class="btn btn-large">Cisco sponsor page</a>
 							</div><!-- /.col -->
@@ -160,29 +174,25 @@
 								<div class="container" style="padding: 50px"></div>
 							</div>
 						  	<!-- -->
-							<div class="col-sm-6 inner-right-xs text-center">
+							<div class="col-sm-6 text-center">
 							<header>
 								<figure><img src="assets/images/sponsor logos/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
 								<p>Lenovo. From pocket to data center</p>
-								<p style="font-size: 80%">Platinum sponsor</p>
 							</header>
 							<a href="#" class="btn btn-large">Lenovo sponsor page</a>
 							</div><!-- /.col -->
 					</div><!-- /.row -->
 					
 				</div><!-- /.container -->
-			</section>
+			</section>			
 			
-			<!-- ============================================================= SECTION – Platinum Sponsors : END ============================================================= -->
-			
-			
-			<!-- ============================================================= SECTION – Sponsorships ============================================================= -->
+<!-- ============================================================= SECTION – Sponsorships ============================================================= -->
 			
 			<section id="reasons">
-				<div class="container inner">
+				<div class="container outer-bottom-md outer-top-md">
 					
 					<div class="row">
-						<div class="center-block text-center">
+						<div class="center-block text-center outer-bottom-md">
 							<header>
 								<h2>Gold sponsors</h2>
 								<p>Please click on the logo to access the sponsors event page for more information</p>
@@ -203,12 +213,14 @@
 								<p>Please click on the logo to access the sponsors event page for more information</p>
 								<hr color="#005982" align="left" width="100%" size="1">
 								<figure>
-									<a href="#"><img src="assets/images/sponsor logos/Silver/citrix.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									
+									<a href="#"><img src="assets/images/sponsor logos/Silver/amd.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/ibm.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/netapp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a href="#"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a href="#"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								</figure>
@@ -237,7 +249,7 @@
 				</div><!-- /.container -->
 			</section>
 			
-			<!-- ============================================================= SECTION – Sponsorships : END ============================================================= -->
+			
 			
 		</main>
 
