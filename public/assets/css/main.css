@@ -4593,7 +4593,7 @@ input:focus:-ms-input-placeholder {
 .modal-header {
 	position: relative;
 	z-index: 1;
-	height: 70px;
+	height: 50px;
 	padding: 22px 25px;
 	background-color: #FFF;
 	border-bottom: 1px solid #E6E9ED;
@@ -4645,7 +4645,7 @@ input:focus:-ms-input-placeholder {
 	top: 70px;
 	bottom: 75px;
 	width: 100%; /* Can use left: 0; right: 0; as well */
-	padding: 0;
+	padding-left: 25px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
