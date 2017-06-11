@@ -1,1 +1,2 @@
 env.json filter=git-crypt diff=git-crypt
+knexfile.js filter=git-crypt diff=git-crypt
