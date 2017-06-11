@@ -3,9 +3,9 @@ module.exports = {
     name: 'chirpee.io',
     script: './server.js',
     env: {
-            NODE_ENV: "development"
+        NODE_ENV: "development"
     },
-    env_prod: {
+    env_production: {
         NODE_ENV: "production"
     },
   }],
