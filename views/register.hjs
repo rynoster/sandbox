@@ -11,6 +11,10 @@
         display: none;
     }
 
+    #dcx-am {
+        display: none;
+    }
+
 </style>
    
     <!-- ============================================================= Top Banner ============================================================= -->
@@ -129,13 +133,13 @@
                                                 <div class="col-sm-6">
                                                         <select class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
                                                             <option value="">Select your role</option>
-                                                            <option value="1">Board member</option>
-                                                            <option value="2">MD / CxO / Executive Management</option>
-                                                            <option value="3">Senior Manager / Business Unit Manager</option>
-                                                            <option value="4">Mid-Level Manager / Team-leader</option>
-                                                            <option value="5">Snr Consultant / Engineer / Architect</option>
-                                                            <option value="6">Technician / Administrator / Operations</option>
-                                                            <option value="7">Other</option>
+                                                            <option value="Board member">Board member</option>
+                                                            <option value="MD / CxO / Executive Management">MD / CxO / Executive Management</option>
+                                                            <option value="Senior Manager / Business Unit Manager">Senior Manager / Business Unit Manager</option>
+                                                            <option value="Mid-Level Manager / Team-leader">Mid-Level Manager / Team-leader</option>
+                                                            <option value="Snr Consultant / Engineer / Architect">Snr Consultant / Engineer / Architect</option>
+                                                            <option value="Technician / Administrator / Operations">Technician / Administrator / Operations</option>
+                                                            <option value="Other">Other</option>
                                                         </select>
                                                 </div>
                                             </div>
@@ -145,8 +149,8 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <label class="radio-inline"><input type="radio" name="sel-am">No</label>
-                                                    <label class="radio-inline"><input type="radio" name="sel-am">Yes</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="No">No</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="Yes">Yes</label>
                                                 </div>
                                             </div>
                                             
@@ -170,14 +174,14 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 outer-top-xxs outer-bottom-xs" >
-                                                <select class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
+                                                <select id="dietary" class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
                                                     <option value="">Select your requirements</option>
-                                                    <option value="1">Banting</option>
-                                                    <option value="2">Halaal</option>
-                                                    <option value="3">Pescetarians</option>
-                                                    <option value="4">Vegan</option>
-                                                    <option value="5">Vegetarian</option>
-                                                    <option value="6">None</option>
+                                                    <option value="Banting">Banting</option>
+                                                    <option value="Halaal">Halaal</option>
+                                                    <option value="Pescetarians">Pescetarians</option>
+                                                    <option value="Vegan">Vegan</option>
+                                                    <option value="Vegetarian">Vegetarian</option>
+                                                    <option value="None">None</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -251,6 +255,20 @@
         var $eventProfile = $("#event_profile");
         var $delRegister = $("#DelRegister");
         var $delRegisterSuccess = $("#DelRegister-Success");
+        var $orgRole = $("#event_del_level");
+        var $dcxAm = $("#dcx-am");
+        var $dietary = $("#dietary");
+
+        //Check radio button change event. If Yes clicked, then unhide AM input field
+        $('input:radio[name=sel-am]').change(
+        function(){
+            if (this.checked && this.value == "Yes"){
+                $dcxAm.show();
+            } else {
+                $dcxAm.hide();
+            }
+            
+        });
 
         $.validate({
             modules : 'date, security',
@@ -268,6 +286,9 @@
                     officenr: $officenr.val(),
                     email: $email.val(),
                     event_profile: $eventProfile.val(),
+                    dietary: $dietary.val(),
+                    accountManager: $dcxAm.val(),
+                    orgRole:$orgRole.val(),
                 }
 
                 $.ajax({

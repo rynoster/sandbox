@@ -189,8 +189,8 @@ router
       var Mail = require('../email');
       var mail = new Mail({
         from : "noreply@chirpee.io", 
-        to : "ryno@coetzee.za.com",
-        // to : "showcase@datacentrix.co.za",
+        // to : "ryno@coetzee.za.com",
+        to : "showcase@datacentrix.co.za",
         subject : "Datacentrix Showcase 2017 - Contact Us Request",
         html : buildHtmlContactUs(req.body),
         
