@@ -98,7 +98,7 @@
                                         </div>
 
                                         <div class="row">
-                                           <div class="col-sm-12 outer-top-xs"><p><strong>Selet the type of registration</strong><p></div>
+                                           <div class="col-sm-6 outer-top-xxs"><p><strong>Selet the type of registration</strong><p></div>
                                         </div>
 
                                          <div class="row">
@@ -110,7 +110,76 @@
                                                         <option value="Staff">Staff</option>
 
                                                     </select>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <!-- Ryno needs to add code to display this div if the id:event_profile is - Customer-->
+                                        <div> 
+                                            <div class="row">
+                                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                                            </div>
+
+
+                                            <div class="row">
+                                            <div class="col-sm-12"><p><strong>Please select your role in the organisation</strong><p></div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                        <select class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
+                                                            <option value="">Select your role</option>
+                                                            <option value="1">Board member</option>
+                                                            <option value="2">MD / CxO / Executive Management</option>
+                                                            <option value="3">Senior Manager / Business Unit Manager</option>
+                                                            <option value="4">Mid-Level Manager / Team-leader</option>
+                                                            <option value="5">Snr Consultant / Engineer / Architect</option>
+                                                            <option value="6">Technician / Administrator / Operations</option>
+                                                            <option value="7">Other</option>
+                                                        </select>
                                                 </div>
+                                            </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12 outer-top-xxs"><p><strong>Do you have a Datacentrix account manager?</strong><p></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label class="radio-inline"><input type="radio" name="sel-am">No</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am">Yes</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Ryno to add code that will unhide this textbox if radio button above is YES -->
+                                            <div class="row">
+                                                <div class="col-sm-6 outer-top-xxs">
+                                                    <input id="dcx-am" type="text" name="dcx=am" class="form-control" placeholder="Datacentrix account manager (Required if Yes)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Please include you Datacentrix account manager's name" />
+                                                </div> 
+                                            </div>
+
+                                            <div class="row">
+                                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+              
+                                            <div class="col-sm-12"><p><strong>Please select your dietary requirements</strong><p></div>
+ 
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 outer-top-xxs outer-bottom-xs" >
+                                                <select class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
+                                                    <option value="">Select your requirements</option>
+                                                    <option value="1">Banting</option>
+                                                    <option value="2">Halaal</option>
+                                                    <option value="3">Pescetarians</option>
+                                                    <option value="4">Vegan</option>
+                                                    <option value="5">Vegetarian</option>
+                                                    <option value="6">None</option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <button type="submit" id="register" class="btn btn-default">Register for the event</button>
