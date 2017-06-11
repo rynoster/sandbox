@@ -1,3 +1,23 @@
+<style>
+    .form-error {
+        font-size: 13px;
+    }
+
+    .form-control.error{
+        margin-bottom: 2px;
+    }
+
+    #pageAlert {
+        display: none;
+		margin-top: 20px;
+    }
+
+	.customCaptcha {
+		display: none;
+	}
+
+</style>
+
 <!-- ============================================================= SECTION – HERO ============================================================= -->
 			
 			<section id="hero" class="dark-bg img-bg " style="background-image: url(assets/images/art/contact-banner.jpg);">
@@ -26,37 +46,51 @@
 							
 							<h2>Leave a Message</h2>
 							
-							<form id="contactform" class="forms" action="contact.php" method="post">
+							<form id="contactform" onsubmit="return false" class="forms" action="contact.php" method="post">
 								
 								<div class="row">
 									<div class="col-sm-6">
-										<input type="text" name="name" class="form-control" placeholder="Name (Required)">
+										<input type="text" name="name" class="form-control" placeholder="Name (Required)" data-validation="length" data-validation-length="min5" data-validation-error-msg="Name must be at least 5 characters">
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 								
 								<div class="row">
 									<div class="col-sm-6">
-										<input type="email" name="email" class="form-control" placeholder="Email (Required)">
+										<input type="email" name="email" class="form-control" placeholder="Email (Required)" data-validation="email">
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 								
 								<div class="row">
 									<div class="col-sm-6">
-										<input type="text" name="subject" class="form-control" placeholder="Subject">
+										<input type="text" name="subject" class="form-control" placeholder="Subject" data-validation="length" data-validation-length="min5" data-validation-error-msg="Subject must be at least 5 characters">
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 								
 								<div class="row">
 									<div class="col-sm-12">
-										<textarea name="message" class="form-control" placeholder="Enter your message ..."></textarea>
+										<textarea name="message" class="form-control" placeholder="Enter your message ..." data-validation="length" data-validation-length="min20" data-validation-error-msg="Name must be at least 20 characters"></textarea>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 								
-								<button type="submit" class="btn btn-default btn-submit">Submit message</button>
+								<div class="row">
+									<div class="col-sm-12">
+										<div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe"></div>	
+										<input type="hidden" class="customCaptcha" data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe" data-validation-error-msg="Please complete the captcha">
+
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+
+								
+								<button id="submit" type="submit" class="btn btn-default btn-submit">Submit message</button>
+
+								<div id="pageAlert" class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <p id="alertText">Error text will go here</p>
+                                </div>
 								
 							</form>
 							
-							<div id="response"></div>
+							<!--<div id="response"></div>-->
 							
 						</section>
 						
@@ -65,7 +99,7 @@
 						
 						<!-- ============================================================= SECTION – CONTACTS ============================================================= -->
 						
-						<section id="contacts" class="outer-top-md outer-bottom-xs">
+						<section id="contacts" class="outer-top-xs outer-bottom-xs">
 							
 							<h2>Contacts</h2>
 							<p>You are most welcome to pop around to our office for a cup a coffee or give us a call. We look forward 
@@ -92,5 +126,55 @@
 			</div><!-- /.container -->
 
 {{> jscript}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!--JavaScript BELOW THIS LINE -->
+
+<script>  
+    $(document).ready(function(){
+
+        $.validate({
+            modules : 'date, security',
+			validateHiddenInputs : true,
+            onModulesLoaded : function() {
+        	},
+
+
+            onSuccess : function() {
+
+				$("#contactform").ajaxSubmit({
+
+					url: "/api/captcha",
+					type: "POST",
+					
+					error: function(){
+						// alert("failed")
+					},
+					
+					success: function(){
+						// Pop up a green alert confirming mail has been sent
+						$("#alertText").text("Thank you for your registration, an email has been sent.");
+						$("#pageAlert").fadeIn(2000);
+
+						//Reset form elements
+						$("#contactform")[0].reset();
+						grecaptcha.reset();
+
+						//Remove the page alert after 3 seconds
+						setTimeout($("#pageAlert").fadeOut(2000),3000);
+						
+					}
+
+				})
+
+			},
+
+
+            onError : function() {
+            },
+    	});   
+
+    });
+
+</script>
