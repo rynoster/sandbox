@@ -267,6 +267,10 @@
 								<p id="sponsorContent">Sponsor content will go here.</p>
 							</div>
 							<div class="col-2 text-right" style="padding-right:50px">
+
+								<!--********* @Rudie |  hier is die image wat ek ge-add het-->
+								<img id="sponsorImage" src="" alt="" style="width:150px;height:auto;padding: 10px">
+
 								<p id="sponsorLevel">Sponsor Level will go here.</p>
 								<br>
 								<p id="sponsorLogo">Sponsor logo will go here.</p>
@@ -310,6 +314,7 @@
 					$("#sponsorContent").html(sponsors.sponsorContent);
 					$("#sponsorLevel").html(sponsors.sponsorLevel);
 					$("#sponsorLogo").html(sponsors.sponsorLogo);
+					$("#sponsorImage").attr("src","/assets/images/sponsor logos/" + sponsors.sponsorLevel + "/" + sponsors.sponsorLogo);
 				},
 				error: function() {
 					// alert("Error retrieving sponsor data");

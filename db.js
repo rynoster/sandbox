@@ -1,15 +1,8 @@
 var knex = require("knex");
 
-var dbConfig = require("./config/env.json")[process.env.NODE_ENV || "dev"]
+// var dbConfig = require("./config/env.json")[process.env.NODE_ENV || "dev"]
+var dbConfig = require("./knexfile")[process.env.NODE_ENV || "development"];
 
-const db = knex({
-    client: "mysql",
-    connection: {
-        host: dbConfig.host,
-        user: dbConfig.user,
-        database: dbConfig.database,
-        password: dbConfig.password
-    }
-})
+const db = knex(dbConfig);
 
 module.exports = db;
