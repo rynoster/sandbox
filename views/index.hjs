@@ -90,7 +90,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6 fadeIn-2">
-								<figure><img src="/assets/images/sponsor logos/diamond/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
+								<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
 								<br>
 							</div>
 							<div class="col-md-6 text-right vertical-center">
@@ -159,7 +159,7 @@
 					<div class="row outer-bottom-xs">
 							<div class="col-sm-6 text-center">
 							<header>
-								<figure><img src="assets/images/sponsor logos/platinum/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
+								<figure><img src="assets/images/sponsor logos/Platinum/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
 							
 							</header>
 							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS">Read more</a>
@@ -170,7 +170,7 @@
 						  	<!-- -->
 							<div class="col-sm-6 text-center">
 							<header>
-								<figure><img src="assets/images/sponsor logos/platinum/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
+								<figure><img src="assets/images/sponsor logos/Platinum/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
 								
 							</header>
 							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN">Read more</a>
@@ -285,7 +285,11 @@
 <script>
     $(document).ready(function(){
         $('#sponsorModal').on('hide.bs.modal', function () {
-    		// do something
+    		// Clear all the data from the modal when it closes, to ensure no artefacts show up on clicking between sponsors
+			$("#sponsorName").text("");
+			$("#sponsorContent").html("");
+			$("#sponsorLevel").html("");
+			$("#sponsorImage").attr("src","");
 		});
 
 		$('.sponsor-Class').on('click', function() {
