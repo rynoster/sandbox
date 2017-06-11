@@ -1,11 +1,12 @@
 <!-- ============================================================= SECTION – HERO ============================================================= -->
 			
-			<section id="hero" class="dark-bg img-bg " style="background-image: url(assets/images/art/contact-banner.jpg);">
+			<section id="hero" class="img-bg img-bg-softer" style="background-image: url(/assets/images/art/mail-bg.jpg);" >
 				<div class="container">
 					<div class="row">
-						<div class="col-md-8 outer-bottom-xs outer-top-xs">
-							<header class="outer-top-xs">
-								<h1>Email address verified!</h1>
+						<div class="fadeInLeft col-md-8 outer-bottom-xs outer-top-xs">
+							<header >
+								<h1 style="color:#fff">Verified</h1>
+								
 							</header>
 						</div><!-- /.col -->
 					</div><!-- ./row -->
@@ -14,23 +15,40 @@
 			
 			<!-- ============================================================= SECTION – HERO : END ============================================================= -->
 			
-			<div class="container outer-top-xs">
-				<div class="row">
-					
-					<div class="col-md-8 inner-right-md">
-						
-						<!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
-						
+			<div class="container outer-top-md">
+				<div class="row">	
 						<section id="verify-form">
-							
-							<h2>Thank you {{fullName}}, your email address has been verified.</h2>
-							
+
+							<div class="row outer-bottom-sm">
+								<div class="col-lg-2">
+									<figure><img src="/assets/images/art/emailverify.jpg" alt="" style="width:150px;height:auto;"></figure>
+								</div>
+								
+								<div class="col-lg-8 outer-bottom-xs">
+										<h2> You have successfully confirmed your registration email address.</h2>
+										<p>
+											Thank you <strong> {{fullName}}</strong>, your email address has been verified. You application has been submitted 
+											to our marketing team for approval. Your applicatin will be reviewed in the next 2 business days,
+											where after you will receive a email confirming acceptance and that your seat is reserved.
+										</p>
+										<br>
+										<p>	
+											Registrations for breakout sessions and all related bookings options will open 1 July 2017. You will also 
+											receive a reminder mail to log back into the site and reserve your seat in our breakout sessions. All of these 
+											session have limited seats and you will need to reserve yours as soon as this opens. 
+										</p>
+										<br>
+										<p>	
+											Do remember to follow us on facebook and start tweeting today using the hashtag <strong>#DatacentrixShowcase</strong>.
+										</p>
+										<a href="http://www.datacentrix.co.za" target="_blank" class="btn btn-large">Visit Datacentrix.co.za</a> 
+								</div>
+
+							</div>
+
 							<div id="response"></div>
-							
 						</section>
-						
-						<!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
-						
+											
 					</div><!-- ./col -->
 				</div><!-- /.row -->
 			</div><!-- /.container -->
