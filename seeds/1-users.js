@@ -26,6 +26,33 @@ exports.seed = function(knex, Promise) {
           last_name: "Raath",
           admin: 1
         },
+        {
+          id: 3,
+          email: "edupreez@datacentrix.co.za",
+          event_profile: "Staff",
+          first_name: "Elzette",
+          last_name: "Du Preez",
+          admin: 1,
+          pro_profile: "Marketing Coordinator",
+          company: "Datacentrix",
+          mobilenr: "0846963000",
+          verified: 1
+          },
+          {
+          id: 4,
+          email: "monique@smart-sm.co.za",
+          event_profile: "Staff",
+          first_name: "Monique ",
+          last_name: "Oosthuizen",
+          admin: 1,
+          pro_profile: "Owner",
+          company: "SMART Strategic Marketing",
+          mobilenr: "0829260506",
+          verified: 1
+          }
+
+
+
       ]);
     });
 };

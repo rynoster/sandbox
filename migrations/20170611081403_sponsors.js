@@ -7,8 +7,8 @@ exports.up = function(knex, Promise) {
     sponsorName varchar(50) DEFAULT NULL, \
     sponsorContent text, \
     sponsorTag varchar(15) DEFAULT '', \
-    sponsorLevel varchar(20) DEFAULT '', \
-    sponsorLogo varchar(100) DEFAULT '', \
+    sponsorLevel varchar(10) DEFAULT '', \
+    sponsorLogo varchar(50) DEFAULT '', \
     PRIMARY KEY (sponsorId) \
     ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1; \
   ")

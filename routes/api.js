@@ -97,6 +97,13 @@ router
         res.send(sponsors);
       }, next)
     })
+
+  .get('/sponsors', auth.loginRequired, auth.adminRequired, (req,res, next) => {
+
+    db("sponsors").then((sponsors) => {
+      res.send(sponsors);
+    }, next)
+  })
    
 
   //Get user details for specific user id
