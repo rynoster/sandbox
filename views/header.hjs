@@ -60,9 +60,9 @@
 									<a href="/logistics" class="dropdown-toggle" data-toggle="dropdown">Logistics</a>
 									
 									<ul class="dropdown-menu">
-										<li><a href="/logostics">Venue</a></li>
-										<li><a href="/logostics#hotels">Accomodation</a></li>
-										<li><a href="=/logostics#transport">Transfers & parking</a></li>
+										<li><a href="/logistics">Venue</a></li>
+										<li><a href="/logistics#hotels">Accomodation</a></li>
+										<li><a href="/logistics#transport">Transfers & parking</a></li>
 									</ul><!-- /.dropdown-menu -->
 								</li>
 

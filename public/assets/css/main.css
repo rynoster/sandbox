@@ -4593,16 +4593,17 @@ input:focus:-ms-input-placeholder {
 .modal-header {
 	position: relative;
 	z-index: 1;
-	height: 50px;
+	height: 70px;
 	padding: 22px 25px;
-	background-color: #FFF;
+	background-color: #005982;
+	color: #fff !important;
 	border-bottom: 1px solid #E6E9ED;
 }
-.modal-header .close {
+.modal-header .close {	
 	float: right;
 	font-size: 24px;
 	font-weight: 400;
-	color: #506A85;
+	color:#fff;
 	text-shadow: none;
 	margin-top: 0;
 	margin-left: 25px;
@@ -4620,7 +4621,8 @@ input:focus:-ms-input-placeholder {
 	opacity: 1 !important;
 }
 .modal-title {
-	color: #506A85 !important;
+	color: #fff !important;
+	font-size: 130%;
 	line-height: 150%;
 }
 .no-modal-header .modal-header {
@@ -4654,7 +4656,7 @@ input:focus:-ms-input-placeholder {
 	bottom: 0;
 	width: 100%; /* Can use left: 0; right: 0; as well */
 	height: 75px;
-	background-color: #FFF;
+	background-color:#005982;
 	border-top: 1px solid #E6E9ED;
 }
 .modal-footer .btn {
@@ -6056,11 +6058,15 @@ input:focus:-ms-input-placeholder {
   background:rgba(0,0,0,0.80);
 }
 /*===================================================================================*/
-/*	DEMO ONLY
+/*	TESTING
 /*===================================================================================*/
 
 a.changecolor {
 	cursor: pointer;
+}
+
+a.changepointer {
+	cursor: hand;
 }
 
 

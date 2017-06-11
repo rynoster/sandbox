@@ -1,10 +1,4 @@
-		<style>
-			.modal-dialog {
-				/* RR - chaging the sizing a bit*/
-				max-height: calc(100vh - 200px);
-    			overflow-y: auto;
-			}
-		</style>
+
 		
 		<!-- ============================================================= MAIN : START============================================================= -->
 		
@@ -96,12 +90,12 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6 fadeIn-2">
-								<figure><img src="/assets/images/sponsor logos/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
+								<figure><img src="/assets/images/sponsor logos/diamond/hpe-white.svg" alt="" style="width:300px;height:auto;"></figure>
 								<br>
 							</div>
 							<div class="col-md-6 text-right vertical-center">
 								<p style="font-size:200%"><strong>Diamond Sponsor</strong></p>
-								<a class="btn tint-bgb btn-large sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE" >Read more</a>
+								<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>
 							</div>
 						</div>
 					</div>
@@ -165,10 +159,10 @@
 					<div class="row outer-bottom-xs">
 							<div class="col-sm-6 text-center">
 							<header>
-								<figure><img src="assets/images/sponsor logos/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
+								<figure><img src="assets/images/sponsor logos/platinum/cisco_white.svg" alt="" style="width:200px;height:auto;"></figure>
 							
 							</header>
-							<a href="#" class="btn btn-large" data-target="#sponsorModal" data-toggle="modal">Read more</a>
+							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS">Read more</a>
 							</div><!-- /.col -->
 							<div class="hidden-lg hidden-md hidden-sm text-center">
 								<div class="container" style="padding: 50px"></div>
@@ -176,10 +170,10 @@
 						  	<!-- -->
 							<div class="col-sm-6 text-center">
 							<header>
-								<figure><img src="assets/images/sponsor logos/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
+								<figure><img src="assets/images/sponsor logos/platinum/Lonovo.svg" alt="" style="width:200px;height:auto;"></figure>
 								
 							</header>
-							<a href="#" class="btn btn-large" data-target="#sponsorModal" data-toggle="modal">Read more</a>
+							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN">Read more</a>
 							</div><!-- /.col -->
 					</div><!-- /.row -->
 					
@@ -198,13 +192,13 @@
 								<p>Please click on the logo to access read more about the sponsor</p>
 								<hr color="#005982" align="left" width="100%" size="1">
 								<figure>
-									<a><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;padding: 10px">&nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FOR"><img src="assets/images/sponsor logos/Gold/Fortinet.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPI"><img src="assets/images/sponsor logos/Gold/HP.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HUA"><img src="assets/images/sponsor logos/Gold/Huawei.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MCA"><img src="assets/images/sponsor logos/Gold/McAfee.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="RIV"><img src="assets/images/sponsor logos/Gold/Riverbed.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VER"><img src="assets/images/sponsor logos/Gold/Veritas.jpg" alt="" style="width:150px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								</figure>
 								<br/>
 								<br/>
@@ -214,15 +208,15 @@
 								<hr color="#005982" align="left" width="100%" size="1">
 								<figure>
 									
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/amd.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/ibm.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/netapp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a data-target="#sponsorModal" data-toggle="modal"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="AMD"><img src="assets/images/sponsor logos/Silver/amd.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="IBM"><img src="assets/images/sponsor logos/Silver/ibm.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="NET"><img src="assets/images/sponsor logos/Silver/netapp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PFO"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VEE"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								</figure>
 								
 								
@@ -253,37 +247,29 @@
 
 				<!--For width and height of modal content, refer to manual styling top of page-->
 				<div class="modal fade" id="sponsorModal" role="dialog">
-					<div class="modal-dialog">
+					<div class="modal-dialog modal-md">
 					
 					<div class="modal-content">
-						<div class="modal-header">
-							<button class="close" data-dismiss="modal">&times;</button>
-							<h3 id="sponsorName" class="modal-title">Sponsor Name goes here</h3>
+						<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
+								<button class="close" data-dismiss="modal">&times;</button>
+								<p id="sponsorLevel" class="modal-title">Sponsor Level goes here</p>
+						
 						</div>
 
 						<div class="modal-body">
-	
-							<div class="col-8 text-left">
-								<p id="sponsorContent">Sponsor content will go here.</p>
-							</div>
-							<div class="col-2 text-right" style="padding-right:50px">
+								
+								<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
+								<p class="outer-top-xs" id="sponsorContent">Sponsor content will go here.</p>
 
-								<!--********* @Rudie |  hier is die image wat ek ge-add het-->
-								<img id="sponsorImage" src="" alt="" style="width:150px;height:auto;padding: 10px">
-
-								<p id="sponsorLevel">Sponsor Level will go here.</p>
-								<br>
-								<p id="sponsorLogo">Sponsor logo will go here.</p>
-							</div>
 						</div>
 
-						<div class="modal-footer">
-							<div class="col-sm-6 text-left">
+						<div class="modal-footer dark-bg" style="background-color:#2C3E50">
+							<div class="col-sm-6 text-left outer-top-xxs">
 							
-								<figure><img class="hidden-phone" src="/assets/images/art/poweredbyc.jpg" alt="" style="width:300px;height:auto;padding:10px"></figure>
+								<p style="font-size:75%"><strong>Powered by chirpee.io</strong> - Secure events management platform </p>
 							</div>							
 							
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
 						</div>
 					</div>
 					
@@ -312,8 +298,7 @@
 				success: function(sponsors) {
 					$("#sponsorName").text(sponsors.sponsorName);
 					$("#sponsorContent").html(sponsors.sponsorContent);
-					$("#sponsorLevel").html(sponsors.sponsorLevel);
-					$("#sponsorLogo").html(sponsors.sponsorLogo);
+					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
 					$("#sponsorImage").attr("src","/assets/images/sponsor logos/" + sponsors.sponsorLevel + "/" + sponsors.sponsorLogo);
 				},
 				error: function() {

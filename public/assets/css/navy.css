@@ -33,10 +33,6 @@ ul.circled li:before,
 .tint-color {
 	color: #005982 !important;
 }
-.tint-bgb .btn,
-.tint-color {
-	color:white !important;
-}
 
 .btn,
 .classic-blog .post .date,
@@ -65,14 +61,9 @@ ul.circled li:before,
 .tooltip-inner {
 	background-color: #005982;
 }
-
-.tint-bgb,
-.tint-bgb.img-bg-soft:before,
-.tint-bgb.img-bg-softer:before,
-.tooltip-inner {
-	background-color:#00b188;
+.btnd {
+	background-color: #fff;
 }
-
 
 .btn:hover,
 .btn:focus,
@@ -85,6 +76,10 @@ ul.circled li:before,
 .pagination > li > a:hover,
 .pagination > li > a:focus {
 	background-color: #2C3E50;
+}
+.btn-rdb {
+	background-color: #fff;
+	color: #005982
 }
 
 .icon-overlay a .icn-more,
