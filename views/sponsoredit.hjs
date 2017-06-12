@@ -11,6 +11,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Sponsor Edit Page</title>
     </head>
     <body>
 
@@ -135,6 +136,22 @@
         $sponsorLevel = $("#sponsorLevel");
         $sponsorContent = $("#sponsorContent");
 
+        //This function allows tabbing inside an input box or textarea field, so tab will not actually jump to the next field
+        $.fn.getTab = function () {
+            this.keydown(function (e) {
+                if (e.keyCode === 9) {
+                    var val = this.value,
+                        start = this.selectionStart,
+                        end = this.selectionEnd;
+                    this.value = val.substring(0, start) + '\t' + val.substring(end);
+                    this.selectionStart = this.selectionEnd = start + 1;
+                    return false;
+                }
+                return true;
+            });
+            return this;
+        };
+
         $.ajax({
             type: 'GET',
             url: '/api/allsponsors',
@@ -191,11 +208,14 @@
 
         });
 
+        $sponsorContent.getTab();
+
         $sponsorContent.on('keyup', function() {
             $contentPreview.empty();
             $contentPreview.append($sponsorContent.val());
         })
 
+        //Update record button click
         $('#btnUpdate').on('click', function() {
             var sponsor = {
                 sponsorName: $sponsorName.val(),
@@ -210,6 +230,7 @@
                 data: sponsor,
 
                 success: function(sponsor) {
+                    $errHeading.text("Success");
                     $errPanel.show();
                     $errPanel.removeClass("panel-danger");
                     $errPanel.addClass("panel-success");
