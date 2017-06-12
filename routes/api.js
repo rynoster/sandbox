@@ -15,16 +15,16 @@ function randomString(length, chars) {
 
 function buildHtmlBody(params){
 
-  htmlBody = "Dear " + params.first_name + " " + params.last_name + ",<br><br>"
-  htmlBody += "<strong>Thank you for registering to the Datacentrix 2017 Showcase event</strong><br><br>"
-  htmlBody += "To verify your email address, please follow the link below:<br><br>"
-  htmlBody += "https://datacentrix.chirpee.io/verify/" + params.token + "<br><br>"
-  htmlBody += "If you didn't register for this event, just ignore this email and nothing will happen.<br><br>"
-  htmlBody += "Have a nice day,<br>"
-  htmlBody += "Datacentrix Showcase team.<br><br>"
-  htmlBody += "This email was sent by a user triggered event and thus can't really be unsubscribed from.<br><br>"
+  var hjs = require("hjs");
+  var fs = require("fs");
+  var htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
 
-  return(htmlBody);
+  var htmlCompile = hjs.compile(htmlFile);
+  var htmlRender = htmlCompile.render({NameofDelegate: params.first_name + " " + params.last_name});
+
+  // console.log(htmlRender);
+
+  return(htmlRender);
 
 }
 

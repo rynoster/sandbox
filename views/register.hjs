@@ -15,6 +15,10 @@
         display: none;
     }
 
+    .customCaptcha {
+		display: none;
+	}
+
 </style>
    
     <!-- ============================================================= Top Banner ============================================================= -->
@@ -156,12 +160,11 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="No" data-validation="required">No</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="No" data-validation="required" checked="checked">No</label>
                                                     <label class="radio-inline"><input type="radio" name="sel-am" value="Yes" data-validation="required">Yes</label>
                                                 </div>
                                             </div>
                                             
-                                            <!-- Ryno to add code that will unhide this textbox if radio button above is YES -->
                                             <div class="row">
                                                 <div class="col-sm-6 outer-top-xxs">
                                                     <input id="dcx-am" type="text" name="dcx=am" class="form-control" placeholder="Datacentrix account manager (Required if Yes)" 
@@ -175,7 +178,6 @@
                                             </div>
 
                                         </div>
-
                                        
                                         <div class="row">
               
@@ -195,6 +197,13 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-6 outer-bottom-xs">
+                                                <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe"></div>	
+                                                <input type="hidden" class="customCaptcha" data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe" data-validation-error-msg="Please complete the captcha">
+                                            </div><!-- /.col -->
+                                        </div><!-- /.row -->
 
                                         <button type="submit" id="register" class="btn btn-default">Register for the event</button>
                                         
@@ -249,6 +258,7 @@
 <!-- ====================================  Do not remove or change - this is needed to render page  ==================================' -->
 {{> jscript}}
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 <script>  
@@ -293,6 +303,7 @@
 
         $.validate({
             modules : 'logic, security',
+            validateHiddenInputs : true,
             onModulesLoaded : function() {
             
         },

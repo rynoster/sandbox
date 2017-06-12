@@ -80,7 +80,19 @@ router
 
   .get('/login', (req, res, next) => {
     
-    res.render('login');
+    // res.render('login');
+
+    res.render('admin/main', {
+      title: "chirpee.io login",
+      loggedOut: true,
+      login: "login",
+      partials : {
+        header: "admin/header", 
+        body: "login",
+        footer: "admin/footer", 
+      }
+    })
+
   }) 
 
   .get('/logout', (req, res, next) => {
@@ -110,7 +122,7 @@ router
     function(req, res) {
 
       if (!req.session.sourceURL) {
-        res.redirect('/auth');
+        res.redirect('/sponsoredit');
       }
       else {
         res.redirect(req.session.sourceURL);
@@ -252,9 +264,19 @@ router
 
   .get('/admin', auth.loginRequired, (req,res) => {
 
-    res.render('admin', {
-      partials: {jscript: "jscript"}
+    res.render('admin/main', {
+      users: "users",
+      title: "chirpee.io - User management",
+      partials : {
+        header: "admin/header", 
+        body: "admin",
+        footer: "admin/footer", 
+      }
     })
+
+    // res.render('admin', {
+    //   partials: {jscript: "jscript"}
+    // })
   })
 
   // ===========================================================================
@@ -263,9 +285,23 @@ router
   
   .get('/sponsoredit', auth.loginRequired, auth.adminRequired, (req,res) => {
 
-    res.render('sponsoredit', {
-      partials: {jscript: "jscript"}
+    
+    res.render('admin/main', {
+      sponsors: "sponsors",
+      title: "chirpee.io - Sponsor edit page",
+      partials : {
+        header: "admin/header", 
+        body: "sponsoredit",
+        footer: "admin/footer", 
+      }
     })
+    
+    
+    // res.render('sponsoredit', {
+    //   partials: {jscript: "jscript"}
+    // })
+
+
   })
  ;
 

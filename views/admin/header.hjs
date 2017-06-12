@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle collapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/login" class="navbar-brand">chirpee.io</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        {{#loggedOut}}
+            {{#login}}
+                <li class="active"><a href="/login">Login</a></li>
+            {{/login}}
+            {{^login}}
+                <li class=""><a href="/login">Login</a></li>
+            {{/login}}
+        {{/loggedOut}}
+
+        {{#sponsors}}
+            <li class="active"><a href="/sponsoredit">Sponsors</a></li>
+        {{/sponsors}}
+        {{^sponsors}}
+            <li class=""><a href="/sponsoredit">Sponsors</a></li>
+        {{/sponsors}}
+
+        {{#users}}
+            <li class="active"><a href="/admin">Users</a></li>
+        {{/users}}
+        {{^users}}
+            <li class=""><a href="/admin">Users</a></li>
+        {{/users}}
+
+      </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <!--<li class="active"><a href="/login">Log in</a></li>-->
+        <!--<li class=""><a href="/signup">Sign up</a></li>-->
+    </ul>
+    </div>
+  </div>
+</nav>
