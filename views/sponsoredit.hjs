@@ -2,6 +2,10 @@
     .list-group-hover .list-group-item:hover {
        background-color: black;
     }
+
+    #errPanel {
+        display: none;
+    }
 </style>
 
 <html>
@@ -78,7 +82,7 @@
 
                     </div>
 
-                     <div id="errPanel" class="panel panel-danger hidden">
+                     <div id="errPanel" class="panel panel-danger">
                         <div class="panel-heading">
                             <h3 id="errHeading" class="panel-title">Error</h3>
                         </div>
@@ -88,13 +92,25 @@
                         </div>
                     </div>
 
+                    <div id='open_ender_output'></div>
+
+                    <div id="pnPreview" class="panel panel-primary" hidden>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">HTML Preview</h3>
+                        </div>
+
+                        <div id="contentPreview" class="panel-body">
+                        </div>
+                    </div>
+
                 </div>
+                
                 
             </div>
 
         </div>
 
-        {{> jscript}}
+        <!--{{> jscript}}-->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -109,7 +125,9 @@
         $sponsors = $("#ulSponsors");
         $errPanel = $("#errPanel");
         $errHeading = $("#errHeading");
-        $errMessage  = $("#errMessage");
+        $errMessage = $("#errMessage");
+        $pnPreview = $("#pnPreview") ;
+        $contentPreview = $("#contentPreview") ;
         
         //All the form fields defined as variables below
         $sponsorTag = $("#sponsorTag");
@@ -130,6 +148,14 @@
             }
         });
 
+        $('#ulSponsors').on('mouseenter', 'li', function() {
+            $(this).addClass("list-group-item-info")
+        })
+
+        $('#ulSponsors').on('mouseleave', 'li', function() {
+            $(this).removeClass("list-group-item-info")
+        })
+
         //Load the form with the sponsor data
         $('#ulSponsors').on('click', 'li', function() {
             var sponsorTag = $(this).attr('id');
@@ -149,6 +175,13 @@
                     $sponsorName.val(sponsor.sponsorName);
                     $sponsorLevel.val(sponsor.sponsorLevel);
                     $sponsorContent.val(sponsor.sponsorContent);
+
+                    var openEnderContent = '<strong>Test</strong>';
+
+                    $pnPreview.show();
+                    $contentPreview.empty();
+                    $contentPreview.append(sponsor.sponsorContent);
+
                 },
 
                 error: function() {
@@ -157,6 +190,11 @@
             });
 
         });
+
+        $sponsorContent.on('keyup', function() {
+            $contentPreview.empty();
+            $contentPreview.append($sponsorContent.val());
+        })
 
         $('#btnUpdate').on('click', function() {
             var sponsor = {
@@ -172,11 +210,11 @@
                 data: sponsor,
 
                 success: function(sponsor) {
-                    $errPanel.removeClass("hidden");
+                    $errPanel.show();
                     $errPanel.removeClass("panel-danger");
                     $errPanel.addClass("panel-success");
                     $errMessage.text("Record successfully updated");
-                    setTimeout($errPanel.fadeOut(10000),5000)
+                    $errPanel.fadeOut( 3000 );
                 },
 
                 error: function(xhr, textStatus, errorThrown) {
