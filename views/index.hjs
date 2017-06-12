@@ -211,6 +211,8 @@
 								<figure>
 									
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="AMD"><img src="assets/images/sponsor logos/Silver/amd.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIT"><img src="assets/images/sponsor logos/Silver/citrix.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FRP"><img src="assets/images/sponsor logos/Silver/forcepoint.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="IBM"><img src="assets/images/sponsor logos/Silver/ibm.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="NET"><img src="assets/images/sponsor logos/Silver/netapp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
@@ -218,7 +220,7 @@
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VEE"><img src="assets/images/sponsor logos/Silver/veeam.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
+								
 								</figure>
 								
 								
@@ -236,6 +238,7 @@
 									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/tripleplay.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/vmware.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
+									<img src="assets/images/sponsor logos/Display/veeam.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 								</figure>
 								
 								</header>
