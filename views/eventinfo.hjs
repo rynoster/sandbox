@@ -186,7 +186,7 @@
                                 </header>
                                 
                             </header>
-		                    <a href="#" class="btn btn-large">Book your seat now</a>
+		                    <a href="/register" class="btn btn-large">Book your seat now</a>
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 					
@@ -194,7 +194,7 @@
 			</section>
 
 
-            <section class="outer-bottom-sm">
+            <section>
 
     <!-- ========================================= Break away session - 14:15 to 14:35  =================================== -->
 
@@ -318,7 +318,7 @@
  <!-- ========================================= After Party - 20:00 to late =================================== -->
 
                     <!-- Next row - Slot info  -->
-                    <div class="row outer-bottom-sm">
+                    <div class="row">
                         <div class="col-md-3" >
                             <p class="text-center">20:00 till late</p>
                         </div>
@@ -329,7 +329,7 @@
                                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Joe Parkers comedy club
                                 </p><br><br>
                         </div>
-                    </div>
+                    </div>  
                 </section>
 
 {{> jscript}}
