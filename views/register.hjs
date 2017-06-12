@@ -75,7 +75,7 @@
                                             </div>
 
                                             <div class="col-sm-6">
-                                                <input id="bustitle" type="text" name="bustitle" class="form-control input-text" placeholder="Business title (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Business title must be longer than 3 characters" />
+                                                <input id="bustitle" type="text" name="bustitle" class="form-control input-text" placeholder="Business title (Required)" data-validation="length" data-validation-length="min2" data-validation-error-msg="Business title must be longer than 2 characters" />
                                                 <label class="label-helper" for="bustitle">Business title </label>
                                             </div>
                                         </div>
@@ -226,14 +226,14 @@
                                 <div class="col-md-8 inner-right-md vcenter">
 
                                         
-                                        <h2>Thank you for registering for the event - Verify Email</h2>
-                                        <p>In order to complete your registration, please click on the verification link we just mailed you. 
-                                            After verification of your email, will your seat be confirmed.
+                                        <h2>Thank you for registering to attend Showcase 2017</h2>
+                                        <h4>Verify your email address</h4>
+                                        <p>To complete your registration, please click on the verification link  
+                                            that we just emailed to you. After verifying of your email, your seat will be confirmed. 
                                             <br><br>
-                                            
-                                            Please start tweeting about the event using the hashtag <strong>#datacentrixshowcase17</strong>. Also 
-                                            please follow us on facebook and join the conversation on your thoughts of sigularity. Will humans be assimulated into
-                                            code - are we on the brink of a new humanity?
+                                            Please start tweeting about the event using #datacentrixshowcase. 
+                                            Follow us on Facebook and join the conversation. Will humans be assimilated into code 
+                                            - are we on the brink of a new humanity?
                                         </p>
                                         <a href="/" class="btn btn-large">Go to home page</a>    
                                 </div>	

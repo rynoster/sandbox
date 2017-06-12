@@ -37,7 +37,7 @@
                         </div><!-- /.col -->
 						
 						<div class="col-sm-6 inner-left-xs inner-bottom-xs">
-							<h2>Montecasino conferences video</h2>
+							<h2>Montecasino conference video</h2>
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/8fzkmzlf7AI" frameborder="0" allowfullscreen></iframe>
 						</div><!-- /.col -->
 						
@@ -56,8 +56,8 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-10 center-block text-center">
 							<header>
-								<h1>Where to book accomodation</h1>
-								<p>Montecasino is home to some of Johannesburg’s most popular hotels. Each hotel has a 
+								<h1>Where to book accommodation</h1>
+								<p style="font-size:120%">Montecasino is home to some of Johannesburg’s most popular hotels. Each hotel has a 
                                     character of its own, so you can choose opulence, contemporary, eclectic, business friendly or 
                                     romantic. Really the choice is yours. We invite you to experience them for yourself and 
                                     enjoy an unforgettable stay in Fourways.</p>
@@ -77,13 +77,14 @@
 								<figcaption>
 								
 									<h2>
-										Southern Sun Montecasino
+										Southern Sun
 									</h2>
-									
+									<a href="https://www.tsogosun.com/southern-sun-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									<br><br>
 									<blockquote>Inspired by the design of the 15th century Palazzo Corsini villa in Italy’s picturesque mountain 
                                         region of Gianicolo, our hotel is the perfect blend of stylistic innovation and old-world Venetian charm coupled 
                                         with the modern convenience expected at a Southern Sun hotel.</blockquote>
-									<a href="https://www.tsogosun.com/southern-sun-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
 									
 								</figcaption>
 								
@@ -99,12 +100,13 @@
 								
 								<figcaption>
 								
-									<h2>SunSquare Montecasino</h2>
-									
+									<h2>SunSquare</h2>
+									<a href="https://www.tsogosun.com/sunsquare-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									<br><br>
 									<blockquote>Modern styling and contemporary design ensure a bright, welcoming atmosphere that is 
                                         underscored by outstanding service and attention to detail. Our location allows you to effortlessly 
                                         explore the Montecasino Entertainment Complex, with the renowned Teatro theatre only a short walk away.</blockquote>
-									<a href="https://www.tsogosun.com/sunsquare-montecasino" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
 									
 								</figcaption>
 								
@@ -119,16 +121,17 @@
 								</div><!-- /.icon-overlay -->
 								
 								<figcaption>
-								
+									
 									<h2>
 										Palazzo
 									</h2>
-									
+									<a href="https://www.tsogosun.com/the-palazzo-hotel" class="btn btn-medium" target="_blank">Book with hotel</a>
+									<br><br>
 									<blockquote>The enchantment of its Tuscan-inspired architecture, reflected in the luxurious 
                                         accommodation and spectacular gardens, is one of the reasons the Palazzo hotel has been a 
                                         World Luxury Hotels Award winner for six consecutive years, and a TripAdvisor Certificate of 
                                         Excellence winner in 2015..</blockquote>
-									<a href="https://www.tsogosun.com/the-palazzo-hotel" class="btn btn-medium" target="_blank">Book with hotel</a>
+									
 									
 								</figcaption>
 								
@@ -143,7 +146,7 @@
 			
 			
 			
-			<!-- ============================================================= SECTION – HOW WE WORK ============================================================= -->
+			<!-- ============================================================= SECTION ============================================================= -->
 			
 			<section id="transport">
 				<div class="container inner-xs">
@@ -152,7 +155,7 @@
 						<div class="col-md-8 col-sm-9 center-block text-center">
 							<header>
 								<h1>Transportation</h1>
-								<p>Datacentrix showcase 2017 is hosted at one of the leading hotels in Gauteng, with an array of options when it comes to 
+								<p style="font-size:120%">Datacentrix showcase 2017 is hosted at one of the leading hotels in Gauteng, with an array of options when it comes to 
                                     getting to and from the venue. Here are our primary options. </p>
 							</header>
 						</div><!-- /.col -->
@@ -165,9 +168,8 @@
 								<i class="icon-road icn lg"></i>
 							</div><!-- /.icon -->
 							<h2>Own transport</h2>
-							<p class="text-small">Complimentary parking is included in your conference seat. Once your 
-                                registration is approved, will you eligible to receive your complimentary undercover 
-                                parking.</p>
+							<p class="text-small">Complimentary parking is included in your conference seat. 
+								Once your registration is approved, you will be eligible to receive a complimentary undercover parking</p>
                             
 						</div><!-- /.col -->
 						
@@ -177,7 +179,7 @@
 							</div><!-- /.icon -->
 							<h2>Call a ride</h2>
 							<p class="text-small">Uber: One tap and a car comes directly to you. Hop in—your driver knows exactly where to go. 
-                                And when you get there, just step out. Payment is completely seamless</p>
+                                And when you get there, just step out. Payment is completely seamless.</p>
 						</div><!-- /.col -->
 						
 						<div class="col-sm-4 inner-bottom-xs">
@@ -185,7 +187,7 @@
 								<i class="icon-flight-1 icn lg"></i>
 							</div><!-- /.icon -->
 							<h2>Airport tranfers</h2>
-							<p class="text-small">Airport transfers can be arranged direclty with the hotel you are booked with, or if you are just flying in for the day, we recommend you make use of Uber.</p>
+							<p class="text-small">Airport transfers can be arranged directly with the hotel you are booked with, or if you are just flying in for the day, we recommend you make use of Uber.</p>
 						</div><!-- /.col -->
 						
 					</div><!-- /.row -->

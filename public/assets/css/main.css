@@ -56,10 +56,10 @@ iframe {
 	-webkit-backface-visibility: hidden; /* Fixes transition flickering in Chrome and Safari */
 }
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #283645;
     color: #73879C;
-    font-size: 18px;
+    font-size: 16px;
 	line-height: 150%;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
@@ -124,7 +124,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Lato', sans-serif;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
 	letter-spacing: 0.025em;
     color: #506A85;
@@ -596,7 +596,7 @@ figure.post-media + * {
 .member figcaption h2 span,
 .member figcaption h3 span {
 	display: block;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.015em;
 }
@@ -1658,7 +1658,7 @@ aside .thumb figure {
     background: #1ABB9C;
     padding: 11px 20px 13px;
 	margin: 15px 0;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 14px;
 	letter-spacing: 0.02em;
@@ -2099,7 +2099,7 @@ p .btn {
 	border-top-color: #1ABB9C;
 }
 .tabs-side .tab a div {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2158,7 +2158,7 @@ p .btn {
 	overflow: hidden;
 }
 .tabs-top .tab a div {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2231,7 +2231,7 @@ p .btn {
 	overflow: hidden;
 }
 .tabs-circle-top .tab a div {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2461,7 +2461,7 @@ blockquote:before {
 	border-color: inherit !important;
 }
 .panel-title {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 15px;
 	line-height: 1.42857;
     font-weight: 700;
@@ -2766,7 +2766,7 @@ blockquote:before {
 	vertical-align: middle;
 	width: 100%;
 	height: auto;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 22px;
 	/*color: #FFF;*/
@@ -3482,7 +3482,7 @@ blockquote:before {
 	margin-bottom: 15px;
 }
 .pricing .plan .price * {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 100%;
 }
 .pricing .plan .price .amount {
@@ -4117,7 +4117,7 @@ input:focus:-ms-input-placeholder {
 /*===================================================================================*/
 
 .author {
-	font-family: 'Lato', sans-serif;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
 	font-weight: 700;
     line-height: 160%;
@@ -4292,7 +4292,7 @@ input:focus:-ms-input-placeholder {
 	float: none;
 	display: inline-block;
     color: #fff;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: #1ABB9C;
     padding: 11px 20px 13px;
 	margin-left: 0;
@@ -6072,7 +6072,7 @@ a.changepointer {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      font-family: arial;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
 .form-block {
@@ -6090,7 +6090,7 @@ a.changepointer {
 
 .input-text:focus + .label-helper, .input-text:invalid + .label-helper {
   bottom: 95%;
-  font-family: arial;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: lighter;
   line-height: 1;
@@ -6102,7 +6102,7 @@ a.changepointer {
   .input-text:invalid + .label-helper::after {
     color: #f00;
     content: "X";
-    font-family: arial;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1;
     padding-left: 12px; }

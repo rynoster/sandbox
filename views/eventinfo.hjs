@@ -30,10 +30,12 @@
                             <p class="text-center">06:00 to 09:00</p>
                         </div>
                         <div class="col-md-8" >
-                            <p class="text-left"><strong>Registration desk opens</strong></p>
-                            <p style="font-size:90%">The doors will open at 06:00 for registration and the showcase are will open at 07:00. Light snacks drinks will be 
-                                avaialble for the earlybirds. All excutives attending the C-Level breakfast will need to be registered by 06:50 to take their seat for 
-                                the 07:00 breakfast session.</p>
+                            <p class="text-left"><strong>Registration and Showcase opening</strong></p>
+                            <p style="font-size:90%">The doors will open at 06:00 for registration with the central exhibition 
+                                area open to delegates from 07:00. Coffee, tea and light snacks will be available for the early birds. 
+                                All executives attending the C-level breakfast need to be registered by 06:50 to take their seats in La 
+                                Toscana for the 07:00 breakfast session.
+                            </p><p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
                         </div>
                     </div>
                    
@@ -52,10 +54,10 @@
                         </div>
                         <div class="col-md-8" >
                             <p class="text-left"><strong>C-Level exclusive business breakfast</strong></p>
-                            <p style="font-size:90%">This breakfast is per invite only, but you are most welcome to request a seat by regitering for the event 
-                                and once approved you can request a pass to the breakfast session. This breakfast is sponsored by Hewlett-Packard Enterprise with "Unknown" as the 
-                                keynote speaker, discussing the impact of the digital age on South Africa and current business model. We will unpack tough questions on the change 
-                                in the job market if technology starts automating tradinional human jobs. Do not miss this oppertunity.</p> 
+                            <p style="font-size:90%">This breakfast is by invititation only. The breakfast is sponsored by Hewlett-Packard 
+                                Enterprise with renowned industry speakers, discussing the impact of the digital age on South Africa and 
+                                current business models. We will unpack tough questions on changes in the job market once technology starts 
+                                automating traditional human jobs. Do not miss this opportunity.</p> 
                             <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana, facilitated by HPE</p>
                         </div>
                     </div>
@@ -70,13 +72,16 @@
                     <!-- Next row - Slot info  -->
                     <div class="row">
                         <div class="col-md-3" >
-                            <p class="text-center">09:15 to 11:00</p>
+                            <p class="text-center">09:00 to 11:00</p>
                         </div>
                         <div class="col-md-8" >
                             <p class="text-left"><strong>Opening plenary</strong></p>
-                            <p style="font-size:90%">Datacentrix Showcase 2017 promise this year to have a mind-blowing keynote, by venture captilist and former banker, 
-                                Dr. Michael Jordaan. Dr. Jordaan will look at the reality of singularity and how business need to respond to this pardigmn shift we are entering. Other 
-                                speakers like David Charmers, CTO for HPE EMEA will focus on how Hewlett-Packard Enterprise innovate in this new age.</p> 
+                            <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by 
+                                venture captilist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the 
+                                reality of the singularity and how business needs to respond to this paradigm shift we 
+                                are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA at Hewlett 
+                                Packard Enterprisewill focus on the importance of innovation in this new age.
+                            </p> 
                                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Il Grande, facilitated by Rudie Raath, chief digital strategist for Datacentrix
                                 </p>
                         </div>
@@ -162,7 +167,7 @@
 				<div class="container text-center">
 
 							<br>
-                            <h3 style="color:#fff">Lunch is served from 12:30 to 14:00 in the Monte ballroom and outside tent area</h3>
+                            <h3 style="color:#fff">Lunch will be served from 12:30 to 14:00 in the Montecasino Ballroom and outside tent area.</h3>
                             <br>
 					
 				</div><!-- /.container -->
@@ -179,8 +184,8 @@
                                 <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
 								<h2 style="color:#fff">Interactive lunch sesion from 13:15 - 14:00 with </h2>
                                 <h1 style="color:#fff"><strong>TOBY SHAPSHACK</strong></h1>
-                                <p style="color:#fff">Toby is hosting a straight talk session with other leading panellists on the very sensitive 
-                                    topic of singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 
+                                <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive 
+                                    topic of the singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 
                                     today and how should business transform to stay relevant in the future. 
                                 </p>							
                                 </header>
@@ -276,10 +281,12 @@
                         </div>
                         <div class="col-md-8" >
                             <p class="text-left"><strong>Networking and prize giving</strong></p>
-                            <p style="font-size:90%">Please join us for the various luck draw prizes that is on offer. During this hour, delegates will be given the 
-                                oppertunity to visit any partner stands that they might have missed, clarify any questions or just have light snack and drinks with 
-                                other delegates, sponsors and Datacentrix staff.  </p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Monte ballroom, facilitated by Rudie Raath, chief digital strategist for Datacentrix
+                            <p style="font-size:90%">Please join us at the Datacentrix stand for the various lucky 
+                                draw prizes on offer. During this hour, sponsors will present their prizes and delegates 
+                                will be given the opportunity to visit any partner stands that they might have missed 
+                                before moving to La Toscana for cocktails, refreshments, not-to-be-missed entertainment 
+                                and the final lucky draw.</p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom, facilitated by Rudie Raath, chief digital strategist for Datacentrix
                                 </p>
                         </div>
                     </div>
@@ -301,9 +308,13 @@
                         </div>
                         <div class="col-md-8" >
                             <p class="text-left"><strong>Intel cocktail function with live performances from "The Muses"</strong></p>
-                            <p style="font-size:90%">Please join Intel for the closing party you do not want to miss. From a live performance by "The Muses" and liquid chefs entertaining 
-                                delegates with all their bar tricks, we will also give away our big prize. We always drink responsibly and therefore we will have a home driving facility available on the day for all delegates.</p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana, sponsored by Intel
+                            <p style="font-size:90%"><strong>Cocktail function with live performances from “1st Project” and "The Muses"</strong></p> 
+
+                            
+                            <p style="font-size:90%">Please join us for a closing party that you don’t want to miss. 
+                                From live performances by “1st Project” and "The Muses" and liquid chefs entertaining delegates 
+                                with cunning bar tricks. We’ll also be giving away our big prize. <br><br>A home driving facility will be available.</p> 
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana
                                 </p>
                         </div>
                     </div>
@@ -323,9 +334,9 @@
                             <p class="text-center">20:00 till late</p>
                         </div>
                         <div class="col-md-8" >
-                            <p class="text-left"><strong>Datacentrix Showcase 2017 after party  </strong></p>
-                            <p style="font-size:90%">Everyone is invited to join Datacentix in celebrating the event of the year and thanking all sponsors and delegates for sharing 
-                                this special day with us. We always drink responsibly and therefore we will have a home driving facility available on the day for all delegates.</p> 
+                            <p class="text-left"><strong>Parker's Comedy and Jive - Datacentrix Showcase 2017 after party</strong></p>
+                            <p style="font-size:90%">Everyone is invited to join Datacentix in celebrating the event of the 
+                                year and thanking all sponsors and delegates for sharing this special day with us. <br><br> A home driving facility will be available.</p> 
                                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Joe Parkers comedy club
                                 </p><br><br>
                         </div>

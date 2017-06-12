@@ -11,18 +11,18 @@
 						<p>Datacentrix is an ICT solutions provider that uses technology and services to deliver business value to organisations. We partner with our customers, equipping them with valuable insight, and help them to align their technology undertakings with their business strategy.</p>
 						<a href="http://www.datacentrix.co.za/technology-solutions.html" class="txt-btn">Technology Solutions</a><br>
 						<a href="http://www.datacentrix.co.za/managed-services.html" class="txt-btn">Managed Services</a><br>
-						<a href="http://www.datacentrix.co.za/business-applications.html" class="txt-btn">Business Application</a>
+						<a href="http://www.datacentrix.co.za/business-applications.html" class="txt-btn">Business Applications</a>
 				 	</div><!-- /.col -->
 					
 					<!-- =============================== Showcase 2017 ============================= -->
 					<div class="col-xs-6 col-md-4 inner">
 						<h4>Showcase 2017</h4>
 						<hr color="#fff" align="left" width="80%" size="1">
-						<p>Do not miss this opportunity to hear from leaders in the industry, network with top experts and get a peak into a new kind of humanity.</p>
+						<p>Do not miss this opportunity to hear from leaders in the industry, network with top experts and get a glimpse of a new kind of humanity.</p>
 						<ul class="Links">
 							<li><i class="icon-location contact"></i> Montecasino, Johannesburg</li>
 							<li><i class="icon-mobile contact"></i> 087 741 5000</li>
-							<li><a href="#"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
+							<li><a href="mailto:showcase@datacentrix.co.za?subject=Showcase 2017 web contact form"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
 						</ul>
 					</div><!-- /.col -->
 
@@ -35,7 +35,7 @@
 							<a href="/eventinfo">Agenda</a><br>
 							<a href="/logistics">Logistics</a><br>
 							<a href="/register">Register</a><br>
-							<a href="/contactus">Contact info</a><br>
+							<a href="/contactus">Contact us</a><br>
 					</div><!-- /.col -->
 									
 							
