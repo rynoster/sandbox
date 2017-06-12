@@ -3,11 +3,11 @@ var router = express.Router();
 var db = require("../db");
 var auth = require("../auth")
 var crypto = require('crypto');
+var request = require('request');
 
 var app = express();
 
 function buildHtmlBody(params){
-  console.log(params);
 
   htmlBody = "Dear " + params.first_name + " " + params.last_name + ",<br><br>"
   htmlBody += "<strong>Thank you for registering to the Datacentrix 2017 Showcase event</strong><br><br>"
@@ -20,6 +20,18 @@ function buildHtmlBody(params){
 
   return(htmlBody);
 
+}
+
+function buildHtmlContactUs(params){
+  console.log(params);
+
+  htmlBody = "<strong>Contact us request received:</strong><br><br>";
+  htmlBody += "Name: " + params.name + "<br>"
+  htmlBody += "Email address: " + params.email + "<br>"
+  htmlBody += "Subject: " + params.subject + "<br>"
+  htmlBody += "Message: " + params.message + "<br>"
+
+  return(htmlBody);
 }
 
 router
@@ -150,5 +162,53 @@ router
         res.send(200);
       }, next)
     })
+
+  //Google reCAPTCHA API
+  .post('/captcha', (req, res, next) => {
+    
+    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+      return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+    }
+
+    // Put your secret key here.
+    var secretKey = "6LfYcCQUAAAAAKf55V5s0ol_9tK1HKEVqNfi0ynJ";
+
+    // req.connection.remoteAddress will provide IP address of connected user.
+    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    
+    // Hitting GET request to the URL, Google will respond with success or error scenario.
+    request(verificationUrl,function(error,response,body) {
+      body = JSON.parse(body);
+      // Success will be true or false depending upon captcha validation.
+      if(body.success !== undefined && !body.success) {
+        return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+      }
+      
+
+      //Send mail on successful verification
+      var Mail = require('../email');
+      var mail = new Mail({
+        from : "noreply@chirpee.io", 
+        // to : "ryno@coetzee.za.com",
+        to : "showcase@datacentrix.co.za",
+        subject : "Datacentrix Showcase 2017 - Contact Us Request",
+        html : buildHtmlContactUs(req.body),
+        
+        successCallback : function(success){
+          console.log("Mail sent");
+        },
+        
+        errorCallback : function(err){
+          console.log("Mail not sent");
+        }
+      });
+
+      mail.send();
+
+      res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
+
+    });
+
+  })
 
 module.exports = router;
