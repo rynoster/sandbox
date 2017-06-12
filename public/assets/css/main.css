@@ -6091,7 +6091,7 @@ a.changepointer {
 .input-text:focus + .label-helper, .input-text:invalid + .label-helper {
   bottom: 95%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: lighter;
   line-height: 1;
   opacity: 1;
