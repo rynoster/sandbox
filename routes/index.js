@@ -260,7 +260,13 @@ router
   // ===========================================================================
   //  Admin Page : END  ========================================================
   // ===========================================================================
+  
+  .get('/sponsoredit', auth.loginRequired, auth.adminRequired, (req,res) => {
 
+    res.render('sponsoredit', {
+      partials: {jscript: "jscript"}
+    })
+  })
  ;
 
 module.exports = router;

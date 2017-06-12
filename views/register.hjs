@@ -114,8 +114,8 @@
 
                                          <div class="row">
                                             <div class="col-sm-6">
-                                                     <select class="form-control" id="event_profile" data-validation="required" data-validation-error-msg="Please select a registration type">
-                                                        <option value="">Select registration type</option>
+                                                     <select class="form-control" id="event_profile" name="event_profile" data-validation="required" data-validation-error-msg="Please select a registration type">
+                                                        <option disabled selected>Select registration type</option>
                                                         <option value="Customer">End Customer</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
@@ -125,7 +125,6 @@
 
                                         </div>
                                         
-                                        <!-- Ryno needs to add code to display this div if the id:event_profile is - Customer-->
                                         <div id="iam-customer" hidden> 
                                             <div class="row">
                                                 <hr style="border: 0.5px dashed #d8d8d8;" />
@@ -138,8 +137,9 @@
 
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                        <select class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
-                                                            <option value="">Select your role</option>
+                                                        <select class="form-control" id="event_del_level" data-validation="required" data-validation-error-msg="Please select a role from the list" data-validation-depends-on="event_profile" data-validation-depends-on-value="Customer">
+                                                            
+                                                            <option disabled selected>Select your role</option>
                                                             <option value="Board member">Board member</option>
                                                             <option value="MD / CxO / Executive Management">MD / CxO / Executive Management</option>
                                                             <option value="Senior Manager / Business Unit Manager">Senior Manager / Business Unit Manager</option>
@@ -156,15 +156,17 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="No">No</label>
-                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="Yes">Yes</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="No" data-validation="required">No</label>
+                                                    <label class="radio-inline"><input type="radio" name="sel-am" value="Yes" data-validation="required">Yes</label>
                                                 </div>
                                             </div>
                                             
                                             <!-- Ryno to add code that will unhide this textbox if radio button above is YES -->
                                             <div class="row">
                                                 <div class="col-sm-6 outer-top-xxs">
-                                                    <input id="dcx-am" type="text" name="dcx=am" class="form-control" placeholder="Datacentrix account manager (Required if Yes)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Please include you Datacentrix account manager's name" />
+                                                    <input id="dcx-am" type="text" name="dcx=am" class="form-control" placeholder="Datacentrix account manager (Required if Yes)" 
+                                                            data-validation="length" data-validation-length="min3" data-validation-error-msg="Please include your Datacentrix account manager's name" 
+                                                            data-validation-depends-on="sel-am" data-validation-depends-on-value="Yes"/>
                                                 </div> 
                                             </div>
 
@@ -182,8 +184,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 outer-bottom-xs" >
-                                                <select id="dietary" class="form-control" id="event_del_level" data-validation-error-msg="Please select a role from the list">
-                                                    <option value="">Select your requirements</option>
+                                                <select id="dietary" class="form-control" data-validation="required" data-validation-error-msg="Please select dietary requirements from the list">
+                                                    <option disabled selected>Select your requirements</option>
                                                     <option value="Banting">Banting</option>
                                                     <option value="Halaal">Halaal</option>
                                                     <option value="Pescetarians">Pescetarians</option>
@@ -290,7 +292,7 @@
         });
 
         $.validate({
-            modules : 'date, security',
+            modules : 'logic, security',
             onModulesLoaded : function() {
             
         },

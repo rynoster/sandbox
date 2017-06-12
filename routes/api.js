@@ -7,6 +7,12 @@ var request = require('request');
 
 var app = express();
 
+function randomString(length, chars) {
+    var result = '';
+    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+    return result;
+}
+
 function buildHtmlBody(params){
 
   htmlBody = "Dear " + params.first_name + " " + params.last_name + ",<br><br>"
@@ -51,8 +57,9 @@ router
   .post('/user', (req, res, next) => {
     const newUser = req.body;
 
-    //Generate the token, trim to 24 characters
-    newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 24);
+    //Generate the token, trim to 32 characters
+    //newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 32);
+    newUser.token = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
     db("users")
       .where("email", newUser.email)
@@ -110,12 +117,27 @@ router
       }, next)
     })
 
-  .get('/sponsors', auth.loginRequired, auth.adminRequired, (req,res, next) => {
+  .get('/allsponsors', auth.loginRequired, auth.adminRequired, (req,res, next) => {
 
     db("sponsors").then((sponsors) => {
       res.send(sponsors);
     }, next)
   })
+
+  //Update existing sponsor details
+  .put('/sponsor/:sponsorTag', (req,res, next) => {
+  const { sponsorTag } = req.params;
+
+    db("sponsors")
+      .where("sponsorTag", sponsorTag)
+      .update(req.body)
+      .then((result) => {
+        if (result === 0 ) {
+          return res.send(400)
+        }
+        res.send(200);
+      }, next)
+    })
    
 
   //Get user details for specific user id
