@@ -6058,7 +6058,7 @@ input:focus:-ms-input-placeholder {
   background:rgba(0,0,0,0.80);
 }
 /*===================================================================================*/
-/*	TESTING
+/*	RUDIE CUSTOMER
 /*===================================================================================*/
 
 a.changecolor {
@@ -6068,6 +6068,44 @@ a.changecolor {
 a.changepointer {
 	cursor: hand;
 }
+*, *:after, *:before {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: arial;
+    }
+
+.form-block {
+  border: 1px solid #cccccc;
+  margin-bottom: 8px;
+  padding: 8px 12px; }
+
+.label-helper {
+  position: absolute;
+  opacity: 0;
+  transition: .2s bottom, .2s opacity;
+  bottom: 0;
+  left: 13px;
+  z-index: 1; }
+
+.input-text:focus + .label-helper, .input-text:invalid + .label-helper {
+  bottom: 95%;
+  font-family: arial;
+  font-size: 10px;
+  font-weight: lighter;
+  line-height: 1;
+  opacity: 1;
+  padding: 4px; }
+  
+.input-text:invalid {
+  border-left: 10px solid #f00; }
+  .input-text:invalid + .label-helper::after {
+    color: #f00;
+    content: "X";
+    font-family: arial;
+    font-size: 14px;
+    line-height: 1;
+    padding-left: 12px; }
 
 
 /*===================================================================================*/
