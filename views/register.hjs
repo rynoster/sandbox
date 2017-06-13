@@ -126,7 +126,7 @@
                                                         <option value="Customer">End Customer</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
-
+                                                        <option value="Staff">Sponsor</option>
                                                     </select>
                                             </div>
 
@@ -209,6 +209,9 @@
                                         </div><!-- /.row -->
 
                                         <button type="submit" id="register" class="btn btn-default">Register for the event</button>
+                                        
+                                        <!--Test button just to see hide and show of divs as well as animation to top-->
+                                        <!--<button id="btnTest" class="btn btn-default">Test</button>-->
                                         
                                     </form>
                                     
@@ -311,6 +314,15 @@
             }     
         });
 
+        $('#btnTest').on('click', function() {
+            $delRegister.hide();
+            $delRegisterSuccess.fadeIn(2500);
+
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+            $regForm[0].reset();
+        })
+
         $.validate({
             modules : 'logic, security',
             validateHiddenInputs : true,
@@ -342,7 +354,7 @@
                         $delRegister.hide();
                         $delRegisterSuccess.fadeIn(2500);
 
-                        $('html, body').animate({ scrollTop: 0 }, 'fast');
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
 
                         $regForm[0].reset();
 
