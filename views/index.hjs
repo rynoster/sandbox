@@ -20,7 +20,7 @@
 									
 									<!-- Display the Showcase logo on everything but the a mobile phone-->
 									<div class="hidden-phone">
-										<img src="/assets/images/showcase.svg" style="width:700px;height:auto">
+										<img src="/assets/images/showcase.svg" style="width:50%;height:auto">
 										<br><br><br>
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
 									</div>
@@ -36,7 +36,7 @@
 								</div>
 														
 								<div class="fadeInDown-2">
-									<a href="/register" class="btn btn-large">Secure your seat now</a>
+									<a href="/register" class="btn">Secure your seat now</a>
 								</div><!-- /.fadeIn -->
 							</div><!-- /.caption -->
 						</div><!-- /.container -->
@@ -66,8 +66,8 @@
 					
 					<div class="row">
 						
-						<div class="col-sm-6 inner-right-xs text-right">
-							<figure><img src="/assets/images/art/product01.jpg" alt=""></figure>
+						<div class="col-sm-6  text-right">
+							<figure><img src="/assets/images/art/product01.jpg" alt="" style="width:70%"></figure>
 						</div><!-- /.col -->
 						
 						<div class="col-sm-6 inner-top-xs inner-left-xs">
@@ -130,7 +130,7 @@
 						
 						<div class="col-sm-6 inner-top-xs inner-left-xs">
 							<h2>3 Reasons to believe the singularity is near</h2>
-							<h3>A thought provoking article by <a href="https://www.forbes.com/sites/gregsatell/2016/06/03/3-reasons-to-believe-the-singularity-is-near/#7b906b917b39" class="txt-btn">Forbes</a> </h3>
+							<h5>A thought provoking article by <a href="https://www.forbes.com/sites/gregsatell/2016/06/03/3-reasons-to-believe-the-singularity-is-near/#7b906b917b39" class="txt-btn">Forbes</a> </h5>
 							<p>When Ray Kurzweil published The Singularity Is Near in 2006, many scoffed at his outlandish predictions. A year before Apple launched its iPhone, Kurzweil imagined a world in which humans and computers essentially fuse, unlocking capabilities we normally see in science fiction movies.<br><br>
 
 							His argument though, was amazingly simple. He pointed out that as technology accelerates at an exponential rate, progress would eventually become virtually instantaneous—a singularity. Further, he predicted that as computers advanced, they would merge with other technologies, namely genomics, nanotechnology and robotics.<br><br>
@@ -189,7 +189,6 @@
 					
 					<div class="row">
 						<div class="center-block text-center outer-bottom-md">
-							<header>
 								<h2>Gold sponsors</h2>
 								<p>Please click on the logo to access read more about the sponsor</p>
 								<hr color="#005982" align="left" width="100%" size="1">
@@ -241,7 +240,7 @@
 									<img src="assets/images/sponsor logos/Display/veeam.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 								</figure>
 								
-								</header>
+						
 						</div><!-- /.col -->
 					</div><!-- /.row -->					
 				</div><!-- /.container -->
@@ -271,7 +270,7 @@
 						<div class="modal-footer dark-bg" style="background-color:#2C3E50">
 							<div class="col-sm-6 text-left outer-top-xxs">
 							
-								<p style="font-size:75%"><strong>Powered by chirpee.io</strong> - Secure events management platform </p>
+								<p style="font-size:75%"><strong>Datacentrix Showcase 2017</p>
 							</div>							
 							
 							<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
