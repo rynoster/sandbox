@@ -1,4 +1,34 @@
-<form action="/login" method="post">
+<div class="login-container container">
+  <div class="panel">
+    <div class="panel-body">
+
+      <form method="POST" action="/login">
+        <legend>Log In</legend>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="username" id="email" placeholder="Email" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+        </div>
+        <!--<div class="form-group"><a href="/forgot"><strong>Forgot your password?</strong></a></div>-->
+        <button type="submit" class="btn btn-success">Log in</button>
+      </form>
+
+      <!--<div class="hr-title"><span>or</span></div>
+      <div class="btn-toolbar text-center">-->
+      </div>
+    </div>
+  </div>
+
+  <!--<p class="text-center">
+    Don't have an account? <a href="/signup"><strong>Sign up</strong></a>
+  </p>-->
+</div>
+
+
+<!--<form action="/login" method="post">
     <div>
         <label>Email:</label>
         <input type="text" name="username"/>
@@ -10,4 +40,4 @@
     <div>
         <input type="submit" value="Log In">
     </div>
-</form>
+</form>-->

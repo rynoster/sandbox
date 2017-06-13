@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">    
+        body { 
+            background: #d5d5d5 !important; 
+            padding-top: 40px; 
+            padding-bottom: 40px; 
+        }
+        .container {
+            background-color: #fff;
+            margin: 0px auto;
+            padding-right:24px;
+            padding-left:24px;
+        }
+        .dbg {
+            background-color: #005982;
+        }
+        div.ex1 {
+            padding: 5px 5px 5px 5px;
+        }
+        div.ex2 {
+            padding: 10px 10px 10px;
+        }
+        div.ex3 {
+            padding: 10px 10px;
+        }
+        div.ex4 {
+            padding: 10px;
+        }
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+    <div class="container" style="width: 500px">    
+<!-- Datacentric showcase logo on top of the page -->
+        <div class="row">    
+            <div class="col-sm-12 ex4 text-center">    
+                <img src="http://www.datacentrix.co.za/uploads/8/3/1/1/83111140/logo.jpg" alt="Logo" width="200px" height="auto">
+            </div>
+        </div>
+        
+<!-- Content section or message that you want to send -->
+        <div class="row">    
+            <div class="col-sm-12 ex4 text-center">
+                <hr style="border: 0.5px dashed #d8d8d8;" />
+                <h3 style="color: #005981"><strong>Thank you for registering to attend Showcase 2017</strong></h3>
+                <h4 style="color:#f9b14b"><strong>Verify your email address</strong></h4><br>
+                <p>Thank you <strong>{{NameofDelegate}}</strong>, to complete your registration, please click on the verification link that we just emailed to you. After verifying your email, your seat at Showcase 2017 will be booked and confirmed. </p>
+              <!-- adding the button to verify email-->
+                <br>
+                <a href="{{verifyUrl}}" class="btn btn-primary"><span class="glyphicon glyphicon-hand-up"></span> Verify your email address now</a>
+                <br><br>
+                <p><br>
+                  Please start tweeting about the event using <strong>#datacentrixshow.</strong> <br>
+                  <br>
+                  Follow us on <strong><a href="https://www.facebook.com/datacentrix/">Facebook</a></strong> and join the conversation. Will humans be assimilated into code – are we on the brink of a new humanity? </p>
+            </div>
+            <div class="row"> </div>
+        
+        </div>
+    </div>
+    <br>
+<!-- Some footer -->
+    <p class="text-center" style="font-size: 80%;color:grey">Datacentrix Showcase 2017</p>
+    
+</body>
+</html>
+ 

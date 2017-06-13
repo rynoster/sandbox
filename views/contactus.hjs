@@ -76,7 +76,6 @@
 									<div class="col-sm-12">
 										<div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe"></div>	
 										<input type="hidden" class="customCaptcha" data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe" data-validation-error-msg="Please complete the captcha">
-
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 

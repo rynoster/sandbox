@@ -11,13 +11,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title>Sponsor Edit Page</title>
+        <title>{{title}}</title>
     </head>
     <body>
 
         <div class="container">
-            <h1>Sponsor Edit Page</h1>
-
             <div class="row">
                 <div class="col-lg-3">
                     <div class="panel panel-primary">
