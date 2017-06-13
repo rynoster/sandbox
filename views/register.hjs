@@ -15,15 +15,12 @@
         display: none;
     }
 
-<<<<<<< HEAD
     .input[type="radio"] + label {
         margin-right: 30px;
     }   
-=======
     .customCaptcha {
 		display: none;
 	}
->>>>>>> 384dd28a65c93abc2489fa0b657fcbd0d70009a6
 
 </style>
    
@@ -242,17 +239,24 @@
                                 
                                 <div class="col-md-8 inner-right-md vcenter">
 
-                                        
+                                        <!--RC: Button moved to top - request by Monique-->
+                                        <a href="/" class="btn btn-large">Go to home page</a>    
+
                                         <h2>Thank you for registering to attend Showcase 2017</h2>
                                         <h4>Verify your email address</h4>
                                         <p>To complete your registration, please click on the verification link  
-                                            that we just emailed to you. After verifying of your email, your seat will be confirmed. 
+                                            that we just emailed to you. After verifying your email address, your registration 
+                                            will go through an approval process with our Marketing team - a quick 
+                                            process that will be completed in two working days. 
                                             <br><br>
-                                            Please start tweeting about the event using #datacentrixshowcase. 
-                                            Follow us on Facebook and join the conversation. Will humans be assimilated into code 
+                                            Once aproved, you'll receive an email confirming that your seat at Showcase 2017 is booked.
+                                            <br><br>
+                                            Please start tweeting about the event using #datacentrixshow. 
+                                            Follow us on Facebook and join the conversation. 
+                                            <br><br>Will humans be assimilated into code 
                                             - are we on the brink of a new humanity?
                                         </p>
-                                        <a href="/" class="btn btn-large">Go to home page</a>    
+                                        
                                 </div>	
 							</div>
 						</div>
