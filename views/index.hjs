@@ -233,7 +233,7 @@
 									<img src="assets/images/sponsor logos/Display/black.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/f5.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/microfocus.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
-									<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MIM"><img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/tripleplay.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/vmware.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
