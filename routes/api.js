@@ -7,29 +7,41 @@ var request = require('request');
 
 var app = express();
 
+function fullUrl(req) {
+  var url=require('url');
+  return url.format({
+    protocol: req.protocol,
+    host: req.get('host'),
+    // pathname: req.originalUrl
+  });
+}
+
 function randomString(length, chars) {
     var result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
 }
 
-function buildHtmlBody(params){
+function buildHtmlBody(params, fullUrl){
 
   var hjs = require("hjs");
   var fs = require("fs");
   var htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
 
   var htmlCompile = hjs.compile(htmlFile);
-  var htmlRender = htmlCompile.render({NameofDelegate: params.first_name + " " + params.last_name});
+  var htmlRender = htmlCompile.render({
+    NameofDelegate: params.first_name + " " + params.last_name,
+    token: params.token,
+    verifyUrl: fullUrl + "/verify/" + params.token,
+  });
 
-  // console.log(htmlRender);
+  console.log(htmlRender);
 
   return(htmlRender);
 
 }
 
 function buildHtmlContactUs(params){
-  console.log(params);
 
   htmlBody = "<strong>Contact us request received:</strong><br><br>";
   htmlBody += "Name: " + params.name + "<br>"
@@ -46,7 +58,14 @@ router
   })
 
   //Shows all users
-  .get('/allUsers', auth.loginRequired, auth.adminRequired, (req,res, next) => {
+  .get('/allusers', auth.loginRequired, auth.adminRequired, (req,res, next) => {
+
+    // Use the below to test email verification email rendering
+    // buildHtmlBody({
+    //   first_name: "Piet",
+    //   last_name: "Skiet",
+    //   token: "tokentest"
+    // },fullUrl(req));
 
     db("users").then((users) => {
       res.send(users);
@@ -79,7 +98,7 @@ router
                 from : "noreply@chirpee.io", 
                 to : newUser.email,
                 subject : "Datacentrix Showcase 2017 - Email Address Verification Request",
-                html : buildHtmlBody(newUser),
+                html : buildHtmlBody(newUser, fullUrl(req)),
                 // html : "the <strong>verification</strong> email",
                 successCallback : function(success){
                   console.log("Mail sent");
@@ -205,7 +224,6 @@ router
       if(body.success !== undefined && !body.success) {
         return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
       }
-      
 
       //Send mail on successful verification
       var Mail = require('../email');

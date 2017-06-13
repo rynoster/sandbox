@@ -58,7 +58,7 @@
                 <p>Thank you <strong>{{NameofDelegate}}</strong>, to complete your registration, please click on the verification link that we just emailed to you. After verifying your email, your seat at Showcase 2017 will be booked and confirmed. </p>
               <!-- adding the button to verify email-->
                 <br>
-                <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-hand-up"></span> Verify your email address now</a>
+                <a href="{{verifyUrl}}" class="btn btn-primary"><span class="glyphicon glyphicon-hand-up"></span> Verify your email address now</a>
                 <br><br>
                 <p><br>
                   Please start tweeting about the event using <strong>#datacentrixshow.</strong> <br>

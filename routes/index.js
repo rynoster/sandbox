@@ -267,6 +267,7 @@ router
     res.render('admin/main', {
       users: "users",
       title: "chirpee.io - User management",
+      loggedIn: true,
       partials : {
         header: "admin/header", 
         body: "admin",
@@ -289,6 +290,7 @@ router
     res.render('admin/main', {
       sponsors: "sponsors",
       title: "chirpee.io - Sponsor edit page",
+      loggedIn: true,
       partials : {
         header: "admin/header", 
         body: "sponsoredit",
