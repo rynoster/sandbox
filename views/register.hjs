@@ -15,9 +15,15 @@
         display: none;
     }
 
+<<<<<<< HEAD
+    .input[type="radio"] + label {
+        margin-right: 30px;
+    }   
+=======
     .customCaptcha {
 		display: none;
 	}
+>>>>>>> 384dd28a65c93abc2489fa0b657fcbd0d70009a6
 
 </style>
    

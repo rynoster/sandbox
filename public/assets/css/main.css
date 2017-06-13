@@ -132,29 +132,29 @@ h6 {
 	/*word-wrap: break-word;*/
 }
 h1 {
-    font-size: 44px;
+    font-size: 30px;
     line-height: 130%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 h2 {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 130%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 h3 {
     font-size: 20px;
-    line-height: 150%;
-    margin-bottom: 15px;
+    line-height: 130%;
+    margin-bottom: 10px;
 }
 h4 {
     font-size: 16px;
-    line-height: 150%;
-    margin-bottom: 15px;
+    line-height: 130%;
+    margin-bottom: 10px;
 }
 h5 {
     font-size: 14px;
-    line-height: 160%;
-    margin-bottom: 13px;
+    line-height: 130%;
+    margin-bottom: 10px;
 }
 h6 {
     font-size: 12px;
@@ -1428,7 +1428,7 @@ aside .thumb figure {
     margin: 0;
 }
 .navbar-nav > li > a {
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 20px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -5314,9 +5314,9 @@ input:focus:-ms-input-placeholder {
 	}
 	
 	h1 {
-		font-size: 33px;
+		font-size: 25pxpx;
 		line-height: 120%;
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 	}
 	
 	header p {
@@ -6091,11 +6091,11 @@ a.changepointer {
 .input-text:focus + .label-helper, .input-text:invalid + .label-helper {
   bottom: 95%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: lighter;
-  line-height: 1;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 120%;
   opacity: 1;
-  padding: 4px; }
+  }
   
 .input-text:invalid {
   border-left: 10px solid #f00; }
@@ -6106,6 +6106,7 @@ a.changepointer {
     font-size: 14px;
     line-height: 1;
     padding-left: 12px; }
+
 
 
 /*===================================================================================*/
