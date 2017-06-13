@@ -23,6 +23,7 @@
 										<img src="/assets/images/showcase.svg" style="width:700px;height:auto">
 										<br><br><br>
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
+										<p style="font-weight: bold; font-size: 150%; color:#005981">Montecasino</p>
 									</div>
 									<div class="hidden-lg hiiden-md hidden-sm" style="padding-bottom: 30px">
 										
@@ -191,7 +192,7 @@
 						<div class="center-block text-center outer-bottom-md">
 							<header>
 								<h2>Gold sponsors</h2>
-								<p>Please click on the logo to access read more about the sponsor</p>
+								<p>Please click on the logo to read more about the sponsor</p>
 								<hr color="#005982" align="left" width="100%" size="1">
 								<figure>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL"><img src="assets/images/sponsor logos/Gold/DellEMC.jpg" alt="" style="width:150px;height:auto;padding: 10px">&nbsp &nbsp</a>
@@ -206,7 +207,7 @@
 								<br/>
 								<br/>
 								<h2 style="padding-top: 40px">Silver sponsors</h2>
-								<p>Please click on the logo to access read more about the sponsor</p>
+								<p>Please click on the logo to read more about the sponsor</p>
 								<hr color="#005982" align="left" width="100%" size="1">
 								<figure>
 									
@@ -218,7 +219,8 @@
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PFO"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
+									<!--RC: Removed as a Silver sponsor until confirmed with Monique-->
+									<!--<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>-->
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								
 								</figure>
@@ -234,7 +236,10 @@
 									<img src="assets/images/sponsor logos/Display/black.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/f5.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/microfocus.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
-									<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
+									
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MIM"><img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp</a>
+									<!--<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp-->
+
 									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/tripleplay.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/vmware.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
@@ -257,14 +262,14 @@
 					<div class="modal-content">
 						<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
 								<button class="close" data-dismiss="modal">&times;</button>
-								<p id="sponsorLevel" class="modal-title">Sponsor Level goes here</p>
+								<p id="sponsorLevel" class="modal-title"></p>
 						
 						</div>
 
 						<div class="modal-body">
 								
 								<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
-								<p class="outer-top-xs" id="sponsorContent">Sponsor content will go here.</p>
+								<p class="outer-top-xs" id="sponsorContent"></p>
 
 						</div>
 

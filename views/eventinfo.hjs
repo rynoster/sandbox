@@ -77,12 +77,12 @@
                         <div class="col-md-8" >
                             <p class="text-left"><strong>Opening plenary</strong></p>
                             <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by 
-                                venture captilist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the 
+                                venture capitalist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the 
                                 reality of the singularity and how business needs to respond to this paradigm shift we 
                                 are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA at Hewlett 
-                                Packard Enterprisewill focus on the importance of innovation in this new age.
+                                Packard Enterprise will focus on the importance of innovation in this new age.
                             </p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Il Grande, facilitated by Rudie Raath, chief digital strategist for Datacentrix
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Ill Grande, facilitated by Rudie Raath, chief digital strategist for Datacentrix
                                 </p>
                         </div>
                     </div>
@@ -182,8 +182,8 @@
 					    <div class="col-md text-center outer-bottom-xs outer-top-xs">
 							<header>
                                 <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
-								<h2 style="color:#fff">Interactive lunch sesion from 13:15 - 14:00 with </h2>
-                                <h1 style="color:#fff"><strong>TOBY SHAPSHACK</strong></h1>
+								<h2 style="color:#fff">Interactive lunch session from 13:15 - 14:00 with </h2>
+                                <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
                                 <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive 
                                     topic of the singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 
                                     today and how should business transform to stay relevant in the future. 
@@ -191,7 +191,8 @@
                                 </header>
                                 
                             </header>
-		                    <a href="/register" class="btn btn-large">Book your seat now</a>
+                            <!--RC: Removed for now until backend is finished to book seats-->
+		                    <!--<a href="/register" class="btn btn-large">Book your seat now</a>-->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 					
@@ -307,12 +308,13 @@
                             <p class="text-center">17:00 to 20:00</p>
                         </div>
                         <div class="col-md-8" >
-                            <p class="text-left"><strong>Intel cocktail function with live performances from "The Muses"</strong></p>
-                            <p style="font-size:90%"><strong>Cocktail function with live performances from “1st Project” and "The Muses"</strong></p> 
+                            <!--RC: Removed first line for Monique-->
+                            <!--<p class="text-left"><strong>Intel cocktail function with live performances from "The Muses"</strong></p>-->
+                            <p style="font-size:100%"><strong>Cocktail function with live performances from “1st Project” and "The Muses"</strong></p> 
 
                             
                             <p style="font-size:90%">Please join us for a closing party that you don’t want to miss. 
-                                From live performances by “1st Project” and "The Muses" and liquid chefs entertaining delegates 
+                                From live performances by “1st Project” and "The Muses" to Liquid Chefs entertaining delegates 
                                 with cunning bar tricks. We’ll also be giving away our big prize. <br><br>A home driving facility will be available.</p> 
                                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana
                                 </p>
@@ -337,7 +339,7 @@
                             <p class="text-left"><strong>Parker's Comedy and Jive - Datacentrix Showcase 2017 after party</strong></p>
                             <p style="font-size:90%">Everyone is invited to join Datacentix in celebrating the event of the 
                                 year and thanking all sponsors and delegates for sharing this special day with us. <br><br> A home driving facility will be available.</p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Joe Parkers comedy club
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Parker's Comedy and Jive
                                 </p><br><br>
                         </div>
                     </div>  

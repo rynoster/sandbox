@@ -61,7 +61,7 @@
 									
 									<ul class="dropdown-menu">
 										<li><a href="/logistics">Venue</a></li>
-										<li><a href="/logistics#hotels">Accomodation</a></li>
+										<li><a href="/logistics#hotels">Accommodation</a></li>
 										<li><a href="/logistics#transport">Transfers & parking</a></li>
 									</ul><!-- /.dropdown-menu -->
 								</li>
