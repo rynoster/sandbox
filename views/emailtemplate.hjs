@@ -55,7 +55,8 @@
                 <hr style="border: 0.5px dashed #d8d8d8;" />
                 <h3 style="color: #005981"><strong>Thank you for registering to attend Showcase 2017</strong></h3>
                 <h4 style="color:#f9b14b"><strong>Verify your email address</strong></h4><br>
-                <p>Thank you <strong>{{NameofDelegate}}</strong>, to complete your registration, please click on the verification link that we just emailed to you. After verifying your email, your seat at Showcase 2017 will be booked and confirmed. </p>
+                <p>Thank you <strong>{{NameofDelegate}}</strong>, to complete your registration, please click on the verification link that we just emailed to you. Please note that all registrations are subject to approval. This process will be completed within 2 working days. We're looking forward to being in touch with you. </p>
+                <p>Kind regards, <br> The Showcase team</p>
               <!-- adding the button to verify email-->
                 <br>
                 <a href="{{verifyUrl}}" class="btn btn-primary"><span class="glyphicon glyphicon-hand-up"></span> Verify your email address now</a>

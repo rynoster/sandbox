@@ -25,21 +25,29 @@
 								</div>
 								
 								<div class="col-lg-8 outer-bottom-xs">
-										<h2> You have successfully confirmed your registration email address.</h2>
+										<h2> You have successfully verified your registration email address.</h2>
 										<p>
-											Thank you <strong> {{fullName}}</strong>, your email address has been verified. You application has been submitted 
-											to our marketing team for approval. Your applicatin will be reviewed in the next 2 business days,
-											where after you will receive a email confirming acceptance and that your seat is reserved.
+											Thank you <strong> {{fullName}}</strong>, your email address has been verified. Your registraion has been submitted 
+											to our marketing team for approval - a quick process that will be completed in two working days.
+										</p>
+										<br>
+										<p>
+											Once approved, you'll receive an email confirming your seat at Showcase 2017 is booked.
 										</p>
 										<br>
 										<p>	
-											Registrations for breakout sessions and all related bookings options will open 1 July 2017. You will also 
-											receive a reminder mail to log back into the site and reserve your seat in our breakout sessions. All of these 
-											session have limited seats and you will need to reserve yours as soon as this opens. 
+											Delegate registrations for the breakaway sessions and lunchtime panel discussion will open on 1 July 2017. A reminder 
+											email will be sent to you once the booking process is available. Please note that all of the sessions throughout the 
+											day have limited seats. Bookings are essential to avoid disappointment. 
 										</p>
 										<br>
 										<p>	
-											Do remember to follow us on facebook and start tweeting today using the hashtag <strong>#DatacentrixShowcase</strong>.
+											Follow us on <a href="http://www.facebook.com/datacentrix">Facebook</a> and start tweeting about the event today using <strong>#DatacentrixShowcase</strong>.
+										</p>
+										<br>
+										<p>	
+											We're looking forward to being in touch. <br>
+											The Showcase team
 										</p>
 										<a href="http://www.datacentrix.co.za" target="_blank" class="btn btn-large">Visit Datacentrix.co.za</a> 
 								</div>
