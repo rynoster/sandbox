@@ -192,10 +192,8 @@
                                             <div class="col-sm-6 outer-bottom-xs" >
                                                 <select id="dietary" class="form-control" data-validation="required" data-validation-error-msg="Please select dietary requirements from the list">
                                                     <option disabled selected>Select your requirements</option>
-                                                    <option value="Banting">Banting</option>
                                                     <option value="Halaal">Halaal</option>
-                                                    <option value="Pescetarians">Pescetarians</option>
-                                                    <option value="Vegan">Vegan</option>
+                                                    <option value="Pescetarians">Kosher</option>
                                                     <option value="Vegetarian">Vegetarian</option>
                                                     <option value="None">None</option>
                                                 </select>
