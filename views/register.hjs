@@ -52,10 +52,11 @@
 												
                                 <section id="regform-section" class="outer-xs">
                                     
-                                    <h2>Please complete to confirm your attendance</h2>
-                                    <p>This exclusive business conference is free of charge. For this reason, all registrations are subject to approval 
+                                    <h2>Please complete the form to book your seat at Showcase 2017</h2>
+                                    <!--RC: Removed per request from Monique-->
+                                    <!--<p>This exclusive business conference is free of charge. For this reason, all registrations are subject to approval 
                                         by Datacentrix’ marketing team – a quick process that’ll be completed within 2 working days. <br><br>As soon as your registration is approved, 
-                                        your seat will be booked and you’ll be notified via email. We’re looking forward to contacting you.</p>
+                                        your seat will be booked and you’ll be notified via email. We’re looking forward to contacting you.</p>-->
                                     
                                     <form onsubmit="return false" id="regform" class="form-horizontal">
                                        
@@ -231,7 +232,8 @@
 
 
 <!-- ============================================================= SECTION HIDDEN - Registration Success =========================================================-->
-			<section id="DelRegister-Success" hidden>
+            <!--RC: Old email verfication div, removed on request from Johann-->
+			<!--<section id="DelRegister-Success" hidden>
 				<div class="container">				
 						<div class="col-sm-12 outer-bottom-md outer-top-md">
 							<div class="row">
@@ -242,7 +244,7 @@
                                 
                                 <div class="col-md-8 inner-right-md vcenter">
 
-                                        <!--RC: Button moved to top - request by Monique-->
+                                        RC: Button moved to top - request by Monique
                                         <a href="/" class="btn btn-large">Go to home page</a>    
 
                                         <h2>Thank you for registering to attend Showcase 2017</h2>
@@ -258,6 +260,36 @@
                                             Follow us on <a href="http://www.facebook.com/datacentrix">Facebook</a> and join the conversation. 
                                             <br><br>Will humans be assimilated into code 
                                             - are we on the brink of a new humanity?
+                                        </p>
+                                        
+                                </div>	
+							</div>
+						</div>
+				</div>
+            </section>-->
+
+            <section id="DelRegister-Success" hidden>
+				<div class="container">				
+						<div class="col-sm-12 outer-bottom-md outer-top-md">
+							<div class="row">
+                                
+                                <div class="col-md-2">	
+                                    <figure><img src="assets/images/art/emailverify.jpg" alt="" style="width:150px;height:auto;"></figure>
+                                </div>
+                                
+                                <div class="col-md-8 inner-right-md vcenter">
+
+                                        <!--RC: Button moved to top - request by Monique-->
+                                        <a href="/" class="btn btn-large">Go to home page</a>    
+
+                                        <h2>Thank you for registering to attend Showcase 2017</h2>
+                                        <p>We’re looking forward to having you as our guest.
+                                            <br><br>
+                                            We’ll be sending you more information about securing your seat at the power breakaway sessions and lunchtime interactive panel discussion with industry experts and guest speakers on topics that are relevant to you and to your business on your journey to digitisation.
+                                            <br><br>
+                                            An email will be sent to you to verify your email address for communication purposes.
+                                            <br><br>
+                                            Join the conversation on #datacentrixshow and follow us on <a href="http://www.facebook.com/datacentrix.">Facebook</a>.
                                         </p>
                                         
                                 </div>	

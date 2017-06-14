@@ -218,12 +218,10 @@
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL"><img src="assets/images/sponsor logos/Silver/paloalto.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PFO"><img src="assets/images/sponsor logos/Silver/pfortner.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA"><img src="assets/images/sponsor logos/Silver/sharp.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
-									<!--RC: Removed as a Silver sponsor until confirmed with Monique-->
-									<!--<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>-->
+									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM"><img src="assets/images/sponsor logos/Silver/symantec.jpg" alt="" style="width:120px;height:auto;padding: 10px">&nbsp &nbsp</a>
 									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE"><img src="assets/images/sponsor logos/Silver/trend.jpg" alt="" style="width:120px;height:auto;padding: 10px"> &nbsp &nbsp</a>
 								
 								</figure>
-								
 								
 								<br/>
 								<br/>
@@ -236,7 +234,7 @@
 									<img src="assets/images/sponsor logos/Display/f5.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									<img src="assets/images/sponsor logos/Display/microfocus.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
 									
-									<a class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MIM"><img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp</a>
+									<a href="" class="sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MIM"><img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp</a>
 									<!--<img src="assets/images/sponsor logos/Display/mimecast.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp-->
 
 									<img src="assets/images/sponsor logos/Display/opentext.jpg" alt="" style="width:90px;height:auto;padding:10px"> &nbsp &nbsp
