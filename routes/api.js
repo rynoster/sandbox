@@ -35,7 +35,7 @@ function buildHtmlBody(params, fullUrl){
     verifyUrl: fullUrl + "/verify/" + params.token,
   });
 
-  console.log(htmlRender);
+  // console.log(htmlRender);
 
   return(htmlRender);
 
