@@ -55,15 +55,20 @@
                 <hr style="border: 0.5px dashed #d8d8d8;" />
                 <h3 style="color: #005981"><strong>Thank you for registering to attend Showcase 2017</strong></h3>
                 <h4 style="color:#f9b14b"><strong>Verify your email address</strong></h4><br>
-                <p>Thank you <strong>{{NameofDelegate}}</strong>, to complete your registration, please click on the verification link that we just emailed to you. After verifying your email, your seat at Showcase 2017 will be booked and confirmed. </p>
-              <!-- adding the button to verify email-->
-                <br>
+                <p>Dear <strong>{{NameofDelegate}}</strong>, 
+                <br><br>Please click on the link below to verify your email address for communication purposes.</p>
+                
+                <!-- adding the button to verify email-->
                 <a href="{{verifyUrl}}" class="btn btn-primary"><span class="glyphicon glyphicon-hand-up"></span> Verify your email address now</a>
-                <br><br>
+
+                <br>
                 <p><br>
-                  Please start tweeting about the event using <strong>#datacentrixshow.</strong> <br>
+                  Start tweeting about the event using <strong>#datacentrixshow.</strong> <br>
                   <br>
-                  Follow us on <strong><a href="https://www.facebook.com/datacentrix/">Facebook</a></strong> and join the conversation. Will humans be assimilated into code – are we on the brink of a new humanity? </p>
+                  Follow us on <strong><a href="https://www.facebook.com/datacentrix/">Facebook</a></strong> and join the conversation. 
+                  <br>
+                  Will humans be assimilated into code – are we on the brink of a new humanity? </p>
+                  <p>Kind regards, <br> The Showcase team</p>
             </div>
             <div class="row"> </div>
         
@@ -75,4 +80,3 @@
     
 </body>
 </html>
- 
