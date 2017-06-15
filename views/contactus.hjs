@@ -101,7 +101,7 @@
 						<section id="contacts" class="outer-top-xs outer-bottom-xs">
 							
 							<h2>Contacts</h2>
-							<p>You are most welcome to pop around to our office for a cup a coffee or give us a call. We look forward 
+							<p>You are most welcome to pop around to our office for a cup of coffee or give us a call. We look forward 
                                 to hearing from you.<br><br>The Showcase team </p>
                             <br><br>
 							
@@ -153,7 +153,7 @@
 					
 					success: function(){
 						// Pop up a green alert confirming mail has been sent
-						$("#alertText").text("Thank you for your registration, an email has been sent.");
+						$("#alertText").text("Thank you for your message. A Showcase organiser will respond to you as soon as possible.");
 						$("#pageAlert").fadeIn(2000);
 
 						//Reset form elements
@@ -161,7 +161,7 @@
 						grecaptcha.reset();
 
 						//Remove the page alert after 3 seconds
-						setTimeout($("#pageAlert").fadeOut(2000),3000);
+						setTimeout($("#pageAlert").fadeOut(2000),10000);
 						
 					}
 
