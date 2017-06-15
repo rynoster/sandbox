@@ -26,6 +26,11 @@
         display: none;
     }
 
+    /*button:disabled,
+    button[disabled] {
+        background-color: red;
+    }*/
+
 </style>
    
     <!-- ============================================================= Top Banner ============================================================= -->
@@ -204,14 +209,15 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
+                                        <!--Captcha removed, creating issues-->
+                                        <!--<div class="row">
                                             <div class="col-sm-6 outer-bottom-xs">
-                                                <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe"></div>	
+                                                <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe" data-callback="imNotARobot"></div>	
                                                 <input type="hidden" class="customCaptcha" data-validation="recaptcha" data-validation-recaptcha-sitekey="6LfYcCQUAAAAALyne5Tmapc76aA7U_iLsm5vMjKe" data-validation-error-msg="Please complete the captcha">
-                                            </div><!-- /.col -->
-                                        </div><!-- /.row -->
+                                            </div>
+                                        </div>-->
 
-                                        <button type="submit" id="register" class="btn btn-default">Register for the event</button>
+                                        <button type="submit" id="btnRegister" class="btn btn-default">Register for the event</button>
                                         
                                         <!--Test button just to see hide and show of divs as well as animation to top-->
                                         <!--<button id="btnTest" class="btn btn-default">Test</button>-->
@@ -371,7 +377,7 @@
             validateHiddenInputs : true,
             onModulesLoaded : function() {
             
-        },
+        }, 
             onSuccess : function() {
 
                 var user = {
