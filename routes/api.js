@@ -4,6 +4,7 @@ var db = require("../db");
 var auth = require("../auth")
 var crypto = require('crypto');
 var request = require('request');
+var _ = require("lodash");
 
 var app = express();
 
@@ -57,19 +58,18 @@ router
     res.send("Register page")
   })
 
-  //Shows all users
-  .get('/allusers', auth.loginRequired, auth.adminRequired, (req,res, next) => {
+  //Shows all users, with more options to filter records
+  .get('/allusers', auth.loginRequired, auth.adminRequired, (req, res, next) => {
 
-    // Use the below to test email verification email rendering
-    // buildHtmlBody({
-    //   first_name: "Piet",
-    //   last_name: "Skiet",
-    //   token: "tokentest"
-    // },fullUrl(req));
+    var ajaxData = req.query;
 
-    db("users").then((users) => {
-      res.send(users);
-    }, next)
+    db("users")
+      .limit(ajaxData.limit || 100)
+      .where(ajaxData.where || {})
+      .then((users) => {
+        res.send(users);
+      }, next)
+
   })
 
   //Main router for registering/creating new users

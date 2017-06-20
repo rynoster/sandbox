@@ -150,6 +150,7 @@
             return this;
         };
 
+        //Populate the sponsors panel
         $.ajax({
             type: 'GET',
             url: '/api/allsponsors',
@@ -163,6 +164,7 @@
             }
         });
 
+        //Mouse hover effect
         $('#ulSponsors').on('mouseenter', 'li', function() {
             $(this).addClass("list-group-item-info")
         })
@@ -206,8 +208,10 @@
 
         });
 
+        //Prevent the tab key from jumping to next text input
         $sponsorContent.getTab();
 
+        //Update the live preview on every key press
         $sponsorContent.on('keyup', function() {
             $contentPreview.empty();
             $contentPreview.append($sponsorContent.val());

@@ -1,31 +1,93 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <style>
+            .panel-heading + .panel-body {
+                padding-top: 15px;
+            }    
+
+            .list-group {
+                margin-bottom: 0px;
+            }  
+
+            li:hover {
+                color: #31708f;
+                background-color: #d9edf7;
+            }
+        </style>
+        <script>
+           
+        </script>
     </head>
     <body>
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
 
-                </div>
-                <div class="col-lg-8">
+                <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Users</h3>
+                            <h3 class="panel-title">Registered, email verified</h3>
                         </div>
 
                         <div class="panel-body">
-                            <ul class="list-group" id="users"></ul>
+                            <ul class="list-group" id="usersRegVer"></ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
+
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Registered, email NOT verified</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="list-group" id="usersRegNotVer"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Completed</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="list-group" id="usersCompleted"></ul>
+                        </div>
+                    </div>
+                </div>
                     
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-3"></div>
+
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Active User</h3>
+                            </div>
+
+                            <div class="panel-body">
+                                some body
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+
+                </div>
+
             </div>
 
-            <div class="row">
+            
+
+            <!--Old Add User-->
+            <!--<div class="row">
                 <div class="col-lg-2">
                     
                 </div>
@@ -122,9 +184,7 @@
                     
                 </div>
                 
-            </div>
-
-        </div>
+            </div>-->
 
         {{> jscript}}
 
@@ -139,6 +199,9 @@
     $(document).ready(function(){
 
         var $users = $("#users");
+        var $usersRegVer = $("#usersRegVer");
+        var $usersRegNotVer = $("#usersRegNotVer");
+        var $usersCompleted = $("#usersCompleted");
         var $firstName = $("#first_name");
         var $lastName = $("#last_name");
         var $email = $("#email");
@@ -149,18 +212,76 @@
         var $errMessage = $("#errMessage");
         var $errPanel = $("#errPanel");
 
+        //Populate registered, email verified panel
         $.ajax({
             type: 'GET',
             url: '/api/allUsers',
+            data: {
+                limit: 10,
+                where: {
+                    verified: 1,
+                    admin: 0,
+                    regComplete: 0
+                }
+            },
+
             success: function(users) {
                 $.each(users, function(i, user) {
-                    $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
+                    $usersRegVer.append("<li class='list-group-item list-group-item-default' id='" + user.id + "'>"+ user.first_name + " " + user.last_name + "</li>");
                 });
             },
             error: function() {
                 alert("Error retrieving users");
             }
         });
+
+        //Populate registered, email NOT verified panel
+        $.ajax({
+            type: 'GET',
+            url: '/api/allUsers',
+            data: {
+                limit: 10,
+                where: {
+                    verified: 0,
+                    admin: 0,
+                    regComplete: 0
+                }
+            },
+
+            success: function(users) {
+                $.each(users, function(i, user) {
+                    $usersRegNotVer.append("<li class='list-group-item list-group-item-default' id='" + user.id + "'>"+ user.first_name + " " + user.last_name + "</li>");
+                });
+            },
+            error: function() {
+                alert("Error retrieving users");
+            }
+        });
+
+        //Populate registration completed panel
+        $.ajax({
+            type: 'GET',
+            url: '/api/allUsers',
+            data: {
+                limit: 10,
+                where: {
+                    regComplete: 1
+                }
+            },
+
+            success: function(users) {
+                $.each(users, function(i, user) {
+                    $usersCompleted.append("<li class='list-group-item list-group-item-default' id='" + user.id + "'>"+ user.first_name + " " + user.last_name + "</li>");
+                });
+            },
+            error: function() {
+                alert("Error retrieving users");
+            }
+        });
+
+        $(".list-group").on("click", "li", function() {
+            console.log("clicked")
+        })
 
         $('#add-user').on('click', function() {
             var user = {
