@@ -28,6 +28,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); //Servers static content
 
+// caching of static content below -- 86400000 is one day
+app.use(function (req, res, next) {
+    if (req.url.match(/^\/(css|js|img|font)\/.+/)) {
+        res.setHeader('Cache-Control', 'public, max-age=86400000');
+    }
+    next();
+});
+
 app.use('/', index);
 app.use('/api', api);
 app.use('/register', register);
