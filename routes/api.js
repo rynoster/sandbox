@@ -65,7 +65,7 @@ router
 
     db("users")
       // .select("id","email","event_profile","first_name","last_name","dietary","accountManager")
-      .limit(ajaxData.limit || 100)
+      // .limit(ajaxData.limit || 100)
       .where(ajaxData.where || {})
       .then((users) => {
         res.send(users);
