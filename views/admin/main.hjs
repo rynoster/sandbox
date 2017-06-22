@@ -72,6 +72,12 @@
                             </a>
                             <ul class="hoe-sub-menu">
                                 <li>
+                                    <a href="/admin/delegateMain/all">
+                                        <span class="menu-text">All</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="/admin/delegateMain/verified">
                                         <span class="menu-text">Verified</span>
                                         <span class="selected"></span>

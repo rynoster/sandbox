@@ -1,5 +1,9 @@
 <style>
     td { cursor: pointer }
+
+    td.highlight {
+        background-color: navy;
+    }
 </style>
 
 <!--start main content-->
@@ -15,7 +19,7 @@
                         <h2 class="panel-title">Data table</h2>
                     </header>-->
                     <div class="panel-body">
-                        <table id="datatable" class="table table-striped dt-responsive nowrap" data-filter="{{filter}}">
+                        <table id="datatable" class="table table-hover dt-responsive nowrap" data-filter="{{filter}}">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -52,6 +56,11 @@
     var delFilter = $("#datatable").data("filter") ;
 
     switch (delFilter) {
+        case "all":
+            filterData = {
+                admin: 0,
+            }
+            break;
         case "verified":
             filterData = {
                 verified: 1,
@@ -105,6 +114,10 @@
                 },
             },
             fnRowCallback: function (nRow, aData) {
+
+                $(nRow).on("mouseenter", function(){
+                    // $(nRow).addClass("highlight")  ;
+                })
                 // $(nRow).click(function() {
                 $(nRow).unbind("click").bind("click", function() { // This code prevents multiple click events being triggered
                     window.location.href = "/admin/delegateEdit/" + aData.id;
@@ -128,6 +141,11 @@
                 { data: 'mobilenr' },
             ]
         });
+
+        $("#datatable").on("mouseenter", "td", function() {
+            // console.log("here");
+            // $( myTable.cells().nodes() ).addClass( 'highlight' );
+        })
 
     });
 
