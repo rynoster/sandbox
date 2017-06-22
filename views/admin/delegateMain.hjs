@@ -1,0 +1,134 @@
+<style>
+    td { cursor: pointer }
+</style>
+
+<!--start main content-->
+<section id="main-content">
+    <div class="space-30"></div>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel">
+                    <!--<header class="panel-heading">
+                        <h2 class="panel-title">Data table</h2>
+                    </header>-->
+                    <div class="panel-body">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap" data-filter="{{filter}}">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email address</th>
+                                    <th>Event Profile</th>
+                                    <th>Company</th>
+                                    <th>Professional Profile</th>
+                                    <th>Mobile Number</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div><!--panel body end-->
+                </div><!--end panel-->
+            </div><!--col end-->
+        </div><!--row end-->
+    </div><!--container end-->
+
+    <!--footer start-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>&copy; Copyright 2017. chirpee.io</span>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</section><!--end main content-->
+
+{{> jscript}}
+
+<script>
+
+    //Get the applied filter from the data-attribute set on the table
+    var delFilter = $("#datatable").data("filter") ;
+
+    switch (delFilter) {
+        case "verified":
+            filterData = {
+                verified: 1,
+                admin: 0,
+                regComplete: 0
+            }
+            break;
+
+        case "unverified":
+            filterData = {
+                verified: 0,
+                admin: 0,
+                regComplete: 0
+            }
+            break;
+
+        case "approved":
+            filterData = {
+                admin: 0,
+                regComplete: 1
+            }
+            break;
+
+        case "rejected":
+            filterData = {
+                admin: 0,
+                regComplete: -1
+            }
+            break;
+
+        default:
+            filterData = {
+                verified: 1,
+                admin: 0,
+                regComplete: 0
+            }
+
+    }
+
+    $(document).ready(function() {
+        var myTable = $('#datatable').DataTable( {
+            processing: true,
+            stateSave: true,
+            pageLength: 25,
+            ajax: {
+                url: "/api/allUsers",
+                dataSrc: "",
+                data: {
+                    // limit: 3,
+                    where: filterData
+                },
+            },
+            fnRowCallback: function (nRow, aData) {
+                // $(nRow).click(function() {
+                $(nRow).unbind("click").bind("click", function() { // This code prevents multiple click events being triggered
+                    window.location.href = "/admin/delegateEdit/" + aData.id;
+                })
+            },
+            // This section merges first_name and last_name in to the first (0) column
+            columnDefs: [
+                {
+                    render: (data, type, full) => {
+                        return full.first_name + " " + full.last_name;
+                    },
+                    targets: [0]
+                }
+            ],
+            columns: [
+                { data: 'first_name' },
+                { data: 'email' },
+                { data: 'event_profile' },
+                { data: 'company' },
+                { data: 'pro_profile' },
+                { data: 'mobilenr' },
+            ]
+        });
+
+    });
+
+</script>

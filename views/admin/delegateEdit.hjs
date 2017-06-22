@@ -1,0 +1,205 @@
+                <style>
+                    .button-margin {
+                        margin-right: 10px;
+                    }
+
+                    .button-hide {
+                        display: none;
+                    }
+                </style>
+                <!--start main content-->
+                <section id="main-content">
+                    <div class="space-30"></div>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <header class="panel-heading">
+                                        <h2 id="hName" class="panel-title" data-id="{{userId}}"></h2>
+                                    </header>
+                                    <div class="panel-body">
+
+                                        <form method="get" role="form" class="form-horizontal">
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Email</label>
+                                                <div class="col-lg-9"><input id="txtEmail" type="email" placeholder="Email" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">First Name</label>
+                                                <div class="col-lg-9"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Last Name</label>
+                                                <div class="col-lg-9"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Event Profile</label>
+                                                <div class="col-lg-9"><input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Company</label>
+                                                <div class="col-lg-9"><input id="txtCompany" type="text" placeholder="Company" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Professional Profile</label>
+                                                <div class="col-lg-9"><input id="txtProProfile" type="text" placeholder="Professional Profile" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Organisation Role</label>
+                                                <div class="col-lg-9"><input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Mobile Number</label>
+                                                <div class="col-lg-9"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Office Number</label>
+                                                <div class="col-lg-9"><input id="txtOfficeNr" type="text" placeholder="Office Number" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Account Manager</label>
+                                                <div class="col-lg-9"><input id="txtAccountMgr" type="text" placeholder="Account Manager" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-3 control-label">Dietary requirements</label>
+                                                <div class="col-lg-9"><input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-info rounded ">Update</button>
+                                            </div>
+
+                                            <div id="divBtnApprove" class="pull-right" hidden>
+                                                <button type="button" class="btn btn-success rounded button-margin">Approve</button>
+                                            </div>
+
+                                            <div id="divBtnReject" class="pull-right" hidden>
+                                                <button type="button" class="btn btn-danger rounded button-margin">Reject</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end container-->
+
+                    <!--footer start-->
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <span>&copy; Copyright 2016. Assan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer end-->
+                </section><!--end main content-->
+
+                {{> jscript}}
+
+<script>
+    $(document).ready(function(){
+
+        var userId = $("#hName").data("id") ;
+
+        var $hName = $("#hName");
+        var $txtEmail = $("#txtEmail");
+        var $txtFirstname = $("#txtFirstname");
+        var $txtLastname = $("#txtLastname");
+        var $txtEventProfile = $("#txtEventProfile");
+        var $txtCompany = $("#txtCompany");
+        var $txtProProfile = $("#txtProProfile");
+        var $txtOrgRole = $("#txtOrgRole");
+        var $txtMobileNr = $("#txtMobileNr");
+        var $txtOfficeNr = $("#txtOfficeNr");
+        var $txtAccountMgr = $("#txtAccountMgr");
+        var $txtDietary = $("#txtDietary");
+
+        //Populate fields
+        $.ajax({
+            type: 'GET',
+            url: '/api/user/' + userId,
+
+            success: function(user) {
+
+                $txtEmail.val(user.email);
+                $txtFirstname.val(user.first_name);
+                $txtLastname.val(user.last_name);
+                $txtEventProfile.val(user.event_profile);
+                $txtCompany.val(user.company);
+                $txtProProfile.val(user.pro_profile);
+                $txtOrgRole.val(user.orgRole);
+                $txtMobileNr.val(user.mobilenr);
+                $txtOfficeNr.val(user.officenr);
+                $txtAccountMgr.val(user.accountManager);
+                $txtDietary.val(user.dietary);
+
+                $hName.text(user.first_name + " " + user.last_name);
+
+                //If delegate is verified
+                if (user.regComplete === 0) {
+                    $("#divBtnReject").show();
+                    $("#divBtnApprove").show();
+                }
+
+            },
+            error: function() {
+                alert("Error retrieving user");
+            }
+        });
+
+        $('#add-user').on('click', function() {
+            var user = {
+                first_name: $firstName.val(),
+                last_name: $lastName.val(),
+                email: $email.val(),
+                dietary: $dietary.val(),
+                event_profile: $eventProfile.val(),
+                pro_profile: $proProfile.val(),
+                company: $company.val(),
+
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/user',
+                data: user,
+                success: function(newUser) {
+                    $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
+
+                    //Clear fields once done
+                    $firstName.val('');
+                    $lastName.val('');
+                    $email.val('');
+                    $dietary.val('');
+                    $eventProfile.val('Delegate');
+                    $proProfile.val('Select a profile');
+                    $company.val('');
+
+                },
+
+                error: function(xhr, textStatus, errorThrown) {
+                    var error = jQuery.parseJSON(xhr.responseText);
+
+                    $errPanel.removeClass("hidden");
+                    $errMessage.text(error.error);
+                }
+                
+            })
+        });
+
+    });
+
+</script>

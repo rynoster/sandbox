@@ -5,6 +5,7 @@ var router = express.Router();
 var db = require('../db');
 var passport = require('passport');
 var auth = require('../auth');
+var _ = require('lodash');
 
 require('../passport');
 
@@ -80,18 +81,23 @@ router
 
   .get('/login', (req, res, next) => {
     
-    // res.render('login');
+    if (req.isAuthenticated()) {
+      res.redirect("/admin/delegateMain");
+    } else {
+      res.render('admin/login');
+    }
+    
 
-    res.render('admin/main', {
-      title: "chirpee.io login",
-      loggedOut: true,
-      login: "login",
-      partials : {
-        header: "admin/header", 
-        body: "login",
-        footer: "admin/footer", 
-      }
-    })
+    // res.render('admin/main', {
+    //   title: "chirpee.io login",
+    //   loggedOut: true,
+    //   login: "login",
+    //   partials : {
+    //     header: "admin/header", 
+    //     body: "login",
+    //     footer: "admin/footer", 
+    //   }
+    // })
 
   }) 
 
@@ -122,7 +128,7 @@ router
     function(req, res) {
 
       if (!req.session.sourceURL) {
-        res.redirect('/sponsoredit');
+        res.redirect('/admin/delegateMain');
       }
       else {
         res.redirect(req.session.sourceURL);
@@ -131,9 +137,6 @@ router
       
   })
 
-  // ===========================================================================
-  //  Login : END ==============================================================
-  // ===========================================================================
 
   // ===========================================================================
   //  Sign up ==================================================================
@@ -148,10 +151,6 @@ router
     successRedirect: "auth",
     failureRedirect: "signup",
   }))
-
-  // ===========================================================================
-  //  Sign up : END ============================================================
-  // ===========================================================================
 
   // ===========================================================================
   //  Sponsors Page  ===========================================================
@@ -169,11 +168,6 @@ router
     });
   })
 
-
-  // ===========================================================================
-  //  Sponsors : END ===========================================================
-  // ===========================================================================
-
   // ===========================================================================
   //  Why Attend Page  =========================================================
   // ===========================================================================
@@ -189,11 +183,6 @@ router
         }
     });
   })
-
-
-  // ===========================================================================
-  //  Why Attend : END =========================================================
-  // ===========================================================================
 
   // ===========================================================================
   //  Event Info Page  =========================================================
@@ -211,11 +200,6 @@ router
     });
   })
 
-
-  // ===========================================================================
-  //  Event Info : END =========================================================
-  // ===========================================================================
-
   // ===========================================================================
   //  Logistics ================================================================
   // ===========================================================================
@@ -231,11 +215,6 @@ router
         }
     });
   })
-
-
-  // ===========================================================================
-  //  Logistics : END ==========================================================
-  // ===========================================================================
 
   // ===========================================================================
   //  Contact Us Page  =========================================================
@@ -253,16 +232,17 @@ router
     });
   })
 
-
   // ===========================================================================
-  //  Contacts Us : END ========================================================
-  // ===========================================================================
-
-  // ===========================================================================
-  //  Admin Page ===== =========================================================
+  //  Admin Pages ==============================================================
   // ===========================================================================
 
-  .get('/admin', auth.loginRequired, (req,res) => {
+  .get('/admin', (req, res, next) => {
+    
+    res.redirect('/login');
+
+  }) 
+
+  .get('/admin/users', auth.loginRequired, (req,res) => {
 
     res.render('admin/main', {
       users: "users",
@@ -280,11 +260,71 @@ router
     // })
   })
 
-  // ===========================================================================
-  //  Admin Page : END  ========================================================
-  // ===========================================================================
-  
-  .get('/sponsoredit', auth.loginRequired, auth.adminRequired, (req,res) => {
+  .get('/admin/delegateMain', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    res.render('admin/main', {
+      users: "users",
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Delegate registrations - Verified",
+      loggedIn: true,
+      filter: "verified",
+      partials : {
+        // header: "admin/header", 
+        body: "admin/delegateMain",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
+
+  })
+
+  .get('/admin/delegateMain/:filter', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    var { filter } = req.params;
+
+    //Validate the filter provided. If it not valid, default to "verified" filter
+    var validateFilter = (filter === "verified" || filter === "rejected" || filter === "approved" || filter === "unverified");
+    if (validateFilter === false){
+      filter = "verified"
+    } 
+
+    res.render('admin/main', {
+      users: "users",
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Delegate registrations - " + _.startCase(filter),
+      loggedIn: true,
+      filter: filter,
+      partials : {
+        // header: "admin/header", 
+        body: "admin/delegateMain",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
+
+  })
+
+  .get('/admin/delegateEdit/:id', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    var { id } = req.params;
+
+    res.render('admin/main', {
+      users: "users",
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Delegate edit",
+      userId: id,
+      loggedIn: true,
+      partials : {
+        // header: "admin/header", 
+        body: "admin/delegateEdit",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
+
+  })
+
+  .get('/admin/sponsoredit', auth.loginRequired, auth.adminRequired, (req,res) => {
 
     
     res.render('admin/main', {

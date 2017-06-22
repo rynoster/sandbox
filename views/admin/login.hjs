@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        {{!-- This is the title of the page--}}
+        <title>chirpee admin</title>
+
+        <!-- Bootstrap -->
+        <link href="admin-assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        
+         {{!-- Stylesheets --}}
+        <link href="admin-assets/css/style.css" rel="stylesheet">
+        <link href="admin-assets/css/chirpee.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        {{!-- Login Panel on page --}}
+        <div class="containter">
+            <div class="center-block login-block">
+                <form class="sign-box" method="POST" action="/login">
+                    <div>
+                        <img src="assets/images/brand/chirpee.svg" alt="" width="150px">
+                    </div>
+                    <p style="padding-top:20px">Admin Portal</p>
+                    <div class="form-group">
+                        <input type="text" name="username" id="email" class="form-control" placeholder="Email address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                    </div>
+                    <button type="submit" name="btn-authenticate" class="chirp-button">Sign in</button>
+
+                </form>
+            </div><!--page center in-->
+        </div><!--page center-->
+
+        
+        <!--Common plugins-->
+        <script src="admin-assets/plugins/jquery/dist/jquery.min.js"></script>
+        <script src="admin-assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="admin-assets/plugins/iCheck/icheck.min.js"></script>
+
+{{!---------------------------------- JQUERY -----------------------------------------------}}
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_flat-blue',
+                radioClass: 'icheckbox_flat-blue'
+            });
+        });
+    </script>
+    </body>
+</html>
