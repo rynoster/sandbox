@@ -242,23 +242,23 @@ router
 
   }) 
 
-  .get('/admin/users', auth.loginRequired, (req,res) => {
+  // .get('/admin/users', auth.loginRequired, (req,res) => {
 
-    res.render('admin/main', {
-      users: "users",
-      title: "chirpee.io - User management",
-      loggedIn: true,
-      partials : {
-        header: "admin/header", 
-        body: "admin",
-        footer: "admin/footer", 
-      }
-    })
+  //   res.render('admin/main', {
+  //     users: "users",
+  //     title: "chirpee.io - User management",
+  //     loggedIn: true,
+  //     partials : {
+  //       header: "admin/header", 
+  //       body: "admin",
+  //       footer: "admin/footer", 
+  //     }
+  //   })
 
-    // res.render('admin', {
-    //   partials: {jscript: "jscript"}
-    // })
-  })
+  //   // res.render('admin', {
+  //   //   partials: {jscript: "jscript"}
+  //   // })
+  // })
 
   .get('/admin/delegateMain', auth.loginRequired, auth.adminRequired, (req,res) => {
 
@@ -283,7 +283,7 @@ router
     var { filter } = req.params;
 
     //Validate the filter provided. If it not valid, default to "verified" filter
-    var validateFilter = (filter === "verified" || filter === "rejected" || filter === "approved" || filter === "unverified");
+    var validateFilter = (filter === "verified" || filter === "rejected" || filter === "approved" || filter === "unverified" || filter === "all");
     if (validateFilter === false){
       filter = "verified"
     } 
