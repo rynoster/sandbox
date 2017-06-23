@@ -37,13 +37,14 @@
         <div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
             <header id="hoe-header" hoe-lpanel-effect="shrink">
                 <div class="hoe-left-header">
-                    <a href="#">chirpee</a>
-                    <!--<span class="hoe-sidebar-toggle"><a href="#"></a></span>-->
+                    <a href="#">c<span>hirpee</span></a>
+                    <span class="hoe-sidebar-toggle"><a href="#"></a></span>
                 </div>
 
                 <div class="hoe-right-header" hoe-position-type="relative">
-                    <!--<span class="hoe-sidebar-toggle"><a href="#"></a></span>-->
+                    <span class="hoe-sidebar-toggle"><a href="#"></a></span>
                     <ul class="left-navbar">
+                        <li>&nbsp</li>
                         <li class="panel-title">
                             {{ title }}
                         </li>
