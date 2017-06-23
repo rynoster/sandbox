@@ -126,9 +126,14 @@
             // This section merges first_name and last_name in to the first (0) column
             columnDefs: [
                 {
-                    render: (data, type, full) => {
+                    // render: (data, type, full) => {
+                    //     return full.first_name + " " + full.last_name;
+                    // },
+
+                    render: function(data, type, full) {
                         return full.first_name + " " + full.last_name;
                     },
+
                     targets: [0]
                 }
             ],
