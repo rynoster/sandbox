@@ -1,5 +1,9 @@
 <style>
-    td { cursor: pointer }
+    /*td { cursor: pointer }*/
+
+    i.fa-edit {
+        cursor: pointer;
+    }
 
     td.highlight {
         background-color: navy;
@@ -27,7 +31,7 @@
                                     <th>Event Profile</th>
                                     <th>Company</th>
                                     <th>Professional Profile</th>
-                                    <th>Mobile Number</th>
+                                    <!--<th>Mobile Number</th>-->
                                 </tr>
                             </thead>
                         </table>
@@ -52,8 +56,8 @@
 
 <script>
 
-    //Get the applied filter from the data-attribute set on the table
-    var delFilter = $("#datatable").data("filter") ;
+    var delFilter = $("#datatable").data("filter") ; //Get the applied filter from the data-attribute set on the table
+    $("#"+delFilter).addClass("active"); //Adds the active class to the selected filter, to highlight in the left navigation bar
 
     switch (delFilter) {
         case "all":
@@ -101,10 +105,13 @@
     }
 
     $(document).ready(function() {
+        var editIcon = '<i class="fa fa-edit"></i>';
+
         var myTable = $('#datatable').DataTable( {
             processing: true,
             stateSave: true,
             pageLength: 25,
+            bAutoWidth: false,
             ajax: {
                 url: "/api/allUsers",
                 dataSrc: "",
@@ -115,25 +122,26 @@
             },
             fnRowCallback: function (nRow, aData) {
 
-                $(nRow).on("mouseenter", function(){
-                    // $(nRow).addClass("highlight")  ;
-                })
-                // $(nRow).click(function() {
-                $(nRow).unbind("click").bind("click", function() { // This code prevents multiple click events being triggered
+                $(nRow).on("click", "i", function(){
+                    // console.log("row here");
                     window.location.href = "/admin/delegateEdit/" + aData.id;
                 })
+
+                // $(nRow).unbind("click").bind("click", function() { // This code prevents multiple click events being triggered
+                //     window.location.href = "/admin/delegateEdit/" + aData.id;
+                // })
             },
             // This section merges first_name and last_name in to the first (0) column
             columnDefs: [
                 {
+                    //This is ES6 code, not supported in IE browsers....
                     // render: (data, type, full) => {
                     //     return full.first_name + " " + full.last_name;
                     // },
 
                     render: function(data, type, full) {
-                        return full.first_name + " " + full.last_name;
+                        return editIcon + " " + full.first_name + " " + full.last_name;
                     },
-
                     targets: [0]
                 }
             ],
@@ -143,14 +151,9 @@
                 { data: 'event_profile' },
                 { data: 'company' },
                 { data: 'pro_profile' },
-                { data: 'mobilenr' },
+                // { data: 'mobilenr' },
             ]
         });
-
-        $("#datatable").on("mouseenter", "td", function() {
-            // console.log("here");
-            // $( myTable.cells().nodes() ).addClass( 'highlight' );
-        })
 
     });
 

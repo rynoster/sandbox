@@ -72,31 +72,31 @@
                                 <span class="selected"></span>
                             </a>
                             <ul class="hoe-sub-menu">
-                                <li>
+                                <li id="all" class="">
                                     <a href="/admin/delegateMain/all">
                                         <span class="menu-text">All</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li id="verified" class="">
                                     <a href="/admin/delegateMain/verified">
                                         <span class="menu-text">Verified</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li id="unverified" class="">
                                     <a href="/admin/delegateMain/unverified">
                                         <span class="menu-text">Unverified</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li id="approved" class="">
                                     <a href="/admin/delegateMain/approved">
                                         <span class="menu-text">Approved</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
-                                <li>
+                                <li id="rejected" class="">
                                     <a href="/admin/delegateMain/rejected">
                                         <span class="menu-text">Rejected</span>
                                         <span class="selected"></span>
