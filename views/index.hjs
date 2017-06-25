@@ -12,7 +12,10 @@
 			background-size: 100% auto;
 			height: auto !important;
 			background-position: center center;
-		}
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+				}
 		.chirp-bg-plat-xs {
 			background:  url('/assets/images/art/platinum-background.jpg') no-repeat center left;
 			background-size: auto 100%;
@@ -27,7 +30,7 @@
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-sm owl-inner-nav owl-ui-lg">
+				<div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
 					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
@@ -172,7 +175,7 @@
 <!-- ============================================================= SECTION – Platinum Sponsers ============================================================= -->
 
 			<section class="chirp-bg-plat-lg visible-lg visible-md visible-sm" >
-				<div class="container">
+				<div class="container fadeInDown">
 					<div class="row">
 						<header>
 							<div class="text-center outer-bottom-xs outer-top-xs">
@@ -181,64 +184,22 @@
 						</header>	
 					</div>
 
-					<div class="row outer-bottom-xs">
-							<div class="col-sm-6 text-center">
-							<header>
-								<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
-							
-							</header>
-							
-							</div><!-- /.col -->
-							<div class="hidden-lg hidden-md hidden-sm text-center">
-								<div class="container" style="padding: 50px"></div>
-							</div>
-						  	<!-- -->
-							<div class="col-sm-6 text-center">
-							<header>
-								<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:60%;height:auto;"></figure>
-								
-							</header>
-							
-							</div><!-- /.col -->
-					</div><!-- /.row -->
-					
-				</div><!-- /.container -->
+					<div class="row inner-bottom-md">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+							<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
+						</div>
+						<div class="visible-xs text-center">
+							<div class="container" style="padding: 50px"></div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">>
+							<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:55%;height:auto;"></figure>
+						</div>
+					</div>
+				</div>
 			</section>
 		
 		
-			<section class="chirp-bg-plat-xs visible-xs" >
-				<div class="container">
-					<div class="row">
-						<header>
-							<div class="text-center outer-bottom-xs outer-top-xs">
-								<p style="font-size:150%;color:#FFF"><strong>Platinum sponsors</strong></p>
-							</div>	
-						</header>	
-					</div>
 
-					<div class="row outer-bottom-xs">
-							<div class="col-sm-6 text-center">
-							<header>
-								<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
-							
-							</header>
-							
-							</div><!-- /.col -->
-							<div class="hidden-lg hidden-md hidden-sm text-center">
-								<div class="container" style="padding: 50px"></div>
-							</div>
-						  	<!-- -->
-							<div class="col-sm-6 text-center">
-							<header>
-								<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:60%;height:auto;"></figure>
-								
-							</header>
-							
-							</div><!-- /.col -->
-					</div><!-- /.row -->
-					
-				</div><!-- /.container -->
-			</section>	
 
 <!-- ============================================================= SECTION – Forbes Content  ============================================================= -->
 			<section>
