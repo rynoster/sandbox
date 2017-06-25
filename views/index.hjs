@@ -124,7 +124,7 @@
 					<div class="col-lg-6 col-md-6 inner-bottom-xs inner-top-xs fadeInLeft-1">	
 						<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:80%;height:auto;"></figure>
 						<p style="font-size:150%"><strong>Diamond sponsor</strong></p>
-						<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>	
+							
 					</div>
 				</div>
 			</section>		
@@ -134,7 +134,6 @@
 					<div class="col-sm-10 col-xs-12 inner-bottom-xs inner-top-xs fadeInLeft-1">	
 						<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:80%;height:auto;"></figure>
 						<p style="font-size:150%"><strong>Diamond sponsor</strong></p>
-						<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>	
 					</div>
 				</div>
 			</section>	
@@ -188,7 +187,7 @@
 								<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
 							
 							</header>
-							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS">Read more</a>
+							
 							</div><!-- /.col -->
 							<div class="hidden-lg hidden-md hidden-sm text-center">
 								<div class="container" style="padding: 50px"></div>
@@ -199,7 +198,7 @@
 								<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:60%;height:auto;"></figure>
 								
 							</header>
-							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN">Read more</a>
+							
 							</div><!-- /.col -->
 					</div><!-- /.row -->
 					
@@ -223,7 +222,7 @@
 								<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
 							
 							</header>
-							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS">Read more</a>
+							
 							</div><!-- /.col -->
 							<div class="hidden-lg hidden-md hidden-sm text-center">
 								<div class="container" style="padding: 50px"></div>
@@ -234,7 +233,7 @@
 								<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:60%;height:auto;"></figure>
 								
 							</header>
-							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN">Read more</a>
+							
 							</div><!-- /.col -->
 					</div><!-- /.row -->
 					
@@ -267,72 +266,8 @@
 				</div>
 			
 			</section>	
-
-<!-- ============================================================= Modal Content: Sponsors Click ============================================================= -->
-
-				<!--For width and height of modal content, refer to manual styling top of page-->
-				<div class="modal fade" id="sponsorModal" role="dialog">
-					<div class="modal-dialog modal-md">
-					
-						<div class="modal-content">
-							<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
-									<button class="close" data-dismiss="modal">&times;</button>
-									<p id="sponsorLevel" class="modal-title"></p>
-							
-							</div>
-
-							<div class="modal-body">
-									<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
-									<p class="outer-top-xs" id="sponsorContent"></p>
-							</div>
-
-							<div class="modal-footer dark-bg" style="background-color:#2C3E50">
-								<div class="col-sm-6 text-left outer-top-xxs">
-								
-									<p style="font-size:75%">Datacentrix Showcase 2017</p>
-								</div>							
-								<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					
-					</div>
-				</div>
-
 		</main>
 
 		{{> jscript}}
 		
 
-<script>
-    $(document).ready(function(){
-        $('#sponsorModal').on('hide.bs.modal', function () {
-    		// Clear all the data from the modal when it closes, to ensure no artefacts show up on clicking between sponsors
-			$("#sponsorName").text("");
-			$("#sponsorContent").html("");
-			$("#sponsorLevel").html("");
-			$("#sponsorImage").attr("src","");
-		});
-
-		$('.sponsor-Class').on('click', function() {
-			sponsorTag = $(this).data('sponsor');
-
-			$.ajax({
-				type: 'GET',
-				url: '/api/sponsor/' + sponsorTag,
-				
-				success: function(sponsors) {
-					$("#sponsorName").text(sponsors.sponsorName);
-					$("#sponsorContent").html(sponsors.sponsorContent);
-					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
-					$("#sponsorImage").attr("src","/assets/images/sponsor logos/" + sponsors.sponsorLevel + "/" + sponsors.sponsorLogo);
-				},
-				error: function() {
-					// alert("Error retrieving sponsor data");
-				}
-				
-			})
-
-		});
-
-    });
-</script>
