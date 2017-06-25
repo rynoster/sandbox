@@ -102,6 +102,12 @@
                                         <span class="selected"></span>
                                     </a>
                                 </li>
+                                <li id="add" class="">
+                                    <a href="/admin/delegateAdd">
+                                        <span class="menu-text">Add delegate</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="hoe-has-menu">

@@ -76,40 +76,47 @@ router
   //Main router for registering/creating new users
   .post('/user', (req, res, next) => {
     const newUser = req.body;
+    var sendEmail = newUser.sendEmail || "true";   //Retrieve the sendEmail from req.body to determine whether email should be sent to delegate for verification
+
+    delete newUser.sendEmail;  //Removes the sendEmail item from the newUser object, to ensure the insert record into the database does not fail
 
     //Generate the token, trim to 32 characters
     //newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 32);
     newUser.token = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
+    //First check if email address already exists before trying to add
     db("users")
       .where("email", newUser.email)
       .first()
       .then((user) => {
         if (user) {
           res.status(500).send({ error: "User exists" });
-        } else {
+        } else {    //If user/delegate does not already exist, create new
 
           db("users")
             .insert(newUser)
             .then((users) => {
 
-              //Send email verification email
-              var Mail = require('../email');
-              var mail = new Mail({
-                from : "noreply@chirpee.io", 
-                to : newUser.email,
-                subject : "Datacentrix Showcase 2017 - Email Address Verification Request",
-                html : buildHtmlBody(newUser, fullUrl(req)),
-                // html : "the <strong>verification</strong> email",
-                successCallback : function(success){
-                  console.log("Mail sent");
-                },
-                errorCallback : function(err){
-                  console.log("Mail not sent");
-                }
-              });
+              //Only email when req.body requested
+              if (sendEmail === "true") {
+                //Send email verification email
+                var Mail = require('../email');
+                var mail = new Mail({
+                  from : "noreply@chirpee.io", 
+                  to : newUser.email,
+                  subject : "Datacentrix Showcase 2017 - Email Address Verification Request",
+                  html : buildHtmlBody(newUser, fullUrl(req)),
+                  // html : "the <strong>verification</strong> email",
+                  successCallback : function(success){
+                    console.log("Mail sent");
+                  },
+                  errorCallback : function(err){
+                    console.log("Mail not sent");
+                  }
+                });
 
-              mail.send();
+                mail.send();
+              }
 
               res.send(users);
 

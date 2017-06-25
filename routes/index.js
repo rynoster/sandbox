@@ -304,6 +304,23 @@ router
 
   })
 
+  .get('/admin/delegateAdd', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    res.render('admin/main', {
+      users: "users",
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Delegate add",
+      loggedIn: true,
+      partials : {
+        // header: "admin/header", 
+        body: "admin/delegateAdd",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
+
+  })
+
   .get('/admin/delegateEdit/:id', auth.loginRequired, auth.adminRequired, (req,res) => {
 
     var { id } = req.params;
