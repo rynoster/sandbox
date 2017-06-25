@@ -5,9 +5,9 @@
 				<div class="row">
 					
 					<!-- =============================== About Us ============================= -->
-					<div class="col-xs-6 col-md-4 inner" style="font-weight:lighter">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner">
 						<h4>More about us</h4>
-						<hr color="#fff" align="left" width="80%">
+						<hr color="#fff" align="left">
 						<p>Datacentrix is an ICT solutions provider that uses technology and services to deliver business value to organisations. We partner with our customers, equipping them with valuable insight, and help them to align their technology undertakings with their business strategy.</p>
 						<a href="http://www.datacentrix.co.za/technology-solutions.html" class="txt-btn">Technology Solutions</a><br>
 						<a href="http://www.datacentrix.co.za/managed-services.html" class="txt-btn">Managed Services</a><br>
@@ -15,9 +15,9 @@
 				 	</div><!-- /.col -->
 					
 					<!-- =============================== Showcase 2017 ============================= -->
-					<div class="col-xs-6 col-md-4 inner" style="font-weight:lighter">
+					<div class="ol-lg-4 col-md-4 col-sm-4 col-xs-12 inner">
 						<h4>Showcase 2017</h4>
-						<hr color="#fff" align="left" width="80%">
+						<hr color="#fff" align="left">
 						<p>Do not miss this opportunity to hear from leaders in the industry, network with top experts and get a glimpse of a new kind of humanity.</p>
 						<ul class="Links">
 							<li><i class="icon-location contact"></i> Montecasino, Johannesburg</li>
@@ -28,9 +28,9 @@
 
 					
 					<!-- =============================== Site Navigation section ============================= -->
-					<div class="col-xs-6 col-md-4 inner" style="font-weight:lighter">
+					<div class="ol-lg-4 col-md-4 col-sm-4 col-xs-12 inner">
 						<h4>Site Navigation</h4>
-						<hr color="#fff" align="left" width="80%">
+						<hr color="#fff" align="left">
 							<a href="/whyattend">Why attend</a><br>
 							<a href="/eventinfo">Agenda</a><br>
 							<a href="/logistics">Logistics</a><br>
@@ -45,7 +45,7 @@
 		  
 			<div class="footer-bottom">
 				<div class="container inner">
-					<p class="pull-left" style="font-weight:lighter">© 2017 Datacentrix (Pty) Ltd. All rights reserved.</p>
+					<p class="pull-left">© 2017 Datacentrix (Pty) Ltd. All rights reserved.</p>
 					<ul class="footer-menu pull-right">
 						<span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=0MTQv4hXa5lSyagnEfu4v0hNhU7WGwgRkh1kPtDeHETNNVKozbpEgU6lsXDK"></script></span>
 					</ul><!-- .footer-menu -->

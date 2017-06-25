@@ -1,12 +1,33 @@
 
-		
-		<main>
+		<style>
+		.chirp-bg-diam {
+			background:  url('/assets/images/art/hpe-background.jpg') no-repeat center left;
+			background-size: 100% auto;
+			height: auto !important;
+			background-position: top right;
+		}
 
-			<!-- ============================================================= SECTION – Top Banner ============================================================= -->
+		.chirp-bg-plat-lg {
+			background:  url('/assets/images/art/platinum-background.jpg') no-repeat center left;
+			background-size: 100% auto;
+			height: auto !important;
+			background-position: center center;
+		}
+		.chirp-bg-plat-xs {
+			background:  url('/assets/images/art/platinum-background.jpg') no-repeat center left;
+			background-size: auto 100%;
+			height: auto !important;
+			background-position: top center;
+		}
+		</style>
+
+
+		<main>
+ <!--============================================================= SECTION – Top Banner ============================================================= -->
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg">
+				<div id="owl-main" class="owl-carousel height-sm owl-inner-nav owl-ui-lg">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
 					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
@@ -46,21 +67,19 @@
 					<div class="item" style="background-image: url(/assets/images/art/slider03.jpg);">
 						<div class="container">
 							<div class="caption vertical-center text-left">
-								
-								<h1 class="fadeInRight-1 dark-bg light-color" style="font-size: 300%"><span>DR. MICHAEL JORDAAN</span></h1>
-								<p class="fadeInLeft-2 light-color" style="font-size: 150%"><strong>Keynote speaker on singularity,</strong> venture capitalist and former banker<br><br/> </p>
-								
-								<!-- /.fadeIn -->
-							</div><!-- /.caption -->
+								<div class="fadeInDown-1 col-lg-7 col-md-8 col-sm-9 col-xs-12 vertical-center ">
+									<p style="color:#FFF;font-weight:bold;font-size:300%">Dr. Michael Jordaan</p>
+									<p style="color:#FFF;font-size:150%"><strong>Keynote speaker on singularity, </strong> venture capitalist and former CEO of FNB	
+								</div>
+							</div>
 						</div><!-- /.container -->
 					</div><!-- /.item -->
-
 				</div>
 			</section>
 
 <!-- ============================================================= SECTION – Count Down timer ============================================================= -->
 
-			<section class="dark-bg">
+			<section style="background-color:#005982">
 					
 					<script src="//www.powr.io/powr.js" external-type="html"></script> 
  					<div class="powr-countdown-timer fadeIn-1" id="ad1114b2_1498337210"></div>
@@ -74,13 +93,23 @@
 					
 					<div class="row">
 						
-						<div class="col-sm-6  text-right">
-							<figure><img src="/assets/images/art/product01.jpg" alt="" style="width:70%"></figure>
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 text-left inner-bottom-xs">
+							<figure><img src="/assets/images/art/product01.jpg" alt="" style="width:100%"></figure>
 						</div><!-- /.col -->
 						
-						<div class="col-sm-6 inner-top-xs inner-left-xs">
-							<h2>Is this the first phase of singularity?</h2>
-							<p>People and organisations will become far more data-dependent in how they make decisions, develop products and services, and interact with customers, employees and stakeholders at all levels. Technology innovation is picking up speed and the birth of an artificial intelligence assisting with this process is very real. Humans and technology are on a collision course and one can only speculate on how this will change humanity as we know it today. What is key is our ability to understand and plan for this change.</p>
+						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+							<h2>Ray Kurzweil: Here’s what will happen when we connect our brains to the cloud</h2>
+							<p style="font-size:80%;color:lightsteelblue"> By Singularity Hub - Jun 23, 2017</p>
+							<p>Ray Kurzweil is an inventor, thinker, and futurist famous for forecasting the pace of technology and predicting the world 
+								of tomorrow. In this video, Kurzweil looks ahead to a time in the not-too-distant future when we’ll be able to connect our brains 
+								to computers in the cloud.
+								<br><br>
+								Individual computers and mobile devices are already billions of times more powerful than their predecessors decades ago, Kurzweil says, 
+								but the most interesting things they can do—search the internet, translate a language, answer spoken questions and requests—are made possible 
+								by each device’s connection to the millions of computers living in the cloud.
+								<br><br>
+								In the future, Kurzweil believes we’ll do away with secondary devices like smartphones in lieu of a direct connection from brain to 
+								cloud—and what happens next will be very interesting indeed.</p>
 						</div><!-- /.col -->
 						
 					</div><!-- /.row -->
@@ -90,56 +119,100 @@
 
 <!-- ============================================================= SECTION – Diamond Sponsor ============================================================= -->
 
-			<section id="DiamondSponsors" class="dark-bg">
-				<div class="fullscreen-bg fadeIn-1" >
-					<figure><img class="fadeInLeft-1" src="/assets/images/art/hpe-robot.jpg" alt=""></figure>
-				</div>
-				<div class="outer-top-xs outer-bottom-xs">
-					<div class="container inner-bottom-xs">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 fadeIn-2">
-								<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:400px;height:auto;"></figure>
-								<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right vertical-center inner-top-sm">
-								<p style="font-size:200%"><strong>Diamond sponsor</strong></p>
-								
-							</div>
-						</div>
+			<section id="DiamondSponsors" class="chirp-bg-diam visible-lg visible-md">
+				<div class="container">
+					<div class="col-lg-6 col-md-6 inner-bottom-xs inner-top-xs fadeInLeft-1">	
+						<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:80%;height:auto;"></figure>
+						<p style="font-size:150%"><strong>Diamond sponsor</strong></p>
+						<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>	
 					</div>
 				</div>
 			</section>		
 
+			<section id="DiamondSponsors" class="visible-sm visible-xs" style="background-color:black">
+				<div class="container">
+					<div class="col-sm-10 col-xs-12 inner-bottom-xs inner-top-xs fadeInLeft-1">	
+						<figure><img src="/assets/images/sponsor logos/Diamond/hpe-white.svg" alt="" style="width:80%;height:auto;"></figure>
+						<p style="font-size:150%"><strong>Diamond sponsor</strong></p>
+						<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE">Read more</a>	
+					</div>
+				</div>
+			</section>	
+
 <!-- ============================================================= SECTION – Event Info continue  ============================================================= -->
 			
 			<section id="EventInfo">
-				<div class="container inner-bottom-sm inner-top-sm">
-									
+				<div class="container inner-bottom-sm inner-top-sm ">			
 					<div class="row">
-						
-						<div class="col-sm-6 col-sm-push-6 inner-left-xs">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/ZNXx8MzvOcs" frameborder="0" allowfullscreen></iframe>
-						</div><!-- /.col -->
-						
-						<div class="col-sm-6 col-sm-pull-6 inner-right-xs">
-							<figure><img src="assets/images/art/raster.png" alt="" style="width:30%;height:auto;"></figure>
+						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+							<figure><img src="assets/images/art/raster.png" alt=""></figure>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">	
+							
 							<h2>How does this affect business?</h2>
-							<p>This is the question that will be answered by Datacentrix and our partners during
-								Showcase 2017. We also aim to create an informal networking environment where attendees 
-								will hear first-hand, from other companies and industry leaders, about this journey. </p>
+							<p>This is the question that will be answered by Datacentrix and our partners during Showcase 2017. 
+								We aim to create an informal networking environment where attendees will hear first-hand, from 
+								other companies and industry leaders, about this journey. Whether you call this the 4th industrial 
+								revolution or you acknowledge the birth of singularity, the remains that we are about to experience 
+								a massive shift in our reality. 
+								<br><br>
+								Everything around us is about to change, in fact it has already began a few years ago. Humanity as 
+								we know it is blind to these changes and one you focus on it, a new world is exposed. Just think back 
+								to a world pre-language where we communication was not that easy, where electronics and even thought 
+								of vehicles, would have been unimaginable to our homosapien ancestors. 
+								<br><br>
+								We find ourselves here today, but once we open our minds to evolution we are amazed to see what is 
+								possible. Visit our media page for great videos on this very topic. 
+ 								</p>
 						</div>
 					</div>	
 				</div>
 			</section>
+
 			
 <!-- ============================================================= SECTION – Platinum Sponsers ============================================================= -->
 
-			<section id="pattern-background-2" class="dark-bg img-bg-softer" style="background-image: url(assets/images/art/pattern-background02.png);">
+			<section class="chirp-bg-plat-lg visible-lg visible-md visible-sm" >
 				<div class="container">
 					<div class="row">
 						<header>
-							<div class="col-sm-1212 text-center outer-bottom-xs outer-top-xs">
-								<h1 style="color:#fff;font-size:250%">Platinum sponsors</h1>
+							<div class="text-center outer-bottom-xs outer-top-xs">
+								<p style="font-size:150%;color:#FFF"><strong>Platinum sponsors</strong></p>
+							</div>	
+						</header>	
+					</div>
+
+					<div class="row outer-bottom-xs">
+							<div class="col-sm-6 text-center">
+							<header>
+								<figure><img src="/assets/images/sponsor-logos/cis.svg" alt="" style="width:70%;height:auto;"></figure>
+							
+							</header>
+							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS">Read more</a>
+							</div><!-- /.col -->
+							<div class="hidden-lg hidden-md hidden-sm text-center">
+								<div class="container" style="padding: 50px"></div>
+							</div>
+						  	<!-- -->
+							<div class="col-sm-6 text-center">
+							<header>
+								<figure><img src="/assets/images/sponsor-logos/len.svg" alt="" style="width:60%;height:auto;"></figure>
+								
+							</header>
+							<a class="btn sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN">Read more</a>
+							</div><!-- /.col -->
+					</div><!-- /.row -->
+					
+				</div><!-- /.container -->
+			</section>
+		
+		
+			<section class="chirp-bg-plat-xs visible-xs" >
+				<div class="container">
+					<div class="row">
+						<header>
+							<div class="text-center outer-bottom-xs outer-top-xs">
+								<p style="font-size:150%;color:#FFF"><strong>Platinum sponsors</strong></p>
 							</div>	
 						</header>	
 					</div>
@@ -168,7 +241,7 @@
 				</div><!-- /.container -->
 			</section>	
 
-
+<!-- ============================================================= SECTION – Forbes Content  ============================================================= -->
 			<section>
 				<div class="container inner-bottom-xs">
 					
@@ -201,29 +274,26 @@
 				<div class="modal fade" id="sponsorModal" role="dialog">
 					<div class="modal-dialog modal-md">
 					
-					<div class="modal-content">
-						<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
-								<button class="close" data-dismiss="modal">&times;</button>
-								<p id="sponsorLevel" class="modal-title"></p>
-						
-						</div>
+						<div class="modal-content">
+							<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
+									<button class="close" data-dismiss="modal">&times;</button>
+									<p id="sponsorLevel" class="modal-title"></p>
+							
+							</div>
 
-						<div class="modal-body">
+							<div class="modal-body">
+									<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
+									<p class="outer-top-xs" id="sponsorContent"></p>
+							</div>
+
+							<div class="modal-footer dark-bg" style="background-color:#2C3E50">
+								<div class="col-sm-6 text-left outer-top-xxs">
 								
-								<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
-								<p class="outer-top-xs" id="sponsorContent"></p>
-
+									<p style="font-size:75%">Datacentrix Showcase 2017</p>
+								</div>							
+								<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
+							</div>
 						</div>
-
-						<div class="modal-footer dark-bg" style="background-color:#2C3E50">
-							<div class="col-sm-6 text-left outer-top-xxs">
-							
-								<p style="font-size:75%"><strong>Datacentrix Showcase 2017</p>
-							</div>							
-							
-							<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
-						</div>
-					</div>
 					
 					</div>
 				</div>
@@ -232,7 +302,6 @@
 
 		{{> jscript}}
 		
-		<!-- ============================================================= MAIN : END ============================================================= -->
 
 <script>
     $(document).ready(function(){
@@ -264,10 +333,6 @@
 			})
 
 		});
-
-
-
-
 
     });
 </script>
