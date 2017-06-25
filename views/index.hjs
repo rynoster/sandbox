@@ -30,7 +30,7 @@
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg">
+				<div id="owl-main" class="owl-carousel height-sm owl-inner-nav owl-ui-lg">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
 					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
