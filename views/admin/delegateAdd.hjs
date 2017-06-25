@@ -20,26 +20,24 @@
                                     </header>
                                     <div class="panel-body">
 
-                                        <form id="frmMain" method="get" role="form" class="form-horizontal">
-
-                                            <div class="form-group"><label class="col-lg-4 control-label">ID</label>
-                                                <div class="col-lg-2"><input id="txtId" type="email" placeholder="ID" class="form-control" disabled>
-                                                </div>
-                                            </div>
+                                        <form id="frmMain" role="form" class="form-horizontal" data-toggle="validator">
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Email</label>
-                                                <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control">
+                                                <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control" data-error="Not a valid email address" required>
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">First Name</label>
-                                                <div class="col-lg-6"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control">
+                                                <div class="col-lg-6"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Last Name</label>
-                                                <div class="col-lg-6"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control">
+                                                <div class="col-lg-6"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Event Profile</label>
@@ -47,8 +45,8 @@
                                                     
                                                     <!--<input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">-->
 
-                                                    <select class="form-control" id="txtEventProfile" name="event_profile">
-                                                        <!--<option disabled selected>Select registration type</option>-->
+                                                    <select class="form-control" id="txtEventProfile" name="event_profile" required>
+                                                        <option disabled selected value="">Select registration type</option>
                                                         <option value="Customer">End Customer</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
@@ -56,11 +54,13 @@
                                                     </select>
 
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Company</label>
-                                                <div class="col-lg-6"><input id="txtCompany" type="text" placeholder="Company" class="form-control">
+                                                <div class="col-lg-6"><input id="txtCompany" type="text" placeholder="Company" data-minlength="2" data-error="At least 2 characters" class="form-control" required>
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Professional Profile</label>
@@ -72,9 +72,9 @@
                                                 <div class="col-lg-6">
                                                     <!--<input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">-->
 
-                                                    <select class="form-control" id="selOrgRole">
+                                                    <select class="form-control" id="selOrgRole" name="selOrgRole" required>
                                                                 
-                                                        <!--<option disabled selected>Select your role</option>-->
+                                                        <option disabled selected value="">Select your role</option>
                                                         <option value="Board member">Board member</option>
                                                         <option value="MD / CxO / Executive Management">MD / CxO / Executive Management</option>
                                                         <option value="Senior Manager / Business Unit Manager">Senior Manager / Business Unit Manager</option>
@@ -85,12 +85,14 @@
                                                     </select>
 
                                                 </div>
+                                                <div class="help-block with-errors"></div>
 
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Mobile Number</label>
-                                                <div class="col-lg-6"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control">
+                                                <div class="col-lg-6"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control" required>
                                                 </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Office Number</label>
@@ -107,8 +109,8 @@
                                                 <div class="col-lg-6">
                                                     <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
 
-                                                    <select id="selDietary" class="form-control" >
-                                                        <!--<option disabled selected>Select your requirements</option>-->
+                                                    <select id="selDietary" class="form-control" required>
+                                                        <option disabled selected value="">Select your requirements</option>
                                                         <option value="Halaal">Halaal</option>
                                                         <option value="Kosher">Kosher</option>
                                                         <option value="Vegetarian">Vegetarian</option>
@@ -116,12 +118,36 @@
                                                     </select>
 
                                                 </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-4 control-label">Verification email</label>
+                                                <div class="col-lg-6">
+
+                                                    <select id="selSendEmail" class="form-control" required>
+                                                        <option disabled selected value="">Make your choice</option>
+                                                        <option value="true">Yes - Send a verification email</option>
+                                                        <option value="false">No - Do not send a verification email</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-4 control-label">Approved delegate</label>
+                                                <div class="col-lg-6">
+
+                                                    <select id="selApproved" class="form-control" required>
+                                                        <option selected value="1">Yes - Automatically approved delegate</option>
+                                                        <option value="0">No - Delegate not yet approved</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="text-center">
-                                                <button id="btnReject" type="button" class="btn btn-danger rounded button-margin" disabled>Reject</button>
-                                                <button id="btnApprove" type="button" class="btn btn-success rounded button-margin" disabled>Approve</button>
-                                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update</button>
+                                                <button id="btnAdd" type="submit" class="btn btn-info rounded ">Add Delegate</button>
                                             </div>
 
                                         </form>
@@ -160,7 +186,6 @@
         //Declare all input fields as variables, for easier use later
         var $frmMain = $("#frmMain")
         var $hName = $("#hName");
-        var $txtId = $("#txtId")
         var $txtEmail = $("#txtEmail");
         var $txtFirstname = $("#txtFirstname");
         var $txtLastname = $("#txtLastname");
@@ -172,139 +197,74 @@
         var $txtOfficeNr = $("#txtOfficeNr");
         var $txtAccountMgr = $("#txtAccountMgr");
         var $selDietary = $("#selDietary");
+        var $selSendEmail = $("#selSendEmail");
+        var $selApproved = $("#selApproved");
 
         //Declare alert panel objects as variables, for easier use later
         //The alert panel is used to show success or failure on record updates or user retrieval
         var $alDiv = $("#alDiv");
         var $alMessage = $("#alMessage");
 
-        //Populate fields
-        $.ajax({
-            type: 'GET',
-            url: '/api/user/' + userId,
+        $txtEmail.focus();
 
-            success: function(user) {
+        //Record add on Add button click. Adds the record and shows success/error alert panel
 
-                $txtId.val(user.id);
-                $txtEmail.val(user.email);
-                $txtFirstname.val(user.first_name);
-                $txtLastname.val(user.last_name);
-                $txtEventProfile.val(user.event_profile);
-                $txtCompany.val(user.company);
-                $txtProProfile.val(user.pro_profile);
-                $selOrgRole.val(user.orgRole);
-                $txtMobileNr.val(user.mobilenr);
-                $txtOfficeNr.val(user.officenr);
-                $txtAccountMgr.val(user.accountManager);
-                $selDietary.val(user.dietary);
-
-                $hName.text(user.first_name + " " + user.last_name);
-
-                //If delegate registration is not yet complete, display Approve and Reject buttons. No use to show otherwise
-                console.log(user.regComplete);
-                if (user.regComplete === 0) {
-                    $("#btnReject").show();
-                    $("#btnApprove").show();
-                } else {
-                    $("#btnReject").hide();
-                    $("#btnApprove").hide();
-                }
-
-            },
-            error: function() {
+        $('#frmMain').validator().on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                // handle the invalid form...
                 $alDiv.addClass("alert-danger");
-                $alMessage.html("<strong>Error - </strong> Error retrieving user information.");
+                $alMessage.html("<strong>Error - </strong> All required fields not yet completed.");
                 $alDiv.show();
+                // alert('error');
 
-                //On error, disable all form fields
-                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
-
-            }
-        });
-
-
-        //Record update on Update button click. Updates the record and shows success/error alert panel
-        $('#btnUpdate').on('click', function() {
-            var delegate = {
-                email: $txtEmail.val(),
-                first_name: $txtFirstname.val(),
-                last_name: $txtLastname.val(),
-                event_profile: $txtEventProfile.val(),
-                company: $txtCompany.val(),
-                pro_profile: $txtProProfile.val(),
-                orgRole:$selOrgRole.val(),
-                mobilenr:$txtMobileNr.val(),
-                officenr:$txtOfficeNr.val(),
-                accountManager:$txtAccountMgr.val(),
-                dietary:$selDietary.val()
-            }
-
-            $.ajax({
-                type: 'PUT',
-                url: '/api/user/' + userId,
-                data: delegate,
-
-                success: function(delegate) {
-                    $alDiv.addClass("alert-success");
-                    $alMessage.html("<strong>Success - </strong> Record successfully updated.");
-                    $alDiv.show();
-                    $alDiv.fadeOut ( 6000 );
-                },
-
-                error: function(xhr, textStatus, errorThrown) {
-                    // var error = jQuery.parseJSON(xhr.responseText);
-
-                    // console.log(error);
-
-                    $alDiv.addClass("alert-danger");
-                    $alMessage.html("<strong>Error - </strong> Could not update record.");
-                    $alDiv.show();
-                    // $alDiv.fadeOut ( 6000 );
+            } else {
+                // everything looks good!
+                var delegate = {
+                    email: $txtEmail.val(),
+                    first_name: $txtFirstname.val(),
+                    last_name: $txtLastname.val(),
+                    event_profile: $txtEventProfile.val(),
+                    company: $txtCompany.val(),
+                    pro_profile: $txtProProfile.val(),
+                    orgRole: $selOrgRole.val(),
+                    mobilenr: $txtMobileNr.val(),
+                    officenr: $txtOfficeNr.val(),
+                    accountManager: $txtAccountMgr.val(),
+                    dietary: $selDietary.val(),
+                    sendEmail: $selSendEmail.val(),
+                    regComplete: $selApproved.val(),
                 }
-                
-            })
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/user',
+                    data: delegate,
+
+                    success: function(delegate) {
+                        $alDiv.addClass("alert-success");
+                        $alMessage.html("<strong>Success - </strong> Delegate successfully added.");
+                        $alDiv.show();
+                        $alDiv.fadeOut ( 6000 )
+
+                        $frmMain[0].reset();
+                        $txtEmail.focus();
+                    },
+
+                    error: function(xhr, textStatus, errorThrown) {
+                        var error = jQuery.parseJSON(xhr.responseText);
+
+                        $alDiv.addClass("alert-danger");
+                        $alMessage.html("<strong>Error - </strong> Could not add delegate record. " + error.error + ".");
+                        $alDiv.show();
+
+                        e.preventDefault();
+                    }
+                    
+                })
+            }
         });
 
-
-        // $('#add-user').on('click', function() {
-        //     var user = {
-        //         first_name: $firstName.val(),
-        //         last_name: $lastName.val(),
-        //         email: $email.val(),
-        //         dietary: $dietary.val(),
-        //         event_profile: $eventProfile.val(),
-        //         pro_profile: $proProfile.val(),
-        //         company: $company.val(),
-
-        //     }
-
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: '/api/user',
-        //         data: user,
-        //         success: function(newUser) {
-        //             $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
-
-        //             //Clear fields once done
-        //             $firstName.val('');
-        //             $lastName.val('');
-        //             $email.val('');
-        //             $dietary.val('');
-        //             $eventProfile.val('Delegate');
-        //             $proProfile.val('Select a profile');
-        //             $company.val('');
-
-        //         },
-
-        //         error: function(xhr, textStatus, errorThrown) {
-        //             var error = jQuery.parseJSON(xhr.responseText);
-
-        //             $errPanel.removeClass("hidden");
-        //             $errMessage.text(error.error);
-        //         }
-                
-        //     })
-        // });
+        $txtEmail.focus();
 
     });
 

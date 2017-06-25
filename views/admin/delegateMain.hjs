@@ -3,6 +3,8 @@
 
     i.fa-edit {
         cursor: pointer;
+        /*color: #fff;*/
+        font-weight: bold;
     }
 
     td.highlight {
