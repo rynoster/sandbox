@@ -22,6 +22,11 @@
 
                                         <form id="frmMain" method="get" role="form" class="form-horizontal">
 
+                                            <div class="form-group"><label class="col-lg-4 control-label">ID</label>
+                                                <div class="col-lg-2"><input id="txtId" type="email" placeholder="ID" class="form-control" disabled>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group"><label class="col-lg-4 control-label">Email</label>
                                                 <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control">
                                                 </div>
@@ -38,7 +43,18 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Event Profile</label>
-                                                <div class="col-lg-6"><input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">
+                                                <div class="col-lg-6">
+                                                    
+                                                    <!--<input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">-->
+
+                                                    <select class="form-control" id="txtEventProfile" name="event_profile">
+                                                        <!--<option disabled selected>Select registration type</option>-->
+                                                        <option value="Customer">End Customer</option>
+                                                        <option value="Media">Media</option>
+                                                        <option value="Staff">Staff</option>
+                                                        <option value="Sponsor">Sponsor</option>
+                                                    </select>
+
                                                 </div>
                                             </div>
 
@@ -53,8 +69,23 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Organisation Role</label>
-                                                <div class="col-lg-6"><input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">
+                                                <div class="col-lg-6">
+                                                    <!--<input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">-->
+
+                                                    <select class="form-control" id="selOrgRole">
+                                                                
+                                                        <!--<option disabled selected>Select your role</option>-->
+                                                        <option value="Board member">Board member</option>
+                                                        <option value="MD / CxO / Executive Management">MD / CxO / Executive Management</option>
+                                                        <option value="Senior Manager / Business Unit Manager">Senior Manager / Business Unit Manager</option>
+                                                        <option value="Mid-Level Manager / Team-leader">Mid-Level Manager / Team-leader</option>
+                                                        <option value="Snr Consultant / Engineer / Architect">Snr Consultant / Engineer / Architect</option>
+                                                        <option value="Technician / Administrator / Operations">Technician / Administrator / Operations</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+
                                                 </div>
+
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Mobile Number</label>
@@ -73,7 +104,17 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Dietary requirements</label>
-                                                <div class="col-lg-6"><input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">
+                                                <div class="col-lg-6">
+                                                    <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
+
+                                                    <select id="selDietary" class="form-control" >
+                                                        <!--<option disabled selected>Select your requirements</option>-->
+                                                        <option value="Halaal">Halaal</option>
+                                                        <option value="Kosher">Kosher</option>
+                                                        <option value="Vegetarian">Vegetarian</option>
+                                                        <option value="None">None</option>
+                                                    </select>
+
                                                 </div>
                                             </div>
 
@@ -119,17 +160,18 @@
         //Declare all input fields as variables, for easier use later
         var $frmMain = $("#frmMain")
         var $hName = $("#hName");
+        var $txtId = $("#txtId")
         var $txtEmail = $("#txtEmail");
         var $txtFirstname = $("#txtFirstname");
         var $txtLastname = $("#txtLastname");
         var $txtEventProfile = $("#txtEventProfile");
         var $txtCompany = $("#txtCompany");
         var $txtProProfile = $("#txtProProfile");
-        var $txtOrgRole = $("#txtOrgRole");
+        var $selOrgRole = $("#selOrgRole");
         var $txtMobileNr = $("#txtMobileNr");
         var $txtOfficeNr = $("#txtOfficeNr");
         var $txtAccountMgr = $("#txtAccountMgr");
-        var $txtDietary = $("#txtDietary");
+        var $selDietary = $("#selDietary");
 
         //Declare alert panel objects as variables, for easier use later
         //The alert panel is used to show success or failure on record updates or user retrieval
@@ -143,17 +185,18 @@
 
             success: function(user) {
 
+                $txtId.val(user.id);
                 $txtEmail.val(user.email);
                 $txtFirstname.val(user.first_name);
                 $txtLastname.val(user.last_name);
                 $txtEventProfile.val(user.event_profile);
                 $txtCompany.val(user.company);
                 $txtProProfile.val(user.pro_profile);
-                $txtOrgRole.val(user.orgRole);
+                $selOrgRole.val(user.orgRole);
                 $txtMobileNr.val(user.mobilenr);
                 $txtOfficeNr.val(user.officenr);
                 $txtAccountMgr.val(user.accountManager);
-                $txtDietary.val(user.dietary);
+                $selDietary.val(user.dietary);
 
                 $hName.text(user.first_name + " " + user.last_name);
 
@@ -189,11 +232,11 @@
                 event_profile: $txtEventProfile.val(),
                 company: $txtCompany.val(),
                 pro_profile: $txtProProfile.val(),
-                orgRole:$txtOrgRole.val(),
+                orgRole:$selOrgRole.val(),
                 mobilenr:$txtMobileNr.val(),
                 officenr:$txtOfficeNr.val(),
                 accountManager:$txtAccountMgr.val(),
-                dietary:$txtDietary.val()
+                dietary:$selDietary.val()
             }
 
             $.ajax({
