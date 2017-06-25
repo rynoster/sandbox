@@ -1,172 +1,24 @@
-					<header>
-			<style>
-				.panel-footer:hover {
-				background-color: #005982 !important;
-				color: #fff;
-				cursor: pointer;
-				}
 
-				.col-centered{
-					float: none;
-					margin: 0 auto;
-				}
-				.gold-sponsor{
-					background:#e5c100;
-					color: #fff;
-					font-weight: bold;
-					font-size:80%;
-					padding:5px;
-				
-				}
-				.silver-sponsor{
-					background:grey;
-					color: #fff;
-					font-weight: bold;
-					font-size:80%;
-					padding:5px;
-				
-				}
+	<style>
 
-			</style>
-
-		</header>
+	</style>
+	<!-- ============================================================= Top Banner ============================================================= -->
 			
-			
-			<section id="reasons">
-				<div class="container outer-top-xs">
-					<div class="row"> 
-						
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-						
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/for.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FOR">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/hpi.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPI">View sposor info</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/hau.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HAU">View sposor info</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/mca.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MCA">View sposor info</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6 ">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/riv.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="RIV">View sposor info</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6">
-							<div class="panel panel-default">
-								<div class="panel-header text-center gold-sponsor">Gold Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/ver.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VER">View sposor info</div>
-							</div>
-						</div>
-					</div><!-- /.row -->
-					<hr>
-					<!-- ====================================== Silver ======================================== -->
+			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/bg-sponsors.jpg);">
+				<div class="container " >
 					<div class="row">
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-
-						<div class="col-md-2 col-sm-3 col-xs-4">
-							<div class="panel panel-default">
-								<div class="panel-header text-center silver-sponsor">Silver Sponsor</div>
-								<div class="panel-body"><img src="assets/images/sponsor-logos/del.svg"></div>
-								<div href="#" class="panel-footer sponsor-Class" id="panelS" style="text-align:center;font-size:80%" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL">View sposor info</div>
-							</div>
-						</div>
-					</div>
-
-					
-
+						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
+							<header>
+								<h1 style="color:#fff">Sponsors </h1>
+							</header>
+						</div><!-- /.col -->
+					</div><!-- ./row -->
 				</div><!-- /.container -->
+			</section>
+			
+<!-- =========================================== Main =============================================-->
+			<section>
+				
 			</section>
 
 
