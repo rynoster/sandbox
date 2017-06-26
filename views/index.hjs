@@ -22,15 +22,14 @@
 			height: auto !important;
 			background-position: top center;
 		}
+
 		</style>
-
-
 		<main>
  <!--============================================================= SECTION – Top Banner ============================================================= -->
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-sm owl-inner-nav owl-ui-lg">
+				<div id="owl-main" class="owl-carousel height-sm owl-ui-sm owl-inner-nav">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
 					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
@@ -231,4 +230,10 @@
 
 		{{> jscript}}
 		
-
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('#owl-main').owlCarousel({
+                dots: false,
+            });
+        });
+    </script>
