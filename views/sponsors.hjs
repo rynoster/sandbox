@@ -50,7 +50,7 @@
 
 					<!-- Gold sponsor-->
 					<div class="row inner-bottom-md">
-						<h2>Gold sponsor</h2>
+						<h2>Gold sponsors</h2>
 						<hr>
 						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
 							<div class="fadeInDown-1 panel panel-chp-light">
@@ -167,7 +167,6 @@
 					<!-- Display sponsor-->
 					<div class="row inner-bottom-md">
 						<h2>Display sponsors</h2>
-						<p>Display sponsosrs does not have additional information on this site</p>
 						<hr>
 						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
 							<div class="fadeInDown-1 panel panel-chpn-light">
