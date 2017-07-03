@@ -29,37 +29,23 @@
 			
 			<section id="TopBanner">	
 							 
-				<div id="owl-main" class="owl-carousel height-sm owl-ui-sm owl-inner-nav">
+				<div id="owl-main" class="owl-carousel height-sm">
 					
 					<!-- Page 1 of main banner - Welcome and counter -->
 					<div class="item" style="background-image: url(/assets/images/art/slider01-b.jpg);">
 						<div class="container">
-						 
-							<div class="caption vertical-center text-right">
-								
+						 	<div class="caption vertical-center text-right">
 								<div class="fadeIn-1">
-									
 									<!-- Display the Showcase logo on everything but the a mobile phone-->
-									<div class="visible-lg visible-md">
-										<img src="/assets/images/showcase.svg" style="width:50%;height:auto">
-										<br><br><br>
+									<div class="row text-right">
+										<img class="rounded pull-right" src="/assets/images/showcase.svg" style="width:50%;height:auto">
+									</div>	
+									<div class="row text-right inner-top-xs">
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Montecasino</p>
-									</div>
-									<div class="visible-xs visible-sm" style="padding-bottom: 30px">
-										
-										<p style="font-weight: bold; font-size: 200%; color:#005981">Showcase 2017</p><br>
-										<p style="font-size: 100%; color:#005981">Montecasino, Thursday 27 July 2017</p>
-										<img src="/assets/images/art/calendar.png" style="width:100px;height:auto">
-										
-										
-									</div>										
-																								
-								</div>
-														
-								<div class="fadeInDown-2">
-									<a href="/register" class="btn">Secure your seat now</a>
-								</div><!-- /.fadeIn -->
+										<a href="/register" class="btn">Secure your seat now</a>
+									</div>												
+								</div>		
 							</div><!-- /.caption -->
 						</div><!-- /.container -->
 					</div><!-- /.item -->
