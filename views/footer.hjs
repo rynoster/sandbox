@@ -9,9 +9,9 @@
 						<h4>More about us</h4>
 						<hr color="#fff" align="left">
 						<p>Datacentrix is an ICT solutions provider that uses technology and services to deliver business value to organisations. We partner with our customers, equipping them with valuable insight, and help them to align their technology undertakings with their business strategy.</p>
-						<p><a href="http://www.datacentrix.co.za/technology-solutions.html" class="txt-btn">Technology Solutions</a></p>
-						<p><a href="http://www.datacentrix.co.za/managed-services.html" class="txt-btn">Managed Services</a><br></p>
-						<p><a href="http://www.datacentrix.co.za/business-applications.html" class="txt-btn">Business Applications</a></p>
+						<i class="icon-cog-1"></i><a href="http://www.datacentrix.co.za/technology-solutions.html" > Technology Solutions</a><br>
+						<i class="icon-users"></i><a href="http://www.datacentrix.co.za/managed-services.html"> Managed Services</a><br>
+						<i class="icon-chart-bar-1"></i><a href="http://www.datacentrix.co.za/business-applications.html"> Business Applications</a><br>
 				 	</div><!-- /.col -->
 					
 					<!-- =============================== Showcase 2017 ============================= -->
@@ -19,11 +19,9 @@
 						<h4>Showcase 2017</h4>
 						<hr color="#fff" align="left">
 						<p>Do not miss this opportunity to hear from leaders in the industry, network with top experts and get a glimpse of a new kind of humanity.</p>
-						<ul class="Links">
-							<li><i class="icon-location contact"></i> Montecasino, Johannesburg</li>
-							<li><i class="icon-mobile contact"></i> 087 741 5000</li>
-							<li><a href="mailto:showcase@datacentrix.co.za?subject=Showcase 2017 web contact form"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
-						</ul>
+						<i class="icon-location contact"></i> Montecasino, Johannesburg<br>
+						<a href="mailto:showcase@datacentrix.co.za?subject=Showcase 2017 web contact form"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za<br>
+						<i class="icon-mobile contact"></i> 087 741 5000<br>
 					</div><!-- /.col -->
 
 					
@@ -31,11 +29,12 @@
 					<div class="ol-lg-4 col-md-4 col-sm-4 col-xs-12 inner">
 						<h4>Site Navigation</h4>
 						<hr color="#fff" align="left">
-							<p><a style="text-decoration:none" href="/whyattend">Why attend</a></p>
-							<p><a href="/eventinfo">Agenda</a></p>
-							<p><a href="/logistics">Logistics</a></p>
-							<p><a href="/register">Register</a></p>
-							<p><a href="/contactus">Contact us</a></p>
+							<a href="/whyattend">Why attend</a><br>
+							<a href="/sponsors">Sponsors</a><br>
+							<a href="/eventinfo">Agenda</a><br>
+							<a href="/logistics">Logistics</a><br>
+							<a href="/register">Register</a><br>
+							<a href="/contactus">Contact us</a><br>
 					</div><!-- /.col -->
 									
 							

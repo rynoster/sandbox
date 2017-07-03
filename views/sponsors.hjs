@@ -84,6 +84,12 @@
 
 						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
 							<div class="fadeInDown-1 panel panel-chp-light">
+								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="OPE" src="/assets/images/sponsor-logos/ope.svg" alt=""></figure></div>
+							</div>	
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+							<div class="fadeInDown-1 panel panel-chp-light">
 								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="RIV" src="/assets/images/sponsor-logos/riv.svg" alt=""></figure></div>
 							</div>	
 						</div>
@@ -200,12 +206,6 @@
 
 						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
 							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/ope.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
 								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/tri.svg" alt=""></figure></div>
 							</div>	
 						</div>
@@ -283,7 +283,7 @@
 					$("#sponsorName").text(sponsors.sponsorName);
 					$("#sponsorContent").html(sponsors.sponsorContent);
 					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
-					$("#sponsorImage").attr("src","/assets/images/sponsor logos/" + sponsors.sponsorLevel + "/" + sponsors.sponsorLogo);
+					$("#sponsorImage").attr("src","/assets/images/sponsor-logos/" + sponsors.sponsorLogo);
 				},
 				error: function() {
 					// alert("Error retrieving sponsor data");

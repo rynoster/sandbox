@@ -101,9 +101,7 @@ p1 {
     
 	
 }
-p a {
-	border-bottom: 1px solid #73879C;
-}
+
 p a:hover {
 	border-color: transparent;
 }
