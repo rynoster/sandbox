@@ -6,6 +6,11 @@
                     .button-hide {
                         display: none;
                     }
+
+                    .tooltip-inner {
+                        min-width: 200px;
+                        max-width: 100%; 
+                    }
                 </style>
                 <!--start main content-->
                 <section id="main-content">
@@ -23,25 +28,25 @@
                                         <form id="frmMain" role="form" class="form-horizontal" data-toggle="validator">
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Email</label>
-                                                <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control" data-error="Not a valid email address" required>
+                                                <div class="col-lg-5"><input id="txtEmail" type="email" placeholder="Email" class="form-control" data-error="Not a valid email address" required>
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">First Name</label>
-                                                <div class="col-lg-6"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
+                                                <div class="col-lg-5"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Last Name</label>
-                                                <div class="col-lg-6"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
+                                                <div class="col-lg-5"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control" data-minlength="3" data-error="At least 3 characters" required>
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Event Profile</label>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-5">
                                                     
                                                     <!--<input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">-->
 
@@ -58,18 +63,18 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Company</label>
-                                                <div class="col-lg-6"><input id="txtCompany" type="text" placeholder="Company" data-minlength="2" data-error="At least 2 characters" class="form-control" required>
+                                                <div class="col-lg-5"><input id="txtCompany" type="text" placeholder="Company" data-minlength="2" data-error="At least 2 characters" class="form-control" required>
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Professional Profile</label>
-                                                <div class="col-lg-6"><input id="txtProProfile" type="text" placeholder="Professional Profile" class="form-control">
+                                                <div class="col-lg-5"><input id="txtProProfile" type="text" placeholder="Professional Profile" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Organisation Role</label>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-5">
                                                     <!--<input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">-->
 
                                                     <select class="form-control" id="selOrgRole" name="selOrgRole" required>
@@ -90,23 +95,23 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Mobile Number</label>
-                                                <div class="col-lg-6"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control" required>
+                                                <div class="col-lg-5"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control" required>
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Office Number</label>
-                                                <div class="col-lg-6"><input id="txtOfficeNr" type="text" placeholder="Office Number" class="form-control">
+                                                <div class="col-lg-5"><input id="txtOfficeNr" type="text" placeholder="Office Number" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Account Manager</label>
-                                                <div class="col-lg-6"><input id="txtAccountMgr" type="text" placeholder="Account Manager" class="form-control">
+                                                <div class="col-lg-5"><input id="txtAccountMgr" type="text" placeholder="Account Manager" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Dietary requirements</label>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-5">
                                                     <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
 
                                                     <select id="selDietary" class="form-control" required>
@@ -122,25 +127,43 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Verification email</label>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-5">
 
-                                                    <select id="selSendEmail" class="form-control" required>
+                                                    <!--<select id="selSendEmail" class="form-control" required>
                                                         <option disabled selected value="">Make your choice</option>
                                                         <option value="true">Yes - Send a verification email</option>
                                                         <option value="false">No - Do not send a verification email</option>
-                                                    </select>
+                                                    </select>-->
+
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="selSendEmail" id="selSendEmail" value="true" data-toggle="tooltip" title="Send email" required> Yes
+                                                    </label>
+
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="selSendEmail" id="selSendEmail" value="false" data-toggle="tooltip" title="Do not send email" required> No
+                                                    </label>
 
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-4 control-label">Approved delegate</label>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-5">
 
-                                                    <select id="selApproved" class="form-control" required>
-                                                        <option selected value="1">Yes - Automatically approved delegate</option>
+                                                    <!--<select id="selApproved" class="form-control" required>
+                                                        <option selected value="1">Yes - Automatically approve delegate</option>
                                                         <option value="0">No - Delegate not yet approved</option>
-                                                    </select>
+                                                    </select>-->
+                                                    <!--<input class="radio-inline" type="radio" name="selApproved" value="Yes" checked> Yes-->
+                                                    <!--<input class="radio-inline" type="radio" name="selApproved" value="No" > No-->
+
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="selApproved" id="selApproved" value="1" data-toggle="tooltip" title="Automatically approve delegate" required> Yes
+                                                    </label>
+
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="selApproved" id="selApproved" value="0" data-toggle="tooltip" title="Delegate not yet approved" required checked> No
+                                                    </label>
 
                                                 </div>
                                                 <div class="help-block with-errors"></div>
@@ -197,8 +220,8 @@
         var $txtOfficeNr = $("#txtOfficeNr");
         var $txtAccountMgr = $("#txtAccountMgr");
         var $selDietary = $("#selDietary");
-        var $selSendEmail = $("#selSendEmail");
-        var $selApproved = $("#selApproved");
+        var $selSendEmail = $("input[name='selSendEmail']");
+        var $selApproved = $("input[name='selApproved']");
 
         //Declare alert panel objects as variables, for easier use later
         //The alert panel is used to show success or failure on record updates or user retrieval
@@ -206,6 +229,7 @@
         var $alMessage = $("#alMessage");
 
         $txtEmail.focus();
+        $("#add").addClass("active"); //Shows active arrow in navigation pane
 
         //Record add on Add button click. Adds the record and shows success/error alert panel
 
@@ -215,10 +239,11 @@
                 $alDiv.addClass("alert-danger");
                 $alMessage.html("<strong>Error - </strong> All required fields not yet completed.");
                 $alDiv.show();
-                // alert('error');
 
             } else {
-                // everything looks good!
+                var selApprovedVal = $selApproved.filter(":checked").val();
+                var selSendEmailVal = $selSendEmail.filter(":checked").val();
+
                 var delegate = {
                     email: $txtEmail.val(),
                     first_name: $txtFirstname.val(),
@@ -231,9 +256,11 @@
                     officenr: $txtOfficeNr.val(),
                     accountManager: $txtAccountMgr.val(),
                     dietary: $selDietary.val(),
-                    sendEmail: $selSendEmail.val(),
-                    regComplete: $selApproved.val(),
+                    sendEmail: selSendEmailVal,
+                    regComplete: selApprovedVal,
                 }
+
+                e.preventDefault();
 
                 $.ajax({
                     type: 'POST',
@@ -241,6 +268,7 @@
                     data: delegate,
 
                     success: function(delegate) {
+                        $alDiv.removeClass("alert-danger");
                         $alDiv.addClass("alert-success");
                         $alMessage.html("<strong>Success - </strong> Delegate successfully added.");
                         $alDiv.show();
@@ -253,11 +281,11 @@
                     error: function(xhr, textStatus, errorThrown) {
                         var error = jQuery.parseJSON(xhr.responseText);
 
+                        $alDiv.removeClass("alert-success");
                         $alDiv.addClass("alert-danger");
                         $alMessage.html("<strong>Error - </strong> Could not add delegate record. " + error.error + ".");
                         $alDiv.show();
-
-                        e.preventDefault();
+                        
                     }
                     
                 })
