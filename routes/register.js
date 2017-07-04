@@ -5,32 +5,32 @@ var app = express();
 
 router
 
-  .get('/delegate', (req,res) => {
+  .get('/delegate', (req, res) => {
 
     res.render('skeleton', {
       partials: {
-        header: "header", 
+        header: "header",
         content: "register",
-        footer: "footer", 
+        footer: "footer",
         jscript: "jscript",
-        }
-      
+      }
+
     });
   })
 
-  .get('/', (req,res) => {
+  .get('/', (req, res) => {
 
     res.render('skeleton', {
       partials: {
-        header: "header", 
+        header: "header",
         content: "register",
-        footer: "footer", 
+        footer: "footer",
         jscript: "jscript",
-        }
-      
+      }
+
     });
   })
 
-  ;
-  
+;
+
 module.exports = router;
