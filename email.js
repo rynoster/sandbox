@@ -15,27 +15,26 @@ var transporter = nodemailer.createTransport({
     })
 });
 
-module.exports = function(params){
+module.exports = function (params) {
     this.from = params.from;
     this.to = params.to;
     this.subject = params.subject;
     this.html = params.html;
     this.successCallback = params.successCallback;
-    this.errorCallback= params.errorCallback;
+    this.errorCallback = params.errorCallback;
 
-    this.send = function(){
+    this.send = function () {
         var options = {
-            from : this.from,
-            to : this.to,
-            subject : this.subject,
-            html : this.html,
+            from: this.from,
+            to: this.to,
+            subject: this.subject,
+            html: this.html,
         };
 
-        transporter.sendMail(options, function(err, success) {
-            if(err){
+        transporter.sendMail(options, function (err, success) {
+            if (err) {
                 // this.errorCallback(err);
-            }
-            else{
+            } else {
                 // this.successCallback(success);
             }
         });
