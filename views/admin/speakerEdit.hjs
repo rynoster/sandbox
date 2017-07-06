@@ -29,7 +29,7 @@
                                         <form id="frmMain" method="get" role="form" class="form-horizontal">
 
                                             <div class="form-group"><label class="col-lg-2 control-label">ID</label>
-                                                <div class="col-lg-2"><input id="txtId" type="email" placeholder="ID" class="form-control" disabled>
+                                                <div class="col-lg-2"><input id="txtId" type="text" placeholder="ID" class="form-control" disabled>
                                                 </div>
                                             </div>
                                             
@@ -288,7 +288,7 @@
     }
 
     function uploadFile(fileName) {
-            var files = $($upImage).get(0).files;
+            var files = $("$upImage").get(0).files;
 
             if (files.length > 0){
                 // One or more files selected, process the file upload
