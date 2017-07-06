@@ -233,7 +233,7 @@
 
 				<!--For width and height of modal content, refer to manual styling top of page-->
 				<div class="modal fade" id="sponsorModal" role="dialog">
-					<div class="modal-dialog modal-md">
+					<div class="modal-dialog modal-md " >
 					
 						<div class="modal-content">
 							<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
@@ -243,7 +243,7 @@
 							</div>
 
 							<div class="modal-body">
-									<img id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
+									<img class="panel-logo" id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
 									<p class="outer-top-xs" id="sponsorContent"></p>
 							</div>
 
