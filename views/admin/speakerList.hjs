@@ -30,6 +30,7 @@
                                 <tr>
                                     <th>Full Name</th>
                                     <th>Company </th>
+                                    <th>Twitter </th>
                                 </tr>
                             </thead>
                         </table>
@@ -69,6 +70,7 @@
             stateSave: true,
             pageLength: 25,
             bAutoWidth: false,
+            order: [[0, "asc"]],
             ajax: {
                 url: "/api/allSpeakers",
                 dataSrc: "",
@@ -84,27 +86,26 @@
                     window.location.href = "/admin/speakerEdit/" + aData.id;
                 })
 
-                // $(nRow).unbind("click").bind("click", function() { // This code prevents multiple click events being triggered
-                //     window.location.href = "/admin/delegateEdit/" + aData.id;
-                // })
             },
             // This section merges first_name and last_name in to the first (0) column
             columnDefs: [
                 {
-                    //This is ES6 code, not supported in IE browsers....
-                    // render: (data, type, full) => {
-                    //     return full.first_name + " " + full.last_name;
-                    // },
-
                     render: function(data, type, full) {
                         return editIcon + " " + full.fullName;
                     },
                     targets: [0]
+                },
+                {
+                    render: function(data, type, full) {
+                        return "@" + full.twitter;
+                    },
+                    targets: [2]
                 }
             ],
             columns: [
                 { data: 'fullName' },
-                { data: 'companyName' }
+                { data: 'companyName' },
+                { data: 'twitter' }
             ]
         });
 
