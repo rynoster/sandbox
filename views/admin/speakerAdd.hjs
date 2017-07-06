@@ -38,7 +38,6 @@
                                                 </div>
                                             </div>
 
-                                            <!--<div class="input-group">-->
                                             <div class="form-group"><label class="control-label col-lg-2">Twitter</label>
                                                 <div class="col-lg-8">
                                                     <div class="input-group">
@@ -46,8 +45,6 @@
                                                         <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="txtTwitter" placeholder="Twitter" required>
                                                     </div>
                                                 </div>
-                                                <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-                                                <!--<div class="help-block with-errors">Hey look, this one has feedback icons!</div>-->
                                             </div>
 
                                             <div id="divSpeaker" class="form-group"><label class="col-lg-2 control-label">Speaker photo</label>
@@ -66,7 +63,7 @@
                                             </div>
 
                                             <div class="text-center">
-                                                <button id="btnAdd" type="submit" class="btn btn-info rounded ">Add Speaker</button>
+                                                <button id="btnAdd" type="button" class="btn btn-info rounded ">Add Speaker</button>
                                             </div>
 
                                         </form>
@@ -223,9 +220,10 @@
                     displayAlert("Success", "Record successfully updated.", 6000);
 
                     //Reset all form elements
-                    // $frmMain[0].reset();
-                    // $txtBio.summernote("code") = "";
-                    // $imgPhoto.prop("src", "../../images/speakers/" + "placeholder-profile.jpg");
+                    $frmMain[0].reset();
+                    $('#txtBio').summernote('code', '');
+                    $('#txtBio').summernote('reset');
+                    $imgPhoto.attr("src", "../../images/speakers/" + "placeholder-profile.jpg");
 
                 },
 
