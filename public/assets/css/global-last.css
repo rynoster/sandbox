@@ -158,4 +158,15 @@
     }    
     .drk-bg p {
         color:#fff !important;
-    }   
+    }  
+
+
+
+     /* footer css */
+
+     .footer-light {
+        background-color: #c7c6c6 !important;
+        color: #005982 !important;
+
+
+     }

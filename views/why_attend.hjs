@@ -1,4 +1,13 @@
 
+	<style>
+	.block-light p {
+		color:white !important ;
+
+	}
+	
+	
+	</style>
+	
 	<!-- ============================================================= Top Banner ============================================================= -->
 			
 			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background-why-attend.jpg);">
@@ -69,12 +78,12 @@
 
 
 <!-- =========================================================== Quote - Gartner: START ============================================================= -->
-									<div class="post format-quote">
+									<div class="post format-quote drk-bg">
 										
-										<div class="post-content">
+										<div class="post-content drk-bg">
 											 
 											<blockquote>
-												<p>Gartner predicts one in three jobs will be converted to software, robots and smart machines by 2025. New digital businesses require less labour; machines will make sense of data faster than humans can.</p>
+												<p class="">Gartner predicts one in three jobs will be converted to software, robots and smart machines by 2025. New digital businesses require less labour; machines will make sense of data faster than humans can.</p>
 												<footer><cite>Peter Sondergaard, Gartner</cite></footer>
 											<br></blockquote>
 											
@@ -140,7 +149,7 @@
 <!-- =========================================================== Quote Start - Centre Top ============================================================= -->
 									<div class="post format-quote">
 										
-										<div class="post-content">
+										<div class="post-content drk-bg">
 											 
 											<blockquote>
 												<p>“Many leaders and organisations are blind to the significant disruptive changes that will be brought by exponential technology growth.</p>
@@ -181,7 +190,7 @@
 <!-- =========================================================== Quote - Gartner: START ============================================================= -->
 									<div class="post format-quote">
 										
-										<div class="post-content">
+										<div class="post-content drk-bg">
 											 
 											<blockquote>
 												<p>With digital business revenue expected to increase by over 80% by 2020, it’s not an option to put growth plans on hold.</p>
