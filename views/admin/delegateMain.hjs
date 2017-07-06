@@ -60,6 +60,7 @@
 
     var delFilter = $("#datatable").data("filter") ; //Get the applied filter from the data-attribute set on the table
     $("#"+delFilter).addClass("active"); //Adds the active class to the selected filter, to highlight in the left navigation bar
+    $("#liMenuDelegate").addClass("active")
 
     switch (delFilter) {
         case "all":
