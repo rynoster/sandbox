@@ -108,9 +108,9 @@
 .light-bg h4{
     color: #005982 !important;
 }
-.light-bg p{
+/*.light-bg p{
     color: #005982 !important;
-}
+}*/
 .light-bg i{
     color: #005982 !important;
 }
@@ -158,4 +158,15 @@
     }    
     .drk-bg p {
         color:#fff !important;
-    }   
+    }  
+
+
+
+     /* footer css */
+
+     .footer-light {
+        background-color: #c7c6c6 !important;
+        color: #005982 !important;
+
+
+     }

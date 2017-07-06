@@ -39,7 +39,7 @@
 			</section>
 
 
-			<section id="TopBanner">	
+			<section id="TopBanner" class="visible-lg visible-md visible-sm">	
 							 
 				<div id="owl-main" class="owl-carousel height-sm dark-bg">
 					

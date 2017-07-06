@@ -1,5 +1,16 @@
 
 		
+	
+	<style>	
+	
+	 .footer-light {
+        background-color: #c7c6c6 !important;
+        color: #005982 !important;
+		line-height: 60px;
+
+     }
+	
+	</style>
 		<footer class="dark-bg">
 			<div class="container">
 				<div class="row">
@@ -42,10 +53,10 @@
 				</div><!-- /.row --> 
 			</div><!-- .container -->
 		  
-			<div class="footer-bottom">
-				<div class="container inner">
-					<p class="pull-left">© 2017 Datacentrix (Pty) Ltd. All rights reserved.</p>
-					<ul class="footer-menu pull-right">
+			<div class="footer-bottom footer-light">
+				<div class="container inner footer-light text-center">
+					<p class="">© 2017 Datacentrix (Pty) Ltd. All rights reserved.</p>
+					<ul class="footer-menu">
 						<span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=0MTQv4hXa5lSyagnEfu4v0hNhU7WGwgRkh1kPtDeHETNNVKozbpEgU6lsXDK"></script></span>
 					</ul><!-- .footer-menu -->
 				</div><!-- .container -->
