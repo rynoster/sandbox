@@ -354,12 +354,40 @@ router
         footer: "admin/footer", 
       }
     })
+  })
     
     
-    // res.render('sponsoredit', {
-    //   partials: {jscript: "jscript"}
-    // })
+  .get('/admin/speakerList', auth.loginRequired, auth.adminRequired, (req,res) => {
 
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Speakers - List",
+      loggedIn: true,
+      partials : {
+        // header: "admin/header", 
+        body: "admin/speakerList",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
+  })
+
+  .get('/admin/speakerEdit/:id', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    var { id } = req.params;
+
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Speaker edit",
+      speakerId: id,
+      loggedIn: true,
+      partials : {
+        // header: "admin/header", 
+        body: "admin/speakerEdit",
+        jscript: "admin/jscript",
+        // footer: "admin/footer", 
+      }
+    })
 
   })
  ;
