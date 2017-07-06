@@ -215,15 +215,15 @@
                 data: speaker,
 
                 success: function(delegate) {
-                    uploadFile(imageUrl);
+                    uploadFile(imageUrl, function() {
+                        displayAlert("Success", "Record successfully updated.", 6000);
 
-                    displayAlert("Success", "Record successfully updated.", 6000);
-
-                    //Reset all form elements
-                    $frmMain[0].reset();
-                    $('#txtBio').summernote('code', '');
-                    $('#txtBio').summernote('reset');
-                    $imgPhoto.attr("src", "../../images/speakers/" + "placeholder-profile.jpg");
+                        //Reset all form elements
+                        $frmMain[0].reset();
+                        $('#txtBio').summernote('code', '');
+                        $('#txtBio').summernote('reset');
+                        $imgPhoto.attr("src", "../../images/speakers/" + "placeholder-profile.jpg");
+                    });
 
                 },
 
@@ -260,7 +260,7 @@
         $("#alDiv").fadeOut(fadeTime);
     }
 
-    function uploadFile(fileName) {
+    function uploadFile(fileName, callback) {
             var files = $("#upImage").get(0).files;
 
             if (files.length > 0){
@@ -279,7 +279,13 @@
                     processData: false,
                     contentType: false,
                     success: function(data){
-                        console.log('upload successful!\n' + data);
+                        // console.log('upload successful!\n' + data);
+                        if(callback && typeof callback == "function"){
+                            callback();
+                        }
+                    },
+                    error: function(){
+                        displayAlert("Error","Something went wrong, record not added");
                     },
                     xhr: function() {
                         // create an XMLHttpRequest
