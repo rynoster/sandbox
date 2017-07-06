@@ -30,47 +30,13 @@
 										
 										<div class="post-content">
 <!-- =========================================================== Flash Cards : START ========================================================================== -->
-
-											<div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
-												
-												<div class="item">
+											<div class="fullwidthbanner">
 													<figure>
-														<img src="/assets/images/art/wa-banner-t0.jpg" alt="">
+														<img src="/assets/images/showcase.svg" alt="" style="padding-bottom:40px ">
+														
 													</figure>
-												</div><!-- /.item -->
 											
-												<div class="item">
-													<figure>
-														<img src="/assets/images/art/wa-banner-t0-3.jpg" alt="">
-													</figure>
-												</div><!-- /.item -->
-
-												<div class="item">
-													<figure>
-														<img src="/assets/images/art/wa-banner-t1.jpg" alt="">
-													</figure>
-												</div><!-- /.item -->
-
-												<div class="item">
-													<figure>
-														<img src="/assets/images/art/wa-banner-t0-4.jpg" alt="">
-													</figure>
-												</div><!-- /.item -->
-												
-												<div class="item">
-													<figure>
-														<img src="/assets/images/art/wa-banner-t2.jpg"alt="">
-													</figure>
-												</div><!-- /.item -->
-
-												<div class="item">
-													<figure>
-														<img src="/assets/images/art/wa-banner-t0-5.jpg" alt="">
-													</figure>
-												</div><!-- /.item -->
-												
-												
-											</div><!-- /.owl-carousel -->
+											</div>	
 
 <!-- =========================================================== Flash Cards : End========================================================================== -->	
 
