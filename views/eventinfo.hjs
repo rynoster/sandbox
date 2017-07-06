@@ -1,9 +1,10 @@
+
     <!-- ============================================================= Top Banner ============================================================= -->
 			
 			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
 				<div class="container " >
 					<div class="row">
-						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
+						<div class="col-md-8 outer-bottom-xs" >
 							<header>
 								<h1 style="color:#005982">Event info </h1>
 								<p>How to plan your day with us, what to expect and much more. </p>
@@ -163,11 +164,11 @@
 
 <!-- ========================================= Lunch ============================================================= -->
 			
-			<section id="lunchsession" style="background-color:lightslategrey">
-				<div class="container text-center">
+			<section id="lunchsession" style="background-color:#005982;color:#fff">
+				<div class="container text-center drk-bg">
 
 							<br>
-                            <h3 style="color:#fff">Lunch will be served from 12:30 to 14:00 in the Montecasino Ballroom and outside tent area.</h3>
+                            <h3>Lunch will be served from 12:30 to 14:00 in the Montecasino Ballroom and outside tent area.</h3>
                             <br>
 					
 				</div><!-- /.container -->
@@ -175,14 +176,14 @@
 
 <!-- ========================================= Lunch ============================================================= -->
 			
-			<section id="lunchsession" class="img-bg img-bg-soft tint-bg" style="background-image: url(assets/images/art/pattern-background01.jpg);">
+			<section id="lunchsession" class="img-bg img-bg-soft" style="background-image: url(assets/images/art/toby-background.jpg);">
 						<div class="container">
 					
 					<div class="row">
-					    <div class="col-md text-center outer-bottom-xs outer-top-xs">
+					    <div class="col-md text-center outer-bottom-xs outer-top-xs drk-bg">
 							<header>
                                 <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
-								<h2 style="color:#fff">Interactive lunch session from 13:15 - 14:00 with </h2>
+								<h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
                                 <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
                                 <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive 
                                     topic of the singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 

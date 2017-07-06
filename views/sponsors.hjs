@@ -120,7 +120,7 @@
 
 						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
 							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FRP" src="/assets/images/sponsor-logos/foc.svg" alt=""></figure></div>
+								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="foc" src="/assets/images/sponsor-logos/foc.svg" alt=""></figure></div>
 							</div>	
 						</div>
 
@@ -283,7 +283,7 @@
 					$("#sponsorName").text(sponsors.sponsorName);
 					$("#sponsorContent").html(sponsors.sponsorContent);
 					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
-					$("#sponsorImage").attr("src","/assets/images/sponsor-logos/" + sponsors.sponsorLogo);
+					$("#sponsorImage").attr("src","/assets/images/sponsor-logos/"+sponsors.sponsorLogo);
 				},
 				error: function() {
 					// alert("Error retrieving sponsor data");
