@@ -364,10 +364,8 @@ router
       title: "Speakers - List",
       loggedIn: true,
       partials : {
-        // header: "admin/header", 
         body: "admin/speakerList",
         jscript: "admin/jscript",
-        // footer: "admin/footer", 
       }
     })
   })
@@ -382,14 +380,29 @@ router
       speakerId: id,
       loggedIn: true,
       partials : {
-        // header: "admin/header", 
         body: "admin/speakerEdit",
         jscript: "admin/jscript",
-        // footer: "admin/footer", 
       }
     })
 
   })
+
+  .get('/admin/speakerAdd', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    var { id } = req.params;
+
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Add speaker",
+      loggedIn: true,
+      partials : {
+        body: "admin/speakerAdd",
+        jscript: "admin/jscript",
+      }
+    })
+
+  })
+
  ;
 
 module.exports = router;
