@@ -263,6 +263,25 @@ router
       }, next)
   })
 
+  //POST/Add Speaker
+  .post('/speaker', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+    var newSpeaker = req.body;
+
+    db("speakers")
+      .insert(newSpeaker)
+      .then((speakers) => {
+
+        res.send(speakers);
+
+      })
+      .catch((err) => {
+        res.status(500).send({
+          error: err.message
+        });
+
+      })
+  })
+
   //Update existing speaker details
   .put('/speaker/:id', (req, res, next) => {
     const {
