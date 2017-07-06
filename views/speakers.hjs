@@ -11,8 +11,6 @@
 
 </div>
 
->
-
 {{> jscript}}
 
 <!--JavaScript BELOW THIS LINE-->
