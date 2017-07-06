@@ -1,0 +1,42 @@
+<div class="container">
+
+
+    <div class="col-lg-10">
+
+        <div id="divSpeakers">
+
+        </div>
+
+    </div>
+
+</div>
+
+>
+
+{{> jscript}}
+
+<!--JavaScript BELOW THIS LINE-->
+
+<script>
+
+    var $divSpeakers = $("#divSpeakers");
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/allSpeakers',
+
+        success: function(speakers) {
+            $.each(speakers, function(i, speaker) {
+                $divSpeakers.append("<div class='' id='" + speaker.id + "'>" + 
+                    speaker.fullName + " " + speaker.twitter + " " + speaker.companyName + " " +
+                    "<img src='/images/speakers/" + speaker.imageUrl + "' />" + " " +
+                    speaker.bio + 
+                    "</div>");
+            });
+        },
+
+        error: function() {
+            //Cannot retrieve sponsors
+        }
+    });
+</script>
