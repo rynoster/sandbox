@@ -52,10 +52,10 @@
 									<div class="row text-right">
 										<img class="rounded pull-right" src="/assets/images/showcase.svg" style="width:50%;height:auto">
 									</div>	
-									<div class="row text-right inner-top-xs">
+									<div class="row text-right inner-top-xs light-bg ">
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Montecasino</p>
-										<a href="/register" class="btn">Secure your seat now</a>
+										<a href="/register" class="btn" style="">Secure your seat now</a>
 									</div>												
 								</div>		
 							</div><!-- /.caption -->

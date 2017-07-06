@@ -1,6 +1,4 @@
-h1, h2, h3, h4, h5, h6 {
-    color:#005982 !important;
-}
+
 /* Here we can customise the customers brand colors*/
 
 .brand-core1 {
@@ -105,6 +103,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark-bg a  {
     color:#00aeef !important;
+}
+
+.light-bg h4{
+    color: #005982 !important;
+}
+.light-bg p{
+    color: #005982 !important;
+}
+.light-bg i{
+    color: #005982 !important;
+}
+
+.light-bg a  {
+    color:#005982 !important;
+    font-weight: bolder;
+}
+.light-bg a  {
+    background-color:#005982 !important;
+    color: #fff !important;
 }
 
 .dark-bg a:hover {
