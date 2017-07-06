@@ -22,31 +22,38 @@
                             <div class="col-md-6">
                                 <div class="panel">
                                     <header class="panel-heading">
-                                        <h2 id="hName" class="panel-title" data-id="{{speakerId}}"></h2>
+                                        <h2 id="hName" class="panel-title"></h2>
                                     </header>
                                     <div class="panel-body">
 
                                         <form id="frmMain" method="get" role="form" class="form-horizontal">
 
-                                            <div class="form-group"><label class="col-lg-2 control-label">ID</label>
-                                                <div class="col-lg-2"><input id="txtId" type="text" placeholder="ID" class="form-control" disabled>
-                                                </div>
-                                            </div>
-                                            
                                             <div class="form-group"><label class="col-lg-2 control-label">Full Name</label>
-                                                <div class="col-lg-8"><input id="txtFullName" type="text" placeholder="Full Name" class="form-control">
+                                                <div class="col-lg-8"><input id="txtFullName" type="text" placeholder="Full Name" class="form-control" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-2 control-label">Company</label>
-                                                <div class="col-lg-8"><input id="txtCompany" type="text" placeholder="Company" class="form-control">
+                                                <div class="col-lg-8"><input id="txtCompany" type="text" placeholder="Company" class="form-control" required>
                                                 </div>
+                                            </div>
+
+                                            <!--<div class="input-group">-->
+                                            <div class="form-group"><label class="control-label col-lg-2">Twitter</label>
+                                                <div class="col-lg-8">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">@</span>
+                                                        <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="txtTwitter" placeholder="Twitter" required>
+                                                    </div>
+                                                </div>
+                                                <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
+                                                <!--<div class="help-block with-errors">Hey look, this one has feedback icons!</div>-->
                                             </div>
 
                                             <div id="divSpeaker" class="form-group"><label class="col-lg-2 control-label">Speaker photo</label>
                                                 <div class="col-lg-10"><img id="imgPhoto" src="" style="margin-bottom: 10px; width:250px"></img></div>
 
-                                                <div class="col-lg-offset-2 col-lg-10"><button id="btnUpload" class="btn btn-warning" type="button">Change photo</button> </div>
+                                                <div class="col-lg-offset-2 col-lg-10"><button id="btnUpload" class="btn btn-warning" type="button">Add photo</button> </div>
 
                                                 <!--The default upload buttons are hidden due to ugliness, replaced with button above-->
                                                 <div class="col-lg-8"><input id="upImage" type="file" name="upload" class="form-control"></div>
@@ -59,7 +66,7 @@
                                             </div>
 
                                             <div class="text-center">
-                                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update</button>
+                                                <button id="btnAdd" type="submit" class="btn btn-info rounded ">Add Speaker</button>
                                             </div>
 
                                         </form>
@@ -94,9 +101,6 @@
 <script>
     $(document).ready(function(){
 
-        //Retrieve speaker id from header data-id tag
-        var speakerId = $("#hName").data("id") ;
-
         //Declare all input fields as variables, for easier use later
         var $frmMain = $("#frmMain");
         var $hName = $("#hName");
@@ -105,49 +109,18 @@
         var $txtCompany = $("#txtCompany");
         var $txtBio = $("#txtBio");
         var $upImage = $("#upImage");
-        var $imgPhoto = $("#imgPhoto")
+        var $imgPhoto = $("#imgPhoto");
+        var $txtTwitter = $("#txtTwitter");
 
         //Declare alert panel objects as variables, for easier use later
-        //The alert panel is used to show success or failure on record updates or speaker retrieval
+        //The alert panel is used to show success or failure on record add
         var $alDiv = $("#alDiv");
         var $alMessage = $("#alMessage");
 
         $("#liMenuSpeaker").addClass("active");
-        $("#liSubMenuSpeakerList").addClass("active");
+        $("#liSubMenuSpeakerAdd").addClass("active");
 
-        //Populate fields
-        $.ajax({
-            type: 'GET',
-            url: '/api/speaker/' + speakerId,
-
-            success: function(speaker) {
-
-                $txtId.val(speaker.id);
-                $txtFullName.val(speaker.fullName);
-                $txtCompany.val(speaker.companyName);
-                $txtBio.summernote("code", speaker.bio);
-
-                if (speaker.imageUrl) {
-                    $imgPhoto.prop("src", "../../images/speakers/" + speaker.imageUrl);
-                    $imgPhoto.prop("data-src", "../../images/speakers/" + speaker.imageUrl);
-                } else {
-                    $imgPhoto.prop("src", "../../images/speakers/" + "placeholder-profile.jpg");
-                    $imgPhoto.prop("data-src", "../../images/speakers/" + "placeholder-profile.jpg");
-                }
-                
-                $hName.text(speaker.fullName);
-
-            },
-            error: function() {
-                $alDiv.addClass("alert-danger");
-                $alMessage.html("<strong>Error - </strong> Error retrieving speaker information.");
-                $alDiv.show();
-
-                //On error, disable all form fields
-                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
-
-            }
-        });
+        $imgPhoto.prop("src", "../../images/speakers/" + "placeholder-profile.jpg");
 
         $('#txtBio').summernote({
             height: "450px",
@@ -162,6 +135,7 @@
             ]
         });
 
+        //Due to hiding the original upload button, this just foces a click on the hidden button
         $("#btnUpload").on("click", function() {
             $("#upImage").click();
         });
@@ -169,7 +143,7 @@
         //This code runs when change of image file is detected
         $('#upImage').on('change', function(){
             var files = $(this).get(0).files;
-
+            
             if (files.length > 0) {
                 var file = files[0];
 
@@ -205,52 +179,53 @@
         });
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
-        $('#btnUpdate').on('click', function() {
+        $('#btnAdd').on('click', function() {
             var currentTime = new Date();
             var filename;
             var imageUrl = "";
-            var blUpload = false;
 
-            if (!$imgPhoto.prop("src").includes("data:")) {
-                imageUrl = $imgPhoto.prop("src").split("/").pop();
-                blUpload = false;
-                
+            //Do a lazy validation
+            if($txtFullName.val() === "" || $txtCompany.val() === "" || $txtTwitter.val() === "" || $txtBio.summernote("isEmpty") ) {
+                displayAlert("Error","All fields not completed!");
+                return;
+            }
+
+            if ($imgPhoto.prop("src").includes("placeholder")) {
+                displayAlert("Error","No photo uploaded!");
+                return;
             } else {
+                fileName = $txtFullName.val().replace(/ /g,'');
+                fileName = fileName.toLowerCase() + "_";
+                fileName = fileName + currentTime.getFullYear() + ("0" + (currentTime.getMonth() + 1)).slice(-2) + 
+                    ("0" + (currentTime.getDate())).slice(-2) + ("0" + (currentTime.getHours())).slice(-2) + 
+                    ("0" + (currentTime.getMinutes())).slice(-2) + ("0" + (currentTime.getSeconds())).slice(-2) ;
+                fileName = fileName + ".jpg";
 
-                if (!$imgPhoto.prop("data-src").includes("placeholder") && $imgPhoto.prop("data-src") !== "") {
-                    imageUrl = $imgPhoto.prop("data-src").split("/").pop();;
-                    blUpload = true;
-                } else {
-                    fileName = $txtFullName.val().replace(/ /g,'');
-                    fileName = fileName.toLowerCase() + "_";
-                    fileName = fileName + currentTime.getFullYear() + ("0" + (currentTime.getMonth() + 1)).slice(-2) + 
-                        ("0" + (currentTime.getDate())).slice(-2) + ("0" + (currentTime.getHours())).slice(-2) + 
-                        ("0" + (currentTime.getMinutes())).slice(-2) + ("0" + (currentTime.getSeconds())).slice(-2) ;
-                    fileName = fileName + ".jpg";
-
-                    imageUrl = fileName;
-                    blUpload = true;
-                }
-
-                // fileName = $imgPhoto.prop("data-src").split("/").pop();
+                imageUrl = fileName;
             }
 
             var speaker = {
                 companyName: $txtCompany.val(),
                 fullName: $txtFullName.val(),
                 bio: $txtBio.summernote("code"),
+                twitter: $txtTwitter.val(),
                 imageUrl: imageUrl
             }
 
             $.ajax({
-                type: 'PUT',
-                url: '/api/speaker/' + speakerId,
+                type: 'POST',
+                url: '/api/speaker',
                 data: speaker,
 
                 success: function(delegate) {
-                    if (blUpload) { uploadFile(imageUrl); };
+                    uploadFile(imageUrl);
 
                     displayAlert("Success", "Record successfully updated.", 6000);
+
+                    //Reset all form elements
+                    // $frmMain[0].reset();
+                    // $txtBio.summernote("code") = "";
+                    // $imgPhoto.prop("src", "../../images/speakers/" + "placeholder-profile.jpg");
 
                 },
 
@@ -288,7 +263,7 @@
     }
 
     function uploadFile(fileName) {
-            var files = $("$upImage").get(0).files;
+            var files = $("#upImage").get(0).files;
 
             if (files.length > 0){
                 // One or more files selected, process the file upload
