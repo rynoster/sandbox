@@ -65,7 +65,7 @@
 
 
                         <!--RC: The active class below needs to be dynamic, based on click-->
-                        <li class="hoe-has-menu active">
+                        <li id="liMenuDelegate" class="hoe-has-menu">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-user"></i>
                                 <span class="menu-text">Delegate Registrations</span>
@@ -110,7 +110,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="hoe-has-menu">
+                        <!--Sponsors menu section-->
+                        <li id="liMenuSponsors" class="hoe-has-menu">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-money"></i>
                                 <span class="menu-text">Sponsors</span>
@@ -137,7 +138,28 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                        <!--Speakers menu section-->
+                        <li id="liMenuSpeaker" class="hoe-has-menu">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-microphone"></i>
+                                <span class="menu-text">Speakers</span>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="hoe-sub-menu">
+                                <li id="liSubMenuSpeakerList" class="">
+                                    <a href="/admin/speakerList">
+                                        <span class="menu-text">List</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="liSubMenuSpeakerAdd" class="">
+                                    <a href="/admin/speakerAdd">
+                                        <span class="menu-text">Add</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </aside><!--aside left menu end-->
