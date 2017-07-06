@@ -6,6 +6,11 @@ var crypto = require('crypto');
 var request = require('request');
 var _ = require("lodash");
 
+//file uploads
+var formidable = require('formidable');
+var fs = require('fs');
+var path = require('path');
+
 var app = express();
 
 function fullUrl(req) {
@@ -225,6 +230,106 @@ router
           res.send(200);
         }, next)
     })
+
+  // All speakers GET
+  .get('/allSpeakers', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+
+    var ajaxData = req.query;
+
+    db("speakers")
+      // .select("id","email","event_profile","first_name","last_name","dietary","accountManager")
+      // .limit(ajaxData.limit || 100)
+      .where(ajaxData.where || {})
+      .then((speakers) => {
+        res.send(speakers);
+      }, next)
+
+  })
+
+  //GET speaker details for specific speaker id
+  .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
+    const {
+      id
+    } = req.params;
+
+    db("speakers")
+      .where("id", id)
+      .first()
+      .then((speakers) => {
+        if (!speakers) {
+          return res.send(400);
+        }
+        res.send(speakers);
+      }, next)
+  })
+
+  //Update existing speaker details
+  .put('/speaker/:id', (req, res, next) => {
+    const {
+      id
+    } = req.params;
+
+    console.log(req.body);
+
+    db("speakers")
+      .where("id", id)
+      .update(req.body)
+      .then((result) => {
+        if (result === 0) {
+          return res.send(400)
+        }
+        res.send(200);
+      }, next)
+  })
+
+  //form uploads for images
+  .post('/upload', function(req, res){
+
+    // create an incoming form object
+    var form = new formidable.IncomingForm();
+
+    // specify that we want to allow the user to upload multiple files in a single request
+    form.multiples = false;
+
+    // store all uploads in the /uploads directory
+    form.uploadDir = path.join(__dirname, '/../public/images/speakers');
+
+    // every time a file has been uploaded successfully,
+    // rename it to it's orignal name
+    form.on('file', function(field, file) {
+      fs.rename(file.path, path.join(form.uploadDir, file.name));
+    });
+
+    // log any errors that occur
+    form.on('error', function(err) {
+      console.log('An error has occured: \n' + err);
+    });
+
+    // once all the files have been uploaded, send a response to the client
+    form.on('end', function() {
+      res.end('success');
+    });
+
+    // parse the incoming request containing the form data
+    form.parse(req);
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //Google reCAPTCHA API
   .post('/captcha', (req, res, next) => {
