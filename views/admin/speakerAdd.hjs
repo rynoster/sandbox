@@ -156,7 +156,7 @@
                     return;
                 }
 
-                //Check if the file matches the dimensions [256x256], do not allow the change if it doesn't match the dimensions
+                //Check if the file matches the dimensions [250x250], do not allow the change if it doesn't match the dimensions
                 var imageCheck = new Image();
                 imageCheck.src = URL.createObjectURL(file);
 
@@ -172,7 +172,7 @@
                         reader.readAsDataURL(file);
                     
                     } else {
-                        displayAlert("Error","Image must be 256px x 256px.");
+                        displayAlert("Error","Image must be 250px x 250px.");
                         return;
                     }
                 };
@@ -188,7 +188,7 @@
             var imageUrl = "";
 
             //Do a lazy validation
-            if($txtFullName.val() === "" || $txtCompany.val() === "" || $txtTwitter.val() === "" || $txtProfession.val() === "" || $txtBio.summernote("isEmpty") ) {
+            if($txtFullName.val() === "" || $txtCompany.val() === "" || $txtProfession.val() === "" || $txtBio.summernote("isEmpty") ) {
                 displayAlert("Error","All fields not completed!");
                 return;
             }
