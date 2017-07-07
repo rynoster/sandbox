@@ -80,7 +80,7 @@
                 $divSpeakers.append('' +
 
                 '<div class="col-md-4 col-sm-6">' +
-                    '<div class="card-container manual-flip">' +
+                    '<div id=' + speaker.id + ' class="card-container manual-flip">' +
                         '<div class="card">' +
                             '<div class="front card-bg-f">' +
                                 '<div class="cover ">' +
@@ -121,7 +121,7 @@
         },
 
         error: function() {
-            //Cannot retrieve sponsors
+            //Cannot retrieve speakers
         }
     });
 </script>
@@ -134,7 +134,16 @@
 
     function rotateCard(btn){
         var $card = $(btn).closest('.card-container');
+        var $allCards = $(".card-container")
         // console.log($card);
+
+        //First flip any cards already flip, back to original state, i.e. remove hover class
+        $allCards.each(function () {
+            if ( $(this).attr("id") !== $card.attr("id")  ) {
+                $(this).removeClass("hover");
+            }
+        })
+
         if($card.hasClass('hover')){
             $card.removeClass('hover');
         } else {
@@ -143,14 +152,15 @@
     }
 
     $(function() {  
-    var window_height = $(window).height(),
-    content_height = window_height - 200;
-    $('.card-scroll').height(content_height);
-        });
-
-        $( window ).resize(function() {
         var window_height = $(window).height(),
         content_height = window_height - 200;
         $('.card-scroll').height(content_height);
-        });
+    });
+
+    $( window ).resize(function() {
+        var window_height = $(window).height(),
+        content_height = window_height - 200;
+        $('.card-scroll').height(content_height);
+    });
+
 </script>
