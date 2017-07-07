@@ -38,6 +38,11 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group"><label class="col-lg-2 control-label">Profession</label>
+                                                <div class="col-lg-8"><input id="txtProfession" type="text" placeholder="Profession" class="form-control" required>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group"><label class="control-label col-lg-2">Twitter</label>
                                                 <div class="col-lg-8">
                                                     <div class="input-group">
@@ -108,6 +113,7 @@
         var $upImage = $("#upImage");
         var $imgPhoto = $("#imgPhoto");
         var $txtTwitter = $("#txtTwitter");
+        var $txtProfession = $("#txtProfession");
 
         //Declare alert panel objects as variables, for easier use later
         //The alert panel is used to show success or failure on record add
@@ -155,7 +161,7 @@
                 imageCheck.src = URL.createObjectURL(file);
 
                 imageCheck.onload = function() {
-                    if (this.width === 256 && this.height === 256) {
+                    if (this.width === 250 && this.height === 250) {
                         //Update the existing image  element
                         var img = document.getElementById("imgPhoto")
                         img.classList.add("obj");
@@ -182,7 +188,7 @@
             var imageUrl = "";
 
             //Do a lazy validation
-            if($txtFullName.val() === "" || $txtCompany.val() === "" || $txtTwitter.val() === "" || $txtBio.summernote("isEmpty") ) {
+            if($txtFullName.val() === "" || $txtCompany.val() === "" || $txtTwitter.val() === "" || $txtProfession.val() === "" || $txtBio.summernote("isEmpty") ) {
                 displayAlert("Error","All fields not completed!");
                 return;
             }
@@ -206,7 +212,8 @@
                 fullName: $txtFullName.val(),
                 bio: $txtBio.summernote("code"),
                 twitter: $txtTwitter.val(),
-                imageUrl: imageUrl
+                imageUrl: imageUrl,
+                profession: $txtProfession.val()
             }
 
             $.ajax({
