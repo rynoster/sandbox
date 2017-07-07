@@ -163,7 +163,7 @@ router
   })
 
   //Update existing sponsor details
-  .put('/sponsor/:sponsorTag', (req, res, next) => {
+  .put('/sponsor/:sponsorTag', auth.loginRequired, auth.adminRequired, (req, res, next) => {
     const {
       sponsorTag
     } = req.params;
@@ -232,7 +232,7 @@ router
     })
 
   // All speakers GET
-  .get('/allSpeakers', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .get('/allSpeakers', (req, res, next) => {
 
     var ajaxData = req.query;
 
@@ -284,7 +284,7 @@ router
   })
 
   //Update existing speaker details
-  .put('/speaker/:id', (req, res, next) => {
+  .put('/speaker/:id', auth.loginRequired, auth.adminRequired, (req, res, next) => {
     const {
       id
     } = req.params;
@@ -303,7 +303,7 @@ router
   })
 
   //form uploads for images
-  .post('/upload', function(req, res){
+  .post('/upload', auth.loginRequired, auth.adminRequired, function(req, res){
 
     // create an incoming form object
     var form = new formidable.IncomingForm();
