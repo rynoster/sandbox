@@ -1,4 +1,110 @@
-<div class="container">
+<header>    
+
+    <link href="/assets/css/rotating-card.css" rel="stylesheet">
+</header>
+
+<style> 
+
+.top-banner {
+        background:  url('/assets/images/art/bg-speakers.jpg') no-repeat center left;
+			background-size: 100% auto;
+			height: 200px !important;
+			background-position: center center;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+}
+
+.btn {
+    font-size: 12px !important;
+	padding: 10px 20px; !important;
+    color: #fff !important;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.card-bg-f {
+  background-color: #ebebeb;
+}
+
+.card-bg-b {
+  background-color: #f5f5f5;
+}
+
+.pre-scrollable{
+    border: 1px  grey;
+    height:130%;
+    overflow: scroll;
+    position:relative;
+}
+
+</style>
+
+<!-- ============================================================= SECTION – Banner ============================================================= -->
+			
+    <section class="top-banner" >
+        <div class="container fadeInDown">
+            <div class="row">
+                    <div class="outer-bottom-xs outer-top-xs">
+                        <h1 style="font-size:300%;color:#FFF"><strong>Event speakers</strong></h1>
+                        <p style="font-size:120%;color:#FFF">Both local and international experts</p>
+                    </div>	
+
+            </div>
+    </section>
+
+<!-- ============================================================= SECTION – Content ============================================================= -->
+    <section>
+        <div class="container inner-top-xs inner-bottom-xs ">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-container manual-flip">
+                        <div class="card">
+                            <div class="front card-bg-f">
+                                <div class="cover ">
+                                    <img src="assets/images/art/rc-bg.jpg"/>
+                                </div>
+                                <div class="user">
+                                    <img class="img-circle" src="images/speakers/rudieraath_20170706234557.jpg"/>
+                                </div>
+                                <div class="content">
+                                    <div class="main text-center">
+                                        <h3 class="name">Rudie Raath</h3>
+                                        <p class="profession">Chief technology strategist</p>
+                                        <p class="company"><strong>Datacentrix</strong></p>
+                                        <button class="btn" onclick="rotateCard(this)">Read bio <i class="icon-user"></i>
+                                    </div>
+                                </div>
+                            </div> <!-- end front panel -->
+                            <div class="back card-bg-b">
+                                <div class="header pull-right">
+                                    <i class="icon-cancel"  onclick="rotateCard(this)"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h4 class="text-left">Rudie Raath</h4>
+                                        <p class="text-left" style="font-size:90%; font-weight:bolder">Chief technology strategist</p>
+                                        <div class="pre-scrollable" style="font-size:90%;">As chief digital strategist and business unit manager of the recently established enterprise technology consulting division in Datacentrix, where his team leads he vendor agnostic advisory services for all our strategic customers, he connects downward, upward, and across to design technology business models and systems conversions that actualize the business value.
+        
+                                        With more than 20 years in industry, he champions, energize and unify all stakeholders that directly and indirectly influence business outcomes. He strongly promotes people development through coaching, official training and skills transfer through mentoring programs, ensuring focused and competent people delivering results.
+                                        
+                                        Before joining Datacentrix January 2015, he was with Hewlett-Packard South Africa from 2007, where he held various senior leadership positions from enterprise consulting country manager to his final role in HP South Africa as chief technologist.
+                                        
+                                        His strength is delivering business and technology alignment through C-Level discovery workshops, where he facilitates discussion and encourage transformation into the digitally connected world..
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--<div class="container">
 
 
     <div class="col-lg-10">
@@ -9,7 +115,7 @@
 
     </div>
 
-</div>
+</div>-->
 
 {{> jscript}}
 
@@ -37,4 +143,33 @@
             //Cannot retrieve sponsors
         }
     });
+</script>
+
+<script type="text/javascript">
+    $().ready(function(){
+        $('[rel="tooltip"]').tooltip();
+
+    });
+
+    function rotateCard(btn){
+        var $card = $(btn).closest('.card-container');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
+        }
+    }
+
+    $(function() {  
+    var window_height = $(window).height(),
+    content_height = window_height - 200;
+    $('.card-scroll').height(content_height);
+        });
+
+        $( window ).resize(function() {
+        var window_height = $(window).height(),
+        content_height = window_height - 200;
+        $('.card-scroll').height(content_height);
+        });
 </script>

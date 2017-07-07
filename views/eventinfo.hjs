@@ -1,4 +1,18 @@
 
+  <style>
+  .toby-bg {
+        background:  url('assets/images/art/toby-background.jpg') no-repeat center left;
+			background-size: 100% auto;
+			height: 500px !important;
+			background-position: center center;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+}
+  
+  </style>
+  
     <!-- ============================================================= Top Banner ============================================================= -->
 			
 			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
@@ -176,7 +190,7 @@
 
 <!-- ========================================= Lunch ============================================================= -->
 			
-			<section id="lunchsession" class="img-bg img-bg-soft" style="background-image: url(assets/images/art/toby-background.jpg);">
+			<section id="lunchsession" class="img-bg img-bg-soft toby-bg">
 						<div class="container">
 					
 					<div class="row">
