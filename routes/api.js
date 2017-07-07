@@ -239,6 +239,7 @@ router
     db("speakers")
       // .select("id","email","event_profile","first_name","last_name","dietary","accountManager")
       // .limit(ajaxData.limit || 100)
+      .orderBy("fullName")
       .where(ajaxData.where || {})
       .then((speakers) => {
         res.send(speakers);

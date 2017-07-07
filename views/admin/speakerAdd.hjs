@@ -38,7 +38,6 @@
                                                 </div>
                                             </div>
 
-                                            <!--<div class="input-group">-->
                                             <div class="form-group"><label class="control-label col-lg-2">Twitter</label>
                                                 <div class="col-lg-8">
                                                     <div class="input-group">
@@ -46,8 +45,6 @@
                                                         <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="txtTwitter" placeholder="Twitter" required>
                                                     </div>
                                                 </div>
-                                                <!--<span class="glyphicon form-control-feedback" aria-hidden="true"></span>-->
-                                                <!--<div class="help-block with-errors">Hey look, this one has feedback icons!</div>-->
                                             </div>
 
                                             <div id="divSpeaker" class="form-group"><label class="col-lg-2 control-label">Speaker photo</label>
@@ -66,7 +63,7 @@
                                             </div>
 
                                             <div class="text-center">
-                                                <button id="btnAdd" type="submit" class="btn btn-info rounded ">Add Speaker</button>
+                                                <button id="btnAdd" type="button" class="btn btn-info rounded ">Add Speaker</button>
                                             </div>
 
                                         </form>
@@ -218,14 +215,15 @@
                 data: speaker,
 
                 success: function(delegate) {
-                    uploadFile(imageUrl);
+                    uploadFile(imageUrl, function() {
+                        displayAlert("Success", "Record successfully updated.", 6000);
 
-                    displayAlert("Success", "Record successfully updated.", 6000);
-
-                    //Reset all form elements
-                    // $frmMain[0].reset();
-                    // $txtBio.summernote("code") = "";
-                    // $imgPhoto.prop("src", "../../images/speakers/" + "placeholder-profile.jpg");
+                        //Reset all form elements
+                        $frmMain[0].reset();
+                        $('#txtBio').summernote('code', '');
+                        $('#txtBio').summernote('reset');
+                        $imgPhoto.attr("src", "../../images/speakers/" + "placeholder-profile.jpg");
+                    });
 
                 },
 
@@ -262,7 +260,7 @@
         $("#alDiv").fadeOut(fadeTime);
     }
 
-    function uploadFile(fileName) {
+    function uploadFile(fileName, callback) {
             var files = $("#upImage").get(0).files;
 
             if (files.length > 0){
@@ -281,7 +279,13 @@
                     processData: false,
                     contentType: false,
                     success: function(data){
-                        console.log('upload successful!\n' + data);
+                        // console.log('upload successful!\n' + data);
+                        if(callback && typeof callback == "function"){
+                            callback();
+                        }
+                    },
+                    error: function(){
+                        displayAlert("Error","Something went wrong, record not added");
                     },
                     xhr: function() {
                         // create an XMLHttpRequest
