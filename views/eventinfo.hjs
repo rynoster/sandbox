@@ -375,7 +375,7 @@
                                         </p>
                                     </div>
                                      <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
+                                        <figure><img src="http://www.bbd.co.za/Assets/_Images/Clients/BankservAfrica.png" alt=""></figure>
                                     </div>
                                 </div>
                             </div>
@@ -527,13 +527,13 @@
                     <h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
                     <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
                     <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic
-                        of the singularity and how humanity is being assimilated into code. What will happened to humanity
+                        of the singularity and how humanity is being assimilated into code. What will happen to humanity
                         as we know it today and how should business transform to stay relevant in the future. Great panel
                         of industry specialists:
                     </p>
                 </header>
                 <div class="row">
-                    <div class="col-md-2 col-xs-6">
+                    <div class="col-md-2 col-md-offset-1 col-xs-6">
                         <div class="profile-header-container">
                             <div class="profile-header-img text-center">
                                 <img class="img-circle" src="images/speakers/michaeljordaan.jpg" />
@@ -587,21 +587,6 @@
                                     <span class="label label-default rank-label">Rudie Raath</span>
                                     <div class="divide10"></div>
                                     <p style="font-size:80%">CDS Datacentrix</p>
-                                    <div class="divide10"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 col-xs-6">
-                        <div class="profile-header-container">
-                            <div class="profile-header-img text-center">
-                                <img class="img-circle" src="images/speakers/DennisMwanza.jpg" />
-                                <!-- badge -->
-                                <div class="rank-label-container" style="padding-left:5px">
-                                    <span class="label label-default rank-label">Dr. Dennis Mwanza</span>
-                                    <div class="divide10"></div>
-                                    <p style="font-size:80%">Head of IT JSE</p>
                                     <div class="divide10"></div>
                                 </div>
                             </div>
@@ -793,14 +778,22 @@
                                 <div class="tab-content" id="tab-2">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Securing digital transformation </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
+                                        <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence. 
+                                            <br> A DC in a box. How has this helped ABSA get ahead of its competitors. </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Werner Vorster / Sales Executive, Nutanix</h5>
                                         <p>
-                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. 
+                                            This case study shows how through collaboration between the system integrator Datacentrix, a world class OEM and the 
+                                            leader in the Enterprise hyper convergence space were able to ensure that the customer was able to achieve their goals 
+                                            of transforming their legacy infrastructure platforms and truly transform their IT estate. Ensuring that their business 
+                                            was able to transform and embrace cutting edge technology whilst ensuring high availability and uptime thus making sure 
+                                            that the services they offered to their customers were available at all times. 
+                                            <br><br> 
+                                            Hear from the program and account team directly how this was achievd.
+
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/cis-b.svg" alt=""></figure>
+                                        <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/ABSA_logo.svg/1280px-ABSA_logo.svg.png" style="width:60%" alt=""></figure>
                                     </div>
                                 </div>
 
@@ -808,22 +801,14 @@
                                 <div class="tab-content" id="tab-3">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
-                                            EMEA
-                                        </h5>
+                                        <h2 style="color:slategray">Being updated - please check back soon  </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
                                         <p>
-                                            A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
-                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
-                                            This convergence enables organisations to standardise, simplify and align IT
-                                            with business needs, reducing costs and enabling agility.
-                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
-                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
-                                            designed to move customers beyond the singularity.
+                                            Being updated, please check back soon. 
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/len.svg" alt=""></figure>
+                                        <figure><img src="http://www.blankcanvas.co.za/wp-content/uploads/2014/06/Exxaro-logo-1.jpg" style="width:60%" alt=""></figure>
                                     </div>
                                 </div>
 
@@ -831,16 +816,15 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Case Study: BankServ - Delivering  </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Justin Hamman / Account Manager, Datacentrix</h5>
+                                        <h2 style="color:slategray">Delivering realtime security analytics </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Wayne Olsen, Business Unit Manger: Security, Datacentrix</h5>
                                         <p>
-                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. 
-                                            This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of 
-                                            the environment is key to the entire South African financial sector as it impacts on the processing of all card transactions 
-                                            in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop 
-                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their 
-                                            arrangement. Hamman Ferreira, the Bankserv CTO has already influenced FNB to replicate their approach which lead to a 
-                                            large (R50mill) Nonstop deal to DCX.
+                                            Datacentrix provides end-to-end security solutions for the monitoring, assessment and defence of our customers’ information assets. 
+                                            Our objective is to achieve complete confidentiality, data integrity, information availability, accountability and assurance (governance) 
+                                            for our customers.
+                                            <br><br>   
+                                            Our specialist security team works closely with our customers to establish and maintain information security by 
+                                            identifying, managing and controlling risks.
                                         </p>
                                     </div>
                                      <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -877,45 +861,43 @@
                         <div class="tabs tabs-top">
 
                             <ul class="etabs text-center">
-                                <li class="tab"><a href="#tab-1">Case Study: Standard Bank</a></li>
-                                <li class="tab"><a href="#tab-2">Enterprise Information Management</a></li>
+                                 <li class="tab"><a href="#tab-1">Enterprise Information Management</a></li>
+                                <li class="tab"><a href="#tab-2">Case Study: Standard Bank</a></li>
                                 <li class="tab"><a href="#tab-3">Backup-as-a-Service </a></li>
                             </ul>
 
                             <div class="panel-container">
 
                                 <!-- Session  1-->
-                                <div class="tab-content" id="tab-1">
+                                <div class="tab-content" id="tab-2">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">IT transformation through hybrid cloud </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg McDonald / Sales Engineering Senior Manager, Dell EMC</h5>
-                                        <p>Cloud architectures are fast becoming the standard for application delivery. This is a big leap forward, but places pressure on organisations to transform their technology even faster or be left behind. Discover what lies behind the trend and how to align your organisation to the tide. Determine your digital maturity and learn how an application-focused transformation will determine your cloud systems.</p>
-                                        <p>&nbsp;</p>
-                                        <p><strong>3 take away benefits</strong></p>
-                                        <ul>
-                                        <i class="icon-right-open"></i>Why direct control over IT no longer makes sense<br>
-                                        <i class="icon-right-open"></i>How to judge the digital maturity of an organisation<br>
-                                        <i class="icon-right-open"></i>What is changing about applications and how that impacts data centre design<br>
-                                        </ul>
+                                        <h2 style="color:slategray">Under review </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
+                                        <p>Being updated - check back soon. 
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/del.svg" alt=""></figure>
+                                        <figure><img src="http://olympiad.org.za/university-it-challenge/wp-content/uploads/sites/5/2017/01/standard-bank-logo.jpg" alt=""></figure>
                                     </div>
                                 </div>
 
                                 <!-- Session 2 -->
-                                <div class="tab-content" id="tab-2">
+                                <div class="tab-content" id="tab-1">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Comprehensive integrated Fortinet Security Fabric<br>The next step in network security evolution</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Paul Williams / Country Manager – SADC for Fortinet</h5>
-                                        <p>The network security approaches of recent years are simply not fast or comprehensive enough to deal with the evolving 
-                                            threat landscape. Join the conversation with Paul Williams, Country Manager – Southern Africa at Fortinet.
+                                        <h2 style="color:slategray">A market leader in the enterprise content management and enterprise information management domains</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Bennie Kotze / EIM Consulting Manager, Datacentrix</h5>
+                                        <p>Datacentrix is a market leader in the enterprise content management and enterprise information management domains in 
+                                            the local market. Organisations need accurate, timely and relevant information to plan, allocate resources and manage 
+                                            the business in order to achieve strategic goals and objectives.
+                                            <br><br>
+                                            Enterprise Information Management (EIM) involves structuring and managing information assets to enhance efficiencies, 
+                                            promote transparency and enable business insight. This comprises managing information across an organisation to enable 
+                                            informed management.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/for.svg" alt=""></figure>
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
                                     </div>
                                 </div>
 
@@ -923,16 +905,15 @@
                                 <div class="tab-content" id="tab-3">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">TCloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Trevor Coetzee / Regional Director, Sub-Saharan Africa at McAfee</h5>
+                                        <h2 style="color:slategray">Being updated</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Being updated</h5>
                                         <p>
-                                        The state of cloud adoption and security: With security and compliance more important than ever, see how IT security 
-                                        professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
+                                        Being updated
 
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/mca.svg" alt=""></figure>
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
                                     </div>
                                 </div>
                             </div>
@@ -942,8 +923,58 @@
 
             </div>
         </div>
+
+         <!-- Next row - Slot info  -->
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="border: 0.5px dashed #d8d8d8;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>16:00 - 17:00</p><br>
+            </div>
+            <div class="col-md-6">
+                <p class="text-left"><strong>Closing and Prize giving on Datacentrix stand</strong></p>
+                <p style="font-size:90%">As the event draws to a close, we look at the days and what we gained from all the session. Rudie Raath, 
+                    the event host will do a high-level recap, followed by various prize givings and lucky draws. 
+                    <br><br>
+                    <strong>Only people present will qualify for the various prizes. </strong>
+
+
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="border: 0.5px dashed #d8d8d8;">
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-2">
+            <p>17:00 - 19:45</p><br>
+        </div>
+        <div class="col-md-6">
+            <p class="text-left"><strong>HPE and Intel cocktail event with perfroming artists</strong></p>
+            <p style="font-size:90%">Please join us at this, not-to-be-missed event where we will see legendary artists "The Muses" perform with "1st Project". Liquid chefs will 
+                be mixing up their world-class cocktails for delegates to enjoy. We also take your safety at heart and do not want you to drive after a few drinks. A take-me-home service 
+                will be avaialble to conference delegates after this event. 
+            </p>
+            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
+
+        </div>
+        <div class="col-md-4 visible-lg visible-md visible-sm">
+            <figure><img src="/assets/images/art/the-muses.jpg" style="" alt=""></figure>
+        </div>
+        </div>
+
+
+
+
     <!-- End of the session data-->
     </div>
+<div class="divide60"></div>    
 </section>
 {{> jscript}}
 
