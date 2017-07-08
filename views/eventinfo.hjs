@@ -1,363 +1,950 @@
+<style>
+    .toby-bg {
+        background: url('assets/images/art/toby-background.jpg') no-repeat center left;
+        background-size: 100% auto;
+        height: auto !important;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-  <style>
-  .toby-bg {
-        background:  url('assets/images/art/toby-background.jpg') no-repeat center left;
-			background-size: 100% auto;
-			height: 500px !important;
-			background-position: center center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
 
-}
-  
-  </style>
-  
-    <!-- ============================================================= Top Banner ============================================================= -->
-			
-			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
-				<div class="container " >
-					<div class="row">
-						<div class="col-md-8 outer-bottom-xs inner-top-xs" >
-							<header>
-								<h1 style="color:#005982">Event info </h1>
-								<p>How to plan your day with us, what to expect and much more. </p>
-							</header>
-						</div><!-- /.col -->
-					</div><!-- ./row -->
-				</div><!-- /.container -->
-			</section>
-			
-<!-- ========================================= Morning Section ============================================================= -->
-			<section id="eventinfo" class="outer-top-xs" >
-                <div class="container">
-                    <h2 >Thursday, 27 July 2017</h2>
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr>
-                        </div>
-                    </div>
-                    
+    .profile-header-container {
+        margin: 0 auto;
+        text-align: center;
+    }
 
-    <!-- ========================================= Registration open - 06:00 to 09:00 =================================== -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">06:00 to 09:00</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <p class="text-left"><strong>Registration and Showcase opening</strong></p>
-                            <p style="font-size:90%">The doors will open at 06:00 for registration with the central exhibition 
-                                area open to delegates from 07:00. Coffee, tea and light snacks will be available for the early birds. 
-                                All executives attending the C-level breakfast need to be registered by 06:50 to take their seats in La 
-                                Toscana for the 07:00 breakfast session.
-                            </p><p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
-                        </div>
-                    </div>
-                   
 
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                        </div>
-                    </div>
+    .profile-header-img>img.img-circle {
+        height: 140px;
+        border: 2px solid #005982;
+    }
+    /*.profile-header {
+            margin-top: 43px;
+        }*/
 
-    <!-- ========================================= C-Breakfastsession - 07:00 to 08:45 =================================== -->
-                     <!-- Next row - Slot info  -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">07:00 to 08:45</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <p class="text-left"><strong>C-Level exclusive business breakfast</strong></p>
-                            <p style="font-size:90%">This breakfast is by invititation only. The breakfast is sponsored by Hewlett-Packard 
-                                Enterprise with renowned industry speakers, discussing the impact of the digital age on South Africa and 
-                                current business models. We will unpack tough questions on changes in the job market once technology starts 
-                                automating traditional human jobs. Do not miss this opportunity.</p> 
-                            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana, facilitated by HPE</p>
-                        </div>
-                    </div>
+    .rank-label-container {
+        margin-top: -19px;
+        /* z-index: 1000; */
+        text-align: center;
+    }
 
-    <!-- ========================================= Opening Plenery session - 09:00 to 11:00 =================================== -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                        </div>
-                    </div>
+    .label.label-default.rank-label {
+        background-color: #005982;
+        padding: 5px 10px 5px 10px;
+        border-radius: 27px;
+    }
 
-                    <!-- Next row - Slot info  -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">09:00 to 11:00</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <p class="text-left"><strong>Opening plenary</strong></p>
-                            <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by 
-                                venture capitalist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the 
-                                reality of the singularity and how business needs to respond to this paradigm shift we 
-                                are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA at Hewlett 
-                                Packard Enterprise will focus on the importance of innovation in this new age.
-                            </p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Ill Grande, facilitated by Rudie Raath, chief digital strategist for Datacentrix
-                                </p>
-                        </div>
-                    </div>
+    .span {
+        display: table;
+        margin: 0 auto;
+    }
 
-                   <!-- Next row - Line  -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
+    .session-body {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+</style>
+
+<!-- ============================================================= Top Banner ============================================================= -->
+
+<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/image-background04.jpg);">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8 outer-bottom-xs inner-top-xs">
+                <header>
+                    <h1 style="color:#005982">Event info </h1>
+                    <p>How to plan your day with us, what to expect and much more. </p>
+                </header>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- ./row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+<!-- ========================================= Morning block  ============================================================= -->
+<section id="eventinfo" class="outer-top-xs">
+    <div class="container">
+        <h2>Thursday, 27 July 2017</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        <!-- Next row - Slot info  -->
+        <div class="row">
+            <div class="col-md-2">
+                <p>06:00 - 09:00</p><br>
+            </div>
+            <div class="col-md-6">
+                <p class="text-left"><strong>Registration and Showcase opening</strong></p>
+                <p style="font-size:90%">The doors will open at 06:00 for registration with the central exhibition area open to delegates from 07:00.
+                    Coffee, tea and light snacks will be available for the early birds. All executives attending the C-level
+                    breakfast need to be registered by 06:50 to take their seats in La Toscana for the 07:00 breakfast session.
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="border: 0.5px dashed #d8d8d8;">
+            </div>
+        </div>
+
+        <!-- Next row - Slot info  -->
+        <div class="row">
+            <div class="col-md-2">
+                <p>09:00 - 11:00</p><br>
+            </div>
+            <div class="col-md-5">
+                <p class="text-left"><strong>Opening plenary</strong></p>
+                <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by venture capitalist and former banker, Dr. Michael
+                    Jordaan. Dr. Jordaan will look at the reality of the singularity and how business needs to respond to
+                    this paradigm shift we are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA
+                    at Hewlett Packard Enterprise will focus on the importance of innovation in this new age.
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Il Grande</p>
+            </div>
+
+            <div class="divide20 visible-xs"></div>
+
+            <!-- Speaker Profile 1-->
+            <div class="col-md-2 col-xs-6">
+                <div class="profile-header-container">
+                    <div class="profile-header-img text-center">
+                        <img class="img-circle" src="images/speakers/michaeljordaan.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container" style="padding-left:5px">
+                            <span class="label label-default rank-label">Dr. Michael Jordaan</span>
                         </div>
-                    </div>
-
-    <!-- ========================================= Break away session - 11:15 to 11:35 =================================== -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">11:15 to 11:35</p>
-                        </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #1</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
-                            </div>
-
-                    <!-- Next row - Line  -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                        </div>
-                    </div> 
-                    </div>
-
-    <!-- ========================================= Break away session - 11:45 to 12:05 =================================== -->
-                         <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">11:45 to 12:05</p>
-                        </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #2</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
-                            </div>
-
-                    <!-- Next row - Line  -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                        </div>
-                    </div> 
-                    </div>
-
-    <!-- ========================================= Break away session - 12:15 to 12:35  =================================== -->
-
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">12:15 to 12:35</p>
-                        </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #3</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
-                            </div>
-
-                        <!-- Next row - Line  -->
-                        <div class="row">
-                            <div class="col-md-12" >
-                                <hr style="border: 0.5px dashed #d8d8d8;" />
-                            </div>
-                        </div> 
                     </div>
                 </div>
-			</section>
+            </div>
+
+            <!-- Speaker Profile 2-->
+            <div class="col-md-2 col-xs-6">
+                <div class="profile-header-container">
+                    <div class="profile-header-img text-center">
+                        <img class="img-circle" src="images/speakers/davidchalrmers.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container" style="padding-left:5px">
+                            <span class="label label-default rank-label">David Chalmers, HPE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <hr style="border: 0.5px dashed #d8d8d8;width:100%">
+            </div>
+            <!-- Next row - Line  -->
+            <div class="row">
+
+            </div>
+        </div>
+
+
+        <!-- ========================================= Sessions Block #1 ============================================================= -->
+        <div class="row">
+            <div class="col-md-2">
+                <p>11:15 - 11:35</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #1</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
+
+        <div class="row inner-bottom-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
+
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">HPE Aruba</a></li>
+                                <li class="tab"><a href="#tab-2">Cisco</a></li>
+                                <li class="tab"><a href="#tab-3">Lenovo </a></li>
+                                <li class="tab"><a href="#tab-4">Datacentrix Cloud</a></li>
+                            </ul>
+
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">No compromise hybrid IT </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Marco Vieira / Country Manager: Datacenter Infrastructure Group, HPE SA</h5>
+                                        <p>
+                                            To compete in the digital world, organisations need the right mix of traditional IT, private and public 
+                                            clouds to support their apps and data – and to meet their business needs. IT must be empowered to create 
+                                            and deliver new value instantly and continuously. Today’s infrastructure must have reduced operational complexity 
+                                            for traditional workloads and increased performance and flexibility for the new breed of applications and services.  
+                                            <br><br>
+                                            Customers shouldn’t have to compromise when they choose their hybrid IT experience.
+                                            </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/hpe.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Securing digital transformation </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
+                                        <p>
+                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers
+                                            are using more technology to transform all parts of their business. This digital
+                                            transformation – more like technological disruption – is taking place at warp
+                                            speed. A side effect of these changes is more data accessed from multiple devices
+                                            and locations (on premise and cloud). With all these devices connected to the
+                                            Internet – security becomes even more critical when managing the estate of data
+                                            and information that flows through the networks and these devices.
+                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation,
+                                            protecting customers’ technology investments, and enabling the achievements of
+                                            their business outcomes.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/cis-b.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
+                                            EMEA
+                                        </h5>
+                                        <p>
+                                            “A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
+                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
+                                            This convergence enables organisations to standardise, simplify and align IT
+                                            with business needs, reducing costs and enabling agility.
+                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
+                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
+                                            designed to move customers beyond the singularity.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/len.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 4 -->
+                                <div class="tab-content" id="tab-4">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Cosume a highly agile, next generation cloud services. </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Jacques Viljoen / Senior Consultant, Datacentrix</h5>
+                                        <p>
+                                            Datacentrix offers public and private cloud services from its tier 3+ capable, highly-available data centre infrastructure.
+                                            <br><br> Our Cloud Services leverage Datacentrix’ service desk, network and security
+                                            operations centre and are underpinned by award-winning data centre infrastructure.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= Sessions Block #2 ============================================================= -->
+        <div class="row col-md-12">
+            <div class="divide20"> </div>
+            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>11:45 - 12:05</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #2</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
+
+        <div class="row inner-bottom-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
+
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">Hewlette-Packerd Enterprise</a></li>
+                                <li class="tab"><a href="#tab-2">Cisco</a></li>
+                                <li class="tab"><a href="#tab-3">Lenovo </a></li>
+                                <li class="tab"><a href="#tab-4">Case Stude: BankServ</a></li>
+                            </ul>
+
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Build and manage your mobile workplace and enable your digital transformation </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Frederic Saint-Joigny / HPE Aruba EMEA Director Channel
+                                            & Alliances</h5>
+                                        <p>
+                                            Business leaders demand faster adoption of all things connected, BYOD and IoT stressing the network while IT can’t compromise
+                                            security and visibility. Aruba bridges this gap – providing actionable insights
+                                            for the business and predictability for IT. Aruba’s Mobile First Platform is
+                                            designed to innovate at the speed of the ecosystem.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/hpe.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Securing digital transformation </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
+                                        <p>
+                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers
+                                            are using more technology to transform all parts of their business. This digital
+                                            transformation – more like technological disruption – is taking place at warp
+                                            speed. A side effect of these changes is more data accessed from multiple devices
+                                            and locations (on premise and cloud). With all these devices connected to the
+                                            Internet – security becomes even more critical when managing the estate of data
+                                            and information that flows through the networks and these devices.
+                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation,
+                                            protecting customers’ technology investments, and enabling the achievements of
+                                            their business outcomes.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/cis-b.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
+                                            EMEA
+                                        </h5>
+                                        <p>
+                                            A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
+                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
+                                            This convergence enables organisations to standardise, simplify and align IT
+                                            with business needs, reducing costs and enabling agility.
+                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
+                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
+                                            designed to move customers beyond the singularity.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/len.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 4 -->
+                                <div class="tab-content" id="tab-4">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Case Study: BankServ - Delivering  </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Justin Hamman / Account Manager, Datacentrix</h5>
+                                        <p>
+                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. 
+                                            This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of 
+                                            the environment is key to the entire South African financial sector as it impacts on the processing of all card transactions 
+                                            in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop 
+                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their 
+                                            arrangement. Hamman Ferreira, the Bankserv CTO has already influenced FNB to replicate their approach which lead to a 
+                                            large (R50mill) Nonstop deal to DCX.
+                                        </p>
+                                    </div>
+                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+ <!-- ========================================= Sessions Block #3 ============================================================= -->
+        <div class="row col-md-12">
+            <div class="divide20"> </div>
+            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>12:15 - 12:35</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #3</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
+
+        <div class="row inner-bottom-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
+
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">Dell EMC</a></li>
+                                <li class="tab"><a href="#tab-2">Fortinet</a></li>
+                                <li class="tab"><a href="#tab-3">McAfee </a></li>
+                                <li class="tab"><a href="#tab-4">Riverbed</a></li>
+                            </ul>
+
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">IT transformation through hybrid cloud </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg McDonald / Sales Engineering Senior Manager, Dell EMC</h5>
+                                        <p>Cloud architectures are fast becoming the standard for application delivery. This is a big leap forward, but places pressure on organisations to transform their technology even faster or be left behind. Discover what lies behind the trend and how to align your organisation to the tide. Determine your digital maturity and learn how an application-focused transformation will determine your cloud systems.</p>
+                                        <p>&nbsp;</p>
+                                        <p><strong>3 take away benefits</strong></p>
+                                        <ul>
+                                        <i class="icon-right-open"></i>Why direct control over IT no longer makes sense<br>
+                                        <i class="icon-right-open"></i>How to judge the digital maturity of an organisation<br>
+                                        <i class="icon-right-open"></i>What is changing about applications and how that impacts data centre design<br>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/del.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Comprehensive integrated Fortinet Security Fabric<br>The next step in network security evolution</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Paul Williams / Country Manager – SADC for Fortinet</h5>
+                                        <p>The network security approaches of recent years are simply not fast or comprehensive enough to deal with the evolving 
+                                            threat landscape. Join the conversation with Paul Williams, Country Manager – Southern Africa at Fortinet.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/for.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">TCloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Trevor Coetzee / Regional Director, Sub-Saharan Africa at McAfee</h5>
+                                        <p>
+                                        The state of cloud adoption and security: With security and compliance more important than ever, see how IT security 
+                                        professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/mca.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 4 -->
+                                <div class="tab-content" id="tab-4">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Digital business transformation initiatives </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> JGordon Fairlie / Enterprise Sales Executive, Riverbed</h5>
+                                        <p>
+                                            With companies continuing to invest heavily in digital business initiatives, their ability to measure and 
+                                            control the quality of user experience remains a challenge. Riverbed SteelCentral now empowers customers 
+                                            to measure and troubleshoot all parts of the digital experience, from the user’s experience on the device to the 
+                                            back-end network, infrastructure, cloud and application. 
+                                            <br><br>
+                                            We invite you to join the Riverbed session and find out more about how Riverbed can assist your enterprise 
+                                            to deliver a reliable and consistently high quality end user experience with our modular and integrated Digital 
+                                            Experience Management solution.
+
+                                        </p>
+                                    </div>
+                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/riv.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <!-- End of the session data-->
+    </div>
+</section>
+
 
 
 <!-- ========================================= Lunch ============================================================= -->
-			
-			<section id="lunchsession" style="background-color:#005982;color:#fff">
-				<div class="container text-center drk-bg">
 
-							<br>
-                            <h3>Lunch will be served from 12:30 to 14:00 in the Montecasino Ballroom and outside tent area.</h3>
-                            <br>
-					
-				</div><!-- /.container -->
-			</section>
+<section id="lunchsession" style="background-color:#005982;color:#fff">
+    <div class="container text-center drk-bg">
+        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+            <br>
+            <p><strong>Lunch will be available from 12:30 to 14:00</strong> in the Montecasino Ballroom and in Il Grande where we will have our 
+                special lunch session which you cannot miss. Grab your lunch and make your way across to Il Grande. Limited seats.  </p>
+            <br>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
 
-<!-- ========================================= Lunch ============================================================= -->
-			
-			<section id="lunchsession" class="img-bg img-bg-soft toby-bg">
-						<div class="container">
-					
-					<div class="row">
-					    <div class="col-md text-center outer-bottom-xs outer-top-xs drk-bg">
-							<header>
-                                <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
-								<h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
-                                <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
-                                <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive 
-                                    topic of the singularity and how humanity is being assimilated into code. What will happened to humanity as we know it 
-                                    today and how should business transform to stay relevant in the future. 
-                                </p>							
-                            </header>
-                            <!--RC: Removed for now until backend is finished to book seats-->
-		                    <!--<a href="/register" class="btn btn-large">Book your seat now</a>-->
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-					
-				</div><!-- /.container -->
-			</section>
+<section id="lunchsession" class="img-bg img-bg-soft toby-bg">
+    <div class="container">
 
-
-            <section>
-
-    <!-- ========================================= Break away session - 14:15 to 14:35  =================================== -->
-
-                    <div class="row outer-top-xs">
-                        <div class="col-md-3" >
-                            <p class="text-center">14:15 to 14:35</p>
-                        </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #4</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
+        <div class="row">
+            <div class="col-md text-center outer-bottom-xs outer-top-xs drk-bg">
+                <header>
+                    <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
+                    <h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
+                    <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
+                    <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic
+                        of the singularity and how humanity is being assimilated into code. What will happened to humanity
+                        as we know it today and how should business transform to stay relevant in the future. Great panel
+                        of industry specialists:
+                    </p>
+                </header>
+                <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/michaeljordaan.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">Dr. Michael Jordaan</span>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">Former CEO FNB</p>
+                                    <div class="divide10"></div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
 
-                        <!-- Next row - Line  -->
-                        <div class="row">
-                            <div class="col-md-12" >
-                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/davidchalrmers.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">David Chalmers</span>
+                                </div>
+                                <div class="divide10"></div>
+                                <p style="font-size:80%">CTO HPE EMEA</p>
+                                <div class="divide10"></div>
                             </div>
-                        </div> 
-                    </div>
-                
-
-    <!-- ========================================= Break away session - 14:45 to 15:05  =================================== -->
-
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">14:45 to 15:05</p>
                         </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #5</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
+                    </div>
+
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/AntionetteWagner.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">Antoinette Wagner</span>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">CIO Deloitte Africa</p>
+                                    <div class="divide10"></div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
 
-                        <!-- Next row - Line  -->
-                        <div class="row">
-                            <div class="col-md-12" >
-                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/rudieraath.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">Rudie Raath</span>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">CDS Datacentrix</p>
+                                    <div class="divide10"></div>
+                                </div>
                             </div>
-                        </div> 
-                    </div>
-               			
-
-
-    <!-- ========================================= Break away session - 15:15 to 15:45  =================================== -->
-
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">15:15 to 15:45</p>
                         </div>
-                            <div class="col-md-8" >
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="text-left"><strong>Breakaway sessions block #6</strong> (4 Streams)</p>
-                                    </div><!-- /.col -->
-                                </div><!-- /.row -->
+                    </div>
+
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/DennisMwanza.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">Dr. Dennis Mwanza</span>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">Head of IT JSE</p>
+                                    <div class="divide10"></div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
 
-                        <!-- Next row - Line  -->
-                        <div class="row">
-                            <div class="col-md-12" >
-                                <hr style="border: 0.5px dashed #d8d8d8;" />
+                    <div class="col-md-2 col-xs-6">
+                        <div class="profile-header-container">
+                            <div class="profile-header-img text-center">
+                                <img class="img-circle" src="images/speakers/LindaMoreira.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container" style="padding-left:5px">
+                                    <span class="label label-default rank-label">Linda Moreira</span>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">Head of DC's ABSA</p>
+                                    <div class="divide10"></div>
+                                </div>
                             </div>
-                        </div> 
-                    </div>
-              
-
-
-    <!-- ========================================= Opening Plenery session - 16:00 to 17:00 =================================== -->
-
-                    <!-- Next row - Slot info  -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">16:00 to 17:00</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <p class="text-left"><strong>Networking and prize giving</strong></p>
-                            <p style="font-size:90%">Please join us at the Datacentrix stand for the various lucky 
-                                draw prizes on offer. During this hour, sponsors will present their prizes and delegates 
-                                will be given the opportunity to visit any partner stands that they might have missed 
-                                before moving to La Toscana for cocktails, refreshments, not-to-be-missed entertainment 
-                                and the final lucky draw.</p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom, facilitated by Rudie Raath, chief digital strategist for Datacentrix
-                                </p>
                         </div>
                     </div>
 
-                   <!-- Next row - Line  -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+
+<!-- ========================================= Session  ============================================================= -->
+<section id="eventinfo" class="outer-top-xs">
+    <div class="container">
+
+
+        <!-- ========================================= Sessions Block #4 ============================================================= -->
+        <div class="row">
+            <div class="col-md-2">
+                <p>14:15 - 14:35</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #4</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
+
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">Huawei</a></li>
+                                <li class="tab"><a href="#tab-2">HP Inc</a></li>
+                                <li class="tab"><a href="#tab-3">OpenText </a></li>
+                                <li class="tab"><a href="#tab-4">Veritas</a></li>
+                            </ul>
+
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">The Singularity of Reality is here. <br>Are your Ready for It? </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pauline Barnes / Channel Account Executive, Hauwei</h5>
+                                        <p>
+                                            Singularity, is defined by Wikipedia as the "moment in time when artificial intelligence will have progressed 
+                                            to the point of a greater-than-human intelligence”. Huawei is at the leading edge of this new technology and 
+                                            has built an open platform eco system where together with our partners we are paving the way to this new world of 
+                                            an Intelligent Society where all things are connected. Does that sound far-fetched? Pauline will unpack this 
+                                            leading edge technology, disclosing a number of live case studies.
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/hua.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Harnessing the power of virtual reality in the workplace </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Yesh  Surjoodeen / Computing, Printing and Personal Systems Group, HP South Africa</h5>
+                                        <p>
+                                            Today, virtual reality technology plays a pivotal role in helping many industries make dramatic 
+                                            advancements in training, collaborative work and learning.
+                                            <br><br>
+                                            By creating realistic and immersive simulations of complicated three-dimensional environments 
+                                            or objects, and enabling realistic interaction between the users and these simulations, complex 
+                                            procedures and macro-level collaborations can now be rehearsed in a safe and controlled environment.
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/hpi.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Title of the session goes here </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Presenter</h5>
+                                        <p>
+                                           Summary of the session
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/ope.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 4 -->
+                                <div class="tab-content" id="tab-4">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Modernise data protection with 360 data management</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Michael Wilson / Veritas</h5>
+                                        <p>
+                                            <strong>Why is modern data protection important?</strong><br>
+                                            Digital business needs to respond to the increasing data management challenges in a multi-cloud and virtual world. Data is one of the most valuable assets the organisation possesses. It’s time to think ahead. It’s time for modernised data protection. Now is the tipping point where businesses must re-evaluate their information infrastructure as they move to digitalisation. Why? We’re moving into the future, and in that future being able to capture data, turn it into information and manage it is absolutely key. Information is increasingly at the core of our customers’ business.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/ver.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- ========================================= Sessions Block #5 ============================================================= -->
+        <div class="row col-md-12">
+            <div class="divide20"> </div>
+            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>14:45 - 15:05</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #5</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
 
-<!-- ========================================= Cocktail Party - 17:00 to 20:00 =================================== -->
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
 
-                    <!-- Next row - Slot info  -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">17:00 to 20:00</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <!--RC: Removed first line for Monique-->
-                            <!--<p class="text-left"><strong>Intel cocktail function with live performances from "The Muses"</strong></p>-->
-                            <p style="font-size:100%"><strong>Cocktail function with live performances from “1st Project” and "The Muses"</strong></p> 
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">AI at work in JSE</a></li>
+                                <li class="tab"><a href="#tab-2">Case Study: ABSA</a></li>
+                                <li class="tab"><a href="#tab-3">Case Study: Exxaro </a></li>
+                                <li class="tab"><a href="#tab-4">Datacentrix SOC</a></li>
+                            </ul>
 
-                            
-                            <p style="font-size:90%">Please join us for a closing party that you don’t want to miss. 
-                                From live performances by “1st Project” and "The Muses" to Liquid Chefs entertaining delegates 
-                                with cunning bar tricks. We’ll also be giving away our big prize. <br><br>A home driving facility will be available.</p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana
-                                </p>
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Trading billions in nanno seconds - how artificial inteligence is used to acheived this</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwanza / Head of IT at JSE</h5>
+                                        <p>
+                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has 
+                                            both local and international expeirece in the the field of stock traders and technologies applied to perform their daily tasks. He shares with us 
+                                            the reality of trades today and how they mange to keep track of buying and selling on the stock excahnge. How is this possible and what is on their roadmap. 
+                                            <br><br>
+                                            Do not miss this oppertunity to hear from the leading minds on how next generation technology is applied to business. 
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="https://cdn.worldvectorlogo.com/logos/jse.svg" style="width:60%" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Securing digital transformation </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
+                                        <p>
+                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. 
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/cis-b.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
+                                            EMEA
+                                        </h5>
+                                        <p>
+                                            A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
+                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
+                                            This convergence enables organisations to standardise, simplify and align IT
+                                            with business needs, reducing costs and enabling agility.
+                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
+                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
+                                            designed to move customers beyond the singularity.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/len.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 4 -->
+                                <div class="tab-content" id="tab-4">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Case Study: BankServ - Delivering  </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Justin Hamman / Account Manager, Datacentrix</h5>
+                                        <p>
+                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. 
+                                            This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of 
+                                            the environment is key to the entire South African financial sector as it impacts on the processing of all card transactions 
+                                            in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop 
+                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their 
+                                            arrangement. Hamman Ferreira, the Bankserv CTO has already influenced FNB to replicate their approach which lead to a 
+                                            large (R50mill) Nonstop deal to DCX.
+                                        </p>
+                                    </div>
+                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                   <!-- Next row - Line  -->
-                    <div class="row">
-                        <div class="col-md-12" >
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
+            </div>
+        </div>
+
+ <!-- ========================================= Sessions Block #6 ============================================================= -->
+        <div class="row col-md-12">
+            <div class="divide20"> </div>
+            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>15:15 - 15:35</p><br>
+            </div>
+            <div class="col-md-10">
+                <p class="text-left"><strong>Breakaway session - Block #6</strong></p>
+                <div class="divide30 visible-xs"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-2 col-xs-12">
+                        <div class="tabs tabs-top">
+
+                            <ul class="etabs text-center">
+                                <li class="tab"><a href="#tab-1">Case Study: Standard Bank</a></li>
+                                <li class="tab"><a href="#tab-2">Enterprise Information Management</a></li>
+                                <li class="tab"><a href="#tab-3">Backup-as-a-Service </a></li>
+                            </ul>
+
+                            <div class="panel-container">
+
+                                <!-- Session  1-->
+                                <div class="tab-content" id="tab-1">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">IT transformation through hybrid cloud </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg McDonald / Sales Engineering Senior Manager, Dell EMC</h5>
+                                        <p>Cloud architectures are fast becoming the standard for application delivery. This is a big leap forward, but places pressure on organisations to transform their technology even faster or be left behind. Discover what lies behind the trend and how to align your organisation to the tide. Determine your digital maturity and learn how an application-focused transformation will determine your cloud systems.</p>
+                                        <p>&nbsp;</p>
+                                        <p><strong>3 take away benefits</strong></p>
+                                        <ul>
+                                        <i class="icon-right-open"></i>Why direct control over IT no longer makes sense<br>
+                                        <i class="icon-right-open"></i>How to judge the digital maturity of an organisation<br>
+                                        <i class="icon-right-open"></i>What is changing about applications and how that impacts data centre design<br>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/del.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 2 -->
+                                <div class="tab-content" id="tab-2">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">Comprehensive integrated Fortinet Security Fabric<br>The next step in network security evolution</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Paul Williams / Country Manager – SADC for Fortinet</h5>
+                                        <p>The network security approaches of recent years are simply not fast or comprehensive enough to deal with the evolving 
+                                            threat landscape. Join the conversation with Paul Williams, Country Manager – Southern Africa at Fortinet.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/for.svg" alt=""></figure>
+                                    </div>
+                                </div>
+
+                                <!-- Session 3 -->
+                                <div class="tab-content" id="tab-3">
+                                    <div class="divide30"></div>
+                                    <div class="row session-body col-md-9 col-xs-12">
+                                        <h2 style="color:slategray">TCloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Trevor Coetzee / Regional Director, Sub-Saharan Africa at McAfee</h5>
+                                        <p>
+                                        The state of cloud adoption and security: With security and compliance more important than ever, see how IT security 
+                                        professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
+                                        <figure><img src="/assets/images/sponsor-logos/mca.svg" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
- <!-- ========================================= After Party - 20:00 to late =================================== -->
-
-                    <!-- Next row - Slot info  -->
-                    <div class="row">
-                        <div class="col-md-3" >
-                            <p class="text-center">20:00 till late</p>
-                        </div>
-                        <div class="col-md-8" >
-                            <p class="text-left"><strong>Parker's Comedy and Jive - Datacentrix Showcase 2017 after party</strong></p>
-                            <p style="font-size:90%">Everyone is invited to join Datacentix in celebrating the event of the 
-                                year and thanking all sponsors and delegates for sharing this special day with us. <br><br> A home driving facility will be available.</p> 
-                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Parker's Comedy and Jive
-                                </p><br><br>
-                        </div>
-                    </div>  
-                </section>
-
+            </div>
+        </div>
+    <!-- End of the session data-->
+    </div>
+</section>
 {{> jscript}}
 
 <!--JavaScript BELOW THIS LINE-->

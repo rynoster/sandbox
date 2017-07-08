@@ -1,3 +1,8 @@
+/*reset the datacentrix colors*/
+h1, h2, h3 {
+    color: #005982;
+}
+
 
 /* Here we can customise the customers brand colors*/
 
