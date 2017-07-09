@@ -82,7 +82,7 @@ router
   .get('/login', (req, res, next) => {
     
     if (req.isAuthenticated()) {
-      res.redirect("/admin/delegateMain");
+      res.redirect("/admin/dashboard");
     } else {
       res.render('admin/login');
     }
@@ -128,7 +128,7 @@ router
     function(req, res) {
 
       if (!req.session.sourceURL) {
-        res.redirect('/admin/delegateMain');
+        res.redirect('/admin/dashboard');
       }
       else {
         res.redirect(req.session.sourceURL);
@@ -255,6 +255,21 @@ router
   .get('/admin', (req, res, next) => {
     
     res.redirect('/login');
+
+  }) 
+
+  .get('/admin/dashboard', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+    
+    res.render('admin/main', {
+      users: "users",
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Dashboard",
+      loggedIn: true,
+      partials : {
+        body: "admin/dashboard",
+        jscript: "admin/jscript",
+      }
+    })
 
   }) 
 
