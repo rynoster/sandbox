@@ -203,14 +203,14 @@ router
   })
 
   //Get user details for specific user email address
-  .get('/userEmail/:email', auth.loginRequired, (req, res, next) => {
+  .get('/userCxo/:email', (req, res, next) => {
     const {
       email
     } = req.params;
 
     db("users")
       .where("email", email)
-      .select("company", "first_name", "last_name", "email")
+      .select("company", "first_name", "last_name", "email", "allowCxoInvite")
       .first()
       .then((users) => {
         if (!users) {
