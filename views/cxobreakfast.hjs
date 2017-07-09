@@ -100,15 +100,20 @@
 
         $.ajax({
             type: 'GET',
-            url: '/api/userEmail/' + $txtEmail.val(),
+            url: '/api/userCxo/' + $txtEmail.val(),
 
             success: function(cxo) {
-                $txtName.val(cxo.first_name + " " + cxo.last_name);
-                $txtCompany.val(cxo.company);
+                if (cxo.allowCxoInvite === 1) {
+                    $txtName.val(cxo.first_name + " " + cxo.last_name);
+                    $txtCompany.val(cxo.company);
+                } else {
+                    window.location = "/";
+                }
             },
 
             error: function() {
                 //Cannot retrieve information
+                window.location = "/";
             }
         });
 
