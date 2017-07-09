@@ -20,7 +20,6 @@ Speaker.prototype.getSpeaker = function (callback) {
             callback(speaker);
         })
         .catch(function(err) {
-            console.log(err);
             callback(err);
         })
 }
