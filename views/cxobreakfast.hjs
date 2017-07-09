@@ -1,0 +1,79 @@
+<!-- CxO Breakfast page-->
+<style>
+    .top-banner {
+        background: url('/assets/images/art/bg-cxo.jpg') no-repeat center left;
+        background-size: 100% auto;
+        height: 200px !important;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<!-- ============================================= SECTION – Banner ================================================== -->
+
+<section class="top-banner">
+    <div class="container fadeInDown">
+        <div class="row">
+            <div class="outer-bottom-xs outer-top-xs">
+                <h1 style="font-size:300%;color:#FFF"><strong>CxO exclusive invite</strong></h1>
+                <p style="font-size:120%;color:#FFF">Please RSVP by selecting your response</p>
+            </div>
+
+        </div>
+</section>
+
+<!-- ============================================= Main Content ================================================== -->
+<div class="container inner-top-xs">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>
+                You are invited to be our guest at the CxO breakfast to be held at Datacentrix Showcase 2017
+            </h2>
+            <h5>
+                27 July 2017<br>
+                La Toscana, Montecasino, Johannesburg<br>
+                07:00-08:30 Registration opens at the Ballroom from 06:30<br>
+            </h5>
+            <p>
+                This exclusive breakfast discussion will explore how unstoppable technological progress is changing business and redefining the future of work and what this means for business leaders and people in Africa.
+                <br><br>
+                <h4>Keynotes</h4>
+
+                <strong>David Chalmres</strong>, Chief technologist for HPE in Europe, Middle East and Africa
+                The world is changing – are you ready? Does your organisation have a clear understanding of the fundamental changes that you need to work through … and probably more critically … how will your organisation get there from where you are? 
+                <br><br>
+                <strong>Linda Moreira</strong>, Head Africa Data Centres at ‎Barclays Africa Group Limited
+                Barclays Africa is on a journey to transform its technology infrastructure and services across its     ‘rest of Africa’ landscape with Datacentrix. This transformation journey across nine African countries is delivering significant learnings and business outcomes. Not only is the consumption of managed ICT services changing, so are the considerations that business should make when investing in technology infrastructure. 
+                <br><br>
+                Join this exclusive opportunity to find out how business should evaluate and prioritise change to enable going beyond surviving – to thriving in the digital age.
+            </p>
+            <div class="divide15"></div>
+            <form>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="frmName">
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" class="form-control" id="frmCompany">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" id="frmEmail">
+                </div>
+                <div class="form-group">
+                 <label for="sel1">Select list:</label>
+                    <select class="form-control" id="sel1">
+                        <option>Yes, I will attend</option>
+                        <option>No, I will not be able to make it</option>
+
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">RSVP</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{> jscript}}
