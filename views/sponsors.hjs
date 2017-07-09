@@ -1,298 +1,373 @@
+<style>
 
-	<style>
+</style>
+<!-- ============================================================= Top Banner ============================================================= -->
 
-	</style>
-	<!-- ============================================================= Top Banner ============================================================= -->
-			
-			<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/bg-sponsors.jpg);padding-left:0.5%">
-				<div class="container " >
-					<div class="row">
-						<div class="col-md-8 outer-top-xs outer-bottom-xs" >
-							<header>
-								<h1 style="color:#fff">Sponsors </h1>
-							</header>
-						</div><!-- /.col -->
-					</div><!-- ./row -->
-				</div><!-- /.container -->
-			</section>
-			
+<section id="hero" class=" img-bg img-bg-softer" style="background-image: url(/assets/images/art/bg-sponsors.jpg);padding-left:0.5%">
+	<div class="container ">
+		<div class="row">
+			<div class="col-md-8 outer-top-xs outer-bottom-xs">
+				<header>
+					<h1 style="color:#fff">Sponsors </h1>
+				</header>
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- ./row -->
+	</div>
+	<!-- /.container -->
+</section>
+
 <!-- =========================================== Main =============================================-->
-			<section style="padding-left:3%">
+<section style="padding-left:3%">
 
-				<div class="container inner-top-xs inner-bottom-xs">
-					<!-- Diamond sponsor-->
-					<div class="row inner-bottom-md">
-						<h2>Diamond sponsor</h2>
-						<hr>
-						<div class="col-lg-5 col-md-7 col-sm-9 col-xs-12">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE" src="/assets/images/sponsor-logos/hpe-b.svg" alt=""></figure></div>
-							</div>	
-						</div>
-					</div>
-
-					<!-- Platinum sponsor-->
-					<div class="row inner-bottom-md">
-						<h2>Platinum sponsors</h2>
-						<hr>
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10 inner-right-xs">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS" src="/assets/images/sponsor-logos/cis-b.svg" alt=""></figure></div>
-							</div>	
-						</div>
-						
-						<div class="ol-lg-4 col-md-4 col-sm-6 col-xs-10">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN" src="/assets/images/sponsor-logos/len.svg" alt=""></figure></div>
-							</div>	
-						</div>
-					</div>
-
-					<!-- Gold sponsor-->
-					<div class="row inner-bottom-md">
-						<h2>Gold sponsors</h2>
-						<hr>
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL" src="/assets/images/sponsor-logos/del.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FOR" src="/assets/images/sponsor-logos/for.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPI" src="/assets/images/sponsor-logos/hpi.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HUA" src="/assets/images/sponsor-logos/hua.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MCA" src="/assets/images/sponsor-logos/mca.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="OPE" src="/assets/images/sponsor-logos/ope.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="RIV" src="/assets/images/sponsor-logos/riv.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VER" src="/assets/images/sponsor-logos/ver.svg" alt=""></figure></div>
-							</div>	
-						</div>
-					</div>
-
-					
-					<!-- Silver sponsor-->
-					<div class="row inner-bottom-md">
-						<h2>Silver sponsors</h2>
-						<hr>
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="AMD" src="/assets/images/sponsor-logos/amd.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIT" src="/assets/images/sponsor-logos/cit.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="foc" src="/assets/images/sponsor-logos/foc.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="IBM" src="/assets/images/sponsor-logos/ibm.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="NET" src="/assets/images/sponsor-logos/net.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL" src="/assets/images/sponsor-logos/pal.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PFO" src="/assets/images/sponsor-logos/pfo.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA" src="/assets/images/sponsor-logos/sha.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM" src="/assets/images/sponsor-logos/sym.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
-							<div class="fadeInDown-1 panel panel-chp-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE" src="/assets/images/sponsor-logos/tre.svg" alt=""></figure></div>
-							</div>	
-						</div>
-					</div>
-
-					<!-- Display sponsor-->
-					<div class="row inner-bottom-md">
-						<h2>Display sponsors</h2>
-						<hr>
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/ari.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/bla.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/f5.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/mic.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/mim.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/tri.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/vmw.svg" alt=""></figure></div>
-							</div>	
-						</div>
-
-
-						<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
-							<div class="fadeInDown-1 panel panel-chpn-light">
-								<div class="panel-body"><figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/vee.svg" alt=""></figure></div>
-							</div>	
-						</div>
+	<div class="container inner-top-xs inner-bottom-xs">
+		<!-- Diamond sponsor-->
+		<div class="row inner-bottom-md">
+			<h2>Diamond sponsor</h2>
+			<hr>
+			<div class="col-lg-5 col-md-7 col-sm-9 col-xs-12">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPE" src="/assets/images/sponsor-logos/hpe-b.svg"
+							 alt=""></figure>
 					</div>
 				</div>
+			</div>
+		</div>
 
-			</section>
+		<!-- Platinum sponsor-->
+		<div class="row inner-bottom-md">
+			<h2>Platinum sponsors</h2>
+			<hr>
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10 inner-right-xs">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIS" src="/assets/images/sponsor-logos/cis-b.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="ol-lg-4 col-md-4 col-sm-6 col-xs-10">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="LEN" src="/assets/images/sponsor-logos/len.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gold sponsor-->
+		<div class="row inner-bottom-md">
+			<h2>Gold sponsors</h2>
+			<hr>
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="DEL" src="/assets/images/sponsor-logos/del.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="FOR" src="/assets/images/sponsor-logos/for.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HPI" src="/assets/images/sponsor-logos/hpi.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="HUA" src="/assets/images/sponsor-logos/hua.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="MCA" src="/assets/images/sponsor-logos/mca.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="OPE" src="/assets/images/sponsor-logos/ope.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="RIV" src="/assets/images/sponsor-logos/riv.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="VER" src="/assets/images/sponsor-logos/ver.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Silver sponsor-->
+		<div class="row inner-bottom-md">
+			<h2>Silver sponsors</h2>
+			<hr>
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="AMD" src="/assets/images/sponsor-logos/amd.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="CIT" src="/assets/images/sponsor-logos/cit.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="foc" src="/assets/images/sponsor-logos/foc.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="IBM" src="/assets/images/sponsor-logos/ibm.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="NET" src="/assets/images/sponsor-logos/net.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PAL" src="/assets/images/sponsor-logos/pal.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="PFO" src="/assets/images/sponsor-logos/pfo.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SHA" src="/assets/images/sponsor-logos/sha.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="SYM" src="/assets/images/sponsor-logos/sym.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+				<div class="fadeInDown-1 panel panel-chp-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey sponsor-Class" data-target="#sponsorModal" data-toggle="modal" data-sponsor="TRE" src="/assets/images/sponsor-logos/tre.svg"
+							 alt=""></figure>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Display sponsor-->
+		<div class="row inner-bottom-md">
+			<h2>Display sponsors</h2>
+			<hr>
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/ari.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/bla.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/f5.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/mic.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/mim.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/tri.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/vmw.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+				<div class="fadeInDown-1 panel panel-chpn-light">
+					<div class="panel-body">
+						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/vee.svg" alt=""></figure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
 
 
 <!-- ============================================================= Modal Content: Sponsors Click ============================================================= -->
 
-				<!--For width and height of modal content, refer to manual styling top of page-->
-				<div class="modal fade" id="sponsorModal" role="dialog">
-					<div class="modal-dialog modal-md " >
-					
-						<div class="modal-content">
-							<div class="modal-header outer-bottom-xs" style="background-color:#2C3E50" >
-									<button class="close" data-dismiss="modal">&times;</button>
-									<p id="sponsorLevel" class="modal-title"></p>
-							
-							</div>
+<!--For width and height of modal content, refer to manual styling top of page-->
+<div class="modal fade" id="sponsorModal" role="dialog">
+	<div class="modal-dialog modal-sm">
 
-							<div class="modal-body">
-									<img class="panel-logo" id="sponsorImage" src="" alt="" style="width:300px;height:auto;padding: 10px">
-									<p class="outer-top-xs" id="sponsorContent"></p>
-							</div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 id="sponsorLevel" class="modal-title"></h4>
+			</div>
 
-							<div class="modal-footer dark-bg" style="background-color:#2C3E50">
-								<div class="col-sm-6 text-left outer-top-xxs">
-								
-									<p style="font-size:75%">Datacentrix Showcase 2017</p>
-								</div>							
-								<button type="button" class="btn btn-lg" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					
-					</div>
-				</div>
+			<div class="modal-body">
+				<img class="panel-logo" id="sponsorImage" src="" alt="" style="height:100px">
+				<p id="sponsorLevel" class="modal-title"></p>
+				<div class="divide15"></div>
+				<p id="sponsorContent"></p>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
 
 {{> jscript}}
 
 
 <script>
-    $(document).ready(function(){
-        $('#sponsorModal').on('hide.bs.modal', function () {
-    		// Clear all the data from the modal when it closes, to ensure no artefacts show up on clicking between sponsors
+	$(document).ready(function () {
+		$('#sponsorModal').on('hide.bs.modal', function () {
+			// Clear all the data from the modal when it closes, to ensure no artefacts show up on clicking between sponsors
 			$("#sponsorName").text("");
 			$("#sponsorContent").html("");
 			$("#sponsorLevel").html("");
-			$("#sponsorImage").attr("src","");
+			$("#sponsorImage").attr("src", "");
 		});
 
-		$('.sponsor-Class').on('click', function() {
+		$('.sponsor-Class').on('click', function () {
 			sponsorTag = $(this).data('sponsor');
 
 			$.ajax({
 				type: 'GET',
 				url: '/api/sponsor/' + sponsorTag,
-				
-				success: function(sponsors) {
+
+				success: function (sponsors) {
 					$("#sponsorName").text(sponsors.sponsorName);
 					$("#sponsorContent").html(sponsors.sponsorContent);
 					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
-					$("#sponsorImage").attr("src","/assets/images/sponsor-logos/"+sponsors.sponsorLogo);
+					$("#sponsorImage").attr("src", "/assets/images/sponsor-logos/" + sponsors.sponsorLogo);
 				},
-				error: function() {
+				error: function () {
 					// alert("Error retrieving sponsor data");
 				}
-				
+
 			})
 
 		});
 
-    });
-</script>
+	});
 
+</script>

@@ -56,6 +56,28 @@
 		
 		<main>
 			{{> content}}
+
+	<!-- ========================================================== MODAL: Login ========================================================== -->
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginFrm" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container text-center">
+				<img src="/assets/images/showcase.svg" style="width:80%;height:auto">
+				<div class="divide20"></div>
+				<form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<!--<input type="submit" name="login" class="login loginmodal-submit" value="Login">-->
+					<button type="submit" class="btn btn-default">Login me in</button>
+				</form>
+				
+				<div class="text-center">
+					<a style="font-size:75%" href="/register"><strong>Register</strong></a> |
+					<a style="font-size:75%" href="#">Request your password</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 		</main>
 		
 	<!-- ============================================================= FOOTER ============================================================= -->

@@ -1,10 +1,25 @@
-/*reset the datacentrix colors*/
-h1, h2, h3 {
+/*===================================================================================*/
+/*	FORCE PRIMARY COLOR
+/*===================================================================================*/
+
+h1, 
+h2, 
+h3, 
+h4 {
     color: #005982;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+p {
+  color:slategray;  
+  font-family: 'Raleway', sans-serif !important;
 }
 
 
-/* Here we can customise the customers brand colors*/
+/*===================================================================================*/
+/*	CUSTOM BRAND COLORS
+/*===================================================================================*/
+
 
 .brand-core1 {
     color:#005982 !important; 
@@ -86,6 +101,7 @@ h1, h2, h3 {
     height: auto !important;
     background-position: top center;
 }
+
 
 /* Footer CSS */
 .dark-bg {
@@ -175,3 +191,55 @@ h1, h2, h3 {
 
 
      }
+
+
+/*===================================================================================*/
+/*	LOGIN MODAL
+/*===================================================================================*/
+
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+}
+
+.loginmodal-submit {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.loginmodal-submit:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

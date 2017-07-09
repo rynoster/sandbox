@@ -157,7 +157,7 @@
             </div>
         </div>
 
-        <div class="row inner-bottom-sm">
+        <div class="row inner-bottom-xs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-2 col-xs-12">
@@ -277,7 +277,7 @@
             </div>
         </div>
 
-        <div class="row inner-bottom-sm">
+        <div class="row inner-bottom-xs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-2 col-xs-12">

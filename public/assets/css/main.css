@@ -56,7 +56,7 @@ iframe {
 	-webkit-backface-visibility: hidden; /* Fixes transition flickering in Chrome and Safari */
 }
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: #283645;
     color: #73879C;
     font-size: 16px;
@@ -122,7 +122,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
 	letter-spacing: 0.025em;
     color: #506A85;
@@ -357,6 +357,9 @@ main header + * {
 .inner-top-xs {
 	padding-top: 40px;
 }
+.inner-top-xxs {
+	padding-top: 20px;
+}
 .inner-bottom {
 	padding-bottom: 120px;
 }
@@ -368,6 +371,9 @@ main header + * {
 }
 .inner-bottom-xs {
 	padding-bottom: 40px;
+}
+.inner-bottom-xxs {
+	padding-bottom: 20px;
 }
 .inner-left {
 	padding-left: 75px;
@@ -649,9 +655,13 @@ figure.post-media + * {
     color: #3B5998;
     color: #4668B3;
 }
-.member .text-overlay .info .social li a:hover .icon-s-gplus {
+.member .text-overlay .info .social li a:hover .icon-mail-1 {
     color: #DD4B39;
     color: #DE5745;
+}
+.member .text-overlay .info .social li a:hover .icon-s-linkedin {
+    color: #00ACED;
+    color: #2FBBED;
 }
 .member .text-overlay .info .social li a:hover .icon-s-twitter {
     color: #00ACED;
@@ -1656,7 +1666,7 @@ aside .thumb figure {
     background: #1ABB9C;
     padding: 11px 20px 13px;
 	margin: 15px 0;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 14px;
 	letter-spacing: 0.02em;
@@ -1882,13 +1892,20 @@ aside .thumb figure {
     background: #00ACED;
     background: #2FBBED;
 }
+.btn-share-lg:hover .icon-s-linkedin:after,
+.btn-share-md:hover .icon-s-linkedin:after,
+.btn-share-sm:hover .icon-s-linkedin:after,
+.btn-share-xs:hover .icon-s-linkedin:after {
+    background: #00ACED;
+    background: #2FBBED;
+}
 .btn-share-lg p,
 .btn-share-md p,
 .btn-share-sm p,
 .btn-share-xs p {
 	position: absolute;
 	height: 1.1em;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	line-height: 100%;
 	color: #FFF;
 	margin: auto;
@@ -1945,7 +1962,7 @@ p .btn {
 	font-weight: 700;
 }
 .txt-btn:after {
-	font-family: 'fontello';
+	font-family: 'Raleway', sans-serif;
 	font-size: 75%;
 	content: '\e846';
 	margin-left: 7px;
@@ -1968,7 +1985,7 @@ p .btn {
     margin: 0;
 }
 .social li {
-    font-family: 'fontello-social';
+    font-family: 'Raleway', sans-serif;
     margin-right: 4px;
 }
 .social li {
@@ -2025,11 +2042,11 @@ p .btn {
     background: #00ACED;
     background: #2FBBED;
 }
-.social a .icon-s-pinterest:after {
-    background: #CB2027;
-    background: #D94348;
+.social a .icon-mail-1:after {
+    background: #005982;
+    background: #005982;
 }
-.social a .icon-s-behance:after {
+.social a .icon-s-linkedin:after {
     background: #1769FF;
     background: #3079FF;
 }
@@ -2097,7 +2114,7 @@ p .btn {
 	border-top-color: #1ABB9C;
 }
 .tabs-side .tab a div {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2156,7 +2173,7 @@ p .btn {
 	overflow: hidden;
 }
 .tabs-top .tab a div {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2229,7 +2246,7 @@ p .btn {
 	overflow: hidden;
 }
 .tabs-circle-top .tab a div {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 40px;
 	line-height: 100%;
 	font-weight: 200;
@@ -2460,7 +2477,7 @@ blockquote:before {
 	border-color: inherit !important;
 }
 .panel-title {
-	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
     font-size: 15px;
 	line-height: 1.42857;
     font-weight: 700;
@@ -2511,7 +2528,7 @@ blockquote:before {
 	color: transparent;
 }
 .panel-title > a span:after {
-	font-family: "fontello";
+	font-family: 'Raleway', sans-serif;
 	content: "\e849";
 	position: absolute;
 	top: 0;
@@ -2765,7 +2782,7 @@ blockquote:before {
 	vertical-align: middle;
 	width: 100%;
 	height: auto;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	line-height: 22px;
 	/*color: #FFF;*/
@@ -4488,7 +4505,6 @@ input:focus:-ms-input-placeholder {
 	border-color: #E6E9ED;
 }
 
-
 /*===================================================================================*/
 /*	MODALS
 /*===================================================================================*/
@@ -4526,7 +4542,7 @@ input:focus:-ms-input-placeholder {
 	overflow: hidden;
 }
 .modal-backdrop {
-	background-color: #F2F5F7;
+	background-color:#c7c6c6;
 	z-index: 8999;
 }
 .modal-backdrop.in {
@@ -4594,15 +4610,14 @@ input:focus:-ms-input-placeholder {
 	z-index: 1;
 	height: 70px;
 	padding: 22px 25px;
-	background-color: #005982;
-	color: #fff !important;
+	background-color: #FFF;
 	border-bottom: 1px solid #E6E9ED;
 }
-.modal-header .close {	
+.modal-header .close {
 	float: right;
 	font-size: 24px;
-	font-weight: 400;
-	color:#fff;
+	font-weight: 800;
+	color: #005982;
 	text-shadow: none;
 	margin-top: 0;
 	margin-left: 25px;
@@ -4620,9 +4635,7 @@ input:focus:-ms-input-placeholder {
 	opacity: 1 !important;
 }
 .modal-title {
-	color: #fff !important;
-	font-size: 130%;
-	line-height: 150%;
+	color: #506A85 !important;
 }
 .no-modal-header .modal-header {
 	background-color: transparent;
@@ -4643,10 +4656,10 @@ input:focus:-ms-input-placeholder {
 }
 .modal-body {
 	position: absolute;
-	top: 70px;
-	bottom: 75px;
+	top: 55px;
+	bottom: 15px;
 	width: 100%; /* Can use left: 0; right: 0; as well */
-	padding-left: 25px;
+	padding: 30px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -4655,7 +4668,7 @@ input:focus:-ms-input-placeholder {
 	bottom: 0;
 	width: 100%; /* Can use left: 0; right: 0; as well */
 	height: 75px;
-	background-color:#005982;
+	background-color: #FFF;
 	border-top: 1px solid #E6E9ED;
 }
 .modal-footer .btn {
@@ -4681,6 +4694,7 @@ input:focus:-ms-input-placeholder {
     background: #EDF0F2 !important;
 	color: #1ABB9C !important;
 }
+
 
 
 /*===================================================================================*/
@@ -6151,8 +6165,12 @@ a.changepointer {
 .panel-logo {
     background-color:#fff;
 	border: 1px solid #a9c4d0;
+	height: 100px;
 }
 
+.panel-logo img {
+	height: 100px;
+}
 /*===================================================================================*/
 /*	MEDIA QUERIES | BREAKPOINTS
 /*===================================================================================*/
@@ -6162,28 +6180,17 @@ body:before {
 	display: none;
 }
 
-/*@media (min-width: 768px) {
-	body:before {
-		content: 'sm';
-	}
-}*/
-
 @media (min-width: 1025px) {
 	body:before {
 		content: 'md';
 	}
 }
 
-/*@media (min-width: 1200px) {
-	body:before {
-		content: 'lg';
-	}
-}*/
 
-
-/*-----------------------------------------------------------------------------------*/
+/*===================================================================================*/
 /*	DIVIDERS
-/*-----------------------------------------------------------------------------------*/
+/*===================================================================================*/
+
 .divide0 {
   width: 100%;
   height: 0px;

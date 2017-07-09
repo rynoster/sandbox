@@ -23,21 +23,33 @@
 			height: auto !important;
 			background-position: top center;
 		}
-		.p{
-				text-decoration: none;
-			}
+		.css-bg-1 {
+			background: #141E30;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #141E30, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #005981, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+
 
 		</style>
 		<main>
  <!--============================================================= SECTION – Top Banner ============================================================= -->
 			<section>
-				<div class="dark-bg fullwidthbanner" >
-					<div class="divide15"></div>
-					<p class="text-center">The doors to this event opens soon. Have you registed yet?  </p>
-					<script src="//www.powr.io/powr.js" external-type="html"></script> 
- 					<div class="powr-countdown-timer" id="ad1114b2_1498337210"></div>
-					 <div class="divide10"></div>
+				<div class="css-bg-1 fullwidthbanner" >
+					<div class="container">	
+						<div class="row inner-bottom-xxs inner-top-xxs">
+							<div class="col-md-5 col-md-offset-3">
+								<p class="text-center">The doors to this event opens soon. Have you registed yet?  </p>
+								<script src="//www.powr.io/powr.js" external-type="html"></script> 
+								<div class="powr-countdown-timer" id="ad1114b2_1498337210"></div>
+							</div>
+							<div class="col-md-1 vertical-center">
+								<div class="divide15"></div>
+								<a href="/register" class="btn btn-w" style="">Register now</a>
+							</div>
+						</div>
 					</div>
+				</div>
 
 			</section>
 
@@ -58,7 +70,7 @@
 									<div class="row text-right inner-top-xs light-bg ">
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Thursday, 27 July 2017</p>
 										<p style="font-weight: bold; font-size: 150%; color:#005981">Montecasino</p>
-										<a href="/register" class="btn" style="">Secure your seat now</a>
+										
 									</div>												
 								</div>		
 							</div><!-- /.caption -->
