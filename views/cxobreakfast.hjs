@@ -42,7 +42,7 @@
                 <br><br>
                 <h4>Keynotes</h4>
 
-                <strong>David Chalmres</strong>, Chief technologist for HPE in Europe, Middle East and Africa The world is
+                <strong>David Chalmers</strong>, Chief technologist for HPE in Europe, Middle East and Africa The world is
                 changing – are you ready? Does your organisation have a clear understanding of the fundamental changes that
                 you need to work through … and probably more critically … how will your organisation get there from where
                 you are?
@@ -57,22 +57,22 @@
                 enable going beyond surviving – to thriving in the digital age.
             </p>
             <div class="divide15"></div>
-            <form>
+            <form id ="frmMain">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" id="frmName">
+                    <input id="txtName" type="text" class="form-control" id="frmName">
 
                     <label>Company</label>
-                    <input type="text" class="form-control" id="frmCompany">
+                    <input id="txtCompany" type="text" class="form-control" id="frmCompany">
 
                     <label>Email</label>
-                    <input type="email" class="form-control" id="frmEmail">
+                    <input id="txtEmail" type="email" class="form-control" id="frmEmail" value="{{email}}">
 
-                    <label class="radio-inline"><input type="radio" value="1" name="optradio" checked="checked"><strong>Yes</strong>, I will attend.</label>
-                    <label class="radio-inline"><input type="radio" value="0" name="optradio"><strong>No</strong>, I cannot make it.</label>
+                    <label class="radio-inline"><input id="rdRSVP" type="radio" value="1" name="rdRSVP" checked="checked"><strong>Yes</strong>, I will attend.</label>
+                    <label class="radio-inline"><input id="rdRSVP" type="radio" value="-1" name="rdRSVP"><strong>No</strong>, I cannot make it.</label>
                 
                 </div>
-                <button type="submit" class="btn btn-default">Submit your response</button>
+                <button id="btnSubmit" type="submit" class="btn btn-default">Submit your response</button>
             </form>
         </div>
         <div class="col-md-4">
@@ -82,3 +82,62 @@
 </div>
 
 {{> jscript}}
+
+<script>
+    $(document).ready(function(){
+
+        var $frmMain = $("#frmMain");
+        var $txtName = $("#txtName");
+        var $txtCompany = $("#txtCompany");
+        var $txtEmail = $("#txtEmail");
+        var $rdRSVP = $("input[name='rdRSVP']");
+        var $btnSubmit = $("#btnSubmit")
+
+        //Disable form fields to avoid tampering
+        $txtName.attr("disabled","disabled");
+        $txtCompany.attr("disabled","disabled");
+        $txtEmail.attr("disabled","disabled");
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/userEmail/' + $txtEmail.val(),
+
+            success: function(cxo) {
+                $txtName.val(cxo.first_name + " " + cxo.last_name);
+                $txtCompany.val(cxo.company);
+            },
+
+            error: function() {
+                //Cannot retrieve information
+            }
+        });
+
+        $btnSubmit.on("click", function(e){
+            e.preventDefault();
+
+            var rdRSVPVal = $rdRSVP.filter(":checked").val();
+
+            var userCxo = {
+                email: $txtEmail.val(),
+                cxoRSVP: rdRSVPVal
+            }
+            
+            $.ajax({
+                    type: 'PUT',
+                    url: '/api/userCxo/' + $txtEmail.val(),
+                    data: userCxo,
+                    success: function() {
+
+                        window.location = "/";
+
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        //error handling
+                    }
+                    
+                })
+
+        })
+
+    })
+</script>
