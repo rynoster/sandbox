@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var db = require("../db");
-var auth = require("../auth")
 var crypto = require('crypto');
 var request = require('request');
 var _ = require("lodash");
+
+//My own modules
+var db = require("../db");
+var auth = require("../auth")
+var Speaker = require("../speakers")
 
 //file uploads
 var formidable = require('formidable');
@@ -83,7 +86,7 @@ router
     const newUser = req.body;
     var sendEmail = newUser.sendEmail || "true"; //Retrieve the sendEmail from req.body to determine whether email should be sent to delegate for verification
 
-    delete newUser.sendEmail; //Removes the sendEmail item from the newUser object, to ensure the insert record into the database does not fail
+    delete newUser.sendEmail; //Removes the sendEmail property from the newUser object, to ensure the insert record into the database does not fail
 
     //Generate the token, trim to 32 characters
     //newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 32);
@@ -91,7 +94,8 @@ router
 
     //First check if email address already exists before trying to add
     db("users")
-      .where("email", newUser.email)
+      // .where("email", newUser.email)
+      .whereRaw("LOWER(email) = ?", [_.toLower(newUser.email)]) //Compare lowercase to lowercase, to ensure users do not register with two different case email addresses that are the same
       .first()
       .then((user) => {
         if (user) {
@@ -234,34 +238,44 @@ router
   // All speakers GET
   .get('/allSpeakers', (req, res, next) => {
 
-    var ajaxData = req.query;
+    var mySpeaker = new Speaker();
 
-    db("speakers")
-      // .select("id","email","event_profile","first_name","last_name","dietary","accountManager")
-      // .limit(ajaxData.limit || 100)
-      .orderBy("fullName")
-      .where(ajaxData.where || {})
-      .then((speakers) => {
-        res.send(speakers);
-      }, next)
+    mySpeaker.allSpeakers(function(rows) {
+        res.send(rows);
+    }, next)
 
   })
 
   //GET speaker details for specific speaker id
-  .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
-    const {
-      id
-    } = req.params;
+  // .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
+  //   const {
+  //     id
+  //   } = req.params;
 
-    db("speakers")
-      .where("id", id)
-      .first()
-      .then((speakers) => {
-        if (!speakers) {
-          return res.send(400);
-        }
-        res.send(speakers);
-      }, next)
+  //   db("speakers")
+  //     .where("id", id)
+  //     .first()
+  //     .then((speakers) => {
+  //       if (!speakers) {
+  //         return res.send(400);
+  //       }
+  //       res.send(speakers);
+  //     }, next)
+  // })
+
+  .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
+    const { id } = req.params;
+    var mySpeaker = new Speaker(id);
+
+    mySpeaker.getSpeaker(function(speaker) {
+      if (speaker.errno) {
+        return res.send(400);
+      } else if (_.isEmpty(speaker)) {
+        res.send(404);
+      } else {
+        res.send(speaker);
+      }
+    }, next)
   })
 
   //POST/Add Speaker
