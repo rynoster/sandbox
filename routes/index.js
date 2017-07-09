@@ -419,6 +419,24 @@ router
 
   })
 
+
+
+   .get('/admin/dashboard', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    var { id } = req.params;
+
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Event dashboard",
+      loggedIn: true,
+      partials : {
+        body: "admin/dashboard",
+        jscript: "admin/jscript",
+      }
+    })
+
+  })
+
  ;
 
 module.exports = router;

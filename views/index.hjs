@@ -31,10 +31,13 @@
 		<main>
  <!--============================================================= SECTION – Top Banner ============================================================= -->
 			<section>
-				<div class="dark-bg fullwidthbanner inner-bottom-xs inner-top-xs" >
+				<div class="dark-bg fullwidthbanner" >
+					<div class="divide15"></div>
+					<p class="text-center">The doors to this event opens soon. Have you registed yet?  </p>
 					<script src="//www.powr.io/powr.js" external-type="html"></script> 
  					<div class="powr-countdown-timer" id="ad1114b2_1498337210"></div>
-				</div>
+					 <div class="divide10"></div>
+					</div>
 
 			</section>
 
