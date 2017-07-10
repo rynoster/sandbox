@@ -7,6 +7,8 @@ var passport = require('passport');
 var auth = require('../auth');
 var _ = require('lodash');
 
+var Agenda = require("../agenda");
+
 require('../passport');
 
 var app = express();
@@ -198,6 +200,28 @@ router
         jscript: "jscript"
         }
     });
+  })
+
+  // ===========================================================================
+  //  Agenda Page (Temporary) ==================================================
+  // ===========================================================================
+
+  .get('/agenda', (req,res) => {
+
+    var myAgenda = new Agenda();
+
+    myAgenda.fullDataset(function(result){
+      res.render('skeleton', {
+        fullDataset: result,
+        partials: {
+          header: "header", 
+          content: "agenda",
+          footer: "footer", 
+          jscript: "jscript"
+        }
+      });
+    })
+    
   })
 
   // ===========================================================================
@@ -405,6 +429,31 @@ router
     })
   })
     
+  .get('/admin/sessionList', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Event Sessions - List",
+      loggedIn: true,
+      partials : {
+        body: "admin/sessionList",
+        jscript: "admin/jscript",
+      }
+    })
+  })
+
+  .get('/admin/sessionAdd', auth.loginRequired, auth.adminRequired, (req,res) => {
+
+    res.render('admin/main', {
+      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      title: "Event Sessions - Add",
+      loggedIn: true,
+      partials : {
+        body: "admin/sessionAdd",
+        jscript: "admin/jscript",
+      }
+    })
+  })
     
   .get('/admin/speakerList', auth.loginRequired, auth.adminRequired, (req,res) => {
 
@@ -452,9 +501,7 @@ router
 
   })
 
-
-
-   .get('/admin/dashboard', auth.loginRequired, auth.adminRequired, (req,res) => {
+  .get('/admin/dashboard', auth.loginRequired, auth.adminRequired, (req,res) => {
 
     var { id } = req.params;
 
