@@ -1,0 +1,108 @@
+<style>
+    /*td { cursor: pointer }*/
+
+    i.fa-edit {
+        cursor: pointer;
+        /*color: #fff;*/
+        font-weight: bold;
+    }
+
+    td.highlight {
+        background-color: navy;
+    }
+</style>
+
+<!--start main content-->
+<section id="main-content">
+    <div class="space-30"></div>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel">
+                    <!--<header class="panel-heading">
+                        <h2 class="panel-title">Data table</h2>
+                    </header>-->
+                    <div class="panel-body">
+                        <table id="datatable" class="table table-hover dt-responsive nowrap" data-filter="{{filter}}">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div><!--panel body end-->
+                </div><!--end panel-->
+            </div><!--col end-->
+        </div><!--row end-->
+    </div><!--container end-->
+
+    <!--footer start-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>&copy; Copyright 2017. chirpee.io</span>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</section><!--end main content-->
+
+{{> jscript}}
+
+<script>
+
+    // var delFilter = $("#datatable").data("filter") ; //Get the applied filter from the data-attribute set on the table
+    // $("#"+delFilter).addClass("active"); //Adds the active class to the selected filter, to highlight in the left navigation bar
+
+    //Activate the Speakers main menu bar
+    $("#liMenuSession").addClass("active")
+    $("#liSubMenuSessionList").addClass("active")
+
+    $(document).ready(function() {
+        var editIcon = '<i class="fa fa-edit"></i>';
+
+        var myTable = $('#datatable').DataTable( {
+            processing: true,
+            stateSave: true,
+            pageLength: 25,
+            bAutoWidth: false,
+            order: [[1, "asc"]],
+            ajax: {
+                url: "/api/sessionsParent",
+                dataSrc: "",
+                data: {
+                    // limit: 3,
+                    // where: filterData
+                },
+            },
+            fnRowCallback: function (nRow, aData) {
+
+                $(nRow).on("click", "i", function(){
+                    window.location.href = "/admin/speakerEdit/" + aData.id;
+                })
+
+            },
+            columnDefs: [
+                {
+                    render: function(data, type, full) {
+                        return editIcon + " " + full.title;
+                    },
+                    targets: [0]
+                }
+            ],
+            columns: [
+                { data: 'title' },
+                { data: 'timeStart' },
+                { data: 'timeEnd' },
+                { data: 'location' }
+            ]
+        });
+
+    });
+
+</script>
