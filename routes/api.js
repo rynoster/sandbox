@@ -8,6 +8,7 @@ var _ = require("lodash");
 var db = require("../db");
 var auth = require("../auth")
 var Speaker = require("../speakers")
+var Agenda = require("../agenda")
 
 //file uploads
 var formidable = require('formidable');
@@ -201,6 +202,42 @@ router
       }, next)
   })
 
+  //Get user details for specific user email address
+  .get('/userCxo/:email', (req, res, next) => {
+    const {
+      email
+    } = req.params;
+
+    db("users")
+      .where("email", email)
+      .select("company", "first_name", "last_name", "email", "allowCxoInvite")
+      .first()
+      .then((users) => {
+        if (!users) {
+          return res.send(400);
+        }
+        res.send(users);
+      }, next)
+  })
+
+   //Update existing user details for CXO breakbast
+  .put('/userCxo/:email', (req, res, next) => {
+    const {
+      email
+    } = req.params;
+
+    db("users")
+      .where("email", email)
+      .update(req.body)
+      .then((result) => {
+        if (result === 0) {
+          return res.send(400)
+        }
+        res.send(200);
+      }, next)
+  })
+
+
   //Update existing user details
   .put('/user/:id', (req, res, next) => {
     const {
@@ -350,7 +387,45 @@ router
   })
 
 
+  // All sessions GET
+  .get('/allSessions', (req, res, next) => {
 
+    var mySession = new Agenda();
+
+    db("agenda")
+      .where("parentId", null)
+      //First find all the parent rows
+      .then(function(parentRows){
+
+        for (i = 0; i < parentRows.length; i++){
+          
+          parentRows[i].sessions = [];
+
+          var childId = parentRows[i].id;
+
+          db("agenda")
+            .where("parentId", childId)
+            .then(function(childRows){
+              // parentRows[i].sessions = childRows;
+              // parentRows[0].sessions.push(childRows);
+              console.log("i: " + i);
+              // console.log(parentRows[0]);
+
+              
+            })
+
+        }
+
+        res.send(parentRows);
+
+      })
+
+    // mySession.allSessions(function(result) {
+    //   res.send(result);
+    // })
+
+
+  })
 
 
 

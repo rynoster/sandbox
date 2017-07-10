@@ -249,12 +249,14 @@ router
   })
 
   // ===========================================================================
-  //  Speakers Page  ===========================================================
+  //  CXO Breakfast Page  ======================================================
   // ===========================================================================
 
-  .get('/cxobreakfast', (req,res) => {
+  .get('/cxobreakfast/:email', (req,res) => {
+    const { email } = req.params;
 
     res.render('skeleton', {
+      email: email,
       partials: {
         header: "header", 
         content: "cxobreakfast",

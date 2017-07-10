@@ -284,10 +284,10 @@
                         <div class="tabs tabs-top">
 
                             <ul class="etabs text-center">
-                                <li class="tab"><a href="#tab-1">Hewlette-Packerd Enterprise</a></li>
+                                <li class="tab"><a href="#tab-1">Hewlette-Packard Enterprise</a></li>
                                 <li class="tab"><a href="#tab-2">Cisco</a></li>
                                 <li class="tab"><a href="#tab-3">Lenovo </a></li>
-                                <li class="tab"><a href="#tab-4">Case Stude: BankServ</a></li>
+                                <li class="tab"><a href="#tab-4">Case Study: BankServ</a></li>
                             </ul>
 
                             <div class="panel-container">
@@ -370,7 +370,11 @@
                                             the environment is key to the entire South African financial sector as it impacts on the processing of all card transactions 
                                             in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop 
                                             resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their 
+<<<<<<< HEAD
                                             arrangement. 
+=======
+                                            arrangement.
+>>>>>>> 5b931321a3b3c4e48932acd32af4370687bbe33a
                                         </p>
                                     </div>
                                      <div class="col-md-3 visible-lg visible-md visible-sm">
