@@ -3,6 +3,7 @@ var router = express.Router();
 var crypto = require('crypto');
 var request = require('request');
 var _ = require("lodash");
+var async = require("async")
 
 //My own modules
 var db = require("../db");
@@ -50,6 +51,49 @@ function buildHtmlBody(params, fullUrl) {
   return (htmlRender);
 
 }
+
+//old, can be removed
+// function getParents(callback){
+//   db("agenda")
+//     .where("parentId", null)
+//     .then(function(rows){
+//       callback(rows);
+//       return rows;
+//     })
+// }
+
+// function getChildren(id, callback){
+//   db("agenda")
+//     .where("parentId", id)
+//     .then(function(rows){
+//       callback(rows);
+//     })
+
+// }
+
+// function buildDataset(callback){
+
+//   getParents(function(parentRows){
+
+//       var processedItems = 0;
+
+//       parentRows.forEach (function(element, index) {
+        
+//         getChildren(element.id, function(childRows){
+//           // myObject.push(element);
+//           parentRows[index].sessions = childRows;
+//           processedItems++;
+
+//           if (processedItems === parentRows.length) {
+//             callback(parentRows);
+//           }
+//         })
+
+//       })
+
+//     })
+
+// }//dataset function
 
 function buildHtmlContactUs(params) {
 
@@ -283,23 +327,6 @@ router
 
   })
 
-  //GET speaker details for specific speaker id
-  // .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
-  //   const {
-  //     id
-  //   } = req.params;
-
-  //   db("speakers")
-  //     .where("id", id)
-  //     .first()
-  //     .then((speakers) => {
-  //       if (!speakers) {
-  //         return res.send(400);
-  //       }
-  //       res.send(speakers);
-  //     }, next)
-  // })
-
   .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
     const { id } = req.params;
     var mySpeaker = new Speaker(id);
@@ -386,45 +413,44 @@ router
 
   })
 
+  // GET full Sessions dataset
+  .get('/sessionsFull', (req, res, next) => {
 
-  // All sessions GET
-  .get('/allSessions', (req, res, next) => {
+    var sessionsFull = new Agenda();
 
-    var mySession = new Agenda();
+    sessionsFull.fullDataset(function(result){
+      res.send(result);
+    }, next)
+
+  })
+
+  .get('/sessionsParent', (req, res, next) => {
+
+    var sessionsParent = new Agenda();
+
+    sessionsParent.getParents(function(result){
+      res.send(result);
+    }, next)
+
+  })
+
+  //POST/Add new session
+  .post('/session', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+    var newSession = req.body;
 
     db("agenda")
-      .where("parentId", null)
-      //First find all the parent rows
-      .then(function(parentRows){
+      .insert(newSession)
+      .then((session) => {
 
-        for (i = 0; i < parentRows.length; i++){
-          
-          parentRows[i].sessions = [];
-
-          var childId = parentRows[i].id;
-
-          db("agenda")
-            .where("parentId", childId)
-            .then(function(childRows){
-              // parentRows[i].sessions = childRows;
-              // parentRows[0].sessions.push(childRows);
-              console.log("i: " + i);
-              // console.log(parentRows[0]);
-
-              
-            })
-
-        }
-
-        res.send(parentRows);
+        res.send(session);
 
       })
+      .catch((err) => {
+        res.status(500).send({
+          error: err.message
+        });
 
-    // mySession.allSessions(function(result) {
-    //   res.send(result);
-    // })
-
-
+      })
   })
 
 
