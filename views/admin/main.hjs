@@ -160,6 +160,28 @@
                                 </li>
                             </ul>
                         </li>
+                        <!--Sessions menu section-->
+                        <li id="liMenuSession" class="hoe-has-menu">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Sessions</span>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="hoe-sub-menu">
+                                <li id="liSubMenuSessionList" class="">
+                                    <a href="/admin/sessionList">
+                                        <span class="menu-text">List</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="liSubMenuSessionAdd" class="">
+                                    <a href="/admin/sessionAdd">
+                                        <span class="menu-text">Add</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </aside><!--aside left menu end-->
