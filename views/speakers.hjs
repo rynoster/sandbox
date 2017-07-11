@@ -77,45 +77,47 @@
         success: function(speakers) {
             $.each(speakers, function(i, speaker) {
 
-                $divSpeakers.append('' +
+                if (speaker.imageUrl) {
+                    $divSpeakers.append('' +
 
-                '<div class="col-md-4 col-sm-6">' +
-                    '<div id=' + speaker.id + ' class="card-container manual-flip">' +
-                        '<div class="card">' +
-                            '<div class="front card-bg-f">' +
-                                '<div class="cover ">' +
-                                    '<img src="assets/images/art/rc-bg.jpg"/>' +
-                                '</div>' +
-                                '<div class="user">' +
-                                    '<img class="img-circle" src="images/speakers/' + speaker.imageUrl + '" />' +
-                                '</div>' +
-                                '<div id="speakerMain" class="content">' +
-                                    '<div class="main text-center">' +
-                                        '<h3 class="name">' + speaker.fullName + '</h3>' +
-                                        '<p class="profession">' + speaker.profession + '</p>' +
-                                        '<p class="company"><strong>' + speaker.companyName +'</strong></p>' +
-                                        '<button class="btn" onclick="rotateCard(this)">Read bio <i class="icon-user"></i>' +
+                    '<div class="col-md-4 col-sm-6">' +
+                        '<div id=' + speaker.id + ' class="card-container manual-flip">' +
+                            '<div class="card">' +
+                                '<div class="front card-bg-f">' +
+                                    '<div class="cover ">' +
+                                        '<img src="assets/images/art/rc-bg.jpg"/>' +
                                     '</div>' +
-                                '</div>' +
-                            '</div> <!-- end front panel -->' +
-                            '<div id="speakerBio" class="back card-bg-b">' +
-                                '<div class="header pull-right">' +
-                                    '<i class="icon-cancel"  onclick="rotateCard(this)"></i>' +
-                                '</div>' +
-                                '<div class="content">' +
-                                    '<div class="main">' +
-                                        '<h4 class="text-left">' + speaker.fullName + '</h4>' +
-                                        '<p class="text-left" style="font-size:90%; font-weight:bolder">' + speaker.profession + '</p>' +
-                                        '<div class="pre-scrollable" style="font-size:90%;">' + speaker.bio +
+                                    '<div class="user">' +
+                                        '<img class="img-circle" src="images/speakers/' + speaker.imageUrl + '" />' +
+                                    '</div>' +
+                                    '<div id="speakerMain" class="content">' +
+                                        '<div class="main text-center">' +
+                                            '<h3 class="name">' + speaker.fullName + '</h3>' +
+                                            '<p class="profession">' + speaker.profession + '</p>' +
+                                            '<p class="company"><strong>' + speaker.companyName +'</strong></p>' +
+                                            '<button class="btn" onclick="rotateCard(this)">Read bio <i class="icon-user"></i>' +
                                         '</div>' +
                                     '</div>' +
-                                '</div>' +
-                            '</div> ' +
-                        '</div>' +
-                    '</div> ' +
-                '</div>' +
+                                '</div> <!-- end front panel -->' +
+                                '<div id="speakerBio" class="back card-bg-b">' +
+                                    '<div class="header pull-right">' +
+                                        '<i class="icon-cancel"  onclick="rotateCard(this)"></i>' +
+                                    '</div>' +
+                                    '<div class="content">' +
+                                        '<div class="main">' +
+                                            '<h4 class="text-left">' + speaker.fullName + '</h4>' +
+                                            '<p class="text-left" style="font-size:90%; font-weight:bolder">' + speaker.profession + '</p>' +
+                                            '<div class="pre-scrollable" style="font-size:90%;">' + speaker.bio +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div> ' +
+                            '</div>' +
+                        '</div> ' +
+                    '</div>' +
 
-                '');
+                    '');
+                }
 
             });
         },
