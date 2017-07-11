@@ -107,7 +107,7 @@
                 </div>
 
                 <div id="divEmailCheckError" hidden>
-                    <p>Sorry, we could not find your invitation in our database. Please contact Bernadine Bell on BBell@datacentrix.co.za, or try again.</p>
+                    <p>Sorry, we could not find your invitation in our database. Please contact Bernadine Bell on <a href="mailto:BBell@datacentrix.co.za">BBell@datacentrix.co.za</a>, or try again.</p>
                     <a href="/"><button id="btnCloseEmailCheck" type="button" class="btn btn-default">Close</button></a>
                     <button id="btnRetryEmailCheck" type="button" class="btn btn-default">Retry</button>
                 </div>
@@ -230,8 +230,6 @@
         })
 
         // RR Check mail address
-        
-
         $btnCheckMail.on("click", function(e){
             e.preventDefault();
 
