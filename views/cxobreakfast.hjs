@@ -92,24 +92,52 @@
         <div class="modal-content">
 
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
                 <img src="/assets/images/showcase.svg" alt="" style="height:50px">
                 <hr>
                 <h2>CxO Breakfast RSVP </h2>
-                <p>Please enter your business email address where this invitation was sent to and click next.</p>
-                <form id="frmColEmail">
-                    <div class="form-group">
-                        <input id="txtEmailCheck" type="email" class="form-control" id="frmEmail" placeholder="Please enter your email here">
-                        <button id="btnCheckMail" type="submit" class="btn btn-default">Next</button>
-                    </div>
-                </form>
+                <div id="divEmailCheck">
+                    <p>Please enter your business email address where this invitation was sent to and click next.</p>
+                    <form id="frmColEmail">
+                        <div class="form-group">
+                            <input id="txtEmailCheck" type="email" class="form-control" id="frmEmail" placeholder="Please enter your email address here">
+                            <button id="btnCheckMail" type="button" class="btn btn-default">Next</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="divEmailCheckError" hidden>
+                    <p>Sorry, we could not find your invitation in our database. Please contact the originator of the invitation or retry.</p>
+                    <a href="/"><button id="btnCloseEmailCheck" type="button" class="btn btn-default">Close</button></a>
+                    <button id="btnRetryEmailCheck" type="button" class="btn btn-default">Retry</button>
+                </div>
 
             </div>
         </div>
     </div>
 
 </div>
+
+<!--The following modal to be used on successful RSVP-->
+<div class="modal fade" id="divSuccessModal" role="dialog">
+    <div class="modal-dialog modal-xs">
+
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <img src="/assets/images/showcase.svg" alt="" style="height:50px">
+                <hr>
+                <h2>CxO Breakfast RSVP </h2>
+
+                <p>Thank you for your response, you will now be automatically redirected to the home page.</p>
+
+            </div>
+        </div>
+    </div>
+
 </div>
+<!--</div>-->
 
 {{> jscript}}
 
@@ -121,31 +149,53 @@
         var $txtCompany = $("#txtCompany");
         var $txtEmail = $("#txtEmail");
         var $rdRSVP = $("input[name='rdRSVP']");
-        var $btnSubmit = $("#btnSubmit")
+        var $btnSubmit = $("#btnSubmit");
+        var $btnCheckMail = $("#btnCheckMail");
+        var $getEmail = $("#getEmail");
+        var $txtEmailCheck = $("#txtEmailCheck");
+        var $divEmailCheck = $("#divEmailCheck");
+        var $divEmailCheckError = $("#divEmailCheckError");
+        var $btnRetryEmailCheck = $("#btnRetryEmailCheck");
+        var $divSuccessModal = $("#divSuccessModal");
 
         //Disable form fields to avoid tampering
         $txtName.attr("disabled","disabled");
         $txtCompany.attr("disabled","disabled");
         $txtEmail.attr("disabled","disabled");
 
-        $.ajax({
-            type: 'GET',
-            url: '/api/userCxo/' + $txtEmail.val(),
+        // $getEmail.modal();
 
-            success: function(cxo) {
-                if (cxo.allowCxoInvite === 1) {
-                    $txtName.val(cxo.first_name + " " + cxo.last_name);
-                    $txtCompany.val(cxo.company);
-                } else {
-                    window.location = "/";
-                }
-            },
+        $getEmail.modal({
+            backdrop: 'static',
+            keyboard: false
+        })
 
-            error: function() {
-                //Cannot retrieve information
-                window.location = "/";
-            }
-        });
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/api/userCxo/' + $txtEmail.val(),
+
+        //     success: function(cxo) {
+        //         if (cxo.allowCxoInvite === 1) {
+        //             $txtName.val(cxo.first_name + " " + cxo.last_name);
+        //             $txtCompany.val(cxo.company);
+        //         } else {
+        //             // window.location = "/";
+        //         }
+        //     },
+
+        //     error: function() {
+        //         //Cannot retrieve information
+        //         alert("error");
+        //         window.location = "/";
+        //     }
+        // });
+
+        $btnRetryEmailCheck.on("click", function(e){
+            e.preventDefault();
+
+            $divEmailCheck.show();
+            $divEmailCheckError.hide();
+        })
 
         $btnSubmit.on("click", function(e){
             e.preventDefault();
@@ -163,7 +213,12 @@
                     data: userCxo,
                     success: function() {
 
-                        window.location = "/";
+                        $divSuccessModal.modal();
+
+                        setTimeout(function(){
+                            window.location = "/";
+                        }, 5000);
+                        
 
                     },
                     error: function(xhr, textStatus, errorThrown) {
@@ -175,11 +230,12 @@
         })
 
         // RR Check mail address
-        var $txtEmailCheck = $("#txtEmailCheck");
+        
 
         $btnCheckMail.on("click", function(e){
             e.preventDefault();
 
+            $.ajax({
             type: 'GET',
             url: '/api/userCxo/' + $txtEmailCheck.val(),
 
@@ -187,18 +243,29 @@
                 if (cxo.allowCxoInvite === 1) {
                     $txtName.val(cxo.first_name + " " + cxo.last_name);
                     $txtCompany.val(cxo.company);
+                    $txtEmail.val(cxo.email);
+
+                    $getEmail.modal("hide");
+
                 } else {
-                    alert ("Sorry we could not find your \ninvitation in our database. Please contact the \noriginator of the invitation. ");
-                    window.location = "/";
+                    // alert ("Sorry we could not find your \ninvitation in our database. Please contact the \noriginator of the invitation. ");
+                    // window.location = "/";
+                    $divEmailCheck.hide();
+                    $divEmailCheckError.show();
+
                 }
             },
 
             error: function() {
                 //Cannot retrieve information
-                window.location = "/";
+
+                $divEmailCheck.hide();
+                $divEmailCheckError.show();
+                // window.location = "/";
             }
 
         })
 
     })
+})
 </script>
