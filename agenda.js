@@ -36,8 +36,8 @@ Agenda.prototype.getParents = function(callback){
             var timeSplitsStart = _.split(element.timeStart,":",2);
             var timeSplitsEnd = _.split(element.timeEnd,":",2);
 
-            element.timeStart = moment( { hour:timeSplitsStart[0], minute:timeSplitsStart[1] } ).format("hh:mm");
-            element.timeEnd = moment( { hour:timeSplitsEnd[0], minute:timeSplitsEnd[1] } ).format("hh:mm");
+            element.timeStart = moment( { hour:timeSplitsStart[0], minute:timeSplitsStart[1] } ).format("HH:mm");
+            element.timeEnd = moment( { hour:timeSplitsEnd[0], minute:timeSplitsEnd[1] } ).format("HH:mm");
         })
 
       callback(rows);
