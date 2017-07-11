@@ -8,6 +8,7 @@
     "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "dependencies": {
+    "async": "^2.5.0",
     "aws-sdk": "^2.65.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.17.1",
@@ -19,6 +20,7 @@
     "formidable": "^1.1.1",
     "hjs": "~0.0.6",
     "knex": "^0.13.0",
+    "moment": "^2.18.1",
     "morgan": "~1.8.1",
     "mysql": "^2.13.0",
     "nodemailer": "^4.0.1",
