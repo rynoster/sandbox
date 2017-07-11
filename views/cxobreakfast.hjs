@@ -107,7 +107,7 @@
                 </div>
 
                 <div id="divEmailCheckError" hidden>
-                    <p>Sorry, we could not find your invitation in our database. Please contact the originator of the invitation or retry.</p>
+                    <p>Sorry, we could not find your invitation in our database. Please contact Bernadine Bell on BBell@datacentrix.co.za, or try again.</p>
                     <a href="/"><button id="btnCloseEmailCheck" type="button" class="btn btn-default">Close</button></a>
                     <button id="btnRetryEmailCheck" type="button" class="btn btn-default">Retry</button>
                 </div>
