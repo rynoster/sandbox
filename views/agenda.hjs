@@ -76,7 +76,7 @@
         </div>
 
         {{#fullDataset}}
-        <!--This section will only render if there are children. It is basically and if statement, with the ^hasChildren further down below being the else -->
+        <!--This section will only render if there are children. It is basically an if statement, with the ^hasChildren further down below being the else -->
         {{#hasChildren}}
         <div class="row">
             <div class="col-md-2">
@@ -138,12 +138,20 @@
             </div>
             <div class="col-md-6">
                 <p class="text-left"><strong>{{title}}</strong></p>
-                <p style="font-size:90%">{{{content}}}
+                <p style="font-size:90%">
+                    {{{content}}}
                 </p>
                 {{#location}}
                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
                 {{/location}}
             </div>
+
+            {{#imageUrl}}
+            <div class="col-md-4 visible-lg visible-md visible-sm">
+                <figure><img src="{{imageUrl}}" style="" alt=""></figure>
+            </div>
+            {{/imageUrl}}
+
         </div>
 
         {{/hasChildren}}
@@ -636,63 +644,3 @@
 {{> jscript}}
 
 <!--JavaScript BELOW THIS LINE-->
-
-<script>
-
-    var $divSpeakers = $("#divSpeakers");
-
-    $.ajax({
-        type: 'GET',
-        url: '/api/sessionsFull',
-
-        success: function(speakers) {
-            $.each(speakers, function(i, speaker) {
-
-                $divSpeakers.append('' +
-
-                '<div class="col-md-4 col-sm-6">' +
-                    '<div id=' + speaker.id + ' class="card-container manual-flip">' +
-                        '<div class="card">' +
-                            '<div class="front card-bg-f">' +
-                                '<div class="cover ">' +
-                                    '<img src="assets/images/art/rc-bg.jpg"/>' +
-                                '</div>' +
-                                '<div class="user">' +
-                                    '<img class="img-circle" src="images/speakers/' + speaker.imageUrl + '" />' +
-                                '</div>' +
-                                '<div id="speakerMain" class="content">' +
-                                    '<div class="main text-center">' +
-                                        '<h3 class="name">' + speaker.fullName + '</h3>' +
-                                        '<p class="profession">' + speaker.profession + '</p>' +
-                                        '<p class="company"><strong>' + speaker.companyName +'</strong></p>' +
-                                        '<button class="btn" onclick="rotateCard(this)">Read bio <i class="icon-user"></i>' +
-                                    '</div>' +
-                                '</div>' +
-                            '</div> <!-- end front panel -->' +
-                            '<div id="speakerBio" class="back card-bg-b">' +
-                                '<div class="header pull-right">' +
-                                    '<i class="icon-cancel"  onclick="rotateCard(this)"></i>' +
-                                '</div>' +
-                                '<div class="content">' +
-                                    '<div class="main">' +
-                                        '<h4 class="text-left">' + speaker.fullName + '</h4>' +
-                                        '<p class="text-left" style="font-size:90%; font-weight:bolder">' + speaker.profession + '</p>' +
-                                        '<div class="pre-scrollable" style="font-size:90%;">' + speaker.bio +
-                                        '</div>' +
-                                    '</div>' +
-                                '</div>' +
-                            '</div> ' +
-                        '</div>' +
-                    '</div> ' +
-                '</div>' +
-
-                '');
-
-            });
-        },
-
-        error: function() {
-            //Cannot retrieve speakers
-        }
-    });
-</script>
