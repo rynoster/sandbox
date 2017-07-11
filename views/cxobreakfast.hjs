@@ -9,6 +9,12 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .modal-body {
+        position: absolute;
+        top: 0px !important;
+        bottom: 15px;
+    }
 </style>
 <!-- ============================================= SECTION – Banner ================================================== -->
 
@@ -31,10 +37,9 @@
                 You are invited to be our guest at the CxO breakfast to be held at Datacentrix Showcase 2017
             </h2>
             <h5>
-            <hr>
-                27 July 2017<br> La Toscana, Montecasino, Johannesburg<br> 07:00-08:30 Registration opens at the Ballroom
+                <hr> 27 July 2017<br> La Toscana, Montecasino, Johannesburg<br> 07:00-08:30 Registration opens at the Ballroom
                 from 06:30<br>
-            <hr>
+                <hr>
             </h5>
             <p>
                 This exclusive breakfast discussion will explore how unstoppable technological progress is changing business and redefining
@@ -52,12 +57,11 @@
                 with Datacentrix. This transformation journey across nine African countries is delivering significant learnings
                 and business outcomes. Not only is the consumption of managed ICT services changing, so are the considerations
                 that business should make when investing in technology infrastructure.
-                <hr>
-                Join this exclusive opportunity to find out how business should evaluate and prioritise change to
-                enable going beyond surviving – to thriving in the digital age.
+                <hr> Join this exclusive opportunity to find out how business should evaluate and prioritise change to enable
+                going beyond surviving – to thriving in the digital age.
             </p>
             <div class="divide15"></div>
-            <form id ="frmMain">
+            <form id="frmMain">
                 <div class="form-group">
                     <label>Name</label>
                     <input id="txtName" type="text" class="form-control" id="frmName">
@@ -70,15 +74,41 @@
 
                     <label class="radio-inline"><input id="rdRSVP" type="radio" value="1" name="rdRSVP" checked="checked"><strong>Yes</strong>, I will attend.</label>
                     <label class="radio-inline"><input id="rdRSVP" type="radio" value="-1" name="rdRSVP"><strong>No</strong>, I cannot make it.</label>
-                
+
                 </div>
                 <button id="btnSubmit" type="submit" class="btn btn-default">Submit your response</button>
             </form>
         </div>
         <div class="col-md-4">
-            <figure><img src="/assets/images/sponsor-logos/hpe.svg" alt="" ></figure>
+            <figure><img src="/assets/images/sponsor-logos/hpe.svg" alt="" data-target="#getEmail" data-toggle="modal"></figure>
         </div>
     </div>
+</div>
+
+<!--For width and height of modal content, refer to manual styling top of page-->
+<div class="modal fade" id="getEmail" role="dialog">
+    <div class="modal-dialog modal-xs">
+
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="/assets/images/showcase.svg" alt="" style="height:50px">
+                <hr>
+                <h2>CxO Breakfast RSVP </h2>
+                <p>Please enter your business email address where this invitation was sent to and click next.</p>
+                <form id="frmColEmail">
+                    <div class="form-group">
+                        <input id="txtEmailCheck" type="email" class="form-control" id="frmEmail" placeholder="Please enter your email here">
+                        <button id="btnCheckMail" type="submit" class="btn btn-default">Next</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 </div>
 
 {{> jscript}}
@@ -141,6 +171,32 @@
                     }
                     
                 })
+
+        })
+
+        // RR Check mail address
+        var $txtEmailCheck = $("#txtEmailCheck");
+
+        $btnCheckMail.on("click", function(e){
+            e.preventDefault();
+
+            type: 'GET',
+            url: '/api/userCxo/' + $txtEmailCheck.val(),
+
+            success: function(cxo) {
+                if (cxo.allowCxoInvite === 1) {
+                    $txtName.val(cxo.first_name + " " + cxo.last_name);
+                    $txtCompany.val(cxo.company);
+                } else {
+                    alert ("Sorry we could not find your \ninvitation in our database. Please contact the \noriginator of the invitation. ");
+                    window.location = "/";
+                }
+            },
+
+            error: function() {
+                //Cannot retrieve information
+                window.location = "/";
+            }
 
         })
 

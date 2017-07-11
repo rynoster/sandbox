@@ -276,7 +276,7 @@ router
   //  CXO Breakfast Page  ======================================================
   // ===========================================================================
 
-  .get('/cxobreakfast/:email', (req,res) => {
+  .get('/cxobreakfast/', (req,res) => {
     const { email } = req.params;
 
     res.render('skeleton', {
