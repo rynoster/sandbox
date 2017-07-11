@@ -1,0 +1,92 @@
+<header>
+	<div class="navbar">
+
+		<div class="navbar-header">
+			<div class="container">
+
+				<ul class="info pull-left">
+					<li><a href="#"><i class="icon-mail-1 contact"></i> showcase@datacentrix.co.za</a></li>
+					<li><i class="icon-mobile contact"></i> 087 741 5000</li>
+				</ul>
+				<!-- /.info -->
+
+				<ul class="social pull-right">
+					<li><a href="https://www.facebook.com/datacentrix/" target="_blank"><i class="icon-s-facebook"></i></a></li>
+					<li><a href="https://twitter.com/datacentrixsa" target="_blank"><i class="icon-s-twitter"></i></a></li>
+					<li><a href="https://za.linkedin.com/company/datacentrix" target="_blank"><i class="icon-s-linkedin"></i></a></li>
+					<li><a href="/contactus"><i class="icon-mail-1 contact"></i></a></li>
+
+				</ul>
+				<!-- /.social -->
+
+				<!-- ============================================================= LOGO MOBILE ============================================================= -->
+
+				<a class="navbar-brand" href="/"><img src="/assets/images/datacentrix.svg" class="logo" alt=""></a>
+
+				<!-- ============================================================= LOGO MOBILE : END ============================================================= -->
+
+				<a class="navbar-toggle btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a>
+
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.navbar-header -->
+
+		<div class="yamm">
+			<div class="navbar-collapse collapse">
+				<div class="container">
+
+					<!-- ============================================================= LOGO ============================================================= -->
+
+					<a class="navbar-brand" href="/"><img src="/assets/images/datacentrix.svg" class="logo animate img-responsive" alt=""  ></a>
+
+					<!-- ============================================================= LOGO : END ============================================================= -->
+
+
+					<!-- ============================================================= MAIN NAVIGATION ============================================================= -->
+
+					<ul class="nav navbar-nav">
+						<!-- This is the menu driving the top navigation -->
+
+						<li class="dropdown">
+							<a href="/whyattend">Why attend</a>
+						</li>
+
+						<li class="dropdown">
+							<a href="/eventinfo">Agenda</a>
+						</li>
+
+						<li class="dropdown">
+							<a href="/speakers">Speakers</a>
+						</li>
+
+						<li class="dropdown">
+							<a href="/logistics" class="dropdown-toggle" data-toggle="dropdown">Logitics</a>
+
+							<ul class="dropdown-menu">
+								<li><a href="/logistics#hotels">Accommodation</a></li>
+								<li><a href="/logistics#transport">Transfers & parking</a></li>
+								<li><a href="/logistics">Venue</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="/sponsors">Sponsors</a>
+						</li>
+
+						<!--<li class="dropdown">
+							<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+							
+						</li>-->
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<body>
+
+
