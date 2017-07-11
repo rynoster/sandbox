@@ -240,20 +240,26 @@
             url: '/api/userCxo/' + $txtEmailCheck.val(),
 
             success: function(cxo) {
-                if (cxo.allowCxoInvite === 1) {
-                    $txtName.val(cxo.first_name + " " + cxo.last_name);
-                    $txtCompany.val(cxo.company);
-                    $txtEmail.val(cxo.email);
+                $txtName.val(cxo.first_name + " " + cxo.last_name);
+                $txtCompany.val(cxo.company);
+                $txtEmail.val(cxo.email);
 
-                    $getEmail.modal("hide");
+                $getEmail.modal("hide");
 
-                } else {
-                    // alert ("Sorry we could not find your \ninvitation in our database. Please contact the \noriginator of the invitation. ");
-                    // window.location = "/";
-                    $divEmailCheck.hide();
-                    $divEmailCheckError.show();
+                // if (cxo.allowCxoInvite === 1) {
+                //     $txtName.val(cxo.first_name + " " + cxo.last_name);
+                //     $txtCompany.val(cxo.company);
+                //     $txtEmail.val(cxo.email);
 
-                }
+                //     $getEmail.modal("hide");
+
+                // } else {
+                //     // alert ("Sorry we could not find your \ninvitation in our database. Please contact the \noriginator of the invitation. ");
+                //     // window.location = "/";
+                //     $divEmailCheck.hide();
+                //     $divEmailCheckError.show();
+
+                // }
             },
 
             error: function() {
