@@ -19,7 +19,7 @@
                     <div class="container">
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="panel">
                                     <header class="panel-heading">
                                         <h2 id="hName" class="panel-title"></h2>
@@ -28,61 +28,59 @@
 
                                         <form id="frmMain" method="get" role="form" class="form-horizontal">
 
-                                            <div class="form-group"><label class="col-lg-3 control-label">Select Parent session</label>
-                                                <div class="col-lg-8">
+                                            <div class="form-group"><label class="col-lg-2 control-label">Select Parent session</label>
+                                                <div class="col-lg-5">
 
                                                     <select id="selParent" class="form-control" required>
                                                         <option disabled selected value="">Select the Parent session</option>
                                                         <option value="0">None - This will create a new Parent session</option>
-                                                        
                                                     </select>
 
                                                 </div>
                                             </div>
 
-                                            <div class="form-group"><label class="col-lg-3 control-label">Title</label>
-                                                <div class="col-lg-8"><input id="txtTitle" type="text" placeholder="Title" class="form-control" required>
+                                            <div class="form-group"><label class="col-lg-2 control-label">Title</label>
+                                                <div class="col-lg-5"><input id="txtTitle" type="text" placeholder="Title" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div id="divSpeaker" class="form-group"><label class="col-lg-3 control-label">Select Speaker</label>
-                                                <div class="col-lg-8">
+                                            <div id="divSpeaker" class="form-group"><label class="col-lg-2 control-label">Select Speaker</label>
+                                                <div class="col-lg-5">
 
                                                     <select id="selSpeaker" class="form-control" required>
-                                                        <option disabled selected value="">Select the primary speaker</option>
-                                                        
+                                                        <option selected value="0">Select the primary speaker</option>
                                                     </select>
 
                                                 </div>
                                             </div>
 
-                                            <div id="divTabName" class="form-group"><label class="col-lg-3 control-label">Tab Name</label>
-                                                <div class="col-lg-8"><input id="txtTabName" type="text" placeholder="Tab Name, used for tabs on agenda page" class="form-control" required>
+                                            <div id="divTabName" class="form-group"><label class="col-lg-2 control-label">Tab Name</label>
+                                                <div class="col-lg-5"><input id="txtTabName" type="text" placeholder="Tab Name, used for tabs on agenda page" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group"><label class="col-lg-3 control-label">Location</label>
-                                                <div class="col-lg-8"><input id="txtLocation" type="text" placeholder="Location of the session" class="form-control" required>
+                                            <div class="form-group"><label class="col-lg-2 control-label">Location</label>
+                                                <div class="col-lg-5"><input id="txtLocation" type="text" placeholder="Location of the session" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div id="divTimeStart" class="form-group"><label class="col-lg-3 control-label">Time Start</label>
-                                                <div class="col-lg-8"><input id="txtTimeStart" type="text" placeholder="06:00 or 14:00" class="form-control" required>
+                                            <div id="divTimeStart" class="form-group"><label class="col-lg-2 control-label">Time Start</label>
+                                                <div class="col-lg-5"><input id="txtTimeStart" type="text" placeholder="06:00 or 14:00" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div id="divTimeEnd" class="form-group"><label class="col-lg-3 control-label">Time End</label>
-                                                <div class="col-lg-8"><input id="txtTimeEnd" type="text" placeholder="06:00 or 14:00" class="form-control" required>
+                                            <div id="divTimeEnd" class="form-group"><label class="col-lg-2 control-label">Time End</label>
+                                                <div class="col-lg-5"><input id="txtTimeEnd" type="text" placeholder="06:00 or 14:00" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div id="divImageUrl" class="form-group"><label class="col-lg-3 control-label">Image URL</label>
-                                                <div class="col-lg-8"><input id="txtImageUrl" type="text" placeholder="Image URL: absolute or relative" class="form-control" required>
+                                            <div id="divImageUrl" class="form-group"><label class="col-lg-2 control-label">Image URL</label>
+                                                <div class="col-lg-5"><input id="txtImageUrl" type="text" placeholder="Image URL: absolute or relative" class="form-control" required>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group"><label class="col-lg-3 control-label">Content</label>
-                                                <div class="col-lg-8"><textarea id="txtContent" placeholder="Biography" class="form-control"></textarea>
+                                            <div class="form-group"><label class="col-lg-2 control-label">Content</label>
+                                                <div class="col-lg-5"><textarea id="txtContent" placeholder="Biography" class="form-control"></textarea>
                                                 </div>
                                             </div>
 
