@@ -487,7 +487,7 @@ router
           case "regPerDay":
             db.raw("select cast(date_created as DATE) as dateAdded, count(id) as count from users group by dateAdded")
               .then(function(result){
-                res.send(result);
+                res.send(result[0]);
               })
           break;
 
