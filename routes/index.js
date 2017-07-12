@@ -316,11 +316,11 @@ router
 
   }) 
 
-  .get('/admin/dashboard', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .get('/admin/dashboard', (req, res, next) => {
     
     res.render('admin/main', {
       users: "users",
-      loginUser: req.user.first_name + ' ' + req.user.last_name,
+      // loginUser: req.user.first_name + ' ' + req.user.last_name,
       title: "Dashboard",
       loggedIn: true,
       partials : {

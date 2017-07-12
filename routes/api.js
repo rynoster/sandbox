@@ -453,7 +453,7 @@ router
       })
   })
 
-  .get('/report/:query', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .get('/report/:query', (req, res, next) => {
     // This API accepts the following queries
       // - totalRegistrations
       // - customerSplit - Customer registration split
@@ -485,7 +485,7 @@ router
           break;
 
           case "regPerDay":
-            db.raw("select cast(date_created as DATE) as dateAdded, count(id) as count from users group by dateAdded")
+            db.raw("SELECT CAST(date_created as DATE) AS dateAdded, COUNT(id) as count FROM users GROUP BY dateAdded")
               .then(function(result){
                 res.send(result[0]);
               })
