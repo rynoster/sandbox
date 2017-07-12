@@ -453,7 +453,51 @@ router
       })
   })
 
+  .get('/report/:query', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+    // This API accepts the following queries
+      // - totalRegistrations
+      // - customerSplit - Customer registration split
+      // - regPerDay - Registrations per day
 
+    const { query } = req.params;
+
+    switch (query) {
+        case "totalRegistrations":
+            db("users")
+              .count("id as count")
+              .select("event_profile")
+              .groupBy("event_profile")
+              .then(function(result){
+                res.send(result);
+              })
+          break;
+
+          case "customerSplit":
+            db("users")
+              .count("id as count")
+              .select("orgRole")
+              .groupBy("orgRole")
+              .where("event_profile","Customer")
+              .whereNot("orgRole", "")
+              .then(function(result){
+                res.send(result);
+              })
+          break;
+
+          case "regPerDay":
+            db.raw("select cast(date_created as DATE) as dateAdded, count(id) as count from users group by dateAdded")
+              .then(function(result){
+                res.send(result);
+              })
+          break;
+
+        default:
+        res.status(500);
+        res.send("Not a valid report query");
+
+    }
+
+  })
 
 
 
