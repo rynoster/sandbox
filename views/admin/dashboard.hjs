@@ -20,13 +20,10 @@
     }
 </style>
 
-
-
 <!-- content for this page -->
 <section id="main-content">
     <div class="space-30"></div>
     <div class="container">
-
         <div class="row">
 
             <!-- Chart: Total registrations -->
@@ -36,25 +33,24 @@
                         <h1 class="panel-title text-center">Total registrations</h1>
                         <div class="panel-body">
                             <div class="chartjs-data">
-                                <canvas style="50px" id="totalReg"></canvas>
+                                <canvas id="totalReg"></canvas>
                             </div>
-
                         </div>
                         <div class="panel-footer">
                             <div class="row text-center">
                                 <div class="col-md-6">
-                                    <i class="fa fa-circle" aria-hidden="true" style="color:#fab24b"></i> <strong> Customers: </strong>505
+                                    <i class="fa fa-circle" aria-hidden="true" style="color:#fab24b"></i> <span id="regCount1"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <i class="fa fa-circle" aria-hidden="true" style="color:#00aeef"></i> <strong> Media: </strong>9
+                                    <i class="fa fa-circle" aria-hidden="true" style="color:#00aeef"></i> <span id="regCount2"></span>
                                 </div>
                             </div>
                             <div class="row text-center">
                                 <div class="col-md-6">
-                                    <i class="fa fa-circle" aria-hidden="true" style="color:#a8cf45"></i> <strong> Sponsors: </strong>104
+                                    <i class="fa fa-circle" aria-hidden="true" style="color:#a8cf45"></i> <span id="regCount3"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <i class="fa fa-circle" aria-hidden="true" style="color:#005982"></i> <strong> Staff: </strong>138
+                                    <i class="fa fa-circle" aria-hidden="true" style="color:#005982"></i> <span id="regCount4"></span>
                                 </div>
                             </div>
                         </div>
@@ -75,21 +71,21 @@
 
                         </div>
                         <div class="panel-footer">
-                            <p style="font-size:80%">
+                            <p id="customerSplit" style="font-size:80%"></p>
+                            <!--<p style="font-size:80%">
                                 <b>1</b> Board Member | <b>2</b> MD, CxO, Director, Excutive | <b>3</b> Snr Manager, BU Manager
                                 |
                                 <b>4</b> Mid Management, Team Lead | <b>5</b> Consultant, Engineer, Architect | <b>6</b>                                Administrator, Operations |
-                                <b>7</b> Other
+                                <b>7</b> Other-->
                         </div>
                 </div>
             </div>
-
 
             <!-- Chart: Reg Per Day -->
             <div class="col-lg-8 col-md-9 col-sm-10">
                 <div class="panel">
                     <header class="panel-heading">
-                        <h1 class="panel-title text-center">Regsitrations per day</h1>
+                        <h1 class="panel-title text-center">Registrations per day</h1>
                         <div class="panel-body">
                             <div class="divide20"></div>
                             <div class="chartjs-data">
@@ -118,6 +114,8 @@
 <script src="/admin-assets/plugins/chartJs/Chart.min.js"></script>
 
 <script>
+
+function buildTotalRegistrations(data) {
     //Total registrations 
     Chart.types.Doughnut.extend({
         name: "DoughnutTextInside",
@@ -136,7 +134,7 @@
             this.chart.ctx.font = fontSize + "em Verdana";
             this.chart.ctx.textBaseline = "middle";
 
-            var text = "756",
+            var text = data[0].count + data[1].count + data[2].count + data[3].count
                 textX = Math.round((width - this.chart.ctx.measureText(text).width) / 2),
                 textY = height / 2;
 
@@ -144,48 +142,68 @@
         }
     });
 
+    $("#regCount1").html("<strong>" + data[0].event_profile + ": </strong>" + data[0].count);
+    $("#regCount2").html("<strong>" + data[1].event_profile + ": </strong>" + data[1].count);
+    $("#regCount3").html("<strong>" + data[2].event_profile + ": </strong>" + data[2].count);
+    $("#regCount4").html("<strong>" + data[3].event_profile + ": </strong>" + data[3].count);
+
     var doughnutData = [
         {
-            value: 505,
+            value: data[0].count,
             color: "#fab24b",
             highlight: "#c7c6c6",
-            label: "Customers"
+            label: data[0].event_profile
         },
         {
-            value: 9,
+            value: data[1].count,
             color: "#00aeef",
             highlight: "#c7c6c6",
-            label: "Media"
+            label: data[1].event_profile
         },
         {
-            value: 104,
+            value: data[2].count,
             color: "#a8cf45",
             highlight: "#c7c6c6",
-            label: "Sponsors"
+            label: data[2].event_profile
         },
         {
-            value: 138,
+            value: data[3].count,
             color: "#005982",
             highlight: "#c7c6c6",
-            label: "Staff"
+            label: data[3].event_profile
         }
     ];
 
     var DoughnutTextInsideChart = new Chart($('#totalReg')[0].getContext('2d')).DoughnutTextInside(doughnutData, {
         responsive: true
     });
+}
 
+function buildCustomerSplits(data){
+
+    graphValues = [];
+    graphLabels = [];
+    customerSplitHTML = ""
+
+    $.each(data, function(index, value){
+        graphValues.push(value.count);
+        graphLabels.push("Label " + (index + 1));
+
+        customerSplitHTML += "<strong>" + (index + 1) + "</strong> " + value.orgRole + (index + 1 !== data.length ? " | " : "" );
+    })
+
+    $("#customerSplit").html(customerSplitHTML);
 
     //Customer profile splits
     var barData = {
-        labels: ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Other"],
+        labels: graphLabels,
         datasets: [
             {
                 label: "customerProfile",
                 fillColor: '#fab24b',
                 highlightFill: "rgba(220,220,220,0.75)",
                 highlightStroke: "rgba(220,220,220,1)",
-                data: [2, 83, 143, 118, 67, 61, 29]
+                data: graphValues
             },
         ]
     };
@@ -206,9 +224,26 @@
     var ctx = document.getElementById("custSplit").getContext("2d");
     var myNewChart = new Chart(ctx).Bar(barData, barOptions);
 
+}
+
+function buildRegPerDay(data) {
+
+    graphValues = [];
+    graphLabels = [];
+
+    $.each(data, function(index, value) {
+        graphValues.push(value.count)
+
+        var graphDate = new Date(value.dateAdded);
+        graphDate = graphDate.toJSON().substring(0,10);
+
+        graphLabels.push(graphDate);
+
+    })
+
     // line chart
     var lineData = {
-        labels: ['17-Jun', '18-Jun', '19-Jun', '20-Jun', '21-Jun', '22-Jun', '23-Jun', '24-Jun', '25-Jun', '26-Jun', '27-Jun', '28-Jun', '29-Jun', '30-Jun', '01-Jul', '02-Jul', '03-Jul', '04-Jul', '05-Jul', '06-Jul', '07-Jul', '08-Jul'],
+        labels: graphLabels,
 
         datasets: [
             {
@@ -219,7 +254,7 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [4, 2, 91, 60, 71, 51, 26, 2, 5, 41, 24, 35, 14, 21, 3, 8, 29, 36, 42, 56, 39, 8,]
+                data: graphValues
             },
         ]
     };
@@ -240,5 +275,39 @@
     };
     var ctx = document.getElementById("regPerDay").getContext("2d");
     var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+
+}
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/report/totalRegistrations',
+        success: function(data){
+            buildTotalRegistrations(data);
+        }
+    })
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/report/customerSplit',
+        success: function(data){
+            buildCustomerSplits(data);
+        }
+    })
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/report/regPerDay',
+        success: function(data){
+            buildRegPerDay(data);
+        }
+    })
+
+})
 
 </script>
