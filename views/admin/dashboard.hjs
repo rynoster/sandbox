@@ -8,17 +8,22 @@
         -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     }
-
+    
     .panel h1 {
         font-size: 25px;
     }
-
+    
     .panel-footer {
         position: relative;
         width: 100%;
         bottom: 0;
     }
 </style>
+
+<header>
+
+    <meta http-equiv="refresh" content="30" />
+</header>
 
 <!-- content for this page -->
 <section id="main-content">
@@ -114,139 +119,130 @@
 <script src="/admin-assets/plugins/chartJs/Chart.min.js"></script>
 
 <script>
+    function buildTotalRegistrations(data) {
+        //Total registrations 
+        Chart.types.Doughnut.extend({
+            name: "DoughnutTextInside",
+            showTooltip: function() {
+                this.chart.ctx.save();
+                Chart.types.Doughnut.prototype.showTooltip.apply(this, arguments);
+                this.chart.ctx.restore();
+            },
+            draw: function() {
+                Chart.types.Doughnut.prototype.draw.apply(this, arguments);
 
-function buildTotalRegistrations(data) {
-    //Total registrations 
-    Chart.types.Doughnut.extend({
-        name: "DoughnutTextInside",
-        showTooltip: function () {
-            this.chart.ctx.save();
-            Chart.types.Doughnut.prototype.showTooltip.apply(this, arguments);
-            this.chart.ctx.restore();
-        },
-        draw: function () {
-            Chart.types.Doughnut.prototype.draw.apply(this, arguments);
+                var width = this.chart.width,
+                    height = this.chart.height;
 
-            var width = this.chart.width,
-                height = this.chart.height;
+                var fontSize = (height / 114).toFixed(2);
+                this.chart.ctx.font = fontSize + "em Verdana";
+                this.chart.ctx.textBaseline = "middle";
 
-            var fontSize = (height / 114).toFixed(2);
-            this.chart.ctx.font = fontSize + "em Verdana";
-            this.chart.ctx.textBaseline = "middle";
-
-            var text = data[0].count + data[1].count + data[2].count + data[3].count
+                var text = data[0].count + data[1].count + data[2].count + data[3].count
                 textX = Math.round((width - this.chart.ctx.measureText(text).width) / 2),
-                textY = height / 2;
+                    textY = height / 2;
 
-            this.chart.ctx.fillText(text, textX, textY);
-        }
-    });
+                this.chart.ctx.fillText(text, textX, textY);
+            }
+        });
 
-    $("#regCount1").html("<strong>" + data[0].event_profile + ": </strong>" + data[0].count);
-    $("#regCount2").html("<strong>" + data[1].event_profile + ": </strong>" + data[1].count);
-    $("#regCount3").html("<strong>" + data[2].event_profile + ": </strong>" + data[2].count);
-    $("#regCount4").html("<strong>" + data[3].event_profile + ": </strong>" + data[3].count);
+        $("#regCount1").html("<strong>" + data[0].event_profile + ": </strong>" + data[0].count);
+        $("#regCount2").html("<strong>" + data[1].event_profile + ": </strong>" + data[1].count);
+        $("#regCount3").html("<strong>" + data[2].event_profile + ": </strong>" + data[2].count);
+        $("#regCount4").html("<strong>" + data[3].event_profile + ": </strong>" + data[3].count);
 
-    var doughnutData = [
-        {
+        var doughnutData = [{
             value: data[0].count,
             color: "#fab24b",
             highlight: "#c7c6c6",
             label: data[0].event_profile
-        },
-        {
+        }, {
             value: data[1].count,
             color: "#00aeef",
             highlight: "#c7c6c6",
             label: data[1].event_profile
-        },
-        {
+        }, {
             value: data[2].count,
             color: "#a8cf45",
             highlight: "#c7c6c6",
             label: data[2].event_profile
-        },
-        {
+        }, {
             value: data[3].count,
             color: "#005982",
             highlight: "#c7c6c6",
             label: data[3].event_profile
-        }
-    ];
+        }];
 
-    var DoughnutTextInsideChart = new Chart($('#totalReg')[0].getContext('2d')).DoughnutTextInside(doughnutData, {
-        responsive: true
-    });
-}
+        var DoughnutTextInsideChart = new Chart($('#totalReg')[0].getContext('2d')).DoughnutTextInside(doughnutData, {
+            responsive: true
+        });
+    }
 
-function buildCustomerSplits(data){
+    function buildCustomerSplits(data) {
 
-    graphValues = [];
-    graphLabels = [];
-    customerSplitHTML = ""
+        graphValues = [];
+        graphLabels = [];
+        customerSplitHTML = ""
 
-    $.each(data, function(index, value){
-        graphValues.push(value.count);
-        graphLabels.push("Label " + (index + 1));
+        $.each(data, function(index, value) {
+            graphValues.push(value.count);
+            graphLabels.push("Label " + (index + 1));
 
-        customerSplitHTML += "<strong>" + (index + 1) + "</strong> " + value.orgRole + (index + 1 !== data.length ? " | " : "" );
-    })
+            customerSplitHTML += "<strong>" + (index + 1) + "</strong> " + value.orgRole + (index + 1 !== data.length ? " | " : "");
+        })
 
-    $("#customerSplit").html(customerSplitHTML);
+        $("#customerSplit").html(customerSplitHTML);
 
-    //Customer profile splits
-    var barData = {
-        labels: graphLabels,
-        datasets: [
-            {
+        //Customer profile splits
+        var barData = {
+            labels: graphLabels,
+            datasets: [{
                 label: "customerProfile",
                 fillColor: '#fab24b',
                 highlightFill: "rgba(220,220,220,0.75)",
                 highlightStroke: "rgba(220,220,220,1)",
                 data: graphValues
-            },
-        ]
-    };
+            }, ]
+        };
 
-    var barOptions = {
-        scaleBeginAtZero: true,
-        scaleShowGridLines: true,
-        scaleGridLineColor: "rgba(0,0,0,.05)",
-        scaleGridLineWidth: 1,
-        barShowStroke: true,
-        barStrokeWidth: 2,
-        barValueSpacing: 5,
-        barDatasetSpacing: 1,
-        responsive: true
-    };
+        var barOptions = {
+            scaleBeginAtZero: true,
+            scaleShowGridLines: true,
+            scaleGridLineColor: "rgba(0,0,0,.05)",
+            scaleGridLineWidth: 1,
+            barShowStroke: true,
+            barStrokeWidth: 2,
+            barValueSpacing: 5,
+            barDatasetSpacing: 1,
+            responsive: true
+        };
 
 
-    var ctx = document.getElementById("custSplit").getContext("2d");
-    var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+        var ctx = document.getElementById("custSplit").getContext("2d");
+        var myNewChart = new Chart(ctx).Bar(barData, barOptions);
 
-}
+    }
 
-function buildRegPerDay(data) {
+    function buildRegPerDay(data) {
 
-    graphValues = [];
-    graphLabels = [];
+        graphValues = [];
+        graphLabels = [];
 
-    $.each(data, function(index, value) {
-        graphValues.push(value.count)
+        $.each(data, function(index, value) {
+            graphValues.push(value.count)
 
-        var graphDate = new Date(value.dateAdded);
-        graphDate = graphDate.toJSON().substring(0,10);
+            var graphDate = new Date(value.dateAdded);
+            graphDate = graphDate.toJSON().substring(0, 10);
 
-        graphLabels.push(graphDate);
+            graphLabels.push(graphDate);
 
-    })
+        })
 
-    // line chart
-    var lineData = {
-        labels: graphLabels,
+        // line chart
+        var lineData = {
+            labels: graphLabels,
 
-        datasets: [
-            {
+            datasets: [{
                 label: "regByDate",
                 fillColor: "rgba(220,220,220,0.5)",
                 strokeColor: "rgba(220,220,220,1)",
@@ -255,59 +251,55 @@ function buildRegPerDay(data) {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 data: graphValues
-            },
-        ]
-    };
-    var lineOptions = {
-        scaleShowGridLines: true,
-        scaleGridLineColor: "rgba(0,0,0,.05)",
-        scaleGridLineWidth: 1,
-        bezierCurve: true,
-        bezierCurveTension: 0.4,
-        pointDot: true,
-        pointDotRadius: 4,
-        pointDotStrokeWidth: 1,
-        pointHitDetectionRadius: 20,
-        datasetStroke: true,
-        datasetStrokeWidth: 2,
-        datasetFill: true,
-        responsive: true
-    };
-    var ctx = document.getElementById("regPerDay").getContext("2d");
-    var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+            }, ]
+        };
+        var lineOptions = {
+            scaleShowGridLines: true,
+            scaleGridLineColor: "rgba(0,0,0,.05)",
+            scaleGridLineWidth: 1,
+            bezierCurve: true,
+            bezierCurveTension: 0.4,
+            pointDot: true,
+            pointDotRadius: 4,
+            pointDotStrokeWidth: 1,
+            pointHitDetectionRadius: 20,
+            datasetStroke: true,
+            datasetStrokeWidth: 2,
+            datasetFill: true,
+            responsive: true
+        };
+        var ctx = document.getElementById("regPerDay").getContext("2d");
+        var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
 
-}
-
+    }
 </script>
 
 <script>
+    $(document).ready(function() {
 
-$(document).ready(function(){
+        $.ajax({
+            type: 'GET',
+            url: '/api/report/totalRegistrations',
+            success: function(data) {
+                buildTotalRegistrations(data);
+            }
+        })
 
-    $.ajax({
-        type: 'GET',
-        url: '/api/report/totalRegistrations',
-        success: function(data){
-            buildTotalRegistrations(data);
-        }
+        $.ajax({
+            type: 'GET',
+            url: '/api/report/customerSplit',
+            success: function(data) {
+                buildCustomerSplits(data);
+            }
+        })
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/report/regPerDay',
+            success: function(data) {
+                buildRegPerDay(data);
+            }
+        })
+
     })
-
-    $.ajax({
-        type: 'GET',
-        url: '/api/report/customerSplit',
-        success: function(data){
-            buildCustomerSplits(data);
-        }
-    })
-
-    $.ajax({
-        type: 'GET',
-        url: '/api/report/regPerDay',
-        success: function(data){
-            buildRegPerDay(data);
-        }
-    })
-
-})
-
 </script>
