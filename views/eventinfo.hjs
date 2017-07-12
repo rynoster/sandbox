@@ -8,14 +8,12 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-
-
+    
     .profile-header-container {
         margin: 0 auto;
         text-align: center;
     }
-
-
+    
     .profile-header-img>img.img-circle {
         height: 140px;
         border: 2px solid #005982;
@@ -23,24 +21,24 @@
     /*.profile-header {
             margin-top: 43px;
         }*/
-
+    
     .rank-label-container {
         margin-top: -19px;
         /* z-index: 1000; */
         text-align: center;
     }
-
+    
     .label.label-default.rank-label {
         background-color: #005982;
         padding: 5px 10px 5px 10px;
         border-radius: 27px;
     }
-
+    
     .span {
         display: table;
         margin: 0 auto;
     }
-
+    
     .session-body {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -81,9 +79,8 @@
             </div>
             <div class="col-md-6">
                 <p class="text-left"><strong>Registration and Showcase opening</strong></p>
-                <p style="font-size:90%">The doors will open at 06:00 for registration with the central exhibition area open to delegates from 07:00.
-                    Coffee, tea and light snacks will be available for the early birds. All executives attending the C-level
-                    breakfast need to be registered by 06:50 to take their seats in La Toscana for the 07:00 breakfast session.
+                <p style="font-size:90%">The doors will open at 06:00 for registration with the central exhibition area open to delegates from 07:00. Coffee, tea and light snacks will be available for the early birds. All executives attending the C-level breakfast need to be
+                    registered by 06:50 to take their seats in La Toscana for the 07:00 breakfast session.
                 </p>
                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
             </div>
@@ -101,10 +98,8 @@
             </div>
             <div class="col-md-5">
                 <p class="text-left"><strong>Opening plenary</strong></p>
-                <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by venture capitalist and former banker, Dr. Michael
-                    Jordaan. Dr. Jordaan will look at the reality of the singularity and how business needs to respond to
-                    this paradigm shift we are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA
-                    at Hewlett Packard Enterprise will focus on the importance of innovation in this new age.
+                <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by venture capitalist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the reality of the singularity and how business needs to respond to this paradigm shift we
+                    are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA at Hewlett Packard Enterprise will focus on the importance of innovation in this new age.
                 </p>
                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Il Grande</p>
             </div>
@@ -179,13 +174,10 @@
                                         <h2 style="color:slategray">No compromise hybrid IT </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Marco Vieira / Country Manager: Datacenter Infrastructure Group, HPE SA</h5>
                                         <p>
-                                            To compete in the digital world, organisations need the right mix of traditional IT, private and public 
-                                            clouds to support their apps and data – and to meet their business needs. IT must be empowered to create 
-                                            and deliver new value instantly and continuously. Today’s infrastructure must have reduced operational complexity 
-                                            for traditional workloads and increased performance and flexibility for the new breed of applications and services.  
-                                            <br><br>
-                                            Customers shouldn’t have to compromise when they choose their hybrid IT experience.
-                                            </p>
+                                            To compete in the digital world, organisations need the right mix of traditional IT, private and public clouds to support their apps and data – and to meet their business needs. IT must be empowered to create and deliver new value instantly and continuously.
+                                            Today’s infrastructure must have reduced operational complexity for traditional workloads and increased performance and flexibility for the new breed of applications and services.
+                                            <br><br> Customers shouldn’t have to compromise when they choose their hybrid IT experience.
+                                        </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
                                         <figure><img src="/assets/images/sponsor-logos/hpe.svg" alt=""></figure>
@@ -199,16 +191,10 @@
                                         <h2 style="color:slategray">Securing digital transformation </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
                                         <p>
-                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers
-                                            are using more technology to transform all parts of their business. This digital
-                                            transformation – more like technological disruption – is taking place at warp
-                                            speed. A side effect of these changes is more data accessed from multiple devices
-                                            and locations (on premise and cloud). With all these devices connected to the
-                                            Internet – security becomes even more critical when managing the estate of data
-                                            and information that flows through the networks and these devices.
-                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation,
-                                            protecting customers’ technology investments, and enabling the achievements of
-                                            their business outcomes.
+                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers are using more technology to transform all parts of their business. This digital transformation – more like technological disruption
+                                            – is taking place at warp speed. A side effect of these changes is more data accessed from multiple devices and locations (on premise and cloud). With all these devices connected to the Internet – security becomes
+                                            even more critical when managing the estate of data and information that flows through the networks and these devices.
+                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation, protecting customers’ technology investments, and enabling the achievements of their business outcomes.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -221,17 +207,12 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
-                                            EMEA
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo EMEA
                                         </h5>
                                         <p>
-                                            “A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
-                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
-                                            This convergence enables organisations to standardise, simplify and align IT
-                                            with business needs, reducing costs and enabling agility.
-                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
-                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
-                                            designed to move customers beyond the singularity.
+                                            “A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure space with the convergence of servers, networking and storage resulting in hyper-convergence. This convergence enables organisations
+                                            to standardise, simplify and align IT with business needs, reducing costs and enabling agility.
+                                            <br><br> See how Lenovo is moving customers forward from “device to data centre” with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically designed to move customers beyond the singularity.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -247,8 +228,7 @@
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Jacques Viljoen / Senior Consultant, Datacentrix</h5>
                                         <p>
                                             Datacentrix offers public and private cloud services from its tier 3+ capable, highly-available data centre infrastructure.
-                                            <br><br> Our Cloud Services leverage Datacentrix’ service desk, network and security
-                                            operations centre and are underpinned by award-winning data centre infrastructure.
+                                            <br><br> Our Cloud Services leverage Datacentrix’ service desk, network and security operations centre and are underpinned by award-winning data centre infrastructure.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -297,13 +277,10 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Build and manage your mobile workplace and enable your digital transformation </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Frederic Saint-Joigny / HPE Aruba EMEA Director Channel
-                                            & Alliances</h5>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Frederic Saint-Joigny / HPE Aruba EMEA Director Channel & Alliances</h5>
                                         <p>
-                                            Business leaders demand faster adoption of all things connected, BYOD and IoT stressing the network while IT can’t compromise
-                                            security and visibility. Aruba bridges this gap – providing actionable insights
-                                            for the business and predictability for IT. Aruba’s Mobile First Platform is
-                                            designed to innovate at the speed of the ecosystem.
+                                            Business leaders demand faster adoption of all things connected, BYOD and IoT stressing the network while IT can’t compromise security and visibility. Aruba bridges this gap – providing actionable insights for the business and predictability for IT. Aruba’s
+                                            Mobile First Platform is designed to innovate at the speed of the ecosystem.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -318,16 +295,10 @@
                                         <h2 style="color:slategray">Securing digital transformation </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg Griessel / Consulting SE, Cisco Southern Africa</h5>
                                         <p>
-                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers
-                                            are using more technology to transform all parts of their business. This digital
-                                            transformation – more like technological disruption – is taking place at warp
-                                            speed. A side effect of these changes is more data accessed from multiple devices
-                                            and locations (on premise and cloud). With all these devices connected to the
-                                            Internet – security becomes even more critical when managing the estate of data
-                                            and information that flows through the networks and these devices.
-                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation,
-                                            protecting customers’ technology investments, and enabling the achievements of
-                                            their business outcomes.
+                                            The evolving landscape of industries is being fuelled by digitisation and technological innovation, which means that customers are using more technology to transform all parts of their business. This digital transformation – more like technological disruption
+                                            – is taking place at warp speed. A side effect of these changes is more data accessed from multiple devices and locations (on premise and cloud). With all these devices connected to the Internet – security becomes
+                                            even more critical when managing the estate of data and information that flows through the networks and these devices.
+                                            <br><br> Come and find out exactly “HOW” Cisco is securing digital transformation, protecting customers’ technology investments, and enabling the achievements of their business outcomes.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -340,17 +311,12 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">The singularity and beyond in your data centre </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo
-                                            EMEA
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Tikiri Wanduragala / Senior Consultant Server Systems, Lenovo EMEA
                                         </h5>
                                         <p>
-                                            A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure
-                                            space with the convergence of servers, networking and storage resulting in hyper-convergence.
-                                            This convergence enables organisations to standardise, simplify and align IT
-                                            with business needs, reducing costs and enabling agility.
-                                            <br><br> See how Lenovo is moving customers forward from “device to data centre”
-                                            with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically
-                                            designed to move customers beyond the singularity.
+                                            A singularity event is the convergence of disparate ideas and technologies. This has already happened in the infrastructure space with the convergence of servers, networking and storage resulting in hyper-convergence. This convergence enables organisations
+                                            to standardise, simplify and align IT with business needs, reducing costs and enabling agility.
+                                            <br><br> See how Lenovo is moving customers forward from “device to data centre” with legacy-free thinking and the new brand of ThinkSystem and ThinkAgile specifically designed to move customers beyond the singularity.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -362,18 +328,15 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Case Study: BankServ - Delivering  </h2>
+                                        <h2 style="color:slategray">Case Study: BankServ - Delivering </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Justin Hamman / Account Manager, Datacentrix</h5>
                                         <p>
-                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. 
-                                            This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of 
-                                            the environment is key to the entire South African financial sector as it impacts on the processing of all card transactions 
-                                            in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop 
-                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their 
-                                            arrangement. 
+                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of the environment is key to the entire South
+                                            African financial sector as it impacts on the processing of all card transactions in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop
+                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their arrangement.
                                         </p>
                                     </div>
-                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
                                         <figure><img src="http://www.bbd.co.za/Assets/_Images/Clients/BankservAfrica.png" alt=""></figure>
                                     </div>
                                 </div>
@@ -385,7 +348,7 @@
             </div>
         </div>
 
- <!-- ========================================= Sessions Block #3 ============================================================= -->
+        <!-- ========================================= Sessions Block #3 ============================================================= -->
         <div class="row col-md-12">
             <div class="divide20"> </div>
             <hr style="border: 0.5px dashed #d8d8d8;width:100%">
@@ -421,13 +384,14 @@
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">IT transformation through hybrid cloud </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Greg McDonald / Sales Engineering Senior Manager, Dell EMC</h5>
-                                        <p>Cloud architectures are fast becoming the standard for application delivery. This is a big leap forward, but places pressure on organisations to transform their technology even faster or be left behind. Discover what lies behind the trend and how to align your organisation to the tide. Determine your digital maturity and learn how an application-focused transformation will determine your cloud systems.</p>
+                                        <p>Cloud architectures are fast becoming the standard for application delivery. This is a big leap forward, but places pressure on organisations to transform their technology even faster or be left behind. Discover
+                                            what lies behind the trend and how to align your organisation to the tide. Determine your digital maturity and learn how an application-focused transformation will determine your cloud systems.</p>
                                         <p>&nbsp;</p>
                                         <p><strong>3 take away benefits</strong></p>
                                         <ul>
-                                        <i class="icon-right-open"></i>Why direct control over IT no longer makes sense<br>
-                                        <i class="icon-right-open"></i>How to judge the digital maturity of an organisation<br>
-                                        <i class="icon-right-open"></i>What is changing about applications and how that impacts data centre design<br>
+                                            <i class="icon-right-open"></i>Why direct control over IT no longer makes sense<br>
+                                            <i class="icon-right-open"></i>How to judge the digital maturity of an organisation<br>
+                                            <i class="icon-right-open"></i>What is changing about applications and how that impacts data centre design<br>
                                         </ul>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -441,8 +405,8 @@
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Comprehensive integrated Fortinet Security Fabric<br>The next step in network security evolution</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Paul Williams / Country Manager – SADC for Fortinet</h5>
-                                        <p>The network security approaches of recent years are simply not fast or comprehensive enough to deal with the evolving 
-                                            threat landscape. Join the conversation with Paul Williams, Country Manager – Southern Africa at Fortinet.
+                                        <p>The network security approaches of recent years are simply not fast or comprehensive enough to deal with the evolving threat landscape. Join the conversation with Paul Williams, Country Manager – Southern Africa
+                                            at Fortinet.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -457,8 +421,7 @@
                                         <h2 style="color:slategray">TCloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Trevor Coetzee / Regional Director, Sub-Saharan Africa at McAfee</h5>
                                         <p>
-                                        The state of cloud adoption and security: With security and compliance more important than ever, see how IT security 
-                                        professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
+                                            The state of cloud adoption and security: With security and compliance more important than ever, see how IT security professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
 
                                         </p>
                                     </div>
@@ -474,18 +437,14 @@
                                         <h2 style="color:slategray">Digital business transformation initiatives </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> JGordon Fairlie / Enterprise Sales Executive, Riverbed</h5>
                                         <p>
-                                            With companies continuing to invest heavily in digital business initiatives, their ability to measure and 
-                                            control the quality of user experience remains a challenge. Riverbed SteelCentral now empowers customers 
-                                            to measure and troubleshoot all parts of the digital experience, from the user’s experience on the device to the 
-                                            back-end network, infrastructure, cloud and application. 
-                                            <br><br>
-                                            We invite you to join the Riverbed session and find out more about how Riverbed can assist your enterprise 
-                                            to deliver a reliable and consistently high quality end user experience with our modular and integrated Digital 
-                                            Experience Management solution.
+                                            With companies continuing to invest heavily in digital business initiatives, their ability to measure and control the quality of user experience remains a challenge. Riverbed SteelCentral now empowers customers to measure and troubleshoot all parts of
+                                            the digital experience, from the user’s experience on the device to the back-end network, infrastructure, cloud and application.
+                                            <br><br> We invite you to join the Riverbed session and find out more about how Riverbed can assist your enterprise to deliver a reliable and consistently high quality end user experience with our modular and
+                                            integrated Digital Experience Management solution.
 
                                         </p>
                                     </div>
-                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
                                         <figure><img src="/assets/images/sponsor-logos/riv.svg" alt=""></figure>
                                     </div>
                                 </div>
@@ -496,7 +455,7 @@
 
             </div>
         </div>
-    <!-- End of the session data-->
+        <!-- End of the session data-->
     </div>
 </section>
 
@@ -508,8 +467,8 @@
     <div class="container text-center drk-bg">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <br>
-            <p><strong>Lunch will be available from 12:30 to 14:00</strong> in the Montecasino Ballroom and in Il Grande where we will have our 
-                special lunch session which you cannot miss. Grab your lunch and make your way across to Il Grande. Limited seats.  </p>
+            <p><strong>Lunch will be available from 12:30 to 14:00</strong> in the Montecasino Ballroom and in Il Grande where we will have our special lunch session which you cannot miss. Grab your lunch and make your way across to Il Grande. Limited seats.
+            </p>
             <br>
         </div>
     </div>
@@ -525,10 +484,8 @@
                     <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
                     <h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
                     <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
-                    <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic
-                        of the singularity and how humanity is being assimilated into code. What will happen to humanity
-                        as we know it today and how should business transform to stay relevant in the future. Great panel
-                        of industry specialists:
+                    <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic of the singularity and how humanity is being assimilated into code. What will happen to humanity as we know it today and how should
+                        business transform to stay relevant in the future. Great panel of industry specialists:
                     </p>
                 </header>
                 <div class="row">
@@ -655,11 +612,9 @@
                                         <h2 style="color:slategray">The Singularity of Reality is here. <br>Are your Ready for It? </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Pauline Barnes / Channel Account Executive, Hauwei</h5>
                                         <p>
-                                            Singularity, is defined by Wikipedia as the "moment in time when artificial intelligence will have progressed 
-                                            to the point of a greater-than-human intelligence”. Huawei is at the leading edge of this new technology and 
-                                            has built an open platform eco system where together with our partners we are paving the way to this new world of 
-                                            an Intelligent Society where all things are connected. Does that sound far-fetched? Pauline will unpack this 
-                                            leading edge technology, disclosing a number of live case studies.
+                                            Singularity, is defined by Wikipedia as the "moment in time when artificial intelligence will have progressed to the point of a greater-than-human intelligence”. Huawei is at the leading edge of this new technology and has built an open platform eco system
+                                            where together with our partners we are paving the way to this new world of an Intelligent Society where all things are connected. Does that sound far-fetched? Pauline will unpack this leading edge technology,
+                                            disclosing a number of live case studies.
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
                                         <figure><img src="/assets/images/sponsor-logos/hua.svg" alt=""></figure>
@@ -671,14 +626,11 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Harnessing the power of virtual reality in the workplace </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Yesh  Surjoodeen / Computing, Printing and Personal Systems Group, HP South Africa</h5>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Yesh Surjoodeen / Computing, Printing and Personal Systems Group, HP South Africa</h5>
                                         <p>
-                                            Today, virtual reality technology plays a pivotal role in helping many industries make dramatic 
-                                            advancements in training, collaborative work and learning.
-                                            <br><br>
-                                            By creating realistic and immersive simulations of complicated three-dimensional environments 
-                                            or objects, and enabling realistic interaction between the users and these simulations, complex 
-                                            procedures and macro-level collaborations can now be rehearsed in a safe and controlled environment.
+                                            Today, virtual reality technology plays a pivotal role in helping many industries make dramatic advancements in training, collaborative work and learning.
+                                            <br><br> By creating realistic and immersive simulations of complicated three-dimensional environments or objects, and enabling realistic interaction between the users and these simulations, complex procedures
+                                            and macro-level collaborations can now be rehearsed in a safe and controlled environment.
 
                                         </p>
                                     </div>
@@ -694,7 +646,7 @@
                                         <h2 style="color:slategray">Title of the session goes here </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i>Presenter</h5>
                                         <p>
-                                           Summary of the session
+                                            Summary of the session
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -709,8 +661,10 @@
                                         <h2 style="color:slategray">Modernise data protection with 360 data management</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Michael Wilson / Veritas</h5>
                                         <p>
-                                            <strong>Why is modern data protection important?</strong><br>
-                                            Digital business needs to respond to the increasing data management challenges in a multi-cloud and virtual world. Data is one of the most valuable assets the organisation possesses. It’s time to think ahead. It’s time for modernised data protection. Now is the tipping point where businesses must re-evaluate their information infrastructure as they move to digitalisation. Why? We’re moving into the future, and in that future being able to capture data, turn it into information and manage it is absolutely key. Information is increasingly at the core of our customers’ business.
+                                            <strong>Why is modern data protection important?</strong><br> Digital business needs to respond to the increasing data management challenges in a multi-cloud and virtual world. Data is one of the most valuable
+                                            assets the organisation possesses. It’s time to think ahead. It’s time for modernised data protection. Now is the tipping point where businesses must re-evaluate their information infrastructure as they move
+                                            to digitalisation. Why? We’re moving into the future, and in that future being able to capture data, turn it into information and manage it is absolutely key. Information is increasingly at the core of our customers’
+                                            business.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -748,7 +702,7 @@
                             <ul class="etabs text-center">
                                 <li class="tab"><a href="#tab-1">AI at work in JSE</a></li>
                                 <li class="tab"><a href="#tab-2">Case Study: ABSA</a></li>
-                                <li class="tab"><a href="#tab-3">Case Study: Exxaro </a></li>
+                                <li class="tab"><a href="#tab-3"> Service integration & management</a></li>
                                 <li class="tab"><a href="#tab-4">Datacentrix SOC</a></li>
                             </ul>
 
@@ -761,11 +715,9 @@
                                         <h2 style="color:slategray">Trading billions in nanno seconds - how artificial inteligence is used to acheived this</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwanza / Head of IT at JSE</h5>
                                         <p>
-                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has 
-                                            both local and international expeirece in the the field of stock traders and technologies applied to perform their daily tasks. He shares with us 
-                                            the reality of trades today and how they mange to keep track of buying and selling on the stock excahnge. How is this possible and what is on their roadmap. 
-                                            <br><br>
-                                            Do not miss this oppertunity to hear from the leading minds on how next generation technology is applied to business. 
+                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has both local and international expeirece in the the field of stock traders and technologies applied to perform their daily tasks. He shares
+                                            with us the reality of trades today and how they mange to keep track of buying and selling on the stock excahnge. How is this possible and what is on their roadmap.
+                                            <br><br> Do not miss this oppertunity to hear from the leading minds on how next generation technology is applied to business.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -777,17 +729,14 @@
                                 <div class="tab-content" id="tab-2">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence. 
+                                        <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence.
                                             <br> A DC in a box. How has this helped ABSA get ahead of its competitors. </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Werner Vorster / Sales Executive, Nutanix</h5>
                                         <p>
-                                            This case study shows how through collaboration between the system integrator Datacentrix, a world class OEM and the 
-                                            leader in the Enterprise hyper convergence space were able to ensure that the customer was able to achieve their goals 
-                                            of transforming their legacy infrastructure platforms and truly transform their IT estate. Ensuring that their business 
-                                            was able to transform and embrace cutting edge technology whilst ensuring high availability and uptime thus making sure 
-                                            that the services they offered to their customers were available at all times. 
-                                            <br><br> 
-                                            Hear from the program and account team directly how this was achievd.
+                                            This case study shows how through collaboration between the system integrator Datacentrix, a world class OEM and the leader in the Enterprise hyper convergence space were able to ensure that the customer was able to achieve their goals of transforming
+                                            their legacy infrastructure platforms and truly transform their IT estate. Ensuring that their business was able to transform and embrace cutting edge technology whilst ensuring high availability and uptime
+                                            thus making sure that the services they offered to their customers were available at all times.
+                                            <br><br> Hear from the program and account team directly how this was achievd.
 
                                         </p>
                                     </div>
@@ -800,14 +749,17 @@
                                 <div class="tab-content" id="tab-3">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Being updated - please check back soon  </h2>
+                                        <h2 style="color:slategray">Service integration and management (SIAM)</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
                                         <p>
-                                            Being updated, please check back soon. 
+                                            Find out how to simplify the management of your multi-vendor environment with Datacentrix:<br> - Single point of visibility and control<br> - Governance, risk management and assurance<br> - End-to-end accountability
+                                            for service delivery<br><br> Service Integration and Management (SIAM) is an approach to managing multiple 3rd party suppliers of services, including business services as well as information technology services,
+                                            and integrating them to provide a single business-facing ICT organisation through a co-operation agreement mechanism.
+                                            <br><br> It aims at seamlessly integrating interdependent services from various internal and external service providers into end-to-end services that are aligned to business requirements.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="http://www.blankcanvas.co.za/wp-content/uploads/2014/06/Exxaro-logo-1.jpg" style="width:60%" alt=""></figure>
+                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" style="width:60%" alt=""></figure>
                                     </div>
                                 </div>
 
@@ -818,15 +770,12 @@
                                         <h2 style="color:slategray">Delivering realtime security analytics </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Wayne Olsen, Business Unit Manger: Security, Datacentrix</h5>
                                         <p>
-                                            Datacentrix provides end-to-end security solutions for the monitoring, assessment and defence of our customers’ information assets. 
-                                            Our objective is to achieve complete confidentiality, data integrity, information availability, accountability and assurance (governance) 
-                                            for our customers.
-                                            <br><br>   
-                                            Our specialist security team works closely with our customers to establish and maintain information security by 
-                                            identifying, managing and controlling risks.
+                                            Datacentrix provides end-to-end security solutions for the monitoring, assessment and defence of our customers’ information assets. Our objective is to achieve complete confidentiality, data integrity, information availability, accountability and assurance
+                                            (governance) for our customers.
+                                            <br><br> Our specialist security team works closely with our customers to establish and maintain information security by identifying, managing and controlling risks.
                                         </p>
                                     </div>
-                                     <div class="col-md-3 visible-lg visible-md visible-sm">
+                                    <div class="col-md-3 visible-lg visible-md visible-sm">
                                         <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
                                     </div>
                                 </div>
@@ -838,7 +787,7 @@
             </div>
         </div>
 
- <!-- ========================================= Sessions Block #6 ============================================================= -->
+        <!-- ========================================= Sessions Block #6 ============================================================= -->
         <div class="row col-md-12">
             <div class="divide20"> </div>
             <hr style="border: 0.5px dashed #d8d8d8;width:100%">
@@ -860,8 +809,8 @@
                         <div class="tabs tabs-top">
 
                             <ul class="etabs text-center">
-                                 <li class="tab"><a href="#tab-1">Enterprise Information Management</a></li>
-                                <li class="tab"><a href="#tab-2">Case Study: Standard Bank</a></li>
+                                <li class="tab"><a href="#tab-1">Enterprise Information Management</a></li>
+                                <li class="tab"><a href="#tab-2">Case Study: TUT</a></li>
                                 <li class="tab"><a href="#tab-3">Backup-as-a-Service </a></li>
                             </ul>
 
@@ -873,10 +822,11 @@
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Under review </h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
-                                        <p>Being updated - check back soon. 
+                                        <p>Being updated - check back
+                                            <soon class=""></soon>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="http://olympiad.org.za/university-it-challenge/wp-content/uploads/sites/5/2017/01/standard-bank-logo.jpg" alt=""></figure>
+                                        <figure><img src="" alt=""></figure>
                                     </div>
                                 </div>
 
@@ -886,13 +836,10 @@
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">A market leader in the enterprise content management and enterprise information management domains</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Bennie Kotze / EIM Consulting Manager, Datacentrix</h5>
-                                        <p>Datacentrix is a market leader in the enterprise content management and enterprise information management domains in 
-                                            the local market. Organisations need accurate, timely and relevant information to plan, allocate resources and manage 
-                                            the business in order to achieve strategic goals and objectives.
-                                            <br><br>
-                                            Enterprise Information Management (EIM) involves structuring and managing information assets to enhance efficiencies, 
-                                            promote transparency and enable business insight. This comprises managing information across an organisation to enable 
-                                            informed management.
+                                        <p>Datacentrix is a market leader in the enterprise content management and enterprise information management domains in the local market. Organisations need accurate, timely and relevant information to plan, allocate
+                                            resources and manage the business in order to achieve strategic goals and objectives.
+                                            <br><br> Enterprise Information Management (EIM) involves structuring and managing information assets to enhance efficiencies, promote transparency and enable business insight. This comprises managing information
+                                            across an organisation to enable informed management.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -907,7 +854,7 @@
                                         <h2 style="color:slategray">Being updated</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Being updated</h5>
                                         <p>
-                                        Being updated
+                                            Being updated
 
                                         </p>
                                     </div>
@@ -923,7 +870,7 @@
             </div>
         </div>
 
-         <!-- Next row - Slot info  -->
+        <!-- Next row - Slot info  -->
         <div class="row">
             <div class="col-md-12">
                 <hr style="border: 0.5px dashed #d8d8d8;">
@@ -935,8 +882,7 @@
             </div>
             <div class="col-md-6">
                 <p class="text-left"><strong>Closing and Prize giving on Datacentrix stand</strong></p>
-                <p style="font-size:90%">As the event draws to a close, we look at the days and what we gained from all the session. Rudie Raath, 
-                    the event host will do a high-level recap, followed by various prize givings and lucky draws. 
+                <p style="font-size:90%">As the event draws to a close, we look at the days and what we gained from all the session. Rudie Raath, the event host will do a high-level recap, followed by various prize givings and lucky draws.
                     <br><br>
                     <strong>Only people present will qualify for the various prizes. </strong>
 
@@ -951,29 +897,28 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-2">
-            <p>17:00 - 19:45</p><br>
+            <div class="col-md-2">
+                <p>17:00 - 19:45</p><br>
+            </div>
+            <div class="col-md-6">
+                <p class="text-left"><strong>HPE and Intel cocktail event with perfroming artists</strong></p>
+                <p style="font-size:90%">Please join us at this, not-to-be-missed event where we will see legendary artists "The Muses" perform with "1st Project". Liquid chefs will be mixing up their world-class cocktails for delegates to enjoy. We also take your safety at heart
+                    and do not want you to drive after a few drinks. A take-me-home service will be avaialble to conference delegates after this event.
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
+
+            </div>
+            <div class="col-md-4 visible-lg visible-md visible-sm">
+                <figure><img src="/assets/images/art/the-muses.jpg" style="" alt=""></figure>
+            </div>
         </div>
-        <div class="col-md-6">
-            <p class="text-left"><strong>HPE and Intel cocktail event with perfroming artists</strong></p>
-            <p style="font-size:90%">Please join us at this, not-to-be-missed event where we will see legendary artists "The Muses" perform with "1st Project". Liquid chefs will 
-                be mixing up their world-class cocktails for delegates to enjoy. We also take your safety at heart and do not want you to drive after a few drinks. A take-me-home service 
-                will be avaialble to conference delegates after this event. 
-            </p>
-            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
-
-        </div>
-        <div class="col-md-4 visible-lg visible-md visible-sm">
-            <figure><img src="/assets/images/art/the-muses.jpg" style="" alt=""></figure>
-        </div>
-        </div>
 
 
 
 
-    <!-- End of the session data-->
+        <!-- End of the session data-->
     </div>
-<div class="divide60"></div>    
+    <div class="divide60"></div>
 </section>
 {{> jscript}}
 
