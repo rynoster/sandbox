@@ -1,92 +1,130 @@
-var moment = require("moment");
-var _ = require("lodash");
+const moment = require("moment");
+const _ = require("lodash");
 
-var db = require("./db.js");
+const db = require("./db");
 
 function Agenda(id) {
     this.id = id;
-};
+}
 
 Agenda.prototype.allSessions = function (callback) {
+    
     db("agenda")
-    .then(function(sessions) {
-        callback(sessions);
-    })
+        .orderBy("timeStart")
+        .then((resultSessions) => {
+            callback(resultSessions);
+        });
+
 };
-Agenda.prototype.getSession = function (callback) {
+
+Agenda.prototype.getSession = function (id, callback) {
+
     db("agenda")
         .where("id", id)
         .first()
-        .then(function(session) {
-            callback(session);
+        .then((resultSession) => {
+            callback(resultSession);
         })
-        .catch(function(err) {
+        .catch((err) => {
             callback(err);
-        })
-}
+        });
 
-Agenda.prototype.getParents = function(callback){
+};
+
+Agenda.prototype.getParents = function (callback) {
+
     db("agenda")
-    .where("parentId", null)
-    .orWhere("parentId", 0)
-    .orderBy("timeStart")
-    .then(function(rows){
+        .where("parentId", null)
+        .orWhere("parentId", 0)
+        .orderBy("timeStart")
+        .then((rows) => {
 
-        rows.forEach(function(element, index){
-            var timeSplitsStart = _.split(element.timeStart,":",2);
-            var timeSplitsEnd = _.split(element.timeEnd,":",2);
+            rows.forEach((element) => {
 
-            element.timeStart = moment( { hour:timeSplitsStart[0], minute:timeSplitsStart[1] } ).format("HH:mm");
-            element.timeEnd = moment( { hour:timeSplitsEnd[0], minute:timeSplitsEnd[1] } ).format("HH:mm");
-        })
+                const timeElement = element;
+                const timeSplitsStart = _.split(element.timeStart, ":", 2);
+                const timeSplitsEnd = _.split(element.timeEnd, ":", 2);
 
-      callback(rows);
-    })
-}
+                timeElement.timeStart = moment({ hour: timeSplitsStart[0], 
+                    minute: timeSplitsStart[1] }).format("HH:mm");
+                timeElement.timeEnd = moment({ hour: timeSplitsEnd[0], 
+                    minute: timeSplitsEnd[1] }).format("HH:mm");
 
-Agenda.prototype.getChildren = function(id, callback){
+            });
+
+        callback(rows);
+
+        });
+
+};
+
+Agenda.prototype.getChildren = function (id, callback) {
+
     db("agenda")
-    .where("parentId", id)
-    .join("speakers", "speakers.id", "=", "agenda.speakerId")
-    .select("speakers.fullName as speakerName", "speakers.companyName as speakerCompany", "speakers.profession as speakerProfession", "agenda.*")
-    .then(function(rows){
-      callback(rows);
-    })
-}
+        .where("parentId", id)
+        .join("speakers", "speakers.id", "=", "agenda.speakerId")
+        .select("speakers.fullName as speakerName", "speakers.companyName as speakerCompany", 
+            "speakers.profession as speakerProfession", "agenda.*")
+        .then((rows) => {
+            callback(rows);
+        });
 
-Agenda.prototype.getSpeaker = function(id, callback){
+};
+
+Agenda.prototype.getSpeaker = function (id, callback) {
+
     db("speakers")
     .where("id", id)
-    .then(function(rows){
+    .then((rows) => {
       callback(rows);
-    })
-}
+    });
 
-Agenda.prototype.fullDataset = function (callback){
+};
 
-    var self = this;
+Agenda.prototype.updateSession = function (id, data, callback) {
 
-    self.getParents(function(parentRows){
-
-      var processedItems = 0;
-
-      parentRows.forEach (function(element, index) {
+    db("agenda")
+      .where("id", id)
+      .update(data)
+      .then((result) => {
+        if (result === 0) {
+            callback(400);
+        } else {
+            callback(200);
+        }
         
-        self.getChildren(element.id, function(childRows){
-          if (childRows.length > 0) parentRows[index].hasChildren = true;
-          parentRows[index].sessions = childRows;
+      });
+
+};
+
+Agenda.prototype.fullDataset = function (callback) {
+
+    const self = this;
+
+    self.getParents((resultParents) => {
+
+      let processedItems = 0;
+      const parentRows = resultParents;
+
+      parentRows.forEach((element, index) => {
+        
+        self.getChildren(element.id, (resultChildren) => {
+
+          if (resultChildren.length > 0) parentRows[index].hasChildren = true;
+          parentRows[index].sessions = resultChildren;
 
           processedItems++;
 
           if (processedItems === parentRows.length) {
             callback(parentRows);
           }
-        })
 
-      })
+        });
 
-    })
+      });
 
-}//dataset function
+    });
+
+};  //dataset function
 
 module.exports = Agenda;
