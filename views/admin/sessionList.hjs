@@ -71,7 +71,8 @@
             stateSave: true,
             pageLength: 25,
             bAutoWidth: false,
-            order: [[1, "asc"]],
+            // order: [[1, "asc"]],
+            ordering: false,
             ajax: {
                 url: "/api/sessionsParent",
                 dataSrc: "",
@@ -83,7 +84,7 @@
             fnRowCallback: function (nRow, aData) {
 
                 $(nRow).on("click", "i", function(){
-                    window.location.href = "/admin/speakerEdit/" + aData.id;
+                    window.location.href = "/admin/sessionEdit/" + aData.id;
                 })
 
             },
