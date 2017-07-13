@@ -1,34 +1,36 @@
-var express = require('express');
-var router = express.Router();
-var crypto = require('crypto');
-var request = require('request');
-var _ = require("lodash");
-var async = require("async")
+const express = require("express");
+
+const router = express.Router();
+const request = require("request");
+const _ = require("lodash");
+const url = require("url");
+// const async = require("async") eslint never used
+// const crypto = require("crypto"); eslint never used
+// const app = express(); eslint never used
 
 //My own modules
-var db = require("../db");
-var auth = require("../auth")
-var Speaker = require("../speakers")
-var Agenda = require("../agenda")
+const db = require("../db");
+const auth = require("../auth");
+const Speaker = require("../speakers");
+const Agenda = require("../agenda");
+
+const agenda = new Agenda();
 
 //file uploads
-var formidable = require('formidable');
-var fs = require('fs');
-var path = require('path');
+const formidable = require("formidable");
+const fs = require("fs");
+const path = require("path");
 
-var app = express();
-
-function fullUrl(req) {
-  var url = require('url');
+function getFullUrl(req) {
   return url.format({
     protocol: req.protocol,
-    host: req.get('host'),
+    host: req.get("host"),
     // pathname: req.originalUrl
   });
 }
 
 function randomString(length, chars) {
-  var result = '';
+  var result = "";
   for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
   return result;
 }
@@ -52,50 +54,9 @@ function buildHtmlBody(params, fullUrl) {
 
 }
 
-//old, can be removed
-// function getParents(callback){
-//   db("agenda")
-//     .where("parentId", null)
-//     .then(function(rows){
-//       callback(rows);
-//       return rows;
-//     })
-// }
-
-// function getChildren(id, callback){
-//   db("agenda")
-//     .where("parentId", id)
-//     .then(function(rows){
-//       callback(rows);
-//     })
-
-// }
-
-// function buildDataset(callback){
-
-//   getParents(function(parentRows){
-
-//       var processedItems = 0;
-
-//       parentRows.forEach (function(element, index) {
-        
-//         getChildren(element.id, function(childRows){
-//           // myObject.push(element);
-//           parentRows[index].sessions = childRows;
-//           processedItems++;
-
-//           if (processedItems === parentRows.length) {
-//             callback(parentRows);
-//           }
-//         })
-
-//       })
-
-//     })
-
-// }//dataset function
-
 function buildHtmlContactUs(params) {
+
+  var htmlBody = "";
 
   htmlBody = "<strong>Contact us request received:</strong><br><br>";
   htmlBody += "Name: " + params.name + "<br>"
@@ -107,18 +68,16 @@ function buildHtmlContactUs(params) {
 }
 
 router
-  .get('/register', (req, res) => {
+  .get("/register", (req, res) => {
     res.send("Register page")
   })
 
   //Shows all users, with more options to filter records
-  .get('/allusers', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .get("/allusers", auth.loginRequired, auth.adminRequired, (req, res, next) => {
 
     var ajaxData = req.query;
 
     db("users")
-      // .select("id","email","event_profile","first_name","last_name","dietary","accountManager")
-      // .limit(ajaxData.limit || 100)
       .where(ajaxData.where || {})
       .then((users) => {
         res.send(users);
@@ -127,15 +86,15 @@ router
   })
 
   //Main router for registering/creating new users
-  .post('/user', (req, res, next) => {
+  .post("/user", (req, res, next) => {
     const newUser = req.body;
     var sendEmail = newUser.sendEmail || "true"; //Retrieve the sendEmail from req.body to determine whether email should be sent to delegate for verification
 
     delete newUser.sendEmail; //Removes the sendEmail property from the newUser object, to ensure the insert record into the database does not fail
 
     //Generate the token, trim to 32 characters
-    //newUser.token = crypto.randomBytes(64).toString('base64').substring(0, 32);
-    newUser.token = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    //newUser.token = crypto.randomBytes(64).toString("base64").substring(0, 32);
+    newUser.token = randomString(32, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
     //First check if email address already exists before trying to add
     db("users")
@@ -161,7 +120,7 @@ router
                   from: "noreply@chirpee.io",
                   to: newUser.email,
                   subject: "Datacentrix Showcase 2017 - Email Address Verification Request",
-                  html: buildHtmlBody(newUser, fullUrl(req)),
+                  html: buildHtmlBody(newUser, getFullUrl(req)),
                   // html : "the <strong>verification</strong> email",
                   successCallback: function (success) {
                     console.log("Mail sent");
@@ -188,7 +147,7 @@ router
 
   })
 
-  .get('/sponsor/:sponsorTag', (req, res, next) => {
+  .get("/sponsor/:sponsorTag", (req, res, next) => {
     const {
       sponsorTag
     } = req.params;
@@ -204,7 +163,7 @@ router
       }, next)
   })
 
-  .get('/allsponsors', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .get("/allsponsors", auth.loginRequired, auth.adminRequired, (req, res, next) => {
 
     db("sponsors").then((sponsors) => {
       res.send(sponsors);
@@ -212,7 +171,7 @@ router
   })
 
   //Update existing sponsor details
-  .put('/sponsor/:sponsorTag', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .put("/sponsor/:sponsorTag", auth.loginRequired, auth.adminRequired, (req, res, next) => {
     const {
       sponsorTag
     } = req.params;
@@ -222,10 +181,10 @@ router
       .update(req.body)
       .then((result) => {
         if (result === 0) {
-          return res.send(400)
+          return res.send(400);
         }
         res.send(200);
-      }, next)
+      }, next);
   })
    
 
@@ -319,19 +278,19 @@ router
   // All speakers GET
   .get('/allSpeakers', (req, res, next) => {
 
-    var mySpeaker = new Speaker();
+    const mySpeaker = new Speaker();
 
-    mySpeaker.allSpeakers(function(rows) {
+    mySpeaker.allSpeakers((rows) => {
         res.send(rows);
-    }, next)
+    }, next);
 
   })
 
   .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
     const { id } = req.params;
-    var mySpeaker = new Speaker(id);
+    const mySpeaker = new Speaker(id);
 
-    mySpeaker.getSpeaker(function(speaker) {
+    mySpeaker.getSpeaker((speaker) => {
       if (speaker.errno) {
         return res.send(400);
       } else if (_.isEmpty(speaker)) {
@@ -339,7 +298,7 @@ router
       } else {
         res.send(speaker);
       }
-    }, next)
+    }, next);
   })
 
   //POST/Add Speaker
@@ -367,8 +326,6 @@ router
       id
     } = req.params;
 
-    console.log(req.body);
-
     db("speakers")
       .where("id", id)
       .update(req.body)
@@ -381,7 +338,7 @@ router
   })
 
   //form uploads for images
-  .post('/upload', auth.loginRequired, auth.adminRequired, function(req, res){
+  .post('/upload', auth.loginRequired, auth.adminRequired, (req, res) => {
 
     // create an incoming form object
     var form = new formidable.IncomingForm();
@@ -404,7 +361,7 @@ router
     });
 
     // once all the files have been uploaded, send a response to the client
-    form.on('end', function() {
+    form.on('end', () => {
       res.end('success');
     });
 
@@ -414,29 +371,64 @@ router
   })
 
   // GET full Sessions dataset
-  .get('/sessionsFull', (req, res, next) => {
+  .get("/sessionsFull", (req, res, next) => {
 
-    var sessionsFull = new Agenda();
+    const sessionsFull = new Agenda();
 
-    sessionsFull.fullDataset(function(result){
+    sessionsFull.fullDataset((result) => {
       res.send(result);
-    }, next)
+    }, next);
 
   })
 
-  .get('/sessionsParent', (req, res, next) => {
+  .get("/sessionsParent", (req, res, next) => {
 
-    var sessionsParent = new Agenda();
+    const sessionsParent = new Agenda();
 
-    sessionsParent.getParents(function(result){
+    sessionsParent.getParents((result) => {
       res.send(result);
-    }, next)
+    }, next);
+
+  })
+
+  .get("/session/:sessionId", (req, res, next) => {
+
+    const { sessionId } = req.params;
+    const sessionsParent = new Agenda();
+
+    sessionsParent.getSession(sessionId, (result) => {
+      res.send(result);
+    }, next);
+
+  })
+
+  .get("/sessionsChildren/:parentId", (req, res, next) => {
+
+    const { parentId } = req.params;
+    const sessionsChildren = new Agenda();
+
+    sessionsChildren.getChildren(parentId, (result) => {
+      res.send(result);
+    }, next);
+
+  })
+
+  // Update/PUT existing session
+  .put("/session/:sessionId", (req, res, next) => {
+
+    const { sessionId } = req.params;
+    // const sessionPut = new Agenda();
+
+    agenda.updateSession(sessionId, req.body, (result) => {
+      res.send(result);
+    }, next);
 
   })
 
   //POST/Add new session
-  .post('/session', auth.loginRequired, auth.adminRequired, (req, res, next) => {
-    var newSession = req.body;
+  .post("/session", auth.loginRequired, auth.adminRequired, (req, res, next) => {
+
+    const newSession = req.body;
 
     db("agenda")
       .insert(newSession)
@@ -450,12 +442,13 @@ router
           error: err.message
         });
 
-      })
+      });
+
   })
 
-  .get('/report/:query', (req, res, next) => {
+  .get("/report/:query", (req, res, next) => {
     // This API accepts the following queries
-      // - totalRegistrations
+      // - totalRegistrations - Counts all the registrations
       // - customerSplit - Customer registration split
       // - regPerDay - Registrations per day
 
@@ -467,9 +460,11 @@ router
               .count("id as count")
               .select("event_profile")
               .groupBy("event_profile")
-              .then(function(result){
+              .then((result) => {
+
                 res.send(result);
-              })
+
+              });
           break;
 
           case "customerSplit":
@@ -477,23 +472,27 @@ router
               .count("id as count")
               .select("orgRole")
               .groupBy("orgRole")
-              .where("event_profile","Customer")
+              .where("event_profile", "Customer")
               .whereNot("orgRole", "")
-              .then(function(result){
+              .then((result) => {
+
                 res.send(result);
-              })
+
+              });
           break;
 
           case "regPerDay":
             db.raw("SELECT CAST(date_created as DATE) AS dateAdded, COUNT(id) as count FROM users GROUP BY dateAdded")
-              .then(function(result){
+              .then((result) => {
+
                 res.send(result[0]);
-              })
+                
+              });
           break;
 
         default:
-        res.status(500);
-        res.send("Not a valid report query");
+          res.status(500);
+          res.send("Not a valid report query");
 
     }
 
@@ -515,8 +514,8 @@ router
     
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
       return res.json({
-        "responseCode": 1,
-        "responseDesc": "Please select captcha"
+        responseCode: 1,
+        responseDesc: "Please select captcha"
       });
     }
 

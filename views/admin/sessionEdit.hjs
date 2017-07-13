@@ -28,12 +28,11 @@
 
                                         <form id="frmMain" method="get" role="form" class="form-horizontal">
 
-                                            <div class="form-group"><label class="col-lg-2 control-label">Select Parent session</label>
+                                            <div id="divParent" class="form-group"><label class="col-lg-2 control-label">Select Parent session</label>
                                                 <div class="col-lg-8">
 
                                                     <select id="selParent" class="form-control" required>
                                                         <option disabled selected value="">Select the Parent session</option>
-                                                        <option value="0">None - This will create a new Parent session</option>
                                                     </select>
 
                                                 </div>
@@ -84,8 +83,18 @@
                                                 </div>
                                             </div>
 
+                                            <div id="divChildren" class="form-group"><label class="col-lg-2 control-label">Child sessions</label>
+                                                <div class="col-lg-8">
+                                                    <strong>Click</strong> on the title below to edit:
+                                                    <ul id="ulChildren">
+                                                        
+                                                    </ul>
+                                                
+                                                </div>
+                                            </div>
+
                                             <div class="text-center">
-                                                <button id="btnAdd" type="button" class="btn btn-info rounded ">Add Session</button>
+                                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update Session</button>
                                             </div>
 
                                         </form>
@@ -118,34 +127,95 @@
                 <script src="/admin-assets/plugins/summernote/summernote.min.js"></script>
 
 <script>
+    //Declare all input fields as variables, for easier use later
+    var $frmMain = $("#frmMain");
+    var $hName = $("#hName");
+    var $txtTitle = $("#txtTitle");
+    var $txtTabName = $("#txtTabName");
+    var $txtLocation = $("#txtLocation");
+    var $txtTimeStart = $("#txtTimeStart");
+    var $txtTimeEnd = $("#txtTimeEnd");
+    var $txtImageUrl = $("#txtImageUrl");
+    var $selParent = $("#selParent");
+    var $selSpeaker = $("#selSpeaker");
+    var $txtContent = $("#txtContent");
+
+    var $divTabName = $("#divTabName");
+    var $divTimeStart = $("#divTimeStart");
+    var $divTimeEnd = $("#divTimeEnd");
+    var $divSpeaker = $("#divSpeaker");
+    var $divImageUrl = $("#divImageUrl");
+    var $divParent = $("#divParent");
+    var $divChildren = $("#divChildren")
+
+    //Declare alert panel objects as variables, for easier use later
+    //The alert panel is used to show success or failure on record add
+    var $alDiv = $("#alDiv");
+    var $alMessage = $("#alMessage");
+
+    function toggleHiddenFields (state) {
+        
+        if (state === "parent") {
+            $divTabName.hide();
+            $divSpeaker.hide();
+            $divImageUrl.hide();
+            $divParent.hide();
+            $divTimeStart.show();
+            $divTimeEnd.show();
+            $divChildren.show();
+        } else {
+            $divTabName.show();
+            $divSpeaker.show();
+            $divImageUrl.show();
+            $divParent.show();
+            $divTimeStart.hide();
+            $divTimeEnd.hide();
+            $divChildren.hide();
+        }
+    }
+
+    function displayAlert(messageType, message, fadeTime) {
+
+        fadeTime = fadeTime || 10000;
+
+        if (messageType.toLowerCase() === "success") {
+            divClass = "alert-success";
+            divClassRemove = "alert-danger"
+        } else {
+            divClass = "alert-danger";
+            divClassRemove = "alert-success"
+        }
+
+        $("#alDiv").removeClass(divClassRemove);
+        $("#alDiv").addClass(divClass);
+        $("#alMessage").html("<strong>" + messageType + " - </strong>" + message);
+        $("#alDiv").show();
+        $("#alDiv").fadeOut(fadeTime);
+    }
+
+    function populateChildren (parentId) {
+
+        $.ajax({
+            type: "GET",
+            url: "/api/sessionsChildren/" + parentId,
+            success: function (children) {
+
+                $.each(children, function (index, child) {
+                    $("#ulChildren").append("<li><a href=/admin/sessionEdit/" + child.id + ">"  + child.title + "</a></li>");
+                })
+
+            }
+        })
+
+    }
+
+</script>
+
+<script>
     $(document).ready(function(){
 
-        //Declare all input fields as variables, for easier use later
-        var $frmMain = $("#frmMain");
-        var $hName = $("#hName");
-        var $txtTitle = $("#txtTitle");
-        var $txtTabName = $("#txtTabName");
-        var $txtLocation = $("#txtLocation");
-        var $txtTimeStart = $("#txtTimeStart");
-        var $txtTimeEnd = $("#txtTimeEnd");
-        var $txtImageUrl = $("#txtImageUrl");
-        var $selParent = $("#selParent");
-        var $selSpeaker = $("#selSpeaker");
-        var $txtContent = $("#txtContent");
-
-        var $divTabName = $("#divTabName");
-        var $divTimeStart = $("#divTimeStart");
-        var $divTimeEnd = $("#divTimeEnd");
-        var $divSpeaker = $("#divSpeaker");
-        var $divImageUrl = $("#divImageUrl");
-
-        //Declare alert panel objects as variables, for easier use later
-        //The alert panel is used to show success or failure on record add
-        var $alDiv = $("#alDiv");
-        var $alMessage = $("#alMessage");
-
         $("#liMenuSession").addClass("active");
-        $("#liSubMenuSessionAdd").addClass("active");
+        // $("#liSubMenuSessionAdd").addClass("active");
 
         $('#txtContent').summernote({
             height: "450px",
@@ -170,7 +240,7 @@
                 $.each(speakers, function(index, speaker) {
                     $selSpeaker.append("<option value='" + speaker.id + "'>" + speaker.fullName + "</option>");
                 })
-                    
+
             },
             error: function() {
                 $alDiv.addClass("alert-danger");
@@ -206,30 +276,51 @@
             }
         });
 
+        //Populate session fields
+        $.ajax({
+            type: "GET",
+            url: "/api/session/{{sessionId}}",
+
+            success: function (session) {
+
+                $txtTitle.val(session.title);
+                $txtLocation.val(session.location);
+                $txtContent.summernote("code", session.content);
+
+                if (!session.parentId) {
+                    toggleHiddenFields("parent");
+
+                    $txtTimeStart.val(session.timeStart);
+                    $txtTimeEnd.val(session.timeEnd);
+
+                    populateChildren(session.id);
+
+                } else {
+                    toggleHiddenFields("child");
+
+                    $selParent.val(session.parentId);
+                    $selSpeaker.val(session.speakerId);
+                    $txtTabName.val(session.tabName);
+                    $txtImageUrl.val(session.imageUrl);
+                }
+            }
+            
+        })
+
         //If a parent session, hide all the child session fields
-        $selParent.on("change", function(){
+        $selParent.on("change", function () {
             if (this.value === "0") {
-                $divTabName.hide();
-                $divSpeaker.hide();
-                $divImageUrl.hide();
-
-                $divTimeStart.show();
-                $divTimeEnd.show();
+                toggleHiddenFields("parent");
             } else {
-                $divTabName.show();
-                $divSpeaker.show();
-                $divImageUrl.show();
-
-                $divTimeStart.hide();
-                $divTimeEnd.hide();
+                toggleHiddenFields("child");
             }
         })
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
-        $('#btnAdd').on('click', function() {
+        $('#btnUpdate').on('click', function() {
 
             var session = {
-                parentId: $selParent.val(),
+                parentId: $selParent.val() || 0,
                 title: $txtTitle.val(),
                 speakerId: $selSpeaker.val(),
                 tabName: $txtTabName.val(),
@@ -240,18 +331,22 @@
                 content: $txtContent.summernote("code"),
             }
 
+            console.log(session);
+
             $.ajax({
-                type: 'POST',
-                url: '/api/session',
+                type: 'PUT',
+                url: '/api/session/{{sessionId}}',
                 data: session,
 
-                success: function(delegate) {
+                success: function() {
                     displayAlert("Success", "Record successfully added.", 6000);
 
+                    window.history.back();
+
                     //Reset all form elements
-                    $frmMain[0].reset();
-                    $('#txtContent').summernote('code', '');
-                    $('#txtContent').summernote('reset');
+                    // $frmMain[0].reset();
+                    // $('#txtContent').summernote('code', '');
+                    // $('#txtContent').summernote('reset');
 
                 },
 
@@ -268,24 +363,5 @@
         });
 
     });
-
-    function displayAlert(messageType, message, fadeTime) {
-
-        fadeTime = fadeTime || 10000;
-
-        if (messageType.toLowerCase() === "success") {
-            divClass = "alert-success";
-            divClassRemove = "alert-danger"
-        } else {
-            divClass = "alert-danger";
-            divClassRemove = "alert-success"
-        }
-
-        $("#alDiv").removeClass(divClassRemove);
-        $("#alDiv").addClass(divClass);
-        $("#alMessage").html("<strong>" + messageType + " - </strong>" + message);
-        $("#alDiv").show();
-        $("#alDiv").fadeOut(fadeTime);
-    }
 
 </script>
