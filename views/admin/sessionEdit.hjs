@@ -1,0 +1,367 @@
+                <link href="/admin-assets/plugins/summernote/summernote.css" rel="stylesheet">
+                <style>
+                    .button-margin {
+                        margin-right: 10px;
+                    }
+
+                    .button-hide {
+                        display: none;
+                    }
+
+                    #upImage {
+                        display: none;
+                    }
+
+                </style>
+                <!--start main content-->
+                <section id="main-content">
+                    <div class="space-30"></div>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <header class="panel-heading">
+                                        <h2 id="hName" class="panel-title"></h2>
+                                    </header>
+                                    <div class="panel-body">
+
+                                        <form id="frmMain" method="get" role="form" class="form-horizontal">
+
+                                            <div id="divParent" class="form-group"><label class="col-lg-2 control-label">Select Parent session</label>
+                                                <div class="col-lg-8">
+
+                                                    <select id="selParent" class="form-control" required>
+                                                        <option disabled selected value="">Select the Parent session</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-2 control-label">Title</label>
+                                                <div class="col-lg-8"><input id="txtTitle" type="text" placeholder="Title" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div id="divSpeaker" class="form-group"><label class="col-lg-2 control-label">Select Speaker</label>
+                                                <div class="col-lg-8">
+
+                                                    <select id="selSpeaker" class="form-control" required>
+                                                        <option selected value="0">Select the primary speaker</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            <div id="divTabName" class="form-group"><label class="col-lg-2 control-label">Tab Name</label>
+                                                <div class="col-lg-8"><input id="txtTabName" type="text" placeholder="Tab Name, used for tabs on agenda page" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-2 control-label">Location</label>
+                                                <div class="col-lg-8"><input id="txtLocation" type="text" placeholder="Location of the session" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div id="divTimeStart" class="form-group"><label class="col-lg-2 control-label">Time Start</label>
+                                                <div class="col-lg-8"><input id="txtTimeStart" type="text" placeholder="06:00 or 14:00" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div id="divTimeEnd" class="form-group"><label class="col-lg-2 control-label">Time End</label>
+                                                <div class="col-lg-8"><input id="txtTimeEnd" type="text" placeholder="06:00 or 14:00" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div id="divImageUrl" class="form-group"><label class="col-lg-2 control-label">Image URL</label>
+                                                <div class="col-lg-8"><input id="txtImageUrl" type="text" placeholder="Image URL: absolute or relative" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group"><label class="col-lg-2 control-label">Content</label>
+                                                <div class="col-lg-8"><textarea id="txtContent" placeholder="Biography" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div id="divChildren" class="form-group"><label class="col-lg-2 control-label">Child sessions</label>
+                                                <div class="col-lg-8">
+                                                    <strong>Click</strong> on the title below to edit:
+                                                    <ul id="ulChildren">
+                                                        
+                                                    </ul>
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="text-center">
+                                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update Session</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                     <div id="alDiv" class="alert alert-dismissable col-lg-offset-3 col-lg-6 text-center" hidden>
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        <span id="alMessage">   </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end container-->
+
+                    <!--footer start-->
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <span>&copy; Copyright 2017. chirpee.io</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer end-->
+                </section><!--end main content-->
+
+                {{> jscript}}
+
+                <script src="/admin-assets/plugins/summernote/summernote.min.js"></script>
+
+<script>
+    //Declare all input fields as variables, for easier use later
+    var $frmMain = $("#frmMain");
+    var $hName = $("#hName");
+    var $txtTitle = $("#txtTitle");
+    var $txtTabName = $("#txtTabName");
+    var $txtLocation = $("#txtLocation");
+    var $txtTimeStart = $("#txtTimeStart");
+    var $txtTimeEnd = $("#txtTimeEnd");
+    var $txtImageUrl = $("#txtImageUrl");
+    var $selParent = $("#selParent");
+    var $selSpeaker = $("#selSpeaker");
+    var $txtContent = $("#txtContent");
+
+    var $divTabName = $("#divTabName");
+    var $divTimeStart = $("#divTimeStart");
+    var $divTimeEnd = $("#divTimeEnd");
+    var $divSpeaker = $("#divSpeaker");
+    var $divImageUrl = $("#divImageUrl");
+    var $divParent = $("#divParent");
+    var $divChildren = $("#divChildren")
+
+    //Declare alert panel objects as variables, for easier use later
+    //The alert panel is used to show success or failure on record add
+    var $alDiv = $("#alDiv");
+    var $alMessage = $("#alMessage");
+
+    function toggleHiddenFields (state) {
+        
+        if (state === "parent") {
+            $divTabName.hide();
+            $divSpeaker.hide();
+            $divImageUrl.hide();
+            $divParent.hide();
+            $divTimeStart.show();
+            $divTimeEnd.show();
+            $divChildren.show();
+        } else {
+            $divTabName.show();
+            $divSpeaker.show();
+            $divImageUrl.show();
+            $divParent.show();
+            $divTimeStart.hide();
+            $divTimeEnd.hide();
+            $divChildren.hide();
+        }
+    }
+
+    function displayAlert(messageType, message, fadeTime) {
+
+        fadeTime = fadeTime || 10000;
+
+        if (messageType.toLowerCase() === "success") {
+            divClass = "alert-success";
+            divClassRemove = "alert-danger"
+        } else {
+            divClass = "alert-danger";
+            divClassRemove = "alert-success"
+        }
+
+        $("#alDiv").removeClass(divClassRemove);
+        $("#alDiv").addClass(divClass);
+        $("#alMessage").html("<strong>" + messageType + " - </strong>" + message);
+        $("#alDiv").show();
+        $("#alDiv").fadeOut(fadeTime);
+    }
+
+    function populateChildren (parentId) {
+
+        $.ajax({
+            type: "GET",
+            url: "/api/sessionsChildren/" + parentId,
+            success: function (children) {
+
+                $.each(children, function (index, child) {
+                    $("#ulChildren").append("<li><a href=/admin/sessionEdit/" + child.id + ">"  + child.title + "</a></li>");
+                })
+
+            }
+        })
+
+    }
+
+</script>
+
+<script>
+    $(document).ready(function(){
+
+        $("#liMenuSession").addClass("active");
+        // $("#liSubMenuSessionAdd").addClass("active");
+
+        $('#txtContent').summernote({
+            height: "450px",
+            airMode: false,
+            placeholder: "Session content. * This is a rich text editor, highlight text for formatting options. *",
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+            ]
+        });
+
+        //Populate speaker dropdown
+        $.ajax({
+            type: 'GET',
+            url: '/api/allSpeakers/',
+
+            success: function(speakers) {
+
+                $.each(speakers, function(index, speaker) {
+                    $selSpeaker.append("<option value='" + speaker.id + "'>" + speaker.fullName + "</option>");
+                })
+
+            },
+            error: function() {
+                $alDiv.addClass("alert-danger");
+                $alMessage.html("<strong>Error - </strong> Error retrieving speaker information.");
+                $alDiv.show();
+
+                //On error, disable all form fields
+                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
+
+            }
+        });
+
+        //Populate Parent Session dropdown
+        $.ajax({
+            type: 'GET',
+            url: '/api/sessionsParent/',
+
+            success: function(sessions) {
+
+                $.each(sessions, function(index, session) {
+                    $selParent.append("<option value='" + session.id + "'>" + session.title + "</option>");
+                })
+                    
+            },
+            error: function() {
+                $alDiv.addClass("alert-danger");
+                $alMessage.html("<strong>Error - </strong> Error retrieving speaker information.");
+                $alDiv.show();
+
+                //On error, disable all form fields
+                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
+
+            }
+        });
+
+        //Populate session fields
+        $.ajax({
+            type: "GET",
+            url: "/api/session/{{sessionId}}",
+
+            success: function (session) {
+
+                $txtTitle.val(session.title);
+                $txtLocation.val(session.location);
+                $txtContent.summernote("code", session.content);
+
+                if (!session.parentId) {
+                    toggleHiddenFields("parent");
+
+                    $txtTimeStart.val(session.timeStart);
+                    $txtTimeEnd.val(session.timeEnd);
+
+                    populateChildren(session.id);
+
+                } else {
+                    toggleHiddenFields("child");
+
+                    $selParent.val(session.parentId);
+                    $selSpeaker.val(session.speakerId);
+                    $txtTabName.val(session.tabName);
+                    $txtImageUrl.val(session.imageUrl);
+                }
+            }
+            
+        })
+
+        //If a parent session, hide all the child session fields
+        $selParent.on("change", function () {
+            if (this.value === "0") {
+                toggleHiddenFields("parent");
+            } else {
+                toggleHiddenFields("child");
+            }
+        })
+
+        //Record update on Update button click. Updates the record and shows success/error alert panel
+        $('#btnUpdate').on('click', function() {
+
+            var session = {
+                parentId: $selParent.val() || 0,
+                title: $txtTitle.val(),
+                speakerId: $selSpeaker.val(),
+                tabName: $txtTabName.val(),
+                location: $txtLocation.val(),
+                timeStart: $txtTimeStart.val(),
+                timeEnd: $txtTimeEnd.val(),
+                imageUrl: $txtImageUrl.val(),
+                content: $txtContent.summernote("code"),
+            }
+
+            console.log(session);
+
+            $.ajax({
+                type: 'PUT',
+                url: '/api/session/{{sessionId}}',
+                data: session,
+
+                success: function() {
+                    displayAlert("Success", "Record successfully added.", 6000);
+
+                    window.history.back();
+
+                    //Reset all form elements
+                    // $frmMain[0].reset();
+                    // $('#txtContent').summernote('code', '');
+                    // $('#txtContent').summernote('reset');
+
+                },
+
+                error: function(xhr, textStatus, errorThrown) {
+                    var error = jQuery.parseJSON(xhr.responseText);
+
+                    $alDiv.addClass("alert-danger");
+                    $alMessage.html("<strong>Error - </strong> Could not add record. <br><br>" + error.error);
+                    $alDiv.show();
+                    // $alDiv.fadeOut ( 6000 );
+                }
+                
+            })
+        });
+
+    });
+
+</script>
