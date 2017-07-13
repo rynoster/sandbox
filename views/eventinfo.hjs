@@ -96,7 +96,7 @@
             <div class="col-md-2">
                 <p>09:00 - 11:00</p><br>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <p class="text-left"><strong>Opening plenary</strong></p>
                 <p style="font-size:90%">Datacentrix Showcase 2017 promises a mind-blowing keynote by venture capitalist and former banker, Dr. Michael Jordaan. Dr. Jordaan will look at the reality of the singularity and how business needs to respond to this paradigm shift we
                     are entering. Other speakers like David Charmers, Chief Technologist, VP EMEA at Hewlett Packard Enterprise will focus on the importance of innovation in this new age.
@@ -110,6 +110,20 @@
             <div class="col-md-2 col-xs-6">
                 <div class="profile-header-container">
                     <div class="profile-header-img text-center">
+                        <img class="img-circle" src="images/speakers/ahmed.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container" style="padding-left:2px">
+                            <span class="label label-default rank-label">Ahmed Mahomed, CEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Speaker Profile 2-->
+            <div class="col-md-2 col-xs-6">
+                <div class="profile-header-container">
+                    <div class="profile-header-img text-center">
                         <img class="img-circle" src="images/speakers/michaeljordaan.jpg" />
                         <!-- badge -->
                         <div class="rank-label-container" style="padding-left:5px">
@@ -119,7 +133,7 @@
                 </div>
             </div>
 
-            <!-- Speaker Profile 2-->
+            <!-- Speaker Profile 3-->
             <div class="col-md-2 col-xs-6">
                 <div class="profile-header-container">
                     <div class="profile-header-img text-center">
@@ -224,7 +238,7 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Cosume a highly agile, next generation cloud services. </h2>
+                                        <h2 style="color:slategray">Consume a highly agile, next generation cloud services.</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Jacques Viljoen / Senior Consultant, Datacentrix</h5>
                                         <p>
                                             Datacentrix offers public and private cloud services from its tier 3+ capable, highly-available data centre infrastructure.
@@ -328,12 +342,13 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Case Study: BankServ - Delivering </h2>
+                                        <h2 style="color:slategray">BankservAfrica influences the demand for local HP Nonstop skills</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Justin Hamman / Account Manager, Datacentrix</h5>
                                         <p>
-                                            HP Nonstop Upgrade. Bankserv Upgraded their HP Nonstop Environment to the latest version though DCX. This was the first HP Nonstop Transaction that was done through an HP partner globally, EVER. The importance of the environment is key to the entire South
-                                            African financial sector as it impacts on the processing of all card transactions in SA. The reason Bankserv chose to transact through DCX is because of our commitment to develop a local support base of Nonstop
-                                            resources. All the big banks and Vodacom run Nonstop and Bankserv wants to motivate why other clients should replicate their arrangement.
+                                            Datacentrix has become the first channel supplier of HPE NonStop locally through a transaction with BankservAfrica, Africa’s largest automated clearing house. Factors that influenced the decision involved the non-negotiable requirements for always-available
+                                            transactions and the dire need to close the southern African ICT skills gap. <br><br> Switching from the traditional HPE contract to Datacentrix has boosted the path
+                                            to building a greater local support structure and NonStop user group in southern Africa and into Africa. BankservAfrica is promoting this regional, HP NonStop community by influencingSouth Africa’s financial
+                                            giants to take the same route and join hands in creating a bigger demand for home-grown, specialised ICT skills.<br><br> Our job as business leaders is to create skills demand and develop expertise locally.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -435,7 +450,7 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Digital business transformation initiatives </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> JGordon Fairlie / Enterprise Sales Executive, Riverbed</h5>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Gordon Fairlie / Enterprise Sales Executive, Riverbed</h5>
                                         <p>
                                             With companies continuing to invest heavily in digital business initiatives, their ability to measure and control the quality of user experience remains a challenge. Riverbed SteelCentral now empowers customers to measure and troubleshoot all parts of
                                             the digital experience, from the user’s experience on the device to the back-end network, infrastructure, cloud and application.
@@ -557,7 +572,7 @@
                                 <div class="rank-label-container" style="padding-left:5px">
                                     <span class="label label-default rank-label">Linda Moreira</span>
                                     <div class="divide10"></div>
-                                    <p style="font-size:80%">Head of DC's ABSA</p>
+                                    <p style="font-size:80%">Head of DCs ABSA</p>
                                     <div class="divide10"></div>
                                 </div>
                             </div>
@@ -712,12 +727,13 @@
                                 <div class="tab-content" id="tab-1">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Trading billions in nanno seconds - how artificial inteligence is used to acheived this</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwanza / Head of IT at JSE</h5>
+                                        <h2 style="color:slategray">Trading billions in nanno seconds - how artificial intelligence is used to achieve this</h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwansa / Head of IT at JSE</h5>
                                         <p>
-                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has both local and international expeirece in the the field of stock traders and technologies applied to perform their daily tasks. He shares
-                                            with us the reality of trades today and how they mange to keep track of buying and selling on the stock excahnge. How is this possible and what is on their roadmap.
-                                            <br><br> Do not miss this oppertunity to hear from the leading minds on how next generation technology is applied to business.
+                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has both local and international experience in the the field of stock traders and technologies applied to perform their daily tasks. He shares
+                                            with us the reality of trades today and how they manage to keep track of buying and selling on the stock exchange. How is this possible and what is on their roadmap?
+
+                                            <br><br>Do not miss this opportunity to hear from one of the leading minds on how next generation technology is applied to business.
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -730,13 +746,13 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence.
-                                            <br> A DC in a box. How has this helped ABSA get ahead of its competitors. </h2>
+                                            <br> Hyper convergence is transforming Africa’s data centres. A DC in a box; how has this helped Absa to get ahead of its competitors?</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Werner Vorster / Sales Executive, Nutanix</h5>
                                         <p>
-                                            This case study shows how through collaboration between the system integrator Datacentrix, a world class OEM and the leader in the Enterprise hyper convergence space were able to ensure that the customer was able to achieve their goals of transforming
-                                            their legacy infrastructure platforms and truly transform their IT estate. Ensuring that their business was able to transform and embrace cutting edge technology whilst ensuring high availability and uptime
-                                            thus making sure that the services they offered to their customers were available at all times.
-                                            <br><br> Hear from the program and account team directly how this was achievd.
+                                            This case study shows how – through collaboration between Datacentrix, the system integrator; a world class OEM; \and the leader in the enterprise hyper convergence space – these industry players were able to ensure that Absa achieved its goals of truly
+                                            transforming its legacy infrastructure platforms and IT estate. <br><br> The multiple-country project embraced cutting edge technology that has resulted in IT capacity
+                                            being converged and automated, enabling the banks within nine African countries to work faster and more efficiently, while ensuring uptime and the high availability of services. Hear from the programme and account
+                                            team directly about how this was achieved.
 
                                         </p>
                                     </div>
@@ -767,8 +783,8 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Delivering realtime security analytics </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Wayne Olsen, Business Unit Manger: Security, Datacentrix</h5>
+                                        <h2 style="color:slategray">Delivering real-time security analytics </h2>
+                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Wayne Olsen, Business Unit Manager: Security, Datacentrix</h5>
                                         <p>
                                             Datacentrix provides end-to-end security solutions for the monitoring, assessment and defence of our customers’ information assets. Our objective is to achieve complete confidentiality, data integrity, information availability, accountability and assurance
                                             (governance) for our customers.
@@ -834,12 +850,14 @@
                                 <div class="tab-content" id="tab-1">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">A market leader in the enterprise content management and enterprise information management domains</h2>
+                                        <h2 style="color:slategray">EIM, ECM, DM, ERM, KM and stuff</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Bennie Kotze / EIM Consulting Manager, Datacentrix</h5>
-                                        <p>Datacentrix is a market leader in the enterprise content management and enterprise information management domains in the local market. Organisations need accurate, timely and relevant information to plan, allocate
-                                            resources and manage the business in order to achieve strategic goals and objectives.
-                                            <br><br> Enterprise Information Management (EIM) involves structuring and managing information assets to enhance efficiencies, promote transparency and enable business insight. This comprises managing information
-                                            across an organisation to enable informed management.
+                                        <p>The need to manage structured content and unstructured data turns effective Enterprise Information Management (EIM) into a strategic enabler that puts you ahead of your competitors.
+                                            <br><br> <strong>Join the discussion.</strong><br><br> Take-aways:
+                                            <br>-Business case for enterprise information management
+                                            <br>-Principles and good practice in management information
+                                            <br>-The importance of information behaviours and values
+
                                         </p>
                                     </div>
                                     <div class="col-md-3 visible-lg visible-md visible-sm">
@@ -881,12 +899,8 @@
                 <p>16:00 - 17:00</p><br>
             </div>
             <div class="col-md-6">
-                <p class="text-left"><strong>Closing and Prize giving on Datacentrix stand</strong></p>
-                <p style="font-size:90%">As the event draws to a close, we look at the days and what we gained from all the session. Rudie Raath, the event host will do a high-level recap, followed by various prize givings and lucky draws.
-                    <br><br>
-                    <strong>Only people present will qualify for the various prizes. </strong>
-
-
+                <p class="text-left"><strong>Prize giving at the Datacentrix stand</strong></p>
+                <p style="font-size:90%">Stand in line to win the end-of-day lucky draw prizes sponsored by our participating technology partners. You need to be present to be eligible to win.
                 </p>
                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
             </div>
@@ -901,9 +915,10 @@
                 <p>17:00 - 19:45</p><br>
             </div>
             <div class="col-md-6">
-                <p class="text-left"><strong>HPE and Intel cocktail event with perfroming artists</strong></p>
-                <p style="font-size:90%">Please join us at this, not-to-be-missed event where we will see legendary artists "The Muses" perform with "1st Project". Liquid chefs will be mixing up their world-class cocktails for delegates to enjoy. We also take your safety at heart
-                    and do not want you to drive after a few drinks. A take-me-home service will be avaialble to conference delegates after this event.
+                <p class="text-left"><strong>HPE and Intel cocktail event with performing artists</strong></p>
+                <p style="font-size:90%">Please join us at this, not-to-be-missed event for our final lucky draw prize and the closing of Datacentrix Showcase 2017. Enjoy performances by legendary artists "The Muses" with "1st Project". Liquid Chefs will be mixing up their world-class
+                    cocktails for delegates to enjoy. A take-me-home service will be available to conference delegates after this event.
+
                 </p>
                 <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
 
