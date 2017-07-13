@@ -238,7 +238,7 @@
                                 <div class="tab-content" id="tab-4">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Consume a highly agile, next generation cloud services.</h2>
+                                        <h2 style="color:slategray">Consume highly agile, next generation cloud services</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Jacques Viljoen / Senior Consultant, Datacentrix</h5>
                                         <p>
                                             Datacentrix offers public and private cloud services from its tier 3+ capable, highly-available data centre infrastructure.
@@ -278,7 +278,7 @@
                         <div class="tabs tabs-top">
 
                             <ul class="etabs text-center">
-                                <li class="tab"><a href="#tab-1">Hewlette-Packard Enterprise</a></li>
+                                <li class="tab"><a href="#tab-1">Hewlette Packard Enterprise</a></li>
                                 <li class="tab"><a href="#tab-2">Cisco</a></li>
                                 <li class="tab"><a href="#tab-3">Lenovo </a></li>
                                 <li class="tab"><a href="#tab-4">Case Study: BankServ</a></li>
@@ -433,7 +433,7 @@
                                 <div class="tab-content" id="tab-3">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">TCloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
+                                        <h2 style="color:slategray">Cloud usage is now over 90%. <br>Is your IT security keeping up?</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Trevor Coetzee / Regional Director, Sub-Saharan Africa at McAfee</h5>
                                         <p>
                                             The state of cloud adoption and security: With security and compliance more important than ever, see how IT security professionals around the world plan to secure their clouds. What you should know and trust in the cloud grows.
@@ -624,7 +624,7 @@
                                 <div class="tab-content" id="tab-1">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">The Singularity of Reality is here. <br>Are your Ready for It? </h2>
+                                        <h2 style="color:slategray">The reality of singularity is here. <br>Are you ready for it?</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Pauline Barnes / Channel Account Executive, Hauwei</h5>
                                         <p>
                                             Singularity, is defined by Wikipedia as the "moment in time when artificial intelligence will have progressed to the point of a greater-than-human intelligence”. Huawei is at the leading edge of this new technology and has built an open platform eco system
@@ -727,7 +727,7 @@
                                 <div class="tab-content" id="tab-1">
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Trading billions in nanno seconds - how artificial intelligence is used to achieve this</h2>
+                                        <h2 style="color:slategray">Trading billions in nano seconds - how artificial intelligence is used to achieve this</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwansa / Head of IT at JSE</h5>
                                         <p>
                                             A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has both local and international experience in the the field of stock traders and technologies applied to perform their daily tasks. He shares
@@ -746,7 +746,7 @@
                                     <div class="divide30"></div>
                                     <div class="row session-body col-md-9 col-xs-12">
                                         <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence.
-                                            <br> Hyper convergence is transforming Africa’s data centres. A DC in a box; how has this helped Absa to get ahead of its competitors?</h2>
+                                            <br> Hyper convergence is transforming Africa’s data centres.</h2>
                                         <h5 style="color:darkcyan"><i class="icon-mic"></i> Werner Vorster / Sales Executive, Nutanix</h5>
                                         <p>
                                             This case study shows how – through collaboration between Datacentrix, the system integrator; a world class OEM; \and the leader in the enterprise hyper convergence space – these industry players were able to ensure that Absa achieved its goals of truly
