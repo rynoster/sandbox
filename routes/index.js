@@ -212,7 +212,7 @@ router
       res.render("skeleton", {
         // fullDataset: result.slice(0, 3),
         dataSet1: result.slice(0, 5),
-        dataSet2: result.slice(6, result.length),
+        dataSet2: result.slice(5, result.length),
         partials: {
           header: "header", 
           content: "agenda",
