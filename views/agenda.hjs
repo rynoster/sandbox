@@ -8,14 +8,12 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-
-
+    
     .profile-header-container {
         margin: 0 auto;
         text-align: center;
     }
-
-
+    
     .profile-header-img>img.img-circle {
         height: 140px;
         border: 2px solid #005982;
@@ -23,24 +21,24 @@
     /*.profile-header {
             margin-top: 43px;
         }*/
-
+    
     .rank-label-container {
         margin-top: -19px;
         /* z-index: 1000; */
         text-align: center;
     }
-
+    
     .label.label-default.rank-label {
         background-color: #005982;
         padding: 5px 10px 5px 10px;
         border-radius: 27px;
     }
-
+    
     .span {
         display: table;
         margin: 0 auto;
     }
-
+    
     .session-body {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -65,8 +63,7 @@
     <!-- /.container -->
 </section>
 
-<!-- ========================================= Morning block  ============================================================= -->
-<section id="eventinfo" class="outer-top-xs">
+<section id="eventinfoBlock1" class="outer-top-xs">
     <div class="container">
         <h2>Thursday, 27 July 2017</h2>
         <div class="row">
@@ -75,102 +72,17 @@
             </div>
         </div>
 
-        {{#fullDataset}}
-        <!--This section will only render if there are children. It is basically an if statement, with the ^hasChildren further down below being the else -->
-        {{#hasChildren}}
-        <div class="row">
-            <div class="col-md-2">
-                <p>{{timeStart}} - {{timeEnd}}</p><br>
-            </div>
-            <div class="col-md-10">
-                <p class="text-left"><strong>{{title}}</strong></p>
-                <div class="divide30 visible-xs"></div>
-            </div>
-        </div>
-        
-        
-        
-        <div class="row inner-bottom-xs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-2 col-xs-12">
-                        
-                        <div class="tabs tabs-top">
-                            
-                            <ul class="etabs text-center">
-                                {{#sessions}}
-                                <li class="tab"><a href="#{{id}}">{{tabName}}</a></li>
-                                {{/sessions}}
-                            </ul>
-                            
-                            <div class="panel-container">
-
-                                {{#sessions}}
-                                <div class="tab-content" id="{{id}}">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">{{title}}</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> {{speakerName}} / {{speakerProfession}}, {{speakerCompany}}</h5>
-                                        <p>
-                                            {{{content}}}
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="{{imageUrl}}" alt=""></figure>
-                                    </div>
-                                </div>
-                                {{/sessions}}
-
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{/hasChildren}}
-        <!--This is the ELSE statement-->
-        {{^hasChildren}}
-        
-        <div class="row">
-            <div class="col-md-2">
-                <p>{{timeStart}} - {{timeEnd}}</p><br>
-            </div>
-            <div class="col-md-6">
-                <p class="text-left"><strong>{{title}}</strong></p>
-                <p style="font-size:90%">
-                    {{{content}}}
-                </p>
-                {{#location}}
-                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
-                {{/location}}
-            </div>
-
-            {{#imageUrl}}
-            <div class="col-md-4 visible-lg visible-md visible-sm">
-                <figure><img src="{{imageUrl}}" style="" alt=""></figure>
-            </div>
-            {{/imageUrl}}
-
-        </div>
-
-        {{/hasChildren}}
-
-        <div class="row col-md-12">
-            <div class="divide20"> </div>
-            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
-        </div>
-
-        {{/fullDataset}}
+        <!-- For edits on the session formatting, edit agenda-session-block.hjs, referred to as sessionBlock view below -->
+        {{#dataSet1}}
+            {{> sessionBlock}}
+        {{/dataSet1}}
 
     </div>
 </section>
 
-
-
 <!-- ========================================= Lunch ============================================================= -->
 
-<section id="lunchsession" style="background-color:#005982;color:#fff">
+<section id="lunchsession1" style="background-color:#005982;color:#fff">
     <div class="container text-center drk-bg">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <br>
@@ -182,7 +94,7 @@
     <!-- /.container -->
 </section>
 
-<section id="lunchsession" class="img-bg img-bg-soft toby-bg">
+<section id="lunchsession2" class="img-bg img-bg-soft toby-bg">
     <div class="container">
 
         <div class="row">
@@ -278,369 +190,26 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-
     </div>
     <!-- /.container -->
 </section>
-
+    
 <!-- ========================================= Session  ============================================================= -->
-<section id="eventinfo" class="outer-top-xs">
+<div class="divide20"></div>    
+
+<section id="eventinfoBlock1" class="outer-top-xs">
     <div class="container">
 
+        <!-- For edits on the session formatting, edit agenda-session-block.hjs, referred to as sessionBlock view below -->
+        {{#dataSet2}}
+            {{> sessionBlock}}
+        {{/dataSet2}}
 
-        <!-- ========================================= Sessions Block #4 ============================================================= -->
-        <div class="row">
-            <div class="col-md-2">
-                <p>14:15 - 14:35</p><br>
-            </div>
-            <div class="col-md-10">
-                <p class="text-left"><strong>Breakaway session - Block #4</strong></p>
-                <div class="divide30 visible-xs"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-2 col-xs-12">
-                        <div class="tabs tabs-top">
-
-                            <ul class="etabs text-center">
-                                <li class="tab"><a href="#tab-1">Huawei</a></li>
-                                <li class="tab"><a href="#tab-2">HP Inc</a></li>
-                                <li class="tab"><a href="#tab-3">OpenText </a></li>
-                                <li class="tab"><a href="#tab-4">Veritas</a></li>
-                            </ul>
-
-                            <div class="panel-container">
-
-                                <!-- Session  1-->
-                                <div class="tab-content" id="tab-1">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">The Singularity of Reality is here. <br>Are your Ready for It? </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pauline Barnes / Channel Account Executive, Hauwei</h5>
-                                        <p>
-                                            Singularity, is defined by Wikipedia as the "moment in time when artificial intelligence will have progressed 
-                                            to the point of a greater-than-human intelligence”. Huawei is at the leading edge of this new technology and 
-                                            has built an open platform eco system where together with our partners we are paving the way to this new world of 
-                                            an Intelligent Society where all things are connected. Does that sound far-fetched? Pauline will unpack this 
-                                            leading edge technology, disclosing a number of live case studies.
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/hua.svg" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 2 -->
-                                <div class="tab-content" id="tab-2">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Harnessing the power of virtual reality in the workplace </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Yesh  Surjoodeen / Computing, Printing and Personal Systems Group, HP South Africa</h5>
-                                        <p>
-                                            Today, virtual reality technology plays a pivotal role in helping many industries make dramatic 
-                                            advancements in training, collaborative work and learning.
-                                            <br><br>
-                                            By creating realistic and immersive simulations of complicated three-dimensional environments 
-                                            or objects, and enabling realistic interaction between the users and these simulations, complex 
-                                            procedures and macro-level collaborations can now be rehearsed in a safe and controlled environment.
-
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/hpi.svg" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 3 -->
-                                <div class="tab-content" id="tab-3">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Title of the session goes here </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i>Presenter</h5>
-                                        <p>
-                                           Summary of the session
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/ope.svg" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 4 -->
-                                <div class="tab-content" id="tab-4">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Modernise data protection with 360 data management</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Michael Wilson / Veritas</h5>
-                                        <p>
-                                            <strong>Why is modern data protection important?</strong><br>
-                                            Digital business needs to respond to the increasing data management challenges in a multi-cloud and virtual world. Data is one of the most valuable assets the organisation possesses. It’s time to think ahead. It’s time for modernised data protection. Now is the tipping point where businesses must re-evaluate their information infrastructure as they move to digitalisation. Why? We’re moving into the future, and in that future being able to capture data, turn it into information and manage it is absolutely key. Information is increasingly at the core of our customers’ business.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/ver.svg" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========================================= Sessions Block #5 ============================================================= -->
-        <div class="row col-md-12">
-            <div class="divide20"> </div>
-            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>14:45 - 15:05</p><br>
-            </div>
-            <div class="col-md-10">
-                <p class="text-left"><strong>Breakaway session - Block #5</strong></p>
-                <div class="divide30 visible-xs"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-2 col-xs-12">
-                        <div class="tabs tabs-top">
-
-                            <ul class="etabs text-center">
-                                <li class="tab"><a href="#tab-1">AI at work in JSE</a></li>
-                                <li class="tab"><a href="#tab-2">Case Study: ABSA</a></li>
-                                <li class="tab"><a href="#tab-3">Case Study: Exxaro </a></li>
-                                <li class="tab"><a href="#tab-4">Datacentrix SOC</a></li>
-                            </ul>
-
-                            <div class="panel-container">
-
-                                <!-- Session  1-->
-                                <div class="tab-content" id="tab-1">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Trading billions in nanno seconds - how artificial inteligence is used to acheived this</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Dr. Dennis Mwanza / Head of IT at JSE</h5>
-                                        <p>
-                                            A leader in the field of applying technology to manage, control and report on all trades in real time. Dr. Dennis has 
-                                            both local and international expeirece in the the field of stock traders and technologies applied to perform their daily tasks. He shares with us 
-                                            the reality of trades today and how they mange to keep track of buying and selling on the stock excahnge. How is this possible and what is on their roadmap. 
-                                            <br><br>
-                                            Do not miss this oppertunity to hear from the leading minds on how next generation technology is applied to business. 
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="https://cdn.worldvectorlogo.com/logos/jse.svg" style="width:60%" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 2 -->
-                                <div class="tab-content" id="tab-2">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Africa DC's is being transformed by Hyper Convergence. 
-                                            <br> A DC in a box. How has this helped ABSA get ahead of its competitors. </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Werner Vorster / Sales Executive, Nutanix</h5>
-                                        <p>
-                                            This case study shows how through collaboration between the system integrator Datacentrix, a world class OEM and the 
-                                            leader in the Enterprise hyper convergence space were able to ensure that the customer was able to achieve their goals 
-                                            of transforming their legacy infrastructure platforms and truly transform their IT estate. Ensuring that their business 
-                                            was able to transform and embrace cutting edge technology whilst ensuring high availability and uptime thus making sure 
-                                            that the services they offered to their customers were available at all times. 
-                                            <br><br> 
-                                            Hear from the program and account team directly how this was achievd.
-
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/ABSA_logo.svg/1280px-ABSA_logo.svg.png" style="width:60%" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 3 -->
-                                <div class="tab-content" id="tab-3">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Being updated - please check back soon  </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
-                                        <p>
-                                            Being updated, please check back soon. 
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="http://www.blankcanvas.co.za/wp-content/uploads/2014/06/Exxaro-logo-1.jpg" style="width:60%" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 4 -->
-                                <div class="tab-content" id="tab-4">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Delivering realtime security analytics </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Wayne Olsen, Business Unit Manger: Security, Datacentrix</h5>
-                                        <p>
-                                            Datacentrix provides end-to-end security solutions for the monitoring, assessment and defence of our customers’ information assets. 
-                                            Our objective is to achieve complete confidentiality, data integrity, information availability, accountability and assurance (governance) 
-                                            for our customers.
-                                            <br><br>   
-                                            Our specialist security team works closely with our customers to establish and maintain information security by 
-                                            identifying, managing and controlling risks.
-                                        </p>
-                                    </div>
-                                     <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
- <!-- ========================================= Sessions Block #6 ============================================================= -->
-        <div class="row col-md-12">
-            <div class="divide20"> </div>
-            <hr style="border: 0.5px dashed #d8d8d8;width:100%">
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>15:15 - 15:35</p><br>
-            </div>
-            <div class="col-md-10">
-                <p class="text-left"><strong>Breakaway session - Block #6</strong></p>
-                <div class="divide30 visible-xs"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-2 col-xs-12">
-                        <div class="tabs tabs-top">
-
-                            <ul class="etabs text-center">
-                                 <li class="tab"><a href="#tab-1">Enterprise Information Management</a></li>
-                                <li class="tab"><a href="#tab-2">Case Study: Standard Bank</a></li>
-                                <li class="tab"><a href="#tab-3">Backup-as-a-Service </a></li>
-                            </ul>
-
-                            <div class="panel-container">
-
-                                <!-- Session  1-->
-                                <div class="tab-content" id="tab-2">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Under review </h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Pending</h5>
-                                        <p>Being updated - check back soon. 
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="http://olympiad.org.za/university-it-challenge/wp-content/uploads/sites/5/2017/01/standard-bank-logo.jpg" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 2 -->
-                                <div class="tab-content" id="tab-1">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">A market leader in the enterprise content management and enterprise information management domains</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Bennie Kotze / EIM Consulting Manager, Datacentrix</h5>
-                                        <p>Datacentrix is a market leader in the enterprise content management and enterprise information management domains in 
-                                            the local market. Organisations need accurate, timely and relevant information to plan, allocate resources and manage 
-                                            the business in order to achieve strategic goals and objectives.
-                                            <br><br>
-                                            Enterprise Information Management (EIM) involves structuring and managing information assets to enhance efficiencies, 
-                                            promote transparency and enable business insight. This comprises managing information across an organisation to enable 
-                                            informed management.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
-                                    </div>
-                                </div>
-
-                                <!-- Session 3 -->
-                                <div class="tab-content" id="tab-3">
-                                    <div class="divide30"></div>
-                                    <div class="row session-body col-md-9 col-xs-12">
-                                        <h2 style="color:slategray">Being updated</h2>
-                                        <h5 style="color:darkcyan"><i class="icon-mic"></i> Being updated</h5>
-                                        <p>
-                                        Being updated
-
-                                        </p>
-                                    </div>
-                                    <div class="col-md-3 visible-lg visible-md visible-sm">
-                                        <figure><img src="/assets/images/sponsor-logos/dcx.svg" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-         <!-- Next row - Slot info  -->
-        <div class="row">
-            <div class="col-md-12">
-                <hr style="border: 0.5px dashed #d8d8d8;">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <p>16:00 - 17:00</p><br>
-            </div>
-            <div class="col-md-6">
-                <p class="text-left"><strong>Closing and Prize giving on Datacentrix stand</strong></p>
-                <p style="font-size:90%">As the event draws to a close, we look at the days and what we gained from all the session. Rudie Raath, 
-                    the event host will do a high-level recap, followed by various prize givings and lucky draws. 
-                    <br><br>
-                    <strong>Only people present will qualify for the various prizes. </strong>
-
-
-                </p>
-                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <hr style="border: 0.5px dashed #d8d8d8;">
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-md-2">
-            <p>17:00 - 19:45</p><br>
-        </div>
-        <div class="col-md-6">
-            <p class="text-left"><strong>HPE and Intel cocktail event with perfroming artists</strong></p>
-            <p style="font-size:90%">Please join us at this, not-to-be-missed event where we will see legendary artists "The Muses" perform with "1st Project". Liquid chefs will 
-                be mixing up their world-class cocktails for delegates to enjoy. We also take your safety at heart and do not want you to drive after a few drinks. A take-me-home service 
-                will be avaialble to conference delegates after this event. 
-            </p>
-            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
-
-        </div>
-        <div class="col-md-4 visible-lg visible-md visible-sm">
-            <figure><img src="/assets/images/art/the-muses.jpg" style="" alt=""></figure>
-        </div>
-        </div>
-
-
-
-
-    <!-- End of the session data-->
     </div>
-<div class="divide60"></div>    
 </section>
+
+<div class="divide60"></div>
+
 {{> jscript}}
 
 <!--JavaScript BELOW THIS LINE-->
