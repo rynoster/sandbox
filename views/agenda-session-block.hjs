@@ -28,8 +28,8 @@
                             <div class="tab-content" id="{{id}}">
                                 <div class="divide30"></div>
                                 <div class="row session-body col-md-9 col-xs-12">
-                                    <h2 style="color:slategray">{{title}}</h2>
-                                    <h5 style="color:darkcyan"><i class="icon-mic"></i> {{speakerName}} / {{speakerProfession}}, {{speakerCompany}}</h5>
+                                    <h2 style="color:slategray">{{{title}}}</h2>
+                                    <h5 style="color:darkcyan"><i class="icon-mic"></i> {{speakerName}} {{#speakerProfession}} / {{speakerProfession}}{{/speakerProfession}}{{#speakerCompany}}, {{speakerCompany}}{{/speakerCompany}}</h5>
                                     <p>
                                         {{{content}}}
                                     </p>
