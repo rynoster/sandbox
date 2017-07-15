@@ -187,7 +187,6 @@ router
       }, next);
   })
    
-
   //Get user details for specific user id
   .get('/user/:id', auth.loginRequired, (req, res, next) => {
     const {
@@ -202,7 +201,26 @@ router
           return res.send(400);
         }
         res.send(users);
-      }, next)
+      }, next);
+  })
+
+  //Get user details based on email address
+  .get("/userEmail/:userEmail", auth.loginRequired, (req, res, next) => {
+    const {
+      userEmail
+    } = req.params;
+
+    console.log(userEmail);
+
+    db("users")
+      .where("email", userEmail)
+      .first()
+      .then((users) => {
+        if (!users) {
+          return res.send(400);
+        }
+        res.send(users);
+      }, next);
   })
 
   //Get user details for specific user email address
@@ -220,7 +238,7 @@ router
           return res.send(400);
         }
         res.send(users);
-      }, next)
+      }, next);
   })
 
    //Update existing user details for CXO breakbast
