@@ -305,7 +305,9 @@ router
 // ===========================================================================
 
 .get("/myProfile", (req, res) => {
+
     res.render("skeleton", {
+        user: req.user,
         partials: {
             header: "headerUser",
             content: "myProfile",
