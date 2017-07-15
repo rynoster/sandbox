@@ -71,11 +71,11 @@
                 <div class="loginmodal-container text-center">
                     <img src="/assets/images/showcase.svg" style="width:80%;height:auto">
                     <div class="divide20"></div>
-                    <form>
-                        <input type="text" name="user" placeholder="Username">
-                        <input type="password" name="pass" placeholder="Password">
+                    <form id="formLogin">
+                        <input id="txtEmail" type="text" name="username" placeholder="Username">
+                        <input id="txtPassword" type="password" name="password" placeholder="Password">
                         <!--<input type="submit" name="login" class="login loginmodal-submit" value="Login">-->
-                        <button type="submit" class="btn btn-default">Login me in</button>
+                        <button id="btnLogin" type="button" class="btn btn-default">Login me in</button>
                     </form>
 
                     <div class="text-center">
@@ -95,7 +95,7 @@
 
     <!-- ========================================================== FOOTER : END ========================================================== -->
 
-    <!-- <script src="/switchstylesheet/switchstylesheet.js"></script> -->
+     <script src="/switchstylesheet/switchstylesheet.js"></script> 
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
 
@@ -121,7 +121,37 @@
 
         ga('create', 'UA-101356926-1', 'auto');
         ga('send', 'pageview');
-    </script>
+</script>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#btnLogin").click(function(e) {
+            // e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "/login",
+                data: $("#formLogin").serialize(),
+
+                success: function(){
+                    
+                    window.location = "/myprofile";
+
+                },
+
+                error: function() {
+
+                    // console.log("error");
+
+                }
+            })
+        })
+
+    })
+
+</script>
 
 </body>
 
