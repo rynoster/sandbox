@@ -1,14 +1,14 @@
-var express = require("express");
-var session = require("express-session");
-var RedisStore = require("connect-redis")(session);
+const express = require("express");
+const session = require("express-session");
+const RedisStore = require("connect-redis")(session);
 
-var router = express.Router();
-var db = require("../db");
-var passport = require("passport");
-var auth = require("../auth");
-var _ = require("lodash");
+const router = express.Router();
+const db = require("../db");
+const passport = require("passport");
+const auth = require("../auth");
+const _ = require("lodash");
 
-var Agenda = require("../agenda");
+const Agenda = require("../agenda");
 
 require("../passport");
 
@@ -85,11 +85,26 @@ router
 
 })
 
+//Delegate login
+
+// .post("/login", passport.authenticate("local",
+//     function (req, res) {
+
+//     }
+// ))
+
+.post("/login", passport.authenticate("local"), (req, res) => {
+
+    res.send(200);
+    // res.redirect("/");
+
+})
+
 // ===========================================================================
-//  Login ====================================================================
+//  Admin Login ==============================================================
 // ===========================================================================
 
-.get("/login", (req, res, next) => {
+.get("/admin/login", (req, res, next) => {
 
     if (req.isAuthenticated()) {
         res.redirect("/admin/dashboard");
@@ -99,10 +114,10 @@ router
 
 })
 
-.get("/logout", (req, res, next) => {
+.get("/admin/logout", (req, res, next) => {
 
     req.session.destroy((err) => {
-        res.redirect("/login");
+        res.redirect("/admin/login");
     });
 
 })
@@ -124,7 +139,7 @@ router
 //   failureRedirect: "login",
 // }))
 
-.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
+.post("/admin/login", passport.authenticate("local", { failureRedirect: "/admin/login" }), (req, res) => {
 
     if (!req.session.sourceURL) {
         res.redirect("/admin/dashboard");
@@ -306,7 +321,7 @@ router
 
 .get("/admin", (req, res) => {
 
-    res.redirect("/login");
+    res.redirect("/admin/login");
 
 })
 
