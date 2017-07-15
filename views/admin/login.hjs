@@ -10,12 +10,12 @@
         <title>chirpee admin</title>
 
         <!-- Bootstrap -->
-        <link href="admin-assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../admin-assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         
          {{!-- Stylesheets --}}
-        <link href="admin-assets/css/style.css" rel="stylesheet">
-        <link href="admin-assets/css/chirpee.css" rel="stylesheet">
+        <link href="../admin-assets/css/style.css" rel="stylesheet">
+        <link href="../admin-assets/css/chirpee.css" rel="stylesheet">
 
     </head>
     <body>
@@ -25,7 +25,7 @@
             <div class="center-block login-block">
                 <form class="sign-box" method="POST" action="/login">
                     <div>
-                        <img src="assets/images/brand/chirpee.svg" alt="" width="150px">
+                        <img src="../assets/images/brand/chirpee.svg" alt="" width="150px">
                     </div>
                     <p style="padding-top:20px">Admin Portal</p>
                     <div class="form-group">
@@ -42,9 +42,9 @@
 
         
         <!--Common plugins-->
-        <script src="admin-assets/plugins/jquery/dist/jquery.min.js"></script>
-        <script src="admin-assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="admin-assets/plugins/iCheck/icheck.min.js"></script>
+        <script src="../admin-assets/plugins/jquery/dist/jquery.min.js"></script>
+        <script src="../admin-assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../admin-assets/plugins/iCheck/icheck.min.js"></script>
 
 {{!---------------------------------- JQUERY -----------------------------------------------}}
     <script>
