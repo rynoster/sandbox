@@ -9,6 +9,9 @@ const auth = require("../auth");
 const _ = require("lodash");
 
 const Agenda = require("../agenda");
+const User = require("../user");
+
+const user = new User();
 
 require("../passport");
 
@@ -282,6 +285,17 @@ router
             jscript: "jscript"
         }
     });
+})
+
+.get("/print", auth.loginRequired, auth.adminRequired, (req, res) => {
+
+    user.allUsers((result) => {
+        res.render("print", {
+            allUsers: result,
+        });
+    });
+
+    
 })
 
 // ===========================================================================
