@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2>
-                Welcome Rudie Raath
+                Welcome {{user.first_name}} {{user.last_name}}
             </h2>
             <p>
                 Please review and update your personal details if needed.
@@ -46,13 +46,12 @@
 
                 <div class="row">
                     <div class="col-sm-6 form-row">
-                        <input id="firstName" type="text" name="firstName" class="form-control input-text" placeholder="Name (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Name must be longer than 3 characters" maxlength="25" />
+                        <input id="firstName" type="text" name="firstName" class="form-control input-text" placeholder="Name (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Name must be longer than 3 characters" maxlength="25" value="{{user.first_name}}"/>
                         <label class="label-helper" for="firstName">Name </label>
                     </div>
 
                     <div class="col-sm-6 form-row">
-                        <input id="lastName" type="text" name="lastName" class="form-control input-text" placeholder="Surname (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Surname must be longer than 3 characters" maxlength="25"
-                        />
+                        <input id="lastName" type="text" name="lastName" class="form-control input-text" placeholder="Surname (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Surname must be longer than 3 characters" maxlength="25" value="{{user.last_name}}"/>
                         <label class="label-helper" for="lastName">Surname </label>
                     </div>
                 </div>
@@ -224,7 +223,7 @@
 {{> jscript}}
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 <script>
