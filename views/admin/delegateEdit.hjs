@@ -212,7 +212,7 @@
                 $txtOfficeNr.val(user.officenr);
                 $txtAccountMgr.val(user.accountManager);
                 $selDietary.val(user.dietary);
-                $selCxO.val(user.allowCxoInvite);
+                $selCxO.val(user.allowCxoInvite || 0);
 
                 $hName.text(user.first_name + " " + user.last_name);
 
@@ -266,6 +266,8 @@
                     $alMessage.html("<strong>Success - </strong> Record successfully updated.");
                     $alDiv.show();
                     $alDiv.fadeOut ( 6000 );
+
+                    window.history.back();
                 },
 
                 error: function(xhr, textStatus, errorThrown) {
