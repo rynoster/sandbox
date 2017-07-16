@@ -14,8 +14,6 @@
     }
 </style>
 
-
-
 <!-- ============================================= SECTION – Banner ================================================== -->
 
 <section class="top-banner">
@@ -35,105 +33,66 @@
 
     <div class="container inner-bottom-sm inner-top-xs">
 
-
         <form id="frmAgenda" action="">
             <div class="row">
-                <h2 style="padding-left:none">Create you agenda</h2>
+                <h2 style="padding-left:none">Create your agenda</h2>
                 <div class="divide30"></div>
 
-                <!-- Single event in block  -->
-                <div class="row">
-                    <div class="col-md-10">
-                        <h4>00:00 - 00:00</h4>
-                        <hr style="border: 0.5px dashed #d8d8d8;">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9 text-left">
-                        <h3>Title</h3>
-                        <p>Ad sint ea sunt do. Eiusmod est ad aute aliqua aliqua. Ea et velit nostrud culpa laborum cillum qui aliqua sint et cupidatat. Ea duis cupidatat aute aute tempor nulla non irure et. Veniam proident aute esse aliqua esse et qui ullamco
-                            do. Cupidatat dolor amet adipisicing aute aute excepteur fugiat tempor eiusmod aliquip.</p>
-                    </div>
-                </div>
-                <div class="divide15"></div>
+                {{#allSessions}}
 
-
-                <!-- Multi-event in block  -->
-                <div class="row inner-top-xs">
-                    <div class="col-md-10">
-                        <h4>00:00 - 00:00</h4>
-                        <p>Breakout session block - please chose the session you want to attend</p>
-                        <hr style="border: 0.5px dashed #d8d8d8;">
-                    </div>
-                </div>
-
-                <!-- /////////////   Child Session ////////////////  -->
-                <div class="row inner-bottom-xs">
-                    <div class="col-md-2">
-                        <p style="font-size:80%">Enroll to this session</p>
-                        <div class="switch">
-                            <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="radio" name="block-1">
-                            <label for="cmn-toggle-1"></label>
+                    {{#hasChildren}}
+                    
+                        <!-- Multi-event in block  -->
+                        <div class="row inner-top-xs">
+                            <div class="col-md-10">
+                                <h4>{{timeStart}} - {{timeEnd}}</h4>
+                                <p>{{title}} - Please choose the session you want to attend</p>
+                                <hr style="border: 0.5px dashed #d8d8d8;">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8 text-left">
-                        <h3>Title</h3>
-                        <h6>Presenter</h6>
-                        <p>Ad sint ea sunt do. Eiusmod est ad aute aliqua aliqua. Ea et velit nostrud culpa laborum cillum qui aliqua sint et cupidatat. Ea duis cupidatat aute aute tempor nulla non irure et. Veniam proident aute esse aliqua esse et qui ullamco
-                            do. Cupidatat dolor amet adipisicing aute aute excepteur fugiat tempor eiusmod aliquip.</p>
-                    </div>
-                </div>
 
-                <!-- /////////////   Child Session ////////////////  -->
-                <div class="row inner-bottom-xs">
-                    <div class="col-md-2">
-                        <p style="font-size:80%">Enroll to this session</p>
-                        <div class="switch">
-                            <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="radio" name="block-1">
-                            <label for="cmn-toggle-2"></label>
-                        </div>
-                    </div>
-                    <div class="col-md-8 text-left">
-                        <h3>Title</h3>
-                        <h6>Presenter</h6>
-                        <p>Ad sint ea sunt do. Eiusmod est ad aute aliqua aliqua. Ea et velit nostrud culpa laborum cillum qui aliqua sint et cupidatat. Ea duis cupidatat aute aute tempor nulla non irure et. Veniam proident aute esse aliqua esse et qui ullamco
-                            do. Cupidatat dolor amet adipisicing aute aute excepteur fugiat tempor eiusmod aliquip.</p>
-                    </div>
-                </div>
+                        {{#sessions}}
 
-                <!-- /////////////   Child Session ////////////////  -->
-                <div class="row inner-bottom-xs">
-                    <div class="col-md-2">
-                        <p style="font-size:80%">Enroll to this session</p>
-                        <div class="switch">
-                            <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round" type="radio" name="block-1">
-                            <label for="cmn-toggle-3"></label>
-                        </div>
-                    </div>
-                    <div class="col-md-8 text-left">
-                        <h3>Title</h3>
-                        <h6>Presenter</h6>
-                        <p>Ad sint ea sunt do. Eiusmod est ad aute aliqua aliqua. Ea et velit nostrud culpa laborum cillum qui aliqua sint et cupidatat. Ea duis cupidatat aute aute tempor nulla non irure et. Veniam proident aute esse aliqua esse et qui ullamco
-                            do. Cupidatat dolor amet adipisicing aute aute excepteur fugiat tempor eiusmod aliquip.</p>
-                    </div>
-                </div>
+                            <div class="row inner-bottom-xs">
+                                <div class="col-md-2">
+                                    <p style="font-size:80%">Enroll to this session</p>
+                                    <div class="switch">
+                                        <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="block-{{parentId}}" />
+                                        <label for="toggle-{{id}}"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-left">
+                                    <h3>{{{title}}}</h3>
+                                    <h6>{{speakerName}}</h6>
+                                    <p>{{{content}}}</p>
+                                </div>
+                            </div>
 
-                <!-- /////////////   Child Session ////////////////  -->
-                <div class="row inner-bottom-xs">
-                    <div class="col-md-2">
-                        <p style="font-size:80%">Enroll to this session</p>
-                        <div class="switch">
-                            <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round" type="radio" name="block-1">
-                            <label for="cmn-toggle-4"></label>
+                        {{/sessions}}
+
+                    {{/hasChildren}}
+
+                    {{^hasChildren}}
+
+                        <!-- Single event in block  -->
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h4>{{timeStart}} - {{timeEnd}}</h4>
+                                <hr style="border: 0.5px dashed #d8d8d8;">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8 text-left">
-                        <h3>Title</h3>
-                        <h6>Presenter</h6>
-                        <p>Ad sint ea sunt do. Eiusmod est ad aute aliqua aliqua. Ea et velit nostrud culpa laborum cillum qui aliqua sint et cupidatat. Ea duis cupidatat aute aute tempor nulla non irure et. Veniam proident aute esse aliqua esse et qui ullamco
-                            do. Cupidatat dolor amet adipisicing aute aute excepteur fugiat tempor eiusmod aliquip.</p>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-9 text-left">
+                                <h3>{{title}}</h3>
+                                <p>{{{content}}}</p>
+                            </div>
+                        </div>
+                        <div class="divide15"></div>
+
+                    {{/hasChildren}}
+
+                {{/allSessions}}
+
                 <div class="row inner-top-xs">
                     <hr style="border: 0.5px dashed #d8d8d8;">
                     <button type="submit" id="btnEnroll" class="btn btn-default">Confirm my agenda</button>
@@ -143,9 +102,8 @@
     </div>
 </section>
 
-
 {{> jscript}}
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
+<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->

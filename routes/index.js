@@ -12,6 +12,7 @@ const Agenda = require("../agenda");
 const User = require("../user");
 
 const user = new User();
+const agenda = new Agenda();
 
 require("../passport");
 
@@ -346,7 +347,9 @@ router
 
 .get("/mysessions", (req, res) => {
 
-    res.render("skeleton", {
+    agenda.fullDataset((result) => {
+        res.render("skeleton", {
+        allSessions: result,
         user: req.user,
         partials: {
             header: "headerUser",
@@ -355,6 +358,9 @@ router
             jscript: "jscript"
         }
     });
+
+    });
+    
 })
 
 // ===========================================================================
