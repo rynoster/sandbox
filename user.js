@@ -1,5 +1,5 @@
 // const moment = require("moment");
-// const _ = require("lodash");
+const _ = require("lodash");
 
 const db = require("./db");
 
@@ -7,9 +7,11 @@ function User(id) {
     this.id = id;
 }
 
-User.prototype.allUsers = function (callback) {
-    
+User.prototype.allUsers = function (callback, recordCount, fromRecord) {
+
     db("users")
+        .offset(_.toInteger(fromRecord) || 0)
+        .limit(_.toInteger(recordCount) || null)
         .then((resultUsers) => {
             callback(resultUsers);
         });
