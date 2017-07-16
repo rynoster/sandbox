@@ -208,16 +208,16 @@ router
 //  Event Info Page  =========================================================
 // ===========================================================================
 
-// .get("/eventinfo", (req, res) => {
-//   res.render("skeleton", {
-//     partials: {
-//       header: "header", 
-//       content: "eventinfo",
-//       footer: "footer", 
-//       jscript: "jscript"
-//       }
-//   });
-// })
+.get("/eventinfo-old", (req, res) => {
+    res.render("skeleton", {
+        partials: {
+            header: "header",
+            content: "eventinfo",
+            footer: "footer",
+            jscript: "jscript"
+        }
+    });
+})
 
 // ===========================================================================
 //  Agenda Page (Temporary) ==================================================

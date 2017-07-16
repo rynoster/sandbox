@@ -1,77 +1,77 @@
 {{#hasChildren}}
-    <div class="row" id="{{id}}">
-        <div class="col-md-2">
-            <p>{{timeStart}} - {{timeEnd}}</p><br>
-        </div>
-        <div class="col-md-10">
-            <p class="text-left"><strong>{{title}}</strong></p>
-            <div class="divide30 visible-xs"></div>
-        </div>
+<div class="row" id="{{id}}">
+    <div class="col-md-2">
+        <p>{{timeStart}} - {{timeEnd}}</p><br>
     </div>
-    
-    <div class="row inner-bottom-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-2 col-xs-12">
-                    
-                    <div class="tabs tabs-top">
-                        
-                        <ul class="etabs text-center">
-                            {{#sessions}}
-                            <li class="tab"><a href="#{{id}}">{{tabName}}</a></li>
-                            {{/sessions}}
-                        </ul>
-                        
-                        <div class="panel-container">
+    <div class="col-md-10">
+        <p class="text-left"><strong>{{title}}</strong></p>
+        <div class="divide30 visible-xs"></div>
+    </div>
+</div>
 
-                            {{#sessions}}
-                            <div class="tab-content" id="{{id}}">
-                                <div class="divide30"></div>
-                                <div class="row session-body col-md-9 col-xs-12">
-                                    <h2 style="color:slategray">{{{title}}}</h2>
-                                    <h5 style="color:darkcyan"><i class="icon-mic"></i> {{speakerName}} {{#speakerProfession}} / {{speakerProfession}}{{/speakerProfession}}{{#speakerCompany}}, {{speakerCompany}}{{/speakerCompany}}</h5>
-                                    <p>
-                                        {{{content}}}
-                                    </p>
-                                </div>
-                                <div class="col-md-3 visible-lg visible-md visible-sm">
-                                    <figure><img src="{{imageUrl}}" alt=""></figure>
-                                </div>
+<div class="row inner-bottom-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2 col-xs-12">
+
+                <div class="tabs tabs-top">
+
+                    <ul class="etabs text-center">
+                        {{#sessions}}
+                        <li class="tab"><a href="#{{id}}">{{tabName}}</a></li>
+                        {{/sessions}}
+                    </ul>
+
+                    <div class="panel-container">
+
+                        {{#sessions}}
+                        <div class="tab-content" id="{{id}}">
+                            <div class="divide30"></div>
+                            <div class="row session-body col-md-9 col-xs-12">
+                                <h2 style="color:slategray">{{{title}}}</h2>
+                                <h5 style="color:darkcyan"><i class="icon-mic"></i> {{speakerName}} {{#speakerProfession}} / {{speakerProfession}}{{/speakerProfession}}{{#speakerCompany}}, {{speakerCompany}}{{/speakerCompany}}</h5>
+                                <p>
+                                    {{{content}}}
+                                </p>
                             </div>
-                            {{/sessions}}
-
+                            <div class="col-md-3 visible-lg visible-md visible-sm">
+                                <figure><img src="{{imageUrl}}" alt=""></figure>
+                            </div>
                         </div>
+                        {{/sessions}}
+
                     </div>
-                    
                 </div>
+
             </div>
         </div>
     </div>
-    {{/hasChildren}}
-    <!--This is the ELSE statement-->
-    {{^hasChildren}}
-    
-    <div class="row">
-        <div class="col-md-2">
-            <p>{{timeStart}} - {{timeEnd}}</p><br>
-        </div>
-        <div class="col-md-6">
-            <p class="text-left"><strong>{{title}}</strong></p>
-            <p style="font-size:90%">
-                {{{content}}}
-            </p>
-            {{#location}}
-            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
-            {{/location}}
-        </div>
+</div>
+{{/hasChildren}}
+<!--This is the ELSE statement-->
+{{^hasChildren}}
 
-        {{#imageUrl}}
-        <div class="col-md-4 visible-lg visible-md visible-sm">
-            <figure><img src="{{imageUrl}}" alt=""></figure>
-        </div>
-        {{/imageUrl}}
-
+<div class="row">
+    <div class="col-md-2">
+        <p>{{timeStart}} - {{timeEnd}}</p><br>
     </div>
+    <div class="col-md-6">
+        <p class="text-left"><strong>{{title}}</strong></p>
+        <p style="font-size:90%">
+            {{{content}}}
+        </p>
+        {{#location}}
+        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
+        {{/location}}
+    </div>
+
+    {{#imageUrl}}
+    <div class="col-md-4 visible-lg visible-md visible-sm">
+        <figure><img src="{{imageUrl}}" alt=""></figure>
+    </div>
+    {{/imageUrl}}
+
+</div>
 
 {{/hasChildren}}
 

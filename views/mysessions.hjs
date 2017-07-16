@@ -23,52 +23,16 @@
 </section>
 
 <!-- ============================================= Main Content ================================================== -->
-<div class="container inner-top-xs inner-bottom-sm">
-    <div class="row">
-        <div class="col-md-8">
-            <h3>
-                Logged in as:
-            </h3>
-            <p>
-                Please review and update your personal details if needed.
-                <br><br>
 
-            </p>
-<!-- ============================================= First slot ================================================== -->
-            <form onsubmit="return false" id="frmSessions" class="form-horizontal">
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <div class="col-md-10">
-                                    <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="submit" id="btnRegister" class="btn btn-default">Update my details</button>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                            <div class="panel-body">Panel Body</div>
-                            <div class="panel-footer">Panel Footer</div>
-                        </div>
-                    </div>
-                </div>
+<section>
+    <div class="container">
+        <div class="row">
 
-            </form>
-
-
-
-
-
-
-
-        </div>
-        <div class="col-md-4">
-            <figure><img src="/assets/images/showcase.svg" alt=""></figure>
         </div>
     </div>
-</div>
+</section>
+
+
 {{> jscript}}
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>

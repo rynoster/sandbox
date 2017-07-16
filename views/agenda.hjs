@@ -73,9 +73,7 @@
         </div>
 
         <!-- For edits on the session formatting, edit agenda-session-block.hjs, referred to as sessionBlock view below -->
-        {{#dataSet1}}
-            {{> sessionBlock}}
-        {{/dataSet1}}
+        {{#dataSet1}} {{> sessionBlock}} {{/dataSet1}}
 
     </div>
 </section>
@@ -86,8 +84,8 @@
     <div class="container text-center drk-bg">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <br>
-            <p><strong>Lunch will be available from 12:30 to 14:00</strong> in the Montecasino Ballroom and in Il Grande where we will have our 
-                special lunch session which you cannot miss. Grab your lunch and make your way across to Il Grande. Limited seats.  </p>
+            <p><strong>Lunch will be available from 12:30 to 14:00</strong> in the Montecasino Ballroom and in Il Grande where we will have our special lunch session which you cannot miss. Grab your lunch and make your way across to Il Grande. Limited seats.
+                </p>
             <br>
         </div>
     </div>
@@ -103,10 +101,8 @@
                     <figure><img src="/assets/images/art/toby.gif" alt="" style="width:200px;height:auto;"></figure>
                     <h2 class="drk-brk">Interactive lunch session from 13:15 - 14:00 with </h2>
                     <h1 style="color:#fff"><strong>TOBY SHAPSHAK</strong></h1>
-                    <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic
-                        of the singularity and how humanity is being assimilated into code. What will happen to humanity
-                        as we know it today and how should business transform to stay relevant in the future. Great panel
-                        of industry specialists:
+                    <p style="color:#fff">Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic of the singularity and how humanity is being assimilated into code. What will happen to humanity as we know it today and how should
+                        business transform to stay relevant in the future. Great panel of industry specialists:
                     </p>
                 </header>
                 <div class="row">
@@ -193,18 +189,49 @@
     </div>
     <!-- /.container -->
 </section>
-    
+
 <!-- ========================================= Session  ============================================================= -->
-<div class="divide20"></div>    
+<div class="divide20"></div>
 
 <section id="eventinfoBlock1" class="outer-top-xs">
     <div class="container">
 
         <!-- For edits on the session formatting, edit agenda-session-block.hjs, referred to as sessionBlock view below -->
-        {{#dataSet2}}
-            {{> sessionBlock}}
-        {{/dataSet2}}
+        {{#dataSet2}} {{> sessionBlock}} {{/dataSet2}}
+        <!-- Next row - Slot info  -->
+        <div class="row">
+            <div class="col-md-2">
+                <p>16:00 - 17:00</p><br>
+            </div>
+            <div class="col-md-6">
+                <p class="text-left"><strong>Prize giving at the Datacentrix stand</strong></p>
+                <p style="font-size:90%">Stand in line to win the end-of-day lucky draw prizes sponsored by our participating technology partners. You need to be present to be eligible to win.
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="border: 0.5px dashed #d8d8d8;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>17:00 - 19:45</p><br>
+            </div>
+            <div class="col-md-6">
+                <p class="text-left"><strong>HPE and Intel cocktail event with performing artists</strong></p>
+                <p style="font-size:90%">Please join us at this, not-to-be-missed event for our final lucky draw prize and the closing of Datacentrix Showcase 2017. Enjoy performances by legendary artists "The Muses" with "1st Project". Liquid Chefs will be mixing up their world-class
+                    cocktails for delegates to enjoy. A take-me-home service will be available to conference delegates after this event.
 
+                </p>
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
+
+            </div>
+            <div class="col-md-4 visible-lg visible-md visible-sm">
+                <figure><img src="/assets/images/art/the-muses.jpg" style="" alt=""></figure>
+            </div>
+        </div>
     </div>
 </section>
 
