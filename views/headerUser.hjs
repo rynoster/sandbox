@@ -49,11 +49,11 @@
                         <!-- This is the menu driving the top navigation -->
 
                         <li class="dropdown">
-                            <a href="#">My profile</a>
+                            <a href="/myProfile">My profile</a>
                         </li>
 
                         <li class="dropdown">
-                            <a href="#">My Agenda</a>
+                            <a href="/mySessions">My Agenda</a>
                         </li>
 
                         <li class="dropdown">

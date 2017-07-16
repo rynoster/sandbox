@@ -208,16 +208,16 @@ router
 //  Event Info Page  =========================================================
 // ===========================================================================
 
-// .get("/eventinfo", (req, res) => {
-//   res.render("skeleton", {
-//     partials: {
-//       header: "header", 
-//       content: "eventinfo",
-//       footer: "footer", 
-//       jscript: "jscript"
-//       }
-//   });
-// })
+.get("/eventinfo-old", (req, res) => {
+    res.render("skeleton", {
+        partials: {
+            header: "header",
+            content: "eventinfo",
+            footer: "footer",
+            jscript: "jscript"
+        }
+    });
+})
 
 // ===========================================================================
 //  Agenda Page (Temporary) ==================================================
@@ -334,6 +334,23 @@ router
         partials: {
             header: "headerUser",
             content: "myProfile",
+            footer: "footer",
+            jscript: "jscript"
+        }
+    });
+})
+
+// ===========================================================================
+//  Edit my profile  =========================================================
+// ===========================================================================
+
+.get("/mysessions", (req, res) => {
+
+    res.render("skeleton", {
+        user: req.user,
+        partials: {
+            header: "headerUser",
+            content: "mysessions",
             footer: "footer",
             jscript: "jscript"
         }

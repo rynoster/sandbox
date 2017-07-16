@@ -339,6 +339,7 @@
             },
         });
 
+
         // Restrict presentation length
         $('#presentation').restrictLength($('#pres-max-length'));
 
