@@ -5,23 +5,35 @@
         <link href="/assets/css/rotating-card.css" rel="stylesheet">
 
         <style type="text/css" >
-            @page 
+            /* @page 
             {
-                size: auto;   /* auto is the current printer page size */
-                margin: 0mm;  /* this affects the margin in the printer settings */
+                size: auto;
+                margin: 0mm;
 
-            }
+            } */
 
             @media all {
                 .page-break	{ display: none; }
+                .border { border: 1px solid black; padding: 10px; }
+                .card {
+                    height: 214px;
+                    width: 322px;
+                    margin-top: 20px;
+                }
             }
 
             @media print {
 	            .page-break	{ display: block; page-break-after: always; }
                 .no-print { display: none; }
+                .border { border: 0px solid red; padding: 0px; }
+                .card {
+                    height: 100%;
+                    width: 100%; 
+                    margin-top: 0px;
+                }
             }
 
-            .spacer-10 {
+            .spacer-5 {
                 margin: 0;
                 padding-top: 5px;
             }
@@ -36,14 +48,7 @@
                 padding-top: 50px;
             }
 
-            .none {
-                border: 1px solid red;
-            }
-
-            .page-none {
-                border: 1px solid blue;
-            }
-
+            /* Loading spinner */
             .spinner {
                 /* margin: 100px auto; */
                 width: 50px;
@@ -52,42 +57,42 @@
                 font-size: 10px;
                 }
 
-                .spinner > div {
-                background-color: #333;
-                height: 100%;
-                width: 6px;
-                display: inline-block;
-                
-                -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
-                animation: sk-stretchdelay 1.2s infinite ease-in-out;
-                }
+            .spinner > div {
+            background-color: #333;
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+            
+            -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+            animation: sk-stretchdelay 1.2s infinite ease-in-out;
+            }
 
-                .spinner .rect2 {
+            .spinner .rect2 {
                 -webkit-animation-delay: -1.1s;
                 animation-delay: -1.1s;
-                }
+            }
 
-                .spinner .rect3 {
+            .spinner .rect3 {
                 -webkit-animation-delay: -1.0s;
                 animation-delay: -1.0s;
-                }
+            }
 
-                .spinner .rect4 {
+            .spinner .rect4 {
                 -webkit-animation-delay: -0.9s;
                 animation-delay: -0.9s;
-                }
+            }
 
-                .spinner .rect5 {
+            .spinner .rect5 {
                 -webkit-animation-delay: -0.8s;
                 animation-delay: -0.8s;
-                }
+            }
 
-                @-webkit-keyframes sk-stretchdelay {
+            @-webkit-keyframes sk-stretchdelay {
                 0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
                 20% { -webkit-transform: scaleY(1.0) }
-                }
+            }
 
-                @keyframes sk-stretchdelay {
+            @keyframes sk-stretchdelay {
                 0%, 40%, 100% { 
                     transform: scaleY(0.4);
                     -webkit-transform: scaleY(0.4);
@@ -95,7 +100,7 @@
                     transform: scaleY(1.0);
                     -webkit-transform: scaleY(1.0);
                 }
-                }
+            }
 
         </style>
     </head>
@@ -116,43 +121,43 @@
 
         <div class="no-print spacer-10">
             <div class="row"></div>
-            <input class="btn btn-info" type="button" onclick="window.print();" value="Print" disabled></input>
+            <input class="btn btn-info" type="button" onclick="window.print();" value="Print" disabled />
         </div>
 
-        <div class="spacer-10"></div>
+        <div class="spacer-10 no-print"></div>
 
         {{#allUsers}}
 
-            <div class="container col-lg-2">
+            <div class="container col-lg-12 border card">
                 <div class="row">
-                    <div class="col-lg-4"><img height="25px" src="/assets/images/datacentrix.svg"></div>
+                    <div class="col-sm-7 pull-right"><img height="25px" src="/assets/images/datacentrix.svg"></div>
                 </div>
 
                 <div class="spacer-10"></div>
 
                 <div class="row">
                     <div class="col-md-4"></div> 
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <div class="divQr" data-email="{{email}}" id="{{id}}"></div>
                     </div>
                     <div class="col-md-4"></div> 
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2"></div> 
-                    <div class="col-md-8 text-center">
+                     <div class="col-md-1"></div>  
+                    <div class="col-md-12 text-center">
                         <h4 class="name">{{first_name}} {{last_name}}</h4>
                         {{pro_profile}}, <strong>{{company}}</strong> 
                     </div>
-                    <div class="col-md-2"></div> 
+                     <div class="col-md-1"></div>  
 
                 </div>
 
             </div>
 
             <div class="page-break"></div>
-            <div class="row"></div>
-            <div class="spacer-10"></div>
+             <div class="row no-print"></div> 
+            <!-- <div class="spacer-10"></div> -->
 
         {{/allUsers}}
 

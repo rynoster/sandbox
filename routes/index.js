@@ -291,7 +291,7 @@ router
 
     user.allUsers((result) => {
         res.render("print", {
-            allUsers: result,
+            allUsers: result.slice(0, 5),
         });
     });
 
