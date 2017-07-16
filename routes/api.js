@@ -260,7 +260,7 @@ router
 
 
   //Update existing user details
-  .put('/user/:id', (req, res, next) => {
+  .put("/user/:id", (req, res, next) => {
     const {
       id
     } = req.params;
@@ -270,10 +270,10 @@ router
       .update(req.body)
       .then((result) => {
         if (result === 0) {
-          return res.send(400)
+          return res.send(400);
         }
         res.send(200);
-      }, next)
+      }, next);
   })
 
     //Delete user

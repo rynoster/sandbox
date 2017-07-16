@@ -287,14 +287,23 @@ router
     });
 })
 
+// ===========================================================================
+//  Printing Page  ===========================================================
+// ===========================================================================
+
 .get("/print", auth.loginRequired, auth.adminRequired, (req, res) => {
 
-    user.allUsers((result) => {
-        res.render("print", {
-            allUsers: result.slice(0, 5),
-        });
-    });
+    // console.log(req.query);
 
+    // ?recordCount=10&fromRecord=5
+
+    user.allUsers((result) => {
+
+        res.render("print", {
+            allUsers: result,
+        });
+
+    }, req.query.recordCount || 20, req.query.fromRecord || 0);
 
 })
 

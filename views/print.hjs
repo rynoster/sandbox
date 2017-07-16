@@ -1,24 +1,28 @@
-<html>
+<!-- <!DOCTYPE html> -->
+<html lang="en">
     <head>
         <title>Print test</title>
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/rotating-card.css" rel="stylesheet">
 
         <style type="text/css" >
-            /* @page 
+             @page 
             {
                 size: auto;
                 margin: 0mm;
 
-            } */
+            } 
 
             @media all {
                 .page-break	{ display: none; }
                 .border { border: 1px solid black; padding: 10px; }
                 .card {
-                    height: 214px;
-                    width: 322px;
-                    margin-top: 20px;
+                    height: 213px;
+                    width: 321px;
+                    padding-top: 0px;
+                    padding-left: 0px;
+                    margin-top: 20px; 
+                    margin-left: 20px;  
                 }
             }
 
@@ -30,22 +34,39 @@
                     height: 100%;
                     width: 100%; 
                     margin-top: 0px;
+                    margin-left: 0px;
                 }
+                
+            }
+
+            .indent {
+                padding-left: 70px;
+            }
+
+            .pull-down {
+                /* float: none; */
+                /* display: table-cell; */
+                vertical-align: bottom;
             }
 
             .spacer-5 {
                 margin: 0;
-                padding-top: 5px;
+                padding: 5px;
             }
 
             .spacer-10 {
                 margin: 0;
-                padding-top: 10px;
+                padding: 10px;
+            }
+
+            .spacer-30 {
+                margin: 0;
+                padding: 30px;
             }
 
             .spacer-50 {
                 margin: 0;
-                padding-top: 50px;
+                padding: 50px;
             }
 
             /* Loading spinner */
@@ -119,6 +140,10 @@
             </div>
         </div>
 
+        <div class="row no-print">
+
+        </div>
+
         <div class="no-print spacer-10">
             <div class="row"></div>
             <input class="btn btn-info" type="button" onclick="window.print();" value="Print" disabled />
@@ -128,36 +153,39 @@
 
         {{#allUsers}}
 
-            <div class="container col-lg-12 border card">
-                <div class="row">
-                    <div class="col-sm-7 pull-right"><img height="25px" src="/assets/images/datacentrix.svg"></div>
-                </div>
+            <div class="container col-lg-12 card border">
+
+                <!-- This is the background image, cannot use CSS background for printing, need to use absolute image -->
+                <img style="position: absolute; z-index:-1; height: 100%; width: 100%" src="assets/images/badge/badge-{{event_profile}}.svg">
 
                 <div class="spacer-10"></div>
+                <div class="spacer-10"></div>
+                <div class="spacer-5"></div> 
 
                 <div class="row">
-                    <div class="col-md-4"></div> 
-                    <div class="col-md-4 text-center">
-                        <div class="divQr" data-email="{{email}}" id="{{id}}"></div>
+                    <div class="col-sm-12 indent">
+                         <strong>{{first_name}} {{last_name}}</strong>
                     </div>
-                    <div class="col-md-4"></div> 
                 </div>
 
                 <div class="row">
-                     <div class="col-md-1"></div>  
-                    <div class="col-md-12 text-center">
-                        <h4 class="name">{{first_name}} {{last_name}}</h4>
-                        {{pro_profile}}, <strong>{{company}}</strong> 
+                    <div class="col-sm-12 indent">
+                        {{company}}
                     </div>
-                     <div class="col-md-1"></div>  
+                    <div class="col-md-1"></div>  
+                </div>
 
+                <div class="spacer-10"></div> 
+
+                <div class="row">
+                    <div class="col-md-4 indent">
+                        <div class="divQr" data-email="{{email}}" id="{{id}}"></div>
+                    </div>
                 </div>
 
             </div>
 
             <div class="page-break"></div>
-             <div class="row no-print"></div> 
-            <!-- <div class="spacer-10"></div> -->
 
         {{/allUsers}}
 
@@ -179,14 +207,16 @@
             var email = $($allQr[i]).data("email");
             var userId = $($allQr[i]).attr("id");
 
-            var qrCodeSvg = new Qrcodesvg(email, userId, 100);
+            var qrCodeSvg = new Qrcodesvg(email, userId, 90);
 
             qrCodeSvg.draw();
-            
         }
 
         $("#spinner").hide();
         $(".btn-info").prop("disabled", false);
+
+        // Request the first 20 records
+
 
     });
 </script>
