@@ -19,6 +19,19 @@ User.prototype.allUsers = function (callback, recordCount, fromRecord) {
 
 };
 
+User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord) {
+
+    db("users")
+        .offset(_.toInteger(fromRecord) || 0)
+        .limit(_.toInteger(recordCount) || null)
+        .orderBy("first_name")
+        .where("cardPrinted", null)
+        .then((resultUsers) => {
+            callback(resultUsers);
+        });
+
+};
+
 // User.prototype.getSession = function (id, callback) {
 
 //     db("agenda")
