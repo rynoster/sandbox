@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>Print test</title>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/rotating-card.css" rel="stylesheet">
+
+        <style type="text/css" >
+            @page 
+            {
+                size: auto;   /* auto is the current printer page size */
+                margin: 0mm;  /* this affects the margin in the printer settings */
+
+            }
+
+            @media all {
+                .page-break	{ display: none; }
+            }
+
+            @media print {
+	            .page-break	{ display: block; page-break-after: always; }
+                .no-print { display: none; }
+            }
+
+            .spacer-10 {
+                margin: 0;
+                padding-top: 5px;
+            }
+
+            .spacer-10 {
+                margin: 0;
+                padding-top: 10px;
+            }
+
+            .spacer-50 {
+                margin: 0;
+                padding-top: 50px;
+            }
+
+            .none {
+                border: 1px solid red;
+            }
+
+            .page-none {
+                border: 1px solid blue;
+            }
+
+            .spinner {
+                /* margin: 100px auto; */
+                width: 50px;
+                 height: 40px; 
+                text-align: center;
+                font-size: 10px;
+                }
+
+                .spinner > div {
+                background-color: #333;
+                height: 100%;
+                width: 6px;
+                display: inline-block;
+                
+                -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+                animation: sk-stretchdelay 1.2s infinite ease-in-out;
+                }
+
+                .spinner .rect2 {
+                -webkit-animation-delay: -1.1s;
+                animation-delay: -1.1s;
+                }
+
+                .spinner .rect3 {
+                -webkit-animation-delay: -1.0s;
+                animation-delay: -1.0s;
+                }
+
+                .spinner .rect4 {
+                -webkit-animation-delay: -0.9s;
+                animation-delay: -0.9s;
+                }
+
+                .spinner .rect5 {
+                -webkit-animation-delay: -0.8s;
+                animation-delay: -0.8s;
+                }
+
+                @-webkit-keyframes sk-stretchdelay {
+                0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+                20% { -webkit-transform: scaleY(1.0) }
+                }
+
+                @keyframes sk-stretchdelay {
+                0%, 40%, 100% { 
+                    transform: scaleY(0.4);
+                    -webkit-transform: scaleY(0.4);
+                }  20% { 
+                    transform: scaleY(1.0);
+                    -webkit-transform: scaleY(1.0);
+                }
+                }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="spinner" class="row no-print">
+            <div class="col-lg-6">  
+                <div class="spinner">Loading...
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-print spacer-10">
+            <div class="row"></div>
+            <input class="btn btn-info" type="button" onclick="window.print();" value="Print" disabled></input>
+        </div>
+
+        <div class="spacer-10"></div>
+
+        {{#allUsers}}
+
+            <div class="container col-lg-2">
+                <div class="row">
+                    <div class="col-lg-4"><img height="25px" src="/assets/images/datacentrix.svg"></div>
+                </div>
+
+                <div class="spacer-10"></div>
+
+                <div class="row">
+                    <div class="col-md-4"></div> 
+                    <div class="col-md-4">
+                        <div class="divQr" data-email="{{email}}" id="{{id}}"></div>
+                    </div>
+                    <div class="col-md-4"></div> 
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"></div> 
+                    <div class="col-md-8 text-center">
+                        <h4 class="name">{{first_name}} {{last_name}}</h4>
+                        {{pro_profile}}, <strong>{{company}}</strong> 
+                    </div>
+                    <div class="col-md-2"></div> 
+
+                </div>
+
+            </div>
+
+            <div class="page-break"></div>
+            <div class="row"></div>
+            <div class="spacer-10"></div>
+
+        {{/allUsers}}
+
+    </body>
+
+</html>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="assets/js/raphael-2.1.0-min.js"></script>
+<script type="text/javascript" src="assets/js/qrcodesvg.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var totalQr = $(".divQr").length;
+        var $allQr = $(".divQr");
+
+        for (var i = 0; i < totalQr; i++) {
+            var email = $($allQr[i]).data("email");
+            var userId = $($allQr[i]).attr("id");
+
+            var qrCodeSvg = new Qrcodesvg(email, userId, 100);
+
+            qrCodeSvg.draw();
+            
+        }
+
+        $("#spinner").hide();
+        $(".btn-info").prop("disabled", false);
+
+    });
+</script>
