@@ -298,7 +298,7 @@ router
 
     // ?recordCount=10&fromRecord=5
 
-    user.allUsers((result) => {
+    user.allUsersNotPrinted((result) => {
 
         res.render("print", {
             allUsers: result,
@@ -375,9 +375,17 @@ router
 
 .get("/admin/dashboard", (req, res, next) => {
 
+    let loginUser;
+
+    if (req.user === undefined) {
+        loginUser = "Visitor";
+    } else {
+        loginUser = req.user.first_name + ' ' + req.user.last_name;
+    }
+
     res.render("admin/main", {
         users: "users",
-        // loginUser: req.user.first_name + ' ' + req.user.last_name,
+        loginUser,
         title: "Dashboard",
         loggedIn: true,
         partials: {

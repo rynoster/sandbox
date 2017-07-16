@@ -143,6 +143,7 @@
         <div class="no-print spacer-10">
              <div class="row"></div> 
             <!-- <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled /> -->
+            <h1 class="jumbotron">Showcase 2017 Card Printing</h1>
 
             <div class="form-group"><label class="col-lg-2 control-label">Print cards below</label>
                 <div class="col-lg-3">
@@ -153,7 +154,7 @@
             <div class="row"></div>
             <div class="spacer-10"></div>
 
-            <div id="printConfirm" class="form-group" hidden><label class="col-lg-2 control-label">Confirm successful print</label>
+            <div id="printConfirm" class="form-group" hidden><label class="col-lg-2 control-label">Did the cards print successfully?</label>
                 <div class="col-lg-3">
                     <input id="btnYes" type="button" class="btn btn-success" value="Yes" />
                     <input id="btnNo" type="button" class="btn btn-danger" value="No" />
@@ -214,6 +215,8 @@
         window.print();
         setTimeout(function () {
 
+            $("#printConfirm").show();
+
          }, 100);
     }
 
@@ -234,7 +237,35 @@
         $("#spinner").hide();
         $(".btn-info").prop("disabled", false);
 
-        
+        $("#btnNo").click(function () {
+            $("#printConfirm").hide();
+        })
+
+        $("#btnYes").click(function () {
+            //Update all the records that have printed and reload the page
+
+            for (var i = 0; i < totalQr; i++) {
+                userId = $($allQr[i]).attr("id");
+                // console.log($($allQr[i]).attr("id"));
+
+                uploadData = {
+                    cardPrinted: 1,
+                }
+
+                $.ajax({
+                    type: "PUT",
+                    url: "/api/user/" + userId,
+                    data: uploadData,
+                    success: function () {
+                        console.log ("Updated " + userId);
+                    }
+                })
+
+            }
+
+            alert("User records have been updated to reflect that their cards have been printed. \n\n The page will now refresh to pull the next batch.")
+            location.reload();
+        })
 
     });
 </script>
