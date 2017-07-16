@@ -1,7 +1,7 @@
 <!-- <!DOCTYPE html> -->
 <html lang="en">
     <head>
-        <title>Print test</title>
+        <title>Showcase Card Printing</title>
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="/assets/css/rotating-card.css" rel="stylesheet">
 
@@ -18,7 +18,7 @@
                 .border { border: 1px solid black; padding: 10px; }
                 .card {
                     height: 213px;
-                    width: 321px;
+                    width: 337px;
                     padding-top: 0px;
                     padding-left: 0px;
                     margin-top: 20px; 
@@ -140,13 +140,25 @@
             </div>
         </div>
 
-        <div class="row no-print">
-
-        </div>
-
         <div class="no-print spacer-10">
+             <div class="row"></div> 
+            <!-- <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled /> -->
+
+            <div class="form-group"><label class="col-lg-2 control-label">Print cards below</label>
+                <div class="col-lg-3">
+                    <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled />
+                </div>
+            </div>
+
             <div class="row"></div>
-            <input class="btn btn-info" type="button" onclick="window.print();" value="Print" disabled />
+            <div class="spacer-10"></div>
+
+            <div id="printConfirm" class="form-group" hidden><label class="col-lg-2 control-label">Confirm successful print</label>
+                <div class="col-lg-3">
+                    <input id="btnYes" type="button" class="btn btn-success" value="Yes" />
+                    <input id="btnNo" type="button" class="btn btn-danger" value="No" />
+                </div>
+            </div>
         </div>
 
         <div class="spacer-10 no-print"></div>
@@ -198,6 +210,13 @@
 <script type="text/javascript" src="assets/js/qrcodesvg.js"></script>
 
 <script>
+    function loadPrint() {
+        window.print();
+        setTimeout(function () {
+
+         }, 100);
+    }
+
     $(document).ready(function(){
 
         var totalQr = $(".divQr").length;
@@ -215,8 +234,7 @@
         $("#spinner").hide();
         $(".btn-info").prop("disabled", false);
 
-        // Request the first 20 records
-
+        
 
     });
 </script>
