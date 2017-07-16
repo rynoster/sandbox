@@ -12,6 +12,7 @@ User.prototype.allUsers = function (callback, recordCount, fromRecord) {
     db("users")
         .offset(_.toInteger(fromRecord) || 0)
         .limit(_.toInteger(recordCount) || null)
+        .orderBy("first_name")
         .then((resultUsers) => {
             callback(resultUsers);
         });
