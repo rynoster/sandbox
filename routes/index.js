@@ -295,7 +295,7 @@ router
         });
     });
 
-    
+
 })
 
 // ===========================================================================
@@ -325,6 +325,23 @@ router
         partials: {
             header: "headerUser",
             content: "myProfile",
+            footer: "footer",
+            jscript: "jscript"
+        }
+    });
+})
+
+// ===========================================================================
+//  Edit my profile  =========================================================
+// ===========================================================================
+
+.get("/mysessions", (req, res) => {
+
+    res.render("skeleton", {
+        user: req.user,
+        partials: {
+            header: "headerUser",
+            content: "mysessions",
             footer: "footer",
             jscript: "jscript"
         }

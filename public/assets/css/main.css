@@ -3049,8 +3049,8 @@ blockquote:before {
 }
 
 .panel-title>a span:after {
-    font-family: 'Raleway', sans-serif;
-    content: "\e849";
+    font-family: 'FontAwesome';
+    content: "\f061";
     position: absolute;
     top: 0;
     right: 0;

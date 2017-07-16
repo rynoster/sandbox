@@ -27,185 +27,33 @@
     <div class="row">
         <div class="col-md-8">
             <h3>
-                Logged in as: <strong>$_SESSION['name']</strong>
+                Logged in as:
             </h3>
             <p>
                 Please review and update your personal details if needed.
                 <br><br>
 
             </p>
-
-            <form onsubmit="return false" id="regform" class="form-horizontal">
-
-                <div class="row form-group has-feedback">
-                    <div class="col-sm-12 outer-top-xs">
-                        <p><strong>Your details</strong>
-                            <p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 form-row">
-                        <input id="firstName" type="text" name="firstName" class="form-control input-text" placeholder="Name (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Name must be longer than 3 characters" maxlength="25" />
-                        <label class="label-helper" for="firstName">Name </label>
-                    </div>
-
-                    <div class="col-sm-6 form-row">
-                        <input id="lastName" type="text" name="lastName" class="form-control input-text" placeholder="Surname (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Surname must be longer than 3 characters" maxlength="25"
-                        />
-                        <label class="label-helper" for="lastName">Surname </label>
-                    </div>
-                </div>
-
-                <div class="row outer-top-xxs">
-                    <div class="col-sm-6">
-                        <input id="company" type="text" name="company" class="form-control input-text" placeholder="Company name (Required)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Company name must be longer than 3 characters" maxlength="50"
-                        />
-                        <label class="label-helper" for="company">Company </label>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <input id="bustitle" type="text" name="bustitle" class="form-control input-text" placeholder="Business title (Required)" data-validation="length" data-validation-length="min2" data-validation-error-msg="Business title must be longer than 2 characters"
-                            maxlength="100" />
-                        <label class="label-helper" for="bustitle">Business title </label>
-                    </div>
-                </div>
-
-
-                <div class="row outer-top-xxs">
-                    <div class="col-sm-6">
-                        <input id="mobilenr" type="text" name="mobilenr" class="form-control input-text" placeholder="Mobile no (Required)" data-validation="custom length" data-validation-length="min10" data-validation-regexp="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
-                            data-validation-error-msg="Not a valid telephone number" maxlength="15" />
-                        <label class="label-helper" for="mobilenr">Mobile no </label>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <input id="officenr" type="text" name="officenr" class="form-control input-text" placeholder="Office no (Optional)" data-validation="custom" data-validation-optional="true" data-validation-regexp="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"
-                            maxlength="15" />
-                        <label class="label-helper" for="officenr">Office no </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 outer-top-xs">
-                        <p><strong>Business email address</strong>
-                            <p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input id="email1" type="email" name="email1" class="form-control" placeholder="Business email (Required)" data-validation="email" maxlength="50" />
-                    </div>
-
-                    <div class="col-sm-6">
-                        <input id="email2" type="email" name="email2" class="form-control input-text" placeholder="Verify email (Required)" data-validation="confirmation" data-validation-confirm="email1" data-validation-error-msg="Email address does not match" maxlength="50"
-                        />
-                        <label class="label-helper" for="email2">Verify your mail address </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 outer-top-xxs">
-                        <p><strong>Select the type of registration</strong>
-                            <p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <select class="form-control" id="event_profile" name="event_profile" data-validation="required" data-validation-error-msg="Please select a registration type">
-                                                        <option disabled selected>Select registration type</option>
-                                                        <option value="Customer">End Customer</option>
-                                                        <option value="Media">Media</option>
-                                                        <option value="Staff">Staff</option>
-                                                        <option value="Sponsor">Sponsor</option>
-                                                    </select>
-                    </div>
-
-                </div>
-
-                <div id="iam-customer" hidden>
-                    <div class="row">
-                        <hr style="border: 0.5px dashed #d8d8d8;" />
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <p><strong>Please select your role in the organisation</strong>
-                                <p>
+<!-- ============================================= First slot ================================================== -->
+            <form onsubmit="return false" id="frmSessions" class="form-horizontal">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <div class="col-md-10">
+                                    <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" id="btnRegister" class="btn btn-default">Update my details</button>
+                                </div>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">Panel Body</div>
+                            <div class="panel-footer">Panel Footer</div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <select class="form-control" id="event_del_level" data-validation="required" data-validation-error-msg="Please select a role from the list" data-validation-depends-on="event_profile" data-validation-depends-on-value="Customer">
-                                                            
-                                                            <option disabled selected>Select your role</option>
-                                                            <option value="Board member">Board member</option>
-                                                            <option value="MD / CxO / Executive Management">MD / CxO / Executive Management</option>
-                                                            <option value="Senior Manager / Business Unit Manager">Senior Manager / Business Unit Manager</option>
-                                                            <option value="Mid-Level Manager / Team-leader">Mid-Level Manager / Team-leader</option>
-                                                            <option value="Snr Consultant / Engineer / Architect">Snr Consultant / Engineer / Architect</option>
-                                                            <option value="Technician / Administrator / Operations">Technician / Administrator / Operations</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12 outer-top-xxs">
-                            <p><strong>Do you have a Datacentrix account manager?</strong>
-                                <p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label class="radio-inline"><input type="radio" name="sel-am" value="No" data-validation="required" checked="checked">No</label>
-                            <label class="radio-inline"><input type="radio" name="sel-am" value="Yes" data-validation="required">Yes</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 outer-top-xxs">
-                            <input id="dcx-am" type="text" name="dcx=am" class="form-control" placeholder="Datacentrix account manager (Required if Yes)" data-validation="length" data-validation-length="min3" data-validation-error-msg="Please include your Datacentrix account manager's name"
-                                data-validation-depends-on="sel-am" data-validation-depends-on-value="Yes" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <hr style="border: 0.5px dashed #d8d8d8;" />
-                    </div>
-
                 </div>
-
-                <div class="row">
-
-                    <div class="col-sm-12 outer-top-xxs">
-                        <p><strong>Please select your dietary requirements</strong>
-                            <p>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 outer-bottom-xs">
-                        <select id="dietary" class="form-control" data-validation="required" data-validation-error-msg="Please select dietary requirements from the list">
-                                                    <option disabled selected>Select your requirements</option>
-                                                    <option value="Halaal">Halaal</option>
-                                                    <option value="Kosher">Kosher</option>
-                                                    <option value="Vegetarian">Vegetarian</option>
-                                                    <option value="None">None</option>
-                                                </select>
-                    </div>
-                </div>
-
-
-
-                <button type="submit" id="btnRegister" class="btn btn-default">Update my details</button>
-
-                <!--Test button just to see hide and show of divs as well as animation to top-->
-                <!--<button id="btnTest" class="btn btn-default">Test</button>-->
 
             </form>
 
