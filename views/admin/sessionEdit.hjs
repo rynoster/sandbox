@@ -276,7 +276,7 @@
                 $txtLocation.val(session.location);
                 $txtContent.summernote("code", session.content);
 
-                if (!session.parentId) {
+                if (!session.parentId || session.parentId === 0) {
                     toggleHiddenFields("parent");
 
                     $txtTimeStart.val(session.timeStart);
@@ -300,10 +300,16 @@
 
     function allFields (callback) {
 
+        console.log($selSpeaker)
+
         populateSpeakers();
         popuLateParentSessions()
 
-        callback();
+        console.log($selSpeaker)
+
+        $.when( populateFields ).then( function() {
+            callback()
+        });
 
     }
 
