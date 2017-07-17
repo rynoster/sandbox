@@ -1,4 +1,4 @@
-                <link href="/admin-assets/plugins/summernote/summernote.css" rel="stylesheet">
+                <!-- <link href="/admin-assets/plugins/summernote/summernote.css" rel="stylesheet"> -->
                 <style>
                     .button-margin {
                         margin-right: 10px;
@@ -68,7 +68,7 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-2 control-label">Biography</label>
-                                                <div class="col-lg-8"><textarea id="txtBio" placeholder="Biography" class="form-control"></textarea>
+                                                <div class="col-lg-8"><textarea id="txtBio" placeholder="Biography" class="form-control" rows="10"></textarea>
                                                 </div>
                                             </div>
 
@@ -103,7 +103,7 @@
 
                 {{> jscript}}
 
-                <script src="/admin-assets/plugins/summernote/summernote.min.js"></script>
+                <!-- <script src="/admin-assets/plugins/summernote/summernote.min.js"></script> -->
 
 <script>
     $(document).ready(function(){
@@ -141,7 +141,8 @@
                 $txtId.val(speaker.id);
                 $txtFullName.val(speaker.fullName);
                 $txtCompany.val(speaker.companyName);
-                $txtBio.summernote("code", speaker.bio);
+                // $txtBio.summernote("code", speaker.bio);
+                $txtBio.val(speaker.bio);
                 $txtTwitter.val(speaker.twitter);
                 $txtProfession.val(speaker.profession);
 
@@ -167,18 +168,18 @@
             }
         });
 
-        $('#txtBio').summernote({
-            height: "450px",
-            airMode: false,
-            placeholder: "Biography. * This is a rich text editor, highlight text for formatting options. *",
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-            ]
-        });
+        // $('#txtBio').summernote({
+        //     height: "450px",
+        //     airMode: false,
+        //     placeholder: "Biography. * This is a rich text editor, highlight text for formatting options. *",
+        //     toolbar: [
+        //         ['style', ['bold', 'italic', 'underline', 'clear']],
+        //         ['font', ['strikethrough', 'superscript', 'subscript']],
+        //         ['fontsize', ['fontsize']],
+        //         ['color', ['color']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //     ]
+        // });
 
         $("#btnUpload").on("click", function() {
             $("#upImage").click();
@@ -256,7 +257,8 @@
             var speaker = {
                 companyName: $txtCompany.val(),
                 fullName: $txtFullName.val(),
-                bio: $txtBio.summernote("code"),
+                // bio: $txtBio.summernote("code"),
+                bio: $txtBio.val(),
                 imageUrl: imageUrl,
                 twitter: $txtTwitter.val(),
                 profession: $txtProfession.val()
@@ -271,6 +273,8 @@
                     if (blUpload) { uploadFile(imageUrl); };
 
                     displayAlert("Success", "Record successfully updated.", 6000);
+
+                    window.history.back();
 
                 },
 
