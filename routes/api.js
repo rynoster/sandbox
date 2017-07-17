@@ -469,6 +469,7 @@ router
       // - totalRegistrations - Counts all the registrations
       // - customerSplit - Customer registration split
       // - regPerDay - Registrations per day
+      // - totalBreakfast - Counts all the positive rsvp's for the CXO breakfast
 
     const { query } = req.params;
 
@@ -485,28 +486,40 @@ router
               });
           break;
 
-          case "customerSplit":
-            db("users")
-              .count("id as count")
-              .select("orgRole")
-              .groupBy("orgRole")
-              .where("event_profile", "Customer")
-              .whereNot("orgRole", "")
-              .then((result) => {
+        case "customerSplit":
+          db("users")
+            .count("id as count")
+            .select("orgRole")
+            .groupBy("orgRole")
+            .where("event_profile", "Customer")
+            .whereNot("orgRole", "")
+            .then((result) => {
 
-                res.send(result);
+              res.send(result);
 
-              });
-          break;
+            });
+        break;
 
-          case "regPerDay":
-            db.raw("SELECT CAST(date_created as DATE) AS dateAdded, COUNT(id) as count FROM users GROUP BY dateAdded")
-              .then((result) => {
+        case "regPerDay":
+          db.raw("SELECT CAST(date_created as DATE) AS dateAdded, COUNT(id) as count FROM users GROUP BY dateAdded")
+            .then((result) => {
 
-                res.send(result[0]);
-                
-              });
-          break;
+              res.send(result[0]);
+              
+            });
+        break;
+
+        case "totalBreakfast":
+          db("users")
+            .count("id as count")
+            .select("cxoRSVP")
+            .where("cxoRSVP", 1)
+            .then((result) => {
+
+              res.send(result);
+
+            });
+        break;
 
         default:
           res.status(500);
