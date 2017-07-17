@@ -209,26 +209,34 @@
 
     }
 
-</script>
+    function popuLateParentSessions() {
 
-<script>
-    $(document).ready(function(){
+        //Populate Parent Session dropdown
+        $.ajax({
+            type: 'GET',
+            url: '/api/sessionsParent/',
 
-        $("#liMenuSession").addClass("active");
-        // $("#liSubMenuSessionAdd").addClass("active");
+            success: function(sessions) {
 
-        $('#txtContent').summernote({
-            height: "450px",
-            airMode: false,
-            placeholder: "Session content. * This is a rich text editor, highlight text for formatting options. *",
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-            ]
+                $.each(sessions, function(index, session) {
+                    $selParent.append("<option value='" + session.id + "'>" + session.title + "</option>");
+                })
+                    
+            },
+            error: function() {
+                $alDiv.addClass("alert-danger");
+                $alMessage.html("<strong>Error - </strong> Error retrieving speaker information.");
+                $alDiv.show();
+
+                //On error, disable all form fields
+                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
+
+            }
         });
+
+    }
+
+    function populateSpeakers () {
 
         //Populate speaker dropdown
         $.ajax({
@@ -253,28 +261,9 @@
             }
         });
 
-        //Populate Parent Session dropdown
-        $.ajax({
-            type: 'GET',
-            url: '/api/sessionsParent/',
+    }
 
-            success: function(sessions) {
-
-                $.each(sessions, function(index, session) {
-                    $selParent.append("<option value='" + session.id + "'>" + session.title + "</option>");
-                })
-                    
-            },
-            error: function() {
-                $alDiv.addClass("alert-danger");
-                $alMessage.html("<strong>Error - </strong> Error retrieving speaker information.");
-                $alDiv.show();
-
-                //On error, disable all form fields
-                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
-
-            }
-        });
+    function populateFields () {
 
         //Populate session fields
         $.ajax({
@@ -307,6 +296,38 @@
             
         })
 
+    }
+
+    function allFields (callback) {
+
+        populateSpeakers();
+        popuLateParentSessions()
+
+        callback();
+
+    }
+
+</script>
+
+<script>
+    $(document).ready(function(){
+
+        $("#liMenuSession").addClass("active");
+        // $("#liSubMenuSessionAdd").addClass("active");
+
+        $('#txtContent').summernote({
+            height: "450px",
+            airMode: false,
+            placeholder: "Session content. * This is a rich text editor, highlight text for formatting options. *",
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+            ]
+        });
+
         //If a parent session, hide all the child session fields
         $selParent.on("change", function () {
             if (this.value === "0") {
@@ -314,6 +335,10 @@
             } else {
                 toggleHiddenFields("child");
             }
+        })
+
+        allFields(function() {
+            populateFields();
         })
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
@@ -330,8 +355,6 @@
                 imageUrl: $txtImageUrl.val(),
                 content: $txtContent.summernote("code"),
             }
-
-            console.log(session);
 
             $.ajax({
                 type: 'PUT',
