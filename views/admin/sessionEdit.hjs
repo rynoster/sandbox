@@ -221,6 +221,8 @@
                 $.each(sessions, function(index, session) {
                     $selParent.append("<option value='" + session.id + "'>" + session.title + "</option>");
                 })
+
+                populateSpeakers();
                     
             },
             error: function() {
@@ -248,6 +250,8 @@
                 $.each(speakers, function(index, speaker) {
                     $selSpeaker.append("<option value='" + speaker.id + "'>" + speaker.fullName + "</option>");
                 })
+
+                populateFields();
 
             },
             error: function() {
@@ -343,9 +347,11 @@
             }
         })
 
-        allFields(function() {
-            populateFields();
-        })
+        popuLateParentSessions();
+
+        // allFields(function() {
+        //     populateFields();
+        // })
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
         $('#btnUpdate').on('click', function() {
