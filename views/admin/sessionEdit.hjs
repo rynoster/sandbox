@@ -1,4 +1,4 @@
-                <link href="/admin-assets/plugins/summernote/summernote.css" rel="stylesheet">
+                <!-- <link href="/admin-assets/plugins/summernote/summernote.css" rel="stylesheet"> -->
                 <style>
                     .button-margin {
                         margin-right: 10px;
@@ -79,7 +79,8 @@
                                             </div>
 
                                             <div class="form-group"><label class="col-lg-2 control-label">Content</label>
-                                                <div class="col-lg-8"><textarea id="txtContent" placeholder="Biography" class="form-control"></textarea>
+                                                <div class="col-lg-8">
+                                                    <textarea id="txtContent" placeholder="Session content" class="form-control" rows="10"></textarea>
                                                 </div>
                                             </div>
 
@@ -124,7 +125,7 @@
 
                 {{> jscript}}
 
-                <script src="/admin-assets/plugins/summernote/summernote.min.js"></script>
+                <!-- <script src="/admin-assets/plugins/summernote/summernote.min.js"></script> -->
 
 <script>
     //Declare all input fields as variables, for easier use later
@@ -278,7 +279,8 @@
 
                 $txtTitle.val(session.title);
                 $txtLocation.val(session.location);
-                $txtContent.summernote("code", session.content);
+                $txtContent.val(session.content);
+                // $txtContent.summernote("code", session.content);
 
                 if (!session.parentId || session.parentId === 0) {
                     toggleHiddenFields("parent");
@@ -302,21 +304,6 @@
 
     }
 
-    function allFields (callback) {
-
-        console.log($selSpeaker)
-
-        populateSpeakers();
-        popuLateParentSessions()
-
-        console.log($selSpeaker)
-
-        $.when( populateFields ).then( function() {
-            callback()
-        });
-
-    }
-
 </script>
 
 <script>
@@ -325,18 +312,18 @@
         $("#liMenuSession").addClass("active");
         // $("#liSubMenuSessionAdd").addClass("active");
 
-        $('#txtContent').summernote({
-            height: "450px",
-            airMode: false,
-            placeholder: "Session content. * This is a rich text editor, highlight text for formatting options. *",
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-            ]
-        });
+        // $('#txtContent').summernote({
+        //     height: "450px",
+        //     airMode: false,
+        //     placeholder: "Session content. * This is a rich text editor, highlight text for formatting options. *",
+        //     toolbar: [
+        //         ['style', ['bold', 'italic', 'underline', 'clear']],
+        //         ['font', ['strikethrough', 'superscript', 'subscript']],
+        //         ['fontsize', ['fontsize']],
+        //         ['color', ['color']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //     ]
+        // });
 
         //If a parent session, hide all the child session fields
         $selParent.on("change", function () {
@@ -348,10 +335,6 @@
         })
 
         popuLateParentSessions();
-
-        // allFields(function() {
-        //     populateFields();
-        // })
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
         $('#btnUpdate').on('click', function() {
@@ -365,7 +348,8 @@
                 timeStart: $txtTimeStart.val(),
                 timeEnd: $txtTimeEnd.val(),
                 imageUrl: $txtImageUrl.val(),
-                content: $txtContent.summernote("code"),
+                content: $txtContent.val(),
+                // content: $txtContent.summernote("code"),
             }
 
             $.ajax({
