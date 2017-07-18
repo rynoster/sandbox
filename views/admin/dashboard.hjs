@@ -18,6 +18,10 @@
         width: 100%;
         bottom: 0;
     }
+
+    /* .progress {
+        height: 40px;
+    } */
 </style>
 
 <header>
@@ -115,11 +119,12 @@
 
                             <div class="row" ></div>
 
-                            <div class="progress">
-                                <div id="prgRSVP" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                    <span id="prgRSVPLabel"></span>
+                            <div class="progress" style="height:40px;">
+                                <div id="prgRSVP" class="progress-bar progress-bar-success" style="width: 0%; min-width: 2em;">
+                                    <span style="line-height: 39px; font-size: 16pt; color: black;" id="prgRSVPLabel"></span>
                                 </div>
                             </div>
+
                         </div>
 
                 </div>
@@ -298,6 +303,7 @@
         var percentComplete = data[0].count / 150 * 100; //There are 150 seats allocatd for the breakfast
 
         $("#prgRSVP").css("width", percentComplete + "%");
+        // $("#prgRSVPLabel").html("<h1>" + data[0].count + "</h1>");
         $("#prgRSVPLabel").text(data[0].count);
     }
 

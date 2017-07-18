@@ -23,7 +23,7 @@
         {{!-- Login Panel on page --}}
         <div class="containter">
             <div class="center-block login-block">
-                <form class="sign-box" method="POST" action="/login">
+                <form class="sign-box" method="POST" action="/admin/login">
                     <div>
                         <img src="../assets/images/brand/chirpee.svg" alt="" width="150px">
                     </div>

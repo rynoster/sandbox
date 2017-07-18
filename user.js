@@ -21,14 +21,28 @@ User.prototype.allUsers = function (callback, recordCount, fromRecord) {
 
 User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord) {
 
-    db("users")
-        .offset(_.toInteger(fromRecord) || 0)
-        .limit(_.toInteger(recordCount) || null)
-        .orderBy("first_name")
-        .where("cardPrinted", null)
+    const sqlRecordCount = recordCount || 20;
+    const sqlFromRecord = fromRecord || 0;
+
+    db.raw("SELECT id, email, event_profile, pro_profile, company, \
+        CONCAT(UCASE(SUBSTRING(`first_name`, 1, 1)), LOWER(SUBSTRING(`first_name`, 2))) \
+        AS first_name, CONCAT(UCASE(SUBSTRING(`last_name`, 1, 1)), \
+        LOWER(SUBSTRING(`last_name`, 2))) AS last_name, cardPrinted FROM users WHERE \
+        cardPrinted IS NULL AND admin = 0 ORDER BY first_name LIMIT " + 
+        sqlRecordCount + " OFFSET " + sqlFromRecord)
+        
         .then((resultUsers) => {
-            callback(resultUsers);
+            callback(resultUsers[0]);
         });
+
+    // db("users")
+    //     .offset(_.toInteger(fromRecord) || 0)
+    //     .limit(_.toInteger(recordCount) || null)
+    //     .orderBy("first_name")
+    //     .where("cardPrinted", null)
+    //     .then((resultUsers) => {
+    //         callback(resultUsers);
+    //     });
 
 };
 

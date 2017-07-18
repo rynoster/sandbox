@@ -1,4 +1,4 @@
-var db = require("./db.js");
+const db = require("./db");
 
 function Speaker(id) {
     this.id = id;
@@ -7,21 +7,21 @@ function Speaker(id) {
 Speaker.prototype.allSpeakers = function (callback) {
     db("speakers")
     .orderBy("fullName")
-        .then(function(speakers) {
+        .then((speakers) => {
             callback(speakers);
-        })
+        });
 };
 
 Speaker.prototype.getSpeaker = function (callback) {
     db("speakers")
         .where("id", this.id)
         .first()
-        .then(function(speaker) {
+        .then((speaker) => {
             callback(speaker);
         })
-        .catch(function(err) {
+        .catch((err) => {
             callback(err);
-        })
-}
+        });
+};
 
 module.exports = Speaker;
