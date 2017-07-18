@@ -124,7 +124,7 @@
                                             <div class="col-sm-6">
                                                      <select class="form-control" id="event_profile" name="event_profile" data-validation="required" data-validation-error-msg="Please select a registration type">
                                                         <option disabled selected>Select registration type</option>
-                                                        <option value="Customer">End Customer</option>
+                                                        <option value="Delegate">Delegate</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
                                                         <option value="Sponsor">Sponsor</option>
@@ -145,7 +145,7 @@
 
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                        <select class="form-control" id="event_del_level" data-validation="required" data-validation-error-msg="Please select a role from the list" data-validation-depends-on="event_profile" data-validation-depends-on-value="Customer">
+                                                        <select class="form-control" id="event_del_level" data-validation="required" data-validation-error-msg="Please select a role from the list" data-validation-depends-on="event_profile" data-validation-depends-on-value="Delegate">
                                                             
                                                             <option disabled selected>Select your role</option>
                                                             <option value="Board member">Board member</option>
@@ -305,7 +305,7 @@
 
         //RR - Check if this is a end customer, if yes, then unhide other options 
        $('#event_profile').bind('change', function (e) { 
-            if( $('#event_profile').val() == 'Customer') {
+            if( $('#event_profile').val() == 'Delegate') {
                 $('#iam-customer').show();
             }   
             else {

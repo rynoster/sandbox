@@ -491,7 +491,7 @@ router
             .count("id as count")
             .select("orgRole")
             .groupBy("orgRole")
-            .where("event_profile", "Customer")
+            .where("event_profile", "Delegate")
             .whereNot("orgRole", "")
             .then((result) => {
 

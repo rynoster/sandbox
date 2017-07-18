@@ -49,7 +49,7 @@
 
                                     <select class="form-control" id="txtEventProfile" name="event_profile">
                                                         <!--<option disabled selected>Select registration type</option>-->
-                                                        <option value="Customer">End Customer</option>
+                                                        <option value="Delegate">Delegate</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
                                                         <option value="Sponsor">Sponsor</option>
