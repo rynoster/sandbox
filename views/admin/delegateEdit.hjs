@@ -1,53 +1,53 @@
-                <style>
-                    .button-margin {
-                        margin-right: 10px;
-                    }
+<style>
+    .button-margin {
+        margin-right: 10px;
+    }
+    
+    .button-hide {
+        display: none;
+    }
+</style>
+<!--start main content-->
+<section id="main-content">
+    <div class="space-30"></div>
+    <div class="container">
 
-                    .button-hide {
-                        display: none;
-                    }
-                </style>
-                <!--start main content-->
-                <section id="main-content">
-                    <div class="space-30"></div>
-                    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <header class="panel-heading">
+                        <h2 id="hName" class="panel-title" data-id="{{userId}}"></h2>
+                    </header>
+                    <div class="panel-body">
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel">
-                                    <header class="panel-heading">
-                                        <h2 id="hName" class="panel-title" data-id="{{userId}}"></h2>
-                                    </header>
-                                    <div class="panel-body">
+                        <form id="frmMain" method="get" role="form" class="form-horizontal">
 
-                                        <form id="frmMain" method="get" role="form" class="form-horizontal">
+                            <div class="form-group"><label class="col-lg-4 control-label">ID</label>
+                                <div class="col-lg-2"><input id="txtId" type="email" placeholder="ID" class="form-control" disabled>
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">ID</label>
-                                                <div class="col-lg-2"><input id="txtId" type="email" placeholder="ID" class="form-control" disabled>
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Email</label>
+                                <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Email</label>
-                                                <div class="col-lg-6"><input id="txtEmail" type="email" placeholder="Email" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">First Name</label>
+                                <div class="col-lg-6"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">First Name</label>
-                                                <div class="col-lg-6"><input id="txtFirstname" type="text" placeholder="First Name" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Last Name</label>
+                                <div class="col-lg-6"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Last Name</label>
-                                                <div class="col-lg-6"><input id="txtLastname" type="text" placeholder="Last Name" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Event Profile</label>
+                                <div class="col-lg-6">
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Event Profile</label>
-                                                <div class="col-lg-6">
-                                                    
-                                                    <!--<input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">-->
+                                    <!--<input id="txtEventProfile" type="text" placeholder="Event Profile" class="form-control">-->
 
-                                                    <select class="form-control" id="txtEventProfile" name="event_profile">
+                                    <select class="form-control" id="txtEventProfile" name="event_profile">
                                                         <!--<option disabled selected>Select registration type</option>-->
                                                         <option value="Customer">End Customer</option>
                                                         <option value="Media">Media</option>
@@ -55,24 +55,24 @@
                                                         <option value="Sponsor">Sponsor</option>
                                                     </select>
 
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Company</label>
-                                                <div class="col-lg-6"><input id="txtCompany" type="text" placeholder="Company" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Company</label>
+                                <div class="col-lg-6"><input id="txtCompany" type="text" placeholder="Company" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Professional Profile</label>
-                                                <div class="col-lg-6"><input id="txtProProfile" type="text" placeholder="Professional Profile" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Professional Profile</label>
+                                <div class="col-lg-6"><input id="txtProProfile" type="text" placeholder="Professional Profile" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Organisation Role</label>
-                                                <div class="col-lg-6">
-                                                    <!--<input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">-->
+                            <div class="form-group"><label class="col-lg-4 control-label">Organisation Role</label>
+                                <div class="col-lg-6">
+                                    <!--<input id="txtOrgRole" type="text" placeholder="Organisation Role" class="form-control">-->
 
-                                                    <select class="form-control" id="selOrgRole">
+                                    <select class="form-control" id="selOrgRole">
                                                                 
                                                         <!--<option disabled selected>Select your role</option>-->
                                                         <option value="Board member">Board member</option>
@@ -84,30 +84,30 @@
                                                         <option value="Other">Other</option>
                                                     </select>
 
-                                                </div>
+                                </div>
 
-                                            </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Mobile Number</label>
-                                                <div class="col-lg-6"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Mobile Number</label>
+                                <div class="col-lg-6"><input id="txtMobileNr" type="text" placeholder="Mobile Number" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Office Number</label>
-                                                <div class="col-lg-6"><input id="txtOfficeNr" type="text" placeholder="Office Number" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Office Number</label>
+                                <div class="col-lg-6"><input id="txtOfficeNr" type="text" placeholder="Office Number" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Account Manager</label>
-                                                <div class="col-lg-6"><input id="txtAccountMgr" type="text" placeholder="Account Manager" class="form-control">
-                                                </div>
-                                            </div>
+                            <div class="form-group"><label class="col-lg-4 control-label">Account Manager</label>
+                                <div class="col-lg-6"><input id="txtAccountMgr" type="text" placeholder="Account Manager" class="form-control">
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">Dietary requirements</label>
-                                                <div class="col-lg-6">
-                                                    <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
+                            <div class="form-group"><label class="col-lg-4 control-label">Dietary requirements</label>
+                                <div class="col-lg-6">
+                                    <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
 
-                                                    <select id="selDietary" class="form-control" >
+                                    <select id="selDietary" class="form-control">
                                                         <!--<option disabled selected>Select your requirements</option>-->
                                                         <option value="Halaal">Halaal</option>
                                                         <option value="Kosher">Kosher</option>
@@ -115,61 +115,63 @@
                                                         <option value="None">None</option>
                                                     </select>
 
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
 
-                                            <div class="form-group"><label class="col-lg-4 control-label">CxO Breakfast</label>
-                                                <div class="col-lg-6">
-                                                    <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
+                            <div class="form-group"><label class="col-lg-4 control-label">CxO Breakfast</label>
+                                <div class="col-lg-6">
+                                    <!--<input id="txtDietary" type="text" placeholder="Dietary requirements" class="form-control">-->
 
-                                                    <select id="selCxO" class="form-control" >
+                                    <select id="selCxO" class="form-control">
                                                         <!--<option disabled selected>Select your requirements</option>-->
                                                         <option value="-1">No</option>
                                                         <option value="1">Yes</option>
                                                         <option value="0">None</option>
                                                     </select>
 
-                                                </div>
-                                            </div>
-
-                                            <div class="text-center">
-                                                <button id="btnReject" type="button" class="btn btn-danger rounded button-margin" disabled>Reject</button>
-                                                <button id="btnApprove" type="button" class="btn btn-success rounded button-margin" disabled>Approve</button>
-                                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update</button>
-                                            </div>
-
-                                        </form>
-
-                                    </div>
-
-                                     <div id="alDiv" class="alert alert-dismissable col-lg-offset-3 col-lg-6 text-center" hidden>
-                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        <span id="alMessage">   </span>
-                                    </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div><!--end container-->
 
-                    <!--footer start-->
-                    <div class="footer">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <span>&copy; Copyright 2017. chirpee.io</span>
+                            <div class="text-center">
+                                <button id="btnReject" type="button" class="btn btn-danger rounded button-margin" data-toggle="confirmation">Reject</button>
+                                <button id="btnApprove" type="button" class="btn btn-success rounded button-margin">Approve</button>
+                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update</button>
                             </div>
-                        </div>
-                    </div>
-                    <!--footer end-->
-                </section><!--end main content-->
 
-                {{> jscript}}
+                        </form>
+
+                    </div>
+
+                    <div id="alDiv" class="alert alert-dismissable col-lg-offset-3 col-lg-6 text-center" hidden>
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <span id="alMessage">   </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+
+    <!--footer start-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>&copy; Copyright 2017. chirpee.io</span>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</section>
+<!--end main content-->
+
+{{> jscript}}
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
 
         //Retrieve user id from header data-id tag
-        var userId = $("#hName").data("id") ;
+        var userId = $("#hName").data("id");
 
         //Declare all input fields as variables, for easier use later
         var $frmMain = $("#frmMain")
@@ -216,15 +218,15 @@
 
                 $hName.text(user.first_name + " " + user.last_name);
 
-                //If delegate registration is not yet complete, display Approve and Reject buttons. No use to show otherwise
-                console.log(user.regComplete);
-                if (user.regComplete === 0) {
-                    $("#btnReject").show();
-                    $("#btnApprove").show();
-                } else {
-                    $("#btnReject").hide();
-                    $("#btnApprove").hide();
-                }
+                // //If delegate registration is not yet complete, display Approve and Reject buttons. No use to show otherwise
+                // console.log(user.regComplete);
+                // if (user.regComplete === 0) {
+                //     $("#btnReject").show();
+                //     $("#btnApprove").show();
+                // } else {
+                //     $("#btnReject").hide();
+                //     $("#btnApprove").hide();
+                // }
 
             },
             error: function() {
@@ -233,7 +235,7 @@
                 $alDiv.show();
 
                 //On error, disable all form fields
-                $frmMain.find('input, textarea, button, select').attr('disabled','disabled');
+                $frmMain.find('input, textarea, button, select').attr('disabled', 'disabled');
 
             }
         });
@@ -248,11 +250,11 @@
                 event_profile: $txtEventProfile.val(),
                 company: $txtCompany.val(),
                 pro_profile: $txtProProfile.val(),
-                orgRole:$selOrgRole.val(),
-                mobilenr:$txtMobileNr.val(),
-                officenr:$txtOfficeNr.val(),
-                accountManager:$txtAccountMgr.val(),
-                dietary:$selDietary.val(),
+                orgRole: $selOrgRole.val(),
+                mobilenr: $txtMobileNr.val(),
+                officenr: $txtOfficeNr.val(),
+                accountManager: $txtAccountMgr.val(),
+                dietary: $selDietary.val(),
                 allowCxoInvite: $selCxO.val()
             }
 
@@ -265,7 +267,7 @@
                     $alDiv.addClass("alert-success");
                     $alMessage.html("<strong>Success - </strong> Record successfully updated.");
                     $alDiv.show();
-                    $alDiv.fadeOut ( 6000 );
+                    $alDiv.fadeOut(6000);
 
                     window.history.back();
                 },
@@ -280,51 +282,63 @@
                     $alDiv.show();
                     // $alDiv.fadeOut ( 6000 );
                 }
-                
+
             })
         });
 
 
-        // $('#add-user').on('click', function() {
-        //     var user = {
-        //         first_name: $firstName.val(),
-        //         last_name: $lastName.val(),
-        //         email: $email.val(),
-        //         dietary: $dietary.val(),
-        //         event_profile: $eventProfile.val(),
-        //         pro_profile: $proProfile.val(),
-        //         company: $company.val(),
+        //Record update on Update button click. Updates the record and shows success/error alert panel
+        $('#btnReject').on('confirmed.bs.confirmation', function() {
+            var delegate = {
+                regComplete: -1
+            }
 
-        //     }
+            $.ajax({
+                type: 'PUT',
+                url: '/api/user/' + userId,
+                data: delegate,
 
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: '/api/user',
-        //         data: user,
-        //         success: function(newUser) {
-        //             $users.append("<li class='list-group-item list-group-item-success'>"+ user.first_name + " " + user.last_name + "</li>");
+                success: function(delegate) {
+                    window.history.back();
+                },
 
-        //             //Clear fields once done
-        //             $firstName.val('');
-        //             $lastName.val('');
-        //             $email.val('');
-        //             $dietary.val('');
-        //             $eventProfile.val('Delegate');
-        //             $proProfile.val('Select a profile');
-        //             $company.val('');
+                error: function(xhr, textStatus, errorThrown) {
+                    $alDiv.addClass("alert-danger");
+                    $alMessage.html("<strong>Error - </strong> Could not update record.");
+                    $alDiv.show();
+                }
 
-        //         },
+            })
+        });
 
-        //         error: function(xhr, textStatus, errorThrown) {
-        //             var error = jQuery.parseJSON(xhr.responseText);
+        //Record update on Update button click. Updates the record and shows success/error alert panel
+        $('#btnApprove').on('click', function() {
+            var delegate = {
+                regComplete: 1
+            }
 
-        //             $errPanel.removeClass("hidden");
-        //             $errMessage.text(error.error);
-        //         }
-                
-        //     })
-        // });
+            $.ajax({
+                type: 'PUT',
+                url: '/api/user/' + userId,
+                data: delegate,
+
+                success: function(delegate) {
+                    window.history.back();
+                },
+
+                error: function(xhr, textStatus, errorThrown) {
+                    $alDiv.addClass("alert-danger");
+                    $alMessage.html("<strong>Error - </strong> Could not update record.");
+                    $alDiv.show();
+                }
+
+            })
+        });
+
+        //RR - Used to fire the popover confirmation 
+        $('[data-toggle=confirmation]').confirmation({
+            rootSelector: '[data-toggle=confirmation]',
+        });
 
     });
-
 </script>

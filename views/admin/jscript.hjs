@@ -10,3 +10,6 @@
 <!-- Datatables-->
 <script src="/admin-assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/admin-assets/plugins/datatables/dataTables.responsive.min.js"></script>
+
+<!-- Bootstrap confirmation  -->
+<script src="/admin-assets/js/bootstrap-confirmation.min.js"></script>
