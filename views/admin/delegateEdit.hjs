@@ -135,7 +135,9 @@
                             <div class="text-center">
                                 <button id="btnReject" type="button" class="btn btn-danger rounded button-margin" data-toggle="confirmation">Reject</button>
                                 <button id="btnApprove" type="button" class="btn btn-success rounded button-margin">Approve</button>
-                                <button id="btnUpdate" type="button" class="btn btn-info rounded ">Update</button>
+                                <button id="btnUpdate" type="button" class="btn btn-info rounded button-margin">Update</button>
+                                <button id="btnApproveUpdate" type="button" class="btn btn-success rounded button-margin">Approve and Update</button>
+                                
                             </div>
 
                         </form>
@@ -195,6 +197,72 @@
         var $alDiv = $("#alDiv");
         var $alMessage = $("#alMessage");
 
+        function recordApprove () {
+
+            var delegate = {
+                regComplete: 1
+            }
+
+            return $.ajax({
+                type: 'PUT',
+                url: '/api/user/' + userId,
+                data: delegate,
+
+                success: function(delegate) {
+                    location.replace(document.referrer);
+                },
+
+                error: function(xhr, textStatus, errorThrown) {
+                    $alDiv.addClass("alert-danger");
+                    $alMessage.html("<strong>Error - </strong> Could not update record.");
+                    $alDiv.show();
+                }
+
+            })
+
+        }
+
+        function updateRecord () {
+
+            var delegate = {
+                email: $txtEmail.val(),
+                first_name: $txtFirstname.val(),
+                last_name: $txtLastname.val(),
+                event_profile: $txtEventProfile.val(),
+                company: $txtCompany.val(),
+                pro_profile: $txtProProfile.val(),
+                orgRole: $selOrgRole.val(),
+                mobilenr: $txtMobileNr.val(),
+                officenr: $txtOfficeNr.val(),
+                accountManager: $txtAccountMgr.val(),
+                dietary: $selDietary.val(),
+                allowCxoInvite: $selCxO.val()
+            }
+
+            return $.ajax({
+                type: 'PUT',
+                url: '/api/user/' + userId,
+                data: delegate,
+
+                success: function(delegate) {
+                    $alDiv.addClass("alert-success");
+                    $alMessage.html("<strong>Success - </strong> Record successfully updated.");
+                    $alDiv.show();
+                    $alDiv.fadeOut(6000);
+
+                },
+
+                error: function(xhr, textStatus, errorThrown) {
+                    // var error = jQuery.parseJSON(xhr.responseText);
+
+                    $alDiv.addClass("alert-danger");
+                    $alMessage.html("<strong>Error - </strong> Could not update record.");
+                    $alDiv.show();
+                }
+
+            })
+        }
+
         //Populate fields
         $.ajax({
             type: 'GET',
@@ -240,52 +308,28 @@
             }
         });
 
-
         //Record update on Update button click. Updates the record and shows success/error alert panel
         $('#btnUpdate').on('click', function() {
-            var delegate = {
-                email: $txtEmail.val(),
-                first_name: $txtFirstname.val(),
-                last_name: $txtLastname.val(),
-                event_profile: $txtEventProfile.val(),
-                company: $txtCompany.val(),
-                pro_profile: $txtProProfile.val(),
-                orgRole: $selOrgRole.val(),
-                mobilenr: $txtMobileNr.val(),
-                officenr: $txtOfficeNr.val(),
-                accountManager: $txtAccountMgr.val(),
-                dietary: $selDietary.val(),
-                allowCxoInvite: $selCxO.val()
-            }
-
-            $.ajax({
-                type: 'PUT',
-                url: '/api/user/' + userId,
-                data: delegate,
-
-                success: function(delegate) {
-                    $alDiv.addClass("alert-success");
-                    $alMessage.html("<strong>Success - </strong> Record successfully updated.");
-                    $alDiv.show();
-                    $alDiv.fadeOut(6000);
-
-                    window.history.back();
-                },
-
-                error: function(xhr, textStatus, errorThrown) {
-                    // var error = jQuery.parseJSON(xhr.responseText);
-
-                    // console.log(error);
-
-                    $alDiv.addClass("alert-danger");
-                    $alMessage.html("<strong>Error - </strong> Could not update record.");
-                    $alDiv.show();
-                    // $alDiv.fadeOut ( 6000 );
-                }
-
-            })
+            
+            updateRecord();
+            location.replace(document.referrer);
+            
         });
 
+        $('#btnApprove').on('click', function() {
+            
+            recordApprove();
+            location.replace(document.referrer);
+
+        });
+
+        $("#btnApproveUpdate").on("click", function() {
+
+            $.when(recordApprove()).then( function() {
+                updateRecord().then(location.replace(document.referrer));
+            })
+
+        })
 
         //Record update on Update button click. Updates the record and shows success/error alert panel
         $('#btnReject').on('confirmed.bs.confirmation', function() {
@@ -299,31 +343,7 @@
                 data: delegate,
 
                 success: function(delegate) {
-                    window.history.back();
-                },
-
-                error: function(xhr, textStatus, errorThrown) {
-                    $alDiv.addClass("alert-danger");
-                    $alMessage.html("<strong>Error - </strong> Could not update record.");
-                    $alDiv.show();
-                }
-
-            })
-        });
-
-        //Record update on Update button click. Updates the record and shows success/error alert panel
-        $('#btnApprove').on('click', function() {
-            var delegate = {
-                regComplete: 1
-            }
-
-            $.ajax({
-                type: 'PUT',
-                url: '/api/user/' + userId,
-                data: delegate,
-
-                success: function(delegate) {
-                    window.history.back();
+                    location.replace(document.referrer);
                 },
 
                 error: function(xhr, textStatus, errorThrown) {
