@@ -202,7 +202,7 @@
             success: function (children) {
 
                 $.each(children, function (index, child) {
-                    $("#ulChildren").append("<li><a href=/admin/sessionEdit/" + child.id + ">"  + child.title + "</a></li>");
+                    $("#ulChildren").append("<li><a href=/admin/sessionEdit/" + child.id + "><em><strong>["  + child.tabName + "]</strong></em> - " + child.title + "</a></li>");
                 })
 
             }
