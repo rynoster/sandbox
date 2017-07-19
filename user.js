@@ -46,15 +46,20 @@ User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord)
             callback(resultUsers[0]);
         });
 
-    // db("users")
-    //     .offset(_.toInteger(fromRecord) || 0)
-    //     .limit(_.toInteger(recordCount) || null)
-    //     .orderBy("first_name")
-    //     .where("cardPrinted", null)
-    //     .then((resultUsers) => {
-    //         callback(resultUsers);
-    //     });
+};
 
+User.prototype.updateMySessions = function (id, data, callback) {
+
+    db("users")
+        .where("id", id)
+        .update(data)
+        .then((result) => {
+            callback(200);
+        })
+        .catch((err) => {
+            callback(400);
+        });
+    
 };
 
 // User.prototype.getSession = function (id, callback) {
