@@ -33,65 +33,24 @@
 
     <div class="container inner-bottom-sm inner-top-xs">
 
-        <form id="frmAgenda" action="">
+        <form id="frmAgenda">
             <div class="row">
                 <h2 style="padding-left:none">Create your agenda</h2>
                 <div class="divide30"></div>
 
-                {{#allSessions}}
+                {{#dataSet1}}
 
-                    {{#hasChildren}}
-                    
-                        <!-- Multi-event in block  -->
-                        <div class="row inner-top-xs">
-                            <div class="col-md-10">
-                                <h4>{{timeStart}} - {{timeEnd}}</h4>
-                                <p>{{title}} - Please choose the session you want to attend</p>
-                                <hr style="border: 0.5px dashed #d8d8d8;">
-                            </div>
-                        </div>
+                    {{> sessionBlock}}
 
-                        {{#sessions}}
+                {{/dataSet1}}
 
-                            <div class="row inner-bottom-xs">
-                                <div class="col-md-2">
-                                    <p style="font-size:80%">Enroll to this session</p>
-                                    <div class="switch">
-                                        <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="block-{{parentId}}" />
-                                        <label for="toggle-{{id}}"></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 text-left">
-                                    <h3>{{{title}}}</h3>
-                                    <h6>{{speakerName}}</h6>
-                                    <p>{{{content}}}</p>
-                                </div>
-                            </div>
+                <!-- @Rudie, put lunch session in here -->
 
-                        {{/sessions}}
+                {{#dataSet2}}
 
-                    {{/hasChildren}}
+                    {{> sessionBlock}}
 
-                    {{^hasChildren}}
-
-                        <!-- Single event in block  -->
-                        <div class="row">
-                            <div class="col-md-10">
-                                <h4>{{timeStart}} - {{timeEnd}}</h4>
-                                <hr style="border: 0.5px dashed #d8d8d8;">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-9 text-left">
-                                <h3>{{title}}</h3>
-                                <p>{{{content}}}</p>
-                            </div>
-                        </div>
-                        <div class="divide15"></div>
-
-                    {{/hasChildren}}
-
-                {{/allSessions}}
+                {{/dataSet2}}
 
                 <div class="row inner-top-xs">
                     <hr style="border: 0.5px dashed #d8d8d8;">
@@ -107,3 +66,44 @@
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
 <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
+
+<script>
+
+    function postForm(){
+
+        $.ajax({
+            type: "POST",
+            url: "/api/mySessions",
+            data: $("#frmAgenda").serialize(),
+            success: function(ajaxResult) {
+                console.log("success");
+            }
+        })
+
+    };
+    
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#frmAgenda").on("submit", function(event) {
+            event.preventDefault();
+            console.log( $( this ).serialize() );
+            postForm();
+        });
+
+        $("#toggle-{{user.block1}}").prop("checked", true);
+        $("#toggle-{{user.block2}}").prop("checked", true);
+        $("#toggle-{{user.block3}}").prop("checked", true);
+        $("#toggle-{{user.block4}}").prop("checked", true);
+        $("#toggle-{{user.block5}}").prop("checked", true);
+        $("#toggle-{{user.block6}}").prop("checked", true);
+
+        
+
+
+    })
+
+</script>

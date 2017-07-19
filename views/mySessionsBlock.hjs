@@ -1,0 +1,50 @@
+{{#hasChildren}}
+                    
+    <!-- Multi-event in block  -->
+    <div class="row inner-top-xs">
+        <div class="col-md-10">
+            <h4>{{timeStart}} - {{timeEnd}}</h4>
+            <p>{{title}} - Please choose the session you want to attend</p>
+            <hr style="border: 0.5px dashed #d8d8d8;">
+        </div>
+    </div>
+    
+    {{#sessions}}
+
+        <div class="row inner-bottom-xs">
+            <div class="col-md-2">
+                <p style="font-size:80%">Enroll to this session {{@index}} </p>
+                <div class="switch">
+                    <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="block-{{parentId}}" value="{{id}}" />
+                    <label for="toggle-{{id}}"></label>
+                </div>
+            </div>
+            <div class="col-md-8 text-left">
+                <h3>{{{title}}} </h3>
+                <h6>{{speakerName}}</h6>
+                <p>{{{content}}}</p>
+            </div>
+        </div>
+
+    {{/sessions}}
+
+{{/hasChildren}}
+
+{{^hasChildren}}
+
+    <!-- Single event in block  -->
+    <div class="row">
+        <div class="col-md-10">
+            <h4>{{timeStart}} - {{timeEnd}}</h4>
+            <hr style="border: 0.5px dashed #d8d8d8;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 text-left">
+            <h3>{{title}}</h3>
+            <p>{{{content}}}</p>
+        </div>
+    </div>
+    <div class="divide15"></div>
+
+{{/hasChildren}}
