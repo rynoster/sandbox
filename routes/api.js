@@ -13,8 +13,10 @@ const db = require("../db");
 const auth = require("../auth");
 const Speaker = require("../speakers");
 const Agenda = require("../agenda");
+const User = require("../user");
 
 const agenda = new Agenda();
+const user = new User();
 
 //file uploads
 const formidable = require("formidable");
@@ -529,25 +531,14 @@ router
 
   })
 
-  .post("/mySessions", auth.loginRequired, (req, res, next) => {
+  .put("/mySessions", (req, res, next) => {
 
-    const mySession = req.body;
+    const userId = req.user.id;
+    const sessionData = req.body;
 
-    console.log(mySession);
-
-    // db("agenda")
-    //   .insert(newSession)
-    //   .then((session) => {
-
-    //     res.send(session);
-
-    //   })
-    //   .catch((err) => {
-    //     res.status(500).send({
-    //       error: err.message
-    //     });
-
-    //   });
+    user.updateMySessions(userId, sessionData, (result) => {
+      res.sendStatus(result);
+    }, next);
 
   })
 
