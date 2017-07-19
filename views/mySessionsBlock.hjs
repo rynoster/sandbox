@@ -1,17 +1,10 @@
 {{#hasChildren}}
 
-<div class="row inner-bottom-xs">
-    <div class="col-md-2">
-        <p style="font-size:80%">Enroll to this session</p>
-        <div class="switch">
-            <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="{{parentTab}}" value="{{id}}" />
-            <label for="toggle-{{id}}"></label>
-        </div>
-    </div>
-    <div class="col-md-8 text-left">
-        <h3>{{{title}}} </h3>
-        <h6>{{speakerName}}</h6>
-        <p>{{{content}}}</p>
+<div class="row inner-top-sm">
+    <div class="col-md-10 text-left">
+        <h3 style="color:darkgray">{{{title}}} </h3>
+        <h4>{{timeStart}} - {{timeEnd}}</h4>
+        <hr style="border: 0.5px dashed #d8d8d8;">
     </div>
 </div>
 
