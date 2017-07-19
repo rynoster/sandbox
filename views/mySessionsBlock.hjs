@@ -13,9 +13,9 @@
 
         <div class="row inner-bottom-xs">
             <div class="col-md-2">
-                <p style="font-size:80%">Enroll to this session {{@index}} </p>
+                <p style="font-size:80%">Enroll to this session</p>
                 <div class="switch">
-                    <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="block-{{parentId}}" value="{{id}}" />
+                    <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="{{parentTab}}" value="{{id}}" />
                     <label for="toggle-{{id}}"></label>
                 </div>
             </div>
