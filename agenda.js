@@ -107,19 +107,20 @@ Agenda.prototype.fullDataset = function (callback, userId) {
     self.getParents((resultParents) => {
 
       let processedItems = 0;
-      let idx = 0;
       const parentRows = resultParents;
 
-      parentRows.forEach((element, index) => {
+      parentRows.forEach((parent, index) => {
         
-        self.getChildren(element.id, (resultChildren) => {
+        self.getChildren(parent.id, (resultChildren) => {
 
             const childRows = resultChildren;
 
             if (resultChildren.length > 0) {
                 parentRows[index].hasChildren = true;
-                parentRows[index].idx = idx;
-                idx++;
+
+                for (let idx = 0; idx < childRows.length; idx++) {
+                    childRows[idx].parentTab = parent.tabName;
+                }
             }
 
             parentRows[index].sessions = childRows;
