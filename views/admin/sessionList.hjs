@@ -1,12 +1,12 @@
 <style>
     /*td { cursor: pointer }*/
-
+    
     i.fa-edit {
         cursor: pointer;
         /*color: #fff;*/
         font-weight: bold;
     }
-
+    
     td.highlight {
         background-color: navy;
     }
@@ -35,11 +35,16 @@
                                 </tr>
                             </thead>
                         </table>
-                    </div><!--panel body end-->
-                </div><!--end panel-->
-            </div><!--col end-->
-        </div><!--row end-->
-    </div><!--container end-->
+                    </div>
+                    <!--panel body end-->
+                </div>
+                <!--end panel-->
+            </div>
+            <!--col end-->
+        </div>
+        <!--row end-->
+    </div>
+    <!--container end-->
 
     <!--footer start-->
     <div class="footer">
@@ -50,12 +55,12 @@
         </div>
     </div>
     <!--footer end-->
-</section><!--end main content-->
+</section>
+<!--end main content-->
 
 {{> jscript}}
 
 <script>
-
     // var delFilter = $("#datatable").data("filter") ; //Get the applied filter from the data-attribute set on the table
     // $("#"+delFilter).addClass("active"); //Adds the active class to the selected filter, to highlight in the left navigation bar
 
@@ -66,7 +71,7 @@
     $(document).ready(function() {
         var editIcon = '<i class="fa fa-edit"></i>';
 
-        var myTable = $('#datatable').DataTable( {
+        var myTable = $('#datatable').DataTable({
             processing: true,
             stateSave: true,
             pageLength: 25,
@@ -81,29 +86,29 @@
                     // where: filterData
                 },
             },
-            fnRowCallback: function (nRow, aData) {
+            fnRowCallback: function(nRow, aData) {
 
-                $(nRow).on("click", "i", function(){
+                $(nRow).on("click", "i", function() {
                     window.location.href = "/admin/sessionEdit/" + aData.id;
                 })
 
             },
-            columnDefs: [
-                {
-                    render: function(data, type, full) {
-                        return editIcon + " " + full.title;
-                    },
-                    targets: [0]
-                }
-            ],
-            columns: [
-                { data: 'title' },
-                { data: 'timeStart' },
-                { data: 'timeEnd' },
-                { data: 'location' }
-            ]
+            columnDefs: [{
+                render: function(data, type, full) {
+                    return editIcon + " " + full.title;
+                },
+                targets: [0]
+            }],
+            columns: [{
+                data: 'title'
+            }, {
+                data: 'timeStart'
+            }, {
+                data: 'timeEnd'
+            }, {
+                data: 'location'
+            }]
         });
 
     });
-
 </script>

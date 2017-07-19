@@ -12,6 +12,41 @@
     h4 {
         color: grey !important;
     }
+    
+    .profile-header-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .profile-header-img>img.img-circle {
+        height: 140px;
+        border: 2px solid #005982;
+    }
+    /*.profile-header {
+            margin-top: 43px;
+        }*/
+    
+    .rank-label-container {
+        margin-top: -19px;
+        /* z-index: 1000; */
+        text-align: center;
+    }
+    
+    .label.label-default.rank-label {
+        background-color: #005982;
+        padding: 5px 10px 5px 10px;
+        border-radius: 27px;
+    }
+    
+    .span {
+        display: table;
+        margin: 0 auto;
+    }
+    
+    .session-body {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 </style>
 
 <!-- ============================================= SECTION – Banner ================================================== -->
@@ -38,19 +73,104 @@
                 <h2 style="padding-left:none">Create your agenda</h2>
                 <div class="divide30"></div>
 
-                {{#dataSet1}}
+                {{#dataSet1}} {{> sessionBlock}} {{/dataSet1}}
 
-                    {{> sessionBlock}}
+                <div class="row">
+                    <div class="col-md-10">
+                        <h4>13:15 - 14:00</h4>
+                        <hr style="border: 0.5px dashed #d8d8d8;">
+                    </div>
+                </div>
+                <div class="row inner-bottom-xs">
+                    <div class="col-md-10 text-left">
+                        <h3>Interactive lunch panel discussion</h3>
+                        <h6>Hosted by Editor-in-chief + publisher:Stuff: Toby Shapshak </h6>
+                        <p>Toby will be hosting a straight talk session with other leading panellists on the very sensitive topic of the singularity and how humanity is being assimilated into code. What will happen to humanity as we know it today and how
+                            should business transform to stay relevant in the future.</p>
+                    </div>
+                </div>
 
-                {{/dataSet1}}
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="col-md-2 col-xs-6">
+                            <div class="profile-header-container">
+                                <div class="profile-header-img text-center">
+                                    <img class="img-circle" src="images/speakers/michaeljordaan.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container" style="padding-left:5px">
+                                        <span class="label label-default rank-label">Dr. Michael Jordaan</span>
+                                        <div class="divide10"></div>
+                                        <p style="font-size:80%">Former CEO FNB</p>
+                                        <div class="divide10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- @Rudie, put lunch session in here -->
+                        <div class="col-md-2 col-xs-6">
+                            <div class="profile-header-container">
+                                <div class="profile-header-img text-center">
+                                    <img class="img-circle" src="images/speakers/davidchalrmers.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container" style="padding-left:5px">
+                                        <span class="label label-default rank-label">David Chalmers</span>
+                                    </div>
+                                    <div class="divide10"></div>
+                                    <p style="font-size:80%">CTO HPE EMEA</p>
+                                    <div class="divide10"></div>
+                                </div>
+                            </div>
+                        </div>
 
-                {{#dataSet2}}
+                        <div class="col-md-2 col-xs-6">
+                            <div class="profile-header-container">
+                                <div class="profile-header-img text-center">
+                                    <img class="img-circle" src="images/speakers/AntionetteWagner.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container" style="padding-left:5px">
+                                        <span class="label label-default rank-label">Antoinette Wagner</span>
+                                        <div class="divide10"></div>
+                                        <p style="font-size:80%">CIO Deloitte Africa</p>
+                                        <div class="divide10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    {{> sessionBlock}}
+                        <div class="col-md-2 col-xs-6">
+                            <div class="profile-header-container">
+                                <div class="profile-header-img text-center">
+                                    <img class="img-circle" src="images/speakers/rudieraath.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container" style="padding-left:5px">
+                                        <span class="label label-default rank-label">Rudie Raath</span>
+                                        <div class="divide10"></div>
+                                        <p style="font-size:80%">CDS Datacentrix</p>
+                                        <div class="divide10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                {{/dataSet2}}
+                        <div class="col-md-2 col-xs-6">
+                            <div class="profile-header-container">
+                                <div class="profile-header-img text-center">
+                                    <img class="img-circle" src="images/speakers/LindaMoreira.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container" style="padding-left:5px">
+                                        <span class="label label-default rank-label">Linda Moreira</span>
+                                        <div class="divide10"></div>
+                                        <p style="font-size:80%">Head of DC's ABSA</p>
+                                        <div class="divide10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {{#dataSet2}} {{> sessionBlock}} {{/dataSet2}}
 
                 <div class="row inner-top-xs">
                     <hr style="border: 0.5px dashed #d8d8d8;">
@@ -68,8 +188,7 @@
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 
 <script>
-
-    function postForm(){
+    function postForm() {
 
         $.ajax({
             type: "POST",
@@ -81,16 +200,14 @@
         })
 
     };
-    
 </script>
 
 <script>
-
     $(document).ready(function() {
 
         $("#frmAgenda").on("submit", function(event) {
             event.preventDefault();
-            console.log( $( this ).serialize() );
+            console.log($(this).serialize());
             postForm();
         });
 
@@ -101,9 +218,8 @@
         $("#toggle-{{user.block5}}").prop("checked", true);
         $("#toggle-{{user.block6}}").prop("checked", true);
 
-        
+
 
 
     })
-
 </script>
