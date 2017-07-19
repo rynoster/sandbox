@@ -191,7 +191,7 @@
     function postForm() {
 
         $.ajax({
-            type: "POST",
+            type: "PUT",
             url: "/api/mySessions",
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
@@ -218,8 +218,12 @@
         $("#toggle-{{user.block5}}").prop("checked", true);
         $("#toggle-{{user.block6}}").prop("checked", true);
 
+<<<<<<< HEAD
 
 
+=======
+    })
+>>>>>>> 4cca64b0873563fe9ab04a69c129421f02eaa883
 
     })
 </script>
