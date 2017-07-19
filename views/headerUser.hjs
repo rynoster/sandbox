@@ -56,9 +56,9 @@
                             <a href="/mySessions">My Agenda</a>
                         </li>
 
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a href="#">Downloads</a>
-                        </li>
+                        </li> -->
 
                         <li class="dropdown">
                             <a href="#" data-toggle="confirmation" data-placement="bottom">logout</a>
