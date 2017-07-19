@@ -205,25 +205,20 @@
 <script>
     $(document).ready(function() {
 
-        $("#frmAgenda").on("submit", function(event) {
-            event.preventDefault();
-            console.log($(this).serialize());
-            postForm();
-        });
+    $("#frmAgenda").on("submit", function(event) {
+        event.preventDefault();
+        console.log($(this).serialize());
+        postForm();
+    });
 
-        $("#toggle-{{user.block1}}").prop("checked", true);
-        $("#toggle-{{user.block2}}").prop("checked", true);
-        $("#toggle-{{user.block3}}").prop("checked", true);
-        $("#toggle-{{user.block4}}").prop("checked", true);
-        $("#toggle-{{user.block5}}").prop("checked", true);
-        $("#toggle-{{user.block6}}").prop("checked", true);
+    $("#toggle-{{user.block1}}").prop("checked", true);
+    $("#toggle-{{user.block2}}").prop("checked", true);
+    $("#toggle-{{user.block3}}").prop("checked", true);
+    $("#toggle-{{user.block4}}").prop("checked", true);
+    $("#toggle-{{user.block5}}").prop("checked", true);
+    $("#toggle-{{user.block6}}").prop("checked", true);
 
-<<<<<<< HEAD
-
-
-=======
     })
->>>>>>> 4cca64b0873563fe9ab04a69c129421f02eaa883
 
     })
 </script>
