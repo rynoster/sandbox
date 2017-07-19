@@ -71,7 +71,7 @@ function buildHtmlContactUs(params) {
 
 router
   .get("/register", (req, res) => {
-    res.send("Register page")
+    res.send("Register page");
   })
 
   //Shows all users, with more options to filter records
@@ -83,7 +83,7 @@ router
       .where(ajaxData.where || {})
       .then((users) => {
         res.send(users);
-      }, next)
+      }, next);
 
   })
 
@@ -103,8 +103,8 @@ router
       // .where("email", newUser.email)
       .whereRaw("LOWER(email) = ?", [_.toLower(newUser.email)]) //Compare lowercase to lowercase, to ensure users do not register with two different case email addresses that are the same
       .first()
-      .then((user) => {
-        if (user) {
+      .then((resultUser) => {
+        if (resultUser) {
           res.status(500).send({
             error: "User exists"
           });
@@ -143,9 +143,9 @@ router
                 error: err.message
               });
 
-            })
+            });
         }
-      })
+      });
 
   })
 
@@ -162,14 +162,14 @@ router
           return res.send(400);
         }
         res.send(sponsors);
-      }, next)
+      }, next);
   })
 
   .get("/allsponsors", auth.loginRequired, auth.adminRequired, (req, res, next) => {
 
     db("sponsors").then((sponsors) => {
       res.send(sponsors);
-    }, next)
+    }, next);
   })
 
   //Update existing sponsor details
