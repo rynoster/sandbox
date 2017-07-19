@@ -195,7 +195,7 @@
             url: "/api/mySessions",
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
-                console.log("success");
+                //success
             }
         })
 
@@ -207,7 +207,6 @@
 
     $("#frmAgenda").on("submit", function(event) {
         event.preventDefault();
-        console.log($(this).serialize());
         postForm();
     });
 
@@ -220,5 +219,4 @@
 
     })
 
-    })
 </script>
