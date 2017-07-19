@@ -33,11 +33,12 @@ router
 .get("/", (req, res) => {
 
     res.render("skeleton", {
+        user: req.user,
         partials: {
             header: "header",
             content: "index",
             footer: "footer",
-            jscript: "jscript"
+            jscript: "jscript",
         }
     });
 
@@ -101,6 +102,14 @@ router
 
     res.send(200);
     // res.redirect("/");
+
+})
+
+.get("/logout", (req, res, next) => {
+
+    req.session.destroy((err) => {
+        res.redirect("/");
+    });
 
 })
 
@@ -349,17 +358,31 @@ router
 
     agenda.fullDataset((result) => {
         res.render("skeleton", {
-        allSessions: result,
+        dataSet1: result.slice(0, 5),
+        dataSet2: result.slice(5, result.length),
         user: req.user,
+        fnChecked: function () {
+            return function (value) {
+                // console.log("********************");
+                console.log(value);
+
+                if (this.id === this.parentId) {
+                    return "checked";
+                } 
+                return "whoop";
+                
+            };
+        },
         partials: {
             header: "headerUser",
             content: "mysessions",
             footer: "footer",
-            jscript: "jscript"
+            jscript: "jscript",
+            sessionBlock: "mySessionsBlock",
         }
     });
 
-    });
+    }, req.user.id);
     
 })
 

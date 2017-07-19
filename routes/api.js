@@ -389,13 +389,13 @@ router
   })
 
   // GET full Sessions dataset
-  .get("/sessionsFull", (req, res, next) => {
+  .get("/sessionsFull", (req, res) => {
 
     const sessionsFull = new Agenda();
 
     sessionsFull.fullDataset((result) => {
       res.send(result);
-    }, next);
+    });
 
   })
 
@@ -526,6 +526,28 @@ router
           res.send("Not a valid report query");
 
     }
+
+  })
+
+  .post("/mySessions", auth.loginRequired, (req, res, next) => {
+
+    const mySession = req.body;
+
+    console.log(mySession);
+
+    // db("agenda")
+    //   .insert(newSession)
+    //   .then((session) => {
+
+    //     res.send(session);
+
+    //   })
+    //   .catch((err) => {
+    //     res.status(500).send({
+    //       error: err.message
+    //     });
+
+    //   });
 
   })
 

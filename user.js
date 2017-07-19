@@ -19,6 +19,17 @@ User.prototype.allUsers = function (callback, recordCount, fromRecord) {
 
 };
 
+User.prototype.userSessions = function (callback, userId) {
+
+    db("users")
+        .where("id", userId)
+        .select("block1", "block2", "block3", "block4", "block5", "block6")
+        .then((resultUser) => {
+            callback(resultUser);
+        });
+
+};
+
 User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord) {
 
     const sqlRecordCount = recordCount || 20;

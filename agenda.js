@@ -2,6 +2,9 @@ const moment = require("moment");
 const _ = require("lodash");
 
 const db = require("./db");
+const User = require("./user");
+
+const user = new User();
 
 function Agenda(id) {
     this.id = id;
@@ -97,26 +100,35 @@ Agenda.prototype.updateSession = function (id, data, callback) {
 
 };
 
-Agenda.prototype.fullDataset = function (callback) {
+Agenda.prototype.fullDataset = function (callback, userId) {
 
     const self = this;
 
     self.getParents((resultParents) => {
 
       let processedItems = 0;
+      let idx = 0;
       const parentRows = resultParents;
 
       parentRows.forEach((element, index) => {
         
         self.getChildren(element.id, (resultChildren) => {
 
-          if (resultChildren.length > 0) parentRows[index].hasChildren = true;
-          parentRows[index].sessions = resultChildren;
+            const childRows = resultChildren;
 
-          processedItems++;
+            if (resultChildren.length > 0) {
+                parentRows[index].hasChildren = true;
+                parentRows[index].idx = idx;
+                idx++;
+            }
 
-          if (processedItems === parentRows.length) {
-            callback(parentRows);
+            parentRows[index].sessions = childRows;
+
+            processedItems++;
+
+            if (processedItems === parentRows.length) {
+              
+                callback(parentRows);
           }
 
         });
