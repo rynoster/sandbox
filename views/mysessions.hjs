@@ -176,6 +176,12 @@
                     <hr style="border: 0.5px dashed #d8d8d8;">
                     <button type="submit" id="btnEnroll" class="btn btn-default">Confirm my agenda</button>
                 </div>
+
+                <div id="alertDiv" class="alert" hidden>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong id="alertTitle"></strong><span id="alertMessage"> </span>
+                </div>
+
             </div>
         </form>
     </div>
@@ -188,6 +194,11 @@
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 
 <script>
+
+    var $alertDiv = $("#alertDiv");
+    var $alertTitle = $("#alertTitle");
+    var $alertMessage = $("#alertMessage");
+
     function postForm() {
 
         $.ajax({
@@ -196,10 +207,27 @@
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
                 //success
+                displayAlert("success", "Succes", "Your personalised agenda has been saved.")
             }
         })
 
     };
+
+    function displayAlert(alertType, alertTitle, alertMessage) {
+
+        if (alertType === "error") {
+            $alertDiv.addClass("alert-danger");
+        } else {
+            $alertDiv.addClass("alert-success");
+        }
+
+        $alertDiv.show();
+        $alertTitle.text(alertTitle);
+        $alertMessage.text(" " + alertMessage);
+        $alertDiv.fadeOut(8000);
+
+    }
+
 </script>
 
 <script>
