@@ -4,6 +4,7 @@ const router = express.Router();
 const request = require("request");
 const _ = require("lodash");
 const url = require("url");
+const bcrypt = require("bcrypt-nodejs");
 // const async = require("async") eslint never used
 // const crypto = require("crypto"); eslint never used
 // const app = express(); eslint never used
@@ -39,12 +40,12 @@ function randomString(length, chars) {
 
 function buildHtmlBody(params, fullUrl) {
 
-  var hjs = require("hjs");
-  var fs = require("fs");
-  var htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
+  const hjs = require("hjs");
+  const fs = require("fs");
+  const htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
 
-  var htmlCompile = hjs.compile(htmlFile);
-  var htmlRender = htmlCompile.render({
+  const htmlCompile = hjs.compile(htmlFile);
+  const htmlRender = htmlCompile.render({
     NameofDelegate: params.first_name + " " + params.last_name,
     token: params.token,
     verifyUrl: fullUrl + "/verify/" + params.token,
@@ -257,7 +258,7 @@ router
           return res.send(400)
         }
         res.send(200);
-      }, next)
+      }, next);
   })
 
 
@@ -266,6 +267,12 @@ router
     const {
       id
     } = req.params;
+
+    const userData = req.body;
+
+    if (userData.password) {
+      userData.password = bcrypt.hashSync(userData.password);
+    }
 
     db("users")
       .where("id", id)
@@ -292,7 +299,7 @@ router
             return res.send(400)
           }
           res.send(200);
-        }, next)
+        }, next);
     })
 
   // All speakers GET
@@ -541,6 +548,20 @@ router
     }, next);
 
   })
+
+  .post("/delegatePasswords", (req, res, next) => {
+
+    // const userId = req.user.id;
+    // const sessionData = req.body;
+
+    user.delegatePasswordsAll((result) => {
+
+      res.send(result);
+
+    }, req, next);
+
+  })
+
 
 
 
