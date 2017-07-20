@@ -70,7 +70,8 @@
 
         <form id="frmAgenda">
             <div class="row">
-                <h2 style="padding-left:none">Create your agenda</h2>
+                <h2 style="padding-left:none">Create your agenda   <button type="button" id="btnEditAgenda" class="btn btn-default collapse">Edit agenda</button></h2>
+
                 <div class="divide30"></div>
 
                 {{#dataSet1}} {{> sessionBlock}} {{/dataSet1}}
@@ -200,6 +201,7 @@
     var $alertDiv = $("#alertDiv");
     var $alertTitle = $("#alertTitle");
     var $alertMessage = $("#alertMessage");
+    var $btnEditAgenda = $("#btnEditAgenda");
 
     function postForm() {
 
@@ -209,7 +211,6 @@
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
                 
-
                 var $allUncheckedRadioButtons = $('input[type="radio"]:not(:checked)');
                 var $allCheckedRadioButtons = $('input[type="radio"]:checked');
 
@@ -258,17 +259,42 @@
 <script>
     $(document).ready(function() {
 
-    $("#frmAgenda").on("submit", function(event) {
-        event.preventDefault();
-        postForm();
-    });
+        $("#frmAgenda").on("submit", function(event) {
+            event.preventDefault();
+            postForm();
+        });
 
-    $("#toggle-{{user.block1}}").prop("checked", true);
-    $("#toggle-{{user.block2}}").prop("checked", true);
-    $("#toggle-{{user.block3}}").prop("checked", true);
-    $("#toggle-{{user.block4}}").prop("checked", true);
-    $("#toggle-{{user.block5}}").prop("checked", true);
-    $("#toggle-{{user.block6}}").prop("checked", true);
+        $("#toggle-{{user.block1}}").prop("checked", true);
+        $("#toggle-{{user.block2}}").prop("checked", true);
+        $("#toggle-{{user.block3}}").prop("checked", true);
+        $("#toggle-{{user.block4}}").prop("checked", true);
+        $("#toggle-{{user.block5}}").prop("checked", true);
+        $("#toggle-{{user.block6}}").prop("checked", true);
+
+        var $allUncheckedRadioButtons = $('input[type="radio"]:not(:checked)');
+        var $allCheckedRadioButtons = $('input[type="radio"]:checked');
+
+        $btnEditAgenda.click(function() {
+
+            $(".sessionEnroll").show();
+            $btnEditAgenda.hide();
+
+            $allUncheckedRadioButtons.each(function(idx) {
+                $("#session-" + this.value).show()
+            })
+
+        });
+
+        if ($allCheckedRadioButtons.length === 6) {
+
+            $(".sessionEnroll").hide();
+            $btnEditAgenda.show();
+
+            $allUncheckedRadioButtons.each(function(idx) {
+                $("#session-" + this.value).hide()
+            })
+
+        } 
 
     })
 
