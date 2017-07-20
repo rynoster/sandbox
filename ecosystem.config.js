@@ -19,7 +19,7 @@ module.exports = {
         repo: "https://github.com/rynoster/sandbox",
         path: "/home/ubuntu/server/chirpee",
         
-        "post-deploy": "npm install && npm run knexprod && pm2 startOrRestart ecosystem.config.js --env production"
+        "post-deploy": "npm install && pm2 startOrRestart ecosystem.config.js --env production"
 
         }
   }
