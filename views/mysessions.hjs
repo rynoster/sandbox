@@ -201,6 +201,8 @@
 
     function postForm() {
 
+        console.log($("#frmAgenda").serialize());
+
         $.ajax({
             type: "PUT",
             url: "/api/mySessions",
@@ -208,6 +210,9 @@
             success: function(ajaxResult) {
                 //success
                 displayAlert("success", "Succes", "Your personalised agenda has been saved.")
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log(xhr.error);
             }
         })
 
