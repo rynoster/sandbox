@@ -201,8 +201,6 @@
 
     function postForm() {
 
-        console.log($("#frmAgenda").serialize());
-
         $.ajax({
             type: "PUT",
             url: "/api/mySessions",
@@ -229,7 +227,7 @@
         $alertDiv.show();
         $alertTitle.text(alertTitle);
         $alertMessage.text(" " + alertMessage);
-        $alertDiv.fadeOut(8000);
+        $alertDiv.fadeOut(60000);
 
     }
 
