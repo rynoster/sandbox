@@ -208,8 +208,28 @@
             url: "/api/mySessions",
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
-                //success
-                displayAlert("success", "Succes", "Your personalised agenda has been saved.")
+                
+
+                var $allUncheckedRadioButtons = $('input[type="radio"]:not(:checked)');
+                var $allCheckedRadioButtons = $('input[type="radio"]:checked');
+
+                //Hide all unchecked elements, only if 6 sessions selected
+                if ($allCheckedRadioButtons.length === 6) {
+
+                    displayAlert("success", "Success", "Your personalised agenda has been saved.")
+
+                    $(".sessionEnroll").hide();
+
+                    $allUncheckedRadioButtons.each(function(idx) {
+                        $("#session-" + this.value).hide()
+                    })
+
+                } else {
+
+                    displayAlert("success", "Success", "Your personalised agenda has been saved. <br> Please note however that you have not booked all the available sessions.")
+
+                }
+
             },
             error: function(xhr, textStatus, errorThrown) {
                 console.log(xhr.error);
@@ -228,7 +248,7 @@
 
         $alertDiv.show();
         $alertTitle.text(alertTitle);
-        $alertMessage.text(" " + alertMessage);
+        $alertMessage.html(" " + alertMessage);
         $alertDiv.fadeOut(60000);
 
     }
