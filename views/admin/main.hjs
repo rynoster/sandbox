@@ -108,6 +108,12 @@
                                         <span class="selected"></span>
                                     </a>
                                 </li>
+                                <li id="passwords" class="">
+                                    <a href="/admin/delegatePasswords">
+                                        <span class="menu-text">Email passwords</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <!--Sponsors menu section-->
