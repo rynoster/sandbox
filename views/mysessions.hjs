@@ -220,6 +220,7 @@
                     displayAlert("success", "Success", "Your personalised agenda has been saved.")
 
                     $(".sessionEnroll").hide();
+                    $btnEditAgenda.show();
 
                     $allUncheckedRadioButtons.each(function(idx) {
                         $("#session-" + this.value).hide()
