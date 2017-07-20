@@ -157,7 +157,7 @@ User.prototype.delegatePasswordsAll = function (callback, req) {
         .where("passwordSent", 0)
         .where("admin", 0)
         .where("password", null)
-        .limit(req.body.limit)
+        .limit(req.body.limit || null)
         .then((result) => {
             mailDelegates(result, req);
             callback(result); //Callback to delegatePasswords API
