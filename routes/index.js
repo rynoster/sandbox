@@ -91,12 +91,28 @@ router
 })
 
 //Delegate login
+.get(
+  '/login',
+  function(req, res, next) {
+    // Populate username and password before passing it on to Passport.
+    req.query.username = req.query.email;
+    req.query.password = req.query.firstLogin;
+    next();
+  },
+  function(req, res, next) {
 
-// .post("/login", passport.authenticate("local",
-//     function (req, res) {
+    passport.authenticate('local', function(err, user, info) {
+      if (err) { return next(err); }
+      if (!user) { return res.redirect('/'); }
+    //   if (!user) { return res.sendStatus(400); }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/myProfile');
+      });
+    })(req, res, next);
 
-//     }
-// ))
+  }
+)
 
 .post("/login", passport.authenticate("local"), (req, res) => {
 
@@ -604,18 +620,33 @@ router
 
 })
 
-.get("/admin/dashboard", auth.loginRequired, auth.adminRequired, (req, res) => {
+// .get("/admin/dashboard", auth.loginRequired, auth.adminRequired, (req, res) => {
+
+//     res.render("admin/main", {
+//         loginUser: req.user.first_name + " " + req.user.last_name,
+//         title: "Event dashboard",
+//         loggedIn: true,
+//         partials: {
+//             body: "admin/dashboard",
+//             jscript: "admin/jscript",
+//         }
+//     });
+
+// });
+
+.get("/admin/delegatePasswords", auth.loginRequired, auth.adminRequired, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
-        title: "Event dashboard",
+        title: "Batch - Email passwords",
         loggedIn: true,
         partials: {
-            body: "admin/dashboard",
+            body: "admin/delegatePasswords",
             jscript: "admin/jscript",
         }
     });
 
 });
+
 
 module.exports = router;
