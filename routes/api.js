@@ -551,9 +551,6 @@ router
 
   .post("/delegatePasswords", (req, res, next) => {
 
-    // const userId = req.user.id;
-    // const sessionData = req.body;
-
     user.delegatePasswordsAll((result) => {
 
       res.send(result);
@@ -563,16 +560,9 @@ router
   })
 
 
-
-
-
-
-
-
-
-
-
-
+  //***********************************************
+  //Below needs to be moved to helper functions app
+  //***********************************************
 
   //Google reCAPTCHA API
   .post('/captcha', (req, res, next) => {
