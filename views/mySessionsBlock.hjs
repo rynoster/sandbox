@@ -38,6 +38,7 @@
     <div class="col-md-9 text-left">
         <h3>{{title}}</h3>
         <p>{{{content}}}</p>
+        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
     </div>
 </div>
 <div class="divide15"></div>
