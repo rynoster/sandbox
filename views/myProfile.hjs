@@ -230,11 +230,11 @@
                             <hr>
                             <h2>Password change</h2>
                             <div id="passwordPrimaryDiv">
-                                <p>Please change your password, minimum 8 characters.</p>
+                                <p>Please change your password, minimum 6 characters.</p>
                                 <form id="frmColEmail">
                                     <div class="form-group">
-                                        <input id="txtPassword1" type="password" class="form-control" placeholder="New password">
-                                        <input id="txtPassword2" type="password" class="form-control" placeholder="Confirm password">
+                                        <input id="txtPassword1" type="password" class="form-control" placeholder="New password" maxlength="15">
+                                        <input id="txtPassword2" type="password" class="form-control" placeholder="Confirm password" maxlength="15">
                                         <button id="btnChangePassword" type="button" class="btn btn-default">Change Password</button>
                                         
                                         <div id="alertPasswordDiv" class="alert">
@@ -373,7 +373,7 @@
         $("#btnChangePassword").click(function(e) {
             e.preventDefault();
 
-            if ($txtPassword1.val() === $txtPassword2.val() && $txtPassword1.val().trim() !== "" & $txtPassword1.val().length >= 8) {
+            if ($txtPassword1.val() === $txtPassword2.val() && $txtPassword1.val().trim() !== "" & $txtPassword1.val().length >= 6) {
 
                 userData = {
                     password: $txtPassword1.val(),
