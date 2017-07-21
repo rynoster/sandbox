@@ -541,7 +541,19 @@ router
   .put("/mySessions", (req, res, next) => {
 
     const userId = req.user.id;
-    const sessionData = req.body;
+    let sessionData = req.body;
+
+    //Expects 6 values in the object. If not, insert nulls to overwrite previous values
+    if (_.size(sessionData) !== 6) {
+      sessionData = {
+        block1: sessionData.block1 || null,
+        block2: sessionData.block2 || null,
+        block3: sessionData.block3 || null,
+        block4: sessionData.block4 || null,
+        block5: sessionData.block5 || null,
+        block6: sessionData.block6 || null,
+      };
+    }
 
     user.updateMySessions(userId, sessionData, (result) => {
       res.sendStatus(result);
