@@ -301,6 +301,10 @@
 
         $editButtons.click(function() {
 
+            $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
+            $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
+            $allRadioButtons = $('input[type="checkbox"]');
+
             $(".sessionEnroll").show();
             $editButtons.hide();
             $btnEnroll.show();
@@ -308,7 +312,12 @@
             $('html, body').animate({ scrollTop: 0 }, 'slow');
 
             $allUncheckedRadioButtons.each(function(idx) {
-                $("#session-" + this.value).show()
+                // $("#session-" + this.value).show()
+                $("#session-" + this.value).animate({
+                    opacity: 1.0,
+                    left: "-=10",
+                    height: "toggle"
+                }, 3000)
             })
 
         });
