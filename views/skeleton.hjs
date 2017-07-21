@@ -112,8 +112,8 @@
                     <!-- Footer -->
                     <!--/////////////////-->
                     <div class="text-center" id="regHelp">
-                        <a style="font-size:75%" href="/register"><strong>Register</strong></a> |
-                        <a id="reqPass" style="font-size:75%" href="#">Request your password</a>
+                        <a style="font-size:75%" href="/register"><strong>Register</strong></a> 
+                        <!-- | <a id="reqPass" style="font-size:75%" href="#">Request your password</a> -->
                     </div>
                 </div>
             </div>
