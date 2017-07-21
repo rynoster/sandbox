@@ -207,7 +207,7 @@
                     </div>
                 </div>
 
-                <button type="submit" id="btnRegister" class="btn btn-default">Update my details</button>
+                <button type="button" id="btnRegister" class="btn btn-default">Update my details</button>
 
                 <div id="alertDiv" class="alert" hidden>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -231,13 +231,14 @@
                             <h2>Password change</h2>
                             <div id="passwordPrimaryDiv">
                                 <p>Please change your password, minimum 6 characters.</p>
-                                <form id="frmColEmail">
+                                <form id="frmChangePassword">
                                     <div class="form-group">
                                         <input id="txtPassword1" type="password" class="form-control" placeholder="New password" maxlength="15">
                                         <input id="txtPassword2" type="password" class="form-control" placeholder="Confirm password" maxlength="15">
                                         <button id="btnChangePassword" type="button" class="btn btn-default">Change Password</button>
+                                        <input type="submit" style="display:none" />
                                         
-                                        <div id="alertPasswordDiv" class="alert">
+                                        <div id="alertPasswordDiv" class="alert collapse">
                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                             <strong id="alertPasswordTitle"></strong><span id="alertPasswordMessage"></span>
                                         </div>
@@ -302,15 +303,17 @@
     function displayAlertPassword(alertType, alertTitle, alertMessage) {
 
         if (alertType === "error") {
+            $alertPasswordDiv.removeClass("alert-success");
             $alertPasswordDiv.addClass("alert-danger");
         } else {
+            $alertPasswordDiv.removeClass("alert-danger");
             $alertPasswordDiv.addClass("alert-success");
         }
 
         $alertPasswordDiv.show();
         $alertPasswordTitle.text(alertTitle);
         $alertPasswordMessage.text(" " + alertMessage);
-        $alertPasswordDiv.fadeOut(8000);
+        // $alertPasswordDiv.fadeOut(8000);
 
     }
 
@@ -326,6 +329,41 @@
         $alertTitle.text(alertTitle);
         $alertMessage.text(" " + alertMessage);
         $alertDiv.fadeOut(8000);
+
+    }
+
+    function changePassword() {
+
+        if ($txtPassword1.val() === $txtPassword2.val() && $txtPassword1.val().trim() !== "" & $txtPassword1.val().length >= 6) {
+
+                userData = {
+                    password: $txtPassword1.val(),
+                    passwordChanged: 1
+                };
+                
+                $.ajax({
+                    type: "PUT",
+                    url: "/api/user/{{user.id}}",
+                    data: userData,
+                    success: function() {
+                        $("#btnChangePassword").hide();
+                        displayAlertPassword("success", "Success", "Password successfully changed");
+
+                        setTimeout(function() {
+                            $modalPassword.modal("hide");
+                        }, 2500);
+                    }
+
+                })
+
+            } else {
+                // alert("There is a problem with the password you have provided. It is either too short, or the fields do not match. Please try again.");
+                displayAlertPassword("error", "Error", "There is a problem with the password you have provided. It is either too short, or the fields do not match. Please try again");
+
+                $(".modal-content").css("height", "500px")
+                $(".modal-body").css("height", "500px")
+
+            }
 
     }
 
@@ -355,6 +393,12 @@
             }
         });
 
+        $("#frmChangePassword").on("submit", function(e) {
+            e.preventDefault();
+
+            changePassword();
+        })
+
         $('#btnTest').on('click', function() {
 
             $delRegister.hide();
@@ -373,31 +417,7 @@
         $("#btnChangePassword").click(function(e) {
             e.preventDefault();
 
-            if ($txtPassword1.val() === $txtPassword2.val() && $txtPassword1.val().trim() !== "" & $txtPassword1.val().length >= 6) {
-
-                userData = {
-                    password: $txtPassword1.val(),
-                    passwordChanged: 1
-                };
-                
-                $.ajax({
-                    type: "PUT",
-                    url: "/api/user/{{user.id}}",
-                    data: userData,
-                    success: function() {
-                        $("#btnChangePassword").hide();
-                        displayAlertPassword("success", "Success", "Password successfully changed");
-
-                        setTimeout(function() {
-                            $modalPassword.modal("hide");
-                        }, 2500);
-                    }
-
-                })
-
-            } else {
-                alert("There is a problem with the password you provided. It is either too short, or the fields do not match. Please try again.");
-            }
+            changePassword();
         })
 
         $.validate({
@@ -457,8 +477,6 @@
         // Set selected values on dropdown lists
         $('#event_profile').val("{{user.event_profile}}");
         $('#dietary').val("{{user.dietary}}");
-
-        console.log(passwordChanged);
 
         if (passwordChanged === "0") {
             $modalPassword.modal({
