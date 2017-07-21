@@ -214,7 +214,11 @@
                 var $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
                 var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
 
-                displayAlert("success", "Success", "Your personalised agenda has been saved.")
+                if ($allCheckedRadioButtons.length === 6) {
+                    displayAlert("success", "Success", "Your personalised agenda has been saved. <br> You can edit your selected sessions at any time by clicking the <strong>Edit Agenda</strong> button at the top of the page.")
+                } else {
+                    displayAlert("success", "Success", "Your personalised agenda has been saved. <br> Please note however that you have not booked all the available sessions. <br> You can edit your selected sessions at any time by clicking the <strong>Edit Agenda</strong> button at the top of the page. ")
+                }
 
                 $(".sessionEnroll").hide();
                 $btnEditAgenda.show();
@@ -242,7 +246,9 @@
         $alertDiv.show();
         $alertTitle.text(alertTitle);
         $alertMessage.html(" " + alertMessage);
-        $alertDiv.fadeOut(60000);
+        setTimeout(function() {
+            $alertDiv.fadeOut(60000);    
+        }, 10000);
 
     }
 
