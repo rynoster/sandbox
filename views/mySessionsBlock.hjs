@@ -1,6 +1,6 @@
 {{#hasChildren}}
 
-<div class="row inner-top-sm">
+<div class="row inner-top-xs">
     <div class="col-md-10 text-left">
         <h3 style="color:darkgray">{{{title}}} </h3>
         <h4>{{timeStart}} - {{timeEnd}}</h4>
@@ -15,7 +15,7 @@
         <div class="col-md-2 sessionEnroll">
             <p style="font-size:80%">Enroll to this session</p>
             <div class="switch">
-                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="{{parentTab}}" value="{{id}}" />
+                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="checkbox" name="{{parentTab}}" value="{{id}}" />
                 <label for="toggle-{{id}}"></label>
             </div>
         </div>
