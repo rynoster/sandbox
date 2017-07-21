@@ -59,8 +59,8 @@ function mailDelegate(user, req) {
 
         const mail = new Mail({
             from: "noreply@chirpee.io",
-            to: "ryno@coetzee.za.com",
-            // to: user.email,
+            // to: "ryno@coetzee.za.com",
+            to: user.email,
             subject: "Datacentrix Showcase 2017 - Tailor your agenda",
             html: buildHtmlBody(user, genPassword, getFullUrl(req)),
 
