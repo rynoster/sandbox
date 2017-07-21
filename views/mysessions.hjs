@@ -70,7 +70,7 @@
 
         <form id="frmAgenda">
             <div class="row">
-                <h2 style="padding-left:none">Create your agenda   <button type="button" id="btnEditAgenda" class="btn btn-default collapse">Edit agenda</button></h2>
+                <h2 style="padding-left:none">Create your agenda   <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit agenda</button></h2>
 
                 <div class="divide30"></div>
 
@@ -178,6 +178,7 @@
                 <div class="row inner-top-xs">
                     <hr style="border: 0.5px dashed #d8d8d8;">
                     <button type="submit" id="btnEnroll" class="btn btn-default">Confirm my agenda</button>
+                    <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit agenda</button>
                 </div>
 
                 <div id="alertDiv" class="alert" hidden>
@@ -202,6 +203,8 @@
     var $alertTitle = $("#alertTitle");
     var $alertMessage = $("#alertMessage");
     var $btnEditAgenda = $("#btnEditAgenda");
+    var $editButtons = $(".button-edit");
+    var $btnEnroll = $("#btnEnroll");
 
     function postForm() {
 
@@ -215,16 +218,27 @@
                 var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
 
                 if ($allCheckedRadioButtons.length === 6) {
-                    displayAlert("success", "Success", "Your personalised agenda has been saved. <br> You can edit your selected sessions at any time by clicking the <strong>Edit Agenda</strong> button at the top of the page.")
+                    displayAlert("success", "Success", "Your personalised agenda has been saved. \
+                        <br> You can edit your selected sessions at any time by clicking the \
+                        <strong>Edit Agenda</strong> button at the top of the page.")
                 } else {
-                    displayAlert("success", "Success", "Your personalised agenda has been saved. <br> Please note however that you have not booked all the available sessions. <br> You can edit your selected sessions at any time by clicking the <strong>Edit Agenda</strong> button at the top of the page. ")
+                    displayAlert("success", "Success", "Your personalised agenda has been saved. \
+                    <br> Please note however that you have not booked all the available sessions. <br> \
+                    You can edit your selected sessions at any time by clicking the <strong>Edit Agenda</strong> button. ")
                 }
 
                 $(".sessionEnroll").hide();
-                $btnEditAgenda.show();
+
+                $editButtons.show();
+                $btnEnroll.hide();
 
                 $allUncheckedRadioButtons.each(function(idx) {
-                    $("#session-" + this.value).hide()
+                    // $("#session-" + this.value).hide()
+                    $("#session-" + this.value).animate({
+                        opacity: 0.25,
+                        left: "-=10",
+                        height: "toggle"
+                    }, 3000)
                 })
 
             },
@@ -285,10 +299,13 @@
 
         })
 
-        $btnEditAgenda.click(function() {
+        $editButtons.click(function() {
 
             $(".sessionEnroll").show();
-            $btnEditAgenda.hide();
+            $editButtons.hide();
+            $btnEnroll.show();
+
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
 
             $allUncheckedRadioButtons.each(function(idx) {
                 $("#session-" + this.value).show()
@@ -299,7 +316,7 @@
         if ($allCheckedRadioButtons.length > 1) {
 
             $(".sessionEnroll").hide();
-            $btnEditAgenda.show();
+            $editButtons.show();
 
             $allUncheckedRadioButtons.each(function(idx) {
                 $("#session-" + this.value).hide()
