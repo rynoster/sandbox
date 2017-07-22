@@ -119,19 +119,18 @@ User.prototype.userSessions = function (callback, userId) {
 
 };
 
-User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord) {
+User.prototype.allUsersNotPrinted = function (callback, recordCount, firstNameFilter, eventProfileFilter) {
 
     const sqlRecordCount = recordCount || 20;
-    const sqlFromRecord = fromRecord || 0;
-
-    // ****************************************
-    // Remember to remove hard code!!!!!!
-    // ****************************************
+    const sqlFirstNameFilter = firstNameFilter || "";
+    const sqlEventProfileFilter = eventProfileFilter || "%";
 
     db.raw("SELECT id, email, event_profile, pro_profile, company, \
         first_name, last_name, cardPrinted FROM users WHERE \
-        cardPrinted IS NULL AND admin = 0 AND event_profile = 'Delegate' ORDER BY first_name LIMIT " + 
-        sqlRecordCount + " OFFSET " + sqlFromRecord)
+        cardPrinted IS NULL AND admin = 0 AND event_profile = '" + sqlEventProfileFilter + "' \
+        AND first_name LIKE '" + sqlFirstNameFilter + "%' \
+        ORDER BY first_name LIMIT " + 
+        sqlRecordCount)
         
         .then((resultUsers) => {
             callback(resultUsers[0]);
