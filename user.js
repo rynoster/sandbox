@@ -124,11 +124,15 @@ User.prototype.allUsersNotPrinted = function (callback, recordCount, fromRecord)
     const sqlRecordCount = recordCount || 20;
     const sqlFromRecord = fromRecord || 0;
 
+    // ****************************************
+    // Remember to remove hard code!!!!!!
+    // ****************************************
+
     db.raw("SELECT id, email, event_profile, pro_profile, company, \
         CONCAT(UCASE(SUBSTRING(`first_name`, 1, 1)), LOWER(SUBSTRING(`first_name`, 2))) \
         AS first_name, CONCAT(UCASE(SUBSTRING(`last_name`, 1, 1)), \
         LOWER(SUBSTRING(`last_name`, 2))) AS last_name, cardPrinted FROM users WHERE \
-        cardPrinted IS NULL AND admin = 0 ORDER BY first_name LIMIT " + 
+        cardPrinted IS NULL AND admin = 0 AND event_profile = 'Delegate' ORDER BY first_name LIMIT " + 
         sqlRecordCount + " OFFSET " + sqlFromRecord)
         
         .then((resultUsers) => {
