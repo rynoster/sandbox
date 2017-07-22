@@ -357,8 +357,11 @@
 
             }
 
-            alert("User records have been updated to reflect that their cards have been printed. \n\n The page will now refresh to pull the next batch.")
-            location.reload();
+            setTimeout(function() {
+                alert("User records have been updated to reflect that their cards have been printed. \n\n The page will now refresh to pull the next batch.")
+                location.reload();    
+            }, 3000);
+            
         });
 
     });
