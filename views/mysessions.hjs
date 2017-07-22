@@ -70,10 +70,13 @@
 
 <section>
 
-    <div class="container inner-bottom-sm inner-top-xs">
+    <div class="container inner-bottom-sm">
 
         <form id="frmAgenda">
             <div class="row">
+                <div class="row inner-top-xs" style="padding-left:15px">
+                    <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit my agenda</button>
+                </div>
                 {{#dataSet1}} {{> sessionBlock}} {{/dataSet1}}
 
                 <div class="row">
@@ -269,7 +272,7 @@
                         opacity: 0.25,
                         left: "-=10",
                         height: "toggle"
-                    }, 3000)
+                    }, 1000)
                 })
 
             },
@@ -310,12 +313,12 @@
 
         // $("#toggle-{{user.block1}}").prop("checked", true);
 
-        ("{{user.block1}}" === "") ? $(".check-block1").hide() : $("#toggle-{{user.block1}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block2}}" === "") ? $(".check-block2").hide() : $("#toggle-{{user.block2}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block3}}" === "") ? $(".check-block3").hide() : $("#toggle-{{user.block3}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block4}}" === "") ? $(".check-block4").hide() : $("#toggle-{{user.block4}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block5}}" === "") ? $(".check-block5").hide() : $("#toggle-{{user.block5}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block6}}" === "") ? $(".check-block6").hide() : $("#toggle-{{user.block6}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block1}}" === "") ? $(".check-block1").hide(): $("#toggle-{{user.block1}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block2}}" === "") ? $(".check-block2").hide(): $("#toggle-{{user.block2}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block3}}" === "") ? $(".check-block3").hide(): $("#toggle-{{user.block3}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block4}}" === "") ? $(".check-block4").hide(): $("#toggle-{{user.block4}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block5}}" === "") ? $(".check-block5").hide(): $("#toggle-{{user.block5}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block6}}" === "") ? $(".check-block6").hide(): $("#toggle-{{user.block6}}").prop("checked", true) && sessionsSelected++;
 
         var $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
         var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');

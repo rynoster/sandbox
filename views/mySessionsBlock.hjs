@@ -8,40 +8,29 @@
     </div>
 </div>
 
-<!-- <div id="session-{{id}}">
-    <div class="row inner-bottom-xs">
-        <div class="col-md-2 sessionEnroll">
-            <p style="font-size:80%">Not selected</p>
-            <div class="switch">
-                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round check-{{tabName}}" type="checkbox" name="{{tabName}}" value="" data-session="{{id}}" />
-                <label for="toggle-{{id}}"></label>
-            </div>
-        </div>
-        <div class="col-md-8 text-left">
-            <h3>Empty Title </h3>
-            <h6>No Speaker</h6>
-        </div>
-    </div>
-</div> -->
-
 {{#sessions}}
 
 <div id="session-{{id}}">
     <div class="row">
-        <div class="col-md-2 sessionEnroll">
-            <p style="font-size:80%">Enroll to this session</p>
-            <div class="switch">
-                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="checkbox" name="{{parentTab}}" value="{{id}}" data-session="{{id}}"/>
-                <label for="toggle-{{id}}"></label>
-            </div>
-        </div>
         <div class="col-md-8 text-left">
             <h3>{{{title}}} </h3>
             <h6>{{speakerName}} / {{speakerProfession}}, {{speakerCompany}}</h6>
             <p>{{{content}}}</p>
+
+            <div class="divide20"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 sessionEnroll">
+            <p style="font-size:80%">Enroll to this session</p>
+            <div class="switch inner-bottom-xs">
+                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="checkbox" name="{{parentTab}}" value="{{id}}" data-session="{{id}}" />
+                <label for="toggle-{{id}}"></label>
+            </div>
         </div>
     </div>
 </div>
+
 
 {{/sessions}} {{/hasChildren}} {{^hasChildren}}
 
