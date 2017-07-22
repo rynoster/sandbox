@@ -118,7 +118,7 @@ router
               //Only email when req.body requested
               if (sendEmail === "true") {
                 //Send email verification email
-                var Mail = require('../email');
+                var Mail = require("../email");
                 var mail = new Mail({
                   from: "noreply@chirpee.io",
                   to: newUser.email,
@@ -189,9 +189,21 @@ router
         res.send(200);
       }, next);
   })
+
+  //Get user details based on first name, used for walk-ins
+  .get("/userFirstName/:firstName", auth.loginRequired, auth.adminRequired, (req, res) => {
+    const {
+      firstName
+    } = req.params;
+
+    user.searchUserFirstName((resultUsers) => {
+      res.send(resultUsers);
+    }, firstName);
+
+  })
    
   //Get user details for specific user id
-  .get('/user/:id', auth.loginRequired, (req, res, next) => {
+  .get("/user/:id", auth.loginRequired, (req, res, next) => {
     const {
       id
     } = req.params;
@@ -227,7 +239,7 @@ router
   })
 
   //Get user details for specific user email address
-  .get('/userCxo/:email', (req, res, next) => {
+  .get("/userCxo/:email", (req, res, next) => {
     const {
       email
     } = req.params;
@@ -245,7 +257,7 @@ router
   })
 
    //Update existing user details for CXO breakbast
-  .put('/userCxo/:email', (req, res, next) => {
+  .put("/userCxo/:email", (req, res, next) => {
     const {
       email
     } = req.params;
@@ -286,7 +298,7 @@ router
   })
 
     //Delete user
-    .delete('/user/:id', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+    .delete("/user/:id", auth.loginRequired, auth.adminRequired, (req, res, next) => {
       const {
         id
       } = req.params;
@@ -303,7 +315,7 @@ router
     })
 
   // All speakers GET
-  .get('/allSpeakers', (req, res, next) => {
+  .get("/allSpeakers", (req, res, next) => {
 
     const mySpeaker = new Speaker();
 
@@ -313,7 +325,7 @@ router
 
   })
 
-  .get('/speaker/:id', auth.loginRequired, (req, res, next) => {
+  .get("/speaker/:id", auth.loginRequired, (req, res, next) => {
     const { id } = req.params;
     const mySpeaker = new Speaker(id);
 
@@ -329,7 +341,7 @@ router
   })
 
   //POST/Add Speaker
-  .post('/speaker', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .post("/speaker", auth.loginRequired, auth.adminRequired, (req, res, next) => {
     var newSpeaker = req.body;
 
     db("speakers")
@@ -348,7 +360,7 @@ router
   })
 
   //Update existing speaker details
-  .put('/speaker/:id', auth.loginRequired, auth.adminRequired, (req, res, next) => {
+  .put("/speaker/:id", auth.loginRequired, auth.adminRequired, (req, res, next) => {
     const {
       id
     } = req.params;
@@ -365,7 +377,7 @@ router
   })
 
   //form uploads for images
-  .post('/upload', auth.loginRequired, auth.adminRequired, (req, res) => {
+  .post("/upload", auth.loginRequired, auth.adminRequired, (req, res) => {
 
     // create an incoming form object
     var form = new formidable.IncomingForm();
@@ -374,22 +386,22 @@ router
     form.multiples = false;
 
     // store all uploads in the /uploads directory
-    form.uploadDir = path.join(__dirname, '/../public/images/speakers');
+    form.uploadDir = path.join(__dirname, "/../public/images/speakers");
 
     // every time a file has been uploaded successfully,
     // rename it to it's orignal name
-    form.on('file', function(field, file) {
+    form.on("file", function(field, file) {
       fs.rename(file.path, path.join(form.uploadDir, file.name));
     });
 
     // log any errors that occur
-    form.on('error', function(err) {
-      console.log('An error has occured: \n' + err);
+    form.on("error", function(err) {
+      console.log("An error has occured: \n" + err);
     });
 
     // once all the files have been uploaded, send a response to the client
-    form.on('end', () => {
-      res.end('success');
+    form.on("end", () => {
+      res.end("success");
     });
 
     // parse the incoming request containing the form data
@@ -562,8 +574,6 @@ router
     sessionData.block5 = (sessionData.block5) === "" ? null : sessionData.block5 || null;
     sessionData.block6 = (sessionData.block6) === "" ? null : sessionData.block6 || null;
 
-    console.log(sessionData);
-
     user.updateMySessions(userId, sessionData, (result) => {
       res.sendStatus(result);
     }, next);
@@ -586,9 +596,9 @@ router
   //***********************************************
 
   //Google reCAPTCHA API
-  .post('/captcha', (req, res, next) => {
+  .post("/captcha", (req, res, next) => {
     
-    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    if (req.body["g-recaptcha-response"] === undefined || req.body["g-recaptcha-response"] === "" || req.body["g-recaptcha-response"] === null) {
       return res.json({
         responseCode: 1,
         responseDesc: "Please select captcha"
@@ -599,7 +609,7 @@ router
     var secretKey = "6LfYcCQUAAAAAKf55V5s0ol_9tK1HKEVqNfi0ynJ";
 
     // req.connection.remoteAddress will provide IP address of connected user.
-    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body["g-recaptcha-response"] + "&remoteip=" + req.connection.remoteAddress;
     
     // Hitting GET request to the URL, Google will respond with success or error scenario.
     request(verificationUrl, function (error, response, body) {
@@ -613,7 +623,7 @@ router
       }
 
       //Send mail on successful verification
-      var Mail = require('../email');
+      var Mail = require("../email");
       var mail = new Mail({
         from: "noreply@chirpee.io",
         // to : "ryno@coetzee.za.com",

@@ -119,7 +119,8 @@ User.prototype.userSessions = function (callback, userId) {
 
 };
 
-User.prototype.allUsersNotPrinted = function (callback, recordCount, firstNameFilter, eventProfileFilter) {
+User.prototype.allUsersNotPrinted = function (callback, recordCount, 
+    firstNameFilter, eventProfileFilter) {
 
     const sqlRecordCount = recordCount || 20;
     const sqlFirstNameFilter = firstNameFilter || "";
@@ -136,6 +137,15 @@ User.prototype.allUsersNotPrinted = function (callback, recordCount, firstNameFi
             callback(resultUsers[0]);
         });
 
+};
+
+User.prototype.searchUserFirstName = function (callback, userFirstName) {
+
+    db("users")
+        .where("first_name", "LIKE", userFirstName + "%")
+        .then((resultUsers) => {
+            callback(resultUsers);
+        });
 };
 
 User.prototype.updateMySessions = function (id, data, callback) {

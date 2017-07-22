@@ -54,7 +54,7 @@
     <!--Jquery validator-->
     <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome-regular.css">
 
     <style>
         .brand-logo {
@@ -112,13 +112,13 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <form id="search" class="navbar-form search" role="search">
-                                        <input type="search" class="form-control" placeholder="Type to search">
-                                        <button type="submit" class="btn btn-default btn-submit icon-right-open"></button>
+                                        <input id="txtSearch" type="search" class="form-control" placeholder="Type to search">
+                                        <button id="btnSearch" type="submit" class="btn btn-default btn-submit icon-right-open"></button>
                                     </form>
                                 </div>
                                 <div class="col-md-9">
 
-                                    <table class="table table-bordred table-striped">
+                                    <table id="tableResult" class="table table-bordred table-striped" hidden>
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
@@ -126,14 +126,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Rudie Raath</td>
-                                                <td>Datacentrix</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rudie Raath</td>
-                                                <td>Datacentrix</td>
-                                            </tr>
                                         </tbody>
                                     </table>
 
@@ -199,3 +191,47 @@
 <script src="/assets/js/viewport-units-buggyfill.js"></script>
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/custom.js"></script>
+
+<script>
+    var $btnSearch = $("#btnSearch");
+    var $txtSearch = $("#txtSearch");
+    var $tableResult = $("#tableResult");
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $btnSearch.click(function(e) {
+            e.preventDefault()
+
+            $.ajax({
+
+                type: "GET",
+                url: "/api/userFirstName/" + $txtSearch.val(),
+                success: function(userResult) {
+
+                    $tableResult.show();
+                    $tableResult.empty();
+
+                    userResult.forEach(function(element) {
+                        $tableResult.append("<tr class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+                        <td>" + element.company + "</td></tr>")
+                    }, this);
+
+                    // $.each(userResult, function(idx) {
+
+                    //     console.log("in");
+
+                        
+
+                    // })
+                }
+            })
+        }) //btnSearch.click
+
+        // $tableResult.on()
+
+    })
+
+</script>
