@@ -47,6 +47,10 @@
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+    
+    .agenda-hide {
+        display: none;
+    }
 </style>
 
 <!-- ============================================= SECTION – Banner ================================================== -->
@@ -70,19 +74,15 @@
 
         <form id="frmAgenda">
             <div class="row">
-                <h2 style="padding-left:none">Create your agenda   <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit agenda</button></h2>
-
-                <div class="divide30"></div>
-
                 {{#dataSet1}} {{> sessionBlock}} {{/dataSet1}}
 
                 <div class="row">
                     <div class="col-md-10">
-                        <h4>13:15 - 14:00</h4>
                         <hr style="border: 0.5px dashed #d8d8d8;">
+                        <h4>13:15 - 14:00</h4>
                     </div>
                 </div>
-                <div class="row inner-bottom-xs">
+                <div class="row">
                     <div class="col-md-10 text-left">
                         <h3>Interactive lunch panel discussion</h3>
                         <h6>Hosted by Editor-in-chief + publisher:Stuff: Toby Shapshak </h6>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row agenda-hide" id="profile-2">
                     <div class="col-md-10">
                         <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
                         <div class="row divide20"></div>
@@ -175,10 +175,38 @@
 
                 {{#dataSet2}} {{> sessionBlock}} {{/dataSet2}}
 
-                <div class="row inner-top-xs">
-                    <hr style="border: 0.5px dashed #d8d8d8;">
+                <div class="row">
+                    <div class="col-md-10">
+                        <hr style="border: 0.5px dashed #d8d8d8;">
+                        <h4>16:00 - 17:00</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 text-left">
+                        <h3>Prize giving at the Datacentrix stand</h3>
+                        <p>Stand in line to win the end-of-day lucky draw prizes sponsored by our participating technology partners. You need to be present to be eligible to win.</p>
+                        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <hr style="border: 0.5px dashed #d8d8d8;">
+                        <h4>17:00 - 20:00</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 text-left">
+                        <h3>HPE and Intel cocktail event with performing artists</h3>
+                        <p>Please join us at this, not-to-be-missed event for our final lucky draw prize and the closing of Datacentrix Showcase 2017. Enjoy performances by legendary artists "The Muses" with "1st Project". Liquid Chefs will be mixing up
+                            their world-class cocktails for delegates to enjoy. A take-me-home service will be available to conference delegates after this event.</p>
+                        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">La Toscana</p>
+                    </div>
+                </div>
+
+                <div class="row inner-top-xs" style="padding-left:15px">
                     <button type="submit" id="btnEnroll" class="btn btn-default">Confirm my agenda</button>
-                    <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit agenda</button>
+                    <button type="button" id="btnEditAgenda" class="btn btn-default collapse button-edit">Edit my agenda</button>
                 </div>
 
                 <div id="alertDiv" class="alert" hidden>
@@ -188,17 +216,17 @@
 
             </div>
         </form>
+
     </div>
 </section>
 
-  {{> jscript}}  
+{{> jscript}}
 
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
 <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 
 <script>
-
     var $alertDiv = $("#alertDiv");
     var $alertTitle = $("#alertTitle");
     var $alertMessage = $("#alertMessage");
@@ -213,7 +241,7 @@
             url: "/api/mySessions",
             data: $("#frmAgenda").serialize(),
             success: function(ajaxResult) {
-                
+
                 var $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
                 var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
 
@@ -231,6 +259,8 @@
 
                 $editButtons.show();
                 $btnEnroll.hide();
+                $("#profile-1").addClass("agenda-hide");
+                $("#profile-2").addClass("agenda-hide");
 
                 $allUncheckedRadioButtons.each(function(idx) {
                     var sessionId = $(this).data("session");
@@ -262,11 +292,10 @@
         $alertTitle.text(alertTitle);
         $alertMessage.html(" " + alertMessage);
         setTimeout(function() {
-            $alertDiv.fadeOut(60000);    
+            $alertDiv.fadeOut(10000);
         }, 10000);
 
     }
-
 </script>
 
 <script>
@@ -305,6 +334,9 @@
         })
 
         $editButtons.click(function() {
+            //Display profile pictures 
+            $("#profile-1").removeClass("agenda-hide");
+            $("#profile-2").removeClass("agenda-hide");
 
             $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
             $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
@@ -323,7 +355,7 @@
                     opacity: 1.0,
                     left: "-=10",
                     height: "toggle"
-                }, 3000)
+                }, 2000)
             })
 
         });
@@ -332,14 +364,14 @@
 
             $(".sessionEnroll").hide();
             $editButtons.show();
+            $btnEnroll.hide();
 
             $allUncheckedRadioButtons.each(function(idx) {
                 var sessionId = $(this).data("session");
                 $("#session-" + sessionId).hide()
             })
 
-        } 
+        }
 
     })
-
 </script>
