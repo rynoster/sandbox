@@ -260,12 +260,67 @@
 
                 $(".sessionEnroll").hide();
 
-                $(".check-block1").hide()
-                $(".check-block2").hide()
-                $(".check-block3").hide()
-                $(".check-block4").hide()
-                $(".check-block5").hide()
-                $(".check-block6").hide()
+                var hide1 = true;
+                var hide2 = true;
+                var hide3 = true;
+                var hide4 = true;
+                var hide5 = true;
+                var hide6 = true;
+
+                $(".block1").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide1 = false;
+                    }
+                })
+
+                $(".block2").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide2 = false;
+                    }
+                })
+
+                $(".block3").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide3 = false;
+                    }
+                })
+
+                $(".block4").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide4 = false;
+                    }
+                })
+
+                $(".block5").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide5 = false;
+                    }
+                })
+
+                $(".block6").each(function(idx) {
+                    if ($(this).prop("checked") === true) {
+                        hide6 = false;
+                    }
+                })
+
+                if (hide1) {
+                    $(".check-block1").hide()
+                }
+                if (hide2) {
+                    $(".check-block2").hide()
+                }
+                if (hide3) {
+                    $(".check-block3").hide()
+                }
+                if (hide4) {
+                    $(".check-block4").hide()
+                }
+                if (hide5) {
+                    $(".check-block5").hide()
+                }
+                if (hide6) {
+                    $(".check-block6").hide()
+                }
 
                 $editButtons.show();
                 $btnEnroll.hide();

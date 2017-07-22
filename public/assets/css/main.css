@@ -4421,12 +4421,12 @@ textarea.form-control {
 }
 
 .navbar .searchbox .dropdown-menu {
-    width: 270px;
+    width: 450px;
 }
 
 .search {
     position: relative;
-    margin: 15px;
+    margin: 0px;
     margin-bottom: 0;
 }
 

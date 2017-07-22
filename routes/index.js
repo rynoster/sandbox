@@ -92,26 +92,26 @@ router
 
 //Delegate login
 .get(
-  '/login',
-  function(req, res, next) {
-    // Populate username and password before passing it on to Passport.
-    req.query.username = req.query.email;
-    req.query.password = req.query.firstLogin;
-    next();
-  },
-  function(req, res, next) {
+    '/login',
+    function(req, res, next) {
+        // Populate username and password before passing it on to Passport.
+        req.query.username = req.query.email;
+        req.query.password = req.query.firstLogin;
+        next();
+    },
+    function(req, res, next) {
 
-    passport.authenticate('local', function(err, user, info) {
-      if (err) { return next(err); }
-      if (!user) { return res.redirect('/'); }
-    //   if (!user) { return res.sendStatus(400); }
-      req.logIn(user, function(err) {
-        if (err) { return next(err); }
-        return res.redirect('/myProfile');
-      });
-    })(req, res, next);
+        passport.authenticate('local', function(err, user, info) {
+            if (err) { return next(err); }
+            if (!user) { return res.redirect('/'); }
+            //   if (!user) { return res.sendStatus(400); }
+            req.logIn(user, function(err) {
+                if (err) { return next(err); }
+                return res.redirect('/myProfile');
+            });
+        })(req, res, next);
 
-  }
+    }
 )
 
 .post("/login", passport.authenticate("local"), (req, res) => {
@@ -378,32 +378,32 @@ router
 
     agenda.fullDataset((result) => {
         res.render("skeleton", {
-        dataSet1: result.slice(0, 5),
-        dataSet2: result.slice(5, result.length),
-        user: req.user,
-        fnChecked: function () {
-            return function (value) {
-                // console.log("********************");
-                console.log(value);
+            dataSet1: result.slice(0, 5),
+            dataSet2: result.slice(5, result.length),
+            user: req.user,
+            fnChecked: function() {
+                return function(value) {
+                    // console.log("********************");
+                    console.log(value);
 
-                if (this.id === this.parentId) {
-                    return "checked";
-                } 
-                return "whoop";
-                
-            };
-        },
-        partials: {
-            header: "headerUser",
-            content: "mysessions",
-            footer: "footer",
-            jscript: "jscript",
-            sessionBlock: "mySessionsBlock",
-        }
-    });
+                    if (this.id === this.parentId) {
+                        return "checked";
+                    }
+                    return "whoop";
+
+                };
+            },
+            partials: {
+                header: "headerUser",
+                content: "mysessions",
+                footer: "footer",
+                jscript: "jscript",
+                sessionBlock: "mySessionsBlock",
+            }
+        });
 
     }, req.user.id);
-    
+
 })
 
 // ===========================================================================
@@ -530,6 +530,17 @@ router
             body: "sponsoredit",
             footer: "admin/footer",
         }
+    });
+
+})
+
+// Walk-In Screen
+.get("/admin/walkin", auth.loginRequired, auth.adminRequired, (req, res) => {
+
+    res.render("admin/walkin", {
+        title: "chirpee.io - Walking Registrations",
+        loggedIn: true,
+
     });
 
 })

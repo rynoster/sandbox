@@ -1,0 +1,172 @@
+picture:
+  name: image
+
+facebook-official:
+  name: facebook
+  prefix: fab
+
+facebook:
+  name: facebook-f
+  prefix: fab
+
+arrow-circle-o-down:
+  name: arrow-circle-down
+  prefix: far
+
+arrow-circle-o-left:
+  name: arrow-circle-left
+  prefix: far
+
+arrow-circle-o-right:
+  name: arrow-circle-right
+  prefix: far
+
+arrow-circle-o-up:
+  name: arrow-circle-up
+  prefix: far
+
+bar-chart:
+  name: chart-bar
+
+line-chart:
+  name: chart-line
+
+pie-chart:
+  name: chart-pie
+
+area-chart:
+  name: chart-area
+
+caret-square-o-down:
+  name: caret-square-down
+  prefix: far
+
+caret-square-o-left:
+  name: caret-square-left
+  prefix: far
+
+caret-square-o-right:
+  name: caret-square-right
+  prefix: far
+
+caret-square-o-up:
+  name: caret-square-up
+  prefix: far
+
+circle-thin:
+  name: circle
+  prefix: fal
+
+cc:
+  name: closed-captioning
+
+chain-broken:
+  name: unlink
+
+diamond:
+  name: gem
+
+clipboard:
+  name: paste
+
+scissors:
+  name: cut
+
+files-o:
+  name: copy
+  prefix: far
+
+cutlery:
+  name: utensils
+
+file-text:
+  name: file-alt
+
+floppy-o:
+  name: save
+  prefix: far
+
+glass:
+  name: glass-martini
+
+google-plus-official:
+  name: google-plus
+  prefix: fab
+
+google-plus:
+  name: google-plus-g
+  prefix: fab
+
+header:
+  name: heading
+
+meanpath:
+  name: font-awesome
+  prefix: fab
+
+refresh:
+  name: sync
+
+pencil-square-o:
+  name: edit
+
+pencil-square:
+  name: pen-square
+
+sort-asc:
+  name: sort-up
+
+sort-desc:
+  name: sort-down
+
+spoon:
+  name: utensil-spoon
+
+window-close:
+  name: times-square
+
+youtube-square:
+  name: youtube-play
+  prefix: fab
+
+list-alt:
+  name: list-alt
+  prefix: far
+
+linkedin:
+  name: linkedin-in
+  prefix: fab
+
+arrows-alt:
+  name: expand-arrows
+
+calendar:
+  name: calendar-alt
+
+circle-o-notch:
+  name: circle-notch
+
+commenting:
+  name: comment-alt
+
+intersex:
+  name: transgender
+
+thumbs-o-up:
+  name: thumbs-up
+  prefix: far
+
+thumbs-o-down:
+  name: thumbs-down
+  prefix: far
+
+credit-card:
+  name: credit-card
+  prefix: far
+
+credit-card-alt:
+  name: credit-card
+
+creative-commons:
+  name: creative-commons
+  prefix: fab
