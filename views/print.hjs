@@ -155,6 +155,45 @@
             <!-- <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled /> -->
             <h1 class="jumbotron">Showcase 2017 Card Printing</h1>
 
+            <div class="form-group"><label class="col-lg-2 control-label">Filter by names starting with</label>
+                <div class="col-xs-1">
+                    
+                    <select name="" id="selectFilter" class="form-control" required="required">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                        <option value="K">K</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="N">N</option>
+                        <option value="O">O</option>
+                        <option value="P">P</option>
+                        <option value="Q">Q</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                        <option value="T">T</option>
+                        <option value="U">U</option>
+                        <option value="V">V</option>
+                        <option value="W">W</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="Z">Z</option>
+                    </select>
+                    
+                    <!-- <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled /> -->
+                </div>
+            </div>
+
+            <div class="row"></div>
+            <div class="spacer-10"></div>
+
             <div class="form-group"><label class="col-lg-2 control-label">Print cards below</label>
                 <div class="col-lg-3">
                     <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled />
@@ -256,7 +295,6 @@
 
             for (var i = 0; i < totalQr; i++) {
                 userId = $($allQr[i]).attr("id");
-                // console.log($($allQr[i]).attr("id"));
 
                 uploadData = {
                     cardPrinted: 1,
