@@ -325,11 +325,11 @@
             $("#printConfirm").hide();
         });
 
-        $("#selectLastNameFilter").on("change", function() {
+        $selectFirstNameFilter.on("change", function() {
             pageReloadWithFilters();
         });
 
-        $("#selectEventProfileFilter").on("change", function() {
+        $selectEventProfileFilter.on("change", function() {
             pageReloadWithFilters();
         });
 
