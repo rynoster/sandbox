@@ -310,12 +310,12 @@
 
         // $("#toggle-{{user.block1}}").prop("checked", true);
 
-        ("{{user.block1}}" === "") ? $(".check-block1").prop("checked", true) : $("#toggle-{{user.block1}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block2}}" === "") ? $(".check-block2").prop("checked", true) : $("#toggle-{{user.block2}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block3}}" === "") ? $(".check-block3").prop("checked", true) : $("#toggle-{{user.block3}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block4}}" === "") ? $(".check-block4").prop("checked", true) : $("#toggle-{{user.block4}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block5}}" === "") ? $(".check-block5").prop("checked", true) : $("#toggle-{{user.block5}}").prop("checked", true) && sessionsSelected++;
-        ("{{user.block6}}" === "") ? $(".check-block6").prop("checked", true) : $("#toggle-{{user.block6}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block1}}" === "") ? $(".check-block1").hide() : $("#toggle-{{user.block1}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block2}}" === "") ? $(".check-block2").hide() : $("#toggle-{{user.block2}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block3}}" === "") ? $(".check-block3").hide() : $("#toggle-{{user.block3}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block4}}" === "") ? $(".check-block4").hide() : $("#toggle-{{user.block4}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block5}}" === "") ? $(".check-block5").hide() : $("#toggle-{{user.block5}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block6}}" === "") ? $(".check-block6").hide() : $("#toggle-{{user.block6}}").prop("checked", true) && sessionsSelected++;
 
         var $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
         var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
@@ -356,6 +356,13 @@
                     left: "-=10",
                     height: "toggle"
                 }, 2000)
+
+                $(".check-block1").show()
+                $(".check-block2").show()
+                $(".check-block3").show()
+                $(".check-block4").show()
+                $(".check-block5").show()
+                $(".check-block6").show()
             })
 
         });

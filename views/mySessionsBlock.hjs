@@ -1,6 +1,6 @@
  {{#hasChildren}}
 
-<div class="row">
+<div class="row check-{{tabName}}">
     <div class="col-md-10 text-left">
         <h3 class="agenda-hide" style="color:darkgray">{{{title}}}</h3>
         <hr style="border: 0.5px dashed #d8d8d8;">
@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div id="session-{{id}}">
+<!-- <div id="session-{{id}}">
     <div class="row inner-bottom-xs">
         <div class="col-md-2 sessionEnroll">
             <p style="font-size:80%">Not selected</p>
@@ -22,7 +22,7 @@
             <h6>No Speaker</h6>
         </div>
     </div>
-</div>
+</div> -->
 
 {{#sessions}}
 
