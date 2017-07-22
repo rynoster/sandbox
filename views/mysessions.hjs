@@ -257,6 +257,13 @@
 
                 $(".sessionEnroll").hide();
 
+                $(".check-block1").hide()
+                $(".check-block2").hide()
+                $(".check-block3").hide()
+                $(".check-block4").hide()
+                $(".check-block5").hide()
+                $(".check-block6").hide()
+
                 $editButtons.show();
                 $btnEnroll.hide();
                 $("#profile-1").addClass("agenda-hide");
