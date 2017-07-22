@@ -555,6 +555,15 @@ router
       };
     }
 
+    sessionData.block1 = (sessionData.block1) === "" ? null : sessionData.block1 || null;
+    sessionData.block2 = (sessionData.block2) === "" ? null : sessionData.block2 || null;
+    sessionData.block3 = (sessionData.block3) === "" ? null : sessionData.block3 || null;
+    sessionData.block4 = (sessionData.block4) === "" ? null : sessionData.block4 || null;
+    sessionData.block5 = (sessionData.block5) === "" ? null : sessionData.block5 || null;
+    sessionData.block6 = (sessionData.block6) === "" ? null : sessionData.block6 || null;
+
+    console.log(sessionData);
+
     user.updateMySessions(userId, sessionData, (result) => {
       res.sendStatus(result);
     }, next);
