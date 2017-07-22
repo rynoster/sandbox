@@ -1,17 +1,17 @@
-{{#hasChildren}}
+ {{#hasChildren}}
 
-<div class="row inner-top-xs">
+<div class="row">
     <div class="col-md-10 text-left">
-        <h3 style="color:darkgray">{{{title}}} </h3>
-        <h4>{{timeStart}} - {{timeEnd}}</h4>
+        <h3 class="agenda-hide" style="color:darkgray">{{{title}}}</h3>
         <hr style="border: 0.5px dashed #d8d8d8;">
+        <h4>{{timeStart}} - {{timeEnd}}</h4>
     </div>
 </div>
 
 {{#sessions}}
 
 <div id="session-{{id}}">
-    <div class="row inner-bottom-xs">
+    <div class="row">
         <div class="col-md-2 sessionEnroll">
             <p style="font-size:80%">Enroll to this session</p>
             <div class="switch">
@@ -21,22 +21,19 @@
         </div>
         <div class="col-md-8 text-left">
             <h3>{{{title}}} </h3>
-            <h6>{{speakerName}}</h6>
+            <h6>{{speakerName}} / {{speakerProfession}}, {{speakerCompany}}</h6>
             <p>{{{content}}}</p>
         </div>
     </div>
 </div>
 
-{{/sessions}} 
-
-{{/hasChildren}} 
-{{^hasChildren}}
+{{/sessions}} {{/hasChildren}} {{^hasChildren}}
 
 <!-- Single event in block  -->
 <div class="row">
-    <div class="col-md-10 inner-top-xs">
-        <h4>{{timeStart}} - {{timeEnd}}</h4>
+    <div class="col-md-10">
         <hr style="border: 0.5px dashed #d8d8d8;">
+        <h4>{{timeStart}} - {{timeEnd}}</h4>
     </div>
 </div>
 <div class="row">
@@ -46,6 +43,5 @@
         <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
     </div>
 </div>
-<div class="divide15"></div>
 
 {{/hasChildren}}
