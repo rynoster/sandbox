@@ -319,7 +319,9 @@ router
 
 .get("/print", auth.loginRequired, auth.adminRequired, (req, res) => {
 
-    // console.log(req.query);
+    const recordCount = req.query.recordCount;
+    const firstNameFilter = req.query.firstNameFilter;
+    const eventProfileFilter = req.query.eventProfileFilter;
 
     // ?recordCount=10&fromRecord=5
 
@@ -327,9 +329,11 @@ router
 
         res.render("print", {
             allUsers: result,
+            firstNameFilter,
+            eventProfileFilter,
         });
 
-    }, req.query.recordCount || 20, req.query.fromRecord || 0);
+    }, recordCount || 20, firstNameFilter, eventProfileFilter);
 
 })
 
