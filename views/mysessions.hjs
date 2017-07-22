@@ -233,8 +233,9 @@
                 $btnEnroll.hide();
 
                 $allUncheckedRadioButtons.each(function(idx) {
-                    // $("#session-" + this.value).hide()
-                    $("#session-" + this.value).animate({
+                    var sessionId = $(this).data("session");
+
+                    $("#session-" + sessionId).animate({
                         opacity: 0.25,
                         left: "-=10",
                         height: "toggle"
@@ -271,17 +272,21 @@
 <script>
     $(document).ready(function() {
 
+        var sessionsSelected = 0;
+
         $("#frmAgenda").on("submit", function(event) {
             event.preventDefault();
             postForm();
         });
 
-        $("#toggle-{{user.block1}}").prop("checked", true);
-        $("#toggle-{{user.block2}}").prop("checked", true);
-        $("#toggle-{{user.block3}}").prop("checked", true);
-        $("#toggle-{{user.block4}}").prop("checked", true);
-        $("#toggle-{{user.block5}}").prop("checked", true);
-        $("#toggle-{{user.block6}}").prop("checked", true);
+        // $("#toggle-{{user.block1}}").prop("checked", true);
+
+        ("{{user.block1}}" === "") ? $(".check-block1").prop("checked", true) : $("#toggle-{{user.block1}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block2}}" === "") ? $(".check-block2").prop("checked", true) : $("#toggle-{{user.block2}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block3}}" === "") ? $(".check-block3").prop("checked", true) : $("#toggle-{{user.block3}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block4}}" === "") ? $(".check-block4").prop("checked", true) : $("#toggle-{{user.block4}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block5}}" === "") ? $(".check-block5").prop("checked", true) : $("#toggle-{{user.block5}}").prop("checked", true) && sessionsSelected++;
+        ("{{user.block6}}" === "") ? $(".check-block6").prop("checked", true) : $("#toggle-{{user.block6}}").prop("checked", true) && sessionsSelected++;
 
         var $allUncheckedRadioButtons = $('input[type="checkbox"]:not(:checked)');
         var $allCheckedRadioButtons = $('input[type="checkbox"]:checked');
@@ -309,11 +314,12 @@
             $editButtons.hide();
             $btnEnroll.show();
 
-            $('html, body').animate({ scrollTop: 0 }, 'slow');
+            // $('html, body').animate({ scrollTop: 0 }, 'slow');
 
             $allUncheckedRadioButtons.each(function(idx) {
-                // $("#session-" + this.value).show()
-                $("#session-" + this.value).animate({
+                var sessionId = $(this).data("session");
+
+                $("#session-" + sessionId).animate({
                     opacity: 1.0,
                     left: "-=10",
                     height: "toggle"
@@ -328,7 +334,8 @@
             $editButtons.show();
 
             $allUncheckedRadioButtons.each(function(idx) {
-                $("#session-" + this.value).hide()
+                var sessionId = $(this).data("session");
+                $("#session-" + sessionId).hide()
             })
 
         } 
