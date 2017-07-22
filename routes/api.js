@@ -4,6 +4,7 @@ const router = express.Router();
 const request = require("request");
 const _ = require("lodash");
 const url = require("url");
+const bcrypt = require("bcrypt-nodejs");
 // const async = require("async") eslint never used
 // const crypto = require("crypto"); eslint never used
 // const app = express(); eslint never used
@@ -39,12 +40,12 @@ function randomString(length, chars) {
 
 function buildHtmlBody(params, fullUrl) {
 
-  var hjs = require("hjs");
-  var fs = require("fs");
-  var htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
+  const hjs = require("hjs");
+  const fs = require("fs");
+  const htmlFile = fs.readFileSync(__dirname + "/../views/emailtemplate.hjs", "utf8");
 
-  var htmlCompile = hjs.compile(htmlFile);
-  var htmlRender = htmlCompile.render({
+  const htmlCompile = hjs.compile(htmlFile);
+  const htmlRender = htmlCompile.render({
     NameofDelegate: params.first_name + " " + params.last_name,
     token: params.token,
     verifyUrl: fullUrl + "/verify/" + params.token,
@@ -71,7 +72,7 @@ function buildHtmlContactUs(params) {
 
 router
   .get("/register", (req, res) => {
-    res.send("Register page")
+    res.send("Register page");
   })
 
   //Shows all users, with more options to filter records
@@ -83,7 +84,7 @@ router
       .where(ajaxData.where || {})
       .then((users) => {
         res.send(users);
-      }, next)
+      }, next);
 
   })
 
@@ -103,8 +104,8 @@ router
       // .where("email", newUser.email)
       .whereRaw("LOWER(email) = ?", [_.toLower(newUser.email)]) //Compare lowercase to lowercase, to ensure users do not register with two different case email addresses that are the same
       .first()
-      .then((user) => {
-        if (user) {
+      .then((resultUser) => {
+        if (resultUser) {
           res.status(500).send({
             error: "User exists"
           });
@@ -143,9 +144,9 @@ router
                 error: err.message
               });
 
-            })
+            });
         }
-      })
+      });
 
   })
 
@@ -162,14 +163,14 @@ router
           return res.send(400);
         }
         res.send(sponsors);
-      }, next)
+      }, next);
   })
 
   .get("/allsponsors", auth.loginRequired, auth.adminRequired, (req, res, next) => {
 
     db("sponsors").then((sponsors) => {
       res.send(sponsors);
-    }, next)
+    }, next);
   })
 
   //Update existing sponsor details
@@ -257,7 +258,7 @@ router
           return res.send(400)
         }
         res.send(200);
-      }, next)
+      }, next);
   })
 
 
@@ -266,6 +267,12 @@ router
     const {
       id
     } = req.params;
+
+    const userData = req.body;
+
+    if (userData.password) {
+      userData.password = bcrypt.hashSync(userData.password);
+    }
 
     db("users")
       .where("id", id)
@@ -292,7 +299,7 @@ router
             return res.send(400)
           }
           res.send(200);
-        }, next)
+        }, next);
     })
 
   // All speakers GET
@@ -534,7 +541,19 @@ router
   .put("/mySessions", (req, res, next) => {
 
     const userId = req.user.id;
-    const sessionData = req.body;
+    let sessionData = req.body;
+
+    //Expects 6 values in the object. If not, insert nulls to overwrite previous values
+    if (_.size(sessionData) !== 6) {
+      sessionData = {
+        block1: sessionData.block1 || null,
+        block2: sessionData.block2 || null,
+        block3: sessionData.block3 || null,
+        block4: sessionData.block4 || null,
+        block5: sessionData.block5 || null,
+        block6: sessionData.block6 || null,
+      };
+    }
 
     user.updateMySessions(userId, sessionData, (result) => {
       res.sendStatus(result);
@@ -542,16 +561,20 @@ router
 
   })
 
+  .post("/delegatePasswords", (req, res, next) => {
+
+    user.delegatePasswordsAll((result) => {
+
+      res.send(result);
+
+    }, req, next);
+
+  })
 
 
-
-
-
-
-
-
-
-
+  //***********************************************
+  //Below needs to be moved to helper functions app
+  //***********************************************
 
   //Google reCAPTCHA API
   .post('/captcha', (req, res, next) => {

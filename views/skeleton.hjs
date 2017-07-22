@@ -78,7 +78,7 @@
                             <input id="txtEmail" type="text" name="username" placeholder="Email address">
                             <input id="txtPassword" type="password" name="password" placeholder="Password">
                             <!--<input type="submit" name="login" class="login loginmodal-submit" value="Login">-->
-                            <button id="btnLogin" type="button" class="btn btn-default">Login me in</button>
+                            <button id="btnLogin" type="button" class="btn btn-default">Log me in</button>
                         </form>
                     </div>
                     <div id="sendPass">
@@ -112,8 +112,8 @@
                     <!-- Footer -->
                     <!--/////////////////-->
                     <div class="text-center" id="regHelp">
-                        <a style="font-size:75%" href="/register"><strong>Register</strong></a> |
-                        <a id="reqPass" style="font-size:75%" href="#">Request your password</a>
+                        <a style="font-size:75%" href="/register"><strong>Register</strong></a> 
+                        <!-- | <a id="reqPass" style="font-size:75%" href="#">Request your password</a> -->
                     </div>
                 </div>
             </div>

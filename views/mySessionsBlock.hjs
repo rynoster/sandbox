@@ -1,6 +1,6 @@
 {{#hasChildren}}
 
-<div class="row inner-top-sm">
+<div class="row inner-top-xs">
     <div class="col-md-10 text-left">
         <h3 style="color:darkgray">{{{title}}} </h3>
         <h4>{{timeStart}} - {{timeEnd}}</h4>
@@ -10,22 +10,27 @@
 
 {{#sessions}}
 
-<div class="row inner-bottom-xs">
-    <div class="col-md-2">
-        <p style="font-size:80%">Enroll to this session {{@index}} </p>
-        <div class="switch">
-            <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="radio" name="block-{{parentId}}" value="{{id}}" />
-            <label for="toggle-{{id}}"></label>
+<div id="session-{{id}}">
+    <div class="row inner-bottom-xs">
+        <div class="col-md-2 sessionEnroll">
+            <p style="font-size:80%">Enroll to this session</p>
+            <div class="switch">
+                <input id="toggle-{{id}}" class="cmn-toggle cmn-toggle-round" type="checkbox" name="{{parentTab}}" value="{{id}}" />
+                <label for="toggle-{{id}}"></label>
+            </div>
         </div>
-    </div>
-    <div class="col-md-8 text-left">
-        <h3>{{{title}}} </h3>
-        <h6>{{speakerName}}</h6>
-        <p>{{{content}}}</p>
+        <div class="col-md-8 text-left">
+            <h3>{{{title}}} </h3>
+            <h6>{{speakerName}}</h6>
+            <p>{{{content}}}</p>
+        </div>
     </div>
 </div>
 
-{{/sessions}} {{/hasChildren}} {{^hasChildren}}
+{{/sessions}} 
+
+{{/hasChildren}} 
+{{^hasChildren}}
 
 <!-- Single event in block  -->
 <div class="row">
@@ -38,6 +43,7 @@
     <div class="col-md-9 text-left">
         <h3>{{title}}</h3>
         <p>{{{content}}}</p>
+        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
     </div>
 </div>
 <div class="divide15"></div>

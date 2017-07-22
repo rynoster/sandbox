@@ -4,8 +4,6 @@ const _ = require("lodash");
 const db = require("./db");
 const User = require("./user");
 
-const user = new User();
-
 function Agenda(id) {
     this.id = id;
 }

@@ -8,6 +8,17 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .modal-content {
+        height: 380px;
+    }
+
+    .modal-body {
+        position: absolute;
+        top: 0px !important;
+        bottom: 15px;
+        height: 380px; 
+    }
 </style>
 <!-- ============================================= SECTION – Banner ================================================== -->
 
@@ -112,7 +123,7 @@
                     <div class="col-sm-6">
                         <select class="form-control ui fluid dropdown" id="event_profile" name="event_profile" data-validation="required" data-validation-error-msg="Please select a registration type" selected="{{user.event_profile}}">
                                                         <option disabled selected>Select registration type</option>
-                                                        <option value="Delegate">End Delegate</option>
+                                                        <option value="Delegate">Delegate</option>
                                                         <option value="Media">Media</option>
                                                         <option value="Staff">Staff</option>
                                                         <option value="Sponsor">Sponsor</option>
@@ -196,20 +207,57 @@
                     </div>
                 </div>
 
+                <button type="button" id="btnRegister" class="btn btn-default">Update my details</button>
 
-
-                <button type="submit" id="btnRegister" class="btn btn-default">Update my details</button>
-
+                <div id="alertDiv" class="alert" hidden>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong id="alertTitle"></strong><span id="alertMessage"></span>
+                </div>
+                
                 <!--Test button just to see hide and show of divs as well as animation to top-->
                 <!--<button id="btnTest" class="btn btn-default">Test</button>-->
 
             </form>
 
+            <div class="modal fade" id="modalPassword" role="dialog">
+                <div class="modal-dialog modal-xs">
 
+                    <div class="modal-content">
 
+                        <div class="modal-body">
+                            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                            <img src="/assets/images/showcase.svg" alt="" style="height:50px">
+                            <hr>
+                            <h2>Password change</h2>
+                            <div id="passwordPrimaryDiv">
+                                <p>Please change your password, minimum 6 characters.</p>
+                                <form id="frmChangePassword">
+                                    <div class="form-group">
+                                        <input id="txtPassword1" type="password" class="form-control" placeholder="New password" maxlength="15">
+                                        <input id="txtPassword2" type="password" class="form-control" placeholder="Confirm password" maxlength="15">
+                                        <button id="btnChangePassword" type="button" class="btn btn-default">Change Password</button>
+                                        <input type="submit" style="display:none" />
+                                        
+                                        <div id="alertPasswordDiv" class="alert collapse">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <strong id="alertPasswordTitle"></strong><span id="alertPasswordMessage"></span>
+                                        </div>
+                                        
+                                    </div>
+                                </form>
+                            </div>
 
+                            <div id="divEmailCheckError" hidden>
+                                <p>Sorry, we could not find your invitation in our database. Please contact Bernadine Bell on <a href="mailto:BBell@datacentrix.co.za">BBell@datacentrix.co.za</a>, or try again.</p>
+                                <a href="/"><button id="btnCloseEmailCheck" type="button" class="btn btn-default">Close</button></a>
+                                <button id="btnRetryEmailCheck" type="button" class="btn btn-default">Retry</button>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
 
+            </div>
 
         </div>
         <div class="col-md-4">
@@ -224,22 +272,105 @@
 
 <!-- ====================================  Ryno's Backend Processing DO NOT EDIT ==================================' -->
 <script>
-    $(document).ready(function() {
 
-        var $regForm = $("#regform");
-        var $firstName = $("#firstName");
-        var $lastName = $("#lastName");
-        var $company = $("#company");
-        var $bustitle = $("#bustitle");
-        var $mobilenr = $("#mobilenr");
-        var $officenr = $("#officenr");
-        var $email = $("#email1");
-        var $eventProfile = $("#event_profile");
-        var $delRegister = $("#DelRegister");
-        var $delRegisterSuccess = $("#DelRegister-Success");
-        var $orgRole = $("#event_del_level");
-        var $dcxAm = $("#dcx-am");
-        var $dietary = $("#dietary");
+    var $regForm = $("#regform");
+    var $firstName = $("#firstName");
+    var $lastName = $("#lastName");
+    var $company = $("#company");
+    var $bustitle = $("#bustitle");
+    var $mobilenr = $("#mobilenr");
+    var $officenr = $("#officenr");
+    var $email = $("#email1");
+    var $eventProfile = $("#event_profile");
+    var $delRegister = $("#DelRegister");
+    var $delRegisterSuccess = $("#DelRegister-Success");
+    var $orgRole = $("#event_del_level");
+    var $dcxAm = $("#dcx-am");
+    var $dietary = $("#dietary");
+    var $alertDiv = $("#alertDiv");
+    var $alertTitle = $("#alertTitle");
+    var $alertMessage = $("#alertMessage");
+    var $modalPassword = $("#modalPassword");
+    var $txtPassword1 = $("#txtPassword1");
+    var $txtPassword2 = $("#txtPassword2");
+
+    var $alertPasswordDiv = $("#alertPasswordDiv");
+    var $alertPasswordTitle = $("#alertPasswordTitle");
+    var $alertPasswordMessage = $("#alertPasswordMessage");
+
+    var passwordChanged = "{{user.passwordChanged}}";
+
+    function displayAlertPassword(alertType, alertTitle, alertMessage) {
+
+        if (alertType === "error") {
+            $alertPasswordDiv.removeClass("alert-success");
+            $alertPasswordDiv.addClass("alert-danger");
+        } else {
+            $alertPasswordDiv.removeClass("alert-danger");
+            $alertPasswordDiv.addClass("alert-success");
+        }
+
+        $alertPasswordDiv.show();
+        $alertPasswordTitle.text(alertTitle);
+        $alertPasswordMessage.text(" " + alertMessage);
+        // $alertPasswordDiv.fadeOut(8000);
+
+    }
+
+    function displayAlert(alertType, alertTitle, alertMessage) {
+
+        if (alertType === "error") {
+            $alertDiv.addClass("alert-danger");
+        } else {
+            $alertDiv.addClass("alert-success");
+        }
+
+        $alertDiv.show();
+        $alertTitle.text(alertTitle);
+        $alertMessage.text(" " + alertMessage);
+        $alertDiv.fadeOut(8000);
+
+    }
+
+    function changePassword() {
+
+        if ($txtPassword1.val() === $txtPassword2.val() && $txtPassword1.val().trim() !== "" & $txtPassword1.val().length >= 6) {
+
+                userData = {
+                    password: $txtPassword1.val(),
+                    passwordChanged: 1
+                };
+                
+                $.ajax({
+                    type: "PUT",
+                    url: "/api/user/{{user.id}}",
+                    data: userData,
+                    success: function() {
+                        $("#btnChangePassword").hide();
+                        displayAlertPassword("success", "Success", "Password successfully changed");
+
+                        setTimeout(function() {
+                            $modalPassword.modal("hide");
+                        }, 2500);
+                    }
+
+                })
+
+            } else {
+                // alert("There is a problem with the password you have provided. It is either too short, or the fields do not match. Please try again.");
+                displayAlertPassword("error", "Error", "There is a problem with the password you have provided. It is either too short, or the fields do not match. Please try again");
+
+                $(".modal-content").css("height", "500px")
+                $(".modal-body").css("height", "500px")
+
+            }
+
+    }
+
+</script>
+
+<script>
+    $(document).ready(function() {
 
         //Check radio button change event. If Yes clicked, then unhide AM input field
         $('input:radio[name=sel-am]').change(
@@ -262,6 +393,12 @@
             }
         });
 
+        $("#frmChangePassword").on("submit", function(e) {
+            e.preventDefault();
+
+            changePassword();
+        })
+
         $('#btnTest').on('click', function() {
 
             $delRegister.hide();
@@ -275,6 +412,12 @@
             }, 'slow');
 
             $regForm[0].reset();
+        })
+
+        $("#btnChangePassword").click(function(e) {
+            e.preventDefault();
+
+            changePassword();
         })
 
         $.validate({
@@ -300,24 +443,16 @@
                 }
 
                 $.ajax({
-                    type: 'POST',
-                    url: '/api/user',
+                    type: 'PUT',
+                    url: '/api/user/{{user.id}}',
                     data: user,
                     success: function() {
 
-                        $delRegister.hide();
-                        $delRegisterSuccess.fadeIn(2500);
+                        displayAlert("success", "Success", "Your details have been sucessfully updated.")
 
-                        $("#alRegisterSuccessText").text("Registration details have been captured, thank you.");
-                        $("#alRegisterSuccess").show();
-
-                        $('html, body').animate({
-                            scrollTop: 0
-                        }, 'slow');
-
-                        $regForm[0].reset();
-
-                        // window.location = "/";
+                        // $('html, body').animate({
+                        //     scrollTop: 0
+                        // }, 'slow');
 
                     },
                     error: function(xhr, textStatus, errorThrown) {
@@ -339,15 +474,17 @@
             },
         });
 
-
-        // Restrict presentation length
-        $('#presentation').restrictLength($('#pres-max-length'));
-
-
         // Set selected values on dropdown lists
         $('#event_profile').val("{{user.event_profile}}");
         $('#dietary').val("{{user.dietary}}");
 
+        if (passwordChanged === "0") {
+            $modalPassword.modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+
+        }
 
 
     });

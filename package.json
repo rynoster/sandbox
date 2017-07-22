@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server.js",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "knexdev": "knex migrate:latest",
+    "knexprod": "NOD_ENV=production knex migrate:latest"
   },
   "dependencies": {
     "async": "^2.5.0",

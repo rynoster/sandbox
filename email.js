@@ -1,42 +1,44 @@
-var nodemailer = require('nodemailer');
-var aws = require('aws-sdk');
+const nodemailer = require('nodemailer');
+const aws = require('aws-sdk');
 
 // configure AWS SDK
-var awsConfig = require("./config/env.json")["awsSes"];
+const awsConfig = require("./config/env.json")["awsSes"];
 
 aws.config.accessKeyId = awsConfig.accessKeyId;
 aws.config.secretAccessKey = awsConfig.secretAccessKey;
 aws.config.region = awsConfig.region;
 
 // create Nodemailer SES transporter
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     SES: new aws.SES({
-        apiVersion: '2010-12-01'
+        apiVersion: "2010-12-01"
     })
 });
 
 module.exports = function (params) {
-    this.from = params.from;
-    this.to = params.to;
-    this.subject = params.subject;
-    this.html = params.html;
-    this.successCallback = params.successCallback;
-    this.errorCallback = params.errorCallback;
+    const self = this;
+
+    self.from = params.from;
+    self.to = params.to;
+    self.subject = params.subject;
+    self.html = params.html;
+    self.successCallback = params.successCallback;
+    self.errorCallback = params.errorCallback;
 
     this.send = function () {
-        var options = {
-            from: this.from,
-            to: this.to,
-            subject: this.subject,
-            html: this.html,
+        const options = {
+            from: self.from,
+            to: self.to,
+            subject: self.subject,
+            html: self.html,
         };
 
         transporter.sendMail(options, function (err, success) {
             if (err) {
-                // this.errorCallback(err);
+                self.errorCallback(err);
             } else {
-                // this.successCallback(success);
+                self.successCallback(success);
             }
         });
-    }
+    };
 };

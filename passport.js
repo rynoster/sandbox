@@ -9,7 +9,7 @@ passport.use(new LocalStrategy(authenticate));
 passport.use("local-register", new LocalStrategy({ passReqToCallback: true }, register));
 
 function authenticate(email, password, done) {
-
+    
     db("users")
         .where("email", email)
         .first()
