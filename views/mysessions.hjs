@@ -302,8 +302,8 @@
         $alertTitle.text(alertTitle);
         $alertMessage.html(" " + alertMessage);
         setTimeout(function() {
-            $alertDiv.fadeOut(10000);
-        }, 10000);
+            $alertDiv.fadeOut(1000);
+        }, 1000);
 
     }
 </script>
@@ -365,7 +365,7 @@
                     opacity: 1.0,
                     left: "-=10",
                     height: "toggle"
-                }, 2000)
+                }, 1000)
 
                 $(".check-block1").show()
                 $(".check-block2").show()
