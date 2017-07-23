@@ -315,7 +315,8 @@
     var $txtEmail = $("#txtEmail");
     var $rdEventProfile = $("input[name='rdEventProfile']");
     var $btnViewBadge = $("#btnViewBadge");
-
+    var $btnYesPrint = $("#btnYesPrint");
+    var $btnNoPrint = $("#btnNoPrint");
 
     function printDiv(elem) {
 
@@ -477,6 +478,15 @@
         $btnViewBadge.click(function() {
             showBadge();
         });
+
+        $btnNoPrint.click(function() {
+            window.history.back();
+        });
+
+        $btnYesPrint.click(function() {
+            location.reload();
+        });
+
 
     })
 </script>
