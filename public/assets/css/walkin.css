@@ -1,0 +1,314 @@
+.multistep .multistep-step {
+    padding: 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.multistep .multistep-step .multistep-stepname {
+    margin-bottom: 16px;
+    color: #fff;
+    font-size: 1.6rem;
+    white-space: nowrap;
+}
+
+.multistep .multistep-step .multistep-dot {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-top: -16px;
+    margin-left: -15.5px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    /* Inner Dot */
+}
+
+.multistep .multistep-step .multistep-dot:after {
+    content: ' ';
+    border-radius: 50px;
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    background: #e0e0e0;
+}
+
+.multistep .multistep-step .progress {
+    position: absolute;
+    width: 100%;
+    height: 10.56px;
+    margin-top: -5.28px;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.multistep .multistep-step .progress .progress-bar {
+    width: 0px;
+    box-shadow: none;
+    background: #005982;
+}
+
+.multistep .multistep-step:first-child>.progress {
+    left: 50%;
+    width: 50%;
+}
+
+.multistep .multistep-step:last-child>.progress {
+    width: 50%;
+}
+
+.multistep .multistep-step.complete .multistep-dot {
+    background: #005982;
+}
+
+.multistep .multistep-step.complete .multistep-dot:after {
+    background: #005982;
+}
+
+.multistep .multistep-step.complete .progress>.progress-bar {
+    width: 100%;
+}
+
+.multistep .multistep-step.next:hover .multistep-dot {
+    background: #fff;
+}
+
+.multistep .multistep-step.next:hover .multistep-dot:after {
+    background: #e0e0e0;
+}
+
+.multistep .multistep-step.current .multistep-dot {
+    background: #fff;
+}
+
+.multistep .multistep-step.current .multistep-dot:after {
+    background: #005982;
+}
+
+.multistep .multistep-step.current .progress>.progress-bar {
+    width: 50%;
+}
+
+.multistep .multistep-step.current:first-child>.progress>.progress-bar {
+    width: 0%;
+}
+
+.multistep .multistep-step.current:last-child>.progress>.progress-bar {
+    width: 100%;
+}
+
+.multistep .multistep-step a.multistep-dot {
+    pointer-events: none;
+}
+
+.multistep .multistep-step.next a.multistep-dot {
+    pointer-events: all;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.walkin-bg {
+    height: 100%;
+    background-image: url(/assets/images/art/walkin-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.brand-logo {
+    width: 200px;
+}
+
+.center-div {
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+    top: 300px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 1100px;
+    height: 700px;
+    background-color: white;
+    border-radius: 20px;
+    -webkit-box-shadow: 9px 9px 20px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 9px 20px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 9px 9px 20px -2px rgba(0, 0, 0, 0.75);
+}
+
+h1 {
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+}
+
+p {
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+}
+
+
+/* DIVIDERS  */
+
+.divide0 {
+    width: 100%;
+    height: 0px;
+}
+
+.divide2 {
+    width: 100%;
+    height: 2px;
+}
+
+.divide3 {
+    width: 100%;
+    height: 3px;
+}
+
+.divide5 {
+    width: 100%;
+    height: 5px;
+}
+
+.divide10 {
+    width: 100%;
+    height: 10px;
+}
+
+.divide15 {
+    width: 100%;
+    height: 15px;
+}
+
+.divide20 {
+    width: 100%;
+    height: 20px;
+}
+
+.divide25 {
+    width: 100%;
+    height: 25px;
+}
+
+.divide30 {
+    width: 100%;
+    height: 30px;
+}
+
+.divide35 {
+    width: 100%;
+    height: 35px;
+}
+
+.divide40 {
+    width: 100%;
+    height: 40px;
+}
+
+.divide45 {
+    width: 100%;
+    height: 40px;
+}
+
+.divide50 {
+    width: 100%;
+    height: 50px;
+}
+
+.divide55 {
+    width: 100%;
+    height: 55px;
+}
+
+.divide60 {
+    width: 100%;
+    height: 60px;
+}
+
+.divide65 {
+    width: 100%;
+    height: 65px;
+}
+
+.divide70 {
+    width: 100%;
+    height: 70px;
+}
+
+.divide75 {
+    width: 100%;
+    height: 75px;
+}
+
+.divide80 {
+    width: 100%;
+    height: 80px;
+}
+
+.divide85 {
+    width: 100%;
+    height: 85px;
+}
+
+.tr-heading {
+    color: cadetblue;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+}
+
+.tr-records {
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+}
+
+.myFormCss_input {
+    display: block;
+    width: 300px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.myFormCss_label {
+    color: #005982;
+    font-family: Raleway;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+}
