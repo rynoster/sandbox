@@ -8,7 +8,7 @@
     .page-break	{ display: none; }
     .border { border: 1px solid black; padding: 10px; }
     .indent {
-        padding-left: 55px;
+        padding-left: 70px;
     }
     .card {
         height: 213px;
@@ -21,20 +21,20 @@
         padding-bottom: 0px;
         padding-right: 0px;
 
-        zoom: 2.5
+        zoom: 2.2
     }
     .spacer-2 {
         margin: 0;
-        padding: 3px;
+        padding: 2px;
     }
     .spacer-5 {
         margin: 0;
-        padding: 7px;
+        padding: 5px;
     }
 
     .spacer-10 {
         margin: 0;
-        padding: 12px;
+        padding: 10px;
     }
 
     .spacer-30 {
