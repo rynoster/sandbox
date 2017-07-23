@@ -219,11 +219,11 @@
                                     <table id="tableResult" class="table table-bordred table-striped" hidden>
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
+                                                <th>Name <i class="ionicons ion-android-walk"></i></th>
                                                 <th>Company</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tableResultContent">
                                         </tbody>
                                     </table>
 
@@ -335,6 +335,7 @@
     var $btnSearch = $("#btnSearch");
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
+    var $tableResultContent = $("#tableResultContent");
     var $delegateName = $("#delegateName");
     var $delegateCompany = $("#delegateCompany");
     var $imgBadge = $("#imgBadge");
@@ -430,11 +431,11 @@
                 url: "/api/userFirstName/" + $txtSearch.val(),
                 success: function(userResult) {
 
-                    $tableResult.empty();
+                    $tableResultContent.empty();
                     $tableResult.show();
 
                     userResult.forEach(function(element) {
-                        $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+                        $tableResultContent.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
                         <td>" + element.company + "</td></tr>")
                     }, this);
 
@@ -458,8 +459,8 @@
             loadTabSearch();
         })
 
-        $(".nav-button").tabs({
-            active: 2
+        $btnDone.click(function() {
+            location.reload();
         })
 
     })
