@@ -265,10 +265,10 @@
                             <p>Did your card print successfully?</p>
                         </div>
                         <div class="col-lg-1">
-                            <button id="btnNoPrint" type="button" class="btn btn-danger rounded">Re-Print</button>
+                            <button id="btnBackReprint" type="button" class="btn btn-danger rounded">Re-Print</button>
                         </div>
                         <div class="col-lg-1">
-                            <button id="btnYesPrint" type="button" class="btn btn-success rounded">Yes, close</button>
+                            <button id="btnDone" type="button" class="btn btn-success rounded">Yes, close</button>
                         </div>
                     </div>
                     <div class="row text-center">
@@ -278,15 +278,6 @@
                         <p style="color:dodgerblue">Remember to tweet and follow the conversation using:</p>
                         <p style="color:#005982;font-size:250%"><strong>#DCxShowcase</strong></p>
 
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                            <button id="btnBackReprint" type="button" class="btn btn-primary rounded">No, reprint</button>
-                            <button id="btnDone" type="button" class="btn btn-primary rounded">Yes</button>
-
-                        </div>
                     </div>
 
                 </div>
@@ -536,15 +527,6 @@
         $btnDone.click(function(){
             location.reload();
         });
-
-        $btnNoPrint.click(function() {
-            window.history.back();
-        });
-
-        $btnYesPrint.click(function() {
-            location.reload();
-        });
-
 
     })
 </script>
