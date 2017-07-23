@@ -345,7 +345,7 @@
 
     function printDiv(elem) {
 
-        var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+        var mywindow = window.open('', 'PRINT', 'height=1,width=1,top=200,left=500');
 
         mywindow.document.write('<html><head><title>' + document.title  + '</title>');
         mywindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');    
@@ -378,8 +378,6 @@
 
         $('.etabs a[href="#tab-2"]').trigger('click');
         $('.etabs a[href="#tab-2"]').trigger('touchstart');
-
-        // $('.etabs a[href="#tab-2"]').tab('active');
 
         $("#idQr").empty();
 
