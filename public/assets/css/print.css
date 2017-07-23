@@ -1,0 +1,91 @@
+@page {
+    size: auto;
+    margin: 0mm;
+
+} 
+
+@media all {
+    .page-break	{ display: none; }
+    .border { border: 1px solid black; padding: 10px; }
+    .indent {
+        padding-left: 55px;
+    }
+    .card {
+        height: 213px;
+        width: 337px;
+        margin-top: 20px; 
+        margin-left: 20px;  
+
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+
+        zoom: 2.5
+    }
+    .spacer-2 {
+        margin: 0;
+        padding: 3px;
+    }
+    .spacer-5 {
+        margin: 0;
+        padding: 7px;
+    }
+
+    .spacer-10 {
+        margin: 0;
+        padding: 12px;
+    }
+
+    .spacer-30 {
+        margin: 0;
+        padding: 30px;
+    }
+
+    .spacer-50 {
+        margin: 0;
+        padding: 50px;
+    }
+}
+
+@media print {
+    .page-break	{ display: block; page-break-after: always; }
+    .no-print { display: none; }
+    .border { border: 0px solid red; padding: 0px; }
+    .indent {
+        padding-left: 70px;
+    }
+    .card {
+        height: 100%;
+        width: 100%; 
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+    }
+    .spacer-5 {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .spacer-10 {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .spacer-30 {
+        margin: 0;
+        padding: 30px;
+    }
+
+    .spacer-50 {
+        margin: 0;
+        padding: 50px;
+    }
+    
+}

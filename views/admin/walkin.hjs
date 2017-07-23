@@ -56,6 +56,8 @@
 
     <link rel="stylesheet" href="/font-awesome/css/font-awesome-regular.css">
 
+    <link href="/assets/css/rotating-card.css" rel="stylesheet">
+
     <style>
         .brand-logo {
             width: 250px;
@@ -71,7 +73,103 @@
             -o-background-size: cover;
             background-size: cover;
         }
-    </style>
+</style>
+
+<style type="text/css" >
+             @page 
+            {
+                size: auto;
+                margin: 0mm;
+
+            } 
+
+            @media all {
+                .page-break	{ display: none; }
+                .border { border: 1px solid black; padding: 10px; }
+                .indent {
+                    padding-left: 55px;
+                }
+                .card {
+                    height: 213px;
+                    width: 337px;
+                    margin-top: 20px; 
+                    margin-left: 20px;  
+
+                    padding-top: 0px;
+                    padding-left: 0px;
+                    padding-bottom: 0px;
+                    padding-right: 0px;
+
+                    zoom: 2.5
+                }
+                .spacer-2 {
+                    margin: 0;
+                    padding: 3px;
+                }
+                .spacer-5 {
+                    margin: 0;
+                    padding: 7px;
+                }
+
+                .spacer-10 {
+                    margin: 0;
+                    padding: 12px;
+                }
+
+                .spacer-30 {
+                    margin: 0;
+                    padding: 30px;
+                }
+
+                .spacer-50 {
+                    margin: 0;
+                    padding: 50px;
+                }
+            }
+
+            @media print {
+	            .page-break	{ display: block; page-break-after: always; }
+                .no-print { display: none; }
+                .border { border: 0px solid red; padding: 0px; }
+                .indent {
+                    padding-left: 70px;
+                }
+                .card {
+                    height: 100%;
+                    width: 100%; 
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-bottom: 0px;
+
+                    padding-top: 0px;
+                    padding-left: 0px;
+                    padding-bottom: 0px;
+                    padding-right: 0px;
+                }
+                .spacer-5 {
+                    margin: 0;
+                    padding: 5px;
+                }
+
+                .spacer-10 {
+                    margin: 0;
+                    padding: 10px;
+                }
+
+                .spacer-30 {
+                    margin: 0;
+                    padding: 30px;
+                }
+
+                .spacer-50 {
+                    margin: 0;
+                    padding: 50px;
+                }
+                
+            }
+
+        </style>
 
 
 </head>
@@ -91,15 +189,15 @@
 
                     <ul class="etabs text-center">
                         <li class="tab">
-                            <a href="#tab-1">
+                            <a href="#tab-1" class="nav-button">
                                 <div><i class="fa fa-search" aria-hidden="true"></i></div>Step 1</a>
                         </li>
                         <li class="tab">
-                            <a href="#tab-2">
+                            <a href="#tab-2" class="nav-button">
                                 <div><i class="fa fa-id-card" aria-hidden="true"></i></div>Step 2</a>
                         </li>
                         <li class="tab">
-                            <a href="#tab-3">
+                            <a href="#tab-3" class="nav-button">
                                 <div><i class="fa fa-print" aria-hidden="true"></i></div>Step 3</a>
                         </li>
                     </ul>
@@ -144,12 +242,46 @@
                         <div class="tab-content" id="tab-2">
                             <div class="row">
 
+                                <div id="printDiv" class="container col-lg-12 card border">
+
+                                    <!-- This is the background image, cannot use CSS background for printing, need to use absolute image -->
+                                    <img id="imgBadge" style="position: absolute; z-index:-1; height: 100%; width: 100%" src="">
+
+                                    <div class="spacer-10"></div>
+                                    <div class="spacer-10"></div>
+                                    <div class="spacer-5"></div> 
+
+                                    <div class="row">
+                                        <div class="col-sm-12 indent">
+                                            <strong id="delegateName"></strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="spacer-2 no-print"></div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 indent">
+                                            <span id="delegateCompany"></span>
+                                        </div>
+                                        <div class="col-md-1"></div>  
+                                    </div>
+
+                                    <div class="spacer-10"></div> 
+
+                                    <div class="row">
+                                        <div class="col-md-4 indent">
+                                            <div class="divQr" id="idQr"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
 
                             </div>
                             <hr style="border: 0.5px dashed #d8d8d8;">
                             <div class="row text-center">
-                                <button type="button" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i> Step back</button>
-                                <button type="button" class="btn btn-primary">Print  <i class="fa fa-print" aria-hidden="true"></i></i></button>
+                                <button id="btnBack" type="button" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i> Step back</button>
+                                <button id="btnPrint" type="button" class="btn btn-primary">Print  <i class="fa fa-print" aria-hidden="true"></i></i></button>
                             </div>
 
 
@@ -164,8 +296,8 @@
                             </div>
                             <hr style="border: 0.5px dashed #d8d8d8;">
                             <div class="row text-center">
-                                <button type="button" class="btn btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Re-Print</button>
-                                <button type="button" class="btn btn-primary">Done <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+                                <button id="btnReprint" type="button" class="btn btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Re-Print</button>
+                                <button id="btnDone" type="button" class="btn btn-primary">Done <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -191,11 +323,100 @@
 <script src="/assets/js/viewport-units-buggyfill.js"></script>
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/custom.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/assets/js/raphael-2.1.0-min.js"></script>
+<script type="text/javascript" src="/assets/js/qrcodesvg.js"></script>
 
 <script>
     var $btnSearch = $("#btnSearch");
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
+    var $delegateName = $("#delegateName");
+    var $delegateCompany = $("#delegateCompany");
+    var $imgBadge = $("#imgBadge");
+    var $btnPrint = $("#btnPrint");
+    var $btnReprint = $("#btnReprint");
+    var $btnDone = $("#btnDone");
+    var $btnBack = $("#btnBack");
+
+    function printDiv(elem) {
+
+        var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+        mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+        mywindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');    
+        mywindow.document.write('<link rel="stylesheet" href="/assets/css/rotating-card.css">');  
+        mywindow.document.write('<link rel="stylesheet" href="/assets/css/print.css">');  
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(document.getElementById(elem).innerHTML);
+        mywindow.document.write('</body></html>');
+        mywindow.document.write("<script>");
+        mywindow.document.write("window.print()\n");
+        // mywindow.document.write("setTimeout(function () {\n");
+        // mywindow.document.write("window.close\n");
+        // mywindow.document.write("}, 100);\n");
+        mywindow.document.write("<\/script>");
+
+        // mywindow.document.close(); // necessary for IE >= 10
+        // mywindow.focus(); // necessary for IE >= 10*/
+
+        setTimeout(function() {
+            mywindow.close();    
+        }, 500);
+
+        loadTabConfirm();
+
+        return true;
+
+    }
+
+    function loadTabBadge (userId) {
+
+        $('.etabs a[href="#tab-2"]').trigger('click');
+        $('.etabs a[href="#tab-2"]').trigger('touchstart');
+
+        // $('.etabs a[href="#tab-2"]').tab('active');
+
+        $("#idQr").empty();
+
+        if (userId) {
+
+            $.ajax({
+
+                type: "GET",
+                url: "/api/user/" + userId,
+                success: function(user) {
+                    $delegateName.text(user.first_name + " " + user.last_name);
+                    $delegateCompany.text(user.company);
+                    $imgBadge.attr("src", "/assets/images/badge/badge-" + user.event_profile + ".svg")
+
+                    var qrCodeSvg = new Qrcodesvg(user.email, "idQr", 90);
+
+                    qrCodeSvg.draw();
+                }
+            })
+
+        }
+
+    }
+
+    function loadTabConfirm () {
+
+        $('.etabs a[href="#tab-3"]').trigger('click');
+        $('.etabs a[href="#tab-3"]').trigger('touchstart');
+
+    }
+
+    function loadTabSearch () {
+
+        $('.etabs a[href="#tab-1"]').trigger('click');
+        $('.etabs a[href="#tab-1"]').trigger('touchstart');
+
+    }
 </script>
 
 <script>
@@ -211,26 +432,37 @@
                 url: "/api/userFirstName/" + $txtSearch.val(),
                 success: function(userResult) {
 
-                    $tableResult.show();
                     $tableResult.empty();
+                    $tableResult.show();
 
                     userResult.forEach(function(element) {
-                        $tableResult.append("<tr class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+                        $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
                         <td>" + element.company + "</td></tr>")
                     }, this);
 
-                    // $.each(userResult, function(idx) {
-
-                    //     console.log("in");
-
-                        
-
-                    // })
                 }
             })
         }) //btnSearch.click
 
-        // $tableResult.on()
+        $tableResult.on("click", ".delegate-rows", function() {
+            loadTabBadge(this.id);
+        })
+
+        $btnPrint.click(function() {
+            printDiv("printDiv");
+        })
+
+        $btnReprint.click(function() {
+            loadTabBadge();
+        })
+
+        $btnBack.click(function() {
+            loadTabSearch();
+        })
+
+        $(".nav-button").tabs({
+            active: 2
+        })
 
     })
 
