@@ -82,9 +82,14 @@ function onError(error) {
  */
 
 function onListening() {
+  let date = new Date();
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log("Server started at: " + date.getHours() + ":" + 
+    ("0" + (date.getMinutes())).slice(-2) + ":" + ("0" + (date.getSeconds())).slice(-2));
+
+  
 }
