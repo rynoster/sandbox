@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chirpee.io - Walkin Registration Desk</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/rate-session.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <!-- Icons/Glyphs -->
+    <link href="/assets/fonts/fontello.css" rel="stylesheet">
+    <!--Jquery validator-->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="container-fluid walkin-bg inner-top-xs">
+        <div class="divide10"></div>
+        <div class="row center-block text-center">
+            <img src="/assets/images/showcase.svg" class="img-responsive brand-logo center-block" alt="Image">
+        </div>
+
+        <!-- Step 2 Div  -->
+        <div class="col-xs-9 center-div text-center ">
+            <div class="row">
+                <h2>View record detail</h2>
+            </div>
+            <div class="divide20"></div>
+            <form id="" action="">
+                <div class="row">
+                    <div class="ui rating"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- End of page  -->
+    </div>
+</body>
+
+
+</html>

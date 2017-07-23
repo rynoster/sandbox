@@ -131,12 +131,12 @@ body {
     padding-left: 40px;
     padding-right: 40px;
     margin: auto;
-    top: 200px;
+    top: 50px;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 1100px;
-    height: 610px;
+    width: 90%;
+    height: 75%;
     background-color: white;
     border-radius: 20px;
     -webkit-box-shadow: 9px 9px 20px -2px rgba(0, 0, 0, 0.75);
@@ -147,6 +147,14 @@ body {
 h1 {
     font-family: Raleway;
     font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: Raleway;
+    font-size: 20px;
     font-style: normal;
     font-variant: normal;
     font-weight: 600;
@@ -288,7 +296,8 @@ p {
 
 .myFormCss_input {
     display: block;
-    width: 300px;
+    align-self: center;
+    width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -312,3 +321,11 @@ p {
     font-variant: normal;
     font-weight: 500;
 }
+
+
+/* Star ratings   */
+
+
+/* FontAwesome for working BootSnippet :> */
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
