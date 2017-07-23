@@ -332,9 +332,16 @@
     var $txtMobile = $("#txtMobile");
     var $txtOffice = $("#txtOffice");
     var $txtEmail = $("#txtEmail");
+<<<<<<< HEAD
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
     
+=======
+    var $rdEventProfile = $("input[name='rdEventProfile']");
+    var $btnViewBadge = $("#btnViewBadge");
+    var $btnYesPrint = $("#btnYesPrint");
+    var $btnNoPrint = $("#btnNoPrint");
+>>>>>>> abd47b9f2794a0f78e8ef4c33ae1f9f205873ee2
 
     function printDiv(elem) {
 
@@ -536,6 +543,15 @@
         $btnDone.click(function(){
             location.reload();
         });
+
+        $btnNoPrint.click(function() {
+            window.history.back();
+        });
+
+        $btnYesPrint.click(function() {
+            location.reload();
+        });
+
 
     })
 </script>
