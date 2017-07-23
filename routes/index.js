@@ -545,6 +545,17 @@ router
 
 })
 
+// Walk-In Screen
+.get("/admin/walkin2", auth.loginRequired, auth.adminRequired, (req, res) => {
+
+    res.render("admin/walkin-old", {
+        title: "chirpee.io - Walking Registrations",
+        loggedIn: true,
+
+    });
+
+})
+
 .get("/admin/sessionList", auth.loginRequired, auth.adminRequired, (req, res) => {
 
     res.render("admin/main", {
