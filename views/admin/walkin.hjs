@@ -231,6 +231,132 @@
 
 
 
+<<<<<<< HEAD
+=======
+        <!-- Steps  -->
+
+        <p></p>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="tabs tabs-services tabs-circle-top tab-container">
+
+                    <ul class="etabs text-center">
+                        <li class="tab">
+                            <a href="#tab-1" class="nav-button">
+                                <div><i class="fa fa-search" aria-hidden="true"></i></div>Step 1</a>
+                        </li>
+                        <li class="tab">
+                            <a href="#tab-2" class="nav-button">
+                                <div><i class="fa fa-id-card" aria-hidden="true"></i></div>Step 2</a>
+                        </li>
+                        <li class="tab">
+                            <a href="#tab-3" class="nav-button">
+                                <div><i class="fa fa-print" aria-hidden="true"></i></div>Step 3</a>
+                        </li>
+                    </ul>
+
+                    <!-- Content for each of the tabs  -->
+                    <div class="panel-container">
+
+                        <!-- Step 1 Content   -->
+                        <div class="tab-content" id="tab-1">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <form id="search" class="navbar-form search" role="search">
+                                        <input id="txtSearch" type="search" class="form-control" placeholder="Type to search">
+                                        <button id="btnSearch" type="submit" class="btn btn-default btn-submit icon-right-open"></button>
+                                    </form>
+                                </div>
+                                <div class="col-md-9">
+
+                                    <table id="tableResult" class="table table-bordred table-striped" hidden>
+                                        <thead>
+                                            <tr>
+                                                <th>Name <i class="ionicons ion-android-walk"></i></th>
+                                                <th>Company</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableResultContent">
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <hr style="border: 0.5px dashed #d8d8d8;">
+                                <div class="row text-center">
+                                    <button type="button" class="btn btn-primary">Next step <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- Step 2 Content  -->
+                        <div class="tab-content" id="tab-2">
+                            <div class="row">
+
+                                <div id="printDiv" class="container col-lg-12 card border">
+
+                                    <!-- This is the background image, cannot use CSS background for printing, need to use absolute image -->
+                                    <img id="imgBadge" style="position: absolute; z-index:-1; height: 100%; width: 100%" src="">
+
+                                    <div class="spacer-10"></div>
+                                    <div class="spacer-10"></div>
+                                    <div class="spacer-5"></div> 
+
+                                    <div class="row">
+                                        <div class="col-sm-12 indent">
+                                            <strong id="delegateName"></strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="spacer-2 no-print"></div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 indent">
+                                            <span id="delegateCompany"></span>
+                                        </div>
+                                        <div class="col-md-1"></div>  
+                                    </div>
+
+                                    <div class="spacer-10"></div> 
+
+                                    <div class="row">
+                                        <div class="col-md-4 indent">
+                                            <div class="divQr" id="idQr"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <hr style="border: 0.5px dashed #d8d8d8;">
+                            <div class="row text-center">
+                                <button id="btnBack" type="button" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i> Step back</button>
+                                <button id="btnPrint" type="button" class="btn btn-primary">Print  <i class="fa fa-print" aria-hidden="true"></i></i></button>
+                            </div>
+
+
+                        </div>
+
+                        <!-- SAtep 3 Content  -->
+                        <div class="tab-content" id="tab-3">
+                            <div class="row">
+
+
+
+                            </div>
+                            <hr style="border: 0.5px dashed #d8d8d8;">
+                            <div class="row text-center">
+                                <button id="btnReprint" type="button" class="btn btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Re-Print</button>
+                                <button id="btnDone" type="button" class="btn btn-primary">Done <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> b78560627f3a95adec49f09fa4a57d0c7d9e572d
         </div>
     </body>
 
@@ -248,6 +374,7 @@
     var $btnSearch = $("#btnSearch");
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
+    var $tableResultContent = $("#tableResultContent");
     var $delegateName = $("#delegateName");
     var $delegateCompany = $("#delegateCompany");
     var $imgBadge = $("#imgBadge");
@@ -342,11 +469,19 @@
                     url: "/api/userFirstName/" + $txtSearch.val(),
                     success: function(userResult) {
 
+<<<<<<< HEAD
                         $tableResult.empty();
                         $tableResult.show();
 
                         userResult.forEach(function(element) {
                             $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+=======
+                    $tableResultContent.empty();
+                    $tableResult.show();
+
+                    userResult.forEach(function(element) {
+                        $tableResultContent.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+>>>>>>> b78560627f3a95adec49f09fa4a57d0c7d9e572d
                         <td>" + element.company + "</td></tr>")
                         }, this);
 
@@ -370,8 +505,8 @@
             loadTabSearch();
         })
 
-        $(".nav-button").tabs({
-            active: 2
+        $btnDone.click(function() {
+            location.reload();
         })
 
     })
