@@ -22,6 +22,9 @@
     <!--Jquery validator-->
     <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Card printing CSS -->
+    <link href="/assets/css/rotating-card.css" rel="stylesheet">
+    <link href="/assets/css/print.css" rel="stylesheet">
 
     <body>
 
@@ -38,7 +41,7 @@
             </div>
             <div class="divide25"></div>
             <div class="row multistep">
-                <div class="col-xs-3 multistep-step complete">
+                <div id="progressTab1" class="col-xs-3 multistep-step current">
                     <div class="text-center multistep-stepname">
                         <p>Step 1<br><strong style="font-size:110%">Search records</strong></p>
                     </div>
@@ -49,7 +52,7 @@
                     <a href="#" class="multistep-dot"></a>
                 </div>
 
-                <div class="col-xs-3 multistep-step current">
+                <div id="progressTab2" class="col-xs-3 multistep-step next">
                     <div class="text-center multistep-stepname">
                         <p>Step 2<br><strong style="font-size:110%">View record / Register new</strong></p>
                     </div>
@@ -60,7 +63,7 @@
                     <a href="#" class="multistep-dot"></a>
                 </div>
 
-                <div class="col-xs-3 multistep-step next">
+                <div id="progressTab3" class="col-xs-3 multistep-step disabled">
                     <div class="text-center multistep-stepname">
                         <p>Step 3<br><strong style="font-size:110%">Print badge</strong></p>
                     </div>
@@ -71,7 +74,7 @@
                     <a href="#" class="multistep-dot"></a>
                 </div>
 
-                <div class="col-xs-3 multistep-step disabled">
+                <div id="progressTab4" class="col-xs-3 multistep-step disabled">
                     <div class="text-center multistep-stepname">
                         <p>Step 4<br><strong style="font-size:110%">Complete</strong></p>
                     </div>
@@ -86,7 +89,7 @@
             <div class="row">
 
                 <!-- Step 1 Div  -->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div" hidden>
+                <div id="tab1" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div">
                     <div class="row">
                         <h1>Search database</h1>
                     </div>
@@ -97,7 +100,7 @@
                         </form>
                     </div>
                     <div class="divide15"></div>
-                    <table class="table table-striped table-hover reset-padding-left">
+                    <table id="tableResult" class="table table-striped table-hover reset-padding-left">
                         <thead>
                             <tr class="tr-heading">
                                 <th>Delegate Name</th>
@@ -105,7 +108,7 @@
                                 <th>Email</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tableResultContent">
                             <tr class="tr-records">
                                 <td>No records to display</td>
                             </tr>
@@ -114,7 +117,7 @@
                 </div>
 
                 <!-- Step 2 Div  -->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div ">
+                <div id="tab2" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
                     <div class="row">
                         <h1>View record detail</h1>
                     </div>
@@ -123,40 +126,40 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">First name</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtFirstName" class="myFormCss_input" value="" required="required">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Last name</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtLastName" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
                         <div class="divide15"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Company name</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtCompany" class="myFormCss_input" value="" required="required">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Business title</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtProProfile" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
                         <div class="divide15"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Mobile no</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtMobile" class="myFormCss_input" value="" required="required">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Office no</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="">
+                                <input type="text" name="" id="txtOffice" class="myFormCss_input" value="">
                             </div>
                         </div>
                         <div class="divide15"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Email address</label>
-                                <input type="text" name="" id="" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="" id="txtEmail" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
                         <div class="divide15"></div>
@@ -171,16 +174,16 @@
                                 <p style="color:#005982"><strong>Please select the correct category</strong></p>
                                 <div class="divide10"></div>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optradio" checked>Delegate
+                                    <input type="radio" name="rdEventProfile" value="Delegate">Delegate
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optradio">Media
+                                    <input type="radio" name="rdEventProfile" value="Media">Media
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optradio">Sponsor
+                                    <input type="radio" name="rdEventProfile" value="Sponsor">Sponsor
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optradio">Staff
+                                    <input type="radio" name="rdEventProfile" value="Staff">Staff
                                 </label>
                             </div>
 
@@ -189,18 +192,275 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <hr style="border: 0.5px dashed #d8d8d8;" />
-                                <button type="button" class="btn btn-primary rounded">Search records </button>
-                                <button type="button" class="btn btn-primary rounded">Save and view badge</button>
+                                <button id="btnBackSearch" type="button" class="btn btn-primary rounded">Search records </button>
+                                <button id="btnViewBadge" type="button" class="btn btn-primary rounded">Save and view badge</button>
 
                             </div>
                         </div>
                     </form>
                 </div>
 
+                <!-- Step 3 Div  -->
+                <div id="tab3" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
+                    <div class="row">
+                        <h1>Card confirmation</h1>
+                    </div>
 
+                    <div id="printDiv" class="container col-lg-12 card border">
 
+                        <!-- This is the background image, cannot use CSS background for printing, need to use absolute image -->
+                        <img id="imgBadge" style="position: absolute; z-index:-1; height: 100%; width: 100%" src="">
 
+                        <div class="spacer-10"></div>
+                        <div class="spacer-10"></div>
+                        <div class="spacer-5"></div> 
 
+                        <div class="row">
+                            <div class="col-sm-12 indent">
+                                <strong id="badgeName"></strong>
+                            </div>
+                        </div>
+
+                        <div class="spacer-2 no-print"></div>
+
+                        <div class="row">
+                            <div class="col-sm-12 indent">
+                                <span id="badgeCompany"></span>
+                            </div>
+                            <div class="col-md-1"></div>  
+                        </div>
+
+                        <div class="spacer-10"></div> 
+
+                        <div class="row">
+                            <div class="col-md-4 indent">
+                                <div class="divQr" id="idQr"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                            <button id="btnBackViewRecord" type="button" class="btn btn-primary rounded">Edit personal information</button>
+                            <button id="btnPrint" type="button" class="btn btn-primary rounded">Confirm and print</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Step 4 Div  -->
+                <div id="tab4" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
+                    <div class="row">
+                        <h1>Card printed</h1>
+                        Did your card print successfully?
+                    </div>
+                </div>
 
                 <!-- End of page  -->
             </div>
+
+    </body>
+</html>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/raphael-2.1.0-min.js"></script>
+<script type="text/javascript" src="/assets/js/qrcodesvg.js"></script>
+
+<script>
+    var $btnSearch = $("#btnSearch");
+    var $txtSearch = $("#txtSearch");
+    var $tableResult = $("#tableResult");
+    var $tableResultContent = $("#tableResultContent");
+    var $badgeName = $("#badgeName");
+    var $badgeCompany = $("#badgeCompany");
+    var $imgBadge = $("#imgBadge");
+    var $btnPrint = $("#btnPrint");
+    var $btnReprint = $("#btnReprint");
+    var $btnDone = $("#btnDone");
+    var $btnBack = $("#btnBack");
+    var $tab1 = $("#tab1");
+    var $tab2 = $("#tab2");
+    var $tab3 = $("#tab3");
+    var $tab4 = $("#tab4");
+    var $progressTab1 = $("#progressTab1");
+    var $progressTab2 = $("#progressTab2");
+    var $progressTab3 = $("#progressTab3");
+    var $progressTab4 = $("#progressTab4");
+    var $txtFirstName = $("#txtFirstName");
+    var $txtLastName = $("#txtLastName");
+    var $txtCompany = $("#txtCompany");
+    var $txtProProfile = $("#txtProProfile");
+    var $txtMobile = $("#txtMobile");
+    var $txtOffice = $("#txtOffice");
+    var $txtEmail = $("#txtEmail");
+    var $rdEventProfile = $("input[name='rdEventProfile']");
+    var $btnViewBadge = $("#btnViewBadge");
+
+
+    function printDiv(elem) {
+
+        var myWindow = window.open('', 'PRINT', 'height=500,width=800,top=200,left=500');
+
+        myWindow.document.write('<html><head><title>' + document.title  + '</title>');
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');    
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/rotating-card.css">');  
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/print.css">');  
+        myWindow.document.write('</head><body >');
+        myWindow.document.write(document.getElementById(elem).innerHTML);
+        myWindow.document.write('</body></html>');
+        myWindow.document.write("<script>");
+        myWindow.document.write("window.print()\n");
+        // myWindow.document.write("setTimeout(function () {\n");
+        // myWindow.document.write("window.close\n");
+        // myWindow.document.write("}, 100);\n");
+        myWindow.document.write("<\/script>");
+
+        // myWindow.document.close(); // necessary for IE >= 10
+        // myWindow.focus(); // necessary for IE >= 10*/
+
+        setTimeout(function() {
+            myWindow.close();    
+        }, 3000);
+
+        loadTabConfirm();
+
+        return true;
+
+    }
+
+    function showBadge() {
+
+        $tab2.hide()
+        $progressTab2.removeClass("current").addClass("complete");
+        $tab3.show();
+        $progressTab3.removeClass("next").addClass("current");
+        $progressTab4.removeClass("disabled").addClass("next");
+
+    }
+
+    function drawQR (user) {
+
+        $("#idQr").empty();
+
+        //This section loads the QR code in the background, while the form is being verified
+        $badgeName.text(user.first_name + " " + user.last_name);
+        $badgeCompany.text(user.company);
+        $imgBadge.attr("src", "/assets/images/badge/badge-" + user.event_profile + ".svg")
+
+        var qrCodeSvg = new Qrcodesvg(user.email, "idQr", 90);
+
+        qrCodeSvg.draw();
+
+    }
+
+    function loadTabView (userId) {
+
+        $progressTab1.addClass("complete").removeClass("current");
+        $progressTab2.addClass("current").removeClass("next");
+        $progressTab3.addClass("next").removeClass("disabled");
+
+        $tab1.hide()
+        $tab2.show();
+
+        if (userId) {
+
+            $.ajax({
+
+                type: "GET",
+                url: "/api/user/" + userId,
+                success: function(user) {
+
+                    drawQR(user);
+                    
+                    $txtFirstName.val(user.first_name);
+                    $txtLastName.val(user.last_name);
+                    $txtCompany.val(user.company);
+                    $txtProProfile.val(user.pro_profile);
+                    $txtMobile.val(user.mobilenr);
+                    $txtOffice.val(user.officenr);
+                    $txtEmail.val(user.email);
+
+                    $("input[name=rdEventProfile][value=" + user.event_profile + "]").prop("checked", true);
+
+                }
+            })
+
+        }
+
+    }
+
+    function showComplete () {
+
+        $progressTab3.removeClass("current").addClass("complete");
+        $progressTab4.removeClass("next").addClass("current");
+        $tab3.hide();
+        $tab4.show();
+
+    }
+
+    function loadTabConfirm () {
+
+        $('.etabs a[href="#tab-3"]').trigger('click');
+        $('.etabs a[href="#tab-3"]').trigger('touchstart');
+
+    }
+
+    function loadTabSearch () {
+
+        $('.etabs a[href="#tab-1"]').trigger('click');
+        $('.etabs a[href="#tab-1"]').trigger('touchstart');
+
+    }
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $btnSearch.click(function(e) {
+            e.preventDefault()
+
+            $.ajax({
+
+                type: "GET",
+                url: "/api/userFirstName/" + $txtSearch.val(),
+                success: function(userResult) {
+
+                    $tableResultContent.empty();
+                    $tableResult.show();
+
+                    userResult.forEach(function(element) {
+                        $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+                        <td>" + element.company + "</td><td>" + element.email + "</td></tr>")
+                    }, this);
+
+                }
+            })
+        }); //btnSearch.click
+
+        $tableResultContent.on("click", ".delegate-rows", function() {
+            loadTabView(this.id);
+        });
+
+        $btnPrint.click(function() {
+            printDiv("printDiv");
+            showComplete();
+        });
+
+        $btnReprint.click(function() {
+            loadTabBadge();
+        });
+
+        $btnBack.click(function() {
+            loadTabSearch();
+        });
+
+        $btnViewBadge.click(function() {
+            showBadge();
+        });
+
+    })
+
+</script>
