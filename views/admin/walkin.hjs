@@ -29,7 +29,7 @@
     <body>
 
         <div class="container-fluid walkin-bg inner-top-xs">
-            <div class="divide25"></div>
+            <div class="divide10"></div>
             <!-- Branding and progress bar  -->
             <div class="row inner-bottom-xs">
                 <div class="col-lg-2 col-lg-offset-3 ">
@@ -39,7 +39,7 @@
                     <h1 style="color:#005982;font-size:300%;font-weight:bolder">Walk-in registration kiosk</h1>
                 </div>
             </div>
-            <div class="divide25"></div>
+            <div class="divide10"></div>
             <div class="row multistep">
                 <div id="progressTab1" class="col-xs-3 multistep-step current">
                     <div class="text-center multistep-stepname">
@@ -121,7 +121,7 @@
                     <div class="row">
                         <h1>View record detail</h1>
                     </div>
-                    <div class="divide20"></div>
+                    <div class="divide10"></div>
                     <form id="" action="">
                         <div class="row">
                             <div class="col-lg-4">
@@ -133,7 +133,7 @@
                                 <input type="text" name="" id="txtLastName" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
-                        <div class="divide15"></div>
+                        <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Company name</label>
@@ -144,7 +144,7 @@
                                 <input type="text" name="" id="txtProProfile" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
-                        <div class="divide15"></div>
+                        <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Mobile no</label>
@@ -155,14 +155,14 @@
                                 <input type="text" name="" id="txtOffice" class="myFormCss_input" value="">
                             </div>
                         </div>
-                        <div class="divide15"></div>
+                        <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Email address</label>
                                 <input type="text" name="" id="txtEmail" class="myFormCss_input" value="" required="required">
                             </div>
                         </div>
-                        <div class="divide15"></div>
+                        <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-8">
                                 <hr style="border: 0.5px dashed #d8d8d8;" />
@@ -203,17 +203,17 @@
                 <!-- Step 3 Div  -->
                 <div id="tab3" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
                     <div class="row">
-                        <h1>Card confirmation</h1>
+                        <h1>View badge and print</h1>
                     </div>
 
-                    <div id="printDiv" class="container col-lg-12 card border">
+                    <div id="printDiv" class="container col-lg-9 card border center-block">
 
                         <!-- This is the background image, cannot use CSS background for printing, need to use absolute image -->
                         <img id="imgBadge" style="position: absolute; z-index:-1; height: 100%; width: 100%" src="">
 
                         <div class="spacer-10"></div>
                         <div class="spacer-10"></div>
-                        <div class="spacer-5"></div> 
+                        <div class="spacer-5"></div>
 
                         <div class="row">
                             <div class="col-sm-12 indent">
@@ -227,10 +227,10 @@
                             <div class="col-sm-12 indent">
                                 <span id="badgeCompany"></span>
                             </div>
-                            <div class="col-md-1"></div>  
+                            <div class="col-md-1"></div>
                         </div>
 
-                        <div class="spacer-10"></div> 
+                        <div class="spacer-10"></div>
 
                         <div class="row">
                             <div class="col-md-4 indent">
@@ -239,22 +239,39 @@
                         </div>
 
                     </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <hr style="border: 0.5px dashed #d8d8d8;" />
-                            <button id="btnBackViewRecord" type="button" class="btn btn-primary rounded">Edit personal information</button>
-                            <button id="btnPrint" type="button" class="btn btn-primary rounded">Confirm and print</button>
 
-                        </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="divide40"></div>
+                        <button id="btnBackViewRecord" type="button" class="btn btn-danger rounded">Go back</button>
+                        <button id="btnPrint" type="button" class="btn btn-primary rounded">Print badge</button>
                     </div>
+
 
                 </div>
 
                 <!-- Step 4 Div  -->
                 <div id="tab4" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
                     <div class="row">
-                        <h1>Card printed</h1>
-                        Did your card print successfully?
+
+                        <div class="col-lg-12">
+                            <h1>Card printed</h1>
+                            <div class="divide15"></div>
+                            <p>Did your card print successfully?</p>
+                        </div>
+                        <div class="col-lg-1">
+                            <button id="btnNoPrint" type="button" class="btn btn-danger rounded">Re-Print</button>
+                        </div>
+                        <div class="col-lg-1">
+                            <button id="btnYesPrint" type="button" class="btn btn-success rounded">Yes, close</button>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+
+                        <img src="/assets/images/art/twitter.png" class="img-responsive center-block" alt="Image" style="width:200px">
+
+                        <p style="color:dodgerblue">Remember to tweet and follow the conversation using:</p>
+                        <p style="color:#005982;font-size:250%"><strong>#DCxShowcase</strong></p>
+
                     </div>
                 </div>
 
@@ -262,6 +279,7 @@
             </div>
 
     </body>
+
 </html>
 
 <script src="/assets/js/jquery-3.2.1.min.js"></script>
@@ -303,10 +321,10 @@
 
         var myWindow = window.open('', 'PRINT', 'height=500,width=800,top=200,left=500');
 
-        myWindow.document.write('<html><head><title>' + document.title  + '</title>');
-        myWindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');    
-        myWindow.document.write('<link rel="stylesheet" href="/assets/css/rotating-card.css">');  
-        myWindow.document.write('<link rel="stylesheet" href="/assets/css/print.css">');  
+        myWindow.document.write('<html><head><title>' + document.title + '</title>');
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/rotating-card.css">');
+        myWindow.document.write('<link rel="stylesheet" href="/assets/css/print.css">');
         myWindow.document.write('</head><body >');
         myWindow.document.write(document.getElementById(elem).innerHTML);
         myWindow.document.write('</body></html>');
@@ -321,7 +339,7 @@
         // myWindow.focus(); // necessary for IE >= 10*/
 
         setTimeout(function() {
-            myWindow.close();    
+            myWindow.close();
         }, 3000);
 
         loadTabConfirm();
@@ -340,7 +358,7 @@
 
     }
 
-    function drawQR (user) {
+    function drawQR(user) {
 
         $("#idQr").empty();
 
@@ -355,7 +373,7 @@
 
     }
 
-    function loadTabView (userId) {
+    function loadTabView(userId) {
 
         $progressTab1.addClass("complete").removeClass("current");
         $progressTab2.addClass("current").removeClass("next");
@@ -373,7 +391,7 @@
                 success: function(user) {
 
                     drawQR(user);
-                    
+
                     $txtFirstName.val(user.first_name);
                     $txtLastName.val(user.last_name);
                     $txtCompany.val(user.company);
@@ -391,7 +409,7 @@
 
     }
 
-    function showComplete () {
+    function showComplete() {
 
         $progressTab3.removeClass("current").addClass("complete");
         $progressTab4.removeClass("next").addClass("current");
@@ -400,14 +418,14 @@
 
     }
 
-    function loadTabConfirm () {
+    function loadTabConfirm() {
 
         $('.etabs a[href="#tab-3"]').trigger('click');
         $('.etabs a[href="#tab-3"]').trigger('touchstart');
 
     }
 
-    function loadTabSearch () {
+    function loadTabSearch() {
 
         $('.etabs a[href="#tab-1"]').trigger('click');
         $('.etabs a[href="#tab-1"]').trigger('touchstart');
@@ -416,7 +434,6 @@
 </script>
 
 <script>
-
     $(document).ready(function() {
 
         $btnSearch.click(function(e) {
@@ -462,5 +479,4 @@
         });
 
     })
-
 </script>
