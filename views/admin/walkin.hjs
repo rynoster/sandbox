@@ -26,6 +26,12 @@
     <link href="/assets/css/rotating-card.css" rel="stylesheet">
     <link href="/assets/css/print.css" rel="stylesheet">
 
+    <style>
+        .delegate-rows {
+            cursor: pointer;
+        }
+    </style>
+
     <body>
 
         <div class="container-fluid walkin-bg inner-top-xs">
@@ -256,6 +262,16 @@
                         <h1>Card printed</h1>
                         Did your card print successfully?
                     </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <hr style="border: 0.5px dashed #d8d8d8;" />
+                            <button id="btnBackReprint" type="button" class="btn btn-primary rounded">No, reprint</button>
+                            <button id="btnDone" type="button" class="btn btn-primary rounded">Yes</button>
+
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- End of page  -->
@@ -269,25 +285,28 @@
 <script type="text/javascript" src="/assets/js/qrcodesvg.js"></script>
 
 <script>
-    var $btnSearch = $("#btnSearch");
-    var $txtSearch = $("#txtSearch");
-    var $tableResult = $("#tableResult");
-    var $tableResultContent = $("#tableResultContent");
     var $badgeName = $("#badgeName");
     var $badgeCompany = $("#badgeCompany");
-    var $imgBadge = $("#imgBadge");
+    var $btnSearch = $("#btnSearch");
+    var $btnViewBadge = $("#btnViewBadge");
+    var $btnBackReprint = $("#btnBackReprint");
+    var $btnBackSearch = $("#btnBackSearch");
+    var $btnBackViewRecord = $("#btnBackViewRecord");
     var $btnPrint = $("#btnPrint");
     var $btnReprint = $("#btnReprint");
     var $btnDone = $("#btnDone");
     var $btnBack = $("#btnBack");
-    var $tab1 = $("#tab1");
-    var $tab2 = $("#tab2");
-    var $tab3 = $("#tab3");
-    var $tab4 = $("#tab4");
+    var $imgBadge = $("#imgBadge");
     var $progressTab1 = $("#progressTab1");
     var $progressTab2 = $("#progressTab2");
     var $progressTab3 = $("#progressTab3");
     var $progressTab4 = $("#progressTab4");
+    var $rdEventProfile = $("input[name='rdEventProfile']");
+    var $tab1 = $("#tab1");
+    var $tab2 = $("#tab2");
+    var $tab3 = $("#tab3");
+    var $tab4 = $("#tab4");
+    var $tableResultContent = $("#tableResultContent");
     var $txtFirstName = $("#txtFirstName");
     var $txtLastName = $("#txtLastName");
     var $txtCompany = $("#txtCompany");
@@ -295,9 +314,9 @@
     var $txtMobile = $("#txtMobile");
     var $txtOffice = $("#txtOffice");
     var $txtEmail = $("#txtEmail");
-    var $rdEventProfile = $("input[name='rdEventProfile']");
-    var $btnViewBadge = $("#btnViewBadge");
-
+    var $txtSearch = $("#txtSearch");
+    var $tableResult = $("#tableResult");
+    
 
     function printDiv(elem) {
 
@@ -324,19 +343,34 @@
             myWindow.close();    
         }, 3000);
 
-        loadTabConfirm();
-
         return true;
 
     }
 
+    function clearProgressBar () {
+        $progressTab1.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
+        $progressTab2.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
+        $progressTab3.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
+        $progressTab4.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
+    }
+
+    function hideAllTabs () {
+        $tab1.hide();
+        $tab2.hide();
+        $tab3.hide();
+        $tab4.hide();
+    }
+
     function showBadge() {
 
-        $tab2.hide()
-        $progressTab2.removeClass("current").addClass("complete");
+        hideAllTabs();
         $tab3.show();
-        $progressTab3.removeClass("next").addClass("current");
-        $progressTab4.removeClass("disabled").addClass("next");
+
+        clearProgressBar();
+        $progressTab1.addClass("complete");
+        $progressTab2.addClass("complete");
+        $progressTab3.addClass("current");
+        $progressTab4.addClass("next");
 
     }
 
@@ -357,11 +391,13 @@
 
     function loadTabView (userId) {
 
-        $progressTab1.addClass("complete").removeClass("current");
-        $progressTab2.addClass("current").removeClass("next");
-        $progressTab3.addClass("next").removeClass("disabled");
+        clearProgressBar()
+        $progressTab1.addClass("complete");
+        $progressTab2.addClass("current");
+        $progressTab3.addClass("next");
+        $progressTab4.addClass("disabled");
 
-        $tab1.hide()
+        hideAllTabs();
         $tab2.show();
 
         if (userId) {
@@ -391,28 +427,32 @@
 
     }
 
+    function showSearch () {
+
+        hideAllTabs();
+        $tab1.show();
+
+        clearProgressBar();
+        $progressTab1.addClass("current");
+        $progressTab2.addClass("next");
+        $progressTab3.addClass("disabled");
+        $progressTab4.addClass("disabled");
+        
+    }
+
     function showComplete () {
 
-        $progressTab3.removeClass("current").addClass("complete");
-        $progressTab4.removeClass("next").addClass("current");
-        $tab3.hide();
+        clearProgressBar()
+        $progressTab1.addClass("complete");
+        $progressTab2.addClass("complete");
+        $progressTab3.addClass("complete");
+        $progressTab4.addClass("current");
+
+        hideAllTabs()
         $tab4.show();
 
     }
 
-    function loadTabConfirm () {
-
-        $('.etabs a[href="#tab-3"]').trigger('click');
-        $('.etabs a[href="#tab-3"]').trigger('touchstart');
-
-    }
-
-    function loadTabSearch () {
-
-        $('.etabs a[href="#tab-1"]').trigger('click');
-        $('.etabs a[href="#tab-1"]').trigger('touchstart');
-
-    }
 </script>
 
 <script>
@@ -431,34 +471,53 @@
                     $tableResultContent.empty();
                     $tableResult.show();
 
-                    userResult.forEach(function(element) {
-                        $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
-                        <td>" + element.company + "</td><td>" + element.email + "</td></tr>")
-                    }, this);
+                    if (userResult.length < 1) {
+                        $tableResultContent.append("<tr class='tr-rows delegate-rows'><td>No records found that match your criteria</td></tr>")
+                    } else {
+                        userResult.forEach(function(element) {
+                            $tableResult.append("<tr id='" + element.id + "' class='delegate-rows'><td>" + element.first_name + " " + element.last_name + "</td> \
+                            <td>" + element.company + "</td><td>" + element.email + "</td></tr>")
+                        }, this);
+                    }
 
                 }
             })
         }); //btnSearch.click
 
+        //On table row click, goes to tab 2
         $tableResultContent.on("click", ".delegate-rows", function() {
             loadTabView(this.id);
         });
 
+        //Tab 2 "Save and view badge", goes to tab 3
+        $btnViewBadge.click(function() {
+            showBadge();
+        });
+
+        //Tab2 "Search records", returns to tab 1
+        $btnBackSearch.click(function() {
+            showSearch();
+        });
+
+        //Tab 3 "Confirm and print" button, goes to tab 4
         $btnPrint.click(function() {
             printDiv("printDiv");
             showComplete();
         });
 
-        $btnReprint.click(function() {
-            loadTabBadge();
+        //Tab 3 "Edit personal information" button, goes back to tab 2
+        $btnBackViewRecord.click(function() {
+            loadTabView();
         });
 
-        $btnBack.click(function() {
-            loadTabSearch();
-        });
-
-        $btnViewBadge.click(function() {
+        //Tab 4 'No, reprint' button, goes back to tab 3
+        $btnBackReprint.click(function(){
             showBadge();
+        });
+
+        //Tab 4 'Yes' button, reloads page
+        $btnDone.click(function(){
+            location.reload();
         });
 
     })
