@@ -21,7 +21,7 @@
         padding-bottom: 0px;
         padding-right: 0px;
 
-        zoom: 1.9
+         zoom: 1.9;
     }
     .spacer-2 {
         margin: 0;
@@ -67,6 +67,9 @@
         padding-left: 0px;
         padding-bottom: 0px;
         padding-right: 0px;
+
+        zoom: 1;
+
     }
     .spacer-5 {
         margin: 0;
