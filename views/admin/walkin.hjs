@@ -103,6 +103,8 @@
                         <form id="search" class="navbar-form" style="padding-left:10px">
                             <input id="txtSearch" type="search" class="form-control input-search" placeholder="Type to search" style="width:400px;">
                             <button id="btnSearch" type="submit" class="btn btn-default btn-submit icon-search"></button>
+                            <button id="btnNewRegister" type="button" class="btn btn-primary pull-right">New registration</button>
+                            
                         </form>
                     </div>
                     <div class="divide15"></div>
@@ -125,47 +127,47 @@
                 <!-- Step 2 Div  -->
                 <div id="tab2" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
                     <div class="row">
-                        <h1>View record detail</h1>
+                        <h1 id="headingTab2">View record detail</h1>
                     </div>
                     <div class="divide10"></div>
-                    <form id="" action="">
+                    <form id="frmDelegate" action="" onsubmit="">
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">First name</label>
-                                <input type="text" name="" id="txtFirstName" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="firstName" id="txtFirstName" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-25" maxlength="25">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Last name</label>
-                                <input type="text" name="" id="txtLastName" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="lastName" id="txtLastName" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-25" maxlength="25">
                             </div>
                         </div>
                         <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Company name</label>
-                                <input type="text" name="" id="txtCompany" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="company" id="txtCompany" class="myFormCss_input" value="" maxlength="30" data-validation="length" data-validation-length="3-30" maxlength="30">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Business title</label>
-                                <input type="text" name="" id="txtProProfile" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="pro_profile" id="txtProProfile" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-30" maxlength="30">
                             </div>
                         </div>
                         <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Mobile no</label>
-                                <input type="text" name="" id="txtMobile" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="mobile" id="txtMobile" class="myFormCss_input" value="" data-validation-error-msg="Invalid phone number" data-validation="custom" data-validation-regexp="[0](\d{9})|([0](\d{2})( |-|)((\d{3}))( |-|)(\d{4}))|[0](\d{2})( |-|)(\d{7})|(\+|00|09)(\d{2}|\d{3})( |-|)(\d{2})( |-|)((\d{3}))( |-|)(\d{4})" data-validation-help="i.e. 0829998888 / +27829998888">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Office no</label>
-                                <input type="text" name="" id="txtOffice" class="myFormCss_input" value="">
+                                <input type="text" name="office" id="txtOffice" class="myFormCss_input" value="" data-validation-optional="true" data-validation="custom" data-validation-regexp="[0](\d{9})|([0](\d{2})( |-|)((\d{3}))( |-|)(\d{4}))|[0](\d{2})( |-|)(\d{7})|(\+|00|09)(\d{2}|\d{3})( |-|)(\d{2})( |-|)((\d{3}))( |-|)(\d{4})" data-validation-error-msg="Invalid phone number" data-validation-help="i.e. 0119998888 / +27119998888">
                             </div>
                         </div>
                         <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Email address</label>
-                                <input type="text" name="" id="txtEmail" class="myFormCss_input" value="" required="required">
+                                <input type="text" name="email" id="txtEmail" class="myFormCss_input" value="" data-validation="email">
                             </div>
                         </div>
                         <div class="divide5"></div>
@@ -180,16 +182,16 @@
                                 <p style="color:#005982"><strong>Please select the correct category</strong></p>
                                 <div class="divide10"></div>
                                 <label class="radio-inline">
-                                    <input type="radio" name="rdEventProfile" value="Delegate">Delegate
+                                    <input type="radio" name="rdEventProfile" value="Delegate" checked>Delegate
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="rdEventProfile" value="Media">Media
+                                    <input type="radio" name="rdEventProfile" value="Media" >Media
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="rdEventProfile" value="Sponsor">Sponsor
+                                    <input type="radio" name="rdEventProfile" value="Sponsor" >Sponsor
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="rdEventProfile" value="Staff">Staff
+                                    <input type="radio" name="rdEventProfile" value="Staff" >Staff
                                 </label>
                             </div>
 
@@ -199,7 +201,7 @@
                             <div class="col-lg-8">
                                 <hr style="border: 0.5px dashed #d8d8d8;" />
                                 <button id="btnBackSearch" type="button" class="btn btn-primary rounded">Search records </button>
-                                <button id="btnViewBadge" type="button" class="btn btn-primary rounded">Save and view badge</button>
+                                <button id="btnViewBadge" type="submit" class="btn btn-primary rounded">Save and view badge</button>
 
                             </div>
                         </div>
@@ -285,13 +287,10 @@
                 <!-- End of page  -->
             </div>
 
-    </body>
-
-</html>
-
 <script src="/assets/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/assets/js/raphael-2.1.0-min.js"></script>
-<script type="text/javascript" src="/assets/js/qrcodesvg.js"></script>
+<script type="text/javascript" src="/assets/js/raphael-2.1.0-min.js"></script> 
+<script type="text/javascript" src="/assets/js/qrcodesvg.js"></script> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 
 <script>
     var $badgeName = $("#badgeName");
@@ -303,8 +302,10 @@
     var $btnBackViewRecord = $("#btnBackViewRecord");
     var $btnPrint = $("#btnPrint");
     var $btnReprint = $("#btnReprint");
+    var $btnNewRegister = $("#btnNewRegister");
     var $btnDone = $("#btnDone");
     var $btnBack = $("#btnBack");
+    var $headingTab2 = $("#headingTab2");
     var $imgBadge = $("#imgBadge");
     var $progressTab1 = $("#progressTab1");
     var $progressTab2 = $("#progressTab2");
@@ -326,6 +327,9 @@
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
     
+    //This variable is used to set the state of the delegate registering, i.e. existing or new registration
+    //It can be either view or new, this will determine a PUSH vs PUT AJAX for updating/adding records
+    var stateDelegate = "view";
 
     function printDiv(elem) {
 
@@ -409,28 +413,39 @@
         $progressTab3.addClass("next");
         $progressTab4.addClass("disabled");
 
-        if (userId) {
+        if (isNaN(userId) && userId === "new") {
 
-            $.ajax({
+            //New registration
+            $headingTab2.text("New delegate registration");
+            stateDelegate = "new";
+            $('#frmDelegate').get(0).reset();
 
-                type: "GET",
-                url: "/api/user/" + userId,
-                success: function(user) {
+        } else {
 
-                    drawQR(user);
+            if (userId) {
 
-                    $txtFirstName.val(user.first_name);
-                    $txtLastName.val(user.last_name);
-                    $txtCompany.val(user.company);
-                    $txtProProfile.val(user.pro_profile);
-                    $txtMobile.val(user.mobilenr);
-                    $txtOffice.val(user.officenr);
-                    $txtEmail.val(user.email);
+                $.ajax({
 
-                    $("input[name=rdEventProfile][value=" + user.event_profile + "]").prop("checked", true);
+                    type: "GET",
+                    url: "/api/user/" + userId,
+                    success: function(user) {
 
-                }
-            })
+                        drawQR(user);
+
+                        $txtFirstName.val(user.first_name);
+                        $txtLastName.val(user.last_name);
+                        $txtCompany.val(user.company);
+                        $txtProProfile.val(user.pro_profile);
+                        $txtMobile.val(user.mobilenr);
+                        $txtOffice.val(user.officenr);
+                        $txtEmail.val(user.email);
+
+                        $("input[name=rdEventProfile][value=" + user.event_profile + "]").prop("checked", true);
+
+                    }
+                })
+
+            }
 
         }
 
@@ -467,6 +482,12 @@
 <script>
     $(document).ready(function() {
 
+        
+
+        $("#frmDelegate").on("submit", function(e) {
+            e.preventDefault();
+        })
+
         $btnSearch.click(function(e) {
             e.preventDefault()
 
@@ -492,14 +513,19 @@
             })
         }); //btnSearch.click
 
-        //On table row click, goes to tab 2
+        //Tab 1 on "New registration" click
+        $btnNewRegister.click(function() {
+            loadTabView("new");
+        });
+
+        //Tab 1 on table row click, goes to tab 2
         $tableResultContent.on("click", ".delegate-rows", function() {
             loadTabView(this.id);
         });
 
         //Tab 2 "Save and view badge", goes to tab 3
-        $btnViewBadge.click(function() {
-            showBadge();
+        $btnViewBadge.click(function(e) {
+            //The logic of this button is moved to the form validation
         });
 
         //Tab2 "Search records", returns to tab 1
@@ -530,3 +556,53 @@
 
     })
 </script>
+
+
+<script>
+    $(document).ready(function() {
+
+        $.validate({
+            form: "#frmDelegate",
+            modules: 'logic, security',
+            errorMessagePosition : 'none',
+            onModulesLoad: function() {
+                console.log("modules loaded")
+            },
+            onError: function() {
+
+            },
+            onSuccess: function() {
+                //if stateDelegate = new then POST, else PUT
+
+                console.log($("input:checked[name=rdEventProfile]").val());
+
+                if (stateDelegate === "new") {
+                    delegateData = {
+                        first_name: $txtFirstName.val(),
+                        last_name: $txtLastName.val(),
+                        company: $txtCompany.val(),
+                        pro_profile: $txtProProfile.val(),
+                        mobile: $txtMobile.val(),
+                        office: $txtOffice.val(),
+                        email: $txtEmail.val(),
+                        event_profile: $("input:checked[name=rdEventProfile]").val()
+                    }
+
+                    //submit POST to API
+
+                } else {
+                    //Submit PUT to API
+                    showBadge();
+                }
+                
+            }
+
+        });
+
+    })
+  
+</script>
+
+    </body>
+
+</html>
