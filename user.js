@@ -139,13 +139,19 @@ User.prototype.allUsersNotPrinted = function (callback, recordCount,
 
 };
 
-User.prototype.searchUserFirstName = function (callback, userFirstName) {
+User.prototype.searchFirstLast = function (callback, searchQuery) {
 
-    db("users")
-        .where("first_name", "LIKE", userFirstName + "%")
+    // db("users")
+        // .where("first_name", "LIKE", userFirstName + "%")
+        
+    db.raw("SELECT * FROM users WHERE CONCAT(first_name, ' ', last_name) LIKE '%" + searchQuery + "%' LIMIT 10")
         .then((resultUsers) => {
-            callback(resultUsers);
-        });
+            callback(resultUsers[0]);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        ;
 };
 
 User.prototype.updateMySessions = function (id, data, callback) {

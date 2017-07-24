@@ -226,14 +226,14 @@ router
   })
 
   //Get user details based on first name, used for walk-ins
-  .get("/userFirstName/:firstName", auth.loginRequired, auth.adminRequired, (req, res) => {
+  .get("/userSearchFirstLast/:searchQuery", auth.loginRequired, auth.adminRequired, (req, res) => {
     const {
-      firstName
+      searchQuery
     } = req.params;
 
-    user.searchUserFirstName((resultUsers) => {
+    user.searchFirstLast((resultUsers) => {
       res.send(resultUsers);
-    }, firstName);
+    }, searchQuery);
 
   })
    
