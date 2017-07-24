@@ -357,7 +357,7 @@ router
 //  Edit my profile  =========================================================
 // ===========================================================================
 
-.get("/myProfile", (req, res) => {
+.get("/myProfile", auth.loginRequired, (req, res) => {
 
     res.render("skeleton", {
         user: req.user,
@@ -407,17 +407,22 @@ router
 })
 
 // ===========================================================================
-//  Edit my profile  =========================================================
+//  Rate session  ============================================================
 // ===========================================================================
 
-.get("/rateSession", (req, res) => {
+.get("/rateSession/:sessionId", (req, res) => {
 
-    res.render("rateSession", {
-        title: "#DCxShowcase",
-        loggedIn: true,
+    const { sessionId } = req.params;
+
+    agenda.getSession(sessionId, (sessionData) => {
+        console.log(sessionData);
+
+        res.render("rateSession", {
+            title: "#DCxShowcase",
+            session: sessionData
+        });
 
     });
-
 })
 
 // ===========================================================================
