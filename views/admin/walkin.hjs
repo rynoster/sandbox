@@ -26,9 +26,21 @@
     <link href="/assets/css/rotating-card.css" rel="stylesheet">
     <link href="/assets/css/print.css" rel="stylesheet">
 
+    <!-- Bootstrap dialog -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" rel="stylesheet">
+
     <style>
         .delegate-rows {
             cursor: pointer;
+        }
+
+        /* This class does a vertical center */
+        .modal-dialog {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            height: 100px;
+            width: 450px;
         }
     </style>
 
@@ -149,7 +161,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Business title</label>
-                                <input type="text" name="pro_profile" id="txtProProfile" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-30" maxlength="30">
+                                <input type="text" name="pro_profile" id="txtProProfile" class="myFormCss_input" value="" data-validation="length" data-validation-length="2-30" maxlength="30">
                             </div>
                         </div>
                         <div class="divide5"></div>
@@ -288,9 +300,11 @@
             </div>
 
 <script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/assets/js/raphael-2.1.0-min.js"></script> 
 <script type="text/javascript" src="/assets/js/qrcodesvg.js"></script> 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
 
 <script>
     var $badgeName = $("#badgeName");
@@ -327,36 +341,68 @@
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
     
-    //This variable is used to set the state of the delegate registering, i.e. existing or new registration
-    //It can be either view or new, this will determine a PUSH vs PUT AJAX for updating/adding records
-    var stateDelegate = "view";
+    
+    var stateDelegate = "view"; //This variable is used to set the state of the delegate registering, i.e. existing or new registration,It can be either view or new, this will determine a PUSH vs PUT AJAX for updating/adding records
+    var delegateID;
 
-    function printDiv(elem) {
+    function modalError(message, callback) {
 
-        var myWindow = window.open('', 'PRINT', 'height=500,width=800,top=200,left=500');
+        BootstrapDialog.show({
+            message,
+            title: "An error has occured",
+            closable: false,
+            type: BootstrapDialog.TYPE_DANGER,
+            size: BootstrapDialog.SIZE_LARGE,
+            buttons: [{
+                label: 'Try again',
+                cssClass: 'btn-primary center-block',
+                action: function(dialogRef){
+                    dialogRef.close();
+                    if (callback) { callback() };
+                }
+            }]
+
+        });
+
+    }
+
+    function buildPrintPage(elem, callback) {
+
+        var attHeight = 500;
+        var attWidth = 800;
+        var attTop = (window.screen.height - attHeight) / 2;
+        var attLeft = (window.screen.width - attWidth) / 2;
+
+        var myWindow = window.open('', 'PRINT', 'height=' + attHeight + ',width=' + attWidth + ',top=' + attTop + ',left=' + attLeft);
 
         myWindow.document.write('<html><head><title>' + document.title + '</title>');
         myWindow.document.write('<link rel="stylesheet" href="/assets/css/bootstrap.min.css">');
         myWindow.document.write('<link rel="stylesheet" href="/assets/css/rotating-card.css">');
         myWindow.document.write('<link rel="stylesheet" href="/assets/css/print.css">');
-        myWindow.document.write('</head><body >');
+        myWindow.document.write('<style>');
+        myWindow.document.write('body { zoom: 2.35; }');
+        myWindow.document.write('@media print { body { zoom: 1; } }');
+        myWindow.document.write('</style>');
+        myWindow.document.write('</head><body');
         myWindow.document.write(document.getElementById(elem).innerHTML);
         myWindow.document.write('</body></html>');
         myWindow.document.write("<script>");
         myWindow.document.write("window.print()\n");
-        // myWindow.document.write("setTimeout(function () {\n");
-        // myWindow.document.write("window.close\n");
-        // myWindow.document.write("}, 100);\n");
+        myWindow.document.write("setTimeout(function () {\n");
+        myWindow.document.write("window.close()\n");
+        myWindow.document.write("}, 100);\n");
         myWindow.document.write("<\/script>");
+
+        if (callback) { callback(myWindow) };
 
         // myWindow.document.close(); // necessary for IE >= 10
         // myWindow.focus(); // necessary for IE >= 10*/
 
-        setTimeout(function() {
-            myWindow.close();
-        }, 3000);
+    }
 
-        return true;
+    function printDiv(elem) {
+
+        buildPrintPage(elem);
 
     }
 
@@ -387,7 +433,7 @@
 
     }
 
-    function drawQR(user) {
+    function drawQR(user, callback) {
 
         $("#idQr").empty();
 
@@ -399,6 +445,8 @@
         var qrCodeSvg = new Qrcodesvg(user.email, "idQr", 90);
 
         qrCodeSvg.draw();
+
+        if (callback) { callback() };
 
     }
 
@@ -422,6 +470,9 @@
 
         } else {
 
+            $headingTab2.text("View record detail");
+            $txtEmail.prop("disabled", true);
+
             if (userId) {
 
                 $.ajax({
@@ -430,7 +481,7 @@
                     url: "/api/user/" + userId,
                     success: function(user) {
 
-                        drawQR(user);
+                        // drawQR(user);
 
                         $txtFirstName.val(user.first_name);
                         $txtLastName.val(user.last_name);
@@ -476,12 +527,64 @@
         $progressTab4.addClass("current");
 
     }
+
+    function createNewDelegate (delegateData) {
+
+        $.ajax({
+
+            type: "POST",
+            url: "/api/walkinUser",
+            data: delegateData,
+            success: function(successData) {
+
+                delegateId = successData[0];
+
+                drawQR(delegateData, function() {
+                    showBadge();
+                    stateDelegate = "view";
+                });
+
+            },
+            error: function(err) {
+                var error = jQuery.parseJSON(err.responseText);
+
+                if (error.error === "User exists") {
+
+                    modalError("Another delegate with this email address has already registered for Showcase 2017.", function() {
+                        $txtEmail.focus();    
+                    });
+
+                } else {
+                    modalError(error.error);
+                }
+            }
+
+        })
+
+    }
+
+    function updateDelegate (delegateData) {
+
+        $.ajax({
+
+            type: "PUT",
+            url: "/api/user/" + delegateId,
+            data: delegateData,
+            success: function(successData) {
+
+                drawQR(delegateData, function() {
+                    showBadge();
+                    stateDelegate = "view";
+                });
+
+            }
+        })
+
+    }
 </script>
 
 <script>
     $(document).ready(function() {
-
-        
 
         $("#frmDelegate").on("submit", function(e) {
             e.preventDefault();
@@ -519,7 +622,8 @@
 
         //Tab 1 on table row click, goes to tab 2
         $tableResultContent.on("click", ".delegate-rows", function() {
-            loadTabView(this.id);
+            delegateId = this.id;
+            loadTabView(delegateId);
         });
 
         //Tab 2 "Save and view badge", goes to tab 3
@@ -538,9 +642,15 @@
             showComplete();
         });
 
-        //Tab 3 "Edit personal information" button, goes back to tab 2
+        //Tab 3 "Go back" button, goes back to tab 2
         $btnBackViewRecord.click(function() {
-            loadTabView();
+            
+            if (delegateId) {
+                loadTabView(delegateId);
+            } else {
+                loadTabView();
+            }
+            
         });
 
         //Tab 4 'No, reprint' button, goes back to tab 3
@@ -550,7 +660,7 @@
 
         //Tab 4 'Yes' button, reloads page
         $btnDone.click(function() {
-            location.reload();
+            location.href = "/admin/walkin";
         });
 
     })
@@ -571,27 +681,26 @@
 
             },
             onSuccess: function() {
-                //if stateDelegate = new then POST, else PUT
 
-                console.log($("input:checked[name=rdEventProfile]").val());
+                delegateData = {
+                    first_name: $txtFirstName.val(),
+                    last_name: $txtLastName.val(),
+                    company: $txtCompany.val(),
+                    pro_profile: $txtProProfile.val(),
+                    mobilenr: $txtMobile.val(),
+                    officenr: $txtOffice.val(),
+                    email: $txtEmail.val(),
+                    event_profile: $("input:checked[name=rdEventProfile]").val()
+                }
 
                 if (stateDelegate === "new") {
-                    delegateData = {
-                        first_name: $txtFirstName.val(),
-                        last_name: $txtLastName.val(),
-                        company: $txtCompany.val(),
-                        pro_profile: $txtProProfile.val(),
-                        mobile: $txtMobile.val(),
-                        office: $txtOffice.val(),
-                        email: $txtEmail.val(),
-                        event_profile: $("input:checked[name=rdEventProfile]").val()
-                    }
-
-                    //submit POST to API
+                    
+                    createNewDelegate(delegateData);
 
                 } else {
-                    //Submit PUT to API
-                    showBadge();
+
+                    updateDelegate(delegateData)
+
                 }
                 
             }
