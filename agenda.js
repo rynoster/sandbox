@@ -21,7 +21,11 @@ Agenda.prototype.allSessions = function (callback) {
 Agenda.prototype.getSession = function (id, callback) {
 
     db("agenda")
-        .where("id", id)
+        .leftJoin("speakers", "agenda.speakerId", "=", "speakers.id")
+        .select("agenda.*", 
+            "speakers.fullName as speakerName", "speakers.profession as speakerProfession", 
+            "speakers.companyName as speakerCompany")
+        .where("agenda.id", id)
         .first()
         .then((resultSession) => {
             callback(resultSession);
@@ -29,6 +33,16 @@ Agenda.prototype.getSession = function (id, callback) {
         .catch((err) => {
             callback(err);
         });
+
+    // db("agenda")
+    //     .where("id", id)
+    //     .first()
+    //     .then((resultSession) => {
+    //         callback(resultSession);
+    //     })
+    //     .catch((err) => {
+    //         callback(err);
+    //     });
 
 };
 
@@ -95,6 +109,26 @@ Agenda.prototype.updateSession = function (id, data, callback) {
         }
         
       });
+
+};
+
+Agenda.prototype.rateSession = function (data, callback) {
+
+    console.log(data);
+
+    db("sessionRatings")
+        .insert(data)
+        .then((result) => {
+            if (result === 0) {
+                callback(400);
+            } else {
+                callback(200);
+            }
+            
+        })
+        .catch(() => {
+            callback(400);
+        });
 
 };
 
