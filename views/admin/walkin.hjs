@@ -465,6 +465,7 @@
 
             //New registration
             $headingTab2.text("New delegate registration");
+            $txtEmail.prop("disabled", false);
             stateDelegate = "new";
             $('#frmDelegate').get(0).reset();
 
