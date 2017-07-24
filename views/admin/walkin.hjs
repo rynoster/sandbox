@@ -42,6 +42,11 @@
             height: 100px;
             width: 450px;
         }
+
+        .pre-scrollable {
+            max-height: 550px;
+            padding-bottom: 30px;
+        }
     </style>
 
     <body>
@@ -107,7 +112,7 @@
             <div class="row">
 
                 <!-- Step 1 Div  -->
-                <div id="tab1" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div">
+                <div id="tab1" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div ">
                     <div class="row">
                         <h1>Search database</h1>
                     </div>
@@ -137,7 +142,7 @@
                 </div>
 
                 <!-- Step 2 Div  -->
-                <div id="tab2" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse">
+                <div id="tab2" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 center-div collapse pre-scrollable">
                     <div class="row">
                         <h1 id="headingTab2">View record detail</h1>
                     </div>
@@ -599,7 +604,7 @@
             $.ajax({
 
                 type: "GET",
-                url: "/api/userFirstName/" + $txtSearch.val(),
+                url: "/api/userSearchFirstLast/" + $txtSearch.val(),
                 success: function(userResult) {
 
                     $tableResultContent.empty();
