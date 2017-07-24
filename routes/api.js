@@ -88,6 +88,41 @@ router
 
   })
 
+  //Walk-in new registrations
+  .post("/walkinUser", (req, res, next) => {
+
+    const newUser = req.body;
+
+    console.log(newUser.email);
+
+    db("users")
+      // .where("email", newUser.email)
+      .whereRaw("LOWER(email) = ?", [_.toLower(newUser.email)]) //Compare lowercase to lowercase, to ensure users do not register with two different case email addresses that are the same
+      .first()
+      .then((resultUser) => {
+        console.log(resultUser);
+        if (resultUser) {
+          res.status(500).send({
+            error: "User exists"
+          });
+        } else { //If user/delegate does not already exist, create new
+
+          db("users")
+            .insert(newUser, "id")
+            .then((users) => {
+              res.send(users);
+            })
+            .catch((err) => {
+              res.status(500).send({
+                error: err.message
+              });
+
+            });
+        }
+
+    });
+  })
+
   //Main router for registering/creating new users
   .post("/user", (req, res, next) => {
     const newUser = req.body;
