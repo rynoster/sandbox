@@ -625,6 +625,18 @@ router
 
   })
 
+  .post("/rateSession", (req, res, next) => {
+
+    const sessionData = req.body;
+
+    agenda.rateSession(sessionData, (result) => {
+
+      res.send(result);
+
+    }, req, next);
+
+  })
+
 
   //***********************************************
   //Below needs to be moved to helper functions app
