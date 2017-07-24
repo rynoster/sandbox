@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chirpee.io - Walkin Registration Desk</title>
+    <title>Walkin Registration Desk</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -325,7 +325,7 @@
     var $txtEmail = $("#txtEmail");
     var $txtSearch = $("#txtSearch");
     var $tableResult = $("#tableResult");
-    
+
 
     function printDiv(elem) {
 
@@ -356,14 +356,14 @@
 
     }
 
-    function clearProgressBar () {
+    function clearProgressBar() {
         $progressTab1.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
         $progressTab2.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
         $progressTab3.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
         $progressTab4.removeClass("current").removeClass("complete").removeClass("next").removeClass("disabled");
     }
 
-    function hideAllTabs () {
+    function hideAllTabs() {
         $tab1.hide();
         $tab2.hide();
         $tab3.hide();
@@ -402,7 +402,7 @@
 
         hideAllTabs();
         $tab2.show();
-        
+
         clearProgressBar()
         $progressTab1.addClass("complete");
         $progressTab2.addClass("current");
@@ -436,7 +436,7 @@
 
     }
 
-    function showSearch () {
+    function showSearch() {
 
         hideAllTabs();
         $tab1.show();
@@ -446,14 +446,14 @@
         $progressTab2.addClass("next");
         $progressTab3.addClass("disabled");
         $progressTab4.addClass("disabled");
-        
+
     }
 
-    function showComplete () {
+    function showComplete() {
 
         hideAllTabs()
         $tab4.show();
-        
+
         clearProgressBar()
         $progressTab1.addClass("complete");
         $progressTab2.addClass("complete");
@@ -461,7 +461,6 @@
         $progressTab4.addClass("current");
 
     }
-
 </script>
 
 <script>
@@ -519,12 +518,12 @@
         });
 
         //Tab 4 'No, reprint' button, goes back to tab 3
-        $btnBackReprint.click(function(){
+        $btnBackReprint.click(function() {
             showBadge();
         });
 
         //Tab 4 'Yes' button, reloads page
-        $btnDone.click(function(){
+        $btnDone.click(function() {
             location.reload();
         });
 

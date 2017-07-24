@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chirpee.io - Walkin Registration Desk</title>
+    <title>#DCxShowcase</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +17,26 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-    <!-- Icons/Glyphs -->
-    <link href="/assets/fonts/fontello.css" rel="stylesheet">
-    <!--Jquery validator-->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
-    <!-- Semantic -->
-    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="/css/font-awesome/font-awesome.css">
+
+
+    <style>
+        .touch-size {
+            font-size: 120%;
+        }
+        
+        th,
+        td {
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: left;
+        }
+        
+        label {
+            font-size: 75%;
+        }
+    </style>
 
 </head>
 
@@ -33,17 +47,243 @@
         <div class="row center-block text-center">
             <img src="/assets/images/showcase.svg" class="img-responsive brand-logo center-block" alt="Image">
         </div>
-
-        <!-- Step 2 Div  -->
-        <div class="col-xs-9 center-div text-center ">
+        <div class="center-div text-center ">
             <div class="row">
-                <h2>View record detail</h2>
+
+                <h1 style="color:indianred">The reality of singularity</h1>
+                <p style="font-size:80%;color:darkgrey"><strong>By: </strong>Rudie Raath / Chief Digital Strategist, Datacentrix
+                    <hr style="border: 0.5px dashed #d8d8d8;">
             </div>
-            <div class="divide20"></div>
+
             <form id="" action="">
                 <div class="row">
-                    <div class="ui rating"></div>
+
+                    <table class="table table-striped table-hover text-left touch-size">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- Next rating   -->
+                            <tr>
+                                <td>Content</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">1 
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">2
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">3
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">4
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">5
+                                                </label>
+                                            </td>
+                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                                        </tr>
+
+
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <!-- Next rating   -->
+                            <tr>
+                                <td>Presenter</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">1 
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">2
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">3
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">4
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">5
+                                                </label>
+                                            </td>
+                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                                        </tr>
+
+
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- Next rating   -->
+                            <tr>
+                                <td>Experience</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">1 
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">2
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">3
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">4
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">5
+                                                </label>
+                                            </td>
+                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                                        </tr>
+
+
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <!-- Next rating -->
+                            <tr>
+                                <td>Room</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">1 
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">2
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">3
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">4
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">5
+                                                </label>
+                                            </td>
+                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                                        </tr>
+
+
+                                    </table>
+                                </td>
+                            </tr>
+
+
+
+                            <!-- Next rating   -->
+                            <tr>
+                                <td>Staff</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">1 
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">2
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">3
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">4
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">5
+                                                </label>
+                                            </td>
+                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+                                        </tr>
+
+
+                                    </table>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
                 </div>
+                <div class="row">
+                    <textarea rows="4" cols="47" placeholder="Leave us a comment here (Optional)"></textarea>
+                </div>
+                <div class="divide30"></div>
+                <button type="button" class="btn btn-primary">Submit my feedback</button>
+
+
             </form>
         </div>
     </div>
@@ -56,11 +296,6 @@
     <!-- End of page  -->
     </div>
 
-    <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
 
 </body>
 
