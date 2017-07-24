@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#DCxShowcase</title>
+    <title>{{title}}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,10 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
     <!-- Icons -->
     <link rel="stylesheet" href="/css/font-awesome/font-awesome.css">
-
+    <!-- Semantic -->
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.css">
+    <!--Bootstrap modal dialog  -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" rel="stylesheet">
 
     <style>
         .touch-size {
@@ -36,6 +39,15 @@
         label {
             font-size: 75%;
         }
+
+        /* This class does a vertical center */
+        .modal-dialog {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            height: 100px;
+            width: 450px;
+        }
     </style>
 
 </head>
@@ -50,8 +62,8 @@
         <div class="center-div text-center ">
             <div class="row">
 
-                <h1 style="color:indianred">The reality of singularity</h1>
-                <p style="font-size:80%;color:darkgrey"><strong>By: </strong>Rudie Raath / Chief Digital Strategist, Datacentrix
+                <h1 style="color:indianred">{{session.title}}</h1>
+                <p style="font-size:80%;color:darkgrey"><strong>By: </strong>{{session.speakerName}} / {{session.speakerProfession}}, {{session.speakerCompany}}
                     <hr style="border: 0.5px dashed #d8d8d8;">
             </div>
 
@@ -71,80 +83,15 @@
                             <tr>
                                 <td>Content</td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">1 
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">2
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">3
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">4
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">5
-                                                </label>
-                                            </td>
-                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
-                                        </tr>
-
-
-                                    </table>
+                                    <div id="ratingContent" class="ui massive star rating"></div>
                                 </td>
                             </tr>
-
 
                             <!-- Next rating   -->
                             <tr>
                                 <td>Presenter</td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">1 
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">2
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">3
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">4
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">5
-                                                </label>
-                                            </td>
-                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
-                                        </tr>
-
-
-                                    </table>
+                                    <div id="ratingPresenter" class="ui massive star rating"></div>
                                 </td>
                             </tr>
 
@@ -152,150 +99,116 @@
                             <tr>
                                 <td>Experience</td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">1 
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">2
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">3
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">4
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">5
-                                                </label>
-                                            </td>
-                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
-                                        </tr>
-
-
-                                    </table>
+                                    <div id="ratingExperience" class="ui massive star rating"></div>
                                 </td>
                             </tr>
-
 
                             <!-- Next rating -->
                             <tr>
                                 <td>Room</td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">1 
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">2
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">3
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">4
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">5
-                                                </label>
-                                            </td>
-                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
-                                        </tr>
-
-
-                                    </table>
+                                    <div id="ratingRoom" class="ui massive star rating"></div>
                                 </td>
                             </tr>
-
-
 
                             <!-- Next rating   -->
                             <tr>
                                 <td>Staff</td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><i class="fa fa-frown-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">1 
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">2
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">3
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">4
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">5
-                                                </label>
-                                            </td>
-                                            <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
-                                        </tr>
-
-
-                                    </table>
+                                    <div id="ratingStaff" class="ui massive star rating"></div>
                                 </td>
                             </tr>
-
-
-
 
                         </tbody>
                     </table>
                 </div>
                 <div class="row">
-                    <textarea rows="4" cols="47" placeholder="Leave us a comment here (Optional)"></textarea>
+                    <textarea id="txtComment" rows="4" cols="35" placeholder="Leave us a comment here (Optional)"></textarea>
                 </div>
                 <div class="divide30"></div>
-                <button type="button" class="btn btn-primary">Submit my feedback</button>
+                <button id="btnSubmit" type="button" class="btn btn-primary">Submit my feedback</button>
 
 
             </form>
         </div>
     </div>
 
-
-
-
-
-
     <!-- End of page  -->
     </div>
 
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/semantic/dist/semantic.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var $btnSubmit = $("#btnSubmit");
+            var $ratingContent = $('#ratingContent');
+            var $ratingPresenter = $('#ratingPresenter');
+            var $ratingExperience = $('#ratingExperience');
+            var $ratingRoom = $('#ratingRoom');
+            var $ratingStaff = $('#ratingStaff');
+            var $txtComment = $("#txtComment");
+
+            var sessionId = "{{session.id}}";
+
+            $btnSubmit.click(function(e) {
+                e.preventDefault();
+
+                sessionData = {
+                    sessionId,
+                    content: $ratingContent.rating("get rating"),
+                    presenter: $ratingPresenter.rating("get rating"),
+                    experience: $ratingExperience.rating("get rating"),
+                    room: $ratingRoom.rating("get rating"),
+                    staff: $ratingStaff.rating("get rating"),
+                    comment:$txtComment.val()
+                };
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "/api/rateSession/",
+                    data: sessionData,
+                    success: function () {
+                        
+                        BootstrapDialog.show({
+                            message: "Your feedback has been captured.",
+                            title: "Thank you",
+                            closable: false,
+                            type: BootstrapDialog.TYPE_SUCCESS,
+                            size: BootstrapDialog.SIZE_LARGE,
+                            // buttons: [{
+                            //     label: 'Try again',
+                            //     cssClass: 'btn-primary center-block',
+                            //     action: function(dialogRef){
+                            //         dialogRef.close();
+                            //         if (callback) { callback() };
+                            //     }
+                            // }]
+
+                        });
+
+                        // setTimeout(function() {
+                        //     location.href = "/myProfile";
+                        // }, 5000);
+
+                    }
+                })
+
+            })
+
+            //Initiate the Semantic-UI-rating plugin
+            $('.ui.rating')
+                .rating({
+                    initialRating: 3,
+                    maxRating: 5
+                });
+
+        })
+    </script>
 
 </body>
 
