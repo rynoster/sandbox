@@ -1,8 +1,50 @@
 const moment = require("moment");
 const _ = require("lodash");
+// const request = require("request");
+const fetch = require("node-fetch");
+const parseXml = require("xml2js").parseString;
+const schedule = require('node-schedule');
 
 const db = require("./db");
 const User = require("./user");
+
+const user = new User();
+
+function getScanData(sessionId, callback) {
+    //This is the call to the codeReadr API to retrieve all scans on a specific session
+
+    fetch("https://api.codereadr.com/api/?section=scans&action=retrieve&api_key=fc18285d4232b57d3a1202117c87ed20&service_id=" + sessionId)
+        .then((result) => {
+            return result.text();
+        })
+        .then((body) => {
+
+            parseXml(body, function (err, result) {
+                return callback(result.xml.scan);
+            });
+
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+}
+
+function sendSms (mobileNr, message) {
+
+    // if (process.env.NODE_ENV === "development") {
+    //     mobileNr = "0829091780";
+    // }
+
+    fetch("http://www.mymobileapi.com/api5/http5.aspx?Type=sendparam&username=rynoster&password=iX0oQV4JOK7h&numto=" + mobileNr + "&data1=" + message, { method: "POST" })
+
+        .then((res) => {
+            return res.text();
+        }).then((body) => {
+            return body;
+        });
+
+}
 
 function Agenda(id) {
     this.id = id;
@@ -33,16 +75,6 @@ Agenda.prototype.getSession = function (id, callback) {
         .catch((err) => {
             callback(err);
         });
-
-    // db("agenda")
-    //     .where("id", id)
-    //     .first()
-    //     .then((resultSession) => {
-    //         callback(resultSession);
-    //     })
-    //     .catch((err) => {
-    //         callback(err);
-    //     });
 
 };
 
@@ -114,8 +146,6 @@ Agenda.prototype.updateSession = function (id, data, callback) {
 
 Agenda.prototype.rateSession = function (data, callback) {
 
-    console.log(data);
-
     db("sessionRatings")
         .insert(data)
         .then((result) => {
@@ -128,6 +158,64 @@ Agenda.prototype.rateSession = function (data, callback) {
         })
         .catch(() => {
             callback(400);
+        });
+
+};
+
+Agenda.prototype.smsRatings = function (callback) {
+
+    db("agenda")
+        .select("id", "title", "tabName", "timeStart", "timeEnd", "scanId", "scanSendTime")
+        .whereNot("scanId", null)
+        .then((resultSessions) => {
+
+            resultSessions.forEach((breakAway) => {
+
+                const scanSendTime = new Date(breakAway.scanSendTime);
+                // const scanSendTime = new Date(2017, 6, 26, 0, 27, 0);
+
+                //Use the following 2 lines for dev testing alone. Adds 3 seconds after program starts.
+                // const scanSendTime = new Date();
+                // scanSendTime.setSeconds(scanSendTime.getSeconds() + 3); 
+
+                //Create the scheduled job for each session
+                const myJob = schedule.scheduleJob(scanSendTime, () => {
+                    
+                    //Retrieve the scanned data from codeReadr API, for the specific session
+                    getScanData(breakAway.scanId, (scannedUsers) => {
+
+                        if (scannedUsers) {
+
+                            //Loop through each user that has been scanned for the specific session
+                            scannedUsers.forEach((userScan) => {
+
+                                //First retrieve the cellphone number from the user record
+                                user.getUserOnEmail(userScan.tid[0], (userRecord) => {
+                                    let mobileNr = userRecord.mobilenr;
+                                    const message = "Dear " + userRecord.first_name + ". Thank you for attending the breakaway session. Please take a minute to rate the session by following this link. https://datacentrix.chirpee.io/rateSession/" + breakAway.id;
+
+                                    //Normalise the cellphone numbers before sending to SMS gateway
+                                    mobileNr = _.replace(mobileNr, "+27", "0").replace(/ /g,"");
+
+                                    // console.log(mobileNr + " - " + message);
+                                    //Send the SMS 
+                                    sendSms(mobileNr, message);
+
+                                });
+
+                            }, this);
+
+                        }
+
+                    });
+
+                });
+
+            }, this);
+
+        })
+        .catch((err) => {
+            return callback(err);
         });
 
 };
