@@ -33,6 +33,7 @@
                                 <p>
                                     {{{content}}}
                                 </p>
+                                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
                             </div>
                             <div class="col-md-3 visible-lg visible-md visible-sm">
                                 <figure><img src="{{imageUrl}}" alt=""></figure>
