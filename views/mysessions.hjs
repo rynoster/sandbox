@@ -96,7 +96,7 @@
 
                 <div class="row agenda-hide" id="profile-2">
                     <div class="col-md-10">
-                        <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
+                        
                         <div class="row divide20"></div>
                         <div class="col-md-2 col-xs-6">
                             <div class="profile-header-container">
@@ -174,6 +174,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">Montecasino Ballroom</p>
 
 
                 {{#dataSet2}} {{> sessionBlock}} {{/dataSet2}}
