@@ -14,6 +14,9 @@ require("./passport");
 const index = require("./routes/index");
 const api = require("./routes/api");
 const register = require("./routes/register");
+const Agenda = require("./agenda");
+
+const agenda = new Agenda();
 
 const app = express();
 
@@ -62,5 +65,7 @@ app.use((err, req, res) => {
   res.status(err.status || 500);
   res.render("error");
 });
+
+agenda.smsRatings();
 
 module.exports = app;
