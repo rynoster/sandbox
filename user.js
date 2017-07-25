@@ -267,6 +267,9 @@ User.prototype.batchMailParking = function (req, callback) {
     db("users")
         .where("parkingSent", 0)
         .where("admin", 0)
+        .whereNot("email", "LIKE", "%bcx.co.za")
+        .whereNot("email", "LIKE", "%eoh%")
+        .whereNot("email", "LIKE", "%aptronics%")
         .limit(recordLimit || null)
         .then((result) => {
             // return console.log(result);
@@ -280,19 +283,5 @@ User.prototype.batchMailParking = function (req, callback) {
         });
 
 };
-
-// User.prototype.getSession = function (id, callback) {
-
-//     db("agenda")
-//         .where("id", id)
-//         .first()
-//         .then((resultSession) => {
-//             callback(resultSession);
-//         })
-//         .catch((err) => {
-//             callback(err);
-//         });
-
-// };
 
 module.exports = User;
