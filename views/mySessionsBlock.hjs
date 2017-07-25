@@ -16,6 +16,7 @@
             <h3>{{{title}}} </h3>
             <h6>{{speakerName}} / {{speakerProfession}}, {{speakerCompany}}</h6>
             <p>{{{content}}}</p>
+            <p class="text-left accent-dcx-grey icon-location" style="font-size:80%">{{location}}</p>
 
             <div class="divide20"></div>
         </div>
