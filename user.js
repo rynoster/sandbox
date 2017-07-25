@@ -270,6 +270,8 @@ User.prototype.batchMailParking = function (req, callback) {
         .whereNot("email", "LIKE", "%bcx.co.za")
         .whereNot("email", "LIKE", "%eoh%")
         .whereNot("email", "LIKE", "%aptronics%")
+        .whereNot("email", "LIKE", "%bt-sa%")
+        .whereNot("regComplete", -1)
         .limit(recordLimit || null)
         .then((result) => {
             // return console.log(result);
