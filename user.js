@@ -54,17 +54,23 @@ function mailDelegate(user, req) {
     .where("id", user.id)
     .update("password", hashPassword)
     .update("passwordSent", 1)
-    .then(function(result) {
+    .then((result) => {
         console.log("Password generated and record updated for: " + user.email);
+
+        let emailAddress;
+
+        if (process.env.NODE_ENV === "production") {
+             emailAddress = user.email;
+        } else {
+            emailAddress = "ryno@coetzee.za.com";
+        }
 
         const mail = new Mail({
             from: "noreply@chirpee.io",
-            // to: "ryno@coetzee.za.com",
-            to: user.email,
+            to: emailAddress,
             subject: "Datacentrix Showcase 2017 - Tailor your agenda",
             html: buildHtmlBody(user, genPassword, getFullUrl(req)),
 
-            // html: "the <strong>agenda tailor</strong> email for " + user.email,
             successCallback: function (success) {
                 console.log("Mail sent to " + user.email);
             },
@@ -76,7 +82,7 @@ function mailDelegate(user, req) {
         mail.send();
 
     })
-    .catch(function() {
+    .catch(() => {
         console.log("Could not generate password or update record for: " + user.email);
     });
 
@@ -89,6 +95,8 @@ function mailDelegates(users, req) {
         mailDelegate(user, req);
 
     });
+
+    return users;
 }
 
 
@@ -176,13 +184,20 @@ User.prototype.delegatePasswordsAll = function (callback, req) {
         .where("password", null)
         .limit(req.body.limit || null)
         .then((result) => {
-            mailDelegates(result, req);
+            return mailDelegates(result, req);
+            // callback(result); //Callback to delegatePasswords API
+        })
+        .then(function (result) {
             callback(result); //Callback to delegatePasswords API
         })
         .catch((err) => {
             callback(err);
         });
     
+};
+
+User.prototype.batchMailParking = function (req, callback) {
+
 };
 
 // User.prototype.getSession = function (id, callback) {
