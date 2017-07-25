@@ -9,7 +9,7 @@
                 <div class="panel">
 
                     
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
                         
                         <div class="panel panel-info">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                         
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
                         <div class="panel panel-info">
                               <div class="panel-heading light-border">
@@ -161,7 +161,7 @@
                 $.ajax({
 
                     type: "POST",
-                    url: "/api/delegatePasswords",
+                    url: "/api/batchMailParking",
                     data: { limit: $txtBatchMailSomeParking.val() },
                     success: function(ajaxResult) {
                         alert("Success, " + ajaxResult.length + " delegates have been emailed.")
