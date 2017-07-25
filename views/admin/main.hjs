@@ -195,20 +195,13 @@
                                 <span class="menu-text">Emails</span>
                                 <span class="selected"></span>
                             </a>
-                            <!-- <ul class="hoe-sub-menu">
-                                <li id="liSubMenuSessionList" class="">
-                                    <a href="/admin/sessionList">
-                                        <span class="menu-text">List</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                                <li id="liSubMenuSessionAdd" class="">
-                                    <a href="/admin/sessionAdd">
-                                        <span class="menu-text">Add</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                            </ul> -->
+                        </li>
+                         <li id="liMenuWalkin" class="hoe">
+                            <a href="/admin/walkin">
+                                <i class="fa fa-linux"></i>
+                                <span class="menu-text">Walk-ins</span>
+                                <span class="selected"></span>
+                            </a>
                         </li>
 
                     </ul>
