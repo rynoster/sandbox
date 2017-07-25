@@ -647,6 +647,16 @@ router
 
   })
 
+  .get("/smsTest", (req, res, next) => {
+
+    agenda.smsRatings((result) => {
+
+      res.send(result);
+
+    }, next);
+
+  })
+
 
   //***********************************************
   //Below needs to be moved to helper functions app
