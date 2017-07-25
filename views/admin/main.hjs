@@ -21,6 +21,13 @@
         <link href="/admin-assets/css/style.css" rel="stylesheet">
 
         <script src="/admin-assets/js/modernizr.js"></script>
+        
+        <style>
+            .light-border {
+                border:1px #c2c0bf solid;
+            }
+        </style>
+        
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -108,12 +115,6 @@
                                         <span class="selected"></span>
                                     </a>
                                 </li>
-                                <li id="passwords" class="">
-                                    <a href="/admin/delegatePasswords">
-                                        <span class="menu-text">Email passwords</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <!--Sponsors menu section-->
@@ -187,6 +188,27 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li><!--Emails menu section-->
+                        <li id="liMenuEmail" class="hoe">
+                            <a href="/admin/delegateEmails">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="menu-text">Emails</span>
+                                <span class="selected"></span>
+                            </a>
+                            <!-- <ul class="hoe-sub-menu">
+                                <li id="liSubMenuSessionList" class="">
+                                    <a href="/admin/sessionList">
+                                        <span class="menu-text">List</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="liSubMenuSessionAdd" class="">
+                                    <a href="/admin/sessionAdd">
+                                        <span class="menu-text">Add</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul> -->
                         </li>
 
                     </ul>
