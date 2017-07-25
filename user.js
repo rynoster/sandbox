@@ -181,6 +181,17 @@ User.prototype.allUsers = function (callback, recordCount, fromRecord) {
 
 };
 
+User.prototype.getUserOnEmail = function (email, callback) {
+
+    db("users")
+        .where("email", email)
+        .first()
+        .then((resultUser) => {
+            callback(resultUser);
+        });
+
+};
+
 User.prototype.userSessions = function (callback, userId) {
 
     db("users")

@@ -25,13 +25,16 @@
     "moment": "^2.18.1",
     "morgan": "~1.8.1",
     "mysql": "^2.13.0",
+    "node-fetch": "^1.7.1",
+    "node-schedule": "^1.2.3",
     "nodemailer": "^4.0.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "request": "^2.81.0",
     "semantic-ui": "^2.2.11",
     "semantic-ui-rating": "^2.2.11",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "eslint-config-rallycoding": "^3.2.0",
