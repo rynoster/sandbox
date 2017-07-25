@@ -681,14 +681,14 @@ router
 
 // });
 
-.get("/admin/delegatePasswords", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateEmails", auth.loginRequired, auth.adminRequired, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
         title: "Batch - Email passwords",
         loggedIn: true,
         partials: {
-            body: "admin/delegatePasswords",
+            body: "admin/delegateEmails",
             jscript: "admin/jscript",
         }
     });
