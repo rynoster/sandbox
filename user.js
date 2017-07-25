@@ -28,6 +28,22 @@ function randomString(length, chars) {
 
 }
 
+function buildHtmlBodyParking(user, fullUrl) {
+
+  const htmlFile = fs.readFileSync(__dirname + "/views/emailParking.hjs", "utf8");
+
+  const htmlCompile = hjs.compile(htmlFile);
+  const htmlRender = htmlCompile.render({
+    delegateName: user.first_name + " " + user.last_name,
+    parkingUrl: fullUrl + "/parkingVoucher.pdf",
+  });
+
+//   console.log(htmlRender);
+
+  return (htmlRender);
+
+}
+
 function buildHtmlBody(user, password, fullUrl) {
 
   const htmlFile = fs.readFileSync(__dirname + "/views/emailAgenda.hjs", "utf8");
@@ -36,12 +52,50 @@ function buildHtmlBody(user, password, fullUrl) {
   const htmlRender = htmlCompile.render({
     delegateName: user.first_name + " " + user.last_name,
     passwordUrl: fullUrl + "/login?email=" + user.email + "&firstLogin=" + password
-    // verifyUrl: fullUrl + "/verify/" + params.token,
   });
 
 //   console.log(htmlRender);
 
   return (htmlRender);
+
+}
+
+function mailDelegateParking(user, req) {
+
+    db("users")
+    .where("id", user.id)
+    .update("parkingSent", 1)
+    .then((result) => {
+        console.log("Parking record updated for: " + user.email);
+
+        let emailAddress;
+
+        if (process.env.NODE_ENV === "production") {
+             emailAddress = user.email;
+        } else {
+            emailAddress = "ryno@coetzee.za.com";
+        }
+
+        const mail = new Mail({
+            from: "noreply@chirpee.io",
+            to: emailAddress,
+            subject: "Datacentrix Showcase 2017 - Parking voucher",
+            html: buildHtmlBodyParking(user, getFullUrl(req)),
+
+            successCallback: function (success) {
+                console.log("Parking mail sent to " + user.email);
+            },
+            errorCallback: function (err) {
+                console.error("Parking mail could not be sent to " + user.email);
+            }
+        });
+
+        mail.send();
+
+    })
+    .catch(() => {
+        console.log("Could not update parking record for: " + user.email);
+    });
 
 }
 
@@ -93,6 +147,17 @@ function mailDelegates(users, req) {
     _.forEach(users, (user) => {
 
         mailDelegate(user, req);
+
+    });
+
+    return users;
+}
+
+function mailDelegatesParking(users, req) {
+
+    _.forEach(users, (user) => {
+
+        mailDelegateParking(user, req);
 
     });
 
@@ -185,9 +250,8 @@ User.prototype.delegatePasswordsAll = function (callback, req) {
         .limit(req.body.limit || null)
         .then((result) => {
             return mailDelegates(result, req);
-            // callback(result); //Callback to delegatePasswords API
         })
-        .then(function (result) {
+        .then((result) => {
             callback(result); //Callback to delegatePasswords API
         })
         .catch((err) => {
@@ -197,6 +261,23 @@ User.prototype.delegatePasswordsAll = function (callback, req) {
 };
 
 User.prototype.batchMailParking = function (req, callback) {
+
+    const recordLimit = req.body.limit || 20;
+
+    db("users")
+        .where("parkingSent", 0)
+        .where("admin", 0)
+        .limit(recordLimit || null)
+        .then((result) => {
+            // return console.log(result);
+            return mailDelegatesParking(result, req);
+        })
+        .then((result) => {
+            callback(result); //Callback to delegatePasswords API
+        })
+        .catch((err) => {
+            callback(err);
+        });
 
 };
 
