@@ -627,11 +627,11 @@ router
 
   .post("/batchMailParking", (req, res, next) => {
 
-    user.batchMailParking((result) => {
+    user.batchMailParking(req, (result) => {
 
       res.send(result);
 
-    }, req, next);
+    }, next);
 
   })
 
