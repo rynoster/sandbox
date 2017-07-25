@@ -62,12 +62,6 @@ function buildHtmlBody(user, password, fullUrl) {
 
 function mailDelegateParking(user, req) {
 
-    db("users")
-    .where("id", user.id)
-    .update("parkingSent", 1)
-    .then((result) => {
-        console.log("Parking record updated for: " + user.email);
-
         let emailAddress;
 
         if (process.env.NODE_ENV === "production") {
@@ -84,6 +78,17 @@ function mailDelegateParking(user, req) {
 
             successCallback: function (success) {
                 console.log("Parking mail sent to " + user.email);
+
+                db("users")
+                    .where("id", user.id)
+                    .update("parkingSent", 1)
+                    .then((result) => {
+                        console.log("Parking record updated for: " + user.email);
+                    })
+                    .catch(() => {
+                        console.log("Could not update parking record for: " + user.email);
+                    });
+
             },
             errorCallback: function (err) {
                 console.error("Parking mail could not be sent to " + user.email);
@@ -91,11 +96,6 @@ function mailDelegateParking(user, req) {
         });
 
         mail.send();
-
-    })
-    .catch(() => {
-        console.log("Could not update parking record for: " + user.email);
-    });
 
 }
 
