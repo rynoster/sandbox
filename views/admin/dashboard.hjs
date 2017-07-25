@@ -312,6 +312,8 @@
 <script>
     $(document).ready(function() {
 
+        $("#liMenuDashboard").addClass("active");
+
         $.ajax({
             type: 'GET',
             url: '/api/report/totalRegistrations',

@@ -70,8 +70,14 @@
 
                     <ul class="nav panel-list">
 
-
-                        <!--RC: The active class below needs to be dynamic, based on click-->
+                        <li id="liMenuDashboard" class="hoe">
+                            <a href="/admin/dashboard">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="menu-text">Dashboard</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        
                         <li id="liMenuDelegate" class="hoe-has-menu">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-user"></i>
@@ -196,7 +202,7 @@
                                 <span class="selected"></span>
                             </a>
                         </li>
-                         <li id="liMenuWalkin" class="hoe">
+                        <li id="liMenuWalkin" class="hoe">
                             <a href="/admin/walkin">
                                 <i class="fa fa-linux"></i>
                                 <span class="menu-text">Walk-ins</span>
