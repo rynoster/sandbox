@@ -625,6 +625,16 @@ router
 
   })
 
+  .post("/batchMailParking", (req, res, next) => {
+
+    user.batchMailParking((result) => {
+
+      res.send(result);
+
+    }, req, next);
+
+  })
+
   .post("/rateSession", (req, res, next) => {
 
     const sessionData = req.body;
