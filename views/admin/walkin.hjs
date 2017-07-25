@@ -151,18 +151,18 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">First name</label>
-                                <input type="text" name="firstName" id="txtFirstName" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-25" maxlength="25">
+                                <input type="text" name="firstName" id="txtFirstName" class="myFormCss_input" value="" data-validation="length" data-validation-length="2-25" maxlength="25">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Last name</label>
-                                <input type="text" name="lastName" id="txtLastName" class="myFormCss_input" value="" data-validation="length" data-validation-length="3-25" maxlength="25">
+                                <input type="text" name="lastName" id="txtLastName" class="myFormCss_input" value="" data-validation="length" data-validation-length="2-25" maxlength="25">
                             </div>
                         </div>
                         <div class="divide5"></div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Company name</label>
-                                <input type="text" name="company" id="txtCompany" class="myFormCss_input" value="" maxlength="30" data-validation="length" data-validation-length="3-30" maxlength="30">
+                                <input type="text" name="company" id="txtCompany" class="myFormCss_input" value="" maxlength="30" data-validation="length" data-validation-length="2-30" maxlength="30">
                             </div>
                             <div class="col-lg-4">
                                 <label class="myFormCss_label" for="input-id">Business title</label>
