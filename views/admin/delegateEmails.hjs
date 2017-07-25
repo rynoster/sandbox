@@ -1,0 +1,176 @@
+<!--start main content-->
+<section id="main-content">
+    <div class="space-30"></div>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel">
+
+                    
+                    <div class="col-md-3">
+
+                        
+                        <div class="panel panel-info">
+                              <div class="panel-heading light-border">
+                                    <h3 class="panel-title">Tailor agenda email</h3>
+                              </div>
+                              <div class="panel-body light-border">
+
+                                <div class="form-group">
+                                    <label for="">Amount of delegates to mail</label>
+                                    <input type="text" class="form-control" id="txtBatchMailSome" placeholder="Amount of delegates to mail" maxlength="3">
+                                </div>
+
+                                <button id="btnBatchMailSome" type="button" class="btn btn-primary">Batch mail to amount of users above</button>
+
+                                <div class="row" style="padding-bottom:30px;"></div>
+
+                                <div class="form-group">
+                                    <label for="">Batch mail all delegates</label>
+                                    <input type="text" class="form-control" id="txtBatchMailAll" placeholder="Type in YES to confirm your action" maxlength="3">
+                                </div>
+
+                                <button id="btnBatchMailAll" type="button" class="btn btn-info">Batch mail to all users</button>
+
+                              </div>
+                        </div>
+                    </div>
+                        
+                    <div class="col-md-3">
+
+                        <div class="panel panel-info">
+                              <div class="panel-heading light-border">
+                                    <h3 class="panel-title">Parking voucher email</h3>
+                              </div>
+                              <div class="panel-body light-border">
+                                    
+                                    <div class="form-group">
+                                        <label for="">Amount of delegates to mail</label>
+                                        <input type="text" class="form-control" id="txtBatchMailSomeParking" placeholder="Amount of delegates to mail" maxlength="3">
+                                    </div>
+
+                                    <button id="btnBatchMailSomeParking" type="button" class="btn btn-primary">Batch mail to amount of users above</button>
+
+                                    <div class="row" style="padding-bottom:30px;"></div>
+
+                                    <div class="form-group">
+                                        <label for="">Batch mail all delegates</label>
+                                        <input type="text" class="form-control" id="txtBatchMailAllParking" placeholder="Type in YES to confirm your action" maxlength="3">
+                                    </div>
+
+                                    <button id="btnBatchMailAllParking" type="button" class="btn btn-info">Batch mail to all users</button>
+
+
+                              </div>
+                        </div>
+                        
+
+                    </div>
+                        
+                        
+                        
+                        
+
+
+                        
+                </div><!--end panel-->
+            </div><!--col end-->
+        </div><!--row end-->
+    </div><!--container end-->
+
+    <!--footer start-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>&copy; Copyright 2017. chirpee.io</span>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</section><!--end main content-->
+
+{{> jscript}}
+
+<script>
+
+    var $btnBatchMailAll = $("#btnBatchMailAll");
+    var $btnBatchMailSome = $("#btnBatchMailSome");
+    var $txtBatchMailAll = $("#txtBatchMailAll");
+    var $txtBatchMailSome = $("#txtBatchMailSome");
+
+    var $btnBatchMailAllParking = $("#btnBatchMailAllParking");
+    var $btnBatchMailSomeParking = $("#btnBatchMailSomeParking");
+    var $txtBatchMailAllParking = $("#txtBatchMailAllParking");
+    var $txtBatchMailSomeParking = $("#txtBatchMailSomeParking");
+
+    //Polyfill
+    Number.isInteger = Number.isInteger || function(value) {
+    return typeof value === 'number' && 
+        isFinite(value) && 
+        Math.floor(value) === value;
+    };
+
+    $("#liMenuEmail").addClass("active");
+
+</script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $btnBatchMailSome.click(function() {
+
+            if ( Number.isInteger(parseInt($txtBatchMailSome.val())) ) {
+                $.ajax({
+
+                    type: "POST",
+                    url: "/api/delegatePasswords",
+                    data: { limit: $txtBatchMailSome.val() },
+                    success: function(ajaxResult) {
+                        alert("Success, " + ajaxResult.length + " delegates have been emailed.")
+                    }
+                })
+            } 
+
+        })
+
+        $btnBatchMailAll.click(function() {
+            
+            if ($txtBatchMailAll.val() === "YES") {
+                $.ajax({
+
+                    type: "POST",
+                    url: "/api/delegatePasswords",
+                    data: { limit: 1 },
+                    success: function(ajaxResult) {
+                        alert("Success, " + ajaxResult.length + " delegates have been emailed.")
+                    }
+                })
+
+            } else {
+                alert ("Make sure to type 'YES' into the field.")
+            }
+
+        })
+
+        $btnBatchMailSomeParking.click(function () {
+
+            if ( Number.isInteger(parseInt($txtBatchMailSomeParking.val())) ) {
+                $.ajax({
+
+                    type: "POST",
+                    url: "/api/delegatePasswords",
+                    data: { limit: $txtBatchMailSomeParking.val() },
+                    success: function(ajaxResult) {
+                        alert("Success, " + ajaxResult.length + " delegates have been emailed.")
+                    }
+                })
+            } 
+            
+        })
+
+    });
+
+</script>
