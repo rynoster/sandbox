@@ -203,6 +203,7 @@
                         <option value="Staff">Staff</option>
                         <option value="Media">Media</option>
                         <option value="Sponsor">Sponsor</option>
+                        <option value="Speaker">Speaker</option>
                     </select>
                     
                     <!-- <input class="btn btn-info" type="button" onclick="loadPrint();" value="Print" disabled /> -->
