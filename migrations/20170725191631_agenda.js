@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.table("agenda", function(table){
     table.integer("scanId");
-    table.time("scanSendTime");
+    table.dateTime("scanSendTime");
   });
 
 };
