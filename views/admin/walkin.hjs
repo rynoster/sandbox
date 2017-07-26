@@ -210,6 +210,9 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="rdEventProfile" value="Staff" >Staff
                                 </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="rdEventProfile" value="Speaker" disabled>Speaker
+                                </label>
                             </div>
 
                         </div>
