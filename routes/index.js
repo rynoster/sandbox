@@ -437,7 +437,7 @@ router
 
     db("liveQuestions")
         .orderBy("dateStamp", "DESC")
-        .limit(30)
+        .limit(50)
         .then(function (resultQuestions) {
 
             res.render("liveAdmin", {
