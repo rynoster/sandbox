@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/rate-session.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <!-- Icons -->
+    <link rel="stylesheet" href="/css/font-awesome/font-awesome.css">
+    <!-- Semantic -->
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.css">
+    <!--Bootstrap modal dialog  -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" rel="stylesheet">
+
+    <style>
+        .touch-size {
+            font-size: 120%;
+        }
+        
+        th,
+        td {
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: left;
+        }
+        
+        label {
+            font-size: 75%;
+        }
+
+        /* This class does a vertical center */
+        .modal-dialog {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            height: 100px;
+            width: 280px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid walkin-bg inner-top-xs">
+        <div class="divide10"></div>
+        <div class="row center-block text-center">
+            <img src="/assets/images/showcase.svg" class="img-responsive brand-logo center-block" alt="Image">
+        </div>
+        <div class="center-div text-center ">
+            <div class="row">
+
+                <h1 style="color:indianred">Live Questions</h1>
+                <!-- <p style="font-size:80%;color:darkgrey"><strong>By: </strong>{{session.speakerName}} / {{session.speakerProfession}}, {{session.speakerCompany}} -->
+                    <hr style="border: 0.5px dashed #d8d8d8;">
+            </div>
+
+            <form id="" action="">
+                <div class="row">
+                    <textarea id="txtQuestion" rows="8" cols="35" placeholder="Post your question here)"></textarea>
+                </div>
+                <div class="divide30"></div>
+                <button id="btnSubmit" type="button" class="btn btn-primary">Submit my question</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <!-- End of page  -->
+    </div>
+
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/semantic/dist/semantic.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
+    <script>
+
+        function twoDigits(d) {
+            if(0 <= d && d < 10) return "0" + d.toString();
+            if(-10 < d && d < 0) return "-0" + (-1*d).toString();
+            return d.toString();
+        }
+
+        Date.prototype.toMysqlFormat = function() {
+            return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+        };
+
+        $(document).ready(function() {
+
+            var $btnSubmit = $("#btnSubmit");
+            var $txtQuestion = $("#txtQuestion");
+
+            $btnSubmit.click(function(e) {
+                e.preventDefault();
+
+                const dateStamp = new Date();
+
+                if ($txtQuestion.val() === "") { return; }
+
+                questionData = {
+                    dateStamp: dateStamp.toMysqlFormat(),
+                    question: $txtQuestion.val()
+                };
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "/api/liveQuestions/",
+                    data: questionData,
+                    success: function () {
+
+                        BootstrapDialog.show({
+                            message: "Your question has been posted.",
+                            title: "Thank you",
+                            closable: false,
+                            type: BootstrapDialog.TYPE_SUCCESS,
+                            size: BootstrapDialog.SIZE_LARGE,
+
+                        });
+
+                    }
+                })
+
+            })
+
+        })
+    </script>
+
+</body>
+
+
+</html>
