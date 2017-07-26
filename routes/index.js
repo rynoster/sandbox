@@ -425,6 +425,30 @@ router
     });
 })
 
+.get("/live", (req, res) => {
+
+    res.render("liveQuestions", {
+        title: "#DCxShowcase",
+    });
+
+})
+
+.get("/liveAdmin", (req, res) => {
+
+    db("liveQuestions")
+        .orderBy("dateStamp", "DESC")
+        .limit(8)
+        .then(function (resultQuestions) {
+
+            res.render("liveAdmin", {
+                title: "#DCxShowcase",
+                resultQuestions
+            });
+
+        });
+
+})
+
 // ===========================================================================
 //  Admin Pages ==============================================================
 // ===========================================================================
