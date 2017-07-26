@@ -592,6 +592,23 @@
         })
 
     }
+
+    function updateCardPrinted () {
+
+        $.ajax({
+
+            type: "PUT",
+            url: "/api/user/" + delegateId,
+            data: { cardPrinted: 1 },
+            success: function() {
+
+                location.href = "/admin/walkin";
+
+            }
+        })
+
+    }
+    
 </script>
 
 <script>
@@ -671,7 +688,7 @@
 
         //Tab 4 'Yes' button, reloads page
         $btnDone.click(function() {
-            location.href = "/admin/walkin";
+            updateCardPrinted()
         });
 
     })
