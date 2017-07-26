@@ -40,6 +40,11 @@
             font-size: 75%;
         }
 
+        .center-div {
+            max-width: 500px;
+            max-height: 350px;
+        }
+
         /* This class does a vertical center */
         .modal-dialog {
             margin: auto;
