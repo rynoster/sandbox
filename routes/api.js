@@ -534,6 +534,8 @@ router
             db("users")
               .count("id as count")
               .select("event_profile")
+              .whereNot("event_profile", "Admin")
+              .whereNot("event_profile", "Speaker")
               .groupBy("event_profile")
               .then((result) => {
 

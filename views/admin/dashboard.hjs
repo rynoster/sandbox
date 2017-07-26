@@ -243,7 +243,6 @@
             responsive: true
         };
 
-
         var ctx = document.getElementById("custSplit").getContext("2d");
         var myNewChart = new Chart(ctx).Bar(barData, barOptions);
 
@@ -258,6 +257,8 @@
             graphValues.push(value.count)
 
             var graphDate = new Date(value.dateAdded);
+
+            graphDate.setDate(graphDate.getDate() + 1);
             graphDate = graphDate.toJSON().substring(0, 10);
 
             graphLabels.push(graphDate);
