@@ -657,6 +657,16 @@ router
 
   })
 
+  .post("/liveQuestions", (req, res) => {
+
+      db("liveQuestions")
+        .insert(req.body)
+        .then(function() {
+          res.sendStatus(200);
+        });
+
+  })
+
 
   //***********************************************
   //Below needs to be moved to helper functions app
