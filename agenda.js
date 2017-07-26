@@ -192,7 +192,7 @@ Agenda.prototype.smsRatings = function (callback) {
                                 //First retrieve the cellphone number from the user record
                                 user.getUserOnEmail(userScan.tid[0], (userRecord) => {
                                     let mobileNr = userRecord.mobilenr;
-                                    const message = "Dear " + userRecord.first_name + ". Thank you for attending the breakaway session. Please take a minute to rate the session by following this link. https://datacentrix.chirpee.io/rateSession/" + breakAway.id;
+                                    const message = "Dear " + userRecord.first_name + ". Thank you for attending the " + breakAway.tabName + " breakaway session. Please take a minute to rate the session. datacentrix.chirpee.io/rateSession/" + breakAway.id;
 
                                     //Normalise the cellphone numbers before sending to SMS gateway
                                     mobileNr = _.replace(mobileNr, "+27", "0").replace(/ /g,"");
