@@ -179,6 +179,7 @@ Agenda.prototype.smsRatings = function (callback) {
                 // scanSendTime.setSeconds(scanSendTime.getSeconds() + 3); 
 
                 //Create the scheduled job for each session
+                console.log("Created job for: " + breakAway.tabName + ", " + scanSendTime);
                 const myJob = schedule.scheduleJob(scanSendTime, () => {
                     
                     //Retrieve the scanned data from codeReadr API, for the specific session
