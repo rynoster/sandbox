@@ -326,9 +326,11 @@ router
       .update(req.body)
       .then((result) => {
         if (result === 0) {
-          return res.send(400);
+          // return res.send(400);
+          return res.sendStatus(400);
         }
-        res.send(200);
+        // res.send(200);
+        res.sendStatus(200);
       }, next);
   })
 
@@ -345,7 +347,7 @@ router
           if (result === 0) {
             return res.send(400)
           }
-          res.send(200);
+          res.sendStatus(200);
         }, next);
     })
 
@@ -366,9 +368,9 @@ router
 
     mySpeaker.getSpeaker((speaker) => {
       if (speaker.errno) {
-        return res.send(400);
+        return res.sendStatus(400);
       } else if (_.isEmpty(speaker)) {
-        res.send(404);
+        res.sendStatus(404);
       } else {
         res.send(speaker);
       }
@@ -391,7 +393,7 @@ router
           error: err.message
         });
 
-      })
+      });
   })
 
   //Update existing speaker details
@@ -405,10 +407,10 @@ router
       .update(req.body)
       .then((result) => {
         if (result === 0) {
-          return res.send(400)
+          return res.sendStatus(400);
         }
-        res.send(200);
-      }, next)
+        res.sendStatus(200);
+      }, next);
   })
 
   //form uploads for images
