@@ -1,6 +1,6 @@
 // const passport = require('passport');
 // const session = require('express-session');
-// const favicon = require('serve-favicon');
+const favicon = require("serve-favicon");
 // const db = require('./db');
 
 const express = require("express");
@@ -25,7 +25,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hjs");
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', '/assets/images/favicon.ico')));
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
