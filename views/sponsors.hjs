@@ -274,7 +274,7 @@
 			<div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
 				<div class="fadeInDown-1 panel panel-chpn-light">
 					<div class="panel-body">
-						<figure><img class="pic-chp-grey" src="/assets/images/sponsor-logos/mim.svg" alt=""></figure>
+						<figure><img id="mimImg" class="pic-chp-grey {{#mimecast}} sponsor-Class {{/mimecast}} " {{#mimecast}} data-target="#sponsorModal" data-toggle="modal" data-sponsor="MIM" {{/mimecast}} src="/assets/images/sponsor-logos/mim.svg" alt=""></figure>
 					</div>
 				</div>
 			</div>
@@ -336,6 +336,29 @@
 
 {{> jscript}}
 
+<script>
+
+	function displaySponsor(sponsorTag) {
+
+		$.ajax({
+			type: 'GET',
+			url: '/api/sponsor/' + sponsorTag,
+
+			success: function (sponsors) {
+				$("#sponsorName").text(sponsors.sponsorName);
+				$("#sponsorContent").html(sponsors.sponsorContent);
+				$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
+				$("#sponsorImage").attr("src", "/assets/images/sponsor-logos/" + sponsors.sponsorLogo);
+			},
+			error: function () {
+				// alert("Error retrieving sponsor data");
+			}
+
+		})
+
+	}
+
+</script>
 
 <script>
 	$(document).ready(function () {
@@ -347,24 +370,15 @@
 			$("#sponsorImage").attr("src", "");
 		});
 
+		if ("{{mimecast}}" === "true") {
+			$("#sponsorModal").modal();
+			displaySponsor("MIM");
+		}
+
 		$('.sponsor-Class').on('click', function () {
 			sponsorTag = $(this).data('sponsor');
 
-			$.ajax({
-				type: 'GET',
-				url: '/api/sponsor/' + sponsorTag,
-
-				success: function (sponsors) {
-					$("#sponsorName").text(sponsors.sponsorName);
-					$("#sponsorContent").html(sponsors.sponsorContent);
-					$("#sponsorLevel").html(sponsors.sponsorLevel + " Sponsor");
-					$("#sponsorImage").attr("src", "/assets/images/sponsor-logos/" + sponsors.sponsorLogo);
-				},
-				error: function () {
-					// alert("Error retrieving sponsor data");
-				}
-
-			})
+			displaySponsor(sponsorTag);
 
 		});
 

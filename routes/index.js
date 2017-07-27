@@ -213,6 +213,20 @@ router
 
 })
 
+.get("/mimecast", (req, res) => {
+
+    res.render("skeleton", {
+        mimecast: true,
+        partials: {
+            header: "header",
+            content: "sponsors",
+            footer: "footer",
+            jscript: "jscript"
+        }
+    });
+
+})
+
 // ===========================================================================
 //  Why Attend Page  =========================================================
 // ===========================================================================
