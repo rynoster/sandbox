@@ -40,14 +40,20 @@
             font-size: 75%;
         }
 
+         .center-div {
+            max-width: 450px;
+            max-height: 570px;
+        } 
+
         /* This class does a vertical center */
         .modal-dialog {
             margin: auto;
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
             height: 100px;
-            width: 450px;
+            width: 280px;
         }
+
     </style>
 
 </head>
@@ -59,7 +65,7 @@
         <div class="row center-block text-center">
             <img src="/assets/images/showcase.svg" class="img-responsive brand-logo center-block" alt="Image">
         </div>
-        <div class="center-div text-center ">
+        <div class="center-div text-center pre-scrollable">
             <div class="row">
 
                 <h1 style="color:indianred">{{session.title}}</h1>
@@ -125,9 +131,9 @@
                 <div class="row">
                     <textarea id="txtComment" rows="4" cols="35" placeholder="Leave us a comment here (Optional)"></textarea>
                 </div>
-                <div class="divide30"></div>
+                 <div class="divide10"></div> 
                 <button id="btnSubmit" type="button" class="btn btn-primary">Submit my feedback</button>
-
+                <div class="divide20"></div> 
 
             </form>
         </div>
