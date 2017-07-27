@@ -93,14 +93,14 @@ router
 
     const newUser = req.body;
 
-    console.log(newUser.email);
+    // console.log(newUser.email);
 
     db("users")
       // .where("email", newUser.email)
       .whereRaw("LOWER(email) = ?", [_.toLower(newUser.email)]) //Compare lowercase to lowercase, to ensure users do not register with two different case email addresses that are the same
       .first()
       .then((resultUser) => {
-        console.log(resultUser);
+        // console.log(resultUser);
         if (resultUser) {
           res.status(500).send({
             error: "User exists"
@@ -260,7 +260,7 @@ router
       userEmail
     } = req.params;
 
-    console.log(userEmail);
+    // console.log(userEmail);
 
     db("users")
       .where("email", userEmail)
