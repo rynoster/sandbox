@@ -116,8 +116,7 @@ router
 
 .post("/login", passport.authenticate("local"), (req, res) => {
 
-    res.send(200);
-    // res.redirect("/");
+    res.sendStatus(200);
 
 })
 
