@@ -32,9 +32,9 @@ function getScanData(sessionId, callback) {
 
 function sendSms (mobileNr, message) {
 
-    // if (process.env.NODE_ENV === "development") {
-    //     mobileNr = "0829091780";
-    // }
+    if (process.env.NODE_ENV !== "production") {
+        mobileNr = "0829091780";
+    }
 
     fetch("http://www.mymobileapi.com/api5/http5.aspx?Type=sendparam&username=rynoster&password=iX0oQV4JOK7h&numto=" + mobileNr + "&data1=" + message, { method: "POST" })
 

@@ -82,14 +82,17 @@ function onError(error) {
  */
 
 function onListening() {
+
   let date = new Date();
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  if (process.env.NODE_ENV === undefined) { process.env.NODE_ENV = "development"; }
   console.log("Server started at: " + date.getHours() + ":" + 
-    ("0" + (date.getMinutes())).slice(-2) + ":" + ("0" + (date.getSeconds())).slice(-2));
+    ("0" + (date.getMinutes())).slice(-2) + ":" + ("0" + (date.getSeconds())).slice(-2) +
+    " in " + process.env.NODE_ENV + " mode");
 
   
 }
