@@ -496,7 +496,7 @@ router
 
 })
 
-.get("/admin/delegateMain", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateMain", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         users: "users",
@@ -513,7 +513,7 @@ router
     });
 })
 
-.get("/admin/delegateMain/:filter", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateMain/:filter", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
     var { filter } = req.params;
 
     //Validate the filter provided. If it not valid, default to "verified" filter
@@ -539,7 +539,7 @@ router
 
 })
 
-.get("/admin/delegateAdd", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateAdd", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         users: "users",
@@ -556,7 +556,7 @@ router
 
 })
 
-.get("/admin/delegateEdit/:id", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateEdit/:id", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     var { id } = req.params;
 
@@ -576,7 +576,7 @@ router
 
 })
 
-.get("/admin/sponsoredit", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/sponsoredit", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         sponsors: "sponsors",
@@ -615,7 +615,7 @@ router
 
 })
 
-.get("/admin/sessionList", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/sessionList", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
@@ -629,7 +629,7 @@ router
 
 })
 
-.get("/admin/sessionAdd", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/sessionAdd", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
@@ -643,7 +643,7 @@ router
 
 })
 
-.get("/admin/sessionEdit/:sessionId", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/sessionEdit/:sessionId", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     const { sessionId } = req.params;
 
@@ -660,7 +660,7 @@ router
 
 })
 
-.get("/admin/speakerList", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/speakerList", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
@@ -674,7 +674,7 @@ router
 
 })
 
-.get("/admin/speakerEdit/:id", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/speakerEdit/:id", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     var { id } = req.params;
 
@@ -691,7 +691,7 @@ router
 
 })
 
-.get("/admin/speakerAdd", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/speakerAdd", auth.loginRequired, auth.adminRequired, auth.superAdmin,  (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,
@@ -719,7 +719,7 @@ router
 
 // });
 
-.get("/admin/delegateEmails", auth.loginRequired, auth.adminRequired, (req, res) => {
+.get("/admin/delegateEmails", auth.loginRequired, auth.adminRequired, auth.superAdmin, (req, res) => {
 
     res.render("admin/main", {
         loginUser: req.user.first_name + " " + req.user.last_name,

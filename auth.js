@@ -12,5 +12,11 @@ module.exports = {
             return res.render("403");
         }
         next();
+    },
+    superAdmin: function(req, res, next) {
+        if (!req.user.superAdmin) {
+            return res.render("403");
         }
+        next();
     }
+};
