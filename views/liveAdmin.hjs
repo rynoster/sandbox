@@ -42,12 +42,12 @@
         }
 
         .center-div {
-            max-width: 500px;
-            max-height: 85%;
+            max-width: 700px;
+            max-height: 660px;
         }
 
         .pre-scrollable {
-            max-height: 350px;
+            max-height: 550px;
             padding-bottom: 30px;
         }
 
